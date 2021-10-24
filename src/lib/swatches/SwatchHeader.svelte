@@ -1,6 +1,6 @@
 <script>
 	export let title;
-	export let manufacturer_name;
+	export let manufacturerName;
 </script>
 
 <header>
@@ -8,7 +8,7 @@
 		<h1>
 			{title}
 		</h1>
-		{manufacturer_name}
+		{manufacturerName}
 	</div>
 	<div>
 		<button>
