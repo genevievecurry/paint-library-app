@@ -16,6 +16,8 @@
 			enable source maps by default.
 			*/
 		"sourceMap": true,
+		"outDir": "dist",
+		"strict": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
