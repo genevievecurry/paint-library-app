@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -21,205 +18,206 @@ enum UserStatus {
   BANNED
 }
 
-model Users {
-  id          Int           @id @default(autoincrement())
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
-  deleted     Boolean       @default(false)
-  email       String        @unique @db.Citext
-  displayName String
-  role        Role          @default(MEMBER)
-  status      UserStatus    @default(PENDING)
-  statusId    Int
-  swatches    Swatches[]
-  swatchCards SwatchCards[]
-  notes       Notes[]
+model User {
+  id             Int          @id @default(autoincrement())
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  deleted        Boolean      @default(false)
+  email          String       @unique @db.Citext
+  hashedPassword String
+  displayName    String
+  role           Role         @default(MEMBER)
+  status         UserStatus   @default(PENDING)
+  swatches       Swatch[]
+  swatchCards    SwatchCard[]
+  notes          Note[]
 }
 
-model Swatches {
-  id                             Int                  @id @default(autoincrement())
-  createdAt                      DateTime             @default(now())
-  updatedAt                      DateTime             @updatedAt
-  deleted                        Boolean              @default(false)
-  published                      Boolean              @default(false)
-  author                         Users                @relation(fields: [authorId], references: [id])
+model Swatch {
+  id                             Int               @id @default(autoincrement())
+  createdAt                      DateTime          @default(now())
+  updatedAt                      DateTime          @updatedAt
+  deleted                        Boolean           @default(false)
+  published                      Boolean           @default(false)
+  author                         User              @relation(fields: [authorId], references: [id])
   authorId                       Int
-  slug                           String               @unique
-  manufacturer                   Manufacturers?       @relation(fields: [manufacturerId], references: [id])
+  slug                           String            @unique
+  manufacturer                   Manufacturer?     @relation(fields: [manufacturerId], references: [id])
   manufacturerId                 Int?
-  paintType                      PaintTypes           @relation(fields: [paintTypeId], references: [id])
+  paintType                      PaintType         @relation(fields: [paintTypeId], references: [id])
   paintTypeId                    Int
   productUrl                     String?
   productColorName               String
   communityDescription           String?
   manufacturerDescription        String?
   manufacturerPigmentDescription String?
-  pigments                       PigmentsOnSwatches[]
-  ratings                        RatingsOnSwatches[]
+  pigments                       PigmentOnSwatch[]
+  ratings                        RatingOnSwatch[]
+  swatchCards                    SwatchCard[]
+  notes                          Note[]
+  tags                           Tag[]
 
-
-  swatchCards SwatchCards[]
-  notes       Notes[]
   @@unique([manufacturerId, productColorName])
 }
 
-model RatingsOnSwatches {
-  id                   Int                 @id @default(autoincrement())
-  swatch               Swatches            @relation(fields: [swatchId], references: [id])
-  swatchId             Int                 @unique
-  lightfastRating      LightfastRatings    @relation(fields: [lightfastRatingId], references: [id])
+model RatingOnSwatch {
+  id                   Int                @id @default(autoincrement())
+  swatch               Swatch             @relation(fields: [swatchId], references: [id])
+  swatchId             Int                @unique
+  lightfastRating      LightfastRating    @relation(fields: [lightfastRatingId], references: [id])
   lightfastRatingId    Int
-  transparencyRating   TransparencyRatings @relation(fields: [transparencyRatingId], references: [id])
+  transparencyRating   TransparencyRating @relation(fields: [transparencyRatingId], references: [id])
   transparencyRatingId Int
-  stainingRating       StainingRatings     @relation(fields: [stainingRatingId], references: [id])
+  stainingRating       StainingRating     @relation(fields: [stainingRatingId], references: [id])
   stainingRatingId     Int
-  granulationRating    GranulationRatings  @relation(fields: [granulationRatingId], references: [id])
+  granulationRating    GranulationRating  @relation(fields: [granulationRatingId], references: [id])
   granulationRatingId  Int
 }
 
-model Pigments {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  code      String   @unique
+model Pigment {
+  id        Int               @id @default(autoincrement())
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+  code      String            @unique
   name      String
   number    Int
-  color     Colors   @relation(fields: [colorId], references: [id])
+  color     Color             @relation(fields: [colorId], references: [id])
   colorId   Int
-
-  swatches PigmentsOnSwatches[]
+  swatches  PigmentOnSwatch[]
 }
 
-model PigmentsOnSwatches {
-  swatch    Swatches @relation(fields: [swatchId], references: [id])
+model PigmentOnSwatch {
+  swatch    Swatch  @relation(fields: [swatchId], references: [id])
   swatchId  Int
-  pigment   Pigments @relation(fields: [pigmentId], references: [id])
+  pigment   Pigment @relation(fields: [pigmentId], references: [id])
   pigmentId Int
 
   @@id([swatchId, pigmentId])
 }
 
-model SwatchCards {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  deleted   Boolean  @default(false)
-
-  swatch           Swatches         @relation(fields: [swatchId], references: [id])
+model SwatchCard {
+  id               Int             @id @default(autoincrement())
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  deleted          Boolean         @default(false)
+  swatch           Swatch          @relation(fields: [swatchId], references: [id])
   swatchId         Int
-  paper            Papers           @relation(fields: [paperId], references: [id])
+  paper            Paper           @relation(fields: [paperId], references: [id])
   paperId          Int
-  swatchCardType   SwatchCardTypes? @relation(fields: [swatchCardTypeId], references: [id])
+  swatchCardType   SwatchCardType? @relation(fields: [swatchCardTypeId], references: [id])
   swatchCardTypeId Int?
-  author           Users            @relation(fields: [authorId], references: [id])
+  author           User            @relation(fields: [authorId], references: [id])
   authorId         Int
   description      String?
 }
 
-model SwatchCardTypes {
-  id          Int           @id @default(autoincrement())
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
+model SwatchCardType {
+  id          Int          @id @default(autoincrement())
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
   label       String
-  swatchCards SwatchCards[]
+  swatchCards SwatchCard[]
 }
 
-model Papers {
-  id             Int            @id @default(autoincrement())
-  createdAt      DateTime       @default(now())
-  updatedAt      DateTime       @updatedAt
-  swatchCards    SwatchCards[]
-  manufacturer   Manufacturers? @relation(fields: [manufacturerId], references: [id])
+model Paper {
+  id             Int           @id @default(autoincrement())
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  swatchCards    SwatchCard[]
+  manufacturer   Manufacturer? @relation(fields: [manufacturerId], references: [id])
   manufacturerId Int?
   description    String
   weightInLbs    Int
 }
 
-model Notes {
+model Note {
   id         Int      @id @default(autoincrement())
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
-  author     Users    @relation(fields: [authorId], references: [id])
+  author     User     @relation(fields: [authorId], references: [id])
   authorId   Int
-  swatch     Swatches @relation(fields: [swatchId], references: [id])
+  swatch     Swatch   @relation(fields: [swatchId], references: [id])
   swatchId   Int
   approved   Boolean  @default(false)
   content    String
-  childNotes Notes[]  @relation("NotesToNotes")
-  Notes      Notes?   @relation("NotesToNotes", fields: [notesId], references: [id])
-  notesId    Int?
+  childNotes Note[]   @relation("NoteToNote")
+  note       Note?    @relation("NoteToNote", fields: [noteId], references: [id])
+  noteId     Int?
 }
 
-model Tags {
+model Tag {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   label     String
+  slug      String
+  swatch    Swatch   @relation(fields: [swatchId], references: [id])
+  swatchId  Int
 
-  @@unique([label])
+  @@unique([label, slug])
 }
 
-model Manufacturers {
-  id        Int        @id @default(autoincrement())
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-  name      String     @unique @db.Citext
+model Manufacturer {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String   @unique @db.Citext
   website   String?
-  swatches  Swatches[]
-  papers    Papers[]
+  swatches  Swatch[]
+  papers    Paper[]
 }
 
-model PaintTypes {
-  id        Int        @id @default(autoincrement())
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-  label     String     @unique
-  slug      String     @unique
-  swatches  Swatches[]
+model PaintType {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  label     String   @unique
+  slug      String   @unique
+  swatches  Swatch[]
 }
 
-model Colors {
-  id        Int        @id @default(autoincrement())
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-  label     String     @unique
-  slug      String     @unique
-  code      String     @unique
-  pigments  Pigments[]
+model Color {
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  label     String    @unique
+  slug      String    @unique
+  code      String    @unique
+  pigments  Pigment[]
 }
 
-model LightfastRatings {
-  id                Int                 @id @default(autoincrement())
-  createdAt         DateTime            @default(now())
-  updatedAt         DateTime            @updatedAt
-  label             String
-  description       String?
-  ratingsOnSwatches RatingsOnSwatches[]
+model LightfastRating {
+  id              Int              @id @default(autoincrement())
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  label           String
+  description     String?
+  ratingsOnSwatch RatingOnSwatch[]
 }
 
-model TransparencyRatings {
-  id                Int                 @id @default(autoincrement())
-  createdAt         DateTime            @default(now())
-  updatedAt         DateTime            @updatedAt
-  label             String
-  description       String?
-  ratingsOnSwatches RatingsOnSwatches[]
+model TransparencyRating {
+  id              Int              @id @default(autoincrement())
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  label           String
+  description     String?
+  ratingsOnSwatch RatingOnSwatch[]
 }
 
-model StainingRatings {
-  id                Int                 @id @default(autoincrement())
-  createdAt         DateTime            @default(now())
-  updatedAt         DateTime            @updatedAt
-  label             String
-  description       String?
-  ratingsOnSwatches RatingsOnSwatches[]
+model StainingRating {
+  id              Int              @id @default(autoincrement())
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  label           String
+  description     String?
+  ratingsOnSwatch RatingOnSwatch[]
 }
 
-model GranulationRatings {
-  id                Int                 @id @default(autoincrement())
-  createdAt         DateTime            @default(now())
-  updatedAt         DateTime            @updatedAt
-  label             String
-  description       String?
-  ratingsOnSwatches RatingsOnSwatches[]
+model GranulationRating {
+  id              Int              @id @default(autoincrement())
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  label           String
+  description     String?
+  ratingsOnSwatch RatingOnSwatch[]
 }

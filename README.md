@@ -2,6 +2,8 @@
 
 Node Version: `v16.12.0`
 
+Env: `$ cp .example.env .env`
+
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
@@ -12,6 +14,19 @@ npm run dev
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
 ```
+
+### Database
+
+This project uses Prisma.io & PostgreSQL.
+
+Seed:
+`npm run seed`
+
+Run Mirations:
+`npm run migrate:dev`
+
+Reset Database & Seed:
+`npm run migrate:reset`
 
 ## Building
 
