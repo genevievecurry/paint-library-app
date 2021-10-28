@@ -5,9 +5,6 @@ export async function get({ params }):Promise<{status: number, body: Record<stri
 
 	const response = await api.get(slug);
 
-	console.log("slug", slug);
-	console.log("response", response);
-
 	if(response.status === 404) {
 		return {
 			status: response.status,

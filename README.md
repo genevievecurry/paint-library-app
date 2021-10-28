@@ -15,18 +15,27 @@ npm run dev
 npm run dev -- --open
 ```
 
-### Database
+## Database
 
 This project uses Prisma.io & PostgreSQL.
 
-Seed:
-`npm run seed`
+Schema is: [schema.prisma](./prisma/schema.prisma)
 
-Run Mirations:
+**Run Migrations:**
+
 `npm run migrate:dev`
 
-Reset Database & Seed:
+**Seed:**
+
+`npm run seed`
+
+**Reset Database & Seed:**
+
 `npm run migrate:reset`
+
+After firing up the app with `npm run dev`, you can try navigating to [http://localhost:3000/swatch/watercolor-swatch](http://localhost:3000/swatch/watercolor-swatch) to see a seeded swatch (the only route at the moment).
+
+**Note:** You'll need to make sure you have your .env configured to use a postgresql superuser. Hopefully you already have user 'postgres' with the same password & will not need to do anything.
 
 ## Building
 

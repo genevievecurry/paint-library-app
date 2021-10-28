@@ -2,7 +2,7 @@
   "name": "paint-library-app",
   "version": "0.0.1",
   "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+    "seed": "node prisma/seed.cjs"
   },
   "scripts": {
     "dev": "svelte-kit dev",

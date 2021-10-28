@@ -3,7 +3,7 @@
   export let paintType;
 </script>
 
-<section>
+<section class="similar-products">
   <h2>Similar {paintType}{similarProducts.length > 1 ? 's' : ''}</h2>
 
   {#each similarProducts as similarProduct}
@@ -15,6 +15,11 @@
 </section>
 
 <style>
+  .similar-products {
+    padding: 10px;
+		border: 1px solid black;
+		margin: 10px;
+  }
   .product {
     display: flex;
   }

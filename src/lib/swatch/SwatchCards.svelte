@@ -1,14 +1,16 @@
 <script>
-	export let swatchCards;
+	export let swatchCardData;
+	// description, paperDescription, paperWeightInLbs, paperManufacturer, typeLabel, typeDescription, authorDisplayName
 </script>
 
-<section class="swatche-cards">
-	{#each swatchCards as swatchCard}
+<section class="swatch-cards">
+	{#each swatchCardData as swatchCard}
 		<div class="swatch-card">
-			<img src={swatchCard.image_url} alt={swatchCard.description} />
+			<img src='https://placekitten.com/250/150' alt={swatchCard.description} />
 			<div class="meta">
 				<p>
-					{swatchCard.swatch_type || swatchCard.custom_swatch_type}
+					<strong>Swatch Type: {swatchCard.typeLabel || "Custom"}</strong> 
+					{#if swatchCard?.typeDescription}({swatchCard.typeDescription}){/if}
 				</p>
 				{#if swatchCard?.description}
 					<p>
@@ -16,10 +18,10 @@
 					</p>
 				{/if}
 				<p>
-					Paper: {swatchCard.paper.description} ({swatchCard.paper.weight_in_lbs})  by {swatchCard.paper.manufacturer}
+					Paper: {swatchCard.paperDescription} ({swatchCard.paperWeightInLbs})  by {swatchCard.paperManufacturer}
 				</p>
 				<p>
-					Uploaded by {swatchCard.author.display_name}
+					Uploaded by {swatchCard.authorDisplayName}
 				</p>
 			</div>
 		</div>
@@ -28,12 +30,18 @@
 
 
 <style>
-	.swatche-cards{
+	.swatch-cards{
 		display: flex;
+		flex-wrap: wrap;
 	}
 
 	.swatch-card {
 		padding: 10px;
+		border: 1px solid black;
+		margin: 10px;
+		flex-grow: 1;
+		width: 250px;
+		flex-basis: 250px;
 	}
 	.meta{
 		font-size: .8rem;

@@ -7,11 +7,14 @@ CREATE TYPE "Role" AS ENUM ('MEMBER', 'ADMIN');
 -- CreateEnum
 CREATE TYPE "UserStatus" AS ENUM ('PENDING', 'ACTIVE', 'BANNED');
 
+-- CreateEnum
+CREATE TYPE "PigmentType" AS ENUM ('HISTORIC', 'CINATURAL', 'CIPIGMENT');
+
 -- CreateTable
 CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
     "deleted" BOOLEAN NOT NULL DEFAULT false,
     "email" CITEXT NOT NULL,
     "hashedPassword" TEXT NOT NULL,
@@ -38,20 +41,12 @@ CREATE TABLE "Swatch" (
     "communityDescription" TEXT,
     "manufacturerDescription" TEXT,
     "manufacturerPigmentDescription" TEXT,
-
-    CONSTRAINT "Swatch_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "RatingOnSwatch" (
-    "id" SERIAL NOT NULL,
-    "swatchId" INTEGER NOT NULL,
     "lightfastRatingId" INTEGER NOT NULL,
     "transparencyRatingId" INTEGER NOT NULL,
     "stainingRatingId" INTEGER NOT NULL,
     "granulationRatingId" INTEGER NOT NULL,
 
-    CONSTRAINT "RatingOnSwatch_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Swatch_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -59,7 +54,7 @@ CREATE TABLE "Pigment" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
-    "code" TEXT NOT NULL,
+    "type" "PigmentType" NOT NULL DEFAULT E'CIPIGMENT',
     "name" TEXT NOT NULL,
     "number" INTEGER NOT NULL,
     "colorId" INTEGER NOT NULL,
@@ -69,10 +64,11 @@ CREATE TABLE "Pigment" (
 
 -- CreateTable
 CREATE TABLE "PigmentOnSwatch" (
+    "id" SERIAL NOT NULL,
     "swatchId" INTEGER NOT NULL,
     "pigmentId" INTEGER NOT NULL,
 
-    CONSTRAINT "PigmentOnSwatch_pkey" PRIMARY KEY ("swatchId","pigmentId")
+    CONSTRAINT "PigmentOnSwatch_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -96,6 +92,7 @@ CREATE TABLE "SwatchCardType" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "label" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
 
     CONSTRAINT "SwatchCardType_pkey" PRIMARY KEY ("id")
 );
@@ -226,10 +223,7 @@ CREATE UNIQUE INDEX "Swatch_slug_key" ON "Swatch"("slug");
 CREATE UNIQUE INDEX "Swatch_manufacturerId_productColorName_key" ON "Swatch"("manufacturerId", "productColorName");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "RatingOnSwatch_swatchId_key" ON "RatingOnSwatch"("swatchId");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Pigment_code_key" ON "Pigment"("code");
+CREATE UNIQUE INDEX "Pigment_type_colorId_number_key" ON "Pigment"("type", "colorId", "number");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Tag_label_slug_key" ON "Tag"("label", "slug");
@@ -262,19 +256,16 @@ ALTER TABLE "Swatch" ADD CONSTRAINT "Swatch_manufacturerId_fkey" FOREIGN KEY ("m
 ALTER TABLE "Swatch" ADD CONSTRAINT "Swatch_paintTypeId_fkey" FOREIGN KEY ("paintTypeId") REFERENCES "PaintType"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "RatingOnSwatch" ADD CONSTRAINT "RatingOnSwatch_swatchId_fkey" FOREIGN KEY ("swatchId") REFERENCES "Swatch"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Swatch" ADD CONSTRAINT "Swatch_lightfastRatingId_fkey" FOREIGN KEY ("lightfastRatingId") REFERENCES "LightfastRating"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "RatingOnSwatch" ADD CONSTRAINT "RatingOnSwatch_lightfastRatingId_fkey" FOREIGN KEY ("lightfastRatingId") REFERENCES "LightfastRating"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Swatch" ADD CONSTRAINT "Swatch_transparencyRatingId_fkey" FOREIGN KEY ("transparencyRatingId") REFERENCES "TransparencyRating"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "RatingOnSwatch" ADD CONSTRAINT "RatingOnSwatch_transparencyRatingId_fkey" FOREIGN KEY ("transparencyRatingId") REFERENCES "TransparencyRating"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Swatch" ADD CONSTRAINT "Swatch_stainingRatingId_fkey" FOREIGN KEY ("stainingRatingId") REFERENCES "StainingRating"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "RatingOnSwatch" ADD CONSTRAINT "RatingOnSwatch_stainingRatingId_fkey" FOREIGN KEY ("stainingRatingId") REFERENCES "StainingRating"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "RatingOnSwatch" ADD CONSTRAINT "RatingOnSwatch_granulationRatingId_fkey" FOREIGN KEY ("granulationRatingId") REFERENCES "GranulationRating"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Swatch" ADD CONSTRAINT "Swatch_granulationRatingId_fkey" FOREIGN KEY ("granulationRatingId") REFERENCES "GranulationRating"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Pigment" ADD CONSTRAINT "Pigment_colorId_fkey" FOREIGN KEY ("colorId") REFERENCES "Color"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

@@ -5,7 +5,7 @@
 	export let manufacturerName;
 </script>
 
-<section>
+<section class="description">
   {#if manufacturerDescription}
   <div>
     <h2>Manufacturer Description</h2>
@@ -22,3 +22,11 @@
   </div>
   {/if}
 </section>
+
+<style>
+  .description {
+    padding: 10px;
+		border: 1px solid black;
+		margin: 10px;
+  }
+</style>
