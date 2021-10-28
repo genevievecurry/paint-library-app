@@ -10,16 +10,13 @@
 		</h1>
 		{manufacturerName}
 	</div>
-	<div>
-		<button>
-			Add to Palette
-		</button>
-	</div>
 </header>
-<hr/>
 
 <style>
 	header {
 		display: flex;
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 10px;
 	}
 </style>

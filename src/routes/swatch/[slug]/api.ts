@@ -2,6 +2,123 @@ import { Prisma, PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+const swatchData: Prisma.SwatchSelect = {
+  createdAt: true,
+  updatedAt: true,
+  author: {
+    select: {
+      displayName: true,
+      role: true,
+      status: true,
+    }
+  },
+  slug: true,
+  manufacturer: {
+    select: {
+      name: true,
+      website: true,
+    }
+  },
+  paintType: {
+    select: {
+      label: true,
+      slug: true
+    }
+  },
+  productUrl: true,
+  productColorName: true,
+  communityDescription: true,
+  manufacturerDescription: true,
+  manufacturerPigmentDescription: true,
+  lightfastRating: {
+    select: {
+      label: true,
+      description: true,
+    }
+  },
+  transparencyRating: {
+    select: {
+      label: true,
+      description: true,
+    }
+  },
+  stainingRating: {
+    select: {
+      label: true,
+      description: true,
+    }
+  },
+  granulationRating: {
+    select: {
+      label: true,
+      description: true,
+    }
+  },
+  pigments: {
+    select: {
+      pigment: {
+        select: {
+          color: {
+            select: {
+              code: true,
+              label: true,
+              slug: true,
+            }
+          },
+          name: true,
+          number: true,
+          type: true,
+        }
+      }
+    }
+  },
+  swatchCards: {
+    select: {
+      createdAt: true,
+      updatedAt: true,
+      paper: {
+        select: {
+          manufacturer: true,
+          description: true,
+          weightInLbs: true,
+        }
+      },
+      swatchCardType: true,
+      author: true,
+      description: true,
+    }
+  },
+  notes: {
+    where: {
+      noteId: {
+        equals: null,
+      }
+    },
+    select: {
+      createdAt: true,
+      updatedAt: true,
+      author: true,
+      approved: true,
+      content: true,
+      childNotes: {
+        select: {
+          createdAt: true,
+          updatedAt: true,
+          author: true,
+          approved: true,
+          content: true,
+        }
+      },
+    }
+  },
+  tags: {
+    select: {
+      label: true,
+      slug: true,
+    }
+  }
+}
+
 async function send({ method, slug}) {
   let body;
   let status = 500;
@@ -11,65 +128,8 @@ async function send({ method, slug}) {
       where: {
         slug
       },
-      include: {
-        notes: true,
-        swatchCards: true,
-        tags: true,
-      }
+      select: swatchData,
     })
-
-    body.pigmentData = await prisma.$queryRaw(
-      Prisma.sql`SELECT p.type, p.name, p.number, c.label AS "colorLabel", c.slug AS "colorSlug", c.code AS "colorCode" FROM "PigmentOnSwatch" pos INNER JOIN "Pigment" p ON pos."pigmentId" = p.id LEFT JOIN "Color" c ON p."colorId" = c.id WHERE pos."swatchId" = ${body.id}`
-    )
-
-    // Oh dear lord is this even ok
-    body.swatchCardData = await prisma.$queryRaw(
-      Prisma.sql`SELECT sc.description, p.description AS "paperDescription", p."weightInLbs" AS "paperWeightInLbs", m.name AS "paperManufacturer", sct.label AS "typeLabel", sct.description AS "typeDescription", u."displayName" AS "authorDisplayName" FROM "SwatchCard" sc INNER JOIN "Paper" p ON sc."paperId" = p.id LEFT JOIN "SwatchCardType" sct ON sc."swatchCardTypeId" = sct.id INNER JOIN "User" u ON sc."authorId" = u.id INNER JOIN "Manufacturer" m on p."manufacturerId" = m.id WHERE sc."swatchId" = ${body.id}`
-    )
-
-    body.manufacturer = await prisma.manufacturer.findUnique({
-      where: { 
-        id: body.manufacturerId,
-      }, 
-    })
-
-    body.paintType = await prisma.paintType.findUnique({
-      where: { 
-        id: body.paintTypeId,
-      }, 
-    })
-    
-    const lightfastRating = await prisma.lightfastRating.findUnique({
-      where: { 
-        id: body.lightfastRatingId,
-      }, 
-    })
-
-    const transparencyRating = await prisma.transparencyRating.findUnique({
-      where: { 
-        id: body.transparencyRatingId,
-      }, 
-    })
-
-    const stainingRating = await prisma.stainingRating.findUnique({
-      where: { 
-        id: body.stainingRatingId,
-      }, 
-    })
-
-    const granulationRating = await prisma.granulationRating.findUnique({
-      where: { 
-        id: body.granulationRatingId,
-      }, 
-    })
-
-    body.ratings = {
-      lightfastRating,
-      transparencyRating,
-      stainingRating,
-      granulationRating
-    }
-
     status = 200;
   }
 

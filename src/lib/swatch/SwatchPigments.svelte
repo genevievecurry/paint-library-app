@@ -1,7 +1,5 @@
 <script>
-  export let pigmentData;
-  // type, name, number, colorLabel, colorSlug, colorCode
-
+  export let pigments;
 
   // Todo: Move this into a utility?
   function pigmentCode(type, number, colorCode){
@@ -24,14 +22,13 @@
 <section class="pigments">
   <h2>Pigments</h2>
 
-  {#each pigmentData as pigment}
+  {#each pigments as item}
     <div class="pigment">
-      <div><img src="https://placekitten.com/50/50" alt={pigment.name}/></div>
+      <div><img src="https://placekitten.com/50/50" alt={item.pigment.name}/></div>
       <div>
-        {pigmentCode(pigment.type, pigment.number, pigment.colorCode)} {pigment.name}
-        <div>{pigment.colorLabel}</div>
+        {pigmentCode(item.pigment.type, item.pigment.number, item.pigment.color?.code)} {item.pigment.name}
+        <div>{item.pigment.color?.label}</div>
       </div>
-
     </div>
   {/each}
 </section>

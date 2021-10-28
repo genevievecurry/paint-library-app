@@ -1,5 +1,5 @@
 <script>
-  export let ratings;
+  export let lightfastRating, transparencyRating, stainingRating, granulationRating;
 </script>
 
 <section class="ratings">
@@ -9,32 +9,32 @@
     <tr>
       <td>Lightfastness</td>
       <td>
-        {ratings.lightfastRating.label}
-        <small>{ratings.lightfastRating.description}</small>
+        {lightfastRating.label}
+        <small>{lightfastRating.description}</small>
       </td>
     </tr>
     <tr>
       <td>Transparency</td>
       <td>
-        {ratings.transparencyRating.label}
-        <small>{ratings.transparencyRating.description}</small>
+        {transparencyRating.label}
+        <small>{transparencyRating.description}</small>
       </td>
     </tr>
     <tr>
       <td>Staining</td>
       <td>
-        {ratings.stainingRating.label}
-        {#if ratings.stainingRating.description}
-          <small>{ratings.stainingRating.description}</small>
+        {stainingRating.label}
+        {#if stainingRating.description}
+          <small>{stainingRating.description}</small>
         {/if}
       </td>
     </tr>
     <tr>
       <td>Granulation</td>
       <td>
-        {ratings.stainingRating.label}
-        {#if ratings.granulationRating.description}
-          <small>{ratings.granulationRating.description}</small>
+        {stainingRating.label}
+        {#if granulationRating.description}
+          <small>{granulationRating.description}</small>
         {/if}
       </td>
     </tr>
