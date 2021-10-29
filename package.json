@@ -17,8 +17,7 @@
     "migrate:reset": "prisma migrate reset"
   },
   "devDependencies": {
-    "@sveltejs/adapter-node": "^1.0.0-next.55",
-    "@sveltejs/kit": "next",
+    
     "@types/node": "^16.11.6",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
@@ -39,6 +38,8 @@
   },
   "type": "module",
   "dependencies": {
+    "@sveltejs/adapter-node": "next",
+    "@sveltejs/kit": "next",
     "@prisma/client": "^3.3.0"
   }
 }
