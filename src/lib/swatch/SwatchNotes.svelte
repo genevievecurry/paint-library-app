@@ -1,7 +1,5 @@
 <script>
   export let notes;
-
-  console.log(notes)
 </script>
 
 <section>
@@ -10,23 +8,24 @@
   {#each notes as note}
     <div>
       <div class="note">
-        <div class="initial">{note.author.displayName.substr(0,1)}</div>
+        <div class="initial">{note.author.displayName.substr(0, 1)}</div>
         <div>
-          {note.author?.displayName} {note.createdAt}
+          {note.author?.displayName}
+          {note.createdAt}
           <div>{@html note.content}</div>
         </div>
       </div>
 
       {#each note.childNotes as childNote}
         <div class="note reply">
-          <div class="initial"><span>{childNote.author.displayName.substr(0,1)}</span></div>
+          <div class="initial"><span>{childNote.author.displayName.substr(0, 1)}</span></div>
           <div>
-            {childNote.author.displayName} {childNote.createdAt}
+            {childNote.author.displayName}
+            {childNote.createdAt}
             <div>{@html childNote.content}</div>
           </div>
         </div>
       {/each}
-
     </div>
   {/each}
 </section>

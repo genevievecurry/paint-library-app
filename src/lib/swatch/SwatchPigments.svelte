@@ -2,20 +2,21 @@
   export let pigments;
 
   // Todo: Move this into a utility?
-  function pigmentCode(type, number, colorCode){
+  function pigmentCode(pigmentType, pigmentNumber, colorCode) {
     let convertedType;
-    
-    switch(type) {
+
+    switch (pigmentType) {
       case 'CIPIGMENT':
         convertedType = 'P';
         break;
       case 'CINATURAL':
         convertedType = 'N';
         break;
-      default: convertedType = '';
+      default:
+        convertedType = '';
     }
 
-    return convertedType + colorCode + number;
+    return convertedType + colorCode + pigmentNumber;
   }
 </script>
 
@@ -24,9 +25,10 @@
 
   {#each pigments as item}
     <div class="pigment">
-      <div><img src="https://placekitten.com/50/50" alt={item.pigment.name}/></div>
+      <div><img src="https://placekitten.com/50/50" alt={item.pigment.name} /></div>
       <div>
-        {pigmentCode(item.pigment.type, item.pigment.number, item.pigment.color?.code)} {item.pigment.name}
+        {pigmentCode(item.pigment.type, item.pigment.number, item.pigment.color?.code)}
+        {item.pigment.name}
         <div>{item.pigment.color?.label}</div>
       </div>
     </div>
@@ -36,8 +38,8 @@
 <style>
   .pigments {
     padding: 10px;
-		border: 1px solid black;
-		margin: 10px;
+    border: 1px solid black;
+    margin: 10px;
   }
   .pigment {
     display: flex;

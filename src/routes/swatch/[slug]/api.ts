@@ -9,14 +9,14 @@ const swatchData: Prisma.SwatchSelect = {
     select: {
       displayName: true,
       role: true,
-      status: true,
+      status: true
     }
   },
   slug: true,
   manufacturer: {
     select: {
       name: true,
-      website: true,
+      website: true
     }
   },
   paintType: {
@@ -33,25 +33,25 @@ const swatchData: Prisma.SwatchSelect = {
   lightfastRating: {
     select: {
       label: true,
-      description: true,
+      description: true
     }
   },
   transparencyRating: {
     select: {
       label: true,
-      description: true,
+      description: true
     }
   },
   stainingRating: {
     select: {
       label: true,
-      description: true,
+      description: true
     }
   },
   granulationRating: {
     select: {
       label: true,
-      description: true,
+      description: true
     }
   },
   pigments: {
@@ -62,12 +62,12 @@ const swatchData: Prisma.SwatchSelect = {
             select: {
               code: true,
               label: true,
-              slug: true,
+              slug: true
             }
           },
           name: true,
           number: true,
-          type: true,
+          type: true
         }
       }
     }
@@ -80,18 +80,18 @@ const swatchData: Prisma.SwatchSelect = {
         select: {
           manufacturer: true,
           description: true,
-          weightInLbs: true,
+          weightInLbs: true
         }
       },
       swatchCardType: true,
       author: true,
-      description: true,
+      description: true
     }
   },
   notes: {
     where: {
       noteId: {
-        equals: null,
+        equals: null
       }
     },
     select: {
@@ -106,39 +106,39 @@ const swatchData: Prisma.SwatchSelect = {
           updatedAt: true,
           author: true,
           approved: true,
-          content: true,
+          content: true
         }
-      },
+      }
     }
   },
   tags: {
     select: {
       label: true,
-      slug: true,
+      slug: true
     }
   }
-}
+};
 
-async function send({ method, slug}) {
-  let body;
+async function send({ method, slug }) {
+  let body: Prisma.SwatchSelect;
   let status = 500;
 
-  if(method === 'GET') {
+  if (method === 'GET') {
     body = await prisma.swatch.findUnique({
       where: {
         slug
       },
-      select: swatchData,
-    })
+      select: swatchData
+    });
     status = 200;
   }
 
   return {
     status,
     body
-  }
+  };
 }
 
 export function get(slug: string) {
-  return send({ method: 'GET', slug})
+  return send({ method: 'GET', slug });
 }
