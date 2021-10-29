@@ -2,49 +2,45 @@
   export let lightfastRating, transparencyRating, stainingRating, granulationRating;
 </script>
 
-<section class="ratings">
-  <h2>Ratings</h2>
+<section class="mt-8">
+  <h2 class="font-bold text-2xl">Ratings</h2>
 
-  <table>
+  <table class="table-fixed border-collapse border border-black mt-4">
     <tr>
-      <td>Lightfastness</td>
-      <td>
+      <th class="text-left border border-black px-4 py-3">Lightfastness</th>
+      <td class="border border-black px-4 py-3">
         {lightfastRating.label}
-        <small>{lightfastRating.description}</small>
-      </td>
-    </tr>
-    <tr>
-      <td>Transparency</td>
-      <td>
-        {transparencyRating.label}
-        <small>{transparencyRating.description}</small>
-      </td>
-    </tr>
-    <tr>
-      <td>Staining</td>
-      <td>
-        {stainingRating.label}
-        {#if stainingRating.description}
-          <small>{stainingRating.description}</small>
+        {#if lightfastRating.description}
+          - {lightfastRating.description}
         {/if}
       </td>
     </tr>
     <tr>
-      <td>Granulation</td>
-      <td>
+      <th class="text-left border border-black px-4 py-3">Transparency</th>
+      <td class="border border-black px-4 py-3">
+        {transparencyRating.label}
+        {#if transparencyRating.description}
+          - {transparencyRating.description}
+        {/if}
+      </td>
+    </tr>
+    <tr>
+      <th class="text-left border border-black px-4 py-3">Staining</th>
+      <td class="border border-black px-4 py-3">
         {stainingRating.label}
+        {#if stainingRating.description}
+          - {stainingRating.description}
+        {/if}
+      </td>
+    </tr>
+    <tr>
+      <th class="text-left border border-black px-4 py-3">Granulation</th>
+      <td class="border border-black px-4 py-3">
+        {granulationRating.label}
         {#if granulationRating.description}
-          <small>{granulationRating.description}</small>
+          - {granulationRating.description}
         {/if}
       </td>
     </tr>
   </table>
 </section>
-
-<style>
-  .ratings {
-    padding: 10px;
-		border: 1px solid black;
-		margin: 10px;
-  }
-</style>

@@ -1,22 +1,13 @@
 <script>
-	export let title;
-	export let manufacturerName;
+  export let title;
+  export let manufacturerName;
 </script>
 
-<header>
-	<div>
-		<h1>
-			{title}
-		</h1>
-		{manufacturerName}
-	</div>
+<header class="my-6">
+  <div>
+    <h1 class="font-extrabold text-4xl">
+      {title}
+    </h1>
+    <span class="block mt-2">{manufacturerName}</span>
+  </div>
 </header>
-
-<style>
-	header {
-		display: flex;
-    border: 1px solid #000;
-    padding: 10px;
-    margin: 10px;
-	}
-</style>

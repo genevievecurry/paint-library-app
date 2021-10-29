@@ -2,20 +2,15 @@
   export let tags;
 </script>
 
-<section class="tags">
-  <h2>Artist Tags</h2>
+<section class="mt-8">
+  <h2 class="font-bold text-2xl">Artist Tags</h2>
 
-  <ul>
+  <ul class="mt-4">
     {#each tags as tag}
-      <li><a href={`/tag/${tag.slug}`}>{tag.label}</a></li>
+      <li class="inline-block"
+        ><a class="m-1 py-2 px-3 border border-black" href="{`/tag/${tag.slug}`}">{tag.label}</a
+        ></li
+      >
     {/each}
   </ul>
 </section>
-
-<style>
-  .tags {
-    padding: 10px;
-		border: 1px solid black;
-		margin: 10px;
-  }
-</style>
