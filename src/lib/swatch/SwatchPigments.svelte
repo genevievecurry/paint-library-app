@@ -20,28 +20,23 @@
   }
 </script>
 
-<section class="pigments">
-  <h2>Pigments</h2>
+<section class="mt-8">
+  <h2 class="font-bold text-2xl">Pigments</h2>
 
   {#each pigments as item}
-    <div class="pigment">
-      <div><img src="https://placekitten.com/50/50" alt={item.pigment.name} /></div>
+    <div class="flex my-4">
+      <div class="mr-4"
+        ><img
+          class="border border-black"
+          src="https://placekitten.com/50/50"
+          alt="{item.pigment.name}"
+        /></div
+      >
       <div>
         {pigmentCode(item.pigment.type, item.pigment.number, item.pigment.color?.code)}
-        {item.pigment.name}
-        <div>{item.pigment.color?.label}</div>
+        <span>{item.pigment.name}</span>
+        <span class="block text-gray-500 text-xs">{item.pigment.color?.label}</span>
       </div>
     </div>
   {/each}
 </section>
-
-<style>
-  .pigments {
-    padding: 10px;
-    border: 1px solid black;
-    margin: 10px;
-  }
-  .pigment {
-    display: flex;
-  }
-</style>

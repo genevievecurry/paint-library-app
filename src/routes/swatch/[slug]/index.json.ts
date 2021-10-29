@@ -8,7 +8,7 @@ export async function get({ params }): Promise<{ status: number; body: Record<st
   if (response.status === 404) {
     return {
       status: response.status,
-      body: { productColorName: 'Missing, oh no' }
+      body: { productColorName: 'Missing, oh no' },
     };
   }
   return response;

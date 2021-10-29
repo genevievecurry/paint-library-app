@@ -3,20 +3,11 @@
   export let manufacturerName;
 </script>
 
-<header>
+<header class="my-6">
   <div>
-    <h1>
+    <h1 class="font-extrabold text-4xl">
       {title}
     </h1>
-    {manufacturerName}
+    <span class="block mt-2">{manufacturerName}</span>
   </div>
 </header>
-
-<style>
-  header {
-    display: flex;
-    border: 1px solid #000;
-    padding: 10px;
-    margin: 10px;
-  }
-</style>
