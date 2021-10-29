@@ -38,6 +38,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@prisma/client": "^3.3.0"
+    "@prisma/client": "^3.3.0",
+    "@sveltejs/adapter-node": "^1.0.0-next.55"
   }
 }
