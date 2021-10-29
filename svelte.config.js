@@ -1,5 +1,5 @@
 import preprocess from 'svelte-preprocess';
-import node from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-node';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,7 +8,11 @@ const config = {
   preprocess: preprocess(),
 
   kit: {
-    adapter: node(),
+		adapter: adapter({
+			// default options are shown
+			out: 'build',
+			precompress: false,
+		}),
     // hydrate the <div id="svelte"> element in src/app.html
     target: '#svelte',
   },
