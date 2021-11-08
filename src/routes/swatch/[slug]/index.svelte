@@ -1,9 +1,3 @@
-<style>
-  .row {
-    display: flex;
-  }
-</style>
-
 <script context="module">
   export async function load({ page, fetch }) {
     const url = `/swatch/${page.params.slug}.json`;
@@ -34,11 +28,13 @@
   import SwatchNotes from '$lib/swatch/SwatchNotes.svelte';
 
   export let swatchData;
+
+  console.log(swatchData)
 </script>
 
 <SwatchHeader
   title="{swatchData.productColorName}"
-  manufacturerName="{swatchData.manufacturer.name}"
+  manufacturerName="{swatchData.manufacturer?.name}"
 />
 <SwatchCards swatchCardData="{swatchData.swatchCards}" />
 <div class="flex">
@@ -53,7 +49,7 @@
       communityDescription="{swatchData.communityDescription}"
       manufacturerDescription="{swatchData.manufacturerDescription}"
       manufacturerPigmentDescription="{swatchData.manufacturerPigmentDescription}"
-      manufacturerName="{swatchData.manufacturer.name}"
+      manufacturerName="{swatchData.manufacturer?.name}"
     />
   </div>
   <div class="flex-none w-96 pl-8">

@@ -2,12 +2,28 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 async function main() {
+  const unknownManufacturer = await prisma.manufacturer.upsert({
+    where: { name: 'Unknown' },
+    update: {},
+    create: {
+      name: 'Unknown',
+      website: '',
+    },
+  });
+
   const manufacturer = await prisma.manufacturer.upsert({
     where: { name: 'Daniel Smith' },
     update: {},
     create: {
       name: 'Daniel Smith',
       website: 'https://danielsmith.com/',
+    },
+  });
+
+  const unknownPaper = await prisma.paper.create({
+    data: {
+      description: 'Unknown',
+      weightInLbs: 0,
     },
   });
 
@@ -275,7 +291,9 @@ async function main() {
   });
 
   console.log({
+    unknownManufacturer,
     manufacturer,
+    unknownPaper,
     paper,
     paintType,
     colors,

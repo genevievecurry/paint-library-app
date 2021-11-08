@@ -1,15 +1,17 @@
 import * as api from '$lib/api';
 
 export async function get({ params }): Promise<{ status: number; body: Record<string, unknown> }> {
-  const { slug } = params;
-
-  const response = await api.get(slug);
+  const { model } = params;
+  const response = await api.getOption(model)
 
   if (response.status === 404) {
     return {
       status: response.status,
-      body: { productColorName: 'Missing, oh no' },
+      body: {},
     };
   }
+
+  // console.log(response)
+
   return response;
 }
