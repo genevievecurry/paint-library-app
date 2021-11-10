@@ -13,8 +13,10 @@
     manufacturerId: 1,
     manufacturerDescription: 'default manufacturer description',
     communityDescription: 'default community description',
-    manufacturerPigmentDescription: 'default manufacturer pigment description'
+    manufacturerPigmentDescription: 'default manufacturer pigment description',
+    pigments: [],
+    tags: [],
   };
 </script>
 
-<Editor swatch={tempSwatch} />
+<Editor swatch="{tempSwatch}" />

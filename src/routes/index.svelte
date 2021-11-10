@@ -16,6 +16,7 @@
     };
   }
 </script>
+
 <script>
   export let swatches;
 </script>
@@ -25,7 +26,7 @@
 </svelte:head>
 
 <ul>
-{#each swatches as swatch}
-  <li><a sveltekit:prefetch href={`swatch/${swatch.slug}`}>{swatch.productColorName}</a></li>
-{/each}
+  {#each swatches as swatch}
+    <li><a sveltekit:prefetch href="{`swatch/${swatch.slug}`}">{swatch.productColorName}</a></li>
+  {/each}
 </ul>

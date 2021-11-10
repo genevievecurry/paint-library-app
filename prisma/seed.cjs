@@ -3,10 +3,10 @@ const prisma = new PrismaClient();
 
 async function main() {
   const unknownManufacturer = await prisma.manufacturer.upsert({
-    where: { name: 'Unknown' },
+    where: { name: 'Unknown Manufacturer' },
     update: {},
     create: {
-      name: 'Unknown',
+      name: 'Unknown Manufacturer',
       website: '',
     },
   });
@@ -22,7 +22,7 @@ async function main() {
 
   const unknownPaper = await prisma.paper.create({
     data: {
-      description: 'Unknown',
+      description: 'Unknown Paper',
       weightInLbs: 0,
     },
   });
@@ -69,6 +69,14 @@ async function main() {
       number: 153,
       colorId: color.id,
     },
+  });
+
+  const additionalPigments = await prisma.pigment.createMany({
+    data: [
+      { name: 'Diarylide Yellow', number: 98, colorId: color.id },
+      { name: 'Tartrazine Lake', number: 100, colorId: color.id },
+      { name: 'Lumogen Yellow', number: 101, colorId: color.id },
+    ],
   });
 
   const lightfastRatings = await prisma.lightfastRating.createMany({
@@ -298,6 +306,7 @@ async function main() {
     paintType,
     colors,
     pigment,
+    additionalPigments,
     granulationRatings,
     lightfastRatings,
     transparencyRatings,

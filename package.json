@@ -38,8 +38,9 @@
   },
   "type": "module",
   "dependencies": {
+    "@prisma/client": "^3.3.0",
     "@sveltejs/adapter-node": "next",
     "@sveltejs/kit": "next",
-    "@prisma/client": "^3.3.0"
+    "svelte-tags-input": "^2.8.1"
   }
 }

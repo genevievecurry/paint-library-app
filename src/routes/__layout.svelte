@@ -20,7 +20,10 @@
   <div class="relative overflow-hidden">
     <header class="relative">
       <div class="bg-gray-900 py-6 mb-8">
-        <nav class="relative container mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
+        <nav
+          class="relative container mx-auto flex items-center justify-between px-4 sm:px-6"
+          aria-label="Global"
+        >
           <div class="flex items-center flex-1">
             <div class="flex items-center justify-between w-full md:w-auto">
               <a href="/"><span class="text-white font-extrabold text-4xl">Paint Library</span></a>
@@ -36,23 +39,19 @@
           </div> -->
         </nav>
       </div>
-
     </header>
     <main>
-
-<div class="container mx-auto px-4 sm:px-6">
-  <slot />
-</div>
-</main>
-<footer aria-labelledby="footerHeading">
-  <h2 id="footerHeading" class="sr-only">Footer</h2>
-  <div class="max-w-md mx-auto pt-12 px-4 sm:max-w-7xl sm:px-6 lg:pt-16 lg:px-8">
-    <div class="mt-12 border-t border-gray-200 py-8">
-      <p class="text-base text-gray-400 xl:text-center">
-        Paint Library. No rights reserved. 
-      </p>
-    </div>
+      <div class="container mx-auto px-4 sm:px-6">
+        <slot />
+      </div>
+    </main>
+    <footer aria-labelledby="footerHeading">
+      <h2 id="footerHeading" class="sr-only">Footer</h2>
+      <div class="max-w-md mx-auto pt-12 px-4 sm:max-w-7xl sm:px-6 lg:pt-16 lg:px-8">
+        <div class="mt-12 border-t border-gray-200 py-8">
+          <p class="text-base text-gray-400 xl:text-center"> Paint Library. No rights reserved. </p>
+        </div>
+      </div>
+    </footer>
   </div>
-</footer>
-</div>
 </div>

@@ -1,5 +1,7 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 
+import type { ReadOnlyFormData } from '@sveltejs/kit/types/helper';
+
 // import type { Prisma } from "@prisma/client";
 
 // import pkg from '@prisma/client';
@@ -142,8 +144,8 @@ const newSwatch: Prisma.SwatchSelect = {
 export async function getSwatches() {
   return {
     status: 200,
-    body: await prisma.swatch.findMany()
-  }
+    body: await prisma.swatch.findMany(),
+  };
 }
 
 async function send({
@@ -154,13 +156,13 @@ async function send({
 }: {
   method: string;
   slug?: string;
-  data?: Record<string, unknown>;
+  data?: ReadOnlyFormData;
   model?: string;
 }) {
   let body = {};
   let status = 500;
 
-  if (method === 'GET' && !model) {
+  if (method === 'GET' && !model && slug) {
     body = await prisma.swatch.findUnique({
       where: {
         slug,
@@ -175,23 +177,36 @@ async function send({
     status = 200;
   }
 
-  if (method == 'POST') {
+  if (method == 'POST' && data) {
+    let pigments = [];
+
+    if (data.getAll('pigments')) {
+      pigments = data.getAll('pigments')?.map((pigmentId) => {
+        return { pigmentId: Number(pigmentId) };
+      });
+    }
+
     body = await prisma.swatch.create({
       data: {
-        slug: data.swatch.slug,
-        productColorName: data.swatch.productColorName,
-        authorId: data.swatch.authorId,
-        paintTypeId: data.swatch.paintTypeId,
-        lightfastRatingId: data.swatch.lightfastRatingId,
-        transparencyRatingId: data.swatch.transparencyRatingId,
-        stainingRatingId: data.swatch.stainingRatingId,
-        granulationRatingId: data.swatch.granulationRatingId,
-        manufacturerId: data.swatch.manufacturerId,
-        manufacturerDescription: data.swatch.manufacturerDescription,
-        manufacturerPigmentDescription: data.swatch.manufacturerPigmentDescription,
-        communityDescription: data.swatch.communityDescription,
+        slug: data.get('slug'),
+        productColorName: data.get('productColorName'),
+        authorId: Number(data.get('authorId')),
+        paintTypeId: Number(data.get('paintTypeId')),
+        lightfastRatingId: Number(data.get('lightfastRatingId')),
+        transparencyRatingId: Number(data.get('transparencyRatingId')),
+        stainingRatingId: Number(data.get('stainingRatingId')),
+        granulationRatingId: Number(data.get('granulationRatingId')),
+        manufacturerId: Number(data.get('manufacturerId')),
+        manufacturerDescription: data.get('manufacturerDescription'),
+        manufacturerPigmentDescription: data.get('manufacturerPigmentDescription'),
+        communityDescription: data.get('communityDescription'),
+        pigments: {
+          createMany: {
+            data: pigments,
+          },
+        },
       },
-      select: newSwatch
+      select: newSwatch,
     });
     status = 200;
   }

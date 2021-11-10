@@ -28,8 +28,6 @@
   import SwatchNotes from '$lib/swatch/SwatchNotes.svelte';
 
   export let swatchData;
-
-  console.log(swatchData)
 </script>
 
 <SwatchHeader
