@@ -1,1 +1,1 @@
-web: npm run start -- --port $PORT --host 0.0.0.0
+web: npm run start:deps & wait -n; npm run start:build -- --port $PORT --host 0.0.0.0
