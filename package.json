@@ -1,6 +1,10 @@
 {
   "name": "paint-library-app",
   "version": "0.0.1",
+  "engines": {
+    "node": "15.x",
+    "npm": "7.x"
+  },
   "prisma": {
     "seed": "node prisma/seed.cjs"
   },
