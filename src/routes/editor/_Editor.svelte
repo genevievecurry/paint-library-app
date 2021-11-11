@@ -1,13 +1,11 @@
 <script>
   import { goto } from '$app/navigation';
   import { generateSlug } from '$lib/utils';
-  import Tags from "svelte-tags-input";
 
   export let swatch;
 
   let manufacturerPromise = getManufacturers();
   let pigmentPromise = getPigments();
-  let tagPromise = getTags();
 
   // Todo: Handle waiting UI
   let publishing = false;
@@ -32,17 +30,7 @@
     }
   }
 
-  async function getTags() {
-    const res = await fetch(`/editor/tag.json`);
-
-    if (res.ok) {
-      return res.json();
-    } else {
-      throw new Error('tags: not happening');
-    }
-  }
-
-  // Todo update these monsters 
+  // Todo update these monsters
   const lightfastRatings = [
     { value: 1, label: 'Unknown', description: '' },
     { value: 2, label: 'I', description: '- Excellent' },
@@ -68,22 +56,6 @@
     { value: 5, label: 'Non-Staining', description: '' },
   ];
 
-  function handleTags(event) {
-    // console.log(event.detail.tags)
-    // swatch.tags = event.detail.tags;
-
-    swatch.tags = event.detail.tags.map(tag => {
-      if(typeof(tag) === 'object'){
-        return tag
-      } else {
-        return {
-          label: tag,
-          slug: generateSlug({value: tag}),
-        }
-      }
-    })
-  }
-
   function setRatingLabel(ratings, value) {
     const result = ratings.filter((object) => object.value == value);
     return result ? `${result[0].label} ${result[0].description}` : null;
@@ -98,10 +70,11 @@
   }
 
   function updateSlug(event) {
-    swatch.slug = generateSlug({value: event.target.value, uuid: true});
+    swatch.slug = generateSlug({ value: event.target.value, uuid: true });
   }
 
   const onsubmit = () => {
+    console.log('swatches on submit!', swatch);
     publishing = true;
   };
 
@@ -146,26 +119,6 @@
   on:submit|preventDefault={submit}
 > -->
 <form action="swatch/create.json" method="post" use:ajax="{{ onsubmit, onresponse }}">
-
-  {#await tagPromise}
-    <p>Loading tags...</p>
-  {:then tags}
-
-    <Tags
-      on:tags={handleTags}
-      autoComplete={tags}
-      autoCompleteKey={"label"}
-    />
-  {#each swatch.tags as tag}
-    <p>{tag} - {tag.id} - {tag.slug} - {tag.label} </p>
-  {/each}
-
-{:catch error}
-  <p>Something went wrong! {error}</p>
-{/await}
-
-  
-
   <fieldset class="mt-10">
     <div class="grid grid-cols-6 gap-6">
       <div class="col-span-6 sm:col-span-3">

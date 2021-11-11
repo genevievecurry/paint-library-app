@@ -23,6 +23,8 @@
 <section class="mt-8">
   <h2 class="font-bold text-2xl">Pigments</h2>
 
+  {#if pigments.length < 1}<span class="block my-4 text-gray-400">No pigments added yet.</span>{/if}
+
   {#each pigments as item}
     <div class="flex my-4">
       <div class="mr-4"

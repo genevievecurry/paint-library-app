@@ -40,7 +40,6 @@
   "dependencies": {
     "@prisma/client": "^3.3.0",
     "@sveltejs/adapter-node": "next",
-    "@sveltejs/kit": "next",
-    "svelte-tags-input": "^2.8.1"
+    "@sveltejs/kit": "next"
   }
 }

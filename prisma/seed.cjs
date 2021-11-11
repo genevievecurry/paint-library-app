@@ -189,6 +189,14 @@ async function main() {
   });
   const swatchCardType = await prisma.swatchCardType.findFirst();
 
+  const tags = await prisma.tag.createMany({
+    data: [
+      { label: 'tropical', slug: 'tropical' },
+      { label: 'bird feathers', slug: 'bird-feathers' },
+      { label: 'nautical', slug: 'nautical' },
+    ],
+  });
+
   let watercolorSwatch = await prisma.swatch.upsert({
     where: { slug: 'watercolor-swatch' },
     update: {},
@@ -206,6 +214,45 @@ async function main() {
       transparencyRatingId: transparencyRating.id,
       stainingRatingId: stainingRating.id,
       granulationRatingId: granulationRating.id,
+      pigments: {
+        create: [
+          {
+            pigment: {
+              connect: {
+                id: pigment.id,
+              },
+            },
+          },
+        ],
+      },
+      tags: {
+        create: [
+          {
+            setAt: new Date(),
+            tag: {
+              connect: {
+                id: 1,
+              },
+            },
+          },
+          {
+            setAt: new Date(),
+            tag: {
+              connect: {
+                id: 2,
+              },
+            },
+          },
+          {
+            setAt: new Date(),
+            tag: {
+              connect: {
+                id: 3,
+              },
+            },
+          },
+        ],
+      },
     },
   });
 
@@ -241,13 +288,6 @@ async function main() {
         description: 'Accidentally erased through the paper.',
       },
     ],
-  });
-
-  const pigmentOnSwatch = await prisma.pigmentOnSwatch.create({
-    data: {
-      swatchId: watercolorSwatch.id,
-      pigmentId: pigment.id,
-    },
   });
 
   const notes = await prisma.note.createMany({
@@ -290,14 +330,6 @@ async function main() {
     ],
   });
 
-  const tags = await prisma.tag.createMany({
-    data: [
-      { label: 'tropical', slug: 'tropical', swatchId: watercolorSwatch.id },
-      { label: 'bird feathers', slug: 'bird-feathers', swatchId: watercolorSwatch.id },
-      { label: 'nautical', slug: 'nautical', swatchId: watercolorSwatch.id },
-    ],
-  });
-
   console.log({
     unknownManufacturer,
     manufacturer,
@@ -316,7 +348,6 @@ async function main() {
     memberUser,
     watercolorSwatch,
     swatchCards,
-    pigmentOnSwatch,
     notes,
     childNotes,
     tags,

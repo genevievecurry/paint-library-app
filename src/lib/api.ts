@@ -118,12 +118,16 @@ const swatchData: Prisma.SwatchSelect = {
       },
     },
   },
-  tags: {
-    select: {
-      label: true,
-      slug: true,
-    },
-  },
+  // tags: {
+  //   select: {
+  //     tag: {
+  //       select: {
+  //         label: true,
+  //         slug: true,
+  //       },
+  //     },
+  //   },
+  // },
 };
 
 const newSwatch: Prisma.SwatchSelect = {
@@ -139,6 +143,8 @@ const newSwatch: Prisma.SwatchSelect = {
   manufacturerDescription: true,
   manufacturerPigmentDescription: true,
   communityDescription: true,
+  pigments: true,
+  // tags: true,
 };
 
 export async function getSwatches() {
@@ -179,12 +185,19 @@ async function send({
 
   if (method == 'POST' && data) {
     let pigments = [];
+    // const tags = [];
 
     if (data.getAll('pigments')) {
       pigments = data.getAll('pigments')?.map((pigmentId) => {
         return { pigmentId: Number(pigmentId) };
       });
     }
+
+    // if (data.getAll('tags')) {
+    //   tags = data.getAll('tags')?.map((tagId) => {
+    //     return { tagId: Number(tagId) };
+    //   });
+    // }
 
     body = await prisma.swatch.create({
       data: {
@@ -205,6 +218,11 @@ async function send({
             data: pigments,
           },
         },
+        // tags: {
+        //   createMany: {
+        //     data: tags,
+        //   },
+        // },
       },
       select: newSwatch,
     });

@@ -4,17 +4,17 @@ function uuidv4() {
   );
 }
 
-type slugOptions = { value: string, uuid?: boolean }
+type slugOptions = { value: string; uuid?: boolean };
 
 export const generateSlug = ({ value, uuid = false }: slugOptions): string => {
   const result = value
     .toLowerCase()
     .replace(/[^\w ]+/g, '')
-    .replace(/ +/g, '-')
+    .replace(/ +/g, '-');
 
-	if (uuid === true){
-		return result.concat(`-${uuidv4()}`);
-	}
+  if (uuid === true) {
+    return result.concat(`-${uuidv4()}`);
+  }
 
-	return result;
+  return result;
 };

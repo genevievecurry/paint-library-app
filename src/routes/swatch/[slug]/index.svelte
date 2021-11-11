@@ -24,7 +24,7 @@
   import SwatchRatings from '$lib/swatch/SwatchRatings.svelte';
   import SwatchDescription from '$lib/swatch/SwatchDescription.svelte';
   import SwatchPigments from '$lib/swatch/SwatchPigments.svelte';
-  import SwatchTags from '$lib/swatch/SwatchTags.svelte';
+  // import SwatchTags from '$lib/swatch/SwatchTags.svelte';
   import SwatchNotes from '$lib/swatch/SwatchNotes.svelte';
 
   export let swatchData;
@@ -52,7 +52,7 @@
   </div>
   <div class="flex-none w-96 pl-8">
     <SwatchPigments pigments="{swatchData.pigments}" />
-    <SwatchTags tags="{swatchData.tags}" />
+    <!-- <SwatchTags tags="{swatchData.tags}" /> -->
   </div>
 </div>
 <SwatchNotes notes="{swatchData.notes}" />

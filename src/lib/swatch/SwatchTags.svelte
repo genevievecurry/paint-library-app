@@ -8,7 +8,8 @@
   <ul class="mt-4">
     {#each tags as tag}
       <li class="inline-block"
-        ><a class="m-1 py-2 px-3 border border-black" href="{`/tag/${tag.slug}`}">{tag.label}</a
+        ><a class="m-1 py-2 px-3 border border-black" href="{`/tag/${tag.tag.slug}`}"
+          >{tag.tag.label}</a
         ></li
       >
     {/each}
