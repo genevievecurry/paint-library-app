@@ -19,13 +19,13 @@
 </script>
 
 <script>
-  import SwatchCards from '$lib/swatch/SwatchCards.svelte';
-  import SwatchHeader from '$lib/swatch/SwatchHeader.svelte';
-  import SwatchRatings from '$lib/swatch/SwatchRatings.svelte';
-  import SwatchDescription from '$lib/swatch/SwatchDescription.svelte';
-  import SwatchPigments from '$lib/swatch/SwatchPigments.svelte';
-  // import SwatchTags from '$lib/swatch/SwatchTags.svelte';
-  import SwatchNotes from '$lib/swatch/SwatchNotes.svelte';
+  import SwatchCards from './_SwatchCards.svelte';
+  import SwatchHeader from './_Header.svelte';
+  import SwatchRatings from './_Ratings.svelte';
+  import SwatchDescription from './_Description.svelte';
+  import SwatchPigments from './_Pigments.svelte';
+  // import SwatchTags from './_Tags.svelte';
+  import SwatchNotes from './_Notes.svelte';
 
   export let swatchData;
 </script>
@@ -34,7 +34,7 @@
   title="{swatchData.productColorName}"
   manufacturerName="{swatchData.manufacturer?.name}"
 />
-<SwatchCards swatchCardData="{swatchData.swatchCards}" />
+<SwatchCards swatchCardData="{swatchData.swatchCardsOnSwatch}" />
 <div class="flex">
   <div class="flex-auto">
     <SwatchRatings

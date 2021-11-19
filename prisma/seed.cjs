@@ -163,15 +163,15 @@ async function main() {
 
   const swatchCardTypes = await prisma.swatchCardType.createMany({
     data: [
-      { label: 'Gradient Wash', description: 'More paint to more water.' },
-      { label: 'Granulation', description: 'Partical separation and texture in wet wash.' },
-      { label: 'Dispersement', description: 'Flow of paint on wet paper.' },
-      { label: 'High dilution undertone', description: 'Highly diluted, on dry paper.' },
-      { label: 'Mid dilution undertone', description: '50% dilution, on dry paper.' },
-      { label: 'Masstone', description: 'Full strength, undiluted, on dry paper.' },
-      { label: 'Glaze', description: 'Layered after dry.' },
-      { label: 'Wet Lift', description: 'Wet brush with clean water "erasing" after dry.' },
-      { label: 'Dry Lift', description: 'Dry brush or tissue lifting wet wash' },
+      { label: 'Gradient Wash', description: 'More paint to more water.', name: 'GRADIENT' },
+      { label: 'Granulation', description: 'Partical separation and texture in wet wash.', name: 'GRANULATION' },
+      { label: 'Dispersement', description: 'Flow of paint on wet paper.', name: 'DISPERSEMENT' },
+      { label: 'High dilution undertone', description: 'Highly diluted, on dry paper.', name: 'HIGH_DILUTION' },
+      { label: 'Mid dilution undertone', description: '50% dilution, on dry paper.', name: 'MID_DILUTION' },
+      { label: 'Masstone', description: 'Full strength, undiluted, on dry paper.', name: 'MASSTONE' },
+      { label: 'Glaze', description: 'Layered after dry.', name: 'GLAZE' },
+      { label: 'Wet Lift', description: 'Wet brush with clean water "erasing" after dry.', name: 'WET_LIFT' },
+      { label: 'Dry Lift', description: 'Dry brush or tissue lifting wet wash', name: 'DRY_LIFT' },
     ],
   });
 
@@ -187,7 +187,7 @@ async function main() {
   const granulationRating = await prisma.granulationRating.findFirst({
     where: { label: 'Yes' },
   });
-  const swatchCardType = await prisma.swatchCardType.findFirst();
+
 
   const tags = await prisma.tag.createMany({
     data: [
@@ -196,6 +196,16 @@ async function main() {
       { label: 'nautical', slug: 'nautical' },
     ],
   });
+
+  const imageKitUpload = await prisma.imageKitUpload.create({
+    data: {
+      fileId: 'test-id-string',
+      filePath: 'kitten.jpg',
+      name: 'kitten.jpg',
+      thumbnailUrl: 'https://placekitten.com/50/50',
+      url: 'https://placekitten.com/350/350'
+    }
+  })
 
   let watercolorSwatch = await prisma.swatch.upsert({
     where: { slug: 'watercolor-swatch' },
@@ -253,42 +263,209 @@ async function main() {
           },
         ],
       },
+      swatchCardsOnSwatch: {
+        create: {
+          gradient: {
+            create: {
+              paperId: paper.id,
+              authorId: memberUser.id,
+              swatchCardTypeName: 'GRADIENT',
+              description: 'This is a supercool wash, with extra awesome.',
+              imageKitUploadId: imageKitUpload.id,
+            }
+          },
+          granulation: {
+            create: {
+              paperId: paper.id,
+              authorId: memberUser.id,
+              swatchCardTypeName: 'GRANULATION',
+              description: 'This is a supercool wash, with extra awesome.',
+              imageKitUploadId: imageKitUpload.id,
+            }
+          },
+          dispersement: {
+            create: {
+              paperId: paper.id,
+              authorId: memberUser.id,
+              swatchCardTypeName: 'DISPERSEMENT',
+              description: 'This is a supercool wash, with extra awesome.',
+              imageKitUploadId: imageKitUpload.id,
+            }
+          },
+          highDilution: {
+            create: {
+              paperId: paper.id,
+              authorId: memberUser.id,
+              swatchCardTypeName: 'HIGH_DILUTION',
+              description: 'This is a supercool wash, with extra awesome.',
+              imageKitUploadId: imageKitUpload.id,
+            }
+          },
+          midDilution: {
+            create: {
+              paperId: paper.id,
+              authorId: memberUser.id,
+              swatchCardTypeName: 'MID_DILUTION',
+              description: 'This is a supercool wash, with extra awesome.',
+              imageKitUploadId: imageKitUpload.id,
+            }
+          },
+          masstone: {
+            create: {
+              paperId: paper.id,
+              authorId: memberUser.id,
+              swatchCardTypeName: 'MASSTONE',
+              description: 'This is a supercool wash, with extra awesome.',
+              imageKitUploadId: imageKitUpload.id,
+            }
+          },
+          glaze: {
+            create: {
+              paperId: paper.id,
+              authorId: memberUser.id,
+              swatchCardTypeName: 'GLAZE',
+              description: 'This is a supercool wash, with extra awesome.',
+              imageKitUploadId: imageKitUpload.id,
+            }
+          },
+          wetLift: {
+            create: {
+              paperId: paper.id,
+              authorId: memberUser.id,
+              swatchCardTypeName: 'WET_LIFT',
+              description: 'This is a supercool wash, with extra awesome.',
+              imageKitUploadId: imageKitUpload.id,
+            }
+          },
+          dryLift: {
+            create: {
+              paperId: paper.id,
+              authorId: memberUser.id,
+              swatchCardTypeName: 'DRY_LIFT',
+              description: 'This is a supercool wash, with extra awesome.',
+              imageKitUploadId: imageKitUpload.id,
+            }
+          }
+        }
+      }
     },
   });
 
-  const swatchCards = await prisma.swatchCard.createMany({
-    data: [
-      {
-        swatchId: watercolorSwatch.id,
-        paperId: paper.id,
-        authorId: memberUser.id,
-        swatchCardTypeId: swatchCardType.id,
-        description: 'This is a supercool wash, with extra awesome.',
-      },
-      {
-        swatchId: watercolorSwatch.id,
-        paperId: paper.id,
-        swatchCardTypeId: swatchCardType.id,
-        authorId: adminUser.id,
-        description:
-          'It also has an unusual bonus of being able to be used as a UV reactive paint which glows under black light.',
-      },
-      {
-        swatchId: watercolorSwatch.id,
-        paperId: paper.id,
-        swatchCardTypeId: swatchCardType.id,
-        authorId: memberUser.id,
-        description: 'This is a slightly deeper valued green-leaning Phthalo Blue.',
-      },
-      {
-        swatchId: watercolorSwatch.id,
-        paperId: paper.id,
-        swatchCardTypeId: swatchCardType.id,
-        authorId: memberUser.id,
-        description: 'Accidentally erased through the paper.',
-      },
-    ],
-  });
+
+  // const swatchCards = await prisma.swatchCard.createMany({
+  //   data: [
+  //     {
+  //       paperId: paper.id,
+  //       authorId: memberUser.id,
+  //       swatchCardTypeId: 1,
+  //       description: 'This is a supercool wash, with extra awesome.',
+  //       swatchCardGradient: {
+  //         create: {
+  //           SwatchCardsOnSwatch: {
+  //             connect: {
+  //               swatchId: watercolorSwatch.id,
+  //             }
+  //           }
+  //         }
+  //       }
+  //     },
+  //     {
+  //       paperId: paper.id,
+  //       swatchCardTypeId: 2,
+  //       authorId: adminUser.id,
+  //       description: 'It also has an unusual bonus of being able to be used as a UV reactive paint which glows under black light.',
+  //       swatchCardGranulation: {
+  //         create: {
+  //           swatchId: watercolorSwatch.id,
+  //         }
+  //       }
+  //     },
+  //     {
+  //       swatchId: watercolorSwatch.id,
+  //       paperId: paper.id,
+  //       swatchCardTypeId: 3,
+  //       authorId: memberUser.id,
+  //       description: 'This is a slightly deeper valued green-leaning Phthalo Blue.',
+  //       swatchCardDispersement: {
+  //         create: {
+  //           swatchId: watercolorSwatch.id,
+  //         }
+  //       }
+  //     },
+  //     {
+  //       swatchId: watercolorSwatch.id,
+  //       paperId: paper.id,
+  //       swatchCardTypeId: 4,
+  //       authorId: memberUser.id,
+  //       description: 'Accidentally erased through the paper.',
+  //       swatchCardHighDilution: {
+  //         create: {
+  //           swatchId: watercolorSwatch.id,
+  //         }
+  //       }
+  //     },
+  //     {
+  //       swatchId: watercolorSwatch.id,
+  //       paperId: paper.id,
+  //       swatchCardTypeId: 5,
+  //       authorId: memberUser.id,
+  //       description: 'Accidentally erased through the paper.',
+  //       swatchCardMidDilution: {
+  //         create: {
+  //           swatchId: watercolorSwatch.id,
+  //         }
+  //       }
+  //     },
+  //     {
+  //       swatchId: watercolorSwatch.id,
+  //       paperId: paper.id,
+  //       swatchCardTypeId: 6,
+  //       authorId: memberUser.id,
+  //       description: 'Accidentally erased through the paper.',
+  //       swatchCardMasstone: {
+  //         create: {
+  //           swatchId: watercolorSwatch.id,
+  //         }
+  //       }
+  //     },
+  //     {
+  //       swatchId: watercolorSwatch.id,
+  //       paperId: paper.id,
+  //       swatchCardTypeId: 7,
+  //       authorId: memberUser.id,
+  //       description: 'Accidentally erased through the paper.',
+  //       swatchCardGlaze: {
+  //         create: {
+  //           swatchId: watercolorSwatch.id,
+  //         }
+  //       }
+  //     },
+  //     {
+  //       swatchId: watercolorSwatch.id,
+  //       paperId: paper.id,
+  //       swatchCardTypeId: 8,
+  //       authorId: memberUser.id,
+  //       description: 'Accidentally erased through the paper.',
+  //       swatchCardWetLift: {
+  //         create: {
+  //           swatchId: watercolorSwatch.id,
+  //         }
+  //       }
+  //     },
+  //     {
+  //       swatchId: watercolorSwatch.id,
+  //       paperId: paper.id,
+  //       swatchCardTypeId: 9,
+  //       authorId: memberUser.id,
+  //       description: 'Accidentally erased through the paper.',
+  //       swatchCardDryLift: {
+  //         create: {
+  //           swatchId: watercolorSwatch.id,
+  //         }
+  //       }
+  //     },
+  //   ],
+  // });
 
   const notes = await prisma.note.createMany({
     data: [
@@ -347,11 +524,9 @@ async function main() {
     adminUser,
     memberUser,
     watercolorSwatch,
-    swatchCards,
     notes,
     childNotes,
     tags,
-    swatchCardType,
   });
 }
 

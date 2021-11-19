@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("VITE_DATABASE_URL")
 }
 
 enum Role {
@@ -22,6 +22,18 @@ enum PigmentType {
   HISTORIC
   CINATURAL
   CIPIGMENT
+}
+
+enum SwatchCardTypeName {
+  GRADIENT
+  GRANULATION
+  DISPERSEMENT
+  HIGH_DILUTION
+  MID_DILUTION
+  MASSTONE
+  GLAZE
+  WET_LIFT
+  DRY_LIFT
 }
 
 model User {
@@ -65,24 +77,27 @@ model Swatch {
   stainingRatingId               Int
   granulationRating              GranulationRating    @relation(fields: [granulationRatingId], references: [id])
   granulationRatingId            Int
+  swatchCardsOnSwatch            SwatchCardsOnSwatch?
   pigments                       PigmentsOnSwatches[]
-  swatchCards                    SwatchCard[]
   notes                          Note[]
   tags                           TagsOnSwatches[]
 
+  // SwatchCard SwatchCard[]
   @@unique([manufacturerId, productColorName])
 }
 
 model Pigment {
-  id        Int                  @id @default(autoincrement())
-  createdAt DateTime             @default(now())
-  updatedAt DateTime             @updatedAt
-  type      PigmentType          @default(CIPIGMENT)
-  name      String
-  number    Int
-  color     Color                @relation(fields: [colorId], references: [id])
-  colorId   Int
-  swatches  PigmentsOnSwatches[]
+  id               Int                  @id @default(autoincrement())
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+  type             PigmentType          @default(CIPIGMENT)
+  name             String
+  number           Int
+  color            Color                @relation(fields: [colorId], references: [id])
+  colorId          Int
+  imageKitUpload   ImageKitUpload?      @relation(fields: [imageKitUploadId], references: [id])
+  imageKitUploadId Int?
+  swatches         PigmentsOnSwatches[]
 
   @@unique([type, colorId, number])
 }
@@ -117,25 +132,59 @@ model TagsOnSwatches {
 }
 
 model SwatchCard {
-  id               Int             @id @default(autoincrement())
-  createdAt        DateTime        @default(now())
-  updatedAt        DateTime        @updatedAt
-  deleted          Boolean         @default(false)
-  swatch           Swatch          @relation(fields: [swatchId], references: [id])
-  swatchId         Int
-  paper            Paper           @relation(fields: [paperId], references: [id])
-  paperId          Int
-  swatchCardType   SwatchCardType? @relation(fields: [swatchCardTypeId], references: [id])
-  swatchCardTypeId Int?
-  author           User            @relation(fields: [authorId], references: [id])
-  authorId         Int
-  description      String?
+  id                     Int                   @id @default(autoincrement())
+  createdAt              DateTime              @default(now())
+  updatedAt              DateTime              @updatedAt
+  deleted                Boolean               @default(false)
+  paper                  Paper                 @relation(fields: [paperId], references: [id])
+  paperId                Int
+  swatchCardType         SwatchCardType?       @relation(fields: [swatchCardTypeName], references: [name])
+  swatchCardTypeName     SwatchCardTypeName?
+  author                 User                  @relation(fields: [authorId], references: [id])
+  authorId               Int
+  description            String?
+  imageKitUpload         ImageKitUpload?       @relation(fields: [imageKitUploadId], references: [id])
+  imageKitUploadId       Int?
+  swatchCardGradient     SwatchCardsOnSwatch[] @relation("swatchCardGradient")
+  swatchCardGranulation  SwatchCardsOnSwatch[] @relation("swatchCardGranulation")
+  swatchCardDispersement SwatchCardsOnSwatch[] @relation("swatchCardDispersement")
+  swatchCardHighDilution SwatchCardsOnSwatch[] @relation("swatchCardHighDilution")
+  swatchCardMidDilution  SwatchCardsOnSwatch[] @relation("swatchCardMidDilution")
+  swatchCardMasstone     SwatchCardsOnSwatch[] @relation("swatchCardMasstone")
+  swatchCardGlaze        SwatchCardsOnSwatch[] @relation("swatchCardGlaze")
+  swatchCardWetLift      SwatchCardsOnSwatch[] @relation("swatchCardWetLift")
+  swatchCardDryLift      SwatchCardsOnSwatch[] @relation("swatchCardDryLift")
+}
+
+model SwatchCardsOnSwatch {
+  id             Int         @id @default(autoincrement())
+  swatch         Swatch      @relation(fields: [swatchId], references: [id])
+  swatchId       Int         @unique
+  gradient       SwatchCard? @relation("swatchCardGradient", fields: [gradientId], references: [id])
+  gradientId     Int?
+  granulation    SwatchCard? @relation("swatchCardGranulation", fields: [granulationId], references: [id])
+  granulationId  Int?
+  dispersement   SwatchCard? @relation("swatchCardDispersement", fields: [dispersementId], references: [id])
+  dispersementId Int?
+  highDilution   SwatchCard? @relation("swatchCardHighDilution", fields: [highDilutionId], references: [id])
+  highDilutionId Int?
+  midDilution    SwatchCard? @relation("swatchCardMidDilution", fields: [midDilutionId], references: [id])
+  midDilutionId  Int?
+  masstone       SwatchCard? @relation("swatchCardMasstone", fields: [masstoneId], references: [id])
+  masstoneId     Int?
+  glaze          SwatchCard? @relation("swatchCardGlaze", fields: [glazeId], references: [id])
+  glazeId        Int?
+  wetLift        SwatchCard? @relation("swatchCardWetLift", fields: [wetLiftId], references: [id])
+  wetLiftId      Int?
+  dryLift        SwatchCard? @relation("swatchCardDryLift", fields: [dryLiftId], references: [id])
+  dryLiftId      Int?
 }
 
 model SwatchCardType {
-  id          Int          @id @default(autoincrement())
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
+  id          Int                @id @default(autoincrement())
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+  name        SwatchCardTypeName @unique
   label       String
   description String
   swatchCards SwatchCard[]
@@ -230,4 +279,17 @@ model GranulationRating {
   label       String
   description String?
   Swatch      Swatch[]
+}
+
+model ImageKitUpload {
+  id           Int          @id @default(autoincrement())
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  fileId       String
+  filePath     String
+  name         String
+  thumbnailUrl String
+  url          String
+  swatchCard   SwatchCard[]
+  pigment      Pigment[]
 }

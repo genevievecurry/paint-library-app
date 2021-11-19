@@ -8,6 +8,11 @@ const config = {
   preprocess: preprocess(),
 
   kit: {
+    vite: {
+      optimizeDeps: {
+        include: []
+      }
+    },
     adapter: adapter({
       // default options are shown
       out: 'build',
@@ -16,11 +21,6 @@ const config = {
     // hydrate the <div id="svelte"> element in src/app.html
     target: '#svelte',
   },
-  vite: {
-    optimizeDeps: {
-      include: ['@prisma/client']
-    }
-  }
 };
 
 export default config;

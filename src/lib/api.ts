@@ -2,18 +2,34 @@
 import type { ReadOnlyFormData } from '@sveltejs/kit/types/helper';
 
 // Comment in this line for local development
-// import { Prisma, PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient } from '@prisma/client';
 
 // Comment in these lines to deploy & build on heroku... 
 // Todo: Cry 
-import type { Prisma } from "@prisma/client";
+// import type { Prisma } from "@prisma/client";
 
-import pkg from '@prisma/client';
-const { PrismaClient } = pkg;
+// import pkg from '@prisma/client';
+// const { PrismaClient } = pkg;
 
 const prisma = new PrismaClient();
 
-const swatchData: Prisma.SwatchSelect = {
+const swatchCardSelect: Prisma.SwatchCardSelect = {
+  createdAt: true,
+  updatedAt: true,
+  swatchCardType: true,
+  paper: {
+    select: {
+      manufacturer: true,
+      description: true,
+      weightInLbs: true,
+    },
+  },
+  author: true,
+  description: true,
+  imageKitUpload: true,
+}
+
+const swatchSelect: Prisma.SwatchSelect = {
   createdAt: true,
   updatedAt: true,
   author: {
@@ -79,25 +95,23 @@ const swatchData: Prisma.SwatchSelect = {
           name: true,
           number: true,
           type: true,
+          imageKitUpload: true,
         },
       },
     },
   },
-  swatchCards: {
+  swatchCardsOnSwatch: {
     select: {
-      createdAt: true,
-      updatedAt: true,
-      paper: {
-        select: {
-          manufacturer: true,
-          description: true,
-          weightInLbs: true,
-        },
-      },
-      swatchCardType: true,
-      author: true,
-      description: true,
-    },
+      gradient: { select: swatchCardSelect },
+      granulation: { select: swatchCardSelect },
+      dispersement: { select: swatchCardSelect },
+      highDilution: { select: swatchCardSelect },
+      midDilution: { select: swatchCardSelect },
+      masstone: { select: swatchCardSelect },
+      glaze: { select: swatchCardSelect },
+      wetLift: { select: swatchCardSelect },
+      dryLift: { select: swatchCardSelect },
+    }
   },
   notes: {
     where: {
@@ -134,7 +148,7 @@ const swatchData: Prisma.SwatchSelect = {
   // },
 };
 
-const newSwatch: Prisma.SwatchSelect = {
+const createSwatchSelect: Prisma.SwatchSelect = {
   slug: true,
   productColorName: true,
   authorId: true,
@@ -148,6 +162,7 @@ const newSwatch: Prisma.SwatchSelect = {
   manufacturerPigmentDescription: true,
   communityDescription: true,
   pigments: true,
+  swatchCardsOnSwatch: true
   // tags: true,
 };
 
@@ -177,7 +192,7 @@ async function send({
       where: {
         slug,
       },
-      select: swatchData,
+      select: swatchSelect,
     });
     status = 200;
   }
@@ -203,6 +218,16 @@ async function send({
     //   });
     // }
 
+    const imageKitUpload = await prisma.imageKitUpload.create({
+      data: {
+        fileId: data.get('uploadFileId'),
+        filePath: data.get('uploadFilePath'),
+        name: data.get('uploadName'),
+        thumbnailUrl: data.get('uploadThumbnailUrl'),
+        url: data.get('uploadUrl'),
+      }
+    })
+
     body = await prisma.swatch.create({
       data: {
         slug: data.get('slug'),
@@ -217,6 +242,19 @@ async function send({
         manufacturerDescription: data.get('manufacturerDescription'),
         manufacturerPigmentDescription: data.get('manufacturerPigmentDescription'),
         communityDescription: data.get('communityDescription'),
+        swatchCardsOnSwatch: {
+          create: {
+            gradient: {
+              create: {
+                paperId: Number(data.get('paperId')),
+                swatchCardTypeName: 'GRADIENT',
+                authorId: Number(data.get('authorId')),
+                description: data.get('swatchCardDescription'),
+                imageKitUploadId: imageKitUpload.id,
+              }
+            }
+          }
+        },
         pigments: {
           createMany: {
             data: pigments,
@@ -228,7 +266,7 @@ async function send({
         //   },
         // },
       },
-      select: newSwatch,
+      select: createSwatchSelect,
     });
     status = 200;
   }

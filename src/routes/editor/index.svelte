@@ -16,6 +16,14 @@
     manufacturerPigmentDescription: 'default manufacturer pigment description',
     pigments: [],
     tags: [],
+    swatchCards: [
+      {
+        paperId: 1,
+        authorId: 1,
+        description: '',
+        imageKitUpload: {}
+      }
+    ],
   };
 </script>
 

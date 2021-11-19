@@ -1,14 +1,19 @@
 <script>
   import { goto } from '$app/navigation';
-  import { generateSlug } from '$lib/utils';
+  import { generateSlug } from '$lib/slug';
+  import imagekit from '$lib/config/imagekit';
 
   export let swatch;
 
   let manufacturerPromise = getManufacturers();
   let pigmentPromise = getPigments();
+  let paperPromise = getPapers()
 
   // Todo: Handle waiting UI
   let publishing = false;
+
+  let userImageUpload;
+  let imageKitData = {};
 
   async function getManufacturers() {
     const res = await fetch(`/editor/manufacturer.json`);
@@ -16,7 +21,7 @@
     if (res.ok) {
       return res.json();
     } else {
-      throw new Error('manufacturers: ruh-roh');
+      throw new Error('manufacturers: ruh-roh'); // Todo: do better
     }
   }
 
@@ -28,6 +33,36 @@
     } else {
       throw new Error('pigments: nope on that'); // Todo: do better
     }
+  }
+
+  async function getPapers() {
+    const res = await fetch(`/editor/paper.json`);
+
+    if (res.ok) {
+      return res.json();
+    } else {
+      throw new Error('paper: nope on that'); // Todo: do better
+    }
+  }
+
+  function onChooseUpload(event) {
+    userImageUpload = event.target.files[0];
+  }
+
+  // Todo: Move this into a utility
+  async function uploadImage() {
+    imagekit.upload({
+    file: userImageUpload,
+    fileName: userImageUpload.name,
+    useUniqueFileName: true,
+  }, function(err, result) {
+      if(err === null){
+        imageKitData = result;
+      } else {
+        // Todo: Handle error
+        console.log(err)
+      }
+  })
   }
 
   // Todo update these monsters
@@ -74,7 +109,6 @@
   }
 
   const onsubmit = () => {
-    console.log('swatches on submit!', swatch);
     publishing = true;
   };
 
@@ -115,10 +149,69 @@
 </script>
 
 <h1 class="font-extrabold text-4xl">Create a New Swatch</h1>
-<!-- <form 
-  on:submit|preventDefault={submit}
-> -->
+
+
+  <fieldset class="mt-10">
+    <div>
+      <legend class="font-extrabold text-2xl">Upload a Swatch Card Sample</legend>
+    </div>
+    <div class="mt-4 space-y-4">
+      <input type="file" id="swatchCardImageKitUpload" name="swatchCardImageKitUpload" on:change="{onChooseUpload}" />
+      <div 
+        on:click="{uploadImage}"
+        class="inline-flex justify-center py-1 px-2 border-2 border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 font-medium text-lg">Upload</div>    
+    </div>
+  </fieldset>
+
+
+
 <form action="swatch/create.json" method="post" use:ajax="{{ onsubmit, onresponse }}">
+  {#if imageKitData }
+    <input name="uploadFileId" id="uploadFileId" value="{imageKitData.fileId}" />
+    <input name="uploadFilePath" id="uploadFilePath" value="{imageKitData.filePath}" />
+    <input name="uploadName" id="uploadName" value="{imageKitData.name}" />
+    <input name="uploadThumbnailUrl" id="uploadThumbnailUrl" value="{imageKitData.thumbnailUrl}" />
+    <input name="uploadUrl" id="uploadUrl" value="{imageKitData.url}" />
+  {/if}
+
+  <fieldset class="mt-10">
+    <div class="mt-6">
+      <label for="paperId" class="block text-sm text-gray-500">Paper Type</label>
+      {#await paperPromise}
+        <p>Loading papers...</p>
+      {:then papers}
+        <select
+          id="paperId"
+          name="paperId"
+          bind:value="{swatch.swatchCards[0].paperId}"
+          on:change="{onChangeValue}"
+          class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
+        >
+          {#each papers as paper}
+            <option value="{paper.id}">
+              {paper.description} ({paper.weightInLbs} lbs)
+            </option>
+          {/each}
+        </select>
+      {:catch error}
+        <p>Something went wrong! {error}</p>
+      {/await}
+    </div>
+
+    <div class="mt-6">
+      <label for="swatchCardDescription" class="block text-sm text-gray-500"
+        >Swatch Description</label
+      >
+      <textarea
+        bind:value="{swatch.swatchCards[0].description}"
+        id="swatchCardDescription"
+        name="swatchCardDescription"
+        class="mt-2 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
+      ></textarea>
+    </div>
+
+  </fieldset>
+
   <fieldset class="mt-10">
     <div class="grid grid-cols-6 gap-6">
       <div class="col-span-6 sm:col-span-3">
