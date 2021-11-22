@@ -22,7 +22,7 @@
   }
 
   async function getPapers() {
-    const res = await fetch("http://localhost:3000/model/paper.json");
+    const res = await fetch('http://localhost:3000/model/paper.json');
 
     if (res.ok) {
       return res.json();
@@ -48,12 +48,12 @@
 
   setContext('slug', slug);
   setContext('editable', true);
-  setContext('papers', papers)
+  setContext('papers', papers);
 
-  if(swatchData) setContext('hex', swatchData.hex);
+  if (swatchData) setContext('hex', swatchData.hex);
 </script>
 
-{#if swatchData }
+{#if swatchData}
   <SwatchHeader
     title="{swatchData.productColorName}"
     manufacturerName="{swatchData.manufacturer?.name}"

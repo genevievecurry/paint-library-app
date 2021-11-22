@@ -1,11 +1,10 @@
-
 import type { ReadOnlyFormData } from '@sveltejs/kit/types/helper';
 
 // Comment in this line for local development
 import { Prisma, PrismaClient } from '@prisma/client';
 
-// Comment in these lines to deploy & build on heroku... 
-// Todo: Cry 
+// Comment in these lines to deploy & build on heroku...
+// Todo: Cry
 // import type { Prisma } from "@prisma/client";
 
 // import pkg from '@prisma/client';
@@ -28,7 +27,7 @@ const swatchCardSelect: Prisma.SwatchCardSelect = {
   author: true,
   description: true,
   imageKitUpload: true,
-}
+};
 
 const swatchSelect: Prisma.SwatchSelect = {
   id: true,
@@ -114,7 +113,7 @@ const swatchSelect: Prisma.SwatchSelect = {
       glaze: { select: swatchCardSelect },
       wetLift: { select: swatchCardSelect },
       dryLift: { select: swatchCardSelect },
-    }
+    },
   },
   notes: {
     where: {
@@ -170,9 +169,11 @@ const createSwatchSelect: Prisma.SwatchSelect = {
   // tags: true,
 };
 
-async function updateSwatchCard({method, data}): Promise<{ status: number; body: Record<string, unknown> }> {
-
-  console.log(data)
+async function updateSwatchCard({
+  method,
+  data,
+}): Promise<{ status: number; body: Record<string, unknown> }> {
+  console.log(data);
 
   const body = await prisma.swatchCard.update({
     where: { id: Number(data.get('id')) },
@@ -180,7 +181,7 @@ async function updateSwatchCard({method, data}): Promise<{ status: number; body:
       paper: {
         connect: {
           id: Number(data.get('paperId')),
-        }
+        },
       },
       description: data.get('description'),
       imageKitUpload: {
@@ -190,12 +191,12 @@ async function updateSwatchCard({method, data}): Promise<{ status: number; body:
           name: data.get('uploadName'),
           thumbnailUrl: data.get('uploadThumbnailUrl'),
           url: data.get('uploadUrl'),
-        }
-      }
-    }
-  })
+        },
+      },
+    },
+  });
 
-  return { status: 200, body}
+  return { status: 200, body };
 }
 
 export async function getSwatches() {
@@ -250,7 +251,6 @@ async function send({
     //   });
     // }
 
-
     body = await prisma.swatch.create({
       data: {
         slug: data.get('slug'),
@@ -271,49 +271,49 @@ async function send({
             gradient: {
               create: {
                 swatchCardTypeName: 'GRADIENT',
-              }
-            }, 
+              },
+            },
             granulation: {
               create: {
                 swatchCardTypeName: 'GRANULATION',
-              }
+              },
             },
             dispersement: {
               create: {
                 swatchCardTypeName: 'DISPERSEMENT',
-              }
+              },
             },
             highDilution: {
               create: {
                 swatchCardTypeName: 'HIGH_DILUTION',
-              }
+              },
             },
             midDilution: {
               create: {
                 swatchCardTypeName: 'MID_DILUTION',
-              }
+              },
             },
             masstone: {
               create: {
                 swatchCardTypeName: 'MASSTONE',
-              }
+              },
             },
             glaze: {
               create: {
                 swatchCardTypeName: 'GLAZE',
-              }
+              },
             },
             wetLift: {
               create: {
                 swatchCardTypeName: 'WET_LIFT',
-              }
+              },
             },
             dryLift: {
               create: {
                 swatchCardTypeName: 'DRY_LIFT',
-              }
+              },
             },
-          }
+          },
         },
         pigments: {
           createMany: {
@@ -330,7 +330,6 @@ async function send({
     });
     status = 200;
   }
-
 
   return {
     status,
@@ -350,6 +349,6 @@ export function getOption(model) {
   return send({ method: 'GET', model });
 }
 
-export function edit(data){
-  return updateSwatchCard({ method: 'POST', data})
+export function edit(data) {
+  return updateSwatchCard({ method: 'POST', data });
 }

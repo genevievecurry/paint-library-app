@@ -10,8 +10,8 @@ const config = {
   kit: {
     vite: {
       optimizeDeps: {
-        include: []
-      }
+        include: [],
+      },
     },
     adapter: adapter({
       // default options are shown

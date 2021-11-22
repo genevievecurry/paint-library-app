@@ -164,13 +164,33 @@ async function main() {
   const swatchCardTypes = await prisma.swatchCardType.createMany({
     data: [
       { label: 'Gradient Wash', description: 'More paint to more water.', name: 'GRADIENT' },
-      { label: 'Granulation', description: 'Particle separation and texture in wet wash.', name: 'GRANULATION' },
+      {
+        label: 'Granulation',
+        description: 'Particle separation and texture in wet wash.',
+        name: 'GRANULATION',
+      },
       { label: 'Dispersement', description: 'Flow of paint on wet paper.', name: 'DISPERSEMENT' },
-      { label: 'High Dilution Undertone', description: 'Highly diluted, on dry paper.', name: 'HIGH_DILUTION' },
-      { label: 'Mid Dilution Undertone', description: '50% dilution, on dry paper.', name: 'MID_DILUTION' },
-      { label: 'Masstone', description: 'Full strength, undiluted, on dry paper.', name: 'MASSTONE' },
+      {
+        label: 'High Dilution Undertone',
+        description: 'Highly diluted, on dry paper.',
+        name: 'HIGH_DILUTION',
+      },
+      {
+        label: 'Mid Dilution Undertone',
+        description: '50% dilution, on dry paper.',
+        name: 'MID_DILUTION',
+      },
+      {
+        label: 'Masstone',
+        description: 'Full strength, undiluted, on dry paper.',
+        name: 'MASSTONE',
+      },
       { label: 'Glaze', description: 'Layered after dry.', name: 'GLAZE' },
-      { label: 'Wet Lift', description: 'Wet brush with clean water "erasing" after dry.', name: 'WET_LIFT' },
+      {
+        label: 'Wet Lift',
+        description: 'Wet brush with clean water "erasing" after dry.',
+        name: 'WET_LIFT',
+      },
       { label: 'Dry Lift', description: 'Dry brush or tissue lifting wet wash', name: 'DRY_LIFT' },
     ],
   });
@@ -188,7 +208,6 @@ async function main() {
     where: { label: 'Yes' },
   });
 
-
   const tags = await prisma.tag.createMany({
     data: [
       { label: 'tropical', slug: 'tropical' },
@@ -203,9 +222,9 @@ async function main() {
       filePath: 'kitten.jpg',
       name: 'kitten.jpg',
       thumbnailUrl: 'https://placekitten.com/50/50',
-      url: 'https://placekitten.com/350/350'
-    }
-  })
+      url: 'https://placekitten.com/350/350',
+    },
+  });
 
   let watercolorSwatch = await prisma.swatch.upsert({
     where: { slug: 'watercolor-swatch' },
@@ -273,7 +292,7 @@ async function main() {
               swatchCardTypeName: 'GRADIENT',
               description: 'This is a supercool wash, with extra awesome.',
               imageKitUploadId: imageKitUpload.id,
-            }
+            },
           },
           granulation: {
             create: {
@@ -282,7 +301,7 @@ async function main() {
               swatchCardTypeName: 'GRANULATION',
               description: 'This is a supercool wash, with extra awesome.',
               imageKitUploadId: imageKitUpload.id,
-            }
+            },
           },
           dispersement: {
             create: {
@@ -291,7 +310,7 @@ async function main() {
               swatchCardTypeName: 'DISPERSEMENT',
               description: 'This is a supercool wash, with extra awesome.',
               imageKitUploadId: imageKitUpload.id,
-            }
+            },
           },
           highDilution: {
             create: {
@@ -300,7 +319,7 @@ async function main() {
               swatchCardTypeName: 'HIGH_DILUTION',
               description: 'This is a supercool wash, with extra awesome.',
               imageKitUploadId: imageKitUpload.id,
-            }
+            },
           },
           midDilution: {
             create: {
@@ -309,7 +328,7 @@ async function main() {
               swatchCardTypeName: 'MID_DILUTION',
               description: 'This is a supercool wash, with extra awesome.',
               imageKitUploadId: imageKitUpload.id,
-            }
+            },
           },
           masstone: {
             create: {
@@ -318,7 +337,7 @@ async function main() {
               swatchCardTypeName: 'MASSTONE',
               description: 'This is a supercool wash, with extra awesome.',
               imageKitUploadId: imageKitUpload.id,
-            }
+            },
           },
           glaze: {
             create: {
@@ -327,7 +346,7 @@ async function main() {
               swatchCardTypeName: 'GLAZE',
               description: 'This is a supercool wash, with extra awesome.',
               imageKitUploadId: imageKitUpload.id,
-            }
+            },
           },
           wetLift: {
             create: {
@@ -336,7 +355,7 @@ async function main() {
               swatchCardTypeName: 'WET_LIFT',
               description: 'This is a supercool wash, with extra awesome.',
               imageKitUploadId: imageKitUpload.id,
-            }
+            },
           },
           dryLift: {
             create: {
@@ -345,10 +364,10 @@ async function main() {
               swatchCardTypeName: 'DRY_LIFT',
               description: 'This is a supercool wash, with extra awesome.',
               imageKitUploadId: imageKitUpload.id,
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      },
     },
   });
 

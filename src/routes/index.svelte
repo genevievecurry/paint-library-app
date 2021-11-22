@@ -15,8 +15,6 @@
       error: new Error('Could not load.'),
     };
   }
-
-  
 </script>
 
 <script>

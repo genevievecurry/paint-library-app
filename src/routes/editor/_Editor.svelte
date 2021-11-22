@@ -7,7 +7,6 @@
   let manufacturerPromise = getManufacturers();
   let pigmentPromise = getPigments();
 
-
   // Todo: Handle waiting UI
   let publishing = false;
 
@@ -116,15 +115,14 @@
 
 <h1 class="font-extrabold text-4xl">Create a New Swatch</h1>
 
-
-
 <form action="swatch/create.json" method="post" use:ajax="{{ onsubmit, onresponse }}">
-
   <fieldset class="mt-10">
     <div class="grid grid-cols-6 gap-6">
       <div class="col-span-6 sm:col-span-3">
         <label for="productColorName" class="block font-extrabold text-2xl">Color</label>
-        <p class="text-sm text-gray-500">Representational default. Don't worry, you can upload something nicer on the next screen.</p>
+        <p class="text-sm text-gray-500"
+          >Representational default. Don't worry, you can upload something nicer on the next screen.</p
+        >
         <input
           type="color"
           name="hex"

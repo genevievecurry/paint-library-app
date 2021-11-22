@@ -1,6 +1,6 @@
 import * as api from '$lib/api';
 
-export async function  post({
+export async function post({
   method,
   body,
   headers,
