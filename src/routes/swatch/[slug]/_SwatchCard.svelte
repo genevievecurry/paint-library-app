@@ -14,7 +14,6 @@
   import imagekit from '$lib/config/imagekit';
   import { goto } from '$app/navigation';
   export let id;
-  export let createdAt;
   export let updatedAt;
   export let swatchCardType;
   export let paper;
@@ -97,8 +96,11 @@
   };
 
   const onresponse = async (res) => {
+    // Todo: Fix, page is not reloading
     if (res.ok) {
       goto(`/swatch/${slug}`);
+    } else {
+      console.log(res)
     }
   };
   const noop = () => {};
