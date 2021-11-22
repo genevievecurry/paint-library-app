@@ -1,8 +1,8 @@
 import { generateImagekitSignature } from '$lib/signature';
-const crypto = await import('crypto');
+import { randomUUID } from 'crypto';
 
 export async function get(): Promise<{ status: number; body: unknown }> {
-  const token = crypto.randomUUID();
+  const token = randomUUID();
   const expire = parseInt(Date.now() / 1000) + 2400;
   const signature = generateImagekitSignature({ token: token, expire: expire });
 

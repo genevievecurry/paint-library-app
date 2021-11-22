@@ -9,6 +9,7 @@ const config = {
 
   kit: {
     vite: {
+      build: { target: 'esnext'},
       optimizeDeps: {
         include: [],
       },

@@ -1,8 +1,7 @@
-const crypto = await import('crypto');
+import { createHmac } from 'crypto';
 
 function signature(privateKey, token, expire) {
-  return crypto
-    .createHmac('sha1', privateKey)
+  return createHmac('sha1', privateKey)
     .update(token + expire)
     .digest('hex');
 }
