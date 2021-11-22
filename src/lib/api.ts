@@ -14,6 +14,7 @@ import { Prisma, PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const swatchCardSelect: Prisma.SwatchCardSelect = {
+  id: true,
   createdAt: true,
   updatedAt: true,
   swatchCardType: true,
@@ -30,6 +31,7 @@ const swatchCardSelect: Prisma.SwatchCardSelect = {
 }
 
 const swatchSelect: Prisma.SwatchSelect = {
+  id: true,
   createdAt: true,
   updatedAt: true,
   author: {
@@ -52,6 +54,7 @@ const swatchSelect: Prisma.SwatchSelect = {
       slug: true,
     },
   },
+  hex: true,
   productUrl: true,
   productColorName: true,
   communityDescription: true,
@@ -162,9 +165,38 @@ const createSwatchSelect: Prisma.SwatchSelect = {
   manufacturerPigmentDescription: true,
   communityDescription: true,
   pigments: true,
-  swatchCardsOnSwatch: true
+  swatchCardsOnSwatch: true,
+  hex: true,
   // tags: true,
 };
+
+async function updateSwatchCard({method, data}): Promise<{ status: number; body: Record<string, unknown> }> {
+
+  console.log(data)
+
+  const body = await prisma.swatchCard.update({
+    where: { id: Number(data.get('id')) },
+    data: {
+      paper: {
+        connect: {
+          id: Number(data.get('paperId')),
+        }
+      },
+      description: data.get('description'),
+      imageKitUpload: {
+        create: {
+          fileId: data.get('uploadFileId'),
+          filePath: data.get('uploadFilePath'),
+          name: data.get('uploadName'),
+          thumbnailUrl: data.get('uploadThumbnailUrl'),
+          url: data.get('uploadUrl'),
+        }
+      }
+    }
+  })
+
+  return { status: 200, body}
+}
 
 export async function getSwatches() {
   return {
@@ -218,15 +250,6 @@ async function send({
     //   });
     // }
 
-    const imageKitUpload = await prisma.imageKitUpload.create({
-      data: {
-        fileId: data.get('uploadFileId'),
-        filePath: data.get('uploadFilePath'),
-        name: data.get('uploadName'),
-        thumbnailUrl: data.get('uploadThumbnailUrl'),
-        url: data.get('uploadUrl'),
-      }
-    })
 
     body = await prisma.swatch.create({
       data: {
@@ -242,17 +265,54 @@ async function send({
         manufacturerDescription: data.get('manufacturerDescription'),
         manufacturerPigmentDescription: data.get('manufacturerPigmentDescription'),
         communityDescription: data.get('communityDescription'),
+        hex: data.get('hex'),
         swatchCardsOnSwatch: {
           create: {
             gradient: {
               create: {
-                paperId: Number(data.get('paperId')),
                 swatchCardTypeName: 'GRADIENT',
-                authorId: Number(data.get('authorId')),
-                description: data.get('swatchCardDescription'),
-                imageKitUploadId: imageKitUpload.id,
               }
-            }
+            }, 
+            granulation: {
+              create: {
+                swatchCardTypeName: 'GRANULATION',
+              }
+            },
+            dispersement: {
+              create: {
+                swatchCardTypeName: 'DISPERSEMENT',
+              }
+            },
+            highDilution: {
+              create: {
+                swatchCardTypeName: 'HIGH_DILUTION',
+              }
+            },
+            midDilution: {
+              create: {
+                swatchCardTypeName: 'MID_DILUTION',
+              }
+            },
+            masstone: {
+              create: {
+                swatchCardTypeName: 'MASSTONE',
+              }
+            },
+            glaze: {
+              create: {
+                swatchCardTypeName: 'GLAZE',
+              }
+            },
+            wetLift: {
+              create: {
+                swatchCardTypeName: 'WET_LIFT',
+              }
+            },
+            dryLift: {
+              create: {
+                swatchCardTypeName: 'DRY_LIFT',
+              }
+            },
           }
         },
         pigments: {
@@ -271,6 +331,7 @@ async function send({
     status = 200;
   }
 
+
   return {
     status,
     body,
@@ -287,4 +348,8 @@ export function post(data) {
 
 export function getOption(model) {
   return send({ method: 'GET', model });
+}
+
+export function edit(data){
+  return updateSwatchCard({ method: 'POST', data})
 }

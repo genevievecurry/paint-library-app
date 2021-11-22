@@ -63,12 +63,15 @@ model Swatch {
   manufacturer                   Manufacturer?        @relation(fields: [manufacturerId], references: [id])
   manufacturerId                 Int?
   paintType                      PaintType            @relation(fields: [paintTypeId], references: [id])
+  line                           Line?                @relation(fields: [lineId], references: [id])
+  lineId                         Int?
   paintTypeId                    Int
   productUrl                     String?
   productColorName               String
   communityDescription           String?
   manufacturerDescription        String?
   manufacturerPigmentDescription String?
+  hex                            String?
   lightfastRating                LightfastRating      @relation(fields: [lightfastRatingId], references: [id])
   lightfastRatingId              Int
   transparencyRating             TransparencyRating   @relation(fields: [transparencyRatingId], references: [id])
@@ -136,12 +139,12 @@ model SwatchCard {
   createdAt              DateTime              @default(now())
   updatedAt              DateTime              @updatedAt
   deleted                Boolean               @default(false)
-  paper                  Paper                 @relation(fields: [paperId], references: [id])
-  paperId                Int
+  paper                  Paper?                @relation(fields: [paperId], references: [id])
+  paperId                Int?
   swatchCardType         SwatchCardType?       @relation(fields: [swatchCardTypeName], references: [name])
   swatchCardTypeName     SwatchCardTypeName?
-  author                 User                  @relation(fields: [authorId], references: [id])
-  authorId               Int
+  author                 User?                 @relation(fields: [authorId], references: [id])
+  authorId               Int?
   description            String?
   imageKitUpload         ImageKitUpload?       @relation(fields: [imageKitUploadId], references: [id])
   imageKitUploadId       Int?
@@ -197,6 +200,8 @@ model Paper {
   swatchCards    SwatchCard[]
   manufacturer   Manufacturer? @relation(fields: [manufacturerId], references: [id])
   manufacturerId Int?
+  line           Line?         @relation(fields: [lineId], references: [id])
+  lineId         Int?
   description    String
   weightInLbs    Int
 }
@@ -224,6 +229,18 @@ model Manufacturer {
   website   String?
   swatches  Swatch[]
   papers    Paper[]
+  lines     Line[]
+}
+
+model Line {
+  id             Int           @id @default(autoincrement())
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  manufacturer   Manufacturer? @relation(fields: [manufacturerId], references: [id])
+  manufacturerId Int?
+  name           String        @unique @db.Citext
+  papers         Paper[]
+  swatches       Swatch[]
 }
 
 model PaintType {
@@ -251,7 +268,7 @@ model LightfastRating {
   updatedAt   DateTime @updatedAt
   label       String
   description String?
-  Swatch      Swatch[]
+  swatch      Swatch[]
 }
 
 model TransparencyRating {
@@ -260,7 +277,7 @@ model TransparencyRating {
   updatedAt   DateTime @updatedAt
   label       String
   description String?
-  Swatch      Swatch[]
+  swatch      Swatch[]
 }
 
 model StainingRating {
@@ -269,7 +286,7 @@ model StainingRating {
   updatedAt   DateTime @updatedAt
   label       String
   description String?
-  Swatch      Swatch[]
+  swatch      Swatch[]
 }
 
 model GranulationRating {
@@ -278,7 +295,7 @@ model GranulationRating {
   updatedAt   DateTime @updatedAt
   label       String
   description String?
-  Swatch      Swatch[]
+  swatch      Swatch[]
 }
 
 model ImageKitUpload {

@@ -3,10 +3,14 @@
     const url = `/swatch/${page.params.slug}.json`;
     const response = await fetch(url);
 
+    let paperPromise = getPapers();
+
     if (response.ok) {
       return {
         props: {
+          slug: page.params.slug,
           swatchData: await response.json(),
+          papers: await paperPromise,
         },
       };
     }
@@ -16,9 +20,20 @@
       error: new Error('Could not load.'),
     };
   }
+
+  async function getPapers() {
+    const res = await fetch("http://localhost:3000/model/paper.json");
+
+    if (res.ok) {
+      return res.json();
+    } else {
+      throw new Error('paper: nope on that'); // Todo: do better
+    }
+  }
 </script>
 
 <script>
+  import { setContext } from 'svelte';
   import SwatchCards from './_SwatchCards.svelte';
   import SwatchHeader from './_Header.svelte';
   import SwatchRatings from './_Ratings.svelte';
@@ -27,32 +42,44 @@
   // import SwatchTags from './_Tags.svelte';
   import SwatchNotes from './_Notes.svelte';
 
+  export let slug;
   export let swatchData;
+  export let papers;
+
+  setContext('slug', slug);
+  setContext('editable', true);
+  setContext('papers', papers)
+
+  if(swatchData) setContext('hex', swatchData.hex);
 </script>
 
-<SwatchHeader
-  title="{swatchData.productColorName}"
-  manufacturerName="{swatchData.manufacturer?.name}"
-/>
-<SwatchCards swatchCardData="{swatchData.swatchCardsOnSwatch}" />
-<div class="flex">
-  <div class="flex-auto">
-    <SwatchRatings
-      lightfastRating="{swatchData.lightfastRating}"
-      transparencyRating="{swatchData.transparencyRating}"
-      stainingRating="{swatchData.stainingRating}"
-      granulationRating="{swatchData.granulationRating}"
-    />
-    <SwatchDescription
-      communityDescription="{swatchData.communityDescription}"
-      manufacturerDescription="{swatchData.manufacturerDescription}"
-      manufacturerPigmentDescription="{swatchData.manufacturerPigmentDescription}"
-      manufacturerName="{swatchData.manufacturer?.name}"
-    />
+{#if swatchData }
+  <SwatchHeader
+    title="{swatchData.productColorName}"
+    manufacturerName="{swatchData.manufacturer?.name}"
+  />
+  <SwatchCards swatchCardData="{swatchData.swatchCardsOnSwatch}" />
+  <div class="flex">
+    <div class="flex-auto">
+      <SwatchRatings
+        lightfastRating="{swatchData.lightfastRating}"
+        transparencyRating="{swatchData.transparencyRating}"
+        stainingRating="{swatchData.stainingRating}"
+        granulationRating="{swatchData.granulationRating}"
+      />
+      <SwatchDescription
+        communityDescription="{swatchData.communityDescription}"
+        manufacturerDescription="{swatchData.manufacturerDescription}"
+        manufacturerPigmentDescription="{swatchData.manufacturerPigmentDescription}"
+        manufacturerName="{swatchData.manufacturer?.name}"
+      />
+    </div>
+    <div class="flex-none w-96 pl-8">
+      <SwatchPigments pigments="{swatchData.pigments}" />
+      <!-- <SwatchTags tags="{swatchData.tags}" /> -->
+    </div>
   </div>
-  <div class="flex-none w-96 pl-8">
-    <SwatchPigments pigments="{swatchData.pigments}" />
-    <!-- <SwatchTags tags="{swatchData.tags}" /> -->
-  </div>
-</div>
-<SwatchNotes notes="{swatchData.notes}" />
+  <SwatchNotes notes="{swatchData.notes}" />
+{:else}
+  LOADING!
+{/if}
