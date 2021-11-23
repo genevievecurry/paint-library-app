@@ -1,16 +1,15 @@
 <script context="module">
+  import { baseURL } from '$lib/config/secrets';
   export async function load({ page, fetch }) {
     const url = `/swatch/${page.params.slug}.json`;
     const response = await fetch(url);
-
-    let paperPromise = getPapers();
 
     if (response.ok) {
       return {
         props: {
           slug: page.params.slug,
           swatchData: await response.json(),
-          papers: await paperPromise,
+          papers: await getPapers(),
         },
       };
     }
@@ -22,12 +21,12 @@
   }
 
   async function getPapers() {
-    const res = await fetch('http://localhost:3000/model/paper.json');
+    const res = await fetch(`${baseURL}/model/paper.json`);
 
     if (res.ok) {
       return res.json();
     } else {
-      throw new Error('paper: nope on that'); // Todo: do better
+      throw new Error('Failed to fetch the papers'); // Todo: do better
     }
   }
 </script>

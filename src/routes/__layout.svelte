@@ -1,15 +1,5 @@
 <script lang="ts" context="module">
   import '../styles/global.css';
-  /**
-   * @type {import('@sveltejs/kit').Load}
-   */
-  export async function load({ page }) {
-    return {
-      props: {
-        path: page.path,
-      },
-    };
-  }
 </script>
 
 <svelte:head>

@@ -15,6 +15,7 @@
   import { goto } from '$app/navigation';
   export let id;
   export let updatedAt;
+  export let createdAt;
   export let swatchCardType;
   export let paper;
   export let author;
@@ -100,7 +101,7 @@
     if (res.ok) {
       goto(`/swatch/${slug}`);
     } else {
-      console.log(res)
+      console.log(res);
     }
   };
   const noop = () => {};

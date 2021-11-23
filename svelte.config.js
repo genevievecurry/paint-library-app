@@ -8,12 +8,12 @@ const config = {
   preprocess: preprocess(),
 
   kit: {
-    vite: {
-      build: { target: 'esnext'},
-      optimizeDeps: {
-        include: [],
-      },
-    },
+    // vite: {
+    //   build: { target: 'esnext'},
+    //   optimizeDeps: {
+    //     include: [],
+    //   },
+    // },
     adapter: adapter({
       // default options are shown
       out: 'build',
