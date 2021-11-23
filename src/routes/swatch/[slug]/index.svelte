@@ -1,5 +1,4 @@
 <script context="module">
-  import { baseURL } from '$lib/config/secrets';
   export async function load({ page, fetch }) {
     const url = `/swatch/${page.params.slug}.json`;
     const response = await fetch(url);
@@ -21,7 +20,7 @@
   }
 
   async function getPapers() {
-    const res = await fetch(`${baseURL}/model/paper.json`);
+    const res = await fetch(`${import.meta.env.BASE_URL}/model/paper.json`);
 
     if (res.ok) {
       return res.json();
