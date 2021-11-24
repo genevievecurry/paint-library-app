@@ -8,7 +8,6 @@
         props: {
           slug: page.params.slug,
           swatchData: await response.json(),
-          papers: await getPapers(),
         },
       };
     }
@@ -17,16 +16,6 @@
       status: response.status,
       error: new Error('Could not load.'),
     };
-  }
-
-  async function getPapers() {
-    const res = await fetch(`${import.meta.env.BASE_URL}/model/paper.json`);
-
-    if (res.ok) {
-      return res.json();
-    } else {
-      throw new Error('Failed to fetch the papers'); // Todo: do better
-    }
   }
 </script>
 
@@ -42,11 +31,9 @@
 
   export let slug;
   export let swatchData;
-  export let papers;
 
   setContext('slug', slug);
   setContext('editable', true);
-  setContext('papers', papers);
 
   if (swatchData) setContext('hex', swatchData.hex);
 </script>

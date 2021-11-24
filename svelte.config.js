@@ -8,13 +8,6 @@ const config = {
   preprocess: preprocess(),
 
   kit: {
-    vite: {
-      base: "https://paint-library-app.herokuapp.com"
-      // build: { target: 'esnext'},
-      // optimizeDeps: {
-      //   include: [],
-      // },
-    },
     adapter: adapter({
       // default options are shown
       out: 'build',

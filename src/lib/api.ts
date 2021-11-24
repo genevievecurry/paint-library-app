@@ -5,7 +5,7 @@ import type { ReadOnlyFormData } from '@sveltejs/kit/types/helper';
 
 // Comment in these lines to deploy & build on heroku...
 // Todo: Cry
-import type { Prisma } from '@prisma/client';
+import type { Prisma } from "@prisma/client";
 
 import pkg from '@prisma/client';
 const { PrismaClient } = pkg;

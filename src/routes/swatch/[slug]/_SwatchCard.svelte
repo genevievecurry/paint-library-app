@@ -34,10 +34,6 @@
   const editable = getContext('editable');
   const hex = getContext('hex');
 
-  if (editable) {
-    papers = getContext('papers');
-  }
-
   const timeAgo = () => {
     const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
     const now = new Date();
@@ -340,7 +336,7 @@
             <input type="hidden" name="uploadUrl" id="uploadUrl" value="{imageKitData.url}" />
 
             <fieldset class="p-6">
-              <div class="mt-6">
+              <!-- <div class="mt-6">
                 <label for="paperId" class="block text-sm text-gray-500">Paper Type</label>
 
                 <select
@@ -354,7 +350,7 @@
                     </option>
                   {/each}
                 </select>
-              </div>
+              </div> -->
 
               <div class="mt-6">
                 <label for="description" class="block text-sm text-gray-500"
