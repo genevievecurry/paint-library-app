@@ -180,7 +180,7 @@ async function updateSwatchCard({
     data: {
       paper: {
         connect: {
-          id: Number(data.get('paperId')),
+          id: 1,
         },
       },
       description: data.get('description'),

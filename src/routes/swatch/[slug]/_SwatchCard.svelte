@@ -354,9 +354,10 @@
 
               <div class="mt-6">
                 <label for="description" class="block text-sm text-gray-500"
-                  >Swatch Description</label
+                  >Swatch Description *</label
                 >
                 <textarea
+                  required
                   id="description"
                   name="description"
                   class="mt-2 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
