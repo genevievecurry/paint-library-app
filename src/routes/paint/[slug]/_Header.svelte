@@ -1,6 +1,6 @@
-<script>
-  export let title;
-  export let manufacturerName;
+<script lang="ts">
+  export let title: string;
+  export let manufacturerName: string;
 </script>
 
 <header class="my-6">

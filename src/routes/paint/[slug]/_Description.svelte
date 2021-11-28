@@ -1,8 +1,8 @@
-<script>
-  export let communityDescription;
-  export let manufacturerDescription;
-  export let manufacturerPigmentDescription;
-  export let manufacturerName;
+<script lang="ts">
+  export let communityDescription: string;
+  export let manufacturerDescription: string;
+  export let manufacturerPigmentDescription: string;
+  export let manufacturerName: string;
 </script>
 
 {#if manufacturerDescription}
