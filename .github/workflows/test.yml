@@ -6,15 +6,6 @@ on:
   pull_request:
     branches: [ $default-branch ]
   workflow_dispatch:
-    inputs:
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
-        default: 'The Octoverse'
 jobs:
   build:
     runs-on: ubuntu-latest
