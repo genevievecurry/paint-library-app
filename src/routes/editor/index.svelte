@@ -1,7 +1,7 @@
 <script>
   import Editor from './_Editor.svelte';
 
-  let tempSwatch = {
+  let tempPaint = {
     productColorName: 'Some random name',
     slug: 'some-random-new-slug',
     authorId: 1,
@@ -19,4 +19,4 @@
   };
 </script>
 
-<Editor swatch="{tempSwatch}" />
+<Editor paint="{tempPaint}" />

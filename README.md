@@ -25,7 +25,18 @@ npm run dev -- --open
 
 This project uses Prisma.io & PostgreSQL.
 
+Note: the following is important at the beginning of the first migration.sql:
+
+```
+CREATE EXTENSION IF NOT EXISTS citext;
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+```
+
 Schema is: [schema.prisma](./prisma/schema.prisma)
+
+**Introspect**
+
+`npx prisma db pull`
 
 **Run Migrations:**
 

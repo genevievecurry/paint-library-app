@@ -226,16 +226,16 @@ async function main() {
     },
   });
 
-  let watercolorSwatch = await prisma.swatch.upsert({
-    where: { slug: 'watercolor-swatch' },
+  let watercolor = await prisma.paint.upsert({
+    where: { slug: 'test-paint' },
     update: {},
     create: {
-      slug: 'watercolor-swatch',
+      slug: 'test-paint',
       published: true,
       authorId: adminUser.id,
       manufacturerId: manufacturer.id,
       paintTypeId: paintType.id,
-      productColorName: 'Test Watercolor Swatch',
+      productColorName: 'Test Paint',
       communityDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
       manufacturerDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
       manufacturerPigmentDescription: 'Some pigment | Series 3',
@@ -283,7 +283,7 @@ async function main() {
           },
         ],
       },
-      swatchCardsOnSwatch: {
+      swatchCardsOnPaint: {
         create: {
           gradient: {
             create: {
@@ -375,15 +375,15 @@ async function main() {
     data: [
       {
         authorId: adminUser.id,
-        swatchId: watercolorSwatch.id,
+        paintId: watercolor.id,
         approved: true,
-        content: 'This is a cool comment about this swatch.',
+        content: 'This is a cool comment about this paint.',
       },
       {
         authorId: memberUser.id,
-        swatchId: watercolorSwatch.id,
+        paintId: watercolor.id,
         approved: true,
-        content: 'This is a totally uncool comment about this swatch.',
+        content: 'This is a totally uncool comment about this paint.',
       },
     ],
   });
@@ -396,14 +396,14 @@ async function main() {
     data: [
       {
         authorId: adminUser.id,
-        swatchId: watercolorSwatch.id,
+        paintId: watercolor.id,
         approved: true,
         content: 'This is a cool reply to this note.',
         noteId: parentNote.id,
       },
       {
         authorId: memberUser.id,
-        swatchId: watercolorSwatch.id,
+        paintId: watercolor.id,
         approved: true,
         content: 'This is a totally uncool reply to this note.',
         noteId: parentNote.id,
@@ -427,7 +427,7 @@ async function main() {
     swatchCardTypes,
     adminUser,
     memberUser,
-    watercolorSwatch,
+    watercolor,
     notes,
     childNotes,
     tags,

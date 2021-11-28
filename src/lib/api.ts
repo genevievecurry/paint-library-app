@@ -29,7 +29,7 @@ const swatchCardSelect: Prisma.SwatchCardSelect = {
   imageKitUpload: true,
 };
 
-const swatchSelect: Prisma.SwatchSelect = {
+const paintSelect: Prisma.SwatchSelect = {
   id: true,
   createdAt: true,
   updatedAt: true,
@@ -102,7 +102,7 @@ const swatchSelect: Prisma.SwatchSelect = {
       },
     },
   },
-  swatchCardsOnSwatch: {
+  swatchCardsOnPaint: {
     select: {
       gradient: { select: swatchCardSelect },
       granulation: { select: swatchCardSelect },
@@ -150,7 +150,7 @@ const swatchSelect: Prisma.SwatchSelect = {
   // },
 };
 
-const createSwatchSelect: Prisma.SwatchSelect = {
+const createPaintSelect: Prisma.PaintSelect = {
   slug: true,
   productColorName: true,
   authorId: true,
@@ -164,7 +164,7 @@ const createSwatchSelect: Prisma.SwatchSelect = {
   manufacturerPigmentDescription: true,
   communityDescription: true,
   pigments: true,
-  swatchCardsOnSwatch: true,
+  swatchCardsOnPaint: true,
   hex: true,
   // tags: true,
 };
@@ -199,10 +199,10 @@ async function updateSwatchCard({
   return { status: 200, body };
 }
 
-export async function getSwatches() {
+export async function getPaints() {
   return {
     status: 200,
-    body: await prisma.swatch.findMany(),
+    body: await prisma.paint.findMany(),
   };
 }
 
@@ -221,11 +221,11 @@ async function send({
   let status = 500;
 
   if (method === 'GET' && !model && slug) {
-    body = await prisma.swatch.findUnique({
+    body = await prisma.paint.findUnique({
       where: {
         slug,
       },
-      select: swatchSelect,
+      select: paintSelect,
     });
     status = 200;
   }
@@ -251,7 +251,7 @@ async function send({
     //   });
     // }
 
-    body = await prisma.swatch.create({
+    body = await prisma.paint.create({
       data: {
         slug: data.get('slug'),
         productColorName: data.get('productColorName'),
@@ -266,7 +266,7 @@ async function send({
         manufacturerPigmentDescription: data.get('manufacturerPigmentDescription'),
         communityDescription: data.get('communityDescription'),
         hex: data.get('hex'),
-        swatchCardsOnSwatch: {
+        swatchCardsOnPaint: {
           create: {
             gradient: {
               create: {
@@ -326,7 +326,7 @@ async function send({
         //   },
         // },
       },
-      select: createSwatchSelect,
+      select: createPaintSelect,
     });
     status = 200;
   }
