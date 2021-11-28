@@ -1,9 +1,5 @@
-/**
- * @jest-environment jsdom
- */
-
 import { render } from '@testing-library/svelte';
-import Description from '../_Description.svelte';
+import Description from './_Description.svelte';
 
 const validProps = {
   communityDescription: 'communityDescription',
