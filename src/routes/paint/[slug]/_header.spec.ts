@@ -1,9 +1,5 @@
-/**
- * @jest-environment jsdom
- */
-
 import { render } from '@testing-library/svelte';
-import Header from '../_Header.svelte';
+import Header from './_Header.svelte';
 
 const validProps = {
   title: 'Some Cool Paint',

@@ -41,7 +41,7 @@
     "seed": "prisma db seed",
     "migrate:dev": "prisma migrate dev",
     "migrate:reset": "prisma migrate reset",
-    "test": "jest src",
+    "test": "jest src --env=jsdom",
     "test:watch": "npm run test -- --watch"
   },
   "devDependencies": {
