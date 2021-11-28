@@ -39,10 +39,7 @@
 </script>
 
 {#if paintData}
-  <Header
-    title="{paintData.productColorName}"
-    manufacturerName="{paintData.manufacturer?.name}"
-  />
+  <Header title="{paintData.productColorName}" manufacturerName="{paintData.manufacturer?.name}" />
   <SwatchCards swatchCardData="{paintData.swatchCardsOnPaint}" />
   <div class="flex">
     <div class="flex-auto">
