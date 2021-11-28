@@ -18,6 +18,8 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm run start:deps
+    - name: Add build dir
+      run: mkdir build
     - name: Build
       run: npm run start:build
     - name: Run test suite
