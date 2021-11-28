@@ -5,7 +5,7 @@
     if (response.ok) {
       return {
         props: {
-          swatches: await response.json(),
+          paints: await response.json(),
         },
       };
     }
@@ -18,7 +18,7 @@
 </script>
 
 <script>
-  export let swatches;
+  export let paints;
 </script>
 
 <svelte:head>
@@ -26,7 +26,7 @@
 </svelte:head>
 
 <ul>
-  {#each swatches as swatch}
-    <li><a sveltekit:prefetch href="{`swatch/${swatch.slug}`}">{swatch.productColorName}</a></li>
+  {#each paints as paint}
+    <li><a sveltekit:prefetch href="{`paint/${paint.slug}`}">{paint.productColorName}</a></li>
   {/each}
 </ul>

@@ -2,7 +2,7 @@
   import { goto } from '$app/navigation';
   import { generateSlug } from '$lib/slug';
 
-  export let swatch;
+  export let paint;
 
   let manufacturerPromise = getManufacturers();
   let pigmentPromise = getPigments();
@@ -62,15 +62,15 @@
   }
 
   function onChangeValue(event) {
-    swatch[event.target.name] = Number(event.target.value);
+    paint[event.target.name] = Number(event.target.value);
   }
 
   function onClickLabel(event) {
-    swatch[event.target.dataset.name] = Number(event.target.dataset.value);
+    paint[event.target.dataset.name] = Number(event.target.dataset.value);
   }
 
   function updateSlug(event) {
-    swatch.slug = generateSlug({ value: event.target.value, uuid: true });
+    paint.slug = generateSlug({ value: event.target.value, uuid: true });
   }
 
   const onsubmit = () => {
@@ -79,7 +79,7 @@
 
   const onresponse = async (res) => {
     if (res.ok) {
-      goto(`/swatch/${swatch.slug}`);
+      goto(`/paint/${paint.slug}`);
     }
     // Todo: Handle when things go wrong?
   };
@@ -113,9 +113,9 @@
   }
 </script>
 
-<h1 class="font-extrabold text-4xl">Create a New Swatch</h1>
+<h1 class="font-extrabold text-4xl">Add a Paint</h1>
 
-<form action="swatch/create.json" method="post" use:ajax="{{ onsubmit, onresponse }}">
+<form action="paint/create.json" method="post" use:ajax="{{ onsubmit, onresponse }}">
   <fieldset class="mt-10">
     <div class="grid grid-cols-6 gap-6">
       <div class="col-span-6 sm:col-span-3">
@@ -142,7 +142,7 @@
         </p>
         <input
           type="text"
-          bind:value="{swatch.productColorName}"
+          bind:value="{paint.productColorName}"
           on:keyup="{updateSlug}"
           id="productColorName"
           name="productColorName"
@@ -154,7 +154,7 @@
         <p class="text-sm text-gray-500">This will be auto-generated for optimal uniqueness. </p>
         <input
           type="text"
-          bind:value="{swatch.slug}"
+          bind:value="{paint.slug}"
           readonly
           id="slug"
           name="slug"
@@ -177,8 +177,8 @@
               name="authorId"
               type="radio"
               class="focus:ring-green-400 focus:border-green-400 border-gray-300 mr-3"
-              bind:group="{swatch.authorId}"
-              value="{swatch.authorId}"
+              bind:group="{paint.authorId}"
+              value="{paint.authorId}"
               on:change="{onChangeValue}"
             />
             Me
@@ -198,8 +198,8 @@
               name="paintTypeId"
               type="radio"
               class="focus:ring-green-400 focus:border-green-400 border-gray-300 mr-3"
-              bind:group="{swatch.paintTypeId}"
-              value="{swatch.paintTypeId}"
+              bind:group="{paint.paintTypeId}"
+              value="{paint.paintTypeId}"
               on:change="{onChangeValue}"
             />
 
@@ -224,7 +224,7 @@
             <select
               id="manufacturerId"
               name="manufacturerId"
-              bind:value="{swatch.manufacturerId}"
+              bind:value="{paint.manufacturerId}"
               on:change="{onChangeValue}"
               class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
             >
@@ -244,7 +244,7 @@
             >Manufacturer Description</label
           >
           <textarea
-            bind:value="{swatch.manufacturerDescription}"
+            bind:value="{paint.manufacturerDescription}"
             id="manufacturerDescription"
             name="manufacturerDescription"
             class="mt-2 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
@@ -256,7 +256,7 @@
             >Manufacturer Pigment Description</label
           >
           <textarea
-            bind:value="{swatch.manufacturerPigmentDescription}"
+            bind:value="{paint.manufacturerPigmentDescription}"
             id="manufacturerPigmentDescription"
             name="manufacturerPigmentDescription"
             class="mt-2 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
@@ -277,7 +277,7 @@
             >Is there another common description of this paint?</label
           >
           <textarea
-            bind:value="{swatch.communityDescription}"
+            bind:value="{paint.communityDescription}"
             id="communityDescription"
             name="communityDescription"
             class="mt-2 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
@@ -302,7 +302,7 @@
               multiple
               id="pigments"
               name="pigments"
-              bind:value="{swatch.pigments}"
+              bind:value="{paint.pigments}"
               class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
             >
               {#each pigments as pigment}
@@ -327,7 +327,7 @@
       </div>
       <div class="col-span-6 sm:col-span-3">
         <span class="font-extrabold text-2xl"
-          >{setRatingLabel(lightfastRatings, swatch.lightfastRatingId)}</span
+          >{setRatingLabel(lightfastRatings, paint.lightfastRatingId)}</span
         >
       </div>
     </div>
@@ -336,7 +336,7 @@
       type="range"
       min="{1}"
       max="{6}"
-      value="{swatch.lightfastRatingId}"
+      value="{paint.lightfastRatingId}"
       name="lightfastRatingId"
       id="lightfastRatingId"
       on:change="{onChangeValue}"
@@ -389,7 +389,7 @@
       </div>
       <div class="col-span-6 sm:col-span-3">
         <span class="font-extrabold text-2xl"
-          >{setRatingLabel(transparencyRatings, swatch.transparencyRatingId)}</span
+          >{setRatingLabel(transparencyRatings, paint.transparencyRatingId)}</span
         >
       </div>
     </div>
@@ -398,7 +398,7 @@
       type="range"
       min="{1}"
       max="{5}"
-      value="{swatch.transparencyRatingId}"
+      value="{paint.transparencyRatingId}"
       name="transparencyRatingId"
       id="transparencyRatingId"
       on:change="{onChangeValue}"
@@ -445,7 +445,7 @@
       </div>
       <div class="col-span-6 sm:col-span-3">
         <span class="font-extrabold text-2xl"
-          >{setRatingLabel(stainingRatings, swatch.stainingRatingId)}</span
+          >{setRatingLabel(stainingRatings, paint.stainingRatingId)}</span
         >
       </div>
     </div>
@@ -454,7 +454,7 @@
       type="range"
       min="{1}"
       max="{5}"
-      value="{swatch.stainingRatingId}"
+      value="{paint.stainingRatingId}"
       name="stainingRatingId"
       id="stainingRatingId"
       on:change="{onChangeValue}"
@@ -516,7 +516,7 @@
             class="focus:ring-green-400 h-4 w-4 text-green-400 border-gray-300 mr-3"
             value="{1}"
             on:change="{onChangeValue}"
-            bind:group="{swatch.granulationRatingId}"
+            bind:group="{paint.granulationRatingId}"
           />
           Unknown
         </label>
@@ -529,7 +529,7 @@
             class="focus:ring-green-400 h-4 w-4 text-green-400 border-gray-300 mr-3"
             value="{2}"
             on:change="{onChangeValue}"
-            bind:group="{swatch.granulationRatingId}"
+            bind:group="{paint.granulationRatingId}"
           />
           Yes
         </label>
@@ -543,7 +543,7 @@
             class="focus:ring-green-400 h-4 w-4 text-green-400 border-gray-300 mr-3"
             value="{3}"
             on:change="{onChangeValue}"
-            bind:group="{swatch.granulationRatingId}"
+            bind:group="{paint.granulationRatingId}"
           />
           No
         </label>
