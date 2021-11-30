@@ -1,9 +1,17 @@
-<script>
-  export let pigments;
+<script lang="ts">
+  import type { Color, Pigment } from '.prisma/client';
+
+  export let pigmentsOnPaints: { pigment: Pigment }[];
+
+  interface PigmentComponent extends Pigment {
+    color?: Color;
+  }
+
+  const pigments: PigmentComponent[] = pigmentsOnPaints.map((pop) => pop.pigment);
 
   // Todo: Move this into a utility?
-  function pigmentCode(pigmentType, pigmentNumber, colorCode) {
-    let convertedType;
+  function pigmentCode(pigmentType: string, pigmentNumber: number, colorCode: string) {
+    let convertedType: string;
 
     switch (pigmentType) {
       case 'CIPIGMENT':
@@ -16,7 +24,7 @@
         convertedType = '';
     }
 
-    return convertedType + colorCode + pigmentNumber;
+    return convertedType + colorCode + pigmentNumber.toString();
   }
 </script>
 
@@ -25,19 +33,19 @@
 
   {#if pigments.length < 1}<span class="block my-4 text-gray-400">No pigments added yet.</span>{/if}
 
-  {#each pigments as item}
+  {#each pigments as pigment}
     <div class="flex my-4">
       <div class="mr-4"
         ><img
           class="border border-black"
           src="https://placekitten.com/50/50"
-          alt="{item.pigment.name}"
+          alt="{pigment.name}"
         /></div
       >
       <div>
-        {pigmentCode(item.pigment.type, item.pigment.number, item.pigment.color?.code)}
-        <span>{item.pigment.name}</span>
-        <span class="block text-gray-500 text-xs">{item.pigment.color?.label}</span>
+        {pigmentCode(pigment.type, pigment.number, pigment.color?.code)}
+        <span>{pigment.name}</span>
+        <span class="block text-gray-500 text-xs">{pigment.color?.label}</span>
       </div>
     </div>
   {/each}

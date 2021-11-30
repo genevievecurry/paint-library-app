@@ -1,38 +1,40 @@
 <style>
   .swatch-card {
-    @apply border border-black p-1 relative;
     min-height: 125px;
-  }
-
-  .swatch-image {
-    @apply h-full w-full bg-cover bg-center;
   }
 </style>
 
-<script>
+<script lang="ts">
+  import { goto } from '$app/navigation';
   import { getContext } from 'svelte';
   import imagekit from '$lib/config/imagekit';
-  import { goto } from '$app/navigation';
-  export let id;
-  export let updatedAt;
-  export let createdAt;
-  export let swatchCardType;
-  export let paper;
-  export let author;
-  export let description;
-  export let imageKitUpload;
-  export let tall;
+  import type { ImageKitUpload, Paper, SwatchCardType, User } from '.prisma/client';
 
-  let papers = [];
-  let userImageUpload;
-  let imageKitData = {};
+  export let id: number;
+  export let updatedAt: Date;
+  export let swatchCardType: SwatchCardType;
+  export let paper: Paper;
+  export let author: User;
+  export let description: string;
+  export let imageKitUpload: ImageKitUpload;
+  export let tall: boolean;
+
+  let userImageUpload: any;
+  let imageKitData = {
+    fileId: null,
+    filePath: null,
+    name: null,
+    thumbnailUrl: null,
+    url: null,
+  };
   let modalVisible = false;
   let swatchActionsVisible = false;
-  let saving = false; // Todo handle waiting state
+  // let saving = false; // Todo handle waiting state
+  // let papers = []; // Todo fix paper problems
 
-  const slug = getContext('slug');
-  const editable = getContext('editable');
-  const hex = getContext('hex');
+  const slug: string = getContext('slug');
+  const editable: boolean = getContext('editable');
+  const hex: string = getContext('hex');
 
   const timeAgo = () => {
     const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
@@ -44,10 +46,6 @@
     const hoursBetween = Math.floor(secondsBetween / (60 * 60));
     const daysBetween = Math.floor(secondsBetween / (60 * 60 * 24));
 
-    console.log(now);
-    console.log(secondsBetween);
-    console.log(hoursBetween);
-    console.log(daysBetween);
     if (daysBetween === 0 && hoursBetween < 12 && hoursBetween > 0) {
       return rtf.format(-hoursBetween, 'hour');
     } else if (daysBetween === 0 && hoursBetween === 0) {
@@ -56,7 +54,7 @@
     return rtf.format(-daysBetween, 'day');
   };
 
-  function onChooseUpload(event) {
+  function onChooseUpload(event: any) {
     userImageUpload = event.target.files[0];
   }
 
@@ -68,7 +66,7 @@
     swatchActionsVisible = !swatchActionsVisible;
   }
 
-  // Todo: Move this into a utility - duplicated in _Editor.svelte
+  // Todo: Move this into a utility - duplicated in _Creator.svelte
   async function uploadImage() {
     imagekit.upload(
       {
@@ -87,28 +85,25 @@
     );
   }
 
-  const onsubmit = () => {
-    saving = true;
+  function onsubmit() {
     modalVisible = false;
-  };
+  }
 
-  const onresponse = async (res) => {
-    // Todo: Fix, page is not reloading
+  async function onresponse(res: any): Promise<void> {
     if (res.ok) {
-      goto(`/swatch/${slug}`);
+      goto(`/paint/${slug}`);
     } else {
       console.log(res);
     }
-  };
-  const noop = () => {};
+  }
 
-  async function ajax(node, { onsubmit = noop, onresponse = noop }) {
-    const handler = async (event) => {
+  function upload(node: HTMLFormElement): SvelteActionReturnType {
+    const handler = async (event: any) => {
       const body = new FormData(node);
       event.preventDefault();
       onsubmit();
 
-      const response = await fetch(node.action, {
+      const response: Response = await fetch(node.action, {
         method: node.method,
         body,
         headers: {
@@ -116,19 +111,19 @@
         },
       });
 
-      // @ts-ignore
       onresponse(response);
     };
     node.addEventListener('submit', handler);
 
     return {
+      update() {},
       destroy() {
         node.removeEventListener('submit', handler);
       },
     };
   }
 
-  let background;
+  let background: string;
   // todo: Handle the other swatch situations; will likely need some assets
   switch (swatchCardType?.name) {
     case 'GRADIENT':
@@ -148,7 +143,7 @@
   }
 </script>
 
-<div class="{`swatch-card ${tall ? 'md:row-span-full' : ''}`}">
+<div class="{`swatch-card border border-black p-1 relative ${tall ? 'md:row-span-full' : ''}`}">
   <div class="absolute left-0 top-0 {swatchActionsVisible ? 'z-10' : ''}">
     <div class="bg-white p-1 flex items-center">
       <div class="cursor-pointer" on:click="{showSwatchActions}">
@@ -237,7 +232,9 @@
   </div>
 
   {#if imageKitUpload?.url}
-    <div class="swatch-image" style="{`background-image: url(${imageKitUpload.url})`}"></div>
+    <div
+      class="h-full w-full bg-cover bg-center"
+      style="{`background-image: url(${imageKitUpload.url})`}"></div>
   {:else}
     <div class="empty-swatch h-full p-2 z-0" style="{`background: ${background}`}"></div>
   {/if}
@@ -286,7 +283,7 @@
                 Contribute a {swatchCardType.label} Swatch
               </h3>
               <p class="text-sm text-gray-500 mt-2">Instructions: {swatchCardType.description}</p>
-              {#if !imageKitData.fileId}
+              {#if !imageKitData?.fileId}
                 <div class="my-4">
                   <input
                     type="file"
@@ -311,7 +308,7 @@
           </div>
         </div>
 
-        <form action="/swatch/edit.json" method="post" use:ajax="{{ onsubmit, onresponse }}">
+        <form action="/paint/edit.json" method="post" use:upload>
           {#if imageKitData.fileId}
             <input type="hidden" name="id" id="id" value="{id}" />
             <input

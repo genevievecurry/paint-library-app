@@ -1,6 +1,6 @@
 export const key = {};
 
-export async function fetchPapers() {
+export async function fetchPapers(): Promise<Response> {
   console.log('fetchPapers()');
   const res = await fetch(`/model/paper.json`);
 

@@ -7,7 +7,7 @@
       return {
         props: {
           slug: page.params.slug,
-          paintData: await response.json(),
+          paint: await response.json(),
         },
       };
     }
@@ -19,7 +19,7 @@
   }
 </script>
 
-<script>
+<script lang="ts">
   import { setContext } from 'svelte';
   import SwatchCards from './_SwatchCards.svelte';
   import Header from './_Header.svelte';
@@ -28,40 +28,52 @@
   import Pigments from './_Pigments.svelte';
   // import Tags from './_Tags.svelte';
   import Notes from './_Notes.svelte';
+  // import type { Paint, Manufacturer, LightfastRating, TransparencyRating, StainingRating, GranulationRating, Pigment } from '.prisma/client';
 
-  export let slug;
-  export let paintData;
+  // interface PaintComponent extends Paint {
+  //   manufacturer: Manufacturer
+  //   swatchCardsOnPaint: SwatchCardsCollection
+  //   lightfastRating: LightfastRating
+  //   transparencyRating: TransparencyRating
+  //   stainingRating: StainingRating
+  //   granulationRating: GranulationRating
+  //   pigmentsOnPaints: { pigment: Pigment;}[]
+  //   notes: Notes
+  // }
+
+  export let slug: string;
+  export let paint: PaintComponent;
 
   setContext('slug', slug);
   setContext('editable', true);
 
-  if (paintData) setContext('hex', paintData.hex);
+  if (paint) setContext('hex', paint.hex);
 </script>
 
-{#if paintData}
-  <Header title="{paintData.productColorName}" manufacturerName="{paintData.manufacturer?.name}" />
-  <SwatchCards swatchCardData="{paintData.swatchCardsOnPaint}" />
+{#if paint}
+  <Header title="{paint.productColorName}" manufacturerName="{paint.manufacturer?.name}" />
+  <SwatchCards swatchCardsOnPaint="{paint.swatchCardsOnPaint}" />
   <div class="flex">
     <div class="flex-auto">
       <Ratings
-        lightfastRating="{paintData.lightfastRating}"
-        transparencyRating="{paintData.transparencyRating}"
-        stainingRating="{paintData.stainingRating}"
-        granulationRating="{paintData.granulationRating}"
+        lightfastRating="{paint.lightfastRating}"
+        transparencyRating="{paint.transparencyRating}"
+        stainingRating="{paint.stainingRating}"
+        granulationRating="{paint.granulationRating}"
       />
       <Description
-        communityDescription="{paintData.communityDescription}"
-        manufacturerDescription="{paintData.manufacturerDescription}"
-        manufacturerPigmentDescription="{paintData.manufacturerPigmentDescription}"
-        manufacturerName="{paintData.manufacturer?.name}"
+        communityDescription="{paint.communityDescription}"
+        manufacturerDescription="{paint.manufacturerDescription}"
+        manufacturerPigmentDescription="{paint.manufacturerPigmentDescription}"
+        manufacturerName="{paint.manufacturer?.name}"
       />
     </div>
     <div class="flex-none w-96 pl-8">
-      <Pigments pigments="{paintData.pigments}" />
-      <!-- <Tags tags="{paintData.tags}" /> -->
+      <Pigments pigmentsOnPaints="{paint.pigmentsOnPaints}" />
+      <!-- <Tags tags="{paint.tags}" /> -->
     </div>
   </div>
-  <Notes notes="{paintData.notes}" />
+  <Notes notes="{paint.notes}" />
 {:else}
   LOADING!
 {/if}

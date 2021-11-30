@@ -1,5 +1,5 @@
 <script context="module">
-  export async function load({ page, fetch }) {
+  export async function load({ fetch }) {
     const response = await fetch('index.json');
 
     if (response.ok) {

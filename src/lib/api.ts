@@ -1,20 +1,19 @@
 import type { ReadOnlyFormData } from '@sveltejs/kit/types/helper';
 
 // Comment in this line for local development
-// import { Prisma, PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient } from '@prisma/client';
 
 // Comment in these lines to deploy & build on heroku...
 // Todo: Cry
-import type { Prisma } from '@prisma/client';
+// import type { Prisma } from '@prisma/client';
 
-import pkg from '@prisma/client';
-const { PrismaClient } = pkg;
+// import pkg from '@prisma/client';
+// const { PrismaClient } = pkg;
 
 const prisma = new PrismaClient();
 
 const swatchCardSelect: Prisma.SwatchCardSelect = {
   id: true,
-  createdAt: true,
   updatedAt: true,
   swatchCardType: true,
   paper: {
@@ -29,7 +28,7 @@ const swatchCardSelect: Prisma.SwatchCardSelect = {
   imageKitUpload: true,
 };
 
-const paintSelect: Prisma.SwatchSelect = {
+const paintSelect: Prisma.PaintSelect = {
   id: true,
   createdAt: true,
   updatedAt: true,
@@ -83,7 +82,7 @@ const paintSelect: Prisma.SwatchSelect = {
       description: true,
     },
   },
-  pigments: {
+  pigmentsOnPaints: {
     select: {
       pigment: {
         select: {
@@ -163,18 +162,15 @@ const createPaintSelect: Prisma.PaintSelect = {
   manufacturerDescription: true,
   manufacturerPigmentDescription: true,
   communityDescription: true,
-  pigments: true,
+  pigmentsOnPaints: true,
   swatchCardsOnPaint: true,
   hex: true,
   // tags: true,
 };
 
 async function updateSwatchCard({
-  method,
   data,
 }): Promise<{ status: number; body: Record<string, unknown> }> {
-  console.log(data);
-
   const body = await prisma.swatchCard.update({
     where: { id: Number(data.get('id')) },
     data: {
@@ -315,7 +311,7 @@ async function send({
             },
           },
         },
-        pigments: {
+        pigmentsOnPaints: {
           createMany: {
             data: pigments,
           },
@@ -345,10 +341,10 @@ export function post(data) {
   return send({ method: 'POST', data });
 }
 
-export function getOption(model) {
+export function getOption(model: string) {
   return send({ method: 'GET', model });
 }
 
 export function edit(data) {
-  return updateSwatchCard({ method: 'POST', data });
+  return updateSwatchCard({ data });
 }
