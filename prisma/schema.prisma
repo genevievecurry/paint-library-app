@@ -81,7 +81,7 @@ model Paint {
   granulationRating              GranulationRating   @relation(fields: [granulationRatingId], references: [id])
   granulationRatingId            Int
   swatchCardsOnPaint             SwatchCardsOnPaint?
-  pigments                       PigmentsOnPaints[]
+  pigmentsOnPaints               PigmentsOnPaints[]
   notes                          Note[]
   tags                           TagsOnPaints[]
 

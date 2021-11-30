@@ -244,7 +244,7 @@ async function main() {
       stainingRatingId: stainingRating.id,
       granulationRatingId: granulationRating.id,
       hex: '#ffbf00',
-      pigments: {
+      pigmentsOnPaints: {
         create: [
           {
             pigment: {

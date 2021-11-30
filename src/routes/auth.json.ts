@@ -3,7 +3,7 @@ import { randomUUID } from 'crypto';
 
 export async function get(): Promise<{ status: number; body: unknown }> {
   const token = randomUUID();
-  const expire = parseInt(Date.now() / 1000) + 2400;
+  const expire = Math.round(Number(Date.now()) / 1000) + 2400;
   const signature = generateImagekitSignature({ token: token, expire: expire });
 
   const response = {

@@ -1,13 +1,13 @@
 <style>
   .swatch-card-collection {
-    @apply grid gap-1;
     min-height: 400px;
   }
 </style>
 
 <script lang="ts">
-  export let swatchCardData;
-  import SwatchCard from './_SwatchCard.svelte';
+  import Card from './_Card.svelte';
+
+  export let swatchCardsOnPaint: SwatchCardsCollection;
 
   const {
     gradient,
@@ -19,21 +19,21 @@
     glaze,
     wetLift,
     dryLift,
-  } = swatchCardData;
+  } = swatchCardsOnPaint;
 </script>
 
 <section
-  class="swatch-card-collection grid grid-cols-1 grid-rows-9 sm:grid-cols-3 sm:grid-rows-3 md:grid-cols-5"
+  class="swatch-card-collection grid gap-1 grid-cols-1 grid-rows-9 sm:grid-cols-3 sm:grid-rows-3 md:grid-cols-5"
 >
-  <SwatchCard {...masstone} tall="{true}" />
-  <SwatchCard {...gradient} tall="{true}" />
-  <SwatchCard {...highDilution} tall="{true}" />
+  <Card {...masstone} tall="{true}" />
+  <Card {...gradient} tall="{true}" />
+  <Card {...highDilution} tall="{true}" />
 
-  <SwatchCard {...midDilution} tall="{false}" />
-  <SwatchCard {...granulation} tall="{false}" />
-  <SwatchCard {...dispersement} tall="{false}" />
+  <Card {...midDilution} tall="{false}" />
+  <Card {...granulation} tall="{false}" />
+  <Card {...dispersement} tall="{false}" />
 
-  <SwatchCard {...glaze} tall="{false}" />
-  <SwatchCard {...wetLift} tall="{false}" />
-  <SwatchCard {...dryLift} tall="{false}" />
+  <Card {...glaze} tall="{false}" />
+  <Card {...wetLift} tall="{false}" />
+  <Card {...dryLift} tall="{false}" />
 </section>
