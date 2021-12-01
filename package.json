@@ -78,6 +78,7 @@
     "@prisma/client": "^3.3.0",
     "@sveltejs/adapter-node": "next",
     "@sveltejs/kit": "next",
+    "dotenv": "^10.0.0",
     "imagekit-javascript": "^1.4.2",
     "uuid": "^8.3.2"
   }

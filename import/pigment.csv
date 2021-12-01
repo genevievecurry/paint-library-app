@@ -1,0 +1,151 @@
+type,name,number,colorCode
+CINATURAL,Indigo,1,B
+CINATURAL,Vandyke Brown,8,Br
+CINATURAL,Rose Madder,9,R
+CIPIGMENT,Victoria Blue,1,B
+CIPIGMENT,Phthalo Blue,15,B
+CIPIGMENT,Phthalo Turquoise,16,B
+CIPIGMENT,Prussian Blue,27,B
+CIPIGMENT,Cobalt Blue,28,B
+CIPIGMENT,French Ultramarine,29,B
+CIPIGMENT,Cerulean Blue,35,B
+CIPIGMENT,Cobalt Chromite,36,B
+CIPIGMENT,Indanthrone Blue,60,B
+CIPIGMENT,Cobalt Zinc Aluminate Blue,72,B
+CIPIGMENT,Cobalt Zinc Silicate Blue,74,B
+CIPIGMENT,Mayan Dark Blue,82,B
+CIPIGMENT,Aniline Black,1,Bk
+CIPIGMENT,Shungite,6,Bk
+CIPIGMENT,Lamp black,7,Bk
+CIPIGMENT,Vine Black,8,Bk
+CIPIGMENT,Bone Black,9,Bk
+CIPIGMENT,Graphite,10,Bk
+CIPIGMENT,Mars Black,11,Bk
+CIPIGMENT,Gold Brown,12,Bk
+CIPIGMENT,Ardoise Grey,19,Bk
+CIPIGMENT,Manganese Ferrite Black,26,Bk
+CIPIGMENT,Perylene Green,31,Bk
+CIPIGMENT,Perylene Green (Deep),32,Bk
+CIPIGMENT,Iron Oxide Hydroxide Brown,6,Br
+CIPIGMENT,Brown Iron Oxide,7,Br
+CIPIGMENT,Lunar Earth,11,Br
+CIPIGMENT,Transparent Brown,23,Br
+CIPIGMENT,Chrome Antimony Titanate,24,Br
+CIPIGMENT,Azo Brown,25,Br
+CIPIGMENT,Mahogany Brown,33,Br
+CIPIGMENT,Transparent Brown,41,Br
+CIPIGMENT,Phthalo Green (Blue Shade),7,G
+CIPIGMENT,Nitroso Green / Hooker's Green,8,G
+CIPIGMENT,Chrome Oxide Green,17,G
+CIPIGMENT,Viridian,18,G
+CIPIGMENT,Cobalt Green,19,G
+CIPIGMENT,Green Earth,23,G
+CIPIGMENT,Cobalt Chromite Green,26,G
+CIPIGMENT,Cobalt Green Deep,27,G
+CIPIGMENT,Phthalo Green (Yellow Shade),36,G
+CIPIGMENT,Cobalt Titanate Green,50,G
+CIPIGMENT,Persian Orange,17,O
+CIPIGMENT,Cadmium Orange,20,O
+CIPIGMENT,Cadmium-Barium Orange,20:1,O
+CIPIGMENT,Pyrazolone Orange,34,O
+CIPIGMENT,Azo Orange Deep,36,O
+CIPIGMENT,Perinone Orange,43,O
+CIPIGMENT,Quinacridone Burnt Orange,48,O
+CIPIGMENT,Nickel Azo Orange,59,O
+CIPIGMENT,Azo Orange,62,O
+CIPIGMENT,Azo Orange,64,O
+CIPIGMENT,Nickel Red,65,O
+CIPIGMENT,Monoazo Orange,67,O
+CIPIGMENT,Transparent Pyrrol Orange,71,O
+CIPIGMENT,Pyrrol Orange,73,O
+CIPIGMENT,Transparent Orange,107,O
+CIPIGMENT,Permanent Bordeaux,12,R
+CIPIGMENT,Rhodamine,81,R
+CIPIGMENT,Alizarin Crimson,83,R
+CIPIGMENT,Thioindigo Violet,88,R
+CIPIGMENT,Synthetic Red Iron Oxide,101,R
+CIPIGMENT,Natural Red Iron Oxide,102,R
+CIPIGMENT,Cadmium Red,108,R
+CIPIGMENT,Naphthol Red,112,R
+CIPIGMENT,Quinacridone Magenta,122,R
+CIPIGMENT,Azo Red,144,R
+CIPIGMENT,Perylene Red,149,R
+CIPIGMENT,Scarlet Red,166,R
+CIPIGMENT,Permanent Scarlet,168,R
+CIPIGMENT,Naphthol Red,170,R
+CIPIGMENT,Benzimidazolone Bordeaux,171,R
+CIPIGMENT,Benzimida Scarlet,175,R
+CIPIGMENT,Benzimida Carmine,176,R
+CIPIGMENT,Anthraquinone Red,177,R
+CIPIGMENT,Perylene Red,178,R
+CIPIGMENT,Perylene Maroon,179,R
+CIPIGMENT,Naphthol Red,187,R
+CIPIGMENT,Vermillion,188,R
+CIPIGMENT,Quinacridone Crimson,202,R
+CIPIGMENT,Quinacridone Burnt Scarlet,206,R
+CIPIGMENT,Quinacridone Red,207,R
+CIPIGMENT,Quinacridone Red,209,R
+CIPIGMENT,Fastogen Super Red,214,R
+CIPIGMENT,Potter's Pink,233,R
+CIPIGMENT,Disazo Condensation Scarlet,242,R
+CIPIGMENT,Vermillion Hue,251,R
+CIPIGMENT,Pyrrol Red,254,R
+CIPIGMENT,Pyrrol Scarlet,255,R
+CIPIGMENT,Ultramarine Pink,258,R
+CIPIGMENT,Ultramarine Pink,259,R
+CIPIGMENT,Permanent Alizarin Crimson,264,R
+CIPIGMENT,Mayan Red,287,R
+CIPIGMENT,Purple,2,V
+CIPIGMENT,Methyl Violet,3,V
+CIPIGMENT,Cobalt Violet,14,V
+CIPIGMENT,Ultramarine Violet ,15,V
+CIPIGMENT,Manganese Violet ,16,V
+CIPIGMENT,Quinacridone Violet,19,V
+CIPIGMENT,Dioxazine Violet,23,V
+CIPIGMENT,Perylene Violet,29,V
+CIPIGMENT,Bordeaux,32,V
+CIPIGMENT,Dioxazine Violet,37,V
+CIPIGMENT,Magenta,42,V
+CIPIGMENT,Cobalt Lithium Violet,47,V
+CIPIGMENT,Cobalt Violet,49,V
+CIPIGMENT,Quinacridone Purple,55,V
+CIPIGMENT,Mayan Violet,58,V
+CIPIGMENT,Chinese White,4,W
+CIPIGMENT,Titanium White,6,W
+CIPIGMENT,Mica,20,W
+CIPIGMENT,Hansa Yellow,1,Y
+CIPIGMENT,Hansa Yellow Lemon,3,Y
+CIPIGMENT,Cadmium Yellow,37,Y
+CIPIGMENT,Aureolin,40,Y
+CIPIGMENT,Yellow Iron Oxide,42,Y
+CIPIGMENT,Natural Yellow Iron Oxide,43,Y
+CIPIGMENT,Nickel Antimony Titanium Yellow Rutile,53,Y
+CIPIGMENT,Lemon Yellow,61,Y
+CIPIGMENT,Hansa Yellow Deep,65,Y
+CIPIGMENT,Hansa Yellow Medium,74,Y
+CIPIGMENT,Diarylide Yellow,83,Y
+CIPIGMENT,Disazo Yellow,93,Y
+CIPIGMENT,Hansa Yellow Medium,97,Y
+CIPIGMENT,Anthrapyrimidine Yellow,108,Y
+CIPIGMENT,Isoindoline Yellow Light,109,Y
+CIPIGMENT,Isoindoline Yellow,110,Y
+CIPIGMENT,Spinel Brown,119,Y
+CIPIGMENT,PV Fast Yellow,120,Y
+CIPIGMENT,Green Gold,129,Y
+CIPIGMENT,Quinaphthalone Yellow,138,Y
+CIPIGMENT,Isoindoline Yellow,139,Y
+CIPIGMENT,Nickel Azo Yellow,150,Y
+CIPIGMENT,Azo Yellow,151,Y
+CIPIGMENT,Nickel Dioxine Yellow,153,Y
+CIPIGMENT,Azo Yellow,154,Y
+CIPIGMENT,Azo Yellow,155,Y
+CIPIGMENT,Zirconium Yellow,159,Y
+CIPIGMENT,Manganese Antimony Titanium Buff Rutile,164,Y
+CIPIGMENT,Azo Yellow,168,Y
+CIPIGMENT,Azo Yellow Lemon,175,Y
+CIPIGMENT,Benzimidazolone Yellow (Red Shade),181,Y
+CIPIGMENT,Paliotol Yellow K227,183,Y
+CIPIGMENT,Bismuth Yellow,184,Y
+CIPIGMENT,Turner's Yellow,216,Y
+CIPIGMENT,Mayan Yellow,223,Y
+CIPIGMENT,NTP Yellow,227,Y

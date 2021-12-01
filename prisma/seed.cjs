@@ -1,7 +1,20 @@
 const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({ log: ["info", "warn"] });
+require('dotenv').config();
 
 async function main() {
+
+  const devMode = process.env.DEV;
+  let manufacturerImport;
+  let pigmentImport;
+
+  if(devMode){
+    // Oi, yes, I know, bad... there's a template literal bug in prisma & I reset the database a lot
+    manufacturerImport = await prisma.$executeRaw`COPY "Manufacturer"(name, website) FROM '/Users/genevievecurry/dev/paint-library-app/import/manufacturer.csv' DELIMITER ',' CSV HEADER;`
+  } else {
+    manufacturerImport = await prisma.$executeRaw`COPY "Manufacturer"(name, website) FROM '/app/import/manufacturer.csv' DELIMITER ',' CSV HEADER;`
+  }
+  
   const unknownManufacturer = await prisma.manufacturer.upsert({
     where: { name: 'Unknown Manufacturer' },
     update: {},
@@ -59,25 +72,12 @@ async function main() {
     ],
   });
 
-  const color = await prisma.color.findFirst({
-    where: { code: 'Y' },
-  });
-
-  const pigment = await prisma.pigment.create({
-    data: {
-      name: 'Nickel Dioxime Yellow',
-      number: 153,
-      colorId: color.id,
-    },
-  });
-
-  const additionalPigments = await prisma.pigment.createMany({
-    data: [
-      { name: 'Diarylide Yellow', number: 98, colorId: color.id },
-      { name: 'Tartrazine Lake', number: 100, colorId: color.id },
-      { name: 'Lumogen Yellow', number: 101, colorId: color.id },
-    ],
-  });
+  if(devMode){
+    // Oi, yes, I know, bad... there's a template literal bug in prisma & I reset the database a lot
+    pigmentImport = await prisma.$executeRaw`COPY "Pigment"(type, name, number, "colorCode") FROM '/Users/genevievecurry/dev/paint-library-app/import/pigment.csv' DELIMITER ',' CSV HEADER;`
+  } else {
+    pigmentImport = await prisma.$executeRaw`COPY "Pigment"(type, name, number, "colorCode") FROM '/app/import/pigment.csv' DELIMITER ',' CSV HEADER;`
+  }
 
   const lightfastRatings = await prisma.lightfastRating.createMany({
     data: [
@@ -249,7 +249,7 @@ async function main() {
           {
             pigment: {
               connect: {
-                id: pigment.id,
+                id: 1,
               },
             },
           },
@@ -412,14 +412,14 @@ async function main() {
   });
 
   console.log({
+    manufacturerImport,
     unknownManufacturer,
     manufacturer,
     unknownPaper,
     paper,
     paintType,
     colors,
-    pigment,
-    additionalPigments,
+    pigmentImport,
     granulationRatings,
     lightfastRatings,
     transparencyRatings,

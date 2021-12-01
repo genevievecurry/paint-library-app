@@ -39,7 +39,7 @@ enum SwatchCardTypeName {
 model User {
   id             Int          @id @default(autoincrement())
   createdAt      DateTime     @default(now())
-  updatedAt      DateTime     @updatedAt
+  updatedAt      DateTime?    @updatedAt
   deleted        Boolean      @default(false)
   email          String       @unique @db.Citext
   hashedPassword String
@@ -54,7 +54,7 @@ model User {
 model Paint {
   id                             Int                 @id @default(autoincrement())
   createdAt                      DateTime            @default(now())
-  updatedAt                      DateTime            @updatedAt
+  updatedAt                      DateTime?           @updatedAt
   deleted                        Boolean             @default(false)
   published                      Boolean             @default(false)
   author                         User                @relation(fields: [authorId], references: [id])
@@ -63,9 +63,9 @@ model Paint {
   manufacturer                   Manufacturer?       @relation(fields: [manufacturerId], references: [id])
   manufacturerId                 Int?
   paintType                      PaintType           @relation(fields: [paintTypeId], references: [id])
+  paintTypeId                    Int
   line                           Line?               @relation(fields: [lineId], references: [id])
   lineId                         Int?
-  paintTypeId                    Int
   productUrl                     String?
   productColorName               String
   communityDescription           String?
@@ -90,19 +90,24 @@ model Paint {
 }
 
 model Pigment {
-  id               Int                @id @default(autoincrement())
-  createdAt        DateTime           @default(now())
-  updatedAt        DateTime           @updatedAt
-  type             PigmentType        @default(CIPIGMENT)
-  name             String
-  number           Int
-  color            Color              @relation(fields: [colorId], references: [id])
-  colorId          Int
-  imageKitUpload   ImageKitUpload?    @relation(fields: [imageKitUploadId], references: [id])
-  imageKitUploadId Int?
-  paints           PigmentsOnPaints[]
+  id                   Int                 @id @default(autoincrement())
+  createdAt            DateTime            @default(now())
+  updatedAt            DateTime?           @updatedAt
+  type                 PigmentType         @default(CIPIGMENT)
+  name                 String
+  number               String
+  hex                  String?
+  color                Color               @relation(fields: [colorCode], references: [code])
+  colorCode            String
+  imageKitUpload       ImageKitUpload?     @relation(fields: [imageKitUploadId], references: [id])
+  imageKitUploadId     Int?
+  lightfastRating      LightfastRating?    @relation(fields: [lightfastRatingId], references: [id])
+  lightfastRatingId    Int?
+  transparencyRating   TransparencyRating? @relation(fields: [transparencyRatingId], references: [id])
+  transparencyRatingId Int?
+  paints               PigmentsOnPaints[]
 
-  @@unique([type, colorId, number])
+  @@unique([type, colorCode, number])
 }
 
 model PigmentsOnPaints {
@@ -137,7 +142,7 @@ model TagsOnPaints {
 model SwatchCard {
   id                     Int                  @id @default(autoincrement())
   createdAt              DateTime             @default(now())
-  updatedAt              DateTime             @updatedAt
+  updatedAt              DateTime?            @updatedAt
   deleted                Boolean              @default(false)
   paper                  Paper?               @relation(fields: [paperId], references: [id])
   paperId                Int?
@@ -186,7 +191,7 @@ model SwatchCardsOnPaint {
 model SwatchCardType {
   id          Int                @id @default(autoincrement())
   createdAt   DateTime           @default(now())
-  updatedAt   DateTime           @updatedAt
+  updatedAt   DateTime?          @updatedAt
   name        SwatchCardTypeName @unique
   label       String
   description String
@@ -196,7 +201,7 @@ model SwatchCardType {
 model Paper {
   id             Int           @id @default(autoincrement())
   createdAt      DateTime      @default(now())
-  updatedAt      DateTime      @updatedAt
+  updatedAt      DateTime?     @updatedAt
   swatchCards    SwatchCard[]
   manufacturer   Manufacturer? @relation(fields: [manufacturerId], references: [id])
   manufacturerId Int?
@@ -207,25 +212,25 @@ model Paper {
 }
 
 model Note {
-  id         Int      @id @default(autoincrement())
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-  author     User     @relation(fields: [authorId], references: [id])
+  id         Int       @id @default(autoincrement())
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime? @updatedAt
+  author     User      @relation(fields: [authorId], references: [id])
   authorId   Int
-  paint      Paint    @relation(fields: [paintId], references: [id])
+  paint      Paint     @relation(fields: [paintId], references: [id])
   paintId    Int
-  approved   Boolean  @default(false)
+  approved   Boolean   @default(false)
   content    String
-  childNotes Note[]   @relation("NoteToNote")
-  note       Note?    @relation("NoteToNote", fields: [noteId], references: [id])
+  childNotes Note[]    @relation("NoteToNote")
+  note       Note?     @relation("NoteToNote", fields: [noteId], references: [id])
   noteId     Int?
 }
 
 model Manufacturer {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name      String   @unique @db.Citext
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+  name      String    @unique @db.Citext
   website   String?
   paints    Paint[]
   papers    Paper[]
@@ -235,7 +240,7 @@ model Manufacturer {
 model Line {
   id             Int           @id @default(autoincrement())
   createdAt      DateTime      @default(now())
-  updatedAt      DateTime      @updatedAt
+  updatedAt      DateTime?     @updatedAt
   manufacturer   Manufacturer? @relation(fields: [manufacturerId], references: [id])
   manufacturerId Int?
   name           String        @unique @db.Citext
@@ -244,18 +249,18 @@ model Line {
 }
 
 model PaintType {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  label     String   @unique
-  slug      String   @unique
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+  label     String    @unique
+  slug      String    @unique
   paints    Paint[]
 }
 
 model Color {
   id        Int       @id @default(autoincrement())
   createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  updatedAt DateTime? @updatedAt
   label     String    @unique
   slug      String    @unique
   code      String    @unique
@@ -263,21 +268,23 @@ model Color {
 }
 
 model LightfastRating {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
   label       String
   description String?
   paint       Paint[]
+  pigment     Pigment[]
 }
 
 model TransparencyRating {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
   label       String
   description String?
   paint       Paint[]
+  pigment     Pigment[]
 }
 
 model StainingRating {
@@ -301,7 +308,7 @@ model GranulationRating {
 model ImageKitUpload {
   id           Int          @id @default(autoincrement())
   createdAt    DateTime     @default(now())
-  updatedAt    DateTime     @updatedAt
+  updatedAt    DateTime?    @updatedAt
   fileId       String
   filePath     String
   name         String
