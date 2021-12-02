@@ -1,0 +1,31 @@
+authorId,slug,manufacturerId,paintTypeId,productColorName,hex,lightfastRatingId,transparencyRatingId,stainingRatingId,granulationRatingId
+1,foo-1,13,1,Alizarin Crimson,#ffbf00,1,1,1,1
+1,foo-2,13,1,Alvaro's Caliente Grey,#ffbf01,1,1,1,1
+1,foo-3,13,1,Alvaro's Fresco Grey,#ffbf02,1,1,1,1
+1,foo-4,13,1,Amazonite Genuine,#ffbf03,1,1,1,1
+1,foo-5,13,1,Amethyst Genuine,#ffbf04,1,1,1,1
+1,foo-6,13,1,Anthraquinoid Red,#ffbf05,1,1,1,1
+1,foo-7,13,1,Anthraquinoid Scarlet,#ffbf06,1,1,1,1
+1,foo-8,13,1,Aureolin (Cobalt Yellow),#ffbf07,1,1,1,1
+1,foo-9,13,1,Aussie Red Gold,#ffbf08,1,1,1,1
+1,foo-10,13,1,Azo Yellow,#ffbf09,1,1,1,1
+1,foo-11,13,1,Bismuth Vanadate Yellow,#ffbf10,1,1,1,1
+1,foo-12,13,1,Black Tourmaline Genuine,#ffbf11,1,1,1,1
+1,foo-13,13,1,Bloodstone Genuine,#ffbf12,1,1,1,1
+1,foo-14,13,1,Blue Apatite Genuine,#ffbf13,1,1,1,1
+1,foo-15,13,1,Bordeaux,#ffbf14,1,1,1,1
+1,foo-16,29,1,Alizarin Crimson,#ffbf15,1,1,1,1
+1,foo-17,29,1,Alvaro's Caliente Grey,#ffbf16,1,1,1,1
+1,foo-18,29,1,Alvaro's Fresco Grey,#ffbf17,1,1,1,1
+1,foo-19,29,1,Amazonite Genuine,#ffbf18,1,1,1,1
+1,foo-20,29,1,Amethyst Genuine,#ffbf19,1,1,1,1
+1,foo-21,29,1,Anthraquinoid Red,#ffbf20,1,1,1,1
+1,foo-22,29,1,Anthraquinoid Scarlet,#ffbf21,1,1,1,1
+1,foo-23,29,1,Aureolin (Cobalt Yellow),#ffbf22,1,1,1,1
+1,foo-24,29,1,Aussie Red Gold,#ffbf23,1,1,1,1
+1,foo-25,29,1,Azo Yellow,#ffbf24,1,1,1,1
+1,foo-26,29,1,Bismuth Vanadate Yellow,#ffbf25,1,1,1,1
+1,foo-27,29,1,Black Tourmaline Genuine,#ffbf26,1,1,1,1
+1,foo-28,29,1,Bloodstone Genuine,#ffbf27,1,1,1,1
+1,foo-29,29,1,Blue Apatite Genuine,#ffbf28,1,1,1,1
+1,foo-30,29,1,Bordeaux,#ffbf29,1,1,1,1
