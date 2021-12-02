@@ -1,37 +1,67 @@
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient({ log: ["info", "warn"] });
 require('dotenv').config();
 
-async function main() {
+const { PrismaClient } = require('@prisma/client');
+const { parse } = require('csv-parse');
+const { createReadStream } = require('fs');
 
-  const devMode = process.env.DEV;
-  let manufacturerImport;
-  let pigmentImport;
+const prisma = new PrismaClient({ log: ["info", "warn"] });
 
-  if(devMode){
-    // Oi, yes, I know, bad... there's a template literal bug in prisma & I reset the database a lot
-    manufacturerImport = await prisma.$executeRaw`COPY "Manufacturer"(name, website) FROM '/Users/genevievecurry/dev/paint-library-app/import/manufacturer.csv' DELIMITER ',' CSV HEADER;`
-  } else {
-    manufacturerImport = await prisma.$executeRaw`COPY "Manufacturer"(name, website) FROM '/app/import/manufacturer.csv' DELIMITER ',' CSV HEADER;`
+const processFile = async (file) => {
+  const records = [];
+  const parser = createReadStream(file)
+    .pipe(parse({
+      // CSV options if any
+      columns: true,
+    }));
+
+  for await (const record of parser) {
+    // Work with each record
+    records.push(record);
   }
-  
-  const unknownManufacturer = await prisma.manufacturer.upsert({
-    where: { name: 'Unknown Manufacturer' },
-    update: {},
-    create: {
-      name: 'Unknown Manufacturer',
-      website: '',
-    },
-  });
+  return records;
+};
 
-  const manufacturer = await prisma.manufacturer.upsert({
-    where: { name: 'Daniel Smith' },
-    update: {},
-    create: {
-      name: 'Daniel Smith',
-      website: 'https://danielsmith.com/',
-    },
-  });
+
+async function main() {
+  // CSV Files
+  const manufacturerCsv = `${__dirname}/manufacturer.csv`;
+  const lineCsv = `${__dirname}/line.csv`;
+  const colorCsv = `${__dirname}/color.csv`;
+  const pigmentCsv = `${__dirname}/pigment.csv`;
+  const paintCsv = `${__dirname}/temp-paints.csv`;
+  
+  // Process CSV files
+  const parsedManufacturerCsv = await processFile(manufacturerCsv);
+  const parsedLineCsv = await processFile(lineCsv);
+  const parsedColorCsv = await processFile(colorCsv);
+  const parsedPigmentCsv = await processFile(pigmentCsv);
+  const parsedPaintCsv = await processFile(paintCsv);
+
+  const manufacturerImport = await prisma.manufacturer.createMany({
+    data: parsedManufacturerCsv,
+    skipDuplicates: true,
+  })
+
+  const colorImport = await prisma.color.createMany({
+    data: parsedColorCsv,
+    skipDuplicates: true,
+  })
+
+  const pigmentImport = await prisma.pigment.createMany({
+    data: parsedPigmentCsv,
+    skipDuplicates: true,
+  })
+
+  // const lineImport = parsedLineCsv.forEach(async (line) => {
+  //   await prisma.line.create({
+  //     data: {
+  //       name: line.name,
+  //       manufacturer: {
+  //         connect: { name: line.manufacturer }
+  //       }
+  //     }
+  //   })
+  // })
 
   const unknownPaper = await prisma.paper.create({
     data: {
@@ -44,7 +74,7 @@ async function main() {
     data: {
       description: 'Cold Press',
       weightInLbs: 140,
-      manufacturerId: manufacturer.id,
+      manufacturerId: 1,
     },
   });
 
@@ -56,28 +86,6 @@ async function main() {
       slug: 'watercolor',
     },
   });
-
-  const colors = await prisma.color.createMany({
-    data: [
-      { label: 'Yellow', slug: 'yellow', code: 'Y' },
-      { label: 'Orange', slug: 'orange', code: 'O' },
-      { label: 'Red', slug: 'red', code: 'R' },
-      { label: 'Violet', slug: 'violet', code: 'V' },
-      { label: 'Blue', slug: 'blue', code: 'B' },
-      { label: 'Green', slug: 'green', code: 'G' },
-      { label: 'Brown', slug: 'brown', code: 'Br' },
-      { label: 'Black', slug: 'black', code: 'Bk' },
-      { label: 'White', slug: 'white', code: 'W' },
-      { label: 'Metal', slug: 'metal', code: 'M' },
-    ],
-  });
-
-  if(devMode){
-    // Oi, yes, I know, bad... there's a template literal bug in prisma & I reset the database a lot
-    pigmentImport = await prisma.$executeRaw`COPY "Pigment"(type, name, number, "colorCode") FROM '/Users/genevievecurry/dev/paint-library-app/import/pigment.csv' DELIMITER ',' CSV HEADER;`
-  } else {
-    pigmentImport = await prisma.$executeRaw`COPY "Pigment"(type, name, number, "colorCode") FROM '/app/import/pigment.csv' DELIMITER ',' CSV HEADER;`
-  }
 
   const lightfastRatings = await prisma.lightfastRating.createMany({
     data: [
@@ -226,162 +234,175 @@ async function main() {
     },
   });
 
-  let watercolor = await prisma.paint.upsert({
-    where: { slug: 'test-paint' },
-    update: {},
-    create: {
-      slug: 'test-paint',
-      published: true,
-      authorId: adminUser.id,
-      manufacturerId: manufacturer.id,
-      paintTypeId: paintType.id,
-      productColorName: 'Test Paint',
-      communityDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
-      manufacturerDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
-      manufacturerPigmentDescription: 'Some pigment | Series 3',
-      lightfastRatingId: lightfastRating.id,
-      transparencyRatingId: transparencyRating.id,
-      stainingRatingId: stainingRating.id,
-      granulationRatingId: granulationRating.id,
-      hex: '#ffbf00',
-      pigmentsOnPaints: {
-        create: [
-          {
-            pigment: {
-              connect: {
-                id: 1,
-              },
-            },
-          },
-        ],
-      },
-      tags: {
-        create: [
-          {
-            setAt: new Date(),
-            tag: {
-              connect: {
-                id: 1,
-              },
-            },
-          },
-          {
-            setAt: new Date(),
-            tag: {
-              connect: {
-                id: 2,
-              },
-            },
-          },
-          {
-            setAt: new Date(),
-            tag: {
-              connect: {
-                id: 3,
-              },
-            },
-          },
-        ],
-      },
-      swatchCardsOnPaint: {
-        create: {
-          gradient: {
-            create: {
-              paperId: paper.id,
-              authorId: memberUser.id,
-              swatchCardTypeName: 'GRADIENT',
-              description: 'This is a supercool wash, with extra awesome.',
-              imageKitUploadId: imageKitUpload.id,
-            },
-          },
-          granulation: {
-            create: {
-              paperId: paper.id,
-              authorId: memberUser.id,
-              swatchCardTypeName: 'GRANULATION',
-              description: 'This is a supercool wash, with extra awesome.',
-              imageKitUploadId: imageKitUpload.id,
-            },
-          },
-          dispersement: {
-            create: {
-              paperId: paper.id,
-              authorId: memberUser.id,
-              swatchCardTypeName: 'DISPERSEMENT',
-              description: 'This is a supercool wash, with extra awesome.',
-              imageKitUploadId: imageKitUpload.id,
-            },
-          },
-          highDilution: {
-            create: {
-              paperId: paper.id,
-              authorId: memberUser.id,
-              swatchCardTypeName: 'HIGH_DILUTION',
-              description: 'This is a supercool wash, with extra awesome.',
-              imageKitUploadId: imageKitUpload.id,
-            },
-          },
-          midDilution: {
-            create: {
-              paperId: paper.id,
-              authorId: memberUser.id,
-              swatchCardTypeName: 'MID_DILUTION',
-              description: 'This is a supercool wash, with extra awesome.',
-              imageKitUploadId: imageKitUpload.id,
-            },
-          },
-          masstone: {
-            create: {
-              paperId: paper.id,
-              authorId: memberUser.id,
-              swatchCardTypeName: 'MASSTONE',
-              description: 'This is a supercool wash, with extra awesome.',
-              imageKitUploadId: imageKitUpload.id,
-            },
-          },
-          glaze: {
-            create: {
-              paperId: paper.id,
-              authorId: memberUser.id,
-              swatchCardTypeName: 'GLAZE',
-              description: 'This is a supercool wash, with extra awesome.',
-              imageKitUploadId: imageKitUpload.id,
-            },
-          },
-          wetLift: {
-            create: {
-              paperId: paper.id,
-              authorId: memberUser.id,
-              swatchCardTypeName: 'WET_LIFT',
-              description: 'This is a supercool wash, with extra awesome.',
-              imageKitUploadId: imageKitUpload.id,
-            },
-          },
-          dryLift: {
-            create: {
-              paperId: paper.id,
-              authorId: memberUser.id,
-              swatchCardTypeName: 'DRY_LIFT',
-              description: 'This is a supercool wash, with extra awesome.',
-              imageKitUploadId: imageKitUpload.id,
-            },
-          },
+  const createPaint = {
+    slug: '',
+    published: true,
+    authorId: adminUser.id,
+    manufacturerId: 1,
+    paintTypeId: paintType.id,
+    productColorName: 'Test Paint',
+    communityDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
+    manufacturerDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
+    manufacturerPigmentDescription: 'Some pigment | Series 3',
+    lightfastRatingId: lightfastRating.id,
+    transparencyRatingId: transparencyRating.id,
+    stainingRatingId: stainingRating.id,
+    granulationRatingId: granulationRating.id,
+    hex: '#ffbf00',
+  }
+
+  const pigmentsOnPaints = [
+    {
+      pigment: {
+        connect: {
+          id: 1,
         },
       },
     },
-  });
+    {
+      pigment: {
+        connect: {
+          id: 5,
+        },
+      },
+    },
+  ]
+
+  const tagsForPaint = [
+    {
+      setAt: new Date(),
+      tag: {
+        connect: {
+          id: 1,
+        },
+      },
+    },
+    {
+      setAt: new Date(),
+      tag: {
+        connect: {
+          id: 2,
+        },
+      },
+    },
+    {
+      setAt: new Date(),
+      tag: {
+        connect: {
+          id: 3,
+        },
+      },
+    },
+  ]
+
+  const swatchCardsOnPaint = {
+    gradient: {
+      create: {
+        paperId: paper.id,
+        authorId: memberUser.id,
+        swatchCardTypeName: 'GRADIENT',
+        description: 'This is a supercool wash, with extra awesome.',
+        imageKitUploadId: imageKitUpload.id,
+      },
+    },
+    granulation: {
+      create: {
+        paperId: paper.id,
+        authorId: memberUser.id,
+        swatchCardTypeName: 'GRANULATION',
+        description: 'This is a supercool wash, with extra awesome.',
+        imageKitUploadId: imageKitUpload.id,
+      },
+    },
+    dispersement: {
+      create: {
+        paperId: paper.id,
+        authorId: memberUser.id,
+        swatchCardTypeName: 'DISPERSEMENT',
+        description: 'This is a supercool wash, with extra awesome.',
+        imageKitUploadId: imageKitUpload.id,
+      },
+    },
+    highDilution: {
+      create: {
+        paperId: paper.id,
+        authorId: memberUser.id,
+        swatchCardTypeName: 'HIGH_DILUTION',
+        description: 'This is a supercool wash, with extra awesome.',
+        imageKitUploadId: imageKitUpload.id,
+      },
+    },
+    midDilution: {
+      create: {
+        paperId: paper.id,
+        authorId: memberUser.id,
+        swatchCardTypeName: 'MID_DILUTION',
+        description: 'This is a supercool wash, with extra awesome.',
+        imageKitUploadId: imageKitUpload.id,
+      },
+    },
+    masstone: {
+      create: {
+        swatchCardTypeName: 'MASSTONE',
+      },
+    },
+    glaze: {
+      create: {
+        swatchCardTypeName: 'GLAZE',
+      },
+    },
+    wetLift: {
+      create: {
+        swatchCardTypeName: 'WET_LIFT',
+      },
+    },
+    dryLift: {
+      create: {
+        swatchCardTypeName: 'DRY_LIFT',
+      },
+    },
+  }
+
+  const paintImport = parsedPaintCsv.forEach(async (paint) => {
+    await prisma.paint.create({
+      data: {
+        slug: paint.slug,
+        published: true,
+        authorId:  Number(paint.authorId),
+        manufacturerId: Number(paint.manufacturerId),
+        paintTypeId: Number(paint.paintTypeId),
+        productColorName: paint.productColorName,
+        communityDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
+        manufacturerDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
+        lightfastRatingId:  Number(paint.lightfastRatingId),
+        transparencyRatingId: Number(paint.transparencyRatingId),
+        stainingRatingId: Number(paint.stainingRatingId),
+        granulationRatingId: Number(paint.granulationRatingId),
+        hex: paint.hex,
+        swatchCardsOnPaint: {
+          create: swatchCardsOnPaint
+        },
+        tags: {
+          create: tagsForPaint
+        },
+        pigmentsOnPaints: {
+          create: pigmentsOnPaints
+        }
+      }
+    })
+  })
 
   const notes = await prisma.note.createMany({
     data: [
       {
         authorId: adminUser.id,
-        paintId: watercolor.id,
+        paintId: 1,
         approved: true,
         content: 'This is a cool comment about this paint.',
       },
       {
         authorId: memberUser.id,
-        paintId: watercolor.id,
+        paintId: 1,
         approved: true,
         content: 'This is a totally uncool comment about this paint.',
       },
@@ -396,14 +417,14 @@ async function main() {
     data: [
       {
         authorId: adminUser.id,
-        paintId: watercolor.id,
+        paintId: 1,
         approved: true,
         content: 'This is a cool reply to this note.',
         noteId: parentNote.id,
       },
       {
         authorId: memberUser.id,
-        paintId: watercolor.id,
+        paintId: 1,
         approved: true,
         content: 'This is a totally uncool reply to this note.',
         noteId: parentNote.id,
@@ -411,15 +432,14 @@ async function main() {
     ],
   });
 
+
   console.log({
     manufacturerImport,
-    unknownManufacturer,
-    manufacturer,
+    colorImport,
+    pigmentImport,
     unknownPaper,
     paper,
     paintType,
-    colors,
-    pigmentImport,
     granulationRatings,
     lightfastRatings,
     transparencyRatings,
@@ -427,7 +447,6 @@ async function main() {
     swatchCardTypes,
     adminUser,
     memberUser,
-    watercolor,
     notes,
     childNotes,
     tags,
