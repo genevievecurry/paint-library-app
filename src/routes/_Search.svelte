@@ -36,5 +36,9 @@
     </svg>
   </button>
 
-  <input class="flex-grow text-2xl py-2 px-3" bind:value="{searchQuery}" placeholder="Search Paints" />
+  <input
+    class="flex-grow text-2xl py-2 px-3"
+    bind:value="{searchQuery}"
+    placeholder="Search Paints"
+  />
 </form>
