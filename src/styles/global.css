@@ -2,3 +2,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .masonry {
+      @apply gap-3;
+      column-count: 2;
+    }
+    .masonry-sm {
+      column-count: 2;
+    }
+    .masonry-md {
+      column-count: 3;
+    }
+    .masonry-lg {
+      column-count: 4;
+    }
+    .masonry-xl {
+      column-count: 5;
+    }
+    .masonry-2xl {
+      column-count: 6;
+    }
+    .break-inside {
+      break-inside: avoid;
+    }
+    .max-h-112 {
+      max-height: 28rem;
+    }
+  }
+}

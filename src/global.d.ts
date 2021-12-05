@@ -39,3 +39,17 @@ interface PaintComponent extends Paint {
   granulationRating?: import('.prisma/client').GranulationRating;
   notes?: import('.prisma/client').Notes;
 }
+
+type ListPaints = {
+  slug: string;
+  hex: string;
+  productColorName: string;
+  manufacturer: {
+    name: string;
+  };
+}[];
+
+type SearchResults = {
+  count: number;
+  paints: ListPaints;
+};

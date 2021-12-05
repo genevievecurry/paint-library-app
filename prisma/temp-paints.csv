@@ -1,31 +1,128 @@
-authorId,slug,manufacturerId,paintTypeId,productColorName,hex,lightfastRatingId,transparencyRatingId,stainingRatingId,granulationRatingId
-1,foo-1,13,1,Alizarin Crimson,#ffbf00,1,1,1,1
-1,foo-2,13,1,Alvaro's Caliente Grey,#ffbf01,1,1,1,1
-1,foo-3,13,1,Alvaro's Fresco Grey,#ffbf02,1,1,1,1
-1,foo-4,13,1,Amazonite Genuine,#ffbf03,1,1,1,1
-1,foo-5,13,1,Amethyst Genuine,#ffbf04,1,1,1,1
-1,foo-6,13,1,Anthraquinoid Red,#ffbf05,1,1,1,1
-1,foo-7,13,1,Anthraquinoid Scarlet,#ffbf06,1,1,1,1
-1,foo-8,13,1,Aureolin (Cobalt Yellow),#ffbf07,1,1,1,1
-1,foo-9,13,1,Aussie Red Gold,#ffbf08,1,1,1,1
-1,foo-10,13,1,Azo Yellow,#ffbf09,1,1,1,1
-1,foo-11,13,1,Bismuth Vanadate Yellow,#ffbf10,1,1,1,1
-1,foo-12,13,1,Black Tourmaline Genuine,#ffbf11,1,1,1,1
-1,foo-13,13,1,Bloodstone Genuine,#ffbf12,1,1,1,1
-1,foo-14,13,1,Blue Apatite Genuine,#ffbf13,1,1,1,1
-1,foo-15,13,1,Bordeaux,#ffbf14,1,1,1,1
-1,foo-16,29,1,Alizarin Crimson,#ffbf15,1,1,1,1
-1,foo-17,29,1,Alvaro's Caliente Grey,#ffbf16,1,1,1,1
-1,foo-18,29,1,Alvaro's Fresco Grey,#ffbf17,1,1,1,1
-1,foo-19,29,1,Amazonite Genuine,#ffbf18,1,1,1,1
-1,foo-20,29,1,Amethyst Genuine,#ffbf19,1,1,1,1
-1,foo-21,29,1,Anthraquinoid Red,#ffbf20,1,1,1,1
-1,foo-22,29,1,Anthraquinoid Scarlet,#ffbf21,1,1,1,1
-1,foo-23,29,1,Aureolin (Cobalt Yellow),#ffbf22,1,1,1,1
-1,foo-24,29,1,Aussie Red Gold,#ffbf23,1,1,1,1
-1,foo-25,29,1,Azo Yellow,#ffbf24,1,1,1,1
-1,foo-26,29,1,Bismuth Vanadate Yellow,#ffbf25,1,1,1,1
-1,foo-27,29,1,Black Tourmaline Genuine,#ffbf26,1,1,1,1
-1,foo-28,29,1,Bloodstone Genuine,#ffbf27,1,1,1,1
-1,foo-29,29,1,Blue Apatite Genuine,#ffbf28,1,1,1,1
-1,foo-30,29,1,Bordeaux,#ffbf29,1,1,1,1
+productColorName,hex,authorId,slug,manufacturerId,paintTypeId,lightfastRatingId,transparencyRatingId,stainingRatingId,granulationRatingId
+Aquarius Cobalt Blue,#668bae,1,paint-1,1,1,1,1,1,1
+Cobalt Blue,#668bae,1,paint-2,1,1,1,1,1,1
+Cobalt Blue Deep,#668bae,1,paint-3,1,1,1,1,1,1
+Cobalt Cerulean Blue,#668bae,1,paint-4,1,1,1,1,1,1
+Cobalt Coelin Blue,#668bae,1,paint-5,1,1,1,1,1,1
+Cobalt Sea Blue,#668bae,1,paint-6,1,1,1,1,1,1
+Cobalt Turquoise,#668bae,1,paint-7,1,1,1,1,1,1
+French Ultramarine,#668bae,1,paint-8,1,1,1,1,1,1
+Indathrone Blue,#668bae,1,paint-9,1,1,1,1,1,1
+Phtalo Blue (Green Shade),#668bae,1,paint-10,1,1,1,1,1,1
+Phtalo Turquoise,#668bae,1,paint-11,1,1,1,1,1,1
+Phthalo Blue (Red Shade),#668bae,1,paint-12,1,1,1,1,1,1
+Prussian Blue,#668bae,1,paint-13,1,1,1,1,1,1
+Ultramarine (Green Shade),#668bae,1,paint-14,1,1,1,1,1,1
+Ultramarine Light,#668bae,1,paint-15,1,1,1,1,1,1
+Aquarius Black,#2a2930,1,paint-16,1,1,1,1,1,1
+Ivory Black,#2a2930,1,paint-17,1,1,1,1,1,1
+Mars Black,#2a2930,1,paint-18,1,1,1,1,1,1
+Perylene Green,#2a2930,1,paint-19,1,1,1,1,1,1
+Perylene Green Deep,#2a2930,1,paint-20,1,1,1,1,1,1
+Roman Black,#2a2930,1,paint-21,1,1,1,1,1,1
+Vine Black,#2a2930,1,paint-22,1,1,1,1,1,1
+Aquarius Brown,#5e452a,1,paint-23,1,1,1,1,1,1
+Brown Ochre,#5e452a,1,paint-24,1,1,1,1,1,1
+Burnt Siena Monte Amiata,#5e452a,1,paint-25,1,1,1,1,1,1
+Cyprus Burnt Umber,#5e452a,1,paint-26,1,1,1,1,1,1
+Cyprus Burnt Umber Light,#5e452a,1,paint-27,1,1,1,1,1,1
+Cyprus Raw Umber,#5e452a,1,paint-28,1,1,1,1,1,1
+Cyprus Raw Umber (Brownish),#5e452a,1,paint-29,1,1,1,1,1,1
+Cyprus Raw Umber Deep,#5e452a,1,paint-30,1,1,1,1,1,1
+German Raw Umber (Greenish),#5e452a,1,paint-31,1,1,1,1,1,1
+Italian Burnt Sienna,#5e452a,1,paint-32,1,1,1,1,1,1
+Naples Yellow Deep,#5e452a,1,paint-33,1,1,1,1,1,1
+Transparent Brown,#5e452a,1,paint-34,1,1,1,1,1,1
+Van Dyck Brown,#5e452a,1,paint-35,1,1,1,1,1,1
+Chromium Green Oxide,#65944d,1,paint-36,1,1,1,1,1,1
+Cobalt Green Light,#65944d,1,paint-37,1,1,1,1,1,1
+Cobalt Teal,#65944d,1,paint-38,1,1,1,1,1,1
+Glauconite,#65944d,1,paint-39,1,1,1,1,1,1
+Green Earth,#65944d,1,paint-40,1,1,1,1,1,1
+Phtalo Green (Blue Shade),#65944d,1,paint-41,1,1,1,1,1,1
+Phtalo Green (Yellow Shade),#65944d,1,paint-42,1,1,1,1,1,1
+Viridian,#65944d,1,paint-43,1,1,1,1,1,1
+Benzimidazole Orange,#d97a25,1,paint-44,1,1,1,1,1,1
+Brilliant Orange,#d97a25,1,paint-45,1,1,1,1,1,1
+Cadmium Orange,#d97a25,1,paint-46,1,1,1,1,1,1
+Deep Orange,#d97a25,1,paint-47,1,1,1,1,1,1
+Golden Orange,#d97a25,1,paint-48,1,1,1,1,1,1
+Permanent Orange,#d97a25,1,paint-49,1,1,1,1,1,1
+Pyrrol Orange,#d97a25,1,paint-50,1,1,1,1,1,1
+Quinacridone Burnt Sienna,#d97a25,1,paint-51,1,1,1,1,1,1
+Transparent Pyrrol Orange,#d97a25,1,paint-52,1,1,1,1,1,1
+Anthraquinone Red,#be362a,1,paint-53,1,1,1,1,1,1
+Anthraquinone Scarlet,#be362a,1,paint-54,1,1,1,1,1,1
+Aquarius Red,#be362a,1,paint-55,1,1,1,1,1,1
+Azo Red,#be362a,1,paint-56,1,1,1,1,1,1
+Cadmium Red,#be362a,1,paint-57,1,1,1,1,1,1
+Cadmium Red Deep,#be362a,1,paint-58,1,1,1,1,1,1
+Cadmium Vermillion,#be362a,1,paint-59,1,1,1,1,1,1
+Caput Mortuum,#be362a,1,paint-60,1,1,1,1,1,1
+Cherry Quinacridone Red,#be362a,1,paint-61,1,1,1,1,1,1
+English Red Deep,#be362a,1,paint-62,1,1,1,1,1,1
+English Red Light,#be362a,1,paint-63,1,1,1,1,1,1
+Hematite,#be362a,1,paint-64,1,1,1,1,1,1
+Hematite (Brown Shade),#be362a,1,paint-65,1,1,1,1,1,1
+Hematite (Violet Shade),#be362a,1,paint-66,1,1,1,1,1,1
+Indian Red,#be362a,1,paint-67,1,1,1,1,1,1
+Magenta,#be362a,1,paint-68,1,1,1,1,1,1
+Mars Red,#be362a,1,paint-69,1,1,1,1,1,1
+Mummy Transparent Red,#be362a,1,paint-70,1,1,1,1,1,1
+Naphthol Red,#be362a,1,paint-71,1,1,1,1,1,1
+Permanent Alizarin Crimson,#be362a,1,paint-72,1,1,1,1,1,1
+Permanent Red,#be362a,1,paint-73,1,1,1,1,1,1
+Perylene Maroon,#be362a,1,paint-74,1,1,1,1,1,1
+Pompeii Red,#be362a,1,paint-75,1,1,1,1,1,1
+Potter's Pink,#be362a,1,paint-76,1,1,1,1,1,1
+Pyrrole Red,#be362a,1,paint-77,1,1,1,1,1,1
+Pyrrole Rubine,#be362a,1,paint-78,1,1,1,1,1,1
+Pyrrole Scarlet,#be362a,1,paint-79,1,1,1,1,1,1
+Quinacridone Fuschia,#be362a,1,paint-80,1,1,1,1,1,1
+Quinacridone Maroon,#be362a,1,paint-81,1,1,1,1,1,1
+Quinacridone Pink,#be362a,1,paint-82,1,1,1,1,1,1
+Red Ochre,#be362a,1,paint-83,1,1,1,1,1,1
+Scarlet Lake,#be362a,1,paint-84,1,1,1,1,1,1
+Scarlet Red,#be362a,1,paint-85,1,1,1,1,1,1
+Transparent Oxide Brown,#be362a,1,paint-86,1,1,1,1,1,1
+Transparent Oxide Red,#be362a,1,paint-87,1,1,1,1,1,1
+Ultramarine Pink,#be362a,1,paint-88,1,1,1,1,1,1
+Venetian Red,#be362a,1,paint-89,1,1,1,1,1,1
+Veronese Red Earth,#be362a,1,paint-90,1,1,1,1,1,1
+Cobalt Violet Deep,#7067a1,1,paint-91,1,1,1,1,1,1
+Cobalt Violet Light,#7067a1,1,paint-92,1,1,1,1,1,1
+Dioxazine Violet,#7067a1,1,paint-93,1,1,1,1,1,1
+Manganese Violet,#7067a1,1,paint-94,1,1,1,1,1,1
+Perylene Violet,#7067a1,1,paint-95,1,1,1,1,1,1
+Quinacridone Red,#7067a1,1,paint-96,1,1,1,1,1,1
+Quinacridone Violet,#7067a1,1,paint-97,1,1,1,1,1,1
+Ultramarine Violet,#7067a1,1,paint-98,1,1,1,1,1,1
+Aquarius Grey,#e5ded6,1,paint-99,1,1,1,1,1,1
+Buff Titanium,#e5ded6,1,paint-100,1,1,1,1,1,1
+Chinese White,#e5ded6,1,paint-101,1,1,1,1,1,1
+Titanium White,#e5ded6,1,paint-102,1,1,1,1,1,1
+Aquarius Yellow,#ecd721,1,paint-103,1,1,1,1,1,1
+Aureoline (Hue),#ecd721,1,paint-104,1,1,1,1,1,1
+Benzymidazole Yellow,#ecd721,1,paint-105,1,1,1,1,1,1
+Bismuth Yellow,#ecd721,1,paint-106,1,1,1,1,1,1
+Cadmium Lemon,#ecd721,1,paint-107,1,1,1,1,1,1
+Cadmium Yellow Deep,#ecd721,1,paint-108,1,1,1,1,1,1
+Deep Green Gold,#ecd721,1,paint-109,1,1,1,1,1,1
+French Ochre,#ecd721,1,paint-110,1,1,1,1,1,1
+Golden Yellow,#ecd721,1,paint-111,1,1,1,1,1,1
+Hansa Yellow Deep,#ecd721,1,paint-112,1,1,1,1,1,1
+Hansa Yellow Light,#ecd721,1,paint-113,1,1,1,1,1,1
+Hansa Yellow Medium,#ecd721,1,paint-114,1,1,1,1,1,1
+Indian Yellow (Hue),#ecd721,1,paint-115,1,1,1,1,1,1
+Isoindoline Yellow Light,#ecd721,1,paint-116,1,1,1,1,1,1
+Lemon Yellow,#ecd721,1,paint-117,1,1,1,1,1,1
+Natural Sienna Light,#ecd721,1,paint-118,1,1,1,1,1,1
+Nickel Azo Yellow,#ecd721,1,paint-119,1,1,1,1,1,1
+Nickel Titanate Yellow,#ecd721,1,paint-120,1,1,1,1,1,1
+Ochre Havana,#ecd721,1,paint-121,1,1,1,1,1,1
+Permanent Yellow,#ecd721,1,paint-122,1,1,1,1,1,1
+Transparent Gold Ochre,#ecd721,1,paint-123,1,1,1,1,1,1
+Transparent Oxide Yellow,#ecd721,1,paint-124,1,1,1,1,1,1
+Venetian Yellow Earth,#ecd721,1,paint-125,1,1,1,1,1,1
+Veronese Yellow Earth,#ecd721,1,paint-126,1,1,1,1,1,1
+Yellow Ochre,#ecd721,1,paint-127,1,1,1,1,1,1

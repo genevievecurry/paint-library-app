@@ -39,6 +39,7 @@
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
     "seed": "prisma db seed",
+    "seed:paints": "node prisma/seed-paints.cjs",
     "migrate:dev": "prisma migrate dev",
     "migrate:reset": "prisma migrate reset",
     "test": "jest src --env=jsdom",
@@ -46,8 +47,10 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
+    "@testing-library/dom": "^7.31.2",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/svelte": "^3.0.3",
+    "@testing-library/user-event": "^13.5.0",
     "@types/imagekit": "^3.1.2",
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.6",

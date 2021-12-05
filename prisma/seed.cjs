@@ -4,15 +4,16 @@ const { PrismaClient } = require('@prisma/client');
 const { parse } = require('csv-parse');
 const { createReadStream } = require('fs');
 
-const prisma = new PrismaClient({ log: ["info", "warn"] });
+const prisma = new PrismaClient({ log: ['info', 'warn'] });
 
 const processFile = async (file) => {
   const records = [];
-  const parser = createReadStream(file)
-    .pipe(parse({
+  const parser = createReadStream(file).pipe(
+    parse({
       // CSV options if any
       columns: true,
-    }));
+    }),
+  );
 
   for await (const record of parser) {
     // Work with each record
@@ -21,36 +22,33 @@ const processFile = async (file) => {
   return records;
 };
 
-
 async function main() {
   // CSV Files
   const manufacturerCsv = `${__dirname}/manufacturer.csv`;
-  const lineCsv = `${__dirname}/line.csv`;
+  // const lineCsv = `${__dirname}/line.csv`;
   const colorCsv = `${__dirname}/color.csv`;
   const pigmentCsv = `${__dirname}/pigment.csv`;
-  const paintCsv = `${__dirname}/temp-paints.csv`;
-  
+
   // Process CSV files
   const parsedManufacturerCsv = await processFile(manufacturerCsv);
-  const parsedLineCsv = await processFile(lineCsv);
+  // const parsedLineCsv = await processFile(lineCsv);
   const parsedColorCsv = await processFile(colorCsv);
   const parsedPigmentCsv = await processFile(pigmentCsv);
-  const parsedPaintCsv = await processFile(paintCsv);
 
   const manufacturerImport = await prisma.manufacturer.createMany({
     data: parsedManufacturerCsv,
     skipDuplicates: true,
-  })
+  });
 
   const colorImport = await prisma.color.createMany({
     data: parsedColorCsv,
     skipDuplicates: true,
-  })
+  });
 
   const pigmentImport = await prisma.pigment.createMany({
     data: parsedPigmentCsv,
     skipDuplicates: true,
-  })
+  });
 
   // const lineImport = parsedLineCsv.forEach(async (line) => {
   //   await prisma.line.create({
@@ -203,19 +201,6 @@ async function main() {
     ],
   });
 
-  const lightfastRating = await prisma.lightfastRating.findFirst({
-    where: { label: 'I' },
-  });
-  const transparencyRating = await prisma.transparencyRating.findFirst({
-    where: { label: '1' },
-  });
-  const stainingRating = await prisma.stainingRating.findFirst({
-    where: { label: 'Low-Staining' },
-  });
-  const granulationRating = await prisma.granulationRating.findFirst({
-    where: { label: 'Yes' },
-  });
-
   const tags = await prisma.tag.createMany({
     data: [
       { label: 'tropical', slug: 'tropical' },
@@ -234,204 +219,66 @@ async function main() {
     },
   });
 
-  const createPaint = {
-    slug: '',
-    published: true,
-    authorId: adminUser.id,
-    manufacturerId: 1,
-    paintTypeId: paintType.id,
-    productColorName: 'Test Paint',
-    communityDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
-    manufacturerDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
-    manufacturerPigmentDescription: 'Some pigment | Series 3',
-    lightfastRatingId: lightfastRating.id,
-    transparencyRatingId: transparencyRating.id,
-    stainingRatingId: stainingRating.id,
-    granulationRatingId: granulationRating.id,
-    hex: '#ffbf00',
-  }
-
-  const pigmentsOnPaints = [
-    {
-      pigment: {
-        connect: {
-          id: 1,
-        },
-      },
-    },
-    {
-      pigment: {
-        connect: {
-          id: 5,
-        },
-      },
-    },
-  ]
-
-  const tagsForPaint = [
-    {
-      setAt: new Date(),
-      tag: {
-        connect: {
-          id: 1,
-        },
-      },
-    },
-    {
-      setAt: new Date(),
-      tag: {
-        connect: {
-          id: 2,
-        },
-      },
-    },
-    {
-      setAt: new Date(),
-      tag: {
-        connect: {
-          id: 3,
-        },
-      },
-    },
-  ]
-
-  const swatchCardsOnPaint = {
-    gradient: {
-      create: {
-        paperId: paper.id,
-        authorId: memberUser.id,
-        swatchCardTypeName: 'GRADIENT',
-        description: 'This is a supercool wash, with extra awesome.',
-        imageKitUploadId: imageKitUpload.id,
-      },
-    },
-    granulation: {
-      create: {
-        paperId: paper.id,
-        authorId: memberUser.id,
-        swatchCardTypeName: 'GRANULATION',
-        description: 'This is a supercool wash, with extra awesome.',
-        imageKitUploadId: imageKitUpload.id,
-      },
-    },
-    dispersement: {
-      create: {
-        paperId: paper.id,
-        authorId: memberUser.id,
-        swatchCardTypeName: 'DISPERSEMENT',
-        description: 'This is a supercool wash, with extra awesome.',
-        imageKitUploadId: imageKitUpload.id,
-      },
-    },
-    highDilution: {
-      create: {
-        paperId: paper.id,
-        authorId: memberUser.id,
-        swatchCardTypeName: 'HIGH_DILUTION',
-        description: 'This is a supercool wash, with extra awesome.',
-        imageKitUploadId: imageKitUpload.id,
-      },
-    },
-    midDilution: {
-      create: {
-        paperId: paper.id,
-        authorId: memberUser.id,
-        swatchCardTypeName: 'MID_DILUTION',
-        description: 'This is a supercool wash, with extra awesome.',
-        imageKitUploadId: imageKitUpload.id,
-      },
-    },
-    masstone: {
-      create: {
-        swatchCardTypeName: 'MASSTONE',
-      },
-    },
-    glaze: {
-      create: {
-        swatchCardTypeName: 'GLAZE',
-      },
-    },
-    wetLift: {
-      create: {
-        swatchCardTypeName: 'WET_LIFT',
-      },
-    },
-    dryLift: {
-      create: {
-        swatchCardTypeName: 'DRY_LIFT',
-      },
-    },
-  }
-
-  const paintImport = parsedPaintCsv.forEach(async (paint) => {
-    await prisma.paint.create({
-      data: {
-        slug: paint.slug,
-        published: true,
-        authorId:  Number(paint.authorId),
-        manufacturerId: Number(paint.manufacturerId),
-        paintTypeId: Number(paint.paintTypeId),
-        productColorName: paint.productColorName,
-        communityDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
-        manufacturerDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
-        lightfastRatingId:  Number(paint.lightfastRatingId),
-        transparencyRatingId: Number(paint.transparencyRatingId),
-        stainingRatingId: Number(paint.stainingRatingId),
-        granulationRatingId: Number(paint.granulationRatingId),
-        hex: paint.hex,
-        swatchCardsOnPaint: {
-          create: swatchCardsOnPaint
-        },
-        tags: {
-          create: tagsForPaint
-        },
-        pigmentsOnPaints: {
-          create: pigmentsOnPaints
-        }
-      }
-    })
-  })
-
-  const notes = await prisma.note.createMany({
+  const imageKitUploads = await prisma.imageKitUpload.createMany({
     data: [
       {
-        authorId: adminUser.id,
-        paintId: 1,
-        approved: true,
-        content: 'This is a cool comment about this paint.',
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/50/50',
+        url: 'https://placekitten.com/750/350',
       },
       {
-        authorId: memberUser.id,
-        paintId: 1,
-        approved: true,
-        content: 'This is a totally uncool comment about this paint.',
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/50/50',
+        url: 'https://placekitten.com/650/250',
+      },
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/50/50',
+        url: 'https://placekitten.com/450/650',
+      },
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/50/50',
+        url: 'https://placekitten.com/150/350',
+      },
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/50/50',
+        url: 'https://placekitten.com/250/450',
+      },
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/50/50',
+        url: 'https://placekitten.com/350/350',
+      },
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/50/50',
+        url: 'https://placekitten.com/350/350',
+      },
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/50/50',
+        url: 'https://placekitten.com/450/350',
       },
     ],
   });
-
-  const parentNote = await prisma.note.findFirst({
-    where: { authorId: adminUser.id },
-  });
-
-  const childNotes = await prisma.note.createMany({
-    data: [
-      {
-        authorId: adminUser.id,
-        paintId: 1,
-        approved: true,
-        content: 'This is a cool reply to this note.',
-        noteId: parentNote.id,
-      },
-      {
-        authorId: memberUser.id,
-        paintId: 1,
-        approved: true,
-        content: 'This is a totally uncool reply to this note.',
-        noteId: parentNote.id,
-      },
-    ],
-  });
-
 
   console.log({
     manufacturerImport,
@@ -447,9 +294,7 @@ async function main() {
     swatchCardTypes,
     adminUser,
     memberUser,
-    notes,
-    childNotes,
-    tags,
+    imageKitUpload,
   });
 }
 
