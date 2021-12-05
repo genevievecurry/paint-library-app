@@ -28,18 +28,6 @@
   import Pigments from './_Pigments.svelte';
   // import Tags from './_Tags.svelte';
   import Notes from './_Notes.svelte';
-  // import type { Paint, Manufacturer, LightfastRating, TransparencyRating, StainingRating, GranulationRating, Pigment } from '.prisma/client';
-
-  // interface PaintComponent extends Paint {
-  //   manufacturer: Manufacturer
-  //   swatchCardsOnPaint: SwatchCardsCollection
-  //   lightfastRating: LightfastRating
-  //   transparencyRating: TransparencyRating
-  //   stainingRating: StainingRating
-  //   granulationRating: GranulationRating
-  //   pigmentsOnPaints: { pigment: Pigment;}[]
-  //   notes: Notes
-  // }
 
   export let slug: string;
   export let paint: PaintComponent;

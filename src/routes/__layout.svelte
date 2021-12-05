@@ -1,5 +1,9 @@
 <script lang="ts" context="module">
   import '../styles/global.css';
+  import Search from './_Search.svelte';
+</script>
+
+<script lang="ts">
 </script>
 
 <svelte:head>
@@ -9,7 +13,7 @@
 <div class="bg-white">
   <div class="relative overflow-hidden">
     <header class="relative">
-      <div class="bg-gray-900 py-6 mb-8">
+      <div class="bg-gray-900 py-6">
         <nav
           class="relative container mx-auto flex items-center justify-between px-4 sm:px-6"
           aria-label="Global"
@@ -19,6 +23,10 @@
               <a href="/"><span class="text-white font-extrabold text-4xl">Paint Library</span></a>
             </div>
           </div>
+          <div class="md:flex md:items-center">
+            <Search />
+          </div>
+
           <!-- <div class="hidden md:flex md:items-center md:space-x-6">
             <a href="#" class="border border-white px-3 py-2 text-base font-medium text-white hover:text-gray-300">
               Log in
@@ -31,9 +39,7 @@
       </div>
     </header>
     <main>
-      <div class="container mx-auto px-4 sm:px-6">
-        <slot />
-      </div>
+      <slot />
     </main>
     <footer aria-labelledby="footerHeading">
       <h2 id="footerHeading" class="sr-only">Footer</h2>

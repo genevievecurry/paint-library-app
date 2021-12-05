@@ -1,12 +1,10 @@
 import type { ReadOnlyFormData } from '@sveltejs/kit/types/helper';
-
-// Comment in this line for local development
-// import { Prisma, PrismaClient } from '@prisma/client';
-
-// Comment in these lines to deploy & build on heroku...
-// Todo: Cry
 import type { Prisma } from '@prisma/client';
 
+// Comment in this line for local development
+// import { PrismaClient } from '@prisma/client';
+
+// Comment in these lines to deploy & build on heroku...
 import pkg from '@prisma/client';
 const { PrismaClient } = pkg;
 
@@ -195,10 +193,93 @@ async function updateSwatchCard({
   return { status: 200, body };
 }
 
-export async function getPaints() {
+export async function getResults(query: string): Promise<{
+  status: number;
+  body: SearchResults;
+}> {
+  const unsluggedQuery = query.replace('-', ' & ');
+
+  const count = await prisma.paint.count({
+    where: {
+      productColorName: {
+        search: unsluggedQuery,
+      },
+    },
+  });
+
+  const paints = await prisma.paint.findMany({
+    where: {
+      productColorName: {
+        search: unsluggedQuery,
+      },
+    },
+    skip: 0,
+    take: 100,
+    orderBy: {
+      createdAt: 'desc',
+    },
+    select: {
+      slug: true,
+      hex: true,
+      productColorName: true,
+      manufacturer: {
+        select: {
+          name: true,
+        },
+      },
+    },
+  });
+
+  const body = {
+    count,
+    paints,
+  };
+
   return {
     status: 200,
-    body: await prisma.paint.findMany(),
+    body: body,
+  };
+}
+
+export async function getPaints(): Promise<{
+  status: number;
+  body: {
+    slug: string;
+    hex: string;
+    productColorName: string;
+    manufacturer: {
+      name: string;
+    };
+  }[];
+}> {
+  return {
+    status: 200,
+    body: await prisma.paint.findMany({
+      skip: 0,
+      take: 100,
+      orderBy: {
+        createdAt: 'desc',
+      },
+      select: {
+        slug: true,
+        hex: true,
+        productColorName: true,
+        manufacturer: {
+          select: {
+            name: true,
+          },
+        },
+        // swatchCardsOnPaint: {
+        //   include: {
+        //     gradient: {
+        //       include: {
+        //         imageKitUpload: true,
+        //       },
+        //     },
+        //   },
+        // },
+      },
+    }),
   };
 }
 
