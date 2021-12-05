@@ -1,14 +1,7 @@
 import type { ReadOnlyFormData } from '@sveltejs/kit/types/helper';
 import type { Prisma } from '@prisma/client';
 
-// Comment in this line for local development
-// import { PrismaClient } from '@prisma/client';
-
-// Comment in these lines to deploy & build on heroku...
-import pkg from '@prisma/client';
-const { PrismaClient } = pkg;
-
-const prisma = new PrismaClient();
+import { prisma } from '$lib/prisma';
 
 const swatchCardSelect: Prisma.SwatchCardSelect = {
   id: true,
