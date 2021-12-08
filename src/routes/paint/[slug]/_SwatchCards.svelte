@@ -23,7 +23,7 @@
 </script>
 
 <section
-  class="swatch-card-collection grid gap-1 grid-cols-1 grid-rows-9 sm:grid-cols-3 sm:grid-rows-3 md:grid-cols-5"
+  class="swatch-card-collection grid gap-3 grid-cols-1 grid-rows-9 sm:grid-cols-3 sm:grid-rows-3 md:grid-cols-5"
 >
   <Card {...masstone} tall="{true}" />
   <Card {...gradient} tall="{true}" />

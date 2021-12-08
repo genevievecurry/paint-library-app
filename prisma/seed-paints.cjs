@@ -27,22 +27,23 @@ async function main() {
   const paintCsv = `${__dirname}/temp-paints.csv`;
   const parsedPaintCsv = await processFile(paintCsv);
 
-  const pigmentsOnPaints = [
-    {
-      pigment: {
-        connect: {
-          id: 1,
+  function setPigmentOnPaint() {
+    const numberOfPigments = Math.floor(Math.random() * 6);
+    const popArray = [];
+
+    for (let index = 0; index < numberOfPigments; index++) {
+      const pigmentId = Math.floor(Math.random() * 100) + 1;
+      popArray.push({
+        pigment: {
+          connect: {
+            id: pigmentId,
+          },
         },
-      },
-    },
-    {
-      pigment: {
-        connect: {
-          id: 5,
-        },
-      },
-    },
-  ];
+      });
+    }
+
+    return popArray;
+  }
 
   const tagsForPaint = [
     {
@@ -163,7 +164,7 @@ async function main() {
             create: tagsForPaint,
           },
           pigmentsOnPaints: {
-            create: pigmentsOnPaints,
+            create: setPigmentOnPaint(),
           },
         },
       });

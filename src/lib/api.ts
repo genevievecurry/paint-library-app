@@ -3,6 +3,41 @@ import type { Prisma } from '@prisma/client';
 
 import { prisma } from '$lib/prisma';
 
+const pigmentSelect: Prisma.PigmentSelect = {
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+  type: true,
+  name: true,
+  number: true,
+  hex: true,
+  color: {
+    select: {
+      code: true,
+      label: true,
+      slug: true,
+    },
+  },
+  imageKitUpload: true,
+  paints: {
+    select: {
+      paint: {
+        select: {
+          slug: true,
+          hex: true,
+          productColorName: true,
+          manufacturer: {
+            select: {
+              name: true,
+            },
+          },
+        },
+      },
+    },
+  },
+  slug: true,
+};
+
 const swatchCardSelect: Prisma.SwatchCardSelect = {
   id: true,
   updatedAt: true,
@@ -84,6 +119,8 @@ const paintSelect: Prisma.PaintSelect = {
               slug: true,
             },
           },
+          hex: true,
+          slug: true,
           name: true,
           number: true,
           type: true,
@@ -186,6 +223,61 @@ async function updateSwatchCard({
   return { status: 200, body };
 }
 
+export async function getAllPigments() {
+  return {
+    body: await prisma.color.findMany({
+      orderBy: {
+        label: 'asc',
+      },
+      select: {
+        label: true,
+        slug: true,
+        pigments: {
+          select: {
+            slug: true,
+            hex: true,
+            name: true,
+            number: true,
+          },
+        },
+      },
+    }),
+    status: 200,
+  };
+}
+
+export async function getPigmentsByColor(slug: string) {
+  const currentColor = await prisma.color.findUnique({
+    where: {
+      slug,
+    },
+  });
+
+  const pigments = await prisma.pigment.findMany({
+    where: {
+      colorCode: currentColor.code,
+    },
+    orderBy: {
+      name: 'asc',
+    },
+    select: {
+      slug: true,
+      hex: true,
+      name: true,
+    },
+  });
+
+  const body = {
+    currentColor: currentColor.label,
+    pigments,
+  };
+
+  return {
+    status: 200,
+    body,
+  };
+}
+
 export async function getResults(query: string): Promise<{
   status: number;
   body: SearchResults;
@@ -231,6 +323,18 @@ export async function getResults(query: string): Promise<{
   return {
     status: 200,
     body: body,
+  };
+}
+
+export async function getPigment(slug: string) {
+  return {
+    status: 200,
+    body: await prisma.pigment.findUnique({
+      where: {
+        slug,
+      },
+      select: pigmentSelect,
+    }),
   };
 }
 
