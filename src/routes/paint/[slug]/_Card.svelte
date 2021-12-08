@@ -143,7 +143,7 @@
   }
 </script>
 
-<div class="{`swatch-card border border-black p-1 relative ${tall ? 'md:row-span-full' : ''}`}">
+<div class="{`swatch-card border border-black p-2 relative ${tall ? 'md:row-span-full' : ''}`}">
   <div class="absolute left-0 top-0 {swatchActionsVisible ? 'z-10' : ''}">
     <div class="bg-white p-1 flex items-center">
       <div class="cursor-pointer" on:click="{showSwatchActions}">

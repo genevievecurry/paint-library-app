@@ -37,7 +37,7 @@
   </button>
 
   <input
-    class="flex-grow text-2xl py-2 px-3"
+    class="flex-grow text-2xl py-2 px-3 font-light"
     bind:value="{searchQuery}"
     placeholder="Search Paints"
   />

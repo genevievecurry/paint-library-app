@@ -94,6 +94,7 @@ model Pigment {
   id                   Int                 @id @default(autoincrement())
   createdAt            DateTime            @default(now())
   updatedAt            DateTime?           @updatedAt
+  slug                 String              @unique
   type                 PigmentType         @default(CIPIGMENT)
   name                 String
   number               String

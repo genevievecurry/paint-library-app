@@ -41,7 +41,7 @@
 {#if paint}
   <Header title="{paint.productColorName}" manufacturerName="{paint.manufacturer?.name}" />
   <SwatchCards swatchCardsOnPaint="{paint.swatchCardsOnPaint}" />
-  <div class="flex">
+  <div class="md:flex">
     <div class="flex-auto">
       <Ratings
         lightfastRating="{paint.lightfastRating}"
@@ -56,7 +56,7 @@
         manufacturerName="{paint.manufacturer?.name}"
       />
     </div>
-    <div class="flex-none w-96 pl-8">
+    <div class="flex-none md:w-96 md:pl-8">
       <Pigments pigmentsOnPaints="{paint.pigmentsOnPaints}" />
       <!-- <Tags tags="{paint.tags}" /> -->
     </div>
