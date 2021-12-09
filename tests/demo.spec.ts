@@ -10,20 +10,20 @@ let _count: number;
 TestSuite.before(() => {
   _count = 0;
   _foo = 10;
-})
+});
 
 TestSuite.skip('should return a number', () => {
-  assert.equal(_foo, 'x')
-})
+  assert.equal(_foo, 'x');
+});
 
 TestSuite('should return a number', () => {
-  assert.equal(_foo, 10)
-})
+  assert.equal(_foo, 10);
+});
 
 TestSuite.only('should return a number', () => {
-  assert.equal(_foo + _count, 10)
-  assert.is.not(_foo, 20)
-})
+  assert.equal(_foo + _count, 10);
+  assert.is.not(_foo, 20);
+});
 
 TestSuite.run();
 
@@ -31,8 +31,8 @@ test.before(ENV.setup);
 test.before.each(ENV.reset);
 
 test('smoke', () => {
-  assert.ok(true)
-})
+  assert.ok(true);
+});
 
 test('Math.sqrt()', () => {
   assert.is(Math.sqrt(4), 2);
@@ -43,7 +43,7 @@ test('Math.sqrt()', () => {
 test('JSON', () => {
   const input = {
     foo: 'hello',
-    bar: 'world'
+    bar: 'world',
   };
 
   const output = JSON.stringify(input);

@@ -14,10 +14,10 @@ Utility.before(() => {
   pigmentType = 'CIPIGMENT';
   pigmentNumber = '62';
   colorCode = 'Br';
-})
+});
 
 Utility('should return a converted pigment ci code', () => {
-  assert.is(pigmentCode(pigmentType, pigmentNumber, colorCode), 'PBr62')
-})
+  assert.is(pigmentCode(pigmentType, pigmentNumber, colorCode), 'PBr62');
+});
 
-Utility.run()
+Utility.run();
