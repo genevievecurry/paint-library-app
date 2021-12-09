@@ -8,26 +8,6 @@
   "prisma": {
     "seed": "node prisma/seed.cjs"
   },
-  "jest": {
-    "transform": {
-      "^.+\\.js$": "babel-jest",
-      "^.+\\.svelte$": [
-        "svelte-jester",
-        {
-          "preprocess": true
-        }
-      ],
-      "^.+\\.ts$": "ts-jest"
-    },
-    "moduleFileExtensions": [
-      "js",
-      "ts",
-      "svelte"
-    ],
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-dom/extend-expect"
-    ]
-  },
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -41,38 +21,26 @@
     "seed": "prisma db seed",
     "seed:paints": "node prisma/seed-paints.cjs",
     "migrate:dev": "prisma migrate dev",
-    "migrate:reset": "prisma migrate reset",
-    "test": "jest src --env=jsdom",
-    "test:watch": "npm run test -- --watch"
+    "migrate:reset": "prisma migrate reset"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.16.4",
-    "@testing-library/dom": "^7.31.2",
-    "@testing-library/jest-dom": "^5.15.1",
-    "@testing-library/svelte": "^3.0.3",
-    "@testing-library/user-event": "^13.5.0",
     "@types/imagekit": "^3.1.2",
-    "@types/jest": "^27.0.3",
     "@types/node": "^16.11.6",
     "@types/uuid": "^8.3.3",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
     "autoprefixer": "^10.4.0",
-    "babel-jest": "^27.3.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.1",
-    "jest": "^27.3.1",
     "postcss": "^8.3.11",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
     "prisma": "^3.3.0",
     "svelte": "^3.42.6",
     "svelte-check": "^2.2.6",
-    "svelte-jester": "^2.1.5",
     "svelte-preprocess": "^4.9.8",
     "tailwindcss": "^2.2.17",
-    "ts-jest": "^27.0.7",
     "tslib": "^2.3.1",
     "typescript": "^4.5.2"
   },
