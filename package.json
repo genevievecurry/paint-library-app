@@ -21,7 +21,8 @@
     "seed": "prisma db seed",
     "seed:paints": "node prisma/seed-paints.cjs",
     "migrate:dev": "prisma migrate dev",
-    "migrate:reset": "prisma migrate reset"
+    "migrate:reset": "prisma migrate reset",
+    "test": "uvu tests '.spec.ts' -r tsm -r tests/setup/register -i setup"
   },
   "devDependencies": {
     "@types/imagekit": "^3.1.2",
@@ -33,6 +34,8 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.1",
+    "jsdom": "^19.0.0",
+    "pirates": "^4.0.4",
     "postcss": "^8.3.11",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
@@ -42,7 +45,9 @@
     "svelte-preprocess": "^4.9.8",
     "tailwindcss": "^2.2.17",
     "tslib": "^2.3.1",
-    "typescript": "^4.5.2"
+    "tsm": "^2.2.1",
+    "typescript": "^4.5.2",
+    "uvu": "^0.5.2"
   },
   "type": "module",
   "dependencies": {
