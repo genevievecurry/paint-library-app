@@ -5,24 +5,7 @@ import adapter from '@sveltejs/adapter-node';
 const config = {
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
-  preprocess: preprocess({
-    babel: {
-      presets: [
-        [
-          '@babel/preset-env',
-          {
-            loose: true,
-            // No need for babel to resolve modules
-            modules: false,
-            targets: {
-              // ! Very important. Target es6+
-              esmodules: true,
-            },
-          },
-        ],
-      ],
-    },
-  }),
+  preprocess: preprocess(),
 
   kit: {
     adapter: adapter({
