@@ -18,7 +18,7 @@
 </script>
 
 <script lang="ts">
-  import Search from './_Search.svelte';
+  import Search from '$lib/components/Search.svelte';
 
   export let paints: ListPaint[];
 

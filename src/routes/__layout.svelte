@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
   import '../styles/global.css';
-  import Search from './_Search.svelte';
+  import Search from '$lib/components/Search.svelte';
 
   export function load() {
     return {
