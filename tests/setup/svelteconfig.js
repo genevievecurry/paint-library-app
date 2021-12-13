@@ -4,7 +4,8 @@ import { dirname, resolve, join } from 'path';
 const configFilename = 'svelte.config.js';
 
 export function getSvelteConfig(rootMode, filename) {
-  const configDir = rootMode === 'upward' ? getConfigDir(dirname(filename)) : process.cwd();
+  const configDir =
+    rootMode === 'upward' ? getConfigDir(dirname(filename)) : process.cwd();
 
   const configFile = resolve(configDir, configFilename);
 

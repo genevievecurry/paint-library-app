@@ -29,15 +29,15 @@
 <header class="my-7">
   <div>
     <div class="mb-4 font-light">
-      <a href="/" class="underline text-gray-500 hover:text-white hover:bg-black inline-block pr-2"
-        >Paint Library</a
-      >
+      <a
+        href="/"
+        class="underline text-gray-500 hover:text-white hover:bg-black inline-block pr-2"
+        >Paint Library</a>
       <span class="text-gray-400">/</span>
       <a
         href="/pigments"
         class="underline text-gray-500 hover:text-white hover:bg-black inline-block px-2"
-        >Pigments</a
-      >
+        >Pigments</a>
       <span class="text-gray-400">/</span>
       <span class="inline-block ml-2">{currentColor}</span>
     </div>
@@ -47,16 +47,17 @@
   </div>
 </header>
 
-<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
+<section
+  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
   {#each pigments as pigment}
     <div class="border border-black">
       <a
         sveltekit:prefetch
         href="{`/pigments/${slug}/${pigment.slug}`}"
-        class="block transition-all bg-white hover:bg-black text-black hover:text-white hover:underline"
-      >
-        <div class="w-full h-48 border-b border-black" style="{`background-color: ${pigment.hex}`}"
-        ></div>
+        class="block transition-all bg-white hover:bg-black text-black hover:text-white hover:underline">
+        <div
+          class="w-full h-48 border-b border-black"
+          style="{`background-color: ${pigment.hex}`}"></div>
         <div class="p-3">
           <span class="block">{pigment.name}</span>
         </div>

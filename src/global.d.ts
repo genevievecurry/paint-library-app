@@ -3,7 +3,8 @@
 declare type Paint = import('.prisma/client').Paint;
 declare type Pigment = import('.prisma/client').Pigment;
 declare type SwatchCard = import('.prisma/client').SwatchCard;
-interface ImportMetaEnv extends Readonly<Record<string, string | boolean | undefined>> {
+interface ImportMetaEnv
+  extends Readonly<Record<string, string | boolean | undefined>> {
   readonly VITE_IMAGEKIT_PUBLIC_API_KEY: string;
   readonly VITE_IMAGEKIT_PRIVATE_API_KEY: string;
 }

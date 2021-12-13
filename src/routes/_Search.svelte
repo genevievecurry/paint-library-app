@@ -2,6 +2,8 @@
   import { goto } from '$app/navigation';
   import { generateSlug } from '$lib/slug';
 
+  export let reverse: boolean = false;
+
   let searchQuery: string;
 
   function resetQuery() {
@@ -17,19 +19,25 @@
 
 <form
   on:submit|preventDefault="{handleQuery}"
-  class="w-full flex align-middle bg-white border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
->
+  class="w-full flex align-middle border {reverse
+    ? 'bg-gray-900 border-white'
+    : 'bg-white  border-black'} focus:outline-none focus:ring-green-400 focus:border-green-400">
   <button class="p-3 flex-none" data-testid="submit-search">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
-        stroke="black"
+        stroke="{reverse ? 'white' : 'black'}"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"></path>
       <path
         d="M21 21L16.65 16.65"
-        stroke="black"
+        stroke="{reverse ? 'white' : 'black'}"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"></path>
@@ -37,8 +45,9 @@
   </button>
 
   <input
-    class="flex-grow text-2xl py-2 px-3 font-light"
+    class="flex-grow font-light py-2 px-3 {reverse
+      ? 'bg-gray-900 border-white text-white'
+      : 'bg-white  border-black text-black'}"
     bind:value="{searchQuery}"
-    placeholder="Search Paints"
-  />
+    placeholder="Search Paints" />
 </form>

@@ -1,5 +1,8 @@
 <script>
-  export let lightfastRating, transparencyRating, stainingRating, granulationRating;
+  export let lightfastRating,
+    transparencyRating,
+    stainingRating,
+    granulationRating;
 </script>
 
 <section class="mt-8">

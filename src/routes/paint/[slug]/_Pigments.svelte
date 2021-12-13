@@ -5,22 +5,30 @@
   export let pigmentsOnPaints: { pigment: Pigment }[];
   interface PigmentComponent extends Pigment {
     color?: Color;
-    slug?: String;
+    slug: string;
   }
 
-  const pigments: PigmentComponent[] = pigmentsOnPaints.map((pop) => pop.pigment);
+  const pigments: PigmentComponent[] = pigmentsOnPaints.map(
+    (pop) => pop.pigment,
+  );
 </script>
 
 <section class="mt-8">
   <h2 class="font-bold text-2xl">Pigments</h2>
 
-  {#if pigments.length < 1}<span class="block my-4 text-gray-400">No pigments added yet.</span>{/if}
+  {#if pigments.length < 1}
+    <span class="block my-4 text-gray-400">No pigments added yet.</span>
+  {/if}
 
   {#each pigments as pigment}
-    <a class="flex my-4" href="{`/pigments/${pigment.color.slug}/${pigment.slug}`}">
+    <a
+      class="flex my-4"
+      href={`/pigments/${pigment.color.slug}/${pigment.slug}`}>
       <div class="mr-4">
         <div class="border border-black relative">
-          <div class="empty-swatch w-16 h-16" style="{`background: ${pigment.hex}`}"></div>
+          <div
+            class="empty-swatch w-16 h-16"
+            style={`background: ${pigment.hex}`} />
         </div>
       </div>
       <div>

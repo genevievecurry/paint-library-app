@@ -10,8 +10,7 @@
       <div>
         <div class="flex my-4">
           <div
-            class="rounded-full bg-green-500 text-white font-extrabold w-10 h-10 grid place-items-center text-xl mr-2"
-          >
+            class="rounded-full bg-green-500 text-white font-extrabold w-10 h-10 grid place-items-center text-xl mr-2">
             <span>{note.author.displayName.substr(0, 1)}</span>
           </div>
           <div>
@@ -26,8 +25,7 @@
         {#each note.childNotes as childNote}
           <div class="flex ml-10 my-4">
             <div
-              class="rounded-full bg-green-300 text-white font-bold w-8 h-8 grid place-items-center text-lg mr-2"
-            >
+              class="rounded-full bg-green-300 text-white font-bold w-8 h-8 grid place-items-center text-lg mr-2">
               <span>{childNote.author.displayName.substr(0, 1)}</span>
             </div>
             <div>

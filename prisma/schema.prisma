@@ -45,11 +45,22 @@ model User {
   email          String       @unique @db.Citext
   hashedPassword String
   displayName    String
+  slug           String       @unique
   role           Role         @default(MEMBER)
   status         UserStatus   @default(PENDING)
   paints         Paint[]
   swatchCards    SwatchCard[]
   notes          Note[]
+  userToken      UserToken[]
+}
+
+model UserToken {
+  id      Int    @id @default(autoincrement())
+  token   String
+  context String
+  sentTo  String
+  user    User   @relation(fields: [userId], references: [id])
+  userId  Int
 }
 
 model Paint {

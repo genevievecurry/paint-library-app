@@ -3,11 +3,6 @@
   "tabWidth": 2,
   "singleQuote": true,
   "trailingComma": "all",
-  "printWidth": 100,
-  "svelteStrictMode": true,
-  "svelteSortOrder": "options-styles-scripts-markup",
-  "svelteAllowShorthand": false,
-  "svelteBracketNewLine": true,
-  "svelteIndentScriptAndStyle": true,
+  "bracketSameLine": true,
   "htmlWhitespaceSensitivity": "strict"
 }
