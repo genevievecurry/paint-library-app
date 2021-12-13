@@ -1,6 +1,5 @@
 <script context="module" lang="ts">
   export function load({ session }) {
-    console.log('session', session);
     const { user } = session;
     if (!user) {
       return {
@@ -18,16 +17,14 @@
   import { session } from '$app/stores';
   import { post } from '$lib/utility';
 
-  export let user;
+  export let user: User;
 
   $: error = false;
-  $: success = false;
 
   async function update() {
     const response = await post('/auth/update', user);
 
     if (response.status == 200) {
-      success = true;
       error = false;
       return response.json();
     } else {
@@ -37,7 +34,6 @@
 
   async function submitHandler() {
     $session.user = await update();
-    console.log('$session.user', $session.user);
   }
 </script>
 
@@ -52,7 +48,7 @@
     </div>
   {/if}
 
-  <form on:submit|preventDefault="{submitHandler}">
+  <form on:submit|preventDefault={submitHandler}>
     <div class="mt-10 grid lg:grid-cols-2 gap-12 xl:gap-32">
       <div>
         <div class="mt-6">
@@ -61,7 +57,7 @@
             id="displayName"
             name="displayName"
             type="text"
-            bind:value="{user.displayName}"
+            bind:value={user.displayName}
             class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400" />
         </div>
 

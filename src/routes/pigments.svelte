@@ -1,8 +1,8 @@
-<script context="module">
+<script context="module" lang="ts">
   export async function load({ fetch }) {
     const response = await fetch('/pigments.json');
     let sections = {};
-    const colors = await response.json();
+    const colors: PigmentListingByColor[] = await response.json();
 
     // Setup containers for sections
     colors.forEach((color) => (sections[color.slug] = {}));
@@ -27,37 +27,39 @@
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
 
-  export let sections;
-  export let colors;
+  export let sections: [];
+  export let colors: PigmentListingByColor[];
 
   const sectionKeys = Object.keys(sections);
 
   let activeSectionId: string;
   let visible = [];
-  let observer;
+  let observer: IntersectionObserver;
 
   // Basic "Scroll Spy" to highlight current section
   onMount(() => {
-    observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const id = entry.target.id;
-        if (entry.isIntersecting) {
-          // To determine if scrolling up or down
-          if (sectionKeys.indexOf(id) < sectionKeys.indexOf(visible[0])) {
-            // Add it to the beginning of the list
-            visible.unshift(id);
+    observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          const id = entry.target.id;
+          if (entry.isIntersecting) {
+            // To determine if scrolling up or down
+            if (sectionKeys.indexOf(id) < sectionKeys.indexOf(visible[0])) {
+              // Add it to the beginning of the list
+              visible.unshift(id);
+            } else {
+              // Add it to the end of the list
+              visible.push(id);
+            }
           } else {
-            // Add it to the end of the list
-            visible.push(id);
+            const visiblePosition = visible.indexOf(id);
+            visiblePosition > -1 && visible.splice(visiblePosition, 1);
           }
-        } else {
-          const visiblePosition = visible.indexOf(id);
-          visiblePosition > -1 && visible.splice(visiblePosition, 1);
-        }
-      });
-      // Set the activeSectionID to the first element in the visible array
-      activeSectionId = visible[0];
-    });
+        });
+        // Set the activeSectionID to the first element in the visible array
+        activeSectionId = visible[0];
+      },
+    );
 
     Object.entries(sections).map((entry) => {
       const target = entry[1];

@@ -258,7 +258,10 @@ export async function getPigment(slug: string) {
   };
 }
 
-export async function getAllPigments() {
+export async function getAllPigments(): Promise <{
+  status: number;
+  body: PigmentListingByColor[];
+}> {
   return {
     body: await prisma.color.findMany({
       orderBy: {
@@ -281,7 +284,13 @@ export async function getAllPigments() {
   };
 }
 
-export async function getPigmentsByColor(slug: string) {
+export async function getPigmentsByColor(slug: string): Promise <{
+  status: number;
+  body: {
+    currentColor: string;
+    pigments: ListPigment[];
+  }
+}> {
   const currentColor = await prisma.color.findUnique({
     where: {
       slug,
@@ -313,7 +322,10 @@ export async function getPigmentsByColor(slug: string) {
   };
 }
 
-export async function getPaint(slug: string) {
+export async function getPaint(slug: string): Promise <{
+  status: number;
+  body: Record<string, unknown>
+}> {
   return {
     body: await prisma.paint.findUnique({
       where: {
@@ -369,14 +381,14 @@ export async function getPaints(): Promise<{
 
 // This will return everythin in the model that is passed in as an argument
 // Intended to be used for form input options
-export async function getOption(model: string) {
+export async function getOption(model: string): Promise<{ body: Record<string, unknown>, status: number}> {
   return {
     body: await prisma[model].findMany(),
     status: 200,
   };
 }
 
-export async function createUser(data) {
+export async function createUser(data: {password: string, email: string, displayName: string}): Promise<{ body: null | User, status: number}> {
   let body = null;
   let status = 404;
 
@@ -412,7 +424,10 @@ export async function createUser(data) {
   };
 }
 
-export async function updateUser(data, user) {
+export async function updateUser(data: User, user: User): Promise<{
+  body: User | null;
+  status: number;
+}> {
   let body = null;
   let status = 401;
 
@@ -443,7 +458,10 @@ export async function updateUser(data, user) {
   };
 }
 
-export async function getUser(data) {
+export async function getUser(data: {password: string, email: string}): Promise<{
+  body: User | null;
+  status: number;
+}> {
   let body = null;
   let status = 404;
 
@@ -484,7 +502,10 @@ export async function getUser(data) {
   };
 }
 
-export async function createPaint(data: ReadOnlyFormData) {
+export async function createPaint(data: ReadOnlyFormData): Promise<{
+  status: number;
+  body: Record<string, unknown>;
+}> {
   let body = {};
   let status = 500;
   let pigments = [];
@@ -589,9 +610,10 @@ export async function createPaint(data: ReadOnlyFormData) {
   };
 }
 
-export async function updateSwatchCard({
-  data,
-}): Promise<{ status: number; body: Record<string, unknown> }> {
+export async function updateSwatchCard(data: ReadOnlyFormData): Promise<{ 
+  status: number; 
+  body: Record<string, unknown>
+}> {
   const body = await prisma.swatchCard.update({
     where: { id: Number(data.get('id')) },
     data: {

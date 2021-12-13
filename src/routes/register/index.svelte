@@ -59,14 +59,21 @@
     <h1 class="font-extrabold text-5xl">Register New User </h1>
   </header>
 
-  <form on:submit|preventDefault="{submitHandler}">
+  {#if error}
+    <div class="bg-red-400 p-3 mb-3 text-white">
+      <p> Error! Error! This is a useful error message! </p>
+    </div>
+  {/if}
+
+  <form on:submit|preventDefault={submitHandler}>
     <div class="mt-10 grid lg:grid-cols-2 gap-12 xl:gap-32">
       <div>
         <div class="mt-6">
           <label for="email" class="block ">Email</label>
-          <small class="leading-5 block mt-1 text-sm text-gray-500 mb-3"
-            >This is what is used to log in & where password reset emails will
-            get sent... someday... when such things exist.</small>
+          <small class="leading-5 block mt-1 text-sm text-gray-500 mb-3">
+            This is what is used to log in & where password reset emails will
+            get sent... someday... when such things exist.
+          </small>
           <input
             class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
             id="email"
@@ -74,7 +81,7 @@
             type="email"
             required
             placeholder="Email"
-            bind:value="{email}" />
+            bind:value={email} />
         </div>
         <div class="mt-6">
           <label for="password" class="block ">Password</label>
@@ -92,7 +99,7 @@
             type="password"
             required
             placeholder="Password"
-            bind:value="{password}" />
+            bind:value={password} />
         </div>
         <div class="mt-6">
           <label for="displayName" class="block">Display Name</label>
@@ -105,7 +112,7 @@
             type="text"
             required
             placeholder="Password"
-            bind:value="{displayName}" />
+            bind:value={displayName} />
         </div>
         <div class="mt-6 px-4 py-3 text-right sm:px-6 border-t border-black">
           <button
@@ -131,10 +138,10 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 class="feather feather-smile">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                <line x1="9" y1="9" x2="9.01" y2="9" />
+                <line x1="15" y1="9" x2="15.01" y2="9" />
               </svg>
               <div class="ml-2">
                 <h2 class="text-xl font-bold">It worked!</h2>

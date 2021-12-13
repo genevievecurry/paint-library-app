@@ -1,4 +1,4 @@
-<script context="module">
+<script context="module" lang="ts">
   export async function load({ page, fetch }) {
     const url = `/pigments/${page.params.colorSlug}/${page.params.pigmentSlug}.json`;
     const response = await fetch(url);
@@ -20,7 +20,7 @@
 </script>
 
 <script lang="ts">
-  export let pigment;
+  export let pigment: PigmentComponent;
 
   function randomDimension() {
     const dimensions = [300, 350, 400, 500, 600];
@@ -58,8 +58,7 @@
 
 <section class="grid gap-3 grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6">
   <div class="border border-black relative h-56 col-span-2 lg:col-span-1">
-    <div class="empty-swatch h-full" style="{`background: ${pigment.hex}`}"
-    ></div>
+    <div class="empty-swatch h-full" style={`background: ${pigment.hex}`} />
   </div>
   <div class="ml-0 lg:ml-3 col-span-2 lg:col-span-3 xl:col-span-3">
     <table class="table-fixed border-collapse border border-black w-full">
@@ -118,17 +117,18 @@
     class="masonry sm:masonry-sm md:masonry-md lg:masonry-lg xl:masonry-xl 2xl:masonry-2xl">
     {#each pigment.paints as paint}
       <div class="table border border-black p-3 break-inside mb-3 w-full">
-        <a sveltekit:prefetch href="{`/paint/${paint.paint.slug}`}">
+        <a sveltekit:prefetch href={`/paint/${paint.paint.slug}`}>
           <div
             class="w-full block h-32"
-            style="{`background-color: ${
+            style={`background-color: ${
               paint.paint.hex
-            }; height: ${randomDimension()}px`}">
+            }; height: ${randomDimension()}px`}>
             <!-- To-do: Figure out how to pull in a swatch image, if there is one. -->
           </div>
           <div class="mt-2">
-            <span class="block font-medium"
-              >{paint.paint.manufacturer?.name}</span>
+            <span class="block font-medium">
+              {paint.paint.manufacturer?.name}
+            </span>
             <span class="block text-sm">{paint.paint.productColorName}</span>
           </div>
         </a>

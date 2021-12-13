@@ -2,7 +2,7 @@
   import '../styles/global.css';
   import Search from './_Search.svelte';
 
-  export function load({ session }) {
+  export function load() {
     return {
       props: {
         menuOpen: false,
@@ -16,7 +16,7 @@
   import { goto } from '$app/navigation';
   import { clickOutside } from '$lib/actions';
 
-  export let menuOpen;
+  export let menuOpen: boolean;
 
   $: menuOpen = false;
 

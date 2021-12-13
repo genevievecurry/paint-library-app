@@ -1,13 +1,18 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import { generateSlug } from '$lib/slug';
+  import type { Manufacturer } from '@prisma/client';
 
-  let manufacturerPromise = getModel('manufacturer');
-  let pigmentPromise = getModel('pigment');
-  let lightfastRatingPromise = getModel('lightfastRating');
-  let transparencyRatingPromise = getModel('transparencyRating');
-  let stainingRatingPromise = getModel('stainingRating');
-  let granulationRatingPromise = getModel('granulationRating');
+  let manufacturerPromise: Promise<Manufacturer[]> = getModel('manufacturer');
+  let pigmentPromise: Promise<Pigment[]> = getModel('pigment');
+  let lightfastRatingPromise: Promise<LightfastRating[]> =
+    getModel('lightfastRating');
+  let transparencyRatingPromise: Promise<TransparencyRating[]> =
+    getModel('transparencyRating');
+  let stainingRatingPromise: Promise<StainingRating[]> =
+    getModel('stainingRating');
+  let granulationRatingPromise: Promise<GranulationRating[]> =
+    getModel('granulationRating');
 
   let slug: string;
 
@@ -251,6 +256,7 @@
               class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400">
               {#each pigments as pigment}
                 <option value={pigment.id}>
+                  {pigment.slug}
                   {pigment.name}
                 </option>
               {/each}
@@ -283,7 +289,8 @@
               class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400">
               {#each lightfastRatings as lightfastRating}
                 <option value={lightfastRating.id}>
-                  {lightfastRating.label}
+                  {lightfastRating.label} -
+                  {lightfastRating.description}
                 </option>
               {/each}
             </select>
@@ -305,7 +312,8 @@
               class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400">
               {#each transparencyRatings as transparencyRating}
                 <option value={transparencyRating.id}>
-                  {transparencyRating.label}
+                  {transparencyRating.label} -
+                  {transparencyRating.description}
                 </option>
               {/each}
             </select>

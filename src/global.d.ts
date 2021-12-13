@@ -3,6 +3,12 @@
 declare type Paint = import('.prisma/client').Paint;
 declare type Pigment = import('.prisma/client').Pigment;
 declare type SwatchCard = import('.prisma/client').SwatchCard;
+declare type Color = import('.prisma/client').Color;
+declare type LightfastRating = import('.prisma/client').LightfastRating;
+declare type TransparencyRating = import('.prisma/client').TransparencyRating;
+declare type StainingRating = import('.prisma/client').StainingRating;
+declare type GranulationRating = import('.prisma/client').GranulationRating;
+
 interface ImportMetaEnv
   extends Readonly<Record<string, string | boolean | undefined>> {
   readonly VITE_IMAGEKIT_PUBLIC_API_KEY: string;
@@ -41,16 +47,46 @@ interface PaintComponent extends Paint {
   notes?: import('.prisma/client').Notes;
 }
 
-type ListPaints = {
+type ListPaint = {
   slug: string;
   hex: string;
   productColorName: string;
   manufacturer: {
     name: string;
   };
-}[];
+}
+
+type ListPigment = {
+  slug: string;
+  hex?: string;
+  name: string;
+  number?: string;
+}
 
 type SearchResults = {
   count: number;
-  paints: ListPaints;
+  paints: ListPaint[];
 };
+
+type PigmentPaints = {
+  paint: ListPaint;
+}[]
+
+interface PigmentComponent extends Pigment {
+  color?: Color;
+  paints: PigmentPaints
+}
+
+type PigmentListingByColor = {
+  label: string,
+  slug: string,
+  pigments: ListPigment[];
+}
+
+type User = {
+  slug: string,
+  displayName: string,
+  email: string,
+  role: string,
+  status: string,
+}

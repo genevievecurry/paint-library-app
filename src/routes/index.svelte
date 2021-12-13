@@ -20,7 +20,7 @@
 <script lang="ts">
   import Search from './_Search.svelte';
 
-  export let paints: ListPaints;
+  export let paints: ListPaint[];
 
   function randomDimension() {
     const dimensions = [300, 350, 400, 500, 600];

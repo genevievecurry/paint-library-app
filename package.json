@@ -25,6 +25,8 @@
     "test": "uvu tests '.spec.ts' -r tsm -r tests/setup/register -i setup"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cookie": "^0.4.1",
     "@types/imagekit": "^3.1.2",
     "@types/node": "^16.11.6",
     "@types/uuid": "^8.3.3",

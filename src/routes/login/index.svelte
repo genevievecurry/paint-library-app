@@ -16,7 +16,6 @@
 
   let email = '';
   let password = '';
-  let combined;
   $: combined = { email: email, password: password };
   $: error = false;
 
@@ -67,7 +66,7 @@
     </div>
   {/if}
 
-  <form on:submit|preventDefault="{submitHandler}">
+  <form on:submit|preventDefault={submitHandler}>
     <fieldset class="form-group">
       <input
         class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
@@ -76,7 +75,7 @@
         type="email"
         required
         placeholder="Email"
-        bind:value="{email}" />
+        bind:value={email} />
     </fieldset>
     <fieldset class="form-group">
       <input
@@ -86,7 +85,7 @@
         type="password"
         required
         placeholder="Password"
-        bind:value="{password}" />
+        bind:value={password} />
     </fieldset>
     <div class="mt-6 px-4 py-3 text-right sm:px-6 border-t border-black">
       <button

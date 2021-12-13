@@ -20,10 +20,10 @@
 </script>
 
 <script lang="ts">
-  export let results;
+  export let results: { pigments: ListPigment[]; currentColor: string };
   export let slug: string;
 
-  const { currentColor, pigments } = results;
+  const { pigments, currentColor } = results;
 </script>
 
 <header class="my-7">
@@ -53,11 +53,11 @@
     <div class="border border-black">
       <a
         sveltekit:prefetch
-        href="{`/pigments/${slug}/${pigment.slug}`}"
+        href={`/pigments/${slug}/${pigment.slug}`}
         class="block transition-all bg-white hover:bg-black text-black hover:text-white hover:underline">
         <div
           class="w-full h-48 border-b border-black"
-          style="{`background-color: ${pigment.hex}`}"></div>
+          style={`background-color: ${pigment.hex}`} />
         <div class="p-3">
           <span class="block">{pigment.name}</span>
         </div>

@@ -19,7 +19,7 @@ export function pigmentCode(
   return convertedType + colorCode + pigmentNumber.toString();
 }
 
-export async function post(endpoint, data) {
+export async function post(endpoint: string, data: unknown): Promise<Response> {
   return fetch(endpoint, {
     method: 'post',
     mode: 'cors',
