@@ -65,7 +65,7 @@
           </div>
           <div class="mt-2">
             <span class="block font-medium">{paint.manufacturer.name}</span>
-            <span class="block text-sm">{paint.productColorName}</span>
+            <span class="block text-sm">{paint.name}</span>
           </div>
         </a>
       </div>

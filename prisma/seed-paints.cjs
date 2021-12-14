@@ -149,7 +149,7 @@ async function main() {
           authorId: Number(paint.authorId),
           manufacturerId: j,
           paintTypeId: Number(paint.paintTypeId),
-          productColorName: paint.productColorName,
+          name: paint.name,
           communityDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
           manufacturerDescription: '<p>Lorem ipsum.</p><p>Lorem ipsum.</p>',
           lightfastRatingId: Number(paint.lightfastRatingId),
@@ -212,6 +212,73 @@ async function main() {
         noteId: parentNote.id,
       },
     ],
+  });
+
+  const palette = await prisma.palette.create({
+    data: {
+      slug: "watercolor-dream-palette-3329435-34534535",
+      title: "Watercolor Dream Palette",
+      description: "This is a short description, limited in length, that describes the intent behind this palette. It is purely optional and might not appear.",
+      ownerId: 1,
+      savedByUsers: {
+        create: [
+          {user: { connect: { id: 1}}},
+          {user: { connect: { id: 2}}},
+        ]
+      },
+      paintsInPalette: {
+        create: [
+          {
+            order: 1,
+            paint: {
+              connect: {
+                id: 1,
+              }
+            }
+          },
+          {
+            order: 2,
+            paint: {
+              connect: {
+                id: 2,
+              }
+            }
+          },
+          {
+            order: 3,
+            paint: {
+              connect: {
+                id: 3,
+              }
+            }
+          },
+          {
+            order: 4,
+            paint: {
+              connect: {
+                id: 4,
+              }
+            }
+          },
+          {
+            order: 5,
+            paint: {
+              connect: {
+                id: 5,
+              }
+            }
+          },
+          {
+            order: 6,
+            paint: {
+              connect: {
+                id: 6,
+              }
+            }
+          },
+        ]
+      }
+    }
   });
 }
 

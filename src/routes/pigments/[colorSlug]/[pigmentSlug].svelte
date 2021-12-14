@@ -129,7 +129,7 @@
             <span class="block font-medium">
               {paint.paint.manufacturer?.name}
             </span>
-            <span class="block text-sm">{paint.paint.productColorName}</span>
+            <span class="block text-sm">{paint.paint.name}</span>
           </div>
         </a>
       </div>

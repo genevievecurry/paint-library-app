@@ -1,4 +1,4 @@
-productColorName,hex,authorId,slug,manufacturerId,paintTypeId,lightfastRatingId,transparencyRatingId,stainingRatingId,granulationRatingId
+name,hex,authorId,slug,manufacturerId,paintTypeId,lightfastRatingId,transparencyRatingId,stainingRatingId,granulationRatingId
 Aquarius Cobalt Blue,#668bae,1,paint-1,1,1,1,1,1,1
 Cobalt Blue,#668bae,1,paint-2,1,1,1,1,1,1
 Cobalt Blue Deep,#668bae,1,paint-3,1,1,1,1,1,1

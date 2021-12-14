@@ -27,7 +27,7 @@ const pigmentSelect: Prisma.PigmentSelect = {
         select: {
           slug: true,
           hex: true,
-          productColorName: true,
+          name: true,
           manufacturer: {
             select: {
               name: true,
@@ -82,7 +82,7 @@ const paintSelect: Prisma.PaintSelect = {
   },
   hex: true,
   productUrl: true,
-  productColorName: true,
+  name: true,
   communityDescription: true,
   manufacturerDescription: true,
   manufacturerPigmentDescription: true,
@@ -181,7 +181,7 @@ const paintSelect: Prisma.PaintSelect = {
 
 const createPaintSelect: Prisma.PaintSelect = {
   slug: true,
-  productColorName: true,
+  name: true,
   authorId: true,
   paintTypeId: true,
   lightfastRatingId: true,
@@ -206,7 +206,7 @@ export async function getSearchResults(query: string): Promise<{
 
   const count = await prisma.paint.count({
     where: {
-      productColorName: {
+      name: {
         search: unsluggedQuery,
       },
     },
@@ -214,7 +214,7 @@ export async function getSearchResults(query: string): Promise<{
 
   const paints = await prisma.paint.findMany({
     where: {
-      productColorName: {
+      name: {
         search: unsluggedQuery,
       },
     },
@@ -226,7 +226,7 @@ export async function getSearchResults(query: string): Promise<{
     select: {
       slug: true,
       hex: true,
-      productColorName: true,
+      name: true,
       manufacturer: {
         select: {
           name: true,
@@ -342,7 +342,7 @@ export async function getPaints(): Promise<{
   body: {
     slug: string;
     hex: string;
-    productColorName: string;
+    name: string;
     manufacturer: {
       name: string;
     };
@@ -359,7 +359,7 @@ export async function getPaints(): Promise<{
       select: {
         slug: true,
         hex: true,
-        productColorName: true,
+        name: true,
         manufacturer: {
           select: {
             name: true,
@@ -526,7 +526,7 @@ export async function createPaint(data: ReadOnlyFormData): Promise<{
   body = await prisma.paint.create({
     data: {
       slug: data.get('slug'),
-      productColorName: data.get('productColorName'),
+      name: data.get('name'),
       authorId: Number(data.get('authorId')),
       paintTypeId: Number(data.get('paintTypeId')),
       lightfastRatingId: Number(data.get('lightfastRatingId')),

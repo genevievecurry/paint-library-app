@@ -50,7 +50,7 @@ interface PaintComponent extends Paint {
 type ListPaint = {
   slug: string;
   hex: string;
-  productColorName: string;
+  name: string;
   manufacturer: {
     name: string;
   };
