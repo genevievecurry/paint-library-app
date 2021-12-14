@@ -38,7 +38,7 @@
     transparencyRating,
     stainingRating,
     granulationRating,
-    productColorName,
+    name,
     manufacturer,
     manufacturerDescription,
     communityDescription,
@@ -55,10 +55,10 @@
           class="underline text-gray-500 hover:text-white hover:bg-black inline-block pr-2"
           >Paint Library</a>
         <span class="text-gray-400">/</span>
-        <span class="inline-block ml-2">{productColorName}</span>
+        <span class="inline-block ml-2">{name}</span>
       </div>
       <h1 class="font-extrabold text-5xl">
-        {productColorName}
+        {name}
       </h1>
       <span class="block mt-2">{manufacturer.name}</span>
     </div>

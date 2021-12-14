@@ -80,7 +80,7 @@
   <fieldset class="mt-10">
     <div class="grid grid-cols-6 gap-6">
       <div class="col-span-6 sm:col-span-3">
-        <label for="productColorName" class="block font-extrabold text-2xl"
+        <label for="name" class="block font-extrabold text-2xl"
           >Color</label>
         <p class="text-sm text-gray-500">
           Representational default. Don't worry, you can upload something nicer
@@ -97,7 +97,7 @@
   <fieldset class="mt-10">
     <div class="grid grid-cols-6 gap-6">
       <div class="col-span-6 sm:col-span-3">
-        <label for="productColorName" class="block font-extrabold text-2xl">
+        <label for="name" class="block font-extrabold text-2xl">
           Color Name</label>
         <p class="text-sm text-gray-500">
           This should be the name of the product as determined by the
@@ -106,8 +106,8 @@
         <input
           type="text"
           on:keyup={updateSlug}
-          id="productColorName"
-          name="productColorName"
+          id="name"
+          name="name"
           class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400" />
       </div>
       <div class="col-span-6 sm:col-span-3">

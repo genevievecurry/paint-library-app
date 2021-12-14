@@ -38,20 +38,22 @@ enum SwatchCardTypeName {
 }
 
 model User {
-  id             Int          @id @default(autoincrement())
-  createdAt      DateTime     @default(now())
-  updatedAt      DateTime?    @updatedAt
-  deleted        Boolean      @default(false)
-  email          String       @unique @db.Citext
-  hashedPassword String
-  displayName    String
-  slug           String       @unique
-  role           Role         @default(MEMBER)
-  status         UserStatus   @default(PENDING)
+  id             Int                   @id @default(autoincrement())
+  createdAt      DateTime              @default(now())
+  updatedAt      DateTime?             @updatedAt
+  deleted        Boolean               @default(false)
+  email          String                @unique @db.Citext
+  hashedPassword String                @db.VarChar(100)
+  displayName    String                @db.VarChar(60)
+  slug           String                @unique
+  role           Role                  @default(MEMBER)
+  status         UserStatus            @default(PENDING)
   paints         Paint[]
   swatchCards    SwatchCard[]
   notes          Note[]
   userToken      UserToken[]
+  ownedPalettes  Palette[]
+  savedPalettes  PaletteSavedByUsers[]
 }
 
 model UserToken {
@@ -78,12 +80,12 @@ model Paint {
   paintTypeId                    Int
   line                           Line?               @relation(fields: [lineId], references: [id])
   lineId                         Int?
-  productUrl                     String?
-  productColorName               String
-  communityDescription           String?
-  manufacturerDescription        String?
-  manufacturerPigmentDescription String?
-  hex                            String?
+  productUrl                     String?             @db.VarChar(140)
+  name                           String              @db.VarChar(140)
+  communityDescription           String?             @db.VarChar(240)
+  manufacturerDescription        String?             @db.VarChar(240)
+  manufacturerPigmentDescription String?             @db.VarChar(240)
+  hex                            String?             @db.VarChar(10)
   lightfastRating                LightfastRating     @relation(fields: [lightfastRatingId], references: [id])
   lightfastRatingId              Int
   transparencyRating             TransparencyRating  @relation(fields: [transparencyRatingId], references: [id])
@@ -96,9 +98,9 @@ model Paint {
   pigmentsOnPaints               PigmentsOnPaints[]
   notes                          Note[]
   tags                           TagsOnPaints[]
+  paintsInPalette                PaintsInPalette[]
 
-  // SwatchCard SwatchCard[]
-  @@unique([manufacturerId, productColorName])
+  @@unique([manufacturerId, name])
 }
 
 model Pigment {
@@ -107,9 +109,9 @@ model Pigment {
   updatedAt            DateTime?           @updatedAt
   slug                 String              @unique
   type                 PigmentType         @default(CIPIGMENT)
-  name                 String
-  number               String
-  hex                  String?
+  name                 String              @db.VarChar(60)
+  number               String              @db.VarChar(4)
+  hex                  String?             @db.VarChar(10)
   color                Color               @relation(fields: [colorCode], references: [code])
   colorCode            String
   imageKitUpload       ImageKitUpload?     @relation(fields: [imageKitUploadId], references: [id])
@@ -136,7 +138,7 @@ model Tag {
   id        Int            @id @default(autoincrement())
   createdAt DateTime       @default(now())
   updatedAt DateTime       @updatedAt
-  label     String
+  label     String         @db.VarChar(60)
   slug      String
   paints    TagsOnPaints[]
 
@@ -206,8 +208,8 @@ model SwatchCardType {
   createdAt   DateTime           @default(now())
   updatedAt   DateTime?          @updatedAt
   name        SwatchCardTypeName @unique
-  label       String
-  description String
+  label       String             @db.VarChar(60)
+  description String             @db.VarChar(240)
   swatchCards SwatchCard[]
 }
 
@@ -220,7 +222,7 @@ model Paper {
   manufacturerId Int?
   line           Line?         @relation(fields: [lineId], references: [id])
   lineId         Int?
-  description    String
+  description    String        @db.VarChar(240)
   weightInLbs    Int
 }
 
@@ -233,7 +235,7 @@ model Note {
   paint      Paint     @relation(fields: [paintId], references: [id])
   paintId    Int
   approved   Boolean   @default(false)
-  content    String
+  content    String    @db.VarChar(500)
   childNotes Note[]    @relation("NoteToNote")
   note       Note?     @relation("NoteToNote", fields: [noteId], references: [id])
   noteId     Int?
@@ -329,4 +331,38 @@ model ImageKitUpload {
   url          String
   swatchCard   SwatchCard[]
   pigment      Pigment[]
+}
+
+model Palette {
+  id              Int                   @id @default(autoincrement())
+  createdAt       DateTime              @default(now())
+  updatedAt       DateTime?             @updatedAt
+  deleted         Boolean               @default(false)
+  visible         Boolean               @default(true)
+  slug            String                @unique
+  title           String                @db.VarChar(60)
+  description     String?               @db.VarChar(240)
+  paintsInPalette PaintsInPalette[]
+  owner           User                  @relation(fields: [ownerId], references: [id])
+  ownerId         Int
+  savedByUsers    PaletteSavedByUsers[]
+}
+
+model PaintsInPalette {
+  id        Int      @id @default(autoincrement())
+  setAt     DateTime @default(now())
+  order     Int?
+  palette   Palette  @relation(fields: [paletteId], references: [id])
+  paletteId Int
+  paint     Paint    @relation(fields: [paintId], references: [id])
+  paintId   Int
+}
+
+model PaletteSavedByUsers {
+  id        Int      @id @default(autoincrement())
+  setAt     DateTime @default(now())
+  palette   Palette  @relation(fields: [paletteId], references: [id])
+  paletteId Int
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
 }
