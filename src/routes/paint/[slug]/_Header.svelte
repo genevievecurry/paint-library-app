@@ -6,9 +6,10 @@
 <header class="my-7">
   <div>
     <div class="mb-4 font-light">
-      <a href="/" class="underline text-gray-500 hover:text-white hover:bg-black inline-block pr-2"
-        >Paint Library</a
-      >
+      <a
+        href="/"
+        class="underline text-gray-500 hover:text-white hover:bg-black inline-block pr-2"
+        >Paint Library</a>
       <span class="text-gray-400">/</span>
       <span class="inline-block ml-2">{title}</span>
     </div>

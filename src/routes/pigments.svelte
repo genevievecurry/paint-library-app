@@ -1,8 +1,8 @@
-<script context="module">
+<script context="module" lang="ts">
   export async function load({ fetch }) {
     const response = await fetch('/pigments.json');
     let sections = {};
-    const colors = await response.json();
+    const colors: PigmentListingByColor[] = await response.json();
 
     // Setup containers for sections
     colors.forEach((color) => (sections[color.slug] = {}));
@@ -27,37 +27,39 @@
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
 
-  export let sections;
-  export let colors;
+  export let sections: [];
+  export let colors: PigmentListingByColor[];
 
   const sectionKeys = Object.keys(sections);
 
   let activeSectionId: string;
   let visible = [];
-  let observer;
+  let observer: IntersectionObserver;
 
   // Basic "Scroll Spy" to highlight current section
   onMount(() => {
-    observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const id = entry.target.id;
-        if (entry.isIntersecting) {
-          // To determine if scrolling up or down
-          if (sectionKeys.indexOf(id) < sectionKeys.indexOf(visible[0])) {
-            // Add it to the beginning of the list
-            visible.unshift(id);
+    observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          const id = entry.target.id;
+          if (entry.isIntersecting) {
+            // To determine if scrolling up or down
+            if (sectionKeys.indexOf(id) < sectionKeys.indexOf(visible[0])) {
+              // Add it to the beginning of the list
+              visible.unshift(id);
+            } else {
+              // Add it to the end of the list
+              visible.push(id);
+            }
           } else {
-            // Add it to the end of the list
-            visible.push(id);
+            const visiblePosition = visible.indexOf(id);
+            visiblePosition > -1 && visible.splice(visiblePosition, 1);
           }
-        } else {
-          const visiblePosition = visible.indexOf(id);
-          visiblePosition > -1 && visible.splice(visiblePosition, 1);
-        }
-      });
-      // Set the activeSectionID to the first element in the visible array
-      activeSectionId = visible[0];
-    });
+        });
+        // Set the activeSectionID to the first element in the visible array
+        activeSectionId = visible[0];
+      },
+    );
 
     Object.entries(sections).map((entry) => {
       const target = entry[1];
@@ -75,8 +77,7 @@
         <a
           href="/"
           class="underline text-gray-500 hover:text-white hover:bg-black inline-block pr-2"
-          >Paint Library</a
-        >
+          >Paint Library</a>
         <span class="text-gray-400">/</span>
         <span class="inline-block pl-2">Pigments</span>
       </div>
@@ -92,13 +93,12 @@
           {#each colors as color}
             <li class="my-1">
               <a
-                class="{`hover:text-white hover:bg-black inline-block px-2 ${
+                class={`hover:text-white hover:bg-black inline-block px-2 ${
                   color.slug === activeSectionId
                     ? 'text-black font-bold'
                     : 'text-gray-500 font-light'
-                }`}"
-                href="{`#${color.slug}`}"
-              >
+                }`}
+                href={`#${color.slug}`}>
                 {color.label}
               </a>
             </li>
@@ -108,15 +108,14 @@
     </aside>
     <div class="col-span-5">
       {#each colors as color}
-        <section id="{color.slug}" bind:this="{sections[color.slug]}">
+        <section id={color.slug} bind:this={sections[color.slug]}>
           <div class="sticky top-0 bg-white py-2 mt-10"
-            ><h2 class="font-bold text-3xl">{color.label}</h2></div
-          >
+            ><h2 class="font-bold text-3xl">{color.label}</h2></div>
 
           <table class="border-collapse border border-black mt-4 w-full">
             <thead class="text-left border-b border-black">
               <tr>
-                <th class="pl-1 pr-3 py-3"></th>
+                <th class="pl-1 pr-3 py-3" />
                 <th class="px-3 whitespace-nowrap">CI #</th>
                 <th class="px-3 py-3 whitespace-nowrap">CI Code</th>
                 <th class="px-3 w-full">Common Name</th>
@@ -125,13 +124,15 @@
             {#each color.pigments as pigment}
               <tr
                 class="transition-all border-b border-gray-300 cursor-pointer hover:bg-black hover:text-white"
-                on:click="{() => goto(`/pigments/${color.slug}/${pigment.slug}`)}"
-              >
+                on:click={() =>
+                  goto(`/pigments/${color.slug}/${pigment.slug}`)}>
                 <td class="pl-1 pr-3 py-1">
-                  <a sveltekit:prefetch href="{`/pigments/${color.slug}/${pigment.slug}`}">
+                  <a
+                    sveltekit:prefetch
+                    href={`/pigments/${color.slug}/${pigment.slug}`}>
                     <div
                       class="w-8 h-8 border border-black"
-                      style="{`background-color: ${pigment.hex}`}"></div>
+                      style={`background-color: ${pigment.hex}`} />
                   </a>
                 </td>
                 <td class="px-3">

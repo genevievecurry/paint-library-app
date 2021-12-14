@@ -3,6 +3,7 @@ require('dotenv').config();
 const { PrismaClient } = require('@prisma/client');
 const { parse } = require('csv-parse');
 const { createReadStream } = require('fs');
+const bcrypt = require('bcrypt');
 
 const prisma = new PrismaClient({ log: ['info', 'warn'] });
 
@@ -144,13 +145,17 @@ async function main() {
     ],
   });
 
+  const salt = bcrypt.genSaltSync(10);
+  const superSecurePassword = bcrypt.hashSync('password', salt);
+
   const adminUser = await prisma.user.upsert({
     where: { email: 'admin@paintlibrary.com' },
     update: {},
     create: {
       email: 'admin@paintlibrary.com',
       displayName: 'Admin the Human',
-      hashedPassword: 'password',
+      hashedPassword: superSecurePassword,
+      slug: 'admin-the-human-37287234987',
       role: 'ADMIN',
       status: 'ACTIVE',
     },
@@ -162,20 +167,29 @@ async function main() {
     create: {
       email: 'member@paintlibrary.foo',
       displayName: 'Entity Member',
-      hashedPassword: 'password',
+      slug: 'entity-member-37287234987',
+      hashedPassword: superSecurePassword,
       status: 'ACTIVE',
     },
   });
 
   const swatchCardTypes = await prisma.swatchCardType.createMany({
     data: [
-      { label: 'Gradient Wash', description: 'More paint to more water.', name: 'GRADIENT' },
+      {
+        label: 'Gradient Wash',
+        description: 'More paint to more water.',
+        name: 'GRADIENT',
+      },
       {
         label: 'Granulation',
         description: 'Particle separation and texture in wet wash.',
         name: 'GRANULATION',
       },
-      { label: 'Dispersement', description: 'Flow of paint on wet paper.', name: 'DISPERSEMENT' },
+      {
+        label: 'Dispersement',
+        description: 'Flow of paint on wet paper.',
+        name: 'DISPERSEMENT',
+      },
       {
         label: 'High Dilution Undertone',
         description: 'Highly diluted, on dry paper.',
@@ -197,7 +211,11 @@ async function main() {
         description: 'Wet brush with clean water "erasing" after dry.',
         name: 'WET_LIFT',
       },
-      { label: 'Dry Lift', description: 'Dry brush or tissue lifting wet wash', name: 'DRY_LIFT' },
+      {
+        label: 'Dry Lift',
+        description: 'Dry brush or tissue lifting wet wash',
+        name: 'DRY_LIFT',
+      },
     ],
   });
 

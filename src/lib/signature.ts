@@ -8,7 +8,10 @@ function signature(privateKey: string, token: string, expire: number) {
 
 type signatureOptions = { token: string; expire: number };
 
-export const generateImagekitSignature = ({ token, expire }: signatureOptions): string => {
+export const generateImagekitSignature = ({
+  token,
+  expire,
+}: signatureOptions): string => {
   const privateKey = import.meta.env.VITE_IMAGEKIT_PRIVATE_API_KEY;
   return signature(privateKey, token, expire);
 };

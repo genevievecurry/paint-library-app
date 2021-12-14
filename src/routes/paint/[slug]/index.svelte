@@ -39,7 +39,9 @@
 </script>
 
 {#if paint}
-  <Header title="{paint.productColorName}" manufacturerName="{paint.manufacturer?.name}" />
+  <Header
+    title="{paint.productColorName}"
+    manufacturerName="{paint.manufacturer?.name}" />
   <SwatchCards swatchCardsOnPaint="{paint.swatchCardsOnPaint}" />
   <div class="md:flex">
     <div class="flex-auto">
@@ -47,14 +49,12 @@
         lightfastRating="{paint.lightfastRating}"
         transparencyRating="{paint.transparencyRating}"
         stainingRating="{paint.stainingRating}"
-        granulationRating="{paint.granulationRating}"
-      />
+        granulationRating="{paint.granulationRating}" />
       <Description
         communityDescription="{paint.communityDescription}"
         manufacturerDescription="{paint.manufacturerDescription}"
         manufacturerPigmentDescription="{paint.manufacturerPigmentDescription}"
-        manufacturerName="{paint.manufacturer?.name}"
-      />
+        manufacturerName="{paint.manufacturer?.name}" />
     </div>
     <div class="flex-none md:w-96 md:pl-8">
       <Pigments pigmentsOnPaints="{paint.pigmentsOnPaints}" />

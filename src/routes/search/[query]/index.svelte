@@ -42,14 +42,16 @@
   </div>
 </header>
 
-<div class="masonry sm:masonry-sm md:masonry-md lg:masonry-lg xl:masonry-xl 2xl:masonry-2xl">
+<div
+  class="masonry sm:masonry-sm md:masonry-md lg:masonry-lg xl:masonry-xl 2xl:masonry-2xl">
   {#each paints as paint (paint)}
     <div class="table border border-black p-3 break-inside mb-3 w-full">
       <a sveltekit:prefetch href="{`/paint/${paint.slug}`}">
         <div
           class="w-full block"
-          style="{`background-color: ${paint.hex}; height: ${randomDimension()}px`}"
-        >
+          style="{`background-color: ${
+            paint.hex
+          }; height: ${randomDimension()}px`}">
           <!-- To-do: Figure out how to pull in a swatch image, if there is one. -->
         </div>
         <div class="mt-2">
