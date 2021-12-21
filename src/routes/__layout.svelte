@@ -53,7 +53,7 @@
 <div class="bg-white">
   <div class="relative">
     <header class="relative">
-      <div class="bg-gray-900 py-6">
+      <div class="dark bg-gray-900 py-6">
         <nav
           class="relative container mx-auto flex items-center justify-between px-4 sm:px-6"
           aria-label="Global">
@@ -109,7 +109,9 @@
           {#if $session?.user}
             <div class="md:flex md:items-center md:space-x-6 text-white px-2">
               <span class="text-gray-400 font-light"
-                >Hi, {$session?.user?.displayName}!</span>
+                >Hi, <a href={`/@${$session.user.slug}`} class="link"
+                  >{$session?.user?.displayName}</a
+                >!</span>
             </div>
 
             <div class="relative inline-block text-left">
@@ -143,45 +145,50 @@
                       y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
                 </button>
               </div>
-              <div
-                class="transition ease-out duration-100 {menuOpen
-                  ? 'transform opacity-100 scale-100'
-                  : 'transform opacity-0 scale-95'} z-10 border border-white origin-top-right absolute right-0 mt-2 w-56 bg-black ring-1 ring-black ring-opacity-5 focus:outline-none"
-                role="menu"
-                aria-orientation="vertical"
-                aria-labelledby="menu-button"
-                tabindex="-1">
-                <div class="py-1" role="none">
-                  {#if $session.user?.role === 'ADMIN'}
+              {#if menuOpen}
+                <div
+                  class="light transition ease-out duration-100 {menuOpen
+                    ? 'transform opacity-100 scale-100'
+                    : 'transform opacity-0 scale-95'} z-10 border border-white origin-top-right absolute right-0 mt-2 w-56 bg-black ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                  tabindex="-1">
+                  <div class="py-1" role="none">
+                    {#if $session.user?.role === 'ADMIN'}
+                      <a
+                        href="/creator"
+                        class="action-link block px-4 py-2 text-sm"
+                        role="menuitem"
+                        tabindex="-1"
+                        on:click={() => (menuOpen = false)}>Create Paint</a>
+                      <a
+                        href="/register"
+                        class="action-link block px-4 py-2 text-sm"
+                        role="menuitem"
+                        tabindex="-1"
+                        on:click={() => (menuOpen = false)}>Register User</a>
+                    {/if}
                     <a
-                      href="/creator"
-                      class="text-white hover:text-black hover:bg-white block px-4 py-2 text-sm"
+                      href={`/@${$session.user.slug}`}
+                      class="action-link block px-4 py-2 text-sm"
                       role="menuitem"
                       tabindex="-1"
-                      id="menu-item-0"
-                      on:click={() => (menuOpen = false)}>Create Paint</a>
+                      on:click={() => (menuOpen = false)}>Profile</a>
                     <a
-                      href="/register"
-                      class="text-white border-t border-white hover:text-black hover:bg-white block px-4 py-2 text-sm"
+                      href="/account"
+                      class="action-link block px-4 py-2 text-sm"
                       role="menuitem"
                       tabindex="-1"
-                      id="menu-item-1"
-                      on:click={() => (menuOpen = false)}>Register User</a>
-                  {/if}
-                  <a
-                    href="/account"
-                    class="text-white border-t border-white hover:text-black hover:bg-white block px-4 py-2 text-sm"
-                    role="menuitem"
-                    tabindex="-1"
-                    id="menu-item-1"
-                    on:click={() => (menuOpen = false)}>Account</a>
-                  <span
-                    class="text-white border-t border-white hover:text-black hover:bg-white block px-4 py-2 text-sm"
-                    role="menuitem"
-                    tabindex="-1"
-                    on:click={logoutHandler}>Sign Out</span>
+                      on:click={() => (menuOpen = false)}>Account</a>
+                    <span
+                      class="action-link block px-4 py-2 text-sm"
+                      role="menuitem"
+                      tabindex="-1"
+                      on:click={logoutHandler}>Sign Out</span>
+                  </div>
                 </div>
-              </div>
+              {/if}
             </div>
           {:else}
             <div class="md:flex md:items-center md:space-x-6 text-white">

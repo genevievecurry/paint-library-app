@@ -8,6 +8,7 @@ declare type LightfastRating = import('.prisma/client').LightfastRating;
 declare type TransparencyRating = import('.prisma/client').TransparencyRating;
 declare type StainingRating = import('.prisma/client').StainingRating;
 declare type GranulationRating = import('.prisma/client').GranulationRating;
+declare type Palette = import('.prisma/client').Palette;
 
 interface ImportMetaEnv
   extends Readonly<Record<string, string | boolean | undefined>> {
@@ -89,4 +90,16 @@ type User = {
   email: string,
   role: string,
   status: string,
+}
+
+type DisplayUser = {
+  slug: string,
+  displayName: string,
+  role: string,
+  status: string,
+}
+
+interface PaletteComponent extends Palette {
+  paintsInPalette?: import('.prisma/client').PaintsInPalette,
+  owner: DisplayUser,
 }

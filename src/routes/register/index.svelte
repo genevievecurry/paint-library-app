@@ -12,7 +12,7 @@
   let email = '';
   let password = '';
   let displayName = '';
-  $: combined = {
+  $: formData = {
     email: email,
     password: password,
     displayName: displayName,
@@ -32,10 +32,10 @@
       },
       redirect: 'follow',
       referrerPolicy: 'no-referrer',
-      body: JSON.stringify(combined),
+      body: JSON.stringify(formData),
     });
 
-    if (response.status == 200) {
+    if (response.status === 200) {
       success = true;
       error = false;
       // Clear out form fields
