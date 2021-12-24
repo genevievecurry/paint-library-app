@@ -6,8 +6,7 @@
     if (response.ok) {
       return {
         props: {
-          data: await response.json(),
-          editable: false,
+          paletteData: await response.json(),
         },
       };
     }
@@ -22,14 +21,14 @@
 <script lang="ts">
   import PalettePreview from '$lib/components/PalettePreview.svelte';
 
-  export let data;
-  export let editable: boolean;
+  export let paletteData;
 
-  const { ownedPalettes } = data;
+  $: data = paletteData;
+
 </script>
 
 <div class="grid grid-cols-3 gap-6">
-  {#each ownedPalettes as ownedPalette}
+  {#each data.ownedPalettes as ownedPalette}
     <PalettePreview palette={ownedPalette} />
   {/each}
 </div>

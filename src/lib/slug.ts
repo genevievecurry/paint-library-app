@@ -15,7 +15,6 @@ export const generateSlug = ({ value, uuid = false }: GenerateSlug): string => {
   return result;
 };
 
-
 export const generateUUID = () => {
   return uuidv4();
-}
+};

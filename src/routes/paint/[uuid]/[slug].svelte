@@ -7,6 +7,7 @@
       return {
         props: {
           slug: page.params.slug,
+          uuid: page.params.uuid,
           paint: await response.json(),
         },
       };
@@ -22,7 +23,7 @@
 <script lang="ts">
   import { session } from '$app/stores';
   import { setContext } from 'svelte';
-  import { connect } from '$lib/utility';
+  import { connect, generateUrl } from '$lib/utility';
   import { clickOutside } from '$lib/actions';
   import Header from '$lib/components/Header.svelte';
   import Modal from '$lib/components/Modal.svelte';
@@ -31,10 +32,11 @@
   import Pigments from './_Pigments.svelte';
   import Notes from './_Notes.svelte';
 
-
   export let slug: string;
+  export let uuid: string;
   export let paint: PaintComponent;
 
+  setContext('uuid', uuid);
   setContext('slug', slug);
   setContext('editable', true);
 
@@ -57,8 +59,8 @@
   let newlyAddedPalette;
   let showPaletteModal = false;
 
-  async function addToPalette(paletteSlug: string) {
-    const response = await connect({method: 'post', endpoint: `/palette/${paletteSlug}.json`, data: {
+  async function addToPalette(paletteUuid: string) {
+    const response = await connect({method: 'post', endpoint: `/palette/${paletteUuid}.json`, data: {
       paintId: paint.id,
     }});
     if (response.status == 200) {
@@ -66,16 +68,17 @@
     }
   }
 
-  async function addToPaletteHandler(paletteSlug) {
-    newlyAddedPalette = await addToPalette(paletteSlug);
+  async function addToPaletteHandler(paletteUuid) {
+    newlyAddedPalette = await addToPalette(paletteUuid);
 
-    if (newlyAddedPalette.slug){
+    if (newlyAddedPalette.uuid){
+      const url = generateUrl({prefix: "palette", target: newlyAddedPalette})
       $session.notification = {
         type: 'success',
         visible: true,
         message: `
         Added <span class="font-bold">${name}</span> to
-        <a href="/palette/${newlyAddedPalette.slug}" class="underline">${newlyAddedPalette.title}</a>
+        <a href="${url}" class="underline">${newlyAddedPalette.title}</a>
         `
       } 
     } else {
@@ -172,7 +175,7 @@
                           class="text-black block"
                           role="menuitem"
                           tabindex="-1"
-                          on:click={() => addToPaletteHandler(palette.slug)}
+                          on:click={() => addToPaletteHandler(palette.uuid)}
                           >{palette.title}</span>
                         <!-- {/if} -->
                       </div>

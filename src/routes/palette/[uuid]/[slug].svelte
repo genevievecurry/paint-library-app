@@ -1,13 +1,13 @@
 <script context="module" lang="ts">
   export async function load({ session, page, fetch }) {
     const { user } = session;
-    const url = `/palette/${page.params.slug}.json`;
+    const url = `/palette/${page.params.uuid}.json`;
     const response = await fetch(url);
 
     if (response.ok) {
       return {
         props: {
-          slug: page.params.slug,
+          uuid: page.params.uuid,
           paletteData: await response.json(),
           user
         },
@@ -27,11 +27,11 @@
   import Modal from '$lib/components/Modal.svelte';
   import PaletteForm from '$lib/components/PaletteForm.svelte';
   import { clickOutside } from '$lib/actions';
-  import { connect } from '$lib/utility';
+  import { connect, generateUrl } from '$lib/utility';
   import { session } from '$app/stores';
   import { goto } from '$app/navigation';
   
-  export let slug: string;
+  export let uuid: string;
   export let paletteData: PaletteComponent;
   export let user: User;
 
@@ -48,7 +48,7 @@
   let showDeletePaletteDialog = false;
 
   async function deletePalette() {
-    const response = await connect({method:'DELETE', endpoint:`/palette/${slug}.json`})
+    const response = await connect({method:'DELETE', endpoint:`/palette/${uuid}.json`})
 
     if (response.ok) {
       goto(`/@${$session.user.username}`);
@@ -154,7 +154,7 @@
     class="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-4">
     {#each paintsInPalette as paintInPalette}
       <div class="border border-black p-1">
-        <a sveltekit:prefetch href={`/paint/${paintInPalette.paint.slug}`}>
+        <a href={generateUrl({prefix: 'paint', target: paintInPalette.paint})}>
           <div
             class="w-full h-32"
             style={`background-color: ${paintInPalette.paint.hex}`} />

@@ -6,7 +6,7 @@
     if (response.ok) {
       return {
         props: {
-          user: await response.json(),
+          userData: await response.json(),
         },
       };
     }
@@ -19,20 +19,20 @@
 </script>
 
 <script lang="ts">
+  import { afterUpdate } from 'svelte';
   import Header from '$lib/components/Header.svelte';
   import Section from './_Section.svelte';
 
-  export let user;
+  export let userData;
 
-  let section;
+  $: user = userData;
 
-  const { username, _count, savedPalettes, ownedPalettes } = user;
 </script>
 
 <div class="container mx-auto px-4 sm:px-6">
-  <Header title={username} />
+  <Header title={user.username} />
 
-  <Section {_count}>
+  <Section _count={user._count}>
     <slot />
   </Section>
 </div>

@@ -8,19 +8,19 @@
   // This functionality will need to be modified if we add ability to create
   // a palette elsewhere, as it is janky jank
   export let paintId = null;
-  export let palette: PaletteComponent;
+  export let palette = null;
 
-  let title = palette.title || '';
-  let description = palette.description || '';
+  let title = palette?.title || '';
+  let description = palette?.description || '';
   let action;
   let endpoint;
 
   if (paintId !== null){
     action = 'create';
     endpoint = '/palette/create.json'
-  } else if(palette?.slug !== undefined) {
+  } else if(palette?.uuid !== undefined) {
     action = 'update';
-    endpoint = `/palette/${palette.slug}.json`
+    endpoint = `/palette/${palette?.uuid}.json`
   }
 
   const dispatch = createEventDispatcher();
@@ -46,9 +46,17 @@
       event.preventDefault();
       const promise = await handlePost()
 
-      if(promise.slug){
-        console.log("is this actually running")
-        goto(`/palette/${promise.slug}`);
+      if(promise.uuid){
+        $session.notification = {
+        type: 'success',
+        visible: true,
+        message: 
+          `
+          Hoorah! Palette was updated successfully.
+          `
+        }
+
+        goto(`/palette/${promise?.uuid}/${promise?.slug}`);
         success();
       }
     };

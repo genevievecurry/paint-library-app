@@ -3,8 +3,8 @@ import * as api from '$lib/api';
 export async function get({
   params,
 }): Promise<{ status: number; body: Record<string, unknown> }> {
-  const { slug } = params;
-  const response = await api.getPalette(slug);
+  const { uuid } = params;
+  const response = await api.getPalette(uuid);
 
   return response;
 }
@@ -15,15 +15,15 @@ export async function post({ body: data, locals, params }) {
       status: 401,
     };
   }
-  const { slug } = params;
-  const response = await api.updatePalette(slug, data, locals.user);
+  const { uuid } = params;
+  const response = await api.updatePalette(uuid, data, locals.user);
 
   return response;
 }
 
 export async function del({ params }) {
-  const { slug } = params;
-  const response = await api.deletePalette(slug); 
+  const { uuid } = params;
+  const response = await api.deletePalette(uuid);
 
   return response;
 }

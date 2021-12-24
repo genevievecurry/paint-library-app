@@ -111,7 +111,7 @@
             <div class="md:flex md:items-center md:space-x-6 text-white px-2">
               <span class="text-gray-400 font-light"
                 >Hi, <a href={`/@${$session.user.username}`} class="link"
-                  >{$session?.user?.username}</a
+                  >{$session?.user?.firstName}</a
                 >!</span>
             </div>
 

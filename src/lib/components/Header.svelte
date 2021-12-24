@@ -1,8 +1,17 @@
 <script lang="ts">
+  import { afterUpdate } from 'svelte';
+
   export let title;
   export let subtitle = null;
   export let description = null;
   export let owner = null;
+
+  afterUpdate(() => {
+    title = title;
+    subtitle = subtitle;
+    description = description;
+    owner = owner;
+  });
 </script>
 
 <header class="my-7 md:flex justify-between">

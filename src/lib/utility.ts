@@ -19,12 +19,30 @@ export function pigmentCode(
   return convertedType + colorCode + pigmentNumber.toString();
 }
 
-export async function connect({method = 'post', endpoint, data}: {
-  method: string, 
-  endpoint: string, 
-  data?: unknown}
-  ): Promise<Response> {
+export function generateUrl({ prefix, target }) {
+  if (prefix && target.uuid && target.slug) {
+    return `/${prefix}/${target.uuid}/${target.slug}`;
+  }
+  if (prefix && target.uuid) {
+    return `/${prefix}/${target.uuid}`;
+  }
+  if (prefix && target.slug) {
+    return `/${prefix}/${target.slug}`;
+  }
+  if (!prefix && target.slug) {
+    return `/@${target.slug}`;
+  }
+}
 
+export async function connect({
+  method = 'post',
+  endpoint,
+  data,
+}: {
+  method: string;
+  endpoint: string;
+  data?: unknown;
+}): Promise<Response> {
   const opts = {
     method,
     mode: 'cors',
@@ -34,13 +52,13 @@ export async function connect({method = 'post', endpoint, data}: {
     referrerPolicy: 'no-referrer',
     headers: {},
     body: '',
-  }
+  };
 
-  if(data){
+  if (data) {
     opts.headers = {
       'Content-Type': 'application/json',
-    }
-    opts.body = JSON.stringify(data)
+    };
+    opts.body = JSON.stringify(data);
   }
 
   return fetch(endpoint, opts);

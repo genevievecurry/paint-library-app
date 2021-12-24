@@ -9,6 +9,7 @@ const userBasicSelect: Prisma.UserSelect = {
   username: true,
   role: true,
   status: true,
+  uuid: true,
 };
 
 const pigmentSelect: Prisma.PigmentSelect = {
@@ -32,6 +33,7 @@ const pigmentSelect: Prisma.PigmentSelect = {
       paint: {
         select: {
           slug: true,
+          uuid: true,
           hex: true,
           name: true,
           manufacturer: {
@@ -66,6 +68,7 @@ const swatchCardSelect: Prisma.SwatchCardSelect = {
 
 const paletteSelect: Prisma.PaletteSelect = {
   id: true,
+  uuid: true,
   visible: true,
   slug: true,
   title: true,
@@ -78,6 +81,7 @@ const paletteSelect: Prisma.PaletteSelect = {
       order: true,
       paint: {
         select: {
+          uuid: true,
           slug: true,
           name: true,
           hex: true,
@@ -496,7 +500,6 @@ export async function updateUser(
   let body = null;
   let status = 404;
 
-
   const response = await prisma.user.update({
     where: {
       email: user.email,
@@ -623,6 +626,7 @@ export async function getUserProfileOwnedPalettes(data): Promise<{
           createdAt: 'desc',
         },
         select: {
+          uuid: true,
           slug: true,
           title: true,
           description: true,
@@ -673,6 +677,7 @@ export async function getUserProfileSavedPalettes(data): Promise<{
         select: {
           palette: {
             select: {
+              uuid: true,
               slug: true,
               title: true,
               description: true,
@@ -870,7 +875,7 @@ export async function createPalette(data): Promise<{
       },
       owner: {
         connect: {
-          slug: data.owner.slug,
+          uuid: data.owner.uuid,
         },
       },
     },
@@ -888,14 +893,14 @@ export async function createPalette(data): Promise<{
 }
 
 export async function getPalette(
-  slug: string,
+  uuid: string,
 ): Promise<{ status: number; body: Record<string, unknown> }> {
   let body = null;
   let status = 404;
 
   body = await prisma.palette.findUnique({
     where: {
-      slug,
+      uuid,
     },
     select: paletteSelect,
   });
@@ -910,12 +915,12 @@ export async function getPalette(
   };
 }
 
-export async function updatePalette(slug, data, user) {
+export async function updatePalette(uuid, data, user) {
   let body = null;
   let status = 404;
   let dataQuery;
 
-  if (data.paintId){
+  if (data.paintId) {
     dataQuery = {
       paintsInPalette: {
         create: {
@@ -926,23 +931,24 @@ export async function updatePalette(slug, data, user) {
           },
         },
       },
-    }
+    };
   } else {
     dataQuery = {
       title: data.title,
       description: data.description,
-      slug: generateSlug({value: data.title})
-    }
+      slug: generateSlug({ value: data.title }),
+    };
   }
 
   body = await prisma.palette.update({
     where: {
-      slug: slug,
+      uuid,
     },
     data: dataQuery,
     select: {
       title: true,
       slug: true,
+      uuid: true,
     },
   });
 
@@ -956,18 +962,18 @@ export async function updatePalette(slug, data, user) {
   };
 }
 
-export async function deletePalette(slug) {
+export async function deletePalette(uuid) {
   let body = null;
   let status = 500;
 
   body = await prisma.palette.delete({
     where: {
-      slug: slug,
+      uuid,
     },
     select: {
       title: true,
-    }
-  })
+    },
+  });
 
   if (body !== null) {
     status = 200;

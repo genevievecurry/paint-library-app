@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { generateUrl } from '$lib/utility';
   import { goto } from '$app/navigation';
   import { generateSlug } from '$lib/slug';
   import type { Manufacturer } from '@prisma/client';
@@ -44,10 +45,6 @@
     // Todo: Handle when things go wrong?
   }
 
-  async function routeToNewPaint(){
-    goto(`/paint/${slug}`);
-  }
-
   function submit(node: HTMLFormElement): SvelteActionReturnType {
     const handler = async (event: Event) => {
       const body =
@@ -69,7 +66,8 @@
       const newPaint = await onresponse(response);
 
       if(newPaint.slug){
-        goto(`/paint/${newPaint.uuid}/${newPaint.slug}`);
+        const url = generateUrl({prefix: 'paint', target: newPaint});
+        goto(url);
       }
     };
     node.addEventListener('submit', handler);

@@ -3,7 +3,7 @@
 </script>
 
 <div class="border border-black p-2">
-  <a href={`/palette/${palette.slug}`}>
+  <a href={`/palette/${palette.uuid}/${palette.slug}`}>
     <div class="grid grid-cols-6 gap-1">
       {#each palette.paintsInPalette as paintPalette}
         <div

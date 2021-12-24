@@ -47,7 +47,7 @@
   @apply text-black hover:text-pink-500 hover:border-pink-500 transition-colors cursor-pointer;
 }
 
-.action-link.delete{
+.action-link.delete {
   @apply border-yellow-600 text-yellow-600;
 }
 
