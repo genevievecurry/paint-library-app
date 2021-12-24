@@ -3,6 +3,8 @@
   const dispatch = createEventDispatcher();
   const close = () => dispatch('close');
 
+  export let title = '';
+
   let modal;
   const handle_keydown = (e) => {
     if (e.key === 'Escape') {
@@ -103,6 +105,7 @@
         </button>
         <div
           class="w-full grid grid-cols-1 gap-y-8 gap-x-6 items-start sm:grid-cols-12 lg:gap-x-8">
+          <div class="col-span-11"><h2 class="font-extrabold text-4xl">{title}</h2></div>
           <slot />
         </div>
       </div>

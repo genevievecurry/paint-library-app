@@ -19,7 +19,7 @@
     <div class="text-sm my-3">
       {palette._count.paintsInPalette} paints
       {#if palette.owner}
-        | by {palette.owner?.displayName}
+        | by @{palette.owner?.username}
       {/if}
     </div>
   </a>

@@ -30,7 +30,7 @@
   }
 
   function updateSlug(event: any) {
-    slug = generateSlug({ value: event.target.value, uuid: true });
+    slug = generateSlug({ value: event.target.value, uuid: false });
   }
 
   function onsubmit() {
@@ -39,9 +39,13 @@
 
   async function onresponse(res: any): Promise<void> {
     if (res.ok) {
-      goto(`/paint/${slug}`);
+      return res.json();
     }
     // Todo: Handle when things go wrong?
+  }
+
+  async function routeToNewPaint(){
+    goto(`/paint/${slug}`);
   }
 
   function submit(node: HTMLFormElement): SvelteActionReturnType {
@@ -62,7 +66,11 @@
       });
 
       // @ts-ignore
-      onresponse(response);
+      const newPaint = await onresponse(response);
+
+      if(newPaint.slug){
+        goto(`/paint/${newPaint.uuid}/${newPaint.slug}`);
+      }
     };
     node.addEventListener('submit', handler);
 

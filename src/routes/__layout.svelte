@@ -15,6 +15,7 @@
   import { session } from '$app/stores';
   import { goto } from '$app/navigation';
   import { clickOutside } from '$lib/actions';
+  import Notification from '$lib/components/Notification.svelte';
 
   export let menuOpen: boolean;
 
@@ -71,18 +72,18 @@
                     y="1.95981"
                     width="29.7889"
                     height="48.0804"
-                    fill="#F54564" />
+                    fill="#DB2777" />
                   <rect
                     x="32.402"
                     y="2.61307"
                     width="16.9849"
                     height="28.0905"
-                    fill="#A8243C" />
+                    fill="#BE185D" />
                   <rect
                     width="16.9849"
                     height="20.1206"
                     transform="matrix(1 0 0 -1 32.402 50.8241)"
-                    fill="#F9B3C0" />
+                    fill="#F9A8D4" />
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -109,8 +110,8 @@
           {#if $session?.user}
             <div class="md:flex md:items-center md:space-x-6 text-white px-2">
               <span class="text-gray-400 font-light"
-                >Hi, <a href={`/@${$session.user.slug}`} class="link"
-                  >{$session?.user?.displayName}</a
+                >Hi, <a href={`/@${$session.user.username}`} class="link"
+                  >{$session?.user?.username}</a
                 >!</span>
             </div>
 
@@ -170,7 +171,7 @@
                         on:click={() => (menuOpen = false)}>Register User</a>
                     {/if}
                     <a
-                      href={`/@${$session.user.slug}`}
+                      href={`/@${$session.user.username}`}
                       class="action-link block px-4 py-2 text-sm"
                       role="menuitem"
                       tabindex="-1"
@@ -199,6 +200,8 @@
       </div>
     </header>
     <main>
+      <Notification />
+
       <slot />
     </main>
     <footer aria-labelledby="footerHeading">

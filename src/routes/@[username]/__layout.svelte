@@ -1,13 +1,12 @@
 <script context="module">
   export async function load({ page, session, fetch }) {
-    const url = `/@${page.params.userSlug}.json`;
+    const url = `/@${page.params.username}.json`;
     const response = await fetch(url);
 
     if (response.ok) {
       return {
         props: {
           user: await response.json(),
-          editable: false,
         },
       };
     }
@@ -24,15 +23,14 @@
   import Section from './_Section.svelte';
 
   export let user;
-  export let editable: boolean;
 
   let section;
 
-  const { displayName, _count, savedPalettes, ownedPalettes } = user;
+  const { username, _count, savedPalettes, ownedPalettes } = user;
 </script>
 
 <div class="container mx-auto px-4 sm:px-6">
-  <Header title={displayName} />
+  <Header title={username} />
 
   <Section {_count}>
     <slot />

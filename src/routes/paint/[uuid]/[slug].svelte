@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
   export async function load({ page, fetch }) {
-    const url = `/paint/${page.params.slug}.json`;
+    const url = `/paint/${page.params.uuid}/${page.params.slug}.json`;
     const response = await fetch(url);
 
     if (response.ok) {
@@ -22,15 +22,15 @@
 <script lang="ts">
   import { session } from '$app/stores';
   import { setContext } from 'svelte';
-  import { post } from '$lib/utility';
+  import { connect } from '$lib/utility';
   import { clickOutside } from '$lib/actions';
   import Header from '$lib/components/Header.svelte';
-  import Notification from '$lib/components/Notification.svelte';
   import Modal from '$lib/components/Modal.svelte';
   import PaletteForm from '$lib/components/PaletteForm.svelte';
   import SwatchCards from './_SwatchCards.svelte';
   import Pigments from './_Pigments.svelte';
   import Notes from './_Notes.svelte';
+
 
   export let slug: string;
   export let paint: PaintComponent;
@@ -54,24 +54,41 @@
 
   let addToPaletteMenuOpen = false;
   let userPalettesPromise: Promise<any>;
-  let addToPalettePromise: Promise<any>;
+  let newlyAddedPalette;
   let showPaletteModal = false;
 
-  async function addToPalette(slug: string) {
-    const response = await post(`/palette/${slug}.json`, {
+  async function addToPalette(paletteSlug: string) {
+    const response = await connect({method: 'post', endpoint: `/palette/${paletteSlug}.json`, data: {
       paintId: paint.id,
-    });
+    }});
     if (response.status == 200) {
       return response.json();
     }
   }
 
-  async function addToPaletteHandler(slug) {
-    addToPalettePromise = addToPalette(slug);
+  async function addToPaletteHandler(paletteSlug) {
+    newlyAddedPalette = await addToPalette(paletteSlug);
+
+    if (newlyAddedPalette.slug){
+      $session.notification = {
+        type: 'success',
+        visible: true,
+        message: `
+        Added <span class="font-bold">${name}</span> to
+        <a href="/palette/${newlyAddedPalette.slug}" class="underline">${newlyAddedPalette.title}</a>
+        `
+      } 
+    } else {
+      $session.notification = {
+        type: 'error',
+        visible: true,
+        message: "Something went wrong!",
+      }
+    }
   }
 
   async function getUserPalettes() {
-    const url = `/@${$session.user.slug}/palettes.json`;
+    const url = `/@${$session.user.username}/palettes.json`;
     const response = await fetch(url);
 
     if (response.status == 200) {
@@ -84,21 +101,8 @@
   }
 </script>
 
-{#await addToPalettePromise then value}
-  {#if value?.slug}
-    <Notification type="success">
-      Added <span class="font-bold">{name}</span> to
-      <a href="/palette/{value?.slug}" class="underline">{value?.title}</a>
-    </Notification>
-  {/if}
-{:catch error}
-  <Notification type="error">
-    {error}
-  </Notification>
-{/await}
-
 {#if showPaletteModal}
-  <Modal on:close={() => (showPaletteModal = false)}>
+  <Modal on:close={() => (showPaletteModal = false)} title="Create New Palette">
     <div class="col-span-12">
       <PaletteForm paintId={paint.id} />
     </div>
@@ -107,7 +111,7 @@
 
 <div class="container mx-auto px-4 sm:px-6">
   {#if paint}
-    <Header title={name} subtitle={manufacturer.name} description={null}>
+    <Header title={name} subtitle={manufacturer.name} description={null} owner={null}>
       {#if $session?.user}
         <div class="relative inline-block text-left">
           <div

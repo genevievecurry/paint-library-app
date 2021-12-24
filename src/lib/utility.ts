@@ -19,17 +19,29 @@ export function pigmentCode(
   return convertedType + colorCode + pigmentNumber.toString();
 }
 
-export async function post(endpoint: string, data: unknown): Promise<Response> {
-  return fetch(endpoint, {
-    method: 'post',
+export async function connect({method = 'post', endpoint, data}: {
+  method: string, 
+  endpoint: string, 
+  data?: unknown}
+  ): Promise<Response> {
+
+  const opts = {
+    method,
     mode: 'cors',
     cache: 'no-cache',
     credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     redirect: 'follow',
     referrerPolicy: 'no-referrer',
-    body: JSON.stringify(data),
-  });
+    headers: {},
+    body: '',
+  }
+
+  if(data){
+    opts.headers = {
+      'Content-Type': 'application/json',
+    }
+    opts.body = JSON.stringify(data)
+  }
+
+  return fetch(endpoint, opts);
 }

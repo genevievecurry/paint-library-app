@@ -11,11 +11,18 @@ export async function handle({ request, resolve }) {
 export function getSession({ locals }) {
   return {
     user: locals.user && {
-      displayName: locals.user.displayName,
-      slug: locals.user.slug,
+      username: locals.user.username,
+      firstName: locals.user.firstName,
+      lastName: locals.user.lastName,
       email: locals.user.email,
       role: locals.user.role,
       status: locals.user.status,
+      uuid: locals.user.uuid,
+    },
+    notification: locals.notification && {
+      visible: locals.notification.visible,
+      type: locals.notification.type,
+      message: locals.notification.message,
     },
   };
 }

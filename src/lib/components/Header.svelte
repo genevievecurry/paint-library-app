@@ -2,7 +2,7 @@
   export let title;
   export let subtitle = null;
   export let description = null;
-  export let owner;
+  export let owner = null;
 </script>
 
 <header class="my-7 md:flex justify-between">
@@ -22,7 +22,7 @@
       <span class="block mt-2 font-light">{subtitle}</span>
     {/if}
     {#if owner}
-      By <a href="/@{owner.slug}" class="link">{owner.displayName}</a>
+      By <a href="/@{owner.username}" class="link">@{owner.username}</a>
     {/if}
   </div>
   <div>

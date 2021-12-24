@@ -199,10 +199,10 @@
           {#if author}
             <hr class="my-2" />
             <span class="text-xs block font-medium"
-              >Notes from {author.displayName}:</span>
+              >Notes from {author.username}:</span>
             <div class="text-xs mt-2">{@html description}</div>
             <p class="text-xs mt-2 leading-tight"
-              >Uploaded by {author.displayName} {timeAgo()}.</p>
+              >Uploaded by {author.username} {timeAgo()}.</p>
           {:else}
             <p class="text-xs mt-2 leading-tight">Uploaded {timeAgo()}.</p>
           {/if}

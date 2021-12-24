@@ -4,7 +4,7 @@ export async function get({
   params,
 }): Promise<{ status: number; body: Record<string, unknown> }> {
   const { slug } = params;
-  const response = await api.getPalette(slug)
+  const response = await api.getPalette(slug);
 
   return response;
 }
@@ -16,7 +16,14 @@ export async function post({ body: data, locals, params }) {
     };
   }
   const { slug } = params;
-  const response = await api.updatePalette(slug, data, locals.user)
+  const response = await api.updatePalette(slug, data, locals.user);
+
+  return response;
+}
+
+export async function del({ params }) {
+  const { slug } = params;
+  const response = await api.deletePalette(slug); 
 
   return response;
 }

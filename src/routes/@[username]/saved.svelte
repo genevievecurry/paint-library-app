@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
   export async function load({ page, session, fetch }) {
-    const url = `/@${page.params.userSlug}/saved.json`;
+    const url = `/@${page.params.username}/saved.json`;
     const response = await fetch(url);
 
     if (response.ok) {

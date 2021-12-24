@@ -1,10 +1,30 @@
 <script type="ts">
+  import { createEventDispatcher, onDestroy } from 'svelte';
   import { session } from '$app/stores';
-  import { post } from '$lib/utility';
+  import { connect } from '$lib/utility';
+  import { goto } from '$app/navigation';
 
-  export let paintId;
+  // paintId is a seed to create a new palette via a paint
+  // This functionality will need to be modified if we add ability to create
+  // a palette elsewhere, as it is janky jank
+  export let paintId = null;
+  export let palette: PaletteComponent;
 
-  let title, description;
+  let title = palette.title || '';
+  let description = palette.description || '';
+  let action;
+  let endpoint;
+
+  if (paintId !== null){
+    action = 'create';
+    endpoint = '/palette/create.json'
+  } else if(palette?.slug !== undefined) {
+    action = 'update';
+    endpoint = `/palette/${palette.slug}.json`
+  }
+
+  const dispatch = createEventDispatcher();
+  const success = () => dispatch('success');
 
   $: formData = {
     owner: $session.user,
@@ -13,57 +33,71 @@
     paintId: paintId,
   };
 
-  $: newPalette = { title: '', description: '', slug: '' };
+  async function handlePost() {
+    const response = await connect({method: 'post', endpoint: endpoint, data: formData});
 
-  async function create() {
-    const response = await post('/palette/create.json', formData);
-
-    if (response.status === 200) {
+    if (response.status == 200) {
       return response.json();
     }
   }
 
-  async function submitHandler() {
-    newPalette = await create();
+  async function submit(node) {
+    const handler = async (event: Event) => {
+      event.preventDefault();
+      const promise = await handlePost()
+
+      if(promise.slug){
+        console.log("is this actually running")
+        goto(`/palette/${promise.slug}`);
+        success();
+      }
+    };
+
+    node.addEventListener('submit', handler);
+    return {
+      destroy() {
+        node.removeEventListener('submit', handler);
+        window.location.reload();
+      },
+    };
   }
 </script>
 
-<form on:submit|preventDefault={submitHandler}>
-  <div class="mt-10 grid lg:grid-cols-2 gap-12 xl:gap-32">
-    <div>
-      <div class="mt-6">
-        <label for="email" class="block">Title</label>
-        <small class="leading-5 block mt-1 text-sm text-gray-500 mb-3">
-          Name your new palette.
-        </small>
-        <input
-          class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
-          id="title"
-          name="title"
-          type="text"
-          required
-          placeholder="Title"
-          bind:value={title} />
-      </div>
-      <div class="mt-6">
-        <label for="email" class="block">Description</label>
-        <small class="leading-5 block mt-1 text-sm text-gray-500 mb-3">
-          Describe it?
-        </small>
-        <textarea
-          class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
-          id="description"
-          name="description"
-          placeholder="Description"
-          bind:value={description} />
-      </div>
+<form use:submit>
+  <div class="mt-10">
+    <div class="mt-6">
+      <label for="title" class="block">Title</label>
+      <small class="leading-5 block mt-1 text-sm text-gray-500 mb-3">
+        Name your new palette.
+      </small>
+      <input
+        class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
+        id="title"
+        name="title"
+        type="text"
+        required
+        placeholder="Title"
+        bind:value={title} />
+    </div>
+    <div class="mt-6">
+      <label for="description" class="block">Description</label>
+      <small class="leading-5 block mt-1 text-sm text-gray-500 mb-3">
+        Describe it?
+      </small>
+      <textarea
+        class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
+        id="description"
+        name="description"
+        placeholder="Description"
+        bind:value={description} />
     </div>
   </div>
-  <div class="mt-6 px-4 py-3 text-right sm:px-6 border-t border-black">
+
+  <div class="mt-6 py-3 text-right border-t border-black">
     <button
       type="submit"
-      class="inline-flex justify-center py-2 px-4 border-4 border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 font-extrabold text-2xl">
-      Create Palette
+      class="action-link inline-flex justify-center py-2 px-4 border-4 border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 font-extrabold text-2xl">
+      {action} Palette
     </button>
   </div>
 </form>
