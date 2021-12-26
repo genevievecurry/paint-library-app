@@ -20,6 +20,8 @@
 </script>
 
 <script lang="ts">
+  import { generateUrl } from "$lib/utility";
+
   export let pigment: PigmentComponent;
 
   function randomDimension() {
@@ -117,7 +119,7 @@
     class="masonry sm:masonry-sm md:masonry-md lg:masonry-lg xl:masonry-xl 2xl:masonry-2xl">
     {#each pigment.paints as paint}
       <div class="table border border-black p-3 break-inside mb-3 w-full">
-        <a sveltekit:prefetch href={`/paint/${paint.paint.slug}`}>
+        <a href="{generateUrl({prefix: 'paint', target: paint.paint})}">
           <div
             class="w-full block h-32"
             style={`background-color: ${

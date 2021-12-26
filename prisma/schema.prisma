@@ -44,8 +44,10 @@ model User {
   deleted        Boolean               @default(false)
   email          String                @unique @db.Citext
   hashedPassword String                @db.VarChar(100)
-  displayName    String                @db.VarChar(60)
-  slug           String                @unique
+  firstName      String                @db.VarChar(100)
+  lastName       String?                @db.VarChar(100)
+  username       String                 @unique @db.Citext
+  uuid           String               @unique
   role           Role                  @default(MEMBER)
   status         UserStatus            @default(PENDING)
   paints         Paint[]
@@ -73,7 +75,8 @@ model Paint {
   published                      Boolean             @default(false)
   author                         User                @relation(fields: [authorId], references: [id])
   authorId                       Int
-  slug                           String              @unique
+  uuid                           String              @unique
+  slug                           String              
   manufacturer                   Manufacturer?       @relation(fields: [manufacturerId], references: [id])
   manufacturerId                 Int?
   paintType                      PaintType           @relation(fields: [paintTypeId], references: [id])
@@ -107,7 +110,7 @@ model Pigment {
   id                   Int                 @id @default(autoincrement())
   createdAt            DateTime            @default(now())
   updatedAt            DateTime?           @updatedAt
-  slug                 String              @unique
+  slug                 String               @unique
   type                 PigmentType         @default(CIPIGMENT)
   name                 String              @db.VarChar(60)
   number               String              @db.VarChar(4)
@@ -339,12 +342,13 @@ model Palette {
   updatedAt       DateTime?             @updatedAt
   deleted         Boolean               @default(false)
   visible         Boolean               @default(true)
-  slug            String                @unique
+  uuid            String                @unique
+  slug            String                
   title           String                @db.VarChar(60)
   description     String?               @db.VarChar(240)
+  owner           User                  @relation(fields: [ownerUuid], references: [uuid])
+  ownerUuid       String
   paintsInPalette PaintsInPalette[]
-  owner           User                  @relation(fields: [ownerId], references: [id])
-  ownerId         Int
   savedByUsers    PaletteSavedByUsers[]
 }
 
@@ -352,17 +356,17 @@ model PaintsInPalette {
   id        Int      @id @default(autoincrement())
   setAt     DateTime @default(now())
   order     Int?
-  palette   Palette  @relation(fields: [paletteId], references: [id])
-  paletteId Int
-  paint     Paint    @relation(fields: [paintId], references: [id])
-  paintId   Int
+  palette   Palette  @relation(fields: [paletteUuid], references: [uuid])
+  paletteUuid String
+  paint     Paint    @relation(fields: [paintUuid], references: [uuid])
+  paintUuid   String
 }
 
 model PaletteSavedByUsers {
-  id        Int      @id @default(autoincrement())
-  setAt     DateTime @default(now())
-  palette   Palette  @relation(fields: [paletteId], references: [id])
-  paletteId Int
-  user      User     @relation(fields: [userId], references: [id])
-  userId    Int
+  id          Int      @id @default(autoincrement())
+  setAt       DateTime @default(now())
+  palette     Palette  @relation(fields: [paletteUuid], references: [uuid])
+  paletteUuid String
+  user        User     @relation(fields: [userUuid], references: [uuid])
+  userUuid    String
 }

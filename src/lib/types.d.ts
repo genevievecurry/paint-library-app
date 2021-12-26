@@ -6,7 +6,10 @@ export interface Locals {
   slug: string;
 }
 
-export type Action = (node: HTMLElement, parameters: any) => {
-	update?: (parameters: any) => void,
-	destroy?: () => void
-}
+export type Action = (
+  node: HTMLElement,
+  parameters: any,
+) => {
+  update?: (parameters: any) => void;
+  destroy?: () => void;
+};

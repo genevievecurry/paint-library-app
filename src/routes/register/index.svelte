@@ -11,15 +11,20 @@
 <script lang="ts">
   let email = '';
   let password = '';
-  let displayName = '';
-  $: combined = {
+  let username = '';
+  let firstName = '';
+  let lastName = '';
+
+  $: formData = {
     email: email,
     password: password,
-    displayName: displayName,
+    username: username,
+    firstName: firstName,
+    lastName: lastName,
   };
   $: error = false;
   $: success = false;
-  $: newUser = { displayName: '', email: '', role: '', status: '', slug: '' };
+  $: newUser = { username: '', email: '', role: '', status: '', firstName: '', lastName: '', uuid: '' };
 
   async function register() {
     const response = await fetch('/auth/register', {
@@ -32,16 +37,18 @@
       },
       redirect: 'follow',
       referrerPolicy: 'no-referrer',
-      body: JSON.stringify(combined),
+      body: JSON.stringify(formData),
     });
 
-    if (response.status == 200) {
+    if (response.status === 200) {
       success = true;
       error = false;
       // Clear out form fields
       email = '';
       password = '';
-      displayName = '';
+      username = '';
+      firstName = '';
+      lastName = '';
 
       return response.json();
     } else {
@@ -68,6 +75,31 @@
   <form on:submit|preventDefault={submitHandler}>
     <div class="mt-10 grid lg:grid-cols-2 gap-12 xl:gap-32">
       <div>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="">
+            <label for="firstName" class="block">First Name</label>
+            <input
+              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
+              id="firstName"
+              name="firstName"
+              type="text"
+              required
+              placeholder="First Name"
+              bind:value={firstName} />
+          </div>
+          <div class="">
+            <label for="lastName" class="block">Last Name</label>
+
+            <input
+              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
+              id="lastName"
+              name="lastName"
+              type="text"
+              required
+              placeholder="Last Name"
+              bind:value={lastName} />
+          </div>
+        </div>
         <div class="mt-6">
           <label for="email" class="block ">Email</label>
           <small class="leading-5 block mt-1 text-sm text-gray-500 mb-3">
@@ -102,17 +134,17 @@
             bind:value={password} />
         </div>
         <div class="mt-6">
-          <label for="displayName" class="block">Display Name</label>
+          <label for="username" class="block">Username</label>
           <small class="leading-5 block mt-1 text-sm text-gray-500 mb-3"
-            >This is what other users are gonna see.</small>
+            >This is what other users are gonna see. (only letters, numbers, and underscores)</small>
           <input
             class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
-            id="displayName"
-            name="displayName"
+            id="username"
+            name="username"
             type="text"
             required
-            placeholder="Password"
-            bind:value={displayName} />
+            placeholder="Username"
+            bind:value={username} />
         </div>
         <div class="mt-6 px-4 py-3 text-right sm:px-6 border-t border-black">
           <button
@@ -152,9 +184,9 @@
               <tr>
                 <th
                   class="text-left border border-white px-4 py-3 whitespace-nowrap"
-                  >Display Name</th>
+                  >User Name</th>
                 <td class="border border-white px-4 py-3 w-full"
-                  >{newUser?.displayName}</td>
+                  >{newUser?.username}</td>
               </tr>
               <tr>
                 <th class="text-left border border-white px-4 py-3">Email</th>
@@ -169,8 +201,12 @@
                 <td class="border border-white px-4 py-3">{newUser?.status}</td>
               </tr>
               <tr>
-                <th class="text-left border border-white px-4 py-3">Slug</th>
-                <td class="border border-white px-4 py-3">{newUser?.slug}</td>
+                <th class="text-left border border-white px-4 py-3">Name</th>
+                <td class="border border-white px-4 py-3">{newUser?.firstName} {newUser?.lastName}</td>
+              </tr>
+              <tr>
+                <th class="text-left border border-white px-4 py-3">UUID</th>
+                <td class="border border-white px-4 py-3">{newUser?.uuid}</td>
               </tr>
             </table>
           </div>

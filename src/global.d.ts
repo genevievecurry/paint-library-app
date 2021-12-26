@@ -8,6 +8,8 @@ declare type LightfastRating = import('.prisma/client').LightfastRating;
 declare type TransparencyRating = import('.prisma/client').TransparencyRating;
 declare type StainingRating = import('.prisma/client').StainingRating;
 declare type GranulationRating = import('.prisma/client').GranulationRating;
+declare type Palette = import('.prisma/client').Palette;
+declare type PaintsInPalette = import('.prisma/client').PaintsInPalette;
 
 interface ImportMetaEnv
   extends Readonly<Record<string, string | boolean | undefined>> {
@@ -37,6 +39,7 @@ interface SwatchCardsCollection {
   dryLift: SwatchCardComponent;
 }
 interface PaintComponent extends Paint {
+  uuid: String;
   swatchCardsOnPaint?: SwatchCardsCollection;
   pigmentsOnPaints?: { pigment: Pigment }[];
   manufacturer?: import('.prisma/client').Manufacturer;
@@ -48,20 +51,21 @@ interface PaintComponent extends Paint {
 }
 
 type ListPaint = {
+  uuid: string;
   slug: string;
   hex: string;
   name: string;
   manufacturer: {
     name: string;
   };
-}
+};
 
 type ListPigment = {
   slug: string;
   hex?: string;
   name: string;
   number?: string;
-}
+};
 
 type SearchResults = {
   count: number;
@@ -70,23 +74,42 @@ type SearchResults = {
 
 type PigmentPaints = {
   paint: ListPaint;
-}[]
+}[];
 
 interface PigmentComponent extends Pigment {
   color?: Color;
-  paints: PigmentPaints
+  paints: PigmentPaints;
 }
 
 type PigmentListingByColor = {
-  label: string,
-  slug: string,
+  label: string;
+  slug: string;
   pigments: ListPigment[];
-}
+};
 
 type User = {
-  slug: string,
-  displayName: string,
-  email: string,
-  role: string,
-  status: string,
+  slug: string;
+  username: string;
+  uuid: string;
+  email: string;
+  role: string;
+  status: string;
+};
+
+type DisplayUser = {
+  slug: string;
+  username: string;
+  role: string;
+  status: string;
+  uuid: string;
+};
+
+interface PaintsInPaletteComponent extends PaintsInPalette {
+  paint: Paint;
+}
+
+interface PaletteComponent extends Palette {
+  paintsInPalette?: PaintsInPaletteComponent[];
+  owner: DisplayUser;
+  savedByUser: boolean;
 }

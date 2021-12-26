@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { generateUrl } from '$lib/utility';
   import { goto } from '$app/navigation';
   import { generateSlug } from '$lib/slug';
   import type { Manufacturer } from '@prisma/client';
@@ -30,7 +31,7 @@
   }
 
   function updateSlug(event: any) {
-    slug = generateSlug({ value: event.target.value, uuid: true });
+    slug = generateSlug({ value: event.target.value, uuid: false });
   }
 
   function onsubmit() {
@@ -39,7 +40,7 @@
 
   async function onresponse(res: any): Promise<void> {
     if (res.ok) {
-      goto(`/paint/${slug}`);
+      return res.json();
     }
     // Todo: Handle when things go wrong?
   }
@@ -62,7 +63,12 @@
       });
 
       // @ts-ignore
-      onresponse(response);
+      const newPaint = await onresponse(response);
+
+      if(newPaint.slug){
+        const url = generateUrl({prefix: 'paint', target: newPaint});
+        goto(url);
+      }
     };
     node.addEventListener('submit', handler);
 

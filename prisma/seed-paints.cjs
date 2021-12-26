@@ -23,7 +23,8 @@ const processFile = async (file) => {
 };
 
 async function main() {
-  const manufacturers = await prisma.manufacturer.count();
+  // const manufacturers = await prisma.manufacturer.count();
+  const manufacturers = 3;
   const paintCsv = `${__dirname}/temp-paints.csv`;
   const parsedPaintCsv = await processFile(paintCsv);
 
@@ -144,7 +145,8 @@ async function main() {
     for (let j = 1; j < manufacturers; j++) {
       let item = await prisma.paint.create({
         data: {
-          slug: `${paint.slug}-${i}-${j}`,
+          uuid: `${paint.slug}-${i}-${j}`,
+          slug: `${paint.slug}`,
           published: true,
           authorId: Number(paint.authorId),
           manufacturerId: j,
@@ -216,15 +218,17 @@ async function main() {
 
   const palette = await prisma.palette.create({
     data: {
-      slug: "watercolor-dream-palette-3329435-34534535",
-      title: "Watercolor Dream Palette",
-      description: "This is a short description, limited in length, that describes the intent behind this palette. It is purely optional and might not appear.",
-      ownerId: 1,
+      uuid: '3329435-34534535',
+      slug: 'watercolor-dream-palette',
+      title: 'Watercolor Dream Palette',
+      description:
+        'This is a short description, limited in length, that describes the intent behind this palette. It is purely optional and might not appear.',
+      ownerUuid: '37287234987',
       savedByUsers: {
         create: [
-          {user: { connect: { id: 1}}},
-          {user: { connect: { id: 2}}},
-        ]
+          { user: { connect: { id: 1 } } },
+          { user: { connect: { id: 2 } } },
+        ],
       },
       paintsInPalette: {
         create: [
@@ -233,52 +237,52 @@ async function main() {
             paint: {
               connect: {
                 id: 1,
-              }
-            }
+              },
+            },
           },
           {
             order: 2,
             paint: {
               connect: {
                 id: 2,
-              }
-            }
+              },
+            },
           },
           {
             order: 3,
             paint: {
               connect: {
                 id: 3,
-              }
-            }
+              },
+            },
           },
           {
             order: 4,
             paint: {
               connect: {
                 id: 4,
-              }
-            }
+              },
+            },
           },
           {
             order: 5,
             paint: {
               connect: {
                 id: 5,
-              }
-            }
+              },
+            },
           },
           {
             order: 6,
             paint: {
               connect: {
                 id: 6,
-              }
-            }
+              },
+            },
           },
-        ]
-      }
-    }
+        ],
+      },
+    },
   });
 }
 

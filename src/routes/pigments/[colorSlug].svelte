@@ -58,7 +58,7 @@
         <div
           class="w-full h-48 border-b border-black"
           style={`background-color: ${pigment.hex}`} />
-        <div class="p-3">
+        <div class="p-31">
           <span class="block">{pigment.name}</span>
         </div>
       </a>

@@ -19,6 +19,7 @@
 
 <script lang="ts">
   import Search from '$lib/components/Search.svelte';
+  import { generateUrl } from '$lib/utility';
 
   export let paints: ListPaint[];
 
@@ -55,7 +56,7 @@
     class="masonry sm:masonry-sm md:masonry-md lg:masonry-lg xl:masonry-xl 2xl:masonry-2xl">
     {#each paints as paint}
       <div class="table border border-black p-3 break-inside mb-3 w-full">
-        <a sveltekit:prefetch href={`paint/${paint.slug}`}>
+        <a sveltekit:prefetch href={generateUrl({prefix: 'paint', target: paint})}>
           <div
             class="w-full block"
             style={`background-color: ${

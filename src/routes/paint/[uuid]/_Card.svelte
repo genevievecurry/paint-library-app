@@ -2,6 +2,7 @@
   import { goto } from '$app/navigation';
   import { getContext } from 'svelte';
   import imagekit from '$lib/config/imagekit';
+  import { generateUrl } from '$lib/utility';
   import type {
     ImageKitUpload,
     Paper,
@@ -31,6 +32,7 @@
   // let saving = false; // Todo handle waiting state
   // let papers = []; // Todo fix paper problems
 
+  const uuid: string = getContext('uuid');
   const slug: string = getContext('slug');
   const editable: boolean = getContext('editable');
   const hex: string = getContext('hex');
@@ -90,6 +92,7 @@
 
   async function onresponse(res: any): Promise<void> {
     if (res.ok) {
+      const url = generateUrl({prefix: 'paint', target: {uuid, slug}})
       goto(`/paint/${slug}`);
     } else {
       console.log(res);
@@ -199,10 +202,10 @@
           {#if author}
             <hr class="my-2" />
             <span class="text-xs block font-medium"
-              >Notes from {author.displayName}:</span>
+              >Notes from {author.username}:</span>
             <div class="text-xs mt-2">{@html description}</div>
             <p class="text-xs mt-2 leading-tight"
-              >Uploaded by {author.displayName} {timeAgo()}.</p>
+              >Uploaded by {author.username} {timeAgo()}.</p>
           {:else}
             <p class="text-xs mt-2 leading-tight">Uploaded {timeAgo()}.</p>
           {/if}
