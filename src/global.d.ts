@@ -39,6 +39,7 @@ interface SwatchCardsCollection {
   dryLift: SwatchCardComponent;
 }
 interface PaintComponent extends Paint {
+  uuid: String;
   swatchCardsOnPaint?: SwatchCardsCollection;
   pigmentsOnPaints?: { pigment: Pigment }[];
   manufacturer?: import('.prisma/client').Manufacturer;
@@ -100,6 +101,7 @@ type DisplayUser = {
   username: string;
   role: string;
   status: string;
+  uuid: string;
 };
 
 interface PaintsInPaletteComponent extends PaintsInPalette {
@@ -109,4 +111,5 @@ interface PaintsInPaletteComponent extends PaintsInPalette {
 interface PaletteComponent extends Palette {
   paintsInPalette?: PaintsInPaletteComponent[];
   owner: DisplayUser;
+  savedByUser: boolean;
 }

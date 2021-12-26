@@ -92,7 +92,6 @@ const paletteSelect: Prisma.PaletteSelect = {
 };
 
 const paintSelect: Prisma.PaintSelect = {
-  id: true,
   uuid: true,
   createdAt: true,
   updatedAt: true,
@@ -674,6 +673,9 @@ export async function getUserProfileSavedPalettes(data): Promise<{
       uuid: true,
       username: true,
       savedPalettes: {
+        orderBy: {
+          setAt: 'desc',
+        },
         select: {
           palette: {
             select: {
@@ -870,7 +872,7 @@ export async function createPalette(data): Promise<{
       description: data.description,
       paintsInPalette: {
         create: {
-          paintId: data.paintId,
+          paintUuid: data.paintUuid,
         },
       },
       owner: {
@@ -894,6 +896,7 @@ export async function createPalette(data): Promise<{
 
 export async function getPalette(
   uuid: string,
+  user,
 ): Promise<{ status: number; body: Record<string, unknown> }> {
   let body = null;
   let status = 404;
@@ -906,6 +909,29 @@ export async function getPalette(
   });
 
   if (body) {
+    body.savedByUser = false;
+
+    if (user) {
+      const savedPalette = await prisma.palette.findFirst({
+        where: {
+          uuid: uuid,
+          AND: [
+            {
+              savedByUsers: {
+                some: {
+                  user: {
+                    uuid: user.uuid,
+                  },
+                },
+              },
+            },
+          ],
+        },
+      });
+
+      body.savedByUser = savedPalette === null ? false : true;
+    }
+
     status = 200;
   }
 
@@ -915,28 +941,40 @@ export async function getPalette(
   };
 }
 
-export async function updatePalette(uuid, data, user) {
+export async function updatePalette(uuid: string, data) {
   let body = null;
   let status = 404;
   let dataQuery;
 
-  if (data.paintId) {
+  if (data.paintUuid) {
     dataQuery = {
       paintsInPalette: {
         create: {
           paint: {
             connect: {
-              id: data.paintId,
+              uuid: data.paintUuid,
             },
           },
         },
       },
     };
-  } else {
+  } else if (data.title) {
     dataQuery = {
       title: data.title,
       description: data.description,
       slug: generateSlug({ value: data.title }),
+    };
+  } else if (data.savedByUser) {
+    dataQuery = {
+      savedByUsers: {
+        create: [{ user: { connect: { uuid: data.savedByUser.uuid } } }],
+      },
+    };
+  } else if (data.unsavedByUser) {
+    dataQuery = {
+      savedByUsers: {
+        deleteMany: [{ userUuid: data.unsavedByUser.uuid }],
+      },
     };
   }
 

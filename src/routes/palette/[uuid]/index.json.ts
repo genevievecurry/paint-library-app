@@ -2,9 +2,10 @@ import * as api from '$lib/api';
 
 export async function get({
   params,
+  locals,
 }): Promise<{ status: number; body: Record<string, unknown> }> {
   const { uuid } = params;
-  const response = await api.getPalette(uuid);
+  const response = await api.getPalette(uuid, locals.user);
 
   return response;
 }
@@ -16,7 +17,7 @@ export async function post({ body: data, locals, params }) {
     };
   }
   const { uuid } = params;
-  const response = await api.updatePalette(uuid, data, locals.user);
+  const response = await api.updatePalette(uuid, data);
 
   return response;
 }

@@ -4,10 +4,10 @@
   import { connect } from '$lib/utility';
   import { goto } from '$app/navigation';
 
-  // paintId is a seed to create a new palette via a paint
+  // paintUuid is a seed to create a new palette via a paint
   // This functionality will need to be modified if we add ability to create
   // a palette elsewhere, as it is janky jank
-  export let paintId = null;
+  export let paintUuid = null;
   export let palette = null;
 
   let title = palette?.title || '';
@@ -15,7 +15,7 @@
   let action;
   let endpoint;
 
-  if (paintId !== null){
+  if (paintUuid !== null){
     action = 'create';
     endpoint = '/palette/create.json'
   } else if(palette?.uuid !== undefined) {
@@ -30,7 +30,7 @@
     owner: $session.user,
     title: title,
     description: description,
-    paintId: paintId,
+    paintUuid: paintUuid,
   };
 
   async function handlePost() {
@@ -52,7 +52,7 @@
         visible: true,
         message: 
           `
-          Hoorah! Palette was updated successfully.
+          Hoorah! Palette was ${action}d successfully.
           `
         }
 

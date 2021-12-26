@@ -223,7 +223,7 @@ async function main() {
       title: 'Watercolor Dream Palette',
       description:
         'This is a short description, limited in length, that describes the intent behind this palette. It is purely optional and might not appear.',
-      ownerId: 1,
+      ownerUuid: '37287234987',
       savedByUsers: {
         create: [
           { user: { connect: { id: 1 } } },

@@ -61,9 +61,9 @@
 
   async function addToPalette(paletteUuid: string) {
     const response = await connect({method: 'post', endpoint: `/palette/${paletteUuid}.json`, data: {
-      paintId: paint.id,
+      paintUuid: paint.uuid,
     }});
-    if (response.status == 200) {
+    if (response.status === 200) {
       return response.json();
     }
   }
@@ -107,7 +107,7 @@
 {#if showPaletteModal}
   <Modal on:close={() => (showPaletteModal = false)} title="Create New Palette">
     <div class="col-span-12">
-      <PaletteForm paintId={paint.id} />
+      <PaletteForm paintUuid={paint.uuid} />
     </div>
   </Modal>
 {/if}

@@ -1,6 +1,5 @@
 <script context="module" lang="ts">
-  export async function load({ session, page, fetch }) {
-    const { user } = session;
+  export async function load({ page, fetch }) {
     const url = `/palette/${page.params.uuid}.json`;
     const response = await fetch(url);
 
@@ -9,7 +8,6 @@
         props: {
           uuid: page.params.uuid,
           paletteData: await response.json(),
-          user
         },
       };
     }
@@ -22,6 +20,7 @@
 </script>
 
 <script lang="ts">
+  import { onMount } from 'svelte';
   import Header from '$lib/components/Header.svelte';
   import Dialog from '$lib/components/Dialog.svelte';
   import Modal from '$lib/components/Modal.svelte';
@@ -30,22 +29,28 @@
   import { connect, generateUrl } from '$lib/utility';
   import { session } from '$app/stores';
   import { goto } from '$app/navigation';
+
   
   export let uuid: string;
   export let paletteData: PaletteComponent;
-  export let user: User;
+
 
   $: palette = paletteData;
   $: title = palette.title || '';
-  $: owner = palette.owner || {};
+  $: owner = palette.owner || { uuid: '' };
   $: description = palette.description || '';
   $: paintsInPalette = palette.paintsInPalette || [];
+  $: saved = false;
 
-  const editable = user && (owner?.uuid === user.uuid|| user.role === 'ADMIN');
-
+  let editable = false;
   let editMenuOpen = false;
   let showEditPaletteModal = false
   let showDeletePaletteDialog = false;
+
+  onMount(() => {
+    editable = $session.user && (owner?.uuid === $session.user.uuid|| $session.user.role === 'ADMIN');
+    saved = palette.savedByUser;
+  })
 
   async function deletePalette() {
     const response = await connect({method:'DELETE', endpoint:`/palette/${uuid}.json`})
@@ -71,6 +76,33 @@
     palette = palette;
     showEditPaletteModal = false;
   }
+
+  async function savePalette() {
+    const response = await connect({method: 'post', endpoint: `/palette/${uuid}.json`, data: {savedByUser: $session.user}});
+    if (response.status === 200) {
+      return response.json();
+    }
+  }
+
+  async function unsavePalette() {
+    const response = await connect({method: 'post', endpoint: `/palette/${uuid}.json`, data: {unsavedByUser: $session.user}});
+    if (response.status === 200) {
+      return response.json();
+    }
+  }
+
+  async function toggleSavedPalette() {
+    let savedPalettePromise;
+    if (saved){
+      savedPalettePromise = await unsavePalette();
+    } else {
+      savedPalettePromise = await savePalette();
+    }
+
+    if(savedPalettePromise?.uuid){
+      saved = !saved;
+    }
+  }
 </script>
 
 
@@ -93,6 +125,13 @@
 
 <div class="container mx-auto px-4 sm:px-6">
   <Header {title} {owner} {description}>
+    {#if $session.user}
+      <button on:click={toggleSavedPalette} class={saved ? "text-pink-600" : "text-black"}>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill={saved ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      </button>
+    {/if}
     {#if editable}
       <div class="relative inline-block text-left">
         <div
