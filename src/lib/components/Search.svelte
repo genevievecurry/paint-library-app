@@ -22,7 +22,7 @@
   class="w-full flex align-middle border {reverse
     ? 'bg-gray-900 border-white'
     : 'bg-white  border-black'} focus:outline-none focus:ring-green-400 focus:border-green-400">
-  <button class="p-3 flex-none" data-testid="submit-search">
+  <button class="p-3 flex-none">
     <svg
       width="24"
       height="24"

@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
   import { createEventDispatcher, onDestroy } from 'svelte';
   import { session } from '$app/stores';
   import { connect } from '$lib/utility';

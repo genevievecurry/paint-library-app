@@ -26,6 +26,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
+  import Header from '$lib/components/Header.svelte';
 
   export let sections: [];
   export let colors: PigmentListingByColor[];
@@ -71,23 +72,11 @@
 </script>
 
 <div class="container mx-auto px-4 sm:px-6">
-  <header class="my-7">
-    <div>
-      <div class="mb-4 font-light">
-        <a
-          href="/"
-          class="underline text-gray-500 hover:text-white hover:bg-black inline-block pr-2"
-          >Paint Library</a>
-        <span class="text-gray-400">/</span>
-        <span class="inline-block pl-2">Pigments</span>
-      </div>
-      <h1 class="font-extrabold text-5xl"> Pigments </h1>
-    </div>
-  </header>
+  <Header title="Pigments"></Header>
 
   <div class="grid grid-cols-6">
     <aside class="col-span-1">
-      <div class="sticky top-0 py-2 mt-10">
+      <div class="sticky top-0 py-2">
         <span class="block text-xl font-bold">Color Ways</span>
         <ul class="mt-3 text-lg">
           {#each colors as color}
@@ -109,7 +98,7 @@
     <div class="col-span-5">
       {#each colors as color}
         <section id={color.slug} bind:this={sections[color.slug]}>
-          <div class="sticky top-0 bg-white py-2 mt-10"
+          <div class="sticky top-0 bg-white py-2"
             ><h2 class="font-bold text-3xl">{color.label}</h2></div>
 
           <table class="border-collapse border border-black mt-4 w-full">

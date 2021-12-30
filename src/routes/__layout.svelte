@@ -56,7 +56,7 @@
     <header class="relative">
       <div class="dark bg-gray-900 py-6">
         <nav
-          class="relative container mx-auto flex items-center justify-between px-4 sm:px-6"
+          class="relative mx-auto flex items-center justify-between px-4 sm:px-6"
           aria-label="Global">
           <div class="flex items-center">
             <div class="flex items-center justify-between w-full md:w-auto">
@@ -106,9 +106,14 @@
           <div class="hidden flex-1 md:flex md:items-center md:space-x-6 px-6">
             <Search reverse={true} />
           </div>
-
+          <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
+            <a href="/pigments" class="link">Pigments</a>
+          </div>
+          <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
+            <a href="/palettes" class="link">Palettes</a>
+          </div>
           {#if $session?.user}
-            <div class="md:flex md:items-center md:space-x-6 text-white px-2">
+            <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
               <span class="text-gray-400 font-light"
                 >Hi, <a href={`/@${$session.user.username}`} class="link"
                   >{$session?.user?.firstName}</a
@@ -192,8 +197,9 @@
               {/if}
             </div>
           {:else}
-            <div class="md:flex md:items-center md:space-x-6 text-white">
-              <a href="/login">Login</a>
+            <div class="bg-gray-300 h-8 w-px mx-3"></div>
+            <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
+              <a href="/login" class="link">Login</a>
             </div>
           {/if}
         </nav>

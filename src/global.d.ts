@@ -113,3 +113,7 @@ interface PaletteComponent extends Palette {
   owner: DisplayUser;
   savedByUser: boolean;
 }
+
+type PaletteListing = {
+  palettes: Palette[];
+};

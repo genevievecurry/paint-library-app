@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
   import { session } from '$app/stores';
   import { afterUpdate } from 'svelte';
 

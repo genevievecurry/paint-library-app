@@ -9,6 +9,8 @@
 </script>
 
 <script lang="ts">
+  import Header from '$lib/components/Header.svelte';
+
   let email = '';
   let password = '';
   let username = '';
@@ -62,9 +64,7 @@
 </script>
 
 <div class="container mx-auto px-4 sm:px-6">
-  <header class="my-7">
-    <h1 class="font-extrabold text-5xl">Register New User </h1>
-  </header>
+  <Header title="Register New User" />
 
   {#if error}
     <div class="bg-red-400 p-3 mb-3 text-white">
@@ -73,7 +73,7 @@
   {/if}
 
   <form on:submit|preventDefault={submitHandler}>
-    <div class="mt-10 grid lg:grid-cols-2 gap-12 xl:gap-32">
+    <div class="grid lg:grid-cols-2 gap-12 xl:gap-32">
       <div>
         <div class="grid grid-cols-2 gap-6">
           <div class="">

@@ -2,9 +2,10 @@ import * as api from '$lib/api';
 
 export async function get({
   params,
+  query,
 }): Promise<{ status: number; body: unknown }> {
-  const { query } = params;
-  const response = await api.getSearchResults(query);
+  const { searchQuery } = params;
+  const response = await api.getSearchResults(searchQuery, query);
 
   return response;
 }

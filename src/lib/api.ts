@@ -67,7 +67,7 @@ const swatchCardSelect: Prisma.SwatchCardSelect = {
 };
 
 const paletteSelect: Prisma.PaletteSelect = {
-  id: true,
+  _count: true,
   uuid: true,
   visible: true,
   slug: true,
@@ -235,11 +235,15 @@ const createPaintSelect: Prisma.PaintSelect = {
   // tags: true,
 };
 
-export async function getSearchResults(query: string): Promise<{
+export async function getSearchResults(
+  searchQuery: string,
+  query,
+): Promise<{
   status: number;
   body: SearchResults;
 }> {
-  const unsluggedQuery = query.replace('-', ' & ');
+  const unsluggedQuery = searchQuery.replace('-', ' & ');
+  const set = Number(query.get('set'));
 
   const count = await prisma.paint.count({
     where: {
@@ -255,8 +259,8 @@ export async function getSearchResults(query: string): Promise<{
         search: unsluggedQuery,
       },
     },
-    skip: 0,
-    take: 100,
+    skip: set,
+    take: set + 50,
     orderBy: {
       createdAt: 'desc',
     },
@@ -388,7 +392,7 @@ export async function getPaint(
   };
 }
 
-export async function getPaints(): Promise<{
+export async function getPaints(query): Promise<{
   status: number;
   body: {
     uuid: string;
@@ -400,11 +404,13 @@ export async function getPaints(): Promise<{
     };
   }[];
 }> {
+  const set = Number(query.get('set'));
+
   return {
     status: 200,
     body: await prisma.paint.findMany({
-      skip: 0,
-      take: 100,
+      skip: set,
+      take: set + 50,
       orderBy: {
         createdAt: 'desc',
       },
@@ -413,6 +419,7 @@ export async function getPaints(): Promise<{
         slug: true,
         hex: true,
         name: true,
+        _count: true,
         manufacturer: {
           select: {
             name: true,
@@ -891,6 +898,21 @@ export async function createPalette(data): Promise<{
   return {
     body,
     status,
+  };
+}
+
+export async function getAllPalettes(): Promise<{
+  status: number;
+  body: Palette[];
+}> {
+  return {
+    body: await prisma.palette.findMany({
+      orderBy: {
+        createdAt: 'asc',
+      },
+      select: paletteSelect,
+    }),
+    status: 200,
   };
 }
 

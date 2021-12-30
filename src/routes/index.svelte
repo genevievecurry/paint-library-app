@@ -1,32 +1,24 @@
-<script context="module">
-  export async function load({ fetch }) {
-    const response = await fetch('index.json');
-
-    if (response.ok) {
-      return {
-        props: {
-          paints: await response.json(),
-        },
-      };
-    }
-
-    return {
-      status: response.status,
-      error: new Error('Could not load.'),
-    };
-  }
-</script>
-
 <script lang="ts">
   import Search from '$lib/components/Search.svelte';
-  import { generateUrl } from '$lib/utility';
+  import PaintPreview from '$lib/components/PaintPreview.svelte';
+  import InfiniteLoad from '$lib/components/InfiniteLoad.svelte';
 
-  export let paints: ListPaint[];
+  let set = 0;
+	let list = [];
 
-  function randomDimension() {
-    const dimensions = [300, 350, 400, 500, 600];
-    return dimensions[Math.floor(Math.random() * dimensions.length)];
-  }
+  function infiniteHandler({ detail: { loaded, complete } }) {
+		fetch(`index.json?set=${set}`)
+			.then(response => response.json())
+			.then(data => {
+        if (data.length) {
+          set += 50; 
+          list = [...list, ...data];
+          loaded();
+        } else {
+          complete();
+        }
+      });
+	}
 </script>
 
 <svelte:head>
@@ -52,24 +44,13 @@
 </div>
 
 <div class="container mx-auto px-4 sm:px-6">
-  <div
-    class="masonry sm:masonry-sm md:masonry-md lg:masonry-lg xl:masonry-xl 2xl:masonry-2xl">
-    {#each paints as paint}
-      <div class="table border border-black p-3 break-inside mb-3 w-full">
-        <a sveltekit:prefetch href={generateUrl({prefix: 'paint', target: paint})}>
-          <div
-            class="w-full block"
-            style={`background-color: ${
-              paint.hex
-            }; height: ${randomDimension()}px`}>
-            <!-- To-do: Figure out how to pull in a swatch image, if there is one. -->
-          </div>
-          <div class="mt-2">
-            <span class="block font-medium">{paint.manufacturer.name}</span>
-            <span class="block text-sm">{paint.name}</span>
-          </div>
-        </a>
-      </div>
+  <div class="grid grid-cols-6 gap-x-3" infinite-wrapper>
+  <!-- <div -->
+    <!-- class="masonry sm:masonry-sm md:masonry-md lg:masonry-lg xl:masonry-xl 2xl:masonry-2xl"> -->
+    {#each list as paint, index}
+      <PaintPreview {paint} {index} />
     {/each}
+
+    <InfiniteLoad on:infinite={infiniteHandler} forceUseInfiniteWrapper />
   </div>
 </div>
