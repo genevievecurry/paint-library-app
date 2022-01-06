@@ -23,7 +23,11 @@
   $: error = false;
 
   async function update() {
-    const response = await connect({method: 'post', endpoint: '/auth/update', data: user});
+    const response = await connect({
+      method: 'post',
+      endpoint: '/auth/update',
+      data: user,
+    });
 
     if (response.status == 200) {
       error = false;
@@ -36,23 +40,21 @@
   async function submitHandler() {
     $session.user = await update();
 
-    if(error){
-
+    if (error) {
     } else {
       $session.notification = {
         type: 'success',
         visible: true,
         message: `
           Hoorah! @${user.username} was updated successfully.
-        `
-      }
+        `,
+      };
     }
-
   }
 </script>
 
 <div class="container mx-auto px-4 sm:px-6">
-  <Header title="Account Settings"></Header>
+  <Header title="Account Settings" />
 
   <form on:submit|preventDefault={submitHandler}>
     <div class="mt-10 grid lg:grid-cols-2 gap-12 xl:gap-32">
@@ -86,11 +88,11 @@
             bind:value={user.lastName}
             class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400" />
         </div>
-        <div class="mt-6 px-4 py-3 text-right sm:px-6 border-t border-black">
+        <div class="mt-6 py-3 text-right border-t border-black">
           <button
             type="submit"
-            class="inline-flex justify-center py-2 px-4 border-4 border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 font-extrabold text-2xl">
-            Update
+            class="pop px-6 py-2 text-2xl hover:text-pink-500">
+            Update Settings
           </button>
         </div>
       </div>

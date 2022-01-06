@@ -26,13 +26,11 @@ const processFile = async (file) => {
 async function main() {
   // CSV Files
   const manufacturerCsv = `${__dirname}/manufacturer.csv`;
-  // const lineCsv = `${__dirname}/line.csv`;
   const colorCsv = `${__dirname}/color.csv`;
   const pigmentCsv = `${__dirname}/pigment.csv`;
 
   // Process CSV files
   const parsedManufacturerCsv = await processFile(manufacturerCsv);
-  // const parsedLineCsv = await processFile(lineCsv);
   const parsedColorCsv = await processFile(colorCsv);
   const parsedPigmentCsv = await processFile(pigmentCsv);
 
@@ -51,27 +49,31 @@ async function main() {
     skipDuplicates: true,
   });
 
-  // const lineImport = parsedLineCsv.forEach(async (line) => {
-  //   await prisma.line.create({
-  //     data: {
-  //       name: line.name,
-  //       manufacturer: {
-  //         connect: { name: line.manufacturer }
-  //       }
-  //     }
-  //   })
-  // })
+  const paperType = await prisma.paperType.createMany({
+    data: [
+      { name: 'Unknown' },
+      { name: 'Cold Press' },
+      { name: 'Hot Press' },
+      { name: 'Rough' },
+      { name: 'Handmade' },
+      { name: 'Yupo' },
+      { name: 'Illustration Board' },
+      { name: 'Bristol Vellum' },
+      { name: 'Bristol Smooth' },
+      { name: 'Hardboard' },
+    ],
+  });
 
   const unknownPaper = await prisma.paper.create({
     data: {
-      description: 'Unknown Paper',
+      paperTypeId: 1,
       weightInLbs: 0,
     },
   });
 
   const paper = await prisma.paper.create({
     data: {
-      description: 'Cold Press',
+      paperTypeId: 2,
       weightInLbs: 140,
       manufacturerId: 1,
     },
@@ -306,6 +308,7 @@ async function main() {
     manufacturerImport,
     colorImport,
     pigmentImport,
+    paperType,
     unknownPaper,
     paper,
     paintType,

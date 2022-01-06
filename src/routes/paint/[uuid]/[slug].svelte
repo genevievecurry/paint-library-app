@@ -28,7 +28,8 @@
   import Header from '$lib/components/Header.svelte';
   import Modal from '$lib/components/Modal.svelte';
   import PaletteForm from '$lib/components/PaletteForm.svelte';
-  import SwatchCards from './_SwatchCards.svelte';
+  import SwatchUpload from '$lib/components/SwatchUpload.svelte';
+  import Card from './_Card.svelte';
   import Pigments from './_Pigments.svelte';
   import Notes from './_Notes.svelte';
 
@@ -36,6 +37,7 @@
   export let uuid: string;
   export let paint: PaintComponent;
 
+  setContext('paintName', paint.name);
   setContext('uuid', uuid);
   setContext('slug', slug);
   setContext('editable', true);
@@ -51,18 +53,44 @@
     manufacturer,
     manufacturerDescription,
     communityDescription,
-    manufacturerPigmentDescription,
   } = paint;
 
   let addToPaletteMenuOpen = false;
   let userPalettesPromise: Promise<any>;
   let newlyAddedPalette;
   let showPaletteModal = false;
+  let showUploadSwatchModal = false;
+  let swatchCardSectionClasses;
+
+  $: editableSwatchCard = {};
+
+  if (paint.swatchCard.length) {
+  }
+  function setEditableSwatchCard(event) {
+    editableSwatchCard = event.detail;
+    showUploadSwatchModal = true;
+  }
+
+  const checkAlignment = (height, width) => {
+    if (height === width) {
+      return 'square';
+    }
+    if (height > width) {
+      return 'vertical';
+    }
+    if (height < width) {
+      return 'horizontal';
+    }
+  };
 
   async function addToPalette(paletteUuid: string) {
-    const response = await connect({method: 'post', endpoint: `/palette/${paletteUuid}.json`, data: {
-      paintUuid: paint.uuid,
-    }});
+    const response = await connect({
+      method: 'post',
+      endpoint: `/palette/${paletteUuid}.json`,
+      data: {
+        paintUuid: paint.uuid,
+      },
+    });
     if (response.status === 200) {
       return response.json();
     }
@@ -71,22 +99,22 @@
   async function addToPaletteHandler(paletteUuid) {
     newlyAddedPalette = await addToPalette(paletteUuid);
 
-    if (newlyAddedPalette.uuid){
-      const url = generateUrl({prefix: "palette", target: newlyAddedPalette})
+    if (newlyAddedPalette.uuid) {
+      const url = generateUrl({ prefix: 'palette', target: newlyAddedPalette });
       $session.notification = {
         type: 'success',
         visible: true,
         message: `
         Added <span class="font-bold">${name}</span> to
         <a href="${url}" class="underline">${newlyAddedPalette.title}</a>
-        `
-      } 
+        `,
+      };
     } else {
       $session.notification = {
         type: 'error',
         visible: true,
-        message: "Something went wrong!",
-      }
+        message: 'Something went wrong!',
+      };
     }
   }
 
@@ -112,19 +140,55 @@
   </Modal>
 {/if}
 
+{#if showUploadSwatchModal}
+  <Modal
+    on:close={() => (showUploadSwatchModal = false)}
+    on:close={() => (editableSwatchCard = {})}
+    title={editableSwatchCard?.id ? 'Edit Swatch' : 'Contribute Swatch'}>
+    <div class="col-span-12">
+      <SwatchUpload
+        paintUuid={paint.uuid}
+        paintSlug={paint.slug}
+        swatchCard={editableSwatchCard} />
+    </div>
+  </Modal>
+{/if}
+
 <div class="container mx-auto px-4 sm:px-6">
   {#if paint}
-    <Header title={name} subtitle={manufacturer.name} description={null} owner={null}>
+    <Header
+      title={name}
+      subtitle={manufacturer.name}
+      description={null}
+      owner={null}>
       {#if $session?.user}
         <div class="relative inline-block text-left">
+          <div class="mr-2 inline">
+            <button
+              type="button"
+              class="pop inline-flex justify-center px-4 py-2 text-sm"
+              on:click={() => (showUploadSwatchModal = true)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 mr-1"
+                viewBox="0 0 20 20"
+                fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
+                  clip-rule="evenodd" />
+              </svg>
+              Contribute Swatch</button>
+          </div>
           <div
+            class="inline"
             use:clickOutside={{
               enabled: addToPaletteMenuOpen,
               cb: () => (addToPaletteMenuOpen = false),
             }}>
             <button
               type="button"
-              class="action-link inline-flex justify-center p-2 text-sm font-medium border border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+              class="pop inline-flex justify-center px-4 py-2 text-sm"
               id="menu-button"
               aria-expanded={addToPaletteMenuOpen}
               aria-haspopup="true"
@@ -132,7 +196,7 @@
               on:click={fetchPalettes}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
+                class="h-5 w-5 mr-1"
                 viewBox="0 0 20 20"
                 fill="currentColor">
                 <path
@@ -144,8 +208,8 @@
           {#if addToPaletteMenuOpen}
             <div
               class="transition ease-out duration-100 {addToPaletteMenuOpen
-                ? 'transform opacity-100 scale-100'
-                : 'transform opacity-0 scale-95'} z-10 border border-black origin-top-right absolute right-0 mt-2 w-64 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                ? 'opacity-100 scale-100'
+                : 'opacity-0 scale-95'} z-10 border border-black origin-top-right absolute right-0 mt-2 w-64 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="menu-button"
@@ -218,7 +282,55 @@
       {/if}
     </Header>
 
-    <SwatchCards swatchCardsOnPaint={paint.swatchCardsOnPaint} />
+    {#if paint.swatchCard.length > 0}
+      <section
+        class="grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-6">
+        {#each paint.swatchCard as swatchCard}
+          <Card
+            {swatchCard}
+            alignment={checkAlignment(
+              swatchCard.imageKitUpload.height,
+              swatchCard.imageKitUpload.width,
+            )}
+            on:notify={setEditableSwatchCard} />
+        {/each}
+      </section>
+    {:else}
+      <div
+        style="border-color:{paint.hex}"
+        class="p-3 grid place-items-center border-2">
+        <div class="text-center m-3">
+          <div class="mb-4">
+            <p class="font-bold text-2xl mb-4">No swatches added yet.</p>
+
+            <p class="text-sm mb-1">
+              Have you swatched <span class="font-bold">{paint.name}</span> by {paint
+                .manufacturer.name}?
+            </p>
+            <p class="text-sm">If so, please share!</p>
+          </div>
+
+          <div>
+            <button
+              type="button"
+              class="pop inline-flex justify-center px-4 py-2 text-lg"
+              on:click={() => (showUploadSwatchModal = true)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 mr-1"
+                viewBox="0 0 20 20"
+                fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
+                  clip-rule="evenodd" />
+              </svg>
+              Contribute Swatch</button>
+          </div>
+        </div>
+      </div>
+    {/if}
+
     <div class="md:flex">
       <div class="flex-auto">
         <section class="mt-8">
@@ -274,7 +386,6 @@
               From {manufacturer.name}:
             </span>
             <div class="mt-2">{@html manufacturerDescription}</div>
-            <div>{manufacturerPigmentDescription}</div>
           </section>
         {/if}
 

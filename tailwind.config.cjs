@@ -1,11 +1,8 @@
-const colors = require('tailwindcss/colors');
-
 module.exports = {
-  purge: ['./src/**/*.svelte', './src/**/*.css'],
-  darkMode: false,
+  content: ['./src/**/*.svelte', './src/**/*.css'],
   theme: {},
-  variants: {
-    extend: {},
-  },
-  plugins: [require('@tailwindcss/aspect-ratio')],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography'),
+  ],
 };

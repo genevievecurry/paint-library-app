@@ -88,7 +88,7 @@
         <div class="mt-6 py-3 text-right border-t border-black">
           <button
             type="submit"
-            class="inline-flex justify-center py-2 px-4 border-4 border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 font-extrabold text-2xl">
+            class="pop px-6 py-2 text-2xl hover:text-pink-500">
             Login
           </button>
         </div>

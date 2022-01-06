@@ -41,6 +41,16 @@ const pigmentSelect: Prisma.PigmentSelect = {
               name: true,
             },
           },
+          swatchCard: {
+            take: 1,
+            select: {
+              imageKitUpload: {
+                select: {
+                  url: true,
+                },
+              },
+            },
+          },
         },
       },
     },
@@ -51,12 +61,27 @@ const pigmentSelect: Prisma.PigmentSelect = {
 const swatchCardSelect: Prisma.SwatchCardSelect = {
   id: true,
   updatedAt: true,
-  swatchCardType: true,
+  swatchCardTypesOnSwatchCard: {
+    select: {
+      swatchCardType: {
+        select: {
+          description: true,
+          label: true,
+          name: true,
+        },
+      },
+    },
+  },
   paper: {
     select: {
-      manufacturer: true,
-      description: true,
+      manufacturer: {
+        select: {
+          name: true,
+        },
+      },
+      line: true,
       weightInLbs: true,
+      paperType: true,
     },
   },
   author: {
@@ -116,7 +141,6 @@ const paintSelect: Prisma.PaintSelect = {
   name: true,
   communityDescription: true,
   manufacturerDescription: true,
-  manufacturerPigmentDescription: true,
   lightfastRating: {
     select: {
       label: true,
@@ -162,18 +186,8 @@ const paintSelect: Prisma.PaintSelect = {
       },
     },
   },
-  swatchCardsOnPaint: {
-    select: {
-      gradient: { select: swatchCardSelect },
-      granulation: { select: swatchCardSelect },
-      dispersement: { select: swatchCardSelect },
-      highDilution: { select: swatchCardSelect },
-      midDilution: { select: swatchCardSelect },
-      masstone: { select: swatchCardSelect },
-      glaze: { select: swatchCardSelect },
-      wetLift: { select: swatchCardSelect },
-      dryLift: { select: swatchCardSelect },
-    },
+  swatchCard: {
+    select: swatchCardSelect,
   },
   notes: {
     where: {
@@ -218,7 +232,7 @@ const paintSelect: Prisma.PaintSelect = {
 const createPaintSelect: Prisma.PaintSelect = {
   slug: true,
   name: true,
-  authorId: true,
+  authorUuid: true,
   paintTypeId: true,
   lightfastRatingId: true,
   transparencyRatingId: true,
@@ -226,10 +240,8 @@ const createPaintSelect: Prisma.PaintSelect = {
   granulationRatingId: true,
   manufacturerId: true,
   manufacturerDescription: true,
-  manufacturerPigmentDescription: true,
   communityDescription: true,
   pigmentsOnPaints: true,
-  swatchCardsOnPaint: true,
   hex: true,
   uuid: true,
   // tags: true,
@@ -272,6 +284,12 @@ export async function getSearchResults(
       manufacturer: {
         select: {
           name: true,
+        },
+      },
+      swatchCard: {
+        take: 1,
+        select: {
+          imageKitUpload: true,
         },
       },
     },
@@ -425,15 +443,12 @@ export async function getPaints(query): Promise<{
             name: true,
           },
         },
-        // swatchCardsOnPaint: {
-        //   include: {
-        //     gradient: {
-        //       include: {
-        //         imageKitUpload: true,
-        //       },
-        //     },
-        //   },
-        // },
+        swatchCard: {
+          take: 1,
+          select: {
+            imageKitUpload: true,
+          },
+        },
       },
     }),
   };
@@ -443,10 +458,34 @@ export async function getPaints(query): Promise<{
 // Intended to be used for form input options
 export async function getOption(
   model: string,
+  query,
 ): Promise<{ body: Record<string, unknown>; status: number }> {
+  let body;
+  let status = 404;
+  const queryArray = [];
+
+  for (const pair of query.entries()) {
+    const key = pair[0];
+    queryArray.push({ [key]: pair[1] });
+  }
+
+  if (queryArray.length > 0) {
+    body = await prisma[model].findMany({
+      where: {
+        AND: queryArray,
+      },
+    });
+  } else {
+    body = await prisma[model].findMany();
+  }
+
+  if (body !== null) {
+    status = 200;
+  }
+
   return {
-    body: await prisma[model].findMany(),
-    status: 200,
+    body,
+    status,
   };
 }
 
@@ -750,7 +789,7 @@ export async function createPaint(data: ReadOnlyFormData): Promise<{
       uuid: uuid,
       slug: data.get('slug'),
       name: data.get('name'),
-      authorId: Number(data.get('authorId')),
+      authorUuid: data.get('authorUuid'),
       paintTypeId: Number(data.get('paintTypeId')),
       lightfastRatingId: Number(data.get('lightfastRatingId')),
       transparencyRatingId: Number(data.get('transparencyRatingId')),
@@ -758,70 +797,13 @@ export async function createPaint(data: ReadOnlyFormData): Promise<{
       granulationRatingId: Number(data.get('granulationRatingId')),
       manufacturerId: Number(data.get('manufacturerId')),
       manufacturerDescription: data.get('manufacturerDescription'),
-      manufacturerPigmentDescription: data.get(
-        'manufacturerPigmentDescription',
-      ),
       communityDescription: data.get('communityDescription'),
       hex: data.get('hex'),
-      swatchCardsOnPaint: {
-        create: {
-          gradient: {
-            create: {
-              swatchCardTypeName: 'GRADIENT',
-            },
-          },
-          granulation: {
-            create: {
-              swatchCardTypeName: 'GRANULATION',
-            },
-          },
-          dispersement: {
-            create: {
-              swatchCardTypeName: 'DISPERSEMENT',
-            },
-          },
-          highDilution: {
-            create: {
-              swatchCardTypeName: 'HIGH_DILUTION',
-            },
-          },
-          midDilution: {
-            create: {
-              swatchCardTypeName: 'MID_DILUTION',
-            },
-          },
-          masstone: {
-            create: {
-              swatchCardTypeName: 'MASSTONE',
-            },
-          },
-          glaze: {
-            create: {
-              swatchCardTypeName: 'GLAZE',
-            },
-          },
-          wetLift: {
-            create: {
-              swatchCardTypeName: 'WET_LIFT',
-            },
-          },
-          dryLift: {
-            create: {
-              swatchCardTypeName: 'DRY_LIFT',
-            },
-          },
-        },
-      },
       pigmentsOnPaints: {
         createMany: {
           data: pigments,
         },
       },
-      // tags: {
-      //   createMany: {
-      //     data: tags,
-      //   },
-      // },
     },
     select: createPaintSelect,
   });
@@ -833,32 +815,90 @@ export async function createPaint(data: ReadOnlyFormData): Promise<{
   };
 }
 
-export async function updateSwatchCard(data: ReadOnlyFormData): Promise<{
+export async function createSwatchCard(
+  uuid: string,
+  data,
+): Promise<{
   status: number;
   body: Record<string, unknown>;
 }> {
-  const body = await prisma.swatchCard.update({
-    where: { id: Number(data.get('id')) },
+  const body = await prisma.swatchCard.create({
     data: {
-      paper: {
+      paint: {
         connect: {
-          id: 1,
+          uuid: uuid,
         },
       },
-      description: data.get('description'),
+      author: {
+        connect: {
+          uuid: data.author.uuid,
+        },
+      },
+      paper: {
+        create: {
+          line: {
+            connect: {
+              id: data.paper.lineId,
+            },
+          },
+          manufacturer: {
+            connect: {
+              name: data.paper.manufacturerName,
+            },
+          },
+          paperType: {
+            connect: {
+              id: Number(data.paper.paperTypeId),
+            },
+          },
+          weightInLbs: Number(data.paper.weightInLbs),
+        },
+      },
+      swatchCardTypesOnSwatchCard: {
+        createMany: {
+          data: data.swatchCardNamesFormData,
+        },
+      },
+      description: data.description,
       imageKitUpload: {
         create: {
-          fileId: data.get('uploadFileId'),
-          filePath: data.get('uploadFilePath'),
-          name: data.get('uploadName'),
-          thumbnailUrl: data.get('uploadThumbnailUrl'),
-          url: data.get('uploadUrl'),
+          fileId: data.imageKitUpload.fileId,
+          filePath: data.imageKitUpload.filePath,
+          name: data.imageKitUpload.name,
+          thumbnailUrl: data.imageKitUpload.thumbnailUrl,
+          url: data.imageKitUpload.url,
+          height: data.imageKitUpload.height,
+          width: data.imageKitUpload.width,
         },
       },
     },
   });
 
   return { status: 200, body };
+}
+
+export async function updateSwatchCard(data: SwatchCard) {
+  let body = null;
+  let status = 500;
+
+  body = await prisma.swatchCard.update({
+    where: {
+      id: data.id,
+    },
+    data: {
+      paperId: Number(data.paperId),
+      description: data.description,
+    },
+  });
+
+  if (body !== null) {
+    status = 200;
+  }
+
+  return {
+    body,
+    status,
+  };
 }
 
 export async function createPalette(data): Promise<{

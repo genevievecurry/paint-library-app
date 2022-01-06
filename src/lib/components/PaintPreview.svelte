@@ -4,26 +4,35 @@
   export let paint;
   export let index;
 
-  function randomDimension() {
-    const dimensions = [300, 350, 400, 500, 600];
-    return dimensions[Math.floor(Math.random() * dimensions.length)];
+  let swatchImage;
+
+  if (paint.swatchCard.length > 0) {
+    swatchImage = paint.swatchCard[0].imageKitUpload?.url;
   }
 </script>
 
-<div class="table border border-black p-3 break-inside mb-3 w-full" data-num={index + 1}>
-  <a href={generateUrl({prefix: 'paint', target: paint})} class="h-full flex flex-col">
+<div
+  class="table border border-black p-3 break-inside mb-3 w-full"
+  data-num={index + 1}>
+  <a
+    href={generateUrl({ prefix: 'paint', target: paint })}
+    class="h-full flex flex-col">
     <div class="flex-1">
       <div
-        class="w-full block"
-        style={`background-color: ${
-          paint.hex
-        }; height: ${randomDimension()}px`}>
-        <!-- To-do: Figure out how to pull in a swatch image, if there is one. -->
+        class="aspect-w-16 aspect-h-16"
+        style={`background-color: ${paint.hex};`}>
+        {#if swatchImage}
+          <img
+            loading="lazy"
+            src={swatchImage}
+            class="w-full h-full object-center object-cover lg:w-full lg:h-full"
+            alt={paint.name} />
+        {/if}
       </div>
     </div>
     <div class="mt-2">
-      <span class="block font-medium">{paint.manufacturer.name}</span>
-      <span class="block text-sm">{index} {paint.name}</span>
+      <span class="block font-medium">{paint.manufacturer?.name}</span>
+      <span class="block text-sm">{paint.name}</span>
     </div>
   </a>
 </div>

@@ -113,13 +113,6 @@
             <a href="/palettes" class="link">Palettes</a>
           </div>
           {#if $session?.user}
-            <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
-              <span class="text-gray-400 font-light"
-                >Hi, <a href={`/@${$session.user.username}`} class="link"
-                  >{$session?.user?.firstName}</a
-                >!</span>
-            </div>
-
             <div class="relative inline-block text-left">
               <div
                 use:clickOutside={{
@@ -154,8 +147,8 @@
               {#if menuOpen}
                 <div
                   class="light transition ease-out duration-100 {menuOpen
-                    ? 'transform opacity-100 scale-100'
-                    : 'transform opacity-0 scale-95'} z-10 border border-white origin-top-right absolute right-0 mt-2 w-56 bg-black ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    ? 'opacity-100 scale-100'
+                    : 'opacity-0 scale-95'} z-10 border border-white origin-top-right absolute right-0 mt-2 w-56 bg-gray-900 ring-1 ring-black ring-opacity-5 focus:outline-none"
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="menu-button"
@@ -191,13 +184,14 @@
                       class="action-link block px-4 py-2 text-sm"
                       role="menuitem"
                       tabindex="-1"
-                      on:click={logoutHandler}>Sign Out</span>
+                      on:click={logoutHandler}
+                      >Sign Out @{$session.user.username}</span>
                   </div>
                 </div>
               {/if}
             </div>
           {:else}
-            <div class="bg-gray-300 h-8 w-px mx-3"></div>
+            <div class="bg-gray-300 h-8 w-px mx-3" />
             <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
               <a href="/login" class="link">Login</a>
             </div>
