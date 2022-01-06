@@ -17,11 +17,14 @@ CREATE TYPE "SwatchCardTypeName" AS ENUM ('GRADIENT', 'GRANULATION', 'DISPERSEME
 CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updatedAt" TIMESTAMP(3),
     "deleted" BOOLEAN NOT NULL DEFAULT false,
     "email" CITEXT NOT NULL,
-    "hashedPassword" TEXT NOT NULL,
-    "displayName" TEXT NOT NULL,
+    "hashedPassword" VARCHAR(100) NOT NULL,
+    "firstName" VARCHAR(100) NOT NULL,
+    "lastName" VARCHAR(100),
+    "username" CITEXT NOT NULL,
+    "uuid" TEXT NOT NULL,
     "role" "Role" NOT NULL DEFAULT E'MEMBER',
     "status" "UserStatus" NOT NULL DEFAULT E'PENDING',
 
@@ -29,23 +32,34 @@ CREATE TABLE "User" (
 );
 
 -- CreateTable
+CREATE TABLE "UserToken" (
+    "id" SERIAL NOT NULL,
+    "token" TEXT NOT NULL,
+    "context" TEXT NOT NULL,
+    "sentTo" TEXT NOT NULL,
+    "userUuid" TEXT NOT NULL,
+
+    CONSTRAINT "UserToken_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "Paint" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updatedAt" TIMESTAMP(3),
     "deleted" BOOLEAN NOT NULL DEFAULT false,
     "published" BOOLEAN NOT NULL DEFAULT false,
-    "authorId" INTEGER NOT NULL,
+    "authorUuid" TEXT NOT NULL,
+    "uuid" TEXT NOT NULL,
     "slug" TEXT NOT NULL,
     "manufacturerId" INTEGER,
-    "lineId" INTEGER,
     "paintTypeId" INTEGER NOT NULL,
-    "productUrl" TEXT,
-    "productColorName" TEXT NOT NULL,
-    "communityDescription" TEXT,
-    "manufacturerDescription" TEXT,
-    "manufacturerPigmentDescription" TEXT,
-    "hex" TEXT,
+    "lineId" INTEGER,
+    "productUrl" VARCHAR(140),
+    "name" VARCHAR(140) NOT NULL,
+    "communityDescription" VARCHAR(500),
+    "manufacturerDescription" VARCHAR(500),
+    "hex" VARCHAR(10),
     "lightfastRatingId" INTEGER NOT NULL,
     "transparencyRatingId" INTEGER NOT NULL,
     "stainingRatingId" INTEGER NOT NULL,
@@ -58,12 +72,16 @@ CREATE TABLE "Paint" (
 CREATE TABLE "Pigment" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updatedAt" TIMESTAMP(3),
+    "slug" TEXT NOT NULL,
     "type" "PigmentType" NOT NULL DEFAULT E'CIPIGMENT',
-    "name" TEXT NOT NULL,
-    "number" INTEGER NOT NULL,
-    "colorId" INTEGER NOT NULL,
+    "name" VARCHAR(60) NOT NULL,
+    "number" VARCHAR(4) NOT NULL,
+    "hex" VARCHAR(10),
+    "colorCode" TEXT NOT NULL,
     "imageKitUploadId" INTEGER,
+    "lightfastRatingId" INTEGER,
+    "transparencyRatingId" INTEGER,
 
     CONSTRAINT "Pigment_pkey" PRIMARY KEY ("id")
 );
@@ -83,7 +101,7 @@ CREATE TABLE "Tag" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
-    "label" TEXT NOT NULL,
+    "label" VARCHAR(60) NOT NULL,
     "slug" TEXT NOT NULL,
 
     CONSTRAINT "Tag_pkey" PRIMARY KEY ("id")
@@ -100,71 +118,83 @@ CREATE TABLE "TagsOnPaints" (
 );
 
 -- CreateTable
-CREATE TABLE "SwatchCard" (
+CREATE TABLE "TagsOnSwatchCards" (
     "id" SERIAL NOT NULL,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
-    "deleted" BOOLEAN NOT NULL DEFAULT false,
-    "paperId" INTEGER,
-    "swatchCardTypeName" "SwatchCardTypeName",
-    "authorId" INTEGER,
-    "description" TEXT,
-    "imageKitUploadId" INTEGER,
+    "swatchCardId" INTEGER NOT NULL,
+    "tagId" INTEGER NOT NULL,
+    "setAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    CONSTRAINT "SwatchCard_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "TagsOnSwatchCards_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
-CREATE TABLE "SwatchCardsOnPaint" (
+CREATE TABLE "SwatchCard" (
     "id" SERIAL NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3),
+    "deleted" BOOLEAN NOT NULL DEFAULT false,
+    "paperId" INTEGER,
+    "authorUuid" TEXT,
+    "description" TEXT,
+    "imageKitUploadId" INTEGER,
     "paintId" INTEGER NOT NULL,
-    "gradientId" INTEGER,
-    "granulationId" INTEGER,
-    "dispersementId" INTEGER,
-    "highDilutionId" INTEGER,
-    "midDilutionId" INTEGER,
-    "masstoneId" INTEGER,
-    "glazeId" INTEGER,
-    "wetLiftId" INTEGER,
-    "dryLiftId" INTEGER,
 
-    CONSTRAINT "SwatchCardsOnPaint_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "SwatchCard_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "SwatchCardType" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updatedAt" TIMESTAMP(3),
     "name" "SwatchCardTypeName" NOT NULL,
-    "label" TEXT NOT NULL,
-    "description" TEXT NOT NULL,
+    "label" VARCHAR(60) NOT NULL,
+    "description" VARCHAR(240) NOT NULL,
 
     CONSTRAINT "SwatchCardType_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "SwatchCardTypesOnSwatchCard" (
+    "id" SERIAL NOT NULL,
+    "swatchCardId" INTEGER NOT NULL,
+    "swatchCardTypeName" "SwatchCardTypeName",
+
+    CONSTRAINT "SwatchCardTypesOnSwatchCard_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Paper" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updatedAt" TIMESTAMP(3),
     "manufacturerId" INTEGER,
     "lineId" INTEGER,
-    "description" TEXT NOT NULL,
     "weightInLbs" INTEGER NOT NULL,
+    "paperTypeId" INTEGER NOT NULL,
 
     CONSTRAINT "Paper_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "PaperType" (
+    "id" SERIAL NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3),
+    "name" TEXT NOT NULL,
+
+    CONSTRAINT "PaperType_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Note" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
-    "authorId" INTEGER NOT NULL,
+    "updatedAt" TIMESTAMP(3),
+    "authorUuid" TEXT NOT NULL,
     "paintId" INTEGER NOT NULL,
     "approved" BOOLEAN NOT NULL DEFAULT false,
-    "content" TEXT NOT NULL,
+    "content" VARCHAR(500) NOT NULL,
     "noteId" INTEGER,
 
     CONSTRAINT "Note_pkey" PRIMARY KEY ("id")
@@ -174,8 +204,8 @@ CREATE TABLE "Note" (
 CREATE TABLE "Manufacturer" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
-    "name" CITEXT NOT NULL,
+    "updatedAt" TIMESTAMP(3),
+    "name" TEXT NOT NULL,
     "website" TEXT,
 
     CONSTRAINT "Manufacturer_pkey" PRIMARY KEY ("id")
@@ -185,9 +215,9 @@ CREATE TABLE "Manufacturer" (
 CREATE TABLE "Line" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
-    "manufacturerId" INTEGER,
-    "name" CITEXT NOT NULL,
+    "updatedAt" TIMESTAMP(3),
+    "manufacturerName" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
 
     CONSTRAINT "Line_pkey" PRIMARY KEY ("id")
 );
@@ -196,7 +226,7 @@ CREATE TABLE "Line" (
 CREATE TABLE "PaintType" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updatedAt" TIMESTAMP(3),
     "label" TEXT NOT NULL,
     "slug" TEXT NOT NULL,
 
@@ -207,7 +237,7 @@ CREATE TABLE "PaintType" (
 CREATE TABLE "Color" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updatedAt" TIMESTAMP(3),
     "label" TEXT NOT NULL,
     "slug" TEXT NOT NULL,
     "code" TEXT NOT NULL,
@@ -263,33 +293,78 @@ CREATE TABLE "GranulationRating" (
 CREATE TABLE "ImageKitUpload" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updatedAt" TIMESTAMP(3),
     "fileId" TEXT NOT NULL,
     "filePath" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "thumbnailUrl" TEXT NOT NULL,
     "url" TEXT NOT NULL,
+    "height" INTEGER,
+    "width" INTEGER,
 
     CONSTRAINT "ImageKitUpload_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Palette" (
+    "id" SERIAL NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3),
+    "deleted" BOOLEAN NOT NULL DEFAULT false,
+    "visible" BOOLEAN NOT NULL DEFAULT true,
+    "uuid" TEXT NOT NULL,
+    "slug" TEXT NOT NULL,
+    "title" VARCHAR(60) NOT NULL,
+    "description" VARCHAR(240),
+    "ownerUuid" TEXT NOT NULL,
+
+    CONSTRAINT "Palette_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "PaintsInPalette" (
+    "id" SERIAL NOT NULL,
+    "setAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "order" INTEGER,
+    "paletteUuid" TEXT NOT NULL,
+    "paintUuid" TEXT NOT NULL,
+
+    CONSTRAINT "PaintsInPalette_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "PaletteSavedByUsers" (
+    "id" SERIAL NOT NULL,
+    "setAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "paletteUuid" TEXT NOT NULL,
+    "userUuid" TEXT NOT NULL,
+
+    CONSTRAINT "PaletteSavedByUsers_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Paint_slug_key" ON "Paint"("slug");
+CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Paint_manufacturerId_productColorName_key" ON "Paint"("manufacturerId", "productColorName");
+CREATE UNIQUE INDEX "User_uuid_key" ON "User"("uuid");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Pigment_type_colorId_number_key" ON "Pigment"("type", "colorId", "number");
+CREATE UNIQUE INDEX "Paint_uuid_key" ON "Paint"("uuid");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Paint_manufacturerId_name_key" ON "Paint"("manufacturerId", "name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Pigment_slug_key" ON "Pigment"("slug");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Pigment_type_colorCode_number_key" ON "Pigment"("type", "colorCode", "number");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Tag_label_slug_key" ON "Tag"("label", "slug");
-
--- CreateIndex
-CREATE UNIQUE INDEX "SwatchCardsOnPaint_paintId_key" ON "SwatchCardsOnPaint"("paintId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "SwatchCardType_name_key" ON "SwatchCardType"("name");
@@ -298,7 +373,7 @@ CREATE UNIQUE INDEX "SwatchCardType_name_key" ON "SwatchCardType"("name");
 CREATE UNIQUE INDEX "Manufacturer_name_key" ON "Manufacturer"("name");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Line_name_key" ON "Line"("name");
+CREATE UNIQUE INDEX "Line_manufacturerName_name_key" ON "Line"("manufacturerName", "name");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "PaintType_label_key" ON "PaintType"("label");
@@ -315,8 +390,14 @@ CREATE UNIQUE INDEX "Color_slug_key" ON "Color"("slug");
 -- CreateIndex
 CREATE UNIQUE INDEX "Color_code_key" ON "Color"("code");
 
+-- CreateIndex
+CREATE UNIQUE INDEX "Palette_uuid_key" ON "Palette"("uuid");
+
 -- AddForeignKey
-ALTER TABLE "Paint" ADD CONSTRAINT "Paint_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "UserToken" ADD CONSTRAINT "UserToken_userUuid_fkey" FOREIGN KEY ("userUuid") REFERENCES "User"("uuid") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Paint" ADD CONSTRAINT "Paint_authorUuid_fkey" FOREIGN KEY ("authorUuid") REFERENCES "User"("uuid") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Paint" ADD CONSTRAINT "Paint_manufacturerId_fkey" FOREIGN KEY ("manufacturerId") REFERENCES "Manufacturer"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -340,10 +421,16 @@ ALTER TABLE "Paint" ADD CONSTRAINT "Paint_stainingRatingId_fkey" FOREIGN KEY ("s
 ALTER TABLE "Paint" ADD CONSTRAINT "Paint_granulationRatingId_fkey" FOREIGN KEY ("granulationRatingId") REFERENCES "GranulationRating"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Pigment" ADD CONSTRAINT "Pigment_colorId_fkey" FOREIGN KEY ("colorId") REFERENCES "Color"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Pigment" ADD CONSTRAINT "Pigment_colorCode_fkey" FOREIGN KEY ("colorCode") REFERENCES "Color"("code") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Pigment" ADD CONSTRAINT "Pigment_imageKitUploadId_fkey" FOREIGN KEY ("imageKitUploadId") REFERENCES "ImageKitUpload"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Pigment" ADD CONSTRAINT "Pigment_lightfastRatingId_fkey" FOREIGN KEY ("lightfastRatingId") REFERENCES "LightfastRating"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Pigment" ADD CONSTRAINT "Pigment_transparencyRatingId_fkey" FOREIGN KEY ("transparencyRatingId") REFERENCES "TransparencyRating"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "PigmentsOnPaints" ADD CONSTRAINT "PigmentsOnPaints_paintId_fkey" FOREIGN KEY ("paintId") REFERENCES "Paint"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -358,46 +445,28 @@ ALTER TABLE "TagsOnPaints" ADD CONSTRAINT "TagsOnPaints_paintId_fkey" FOREIGN KE
 ALTER TABLE "TagsOnPaints" ADD CONSTRAINT "TagsOnPaints_tagId_fkey" FOREIGN KEY ("tagId") REFERENCES "Tag"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "TagsOnSwatchCards" ADD CONSTRAINT "TagsOnSwatchCards_swatchCardId_fkey" FOREIGN KEY ("swatchCardId") REFERENCES "SwatchCard"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "TagsOnSwatchCards" ADD CONSTRAINT "TagsOnSwatchCards_tagId_fkey" FOREIGN KEY ("tagId") REFERENCES "Tag"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "SwatchCard" ADD CONSTRAINT "SwatchCard_paperId_fkey" FOREIGN KEY ("paperId") REFERENCES "Paper"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "SwatchCard" ADD CONSTRAINT "SwatchCard_swatchCardTypeName_fkey" FOREIGN KEY ("swatchCardTypeName") REFERENCES "SwatchCardType"("name") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "SwatchCard" ADD CONSTRAINT "SwatchCard_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "SwatchCard" ADD CONSTRAINT "SwatchCard_authorUuid_fkey" FOREIGN KEY ("authorUuid") REFERENCES "User"("uuid") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "SwatchCard" ADD CONSTRAINT "SwatchCard_imageKitUploadId_fkey" FOREIGN KEY ("imageKitUploadId") REFERENCES "ImageKitUpload"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "SwatchCardsOnPaint" ADD CONSTRAINT "SwatchCardsOnPaint_paintId_fkey" FOREIGN KEY ("paintId") REFERENCES "Paint"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "SwatchCard" ADD CONSTRAINT "SwatchCard_paintId_fkey" FOREIGN KEY ("paintId") REFERENCES "Paint"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "SwatchCardsOnPaint" ADD CONSTRAINT "SwatchCardsOnPaint_gradientId_fkey" FOREIGN KEY ("gradientId") REFERENCES "SwatchCard"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "SwatchCardTypesOnSwatchCard" ADD CONSTRAINT "SwatchCardTypesOnSwatchCard_swatchCardId_fkey" FOREIGN KEY ("swatchCardId") REFERENCES "SwatchCard"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "SwatchCardsOnPaint" ADD CONSTRAINT "SwatchCardsOnPaint_granulationId_fkey" FOREIGN KEY ("granulationId") REFERENCES "SwatchCard"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "SwatchCardsOnPaint" ADD CONSTRAINT "SwatchCardsOnPaint_dispersementId_fkey" FOREIGN KEY ("dispersementId") REFERENCES "SwatchCard"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "SwatchCardsOnPaint" ADD CONSTRAINT "SwatchCardsOnPaint_highDilutionId_fkey" FOREIGN KEY ("highDilutionId") REFERENCES "SwatchCard"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "SwatchCardsOnPaint" ADD CONSTRAINT "SwatchCardsOnPaint_midDilutionId_fkey" FOREIGN KEY ("midDilutionId") REFERENCES "SwatchCard"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "SwatchCardsOnPaint" ADD CONSTRAINT "SwatchCardsOnPaint_masstoneId_fkey" FOREIGN KEY ("masstoneId") REFERENCES "SwatchCard"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "SwatchCardsOnPaint" ADD CONSTRAINT "SwatchCardsOnPaint_glazeId_fkey" FOREIGN KEY ("glazeId") REFERENCES "SwatchCard"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "SwatchCardsOnPaint" ADD CONSTRAINT "SwatchCardsOnPaint_wetLiftId_fkey" FOREIGN KEY ("wetLiftId") REFERENCES "SwatchCard"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "SwatchCardsOnPaint" ADD CONSTRAINT "SwatchCardsOnPaint_dryLiftId_fkey" FOREIGN KEY ("dryLiftId") REFERENCES "SwatchCard"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "SwatchCardTypesOnSwatchCard" ADD CONSTRAINT "SwatchCardTypesOnSwatchCard_swatchCardTypeName_fkey" FOREIGN KEY ("swatchCardTypeName") REFERENCES "SwatchCardType"("name") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Paper" ADD CONSTRAINT "Paper_manufacturerId_fkey" FOREIGN KEY ("manufacturerId") REFERENCES "Manufacturer"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -406,7 +475,10 @@ ALTER TABLE "Paper" ADD CONSTRAINT "Paper_manufacturerId_fkey" FOREIGN KEY ("man
 ALTER TABLE "Paper" ADD CONSTRAINT "Paper_lineId_fkey" FOREIGN KEY ("lineId") REFERENCES "Line"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Note" ADD CONSTRAINT "Note_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Paper" ADD CONSTRAINT "Paper_paperTypeId_fkey" FOREIGN KEY ("paperTypeId") REFERENCES "PaperType"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Note" ADD CONSTRAINT "Note_authorUuid_fkey" FOREIGN KEY ("authorUuid") REFERENCES "User"("uuid") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Note" ADD CONSTRAINT "Note_paintId_fkey" FOREIGN KEY ("paintId") REFERENCES "Paint"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -415,4 +487,19 @@ ALTER TABLE "Note" ADD CONSTRAINT "Note_paintId_fkey" FOREIGN KEY ("paintId") RE
 ALTER TABLE "Note" ADD CONSTRAINT "Note_noteId_fkey" FOREIGN KEY ("noteId") REFERENCES "Note"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Line" ADD CONSTRAINT "Line_manufacturerId_fkey" FOREIGN KEY ("manufacturerId") REFERENCES "Manufacturer"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "Line" ADD CONSTRAINT "Line_manufacturerName_fkey" FOREIGN KEY ("manufacturerName") REFERENCES "Manufacturer"("name") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Palette" ADD CONSTRAINT "Palette_ownerUuid_fkey" FOREIGN KEY ("ownerUuid") REFERENCES "User"("uuid") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "PaintsInPalette" ADD CONSTRAINT "PaintsInPalette_paletteUuid_fkey" FOREIGN KEY ("paletteUuid") REFERENCES "Palette"("uuid") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "PaintsInPalette" ADD CONSTRAINT "PaintsInPalette_paintUuid_fkey" FOREIGN KEY ("paintUuid") REFERENCES "Paint"("uuid") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "PaletteSavedByUsers" ADD CONSTRAINT "PaletteSavedByUsers_paletteUuid_fkey" FOREIGN KEY ("paletteUuid") REFERENCES "Palette"("uuid") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "PaletteSavedByUsers" ADD CONSTRAINT "PaletteSavedByUsers_userUuid_fkey" FOREIGN KEY ("userUuid") REFERENCES "User"("uuid") ON DELETE RESTRICT ON UPDATE CASCADE;

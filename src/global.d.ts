@@ -10,6 +10,8 @@ declare type StainingRating = import('.prisma/client').StainingRating;
 declare type GranulationRating = import('.prisma/client').GranulationRating;
 declare type Palette = import('.prisma/client').Palette;
 declare type PaintsInPalette = import('.prisma/client').PaintsInPalette;
+declare type PaperType = import('.prisma/client').PaperType;
+declare type Line = import('.prisma/client').Line;
 
 interface ImportMetaEnv
   extends Readonly<Record<string, string | boolean | undefined>> {
@@ -25,22 +27,12 @@ interface SwatchCardComponent extends SwatchCard {
   paper: import('.prisma/client').Paper;
   author: import('.prisma/client').User;
   imageKitUpload: import('.prisma/client').ImageKitUpload;
-}
-
-interface SwatchCardsCollection {
-  gradient: SwatchCardComponent;
-  granulation: SwatchCardComponent;
-  dispersement: SwatchCardComponent;
-  highDilution: SwatchCardComponent;
-  midDilution: SwatchCardComponent;
-  masstone: SwatchCardComponent;
-  glaze: SwatchCardComponent;
-  wetLift: SwatchCardComponent;
-  dryLift: SwatchCardComponent;
+  tags: import('.prisma/client').Tag[];
+  swatchCardTypesOnSwatchCard: import('.prisma/client').SwatchCardTypesOnSwatchCard[];
 }
 interface PaintComponent extends Paint {
-  uuid: String;
-  swatchCardsOnPaint?: SwatchCardsCollection;
+  uuid: string;
+  swatchCard?: SwatchCardComponent[];
   pigmentsOnPaints?: { pigment: Pigment }[];
   manufacturer?: import('.prisma/client').Manufacturer;
   lightfastRating?: import('.prisma/client').LightfastRating;

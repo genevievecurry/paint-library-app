@@ -20,7 +20,8 @@
 </script>
 
 <script lang="ts">
-  import { generateUrl } from "$lib/utility";
+  import { generateUrl } from '$lib/utility';
+  import PaintPreview from '$lib/components/PaintPreview.svelte';
 
   export let pigment: PigmentComponent;
 
@@ -115,26 +116,12 @@
       No paint in this database is currently linked to this pigment.
     {/if}
   </p>
-  <div
-    class="masonry sm:masonry-sm md:masonry-md lg:masonry-lg xl:masonry-xl 2xl:masonry-2xl">
-    {#each pigment.paints as paint}
-      <div class="table border border-black p-3 break-inside mb-3 w-full">
-        <a href="{generateUrl({prefix: 'paint', target: paint.paint})}">
-          <div
-            class="w-full block h-32"
-            style={`background-color: ${
-              paint.paint.hex
-            }; height: ${randomDimension()}px`}>
-            <!-- To-do: Figure out how to pull in a swatch image, if there is one. -->
-          </div>
-          <div class="mt-2">
-            <span class="block font-medium">
-              {paint.paint.manufacturer?.name}
-            </span>
-            <span class="block text-sm">{paint.paint.name}</span>
-          </div>
-        </a>
-      </div>
-    {/each}
-  </div>
+  {#if pigment.paints.length > 0}
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-3">
+      {#each pigment.paints as paint, index}
+        <PaintPreview paint={paint.paint} {index} />
+      {/each}
+    </div>
+  {/if}
 </section>

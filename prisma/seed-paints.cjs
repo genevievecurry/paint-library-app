@@ -26,7 +26,9 @@ async function main() {
   // const manufacturers = await prisma.manufacturer.count();
   const manufacturers = 3;
   const paintCsv = `${__dirname}/temp-paints.csv`;
+  const lineCsv = `${__dirname}/line.csv`;
   const parsedPaintCsv = await processFile(paintCsv);
+  const parsedLineCsv = await processFile(lineCsv);
 
   function setPigmentOnPaint() {
     const numberOfPigments = Math.floor(Math.random() * 6);
@@ -73,73 +75,33 @@ async function main() {
     },
   ];
 
-  const swatchCardsOnPaint = {
-    gradient: {
-      create: {
-        paperId: 1,
-        authorId: 2,
-        swatchCardTypeName: 'GRADIENT',
-        description: 'This is a supercool wash, with extra awesome.',
-        imageKitUploadId: 1,
+  const lineImport = parsedLineCsv.forEach(async (line) => {
+    let lineItem = await prisma.line.upsert({
+      where: {
+        manufacturerName_name: {
+          name: line.name,
+          manufacturerName: line.manufacturer,
+        },
       },
-    },
-    granulation: {
-      create: {
-        paperId: 1,
-        authorId: 2,
-        swatchCardTypeName: 'GRANULATION',
-        description: 'This is a supercool wash, with extra awesome.',
-        imageKitUploadId: 2,
+      update: {
+        name: line.name,
       },
-    },
-    dispersement: {
       create: {
-        paperId: 1,
-        authorId: 2,
-        swatchCardTypeName: 'DISPERSEMENT',
-        description: 'This is a supercool wash, with extra awesome.',
-        imageKitUploadId: 3,
+        name: line.name,
+        manufacturer: {
+          connectOrCreate: {
+            create: {
+              name: line.manufacturer,
+            },
+            where: {
+              name: line.manufacturer,
+            },
+          },
+        },
       },
-    },
-    highDilution: {
-      create: {
-        paperId: 1,
-        authorId: 2,
-        swatchCardTypeName: 'HIGH_DILUTION',
-        description: 'This is a supercool wash, with extra awesome.',
-        imageKitUploadId: 4,
-      },
-    },
-    midDilution: {
-      create: {
-        paperId: 1,
-        authorId: 2,
-        swatchCardTypeName: 'MID_DILUTION',
-        description: 'This is a supercool wash, with extra awesome.',
-        imageKitUploadId: 5,
-      },
-    },
-    masstone: {
-      create: {
-        swatchCardTypeName: 'MASSTONE',
-      },
-    },
-    glaze: {
-      create: {
-        swatchCardTypeName: 'GLAZE',
-      },
-    },
-    wetLift: {
-      create: {
-        swatchCardTypeName: 'WET_LIFT',
-      },
-    },
-    dryLift: {
-      create: {
-        swatchCardTypeName: 'DRY_LIFT',
-      },
-    },
-  };
+    });
+    console.log('lineItem', lineItem);
+  });
 
   const paintImport = parsedPaintCsv.forEach(async (paint, i) => {
     for (let j = 1; j < manufacturers; j++) {
@@ -148,7 +110,7 @@ async function main() {
           uuid: `${paint.slug}-${i}-${j}`,
           slug: `${paint.slug}`,
           published: true,
-          authorId: Number(paint.authorId),
+          authorUuid: '37287234987',
           manufacturerId: j,
           paintTypeId: Number(paint.paintTypeId),
           name: paint.name,
@@ -159,8 +121,17 @@ async function main() {
           stainingRatingId: Number(paint.stainingRatingId),
           granulationRatingId: Number(paint.granulationRatingId),
           hex: paint.hex,
-          swatchCardsOnPaint: {
-            create: swatchCardsOnPaint,
+          swatchCard: {
+            createMany: {
+              data: [
+                {
+                  paperId: 1,
+                  authorUuid: '37287234987',
+                  description: 'Blah blah blah',
+                  imageKitUploadId: 1,
+                },
+              ],
+            },
           },
           tags: {
             create: tagsForPaint,
@@ -179,13 +150,13 @@ async function main() {
   const notes = await prisma.note.createMany({
     data: [
       {
-        authorId: 1,
+        authorUuid: '37287234987',
         paintId: 1,
         approved: true,
         content: 'This is a cool comment about this paint.',
       },
       {
-        authorId: 1,
+        authorUuid: '372sdf34987',
         paintId: 1,
         approved: true,
         content: 'This is a totally uncool comment about this paint.',
@@ -194,20 +165,20 @@ async function main() {
   });
 
   const parentNote = await prisma.note.findFirst({
-    where: { authorId: 1 },
+    where: { authorUuid: '37287234987' },
   });
 
   const childNotes = await prisma.note.createMany({
     data: [
       {
-        authorId: 1,
+        authorUuid: '37287234987',
         paintId: 1,
         approved: true,
         content: 'This is a cool reply to this note.',
         noteId: parentNote.id,
       },
       {
-        authorId: 2,
+        authorUuid: '372sdf34987',
         paintId: 1,
         approved: true,
         content: 'This is a totally uncool reply to this note.',

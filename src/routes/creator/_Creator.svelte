@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { session } from '$app/stores';
   import { generateUrl } from '$lib/utility';
   import { goto } from '$app/navigation';
   import { generateSlug } from '$lib/slug';
@@ -65,8 +66,8 @@
       // @ts-ignore
       const newPaint = await onresponse(response);
 
-      if(newPaint.slug){
-        const url = generateUrl({prefix: 'paint', target: newPaint});
+      if (newPaint.slug) {
+        const url = generateUrl({ prefix: 'paint', target: newPaint });
         goto(url);
       }
     };
@@ -86,8 +87,7 @@
   <fieldset class="mt-10">
     <div class="grid grid-cols-6 gap-6">
       <div class="col-span-6 sm:col-span-3">
-        <label for="name" class="block font-extrabold text-2xl"
-          >Color</label>
+        <label for="name" class="block font-extrabold text-2xl">Color</label>
         <p class="text-sm text-gray-500">
           Representational default. Don't worry, you can upload something nicer
           on the next screen.</p>
@@ -141,12 +141,13 @@
         <div class="flex items-center">
           <label class="cursor-pointer">
             <input
+              checked
               id="author1"
-              name="authorId"
+              name="authorUuid"
               type="radio"
               class="focus:ring-green-400 focus:border-green-400 border-gray-300 mr-3"
-              value={1} />
-            Me
+              value={$session.user.uuid} />
+            {$session.user.username}
           </label>
         </div>
       </div>
@@ -159,12 +160,12 @@
         <div class="flex items-center">
           <label class="cursor-pointer">
             <input
+              checked
               id="paintType1"
               name="paintTypeId"
               type="radio"
               class="focus:ring-green-400 focus:border-green-400 border-gray-300 mr-3"
               value={1} />
-
             Watercolor
           </label>
         </div>
@@ -207,17 +208,6 @@
           <textarea
             id="manufacturerDescription"
             name="manufacturerDescription"
-            class="mt-2 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400" />
-        </div>
-
-        <div class="mt-6">
-          <label
-            for="manufacturerPigmentDescription"
-            class="block text-sm text-gray-500">
-            Manufacturer Pigment Description</label>
-          <textarea
-            id="manufacturerPigmentDescription"
-            name="manufacturerPigmentDescription"
             class="mt-2 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400" />
         </div>
       </div>

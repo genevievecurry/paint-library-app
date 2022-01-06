@@ -4,6 +4,7 @@
   const close = () => dispatch('close');
 
   export let title = '';
+  export let fullWidth = false;
 
   let modal;
   const handle_keydown = (e) => {
@@ -41,7 +42,7 @@
 <svelte:window on:keydown={handle_keydown} />
 
 <div
-  class="fixed z-10 inset-0 overflow-y-auto"
+  class="fixed z-20 inset-0 overflow-y-auto"
   role="dialog"
   aria-modal="true"
   bind:this={modal}>
@@ -79,12 +80,14 @@
         To: "opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
     -->
     <div
-      class="flex text-base text-left transform transition w-full md:inline-block md:max-w-2xl md:px-4 md:my-8 md:align-middle lg:max-w-4xl">
+      class="flex text-base text-left transition w-full md:inline-block md:max-w-2xl md:px-4 md:my-8 md:align-middle {fullWidth
+        ? 'lg:max-w-full'
+        : 'lg:max-w-4xl'}">
       <div
         class="w-full relative flex items-center bg-white px-4 pt-14 pb-8 overflow-hidden shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
         <button
           type="button"
-          class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8"
+          class="absolute top-4 right-4 text-black hover:text-pink-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8"
           autofocus
           on:click={close}>
           <span class="sr-only">Close</span>
@@ -104,8 +107,8 @@
           </svg>
         </button>
         <div
-          class="w-full grid grid-cols-1 gap-y-8 gap-x-6 items-start sm:grid-cols-12 lg:gap-x-8">
-          <div class="col-span-11"><h2 class="font-extrabold text-4xl">{title}</h2></div>
+          class="w-full grid grid-cols-1 gap-y-8 gap-x-6 items-start sm:grid-cols-12 lg:gap-x-8 ">
+          <div class="col-span-11"><h2 class="h2">{title}</h2></div>
           <slot />
         </div>
       </div>

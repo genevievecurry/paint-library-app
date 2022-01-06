@@ -4,21 +4,21 @@
   import InfiniteLoad from '$lib/components/InfiniteLoad.svelte';
 
   let set = 0;
-	let list = [];
+  let list = [];
 
   function infiniteHandler({ detail: { loaded, complete } }) {
-		fetch(`index.json?set=${set}`)
-			.then(response => response.json())
-			.then(data => {
+    fetch(`index.json?set=${set}`)
+      .then((response) => response.json())
+      .then((data) => {
         if (data.length) {
-          set += 50; 
+          set += 50;
           list = [...list, ...data];
           loaded();
         } else {
           complete();
         }
       });
-	}
+  }
 </script>
 
 <svelte:head>
@@ -30,7 +30,7 @@
     <div class="container mx-auto px-4 sm:px-6 mt-32 mb-20">
       <h1 class="text-white font-bold text-5xl">Paint Library</h1>
       <p class="text-white text-xl font-light mt-6">
-        Paint Library is an online database of artists paints and pigments.
+        Paint Library is an online database of artist paint swatches.
       </p>
       <div class="w-full mt-8">
         <Search />
@@ -44,13 +44,12 @@
 </div>
 
 <div class="container mx-auto px-4 sm:px-6">
-  <div class="grid grid-cols-6 gap-x-3" infinite-wrapper>
-  <!-- <div -->
-    <!-- class="masonry sm:masonry-sm md:masonry-md lg:masonry-lg xl:masonry-xl 2xl:masonry-2xl"> -->
+  <div
+    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-3"
+    infinite-wrapper>
     {#each list as paint, index}
       <PaintPreview {paint} {index} />
     {/each}
-
     <InfiniteLoad on:infinite={infiniteHandler} forceUseInfiniteWrapper />
   </div>
 </div>
