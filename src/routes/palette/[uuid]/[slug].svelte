@@ -25,6 +25,7 @@
   import Dialog from '$lib/components/Dialog.svelte';
   import Modal from '$lib/components/Modal.svelte';
   import PaletteForm from '$lib/components/PaletteForm.svelte';
+  import PaintPalettePreview from '$lib/components/PaintPalettePreview.svelte';
   import { clickOutside } from '$lib/actions';
   import { connect, generateUrl } from '$lib/utility';
   import { session } from '$app/stores';
@@ -39,6 +40,8 @@
   $: description = palette.description || '';
   $: paintsInPalette = palette.paintsInPalette || [];
   $: saved = false;
+  $: showText = false;
+  $: listView = false;
 
   let editable = false;
   let editMenuOpen = false;
@@ -128,12 +131,10 @@
   <Dialog
     on:close={() => (showDeletePaletteDialog = false)}
     on:confirm={deletePalette}>
-    <div slot="confirmationText">
-      <p class="font-bold">Are you sure you want to delete this palette?</p>
-      <p class="my-2"
-        >This cannot be undone. The good news is that you can easily make
-        another palette just like it if you have regrets!</p>
-    </div>
+    <span slot="title">Are you sure you want to delete this palette?</span>
+    <p slot="confirmationText">
+      This cannot be undone. The good news is that you can easily make another
+      palette just like it if you have regrets!</p>
   </Dialog>
 {/if}
 
@@ -169,7 +170,9 @@
           }}>
           <button
             type="button"
-            class="pop inline-flex justify-center px-2 py-1 text-sm"
+            class="pop inline-flex justify-center px-2 py-1 text-sm {editMenuOpen
+              ? 'active'
+              : ''}"
             id="menu-button"
             aria-expanded={editMenuOpen}
             aria-haspopup="true"
@@ -192,21 +195,33 @@
           <div
             class="transition ease-out duration-100 {editMenuOpen
               ? 'opacity-100 scale-100'
-              : 'opacity-0 scale-95'} z-10 border border-black origin-top-right absolute right-0 mt-2 w-64 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+              : 'opacity-0 scale-95'} z-10 border-2 border-black origin-top-right absolute right-0 mt-2 w-48 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="menu-button"
             tabindex="-1">
             <span
               on:click={() => (showEditPaletteModal = true)}
-              class="action-link block px-4 py-2 text-sm flex"
+              class="action-link px-2 pt-3 text-sm flex"
               role="menuitem"
               tabindex="-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
               Edit
             </span>
             <span
               on:click={() => (showDeletePaletteDialog = true)}
-              class="action-link delete block px-4 py-2 text-sm flex"
+              class="text-red-600 px-2 py-3 text-sm flex"
               role="menuitem"
               tabindex="-1">
               <svg
@@ -231,16 +246,84 @@
   </Header>
 
   <section
-    class="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-4">
-    {#each paintsInPalette as paintInPalette}
-      <div class="border border-black p-1">
-        <a
-          href={generateUrl({ prefix: 'paint', target: paintInPalette.paint })}>
-          <div
-            class="w-full h-32"
-            style={`background-color: ${paintInPalette.paint.hex}`} />
-        </a>
-      </div>
-    {/each}
+    class="flex justify-end w-full items-center pb-3 mb-3 border-b-2 border-black">
+    {#if !listView}
+      <div on:click={() => (showText = !showText)} class="text-sm mr-3 link">
+        {showText ? 'Hide' : 'Show'} Details</div>
+    {/if}
+
+    <button
+      aria-label="List View"
+      title="List View"
+      on:click={() => (listView = !listView)}
+      class="pop inline-flex justify-center px-2 py-1 text-sm {listView
+        ? 'text-pink-600 active'
+        : 'text-black'}">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+      </svg>
+    </button>
+    <button
+      aria-label="Grid View"
+      title="Grid View"
+      on:click={() => (listView = !listView)}
+      class="pop inline-flex justify-center px-2 py-1 text-sm {!listView
+        ? 'text-pink-600 active'
+        : 'text-black'}">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        viewBox="0 0 20 20"
+        fill="currentColor">
+        <path
+          d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+      </svg>
+    </button>
+  </section>
+
+  <section
+    class={listView
+      ? ''
+      : 'grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-2'}>
+    {#if listView}
+      <table class="border-collapse table-auto w-full text-sm">
+        <thead>
+          <tr>
+            <td>&nbsp;</td>
+            <td class="font-bold p-3">Manufacturer</td>
+            <td class="font-bold p-3">Name</td>
+            <td class="font-bold p-3">Lightfastness</td>
+            <td class="font-bold p-3">Transparency</td>
+            <td class="font-bold p-3">Staining</td>
+            <td class="font-bold p-3">Granulating</td>
+            <td class="font-bold p-3">Pigments</td>
+          </tr>
+        </thead>
+        <tbody>
+          {#each paintsInPalette as paintInPalette}
+            <PaintPalettePreview
+              paint={paintInPalette.paint}
+              {showText}
+              {listView} />
+          {/each}
+        </tbody>
+      </table>
+    {:else}
+      {#each paintsInPalette as paintInPalette}
+        <PaintPalettePreview
+          paint={paintInPalette.paint}
+          {showText}
+          {listView} />
+      {/each}
+    {/if}
   </section>
 </div>

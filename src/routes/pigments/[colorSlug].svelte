@@ -26,18 +26,12 @@
   const { pigments, currentColor } = results;
 </script>
 
-<header class="my-7">
-  <div>
+<header class="my-7 md:flex justify-between">
+  <div class="mb-4">
     <div class="mb-4 font-light">
-      <a
-        href="/"
-        class="underline text-gray-500 hover:text-white hover:bg-black inline-block pr-2"
-        >Paint Library</a>
+      <a href="/" class="decorate-link inline-block pr-2">Paint Library</a>
       <span class="text-gray-400">/</span>
-      <a
-        href="/pigments"
-        class="underline text-gray-500 hover:text-white hover:bg-black inline-block px-2"
-        >Pigments</a>
+      <a href="/pigments" class="decorate-link inline-block px-2">Pigments</a>
       <span class="text-gray-400">/</span>
       <span class="inline-block ml-2">{currentColor}</span>
     </div>
@@ -50,16 +44,17 @@
 <section
   class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
   {#each pigments as pigment}
-    <div class="border border-black">
+    <div class="border-2 border-black p-1">
       <a
         sveltekit:prefetch
         href={`/pigments/${slug}/${pigment.slug}`}
-        class="block transition-all bg-white hover:bg-black text-black hover:text-white hover:underline">
+        class="relative">
         <div
-          class="w-full h-48 border-b border-black"
+          class="aspect-w-16 aspect-h-16"
           style={`background-color: ${pigment.hex}`} />
-        <div class="p-31">
-          <span class="block">{pigment.name}</span>
+        <div class="p-2">
+          <span class="block font-medium">{pigment.name}</span>
+          <span class="block text-sm">{pigment.slug}</span>
         </div>
       </a>
     </div>

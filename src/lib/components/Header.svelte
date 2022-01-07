@@ -17,7 +17,7 @@
 <header class="my-7 md:flex justify-between">
   <div class="mb-4">
     <div class="mb-4 font-light">
-      <a href="/" class="link inline-block pr-2">Paint Library</a>
+      <a href="/" class="decorate-link inline-block pr-2">Paint Library</a>
       <span class="text-gray-400">/</span>
       <span class="inline-block ml-2">{title}</span>
     </div>
@@ -31,7 +31,8 @@
       <span class="block mt-2 font-light">{subtitle}</span>
     {/if}
     {#if owner}
-      By <a href="/@{owner.username}" class="link">@{owner.username}</a>
+      By <a href="/@{owner.username}" class="decorate-link"
+        >@{owner.username}</a>
     {/if}
   </div>
   <div>

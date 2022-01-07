@@ -19,7 +19,7 @@
 
 <form
   on:submit|preventDefault={handleQuery}
-  class="w-full flex align-middle border {reverse
+  class="w-full flex align-middle border-2 {reverse
     ? 'bg-gray-900 border-white'
     : 'bg-white  border-black'} focus:outline-none focus:ring-green-400 focus:border-green-400">
   <button class="p-3 flex-none">

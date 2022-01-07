@@ -45,31 +45,13 @@
 .h4 {
 }
 
-.link,
-.light .link {
-  @apply text-gray-500 underline hover:text-pink-500 transition-colors cursor-pointer;
-}
-
-.dark .link {
-  @apply text-white hover:text-pink-500;
-}
-
-.action-link,
-.light .action-link {
-  @apply text-black hover:text-pink-500 hover:border-pink-500 transition-colors cursor-pointer;
-}
-
-.action-link.delete {
-  @apply border-yellow-600 text-yellow-600;
-}
-
-.dark .action-link {
-  @apply text-white hover:text-pink-500;
+.link {
+  @apply text-gray-500 underline hover:text-pink-400 transition-colors cursor-pointer;
 }
 
 .decorate-link {
-  @apply font-normal;
-
+  /* @apply font-normal; */
+  @apply font-medium;
   transition: background-size 0.4s ease;
   background-color: rgba(0, 0, 0, 0);
   background-position-x: center;
@@ -148,7 +130,8 @@
   );
 }
 
-.pop:hover {
+.pop:hover,
+.pop.active {
   transform: translate(0, 0);
   clip-path: polygon(
     0% var(--c),
