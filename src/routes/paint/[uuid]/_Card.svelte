@@ -2,7 +2,6 @@
   import { session } from '$app/stores';
   import { getContext, createEventDispatcher } from 'svelte';
   import Modal from '$lib/components/Modal.svelte';
-  import { userInfo } from 'os';
 
   export let swatchCard: SwatchCardComponent;
   export let alignment: string;
@@ -115,7 +114,7 @@
   </Modal>
 {/if}
 <div
-  class={`cursor-pointer swatch-card border border-black p-2 relative ${swatchCardClasses}`}
+  class={`cursor-pointer border-2 border-black p-1 relative ${swatchCardClasses}`}
   on:click={() => (showSwatchCardModal = true)}>
   <div class={aspectRatioClasses}>
     <div

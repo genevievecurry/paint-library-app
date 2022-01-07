@@ -1,4 +1,5 @@
 <script>
+  // Based on https://gitlab.com/az67128/svelte-atoms/-/blob/master/src/components/DropZone.svelte
   import { onMount } from 'svelte';
   import { bubble, listen } from 'svelte/internal';
   import { current_component } from 'svelte/internal';
@@ -161,24 +162,13 @@
 </div>
 
 <style>
+  /* To do: convert to tailwind */
   .fullPageText {
     font-family: var(--preferred-font);
     font-size: 24px;
     font-weight: 500;
     text-align: center;
     color: var(--palette-white);
-  }
-  .aa-DropZone {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--palette-white);
-    border: dashed 2px var(--palette-noactive-4);
-    min-height: 120px;
-    border-radius: 8px;
-    padding: 16px;
-    cursor: pointer;
   }
   .fileInput {
     display: none;
@@ -196,10 +186,6 @@
     font-display: var(--preferred-font);
     font-size: 14px;
     color: var(--palette-negative-1);
-  }
-  .fileNameContainer {
-    display: flex;
-    align-items: center;
   }
   .disabled {
     cursor: initial;
@@ -227,11 +213,5 @@
     border-radius: 8px;
     border: dashed 4px var(--palette-white);
     margin: 16px;
-  }
-  .fileTitle {
-    margin-left: 8px;
-    font-size: 14px;
-    font-family: var(--preferred-font);
-    color: var(--palette-noactive-3);
   }
 </style>

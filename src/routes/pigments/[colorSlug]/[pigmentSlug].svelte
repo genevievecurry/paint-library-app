@@ -20,33 +20,22 @@
 </script>
 
 <script lang="ts">
-  import { generateUrl } from '$lib/utility';
   import PaintPreview from '$lib/components/PaintPreview.svelte';
 
   export let pigment: PigmentComponent;
-
-  function randomDimension() {
-    const dimensions = [300, 350, 400, 500, 600];
-    return dimensions[Math.floor(Math.random() * dimensions.length)];
-  }
 </script>
 
-<header class="my-7">
-  <div>
+<!-- Todo: figure out breadcrumbs and use Header component -->
+<header class="my-7 md:flex justify-between">
+  <div class="mb-4">
     <div class="mb-4 font-light">
-      <a
-        href="/"
-        class="underline text-gray-500 hover:text-white hover:bg-black inline-block pr-2"
-        >Paint Library</a>
+      <a href="/" class="decorate-link inline-block pr-2">Paint Library</a>
       <span class="text-gray-400">/</span>
-      <a
-        href="/pigments"
-        class="underline text-gray-500 hover:text-white hover:bg-black inline-block px-2"
-        >Pigments</a>
+      <a href="/pigments" class="decorate-link inline-block px-2">Pigments</a>
       <span class="text-gray-400">/</span>
       <a
         href="/pigments/{pigment.color.label.toLowerCase()}"
-        class="underline text-gray-500 hover:text-white hover:bg-black inline-block px-2">
+        class="decorate-link inline-block px-2">
         {pigment.color.label}
       </a>
       <span class="text-gray-400">/</span>
@@ -60,15 +49,15 @@
 </header>
 
 <section class="grid gap-3 grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6">
-  <div class="border border-black relative h-56 col-span-2 lg:col-span-1">
+  <div class="border-2 border-black p-1 relative h-56 col-span-2 lg:col-span-1">
     <div class="empty-swatch h-full" style={`background: ${pigment.hex}`} />
   </div>
   <div class="ml-0 lg:ml-3 col-span-2 lg:col-span-3 xl:col-span-3">
-    <table class="table-fixed border-collapse border border-black w-full">
+    <table class="table-fixed border-collapse border border-gray-400 w-full">
       <tr>
-        <th class="text-left border border-black px-4 py-3"
+        <th class="text-left border border-gray-400 px-4 py-3"
           ><span class="whitespace-nowrap">C.I. Generic Name</span></th>
-        <td class="border border-black px-4 py-3">
+        <td class="border border-gray-400 px-4 py-3">
           {#if pigment.type === 'CIPIGMENT'}
             Pigment {pigment.color.label} {pigment.number}, {pigment.name}
           {/if}

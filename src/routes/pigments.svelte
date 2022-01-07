@@ -72,7 +72,7 @@
 </script>
 
 <div class="container mx-auto px-4 sm:px-6">
-  <Header title="Pigments"></Header>
+  <Header title="Pigments" />
 
   <div class="grid grid-cols-6">
     <aside class="col-span-1">
@@ -84,7 +84,7 @@
               <a
                 class={`hover:text-white hover:bg-black inline-block px-2 ${
                   color.slug === activeSectionId
-                    ? 'text-black font-bold'
+                    ? 'text-pink-500 font-bold'
                     : 'text-gray-500 font-light'
                 }`}
                 href={`#${color.slug}`}>
@@ -101,8 +101,8 @@
           <div class="sticky top-0 bg-white py-2"
             ><h2 class="font-bold text-3xl">{color.label}</h2></div>
 
-          <table class="border-collapse border border-black mt-4 w-full">
-            <thead class="text-left border-b border-black">
+          <table class="border-collapse border-2 border-black my-4 w-full">
+            <thead class="text-left border-b-2 border-black">
               <tr>
                 <th class="pl-1 pr-3 py-3" />
                 <th class="px-3 whitespace-nowrap">CI #</th>
@@ -112,7 +112,7 @@
             </thead>
             {#each color.pigments as pigment}
               <tr
-                class="transition-all border-b border-gray-300 cursor-pointer hover:bg-black hover:text-white"
+                class="transition-all border-b border-gray-300 cursor-pointer"
                 on:click={() =>
                   goto(`/pigments/${color.slug}/${pigment.slug}`)}>
                 <td class="pl-1 pr-3 py-1">
@@ -131,7 +131,7 @@
                   <span>{pigment.slug}</span>
                 </td>
                 <td class="px-3 w-full">
-                  <span>{pigment.name}</span>
+                  <span class="decorate-link">{pigment.name}</span>
                 </td>
               </tr>
             {/each}

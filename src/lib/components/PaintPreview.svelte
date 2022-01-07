@@ -12,7 +12,7 @@
 </script>
 
 <div
-  class="table border border-black p-3 break-inside mb-3 w-full"
+  class="table border-2 border-black p-1 break-inside mb-3 w-full"
   data-num={index + 1}>
   <a
     href={generateUrl({ prefix: 'paint', target: paint })}
@@ -25,12 +25,12 @@
           <img
             loading="lazy"
             src={swatchImage}
-            class="w-full h-full object-center object-cover lg:w-full lg:h-full"
+            class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 hover:opacity-0"
             alt={paint.name} />
         {/if}
       </div>
     </div>
-    <div class="mt-2">
+    <div class="p-1">
       <span class="block font-medium">{paint.manufacturer?.name}</span>
       <span class="block text-sm">{paint.name}</span>
     </div>

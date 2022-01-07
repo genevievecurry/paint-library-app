@@ -5,12 +5,68 @@ import { prisma } from '$lib/prisma';
 import { generateSlug, generateUUID } from '$lib/slug';
 import bcrypt from 'bcrypt';
 
-const userBasicSelect: Prisma.UserSelect = {
+const limitedUserSelect: Prisma.UserSelect = {
   username: true,
   role: true,
   status: true,
   uuid: true,
 };
+
+const limitedPaintSelect: Prisma.PaintSelect = {
+  slug: true,
+  uuid: true,
+  hex: true,
+  name: true,
+  manufacturer: {
+    select: {
+      name: true,
+    },
+  },
+  lightfastRating: {
+    select: {
+      label: true,
+    },
+  },
+  transparencyRating: {
+    select: {
+      label: true,
+    },
+  },
+  stainingRating: {
+    select: {
+      label: true,
+    },
+  },
+  granulationRating: {
+    select: {
+      label: true,
+    },
+  },
+  pigmentsOnPaints: {
+    select: {
+      pigment: {
+        select: {
+          slug: true,
+          color: {
+            select: {
+              slug: true,
+            }
+          }
+        },
+      },
+    },
+  },
+  swatchCard: {
+    take: 1,
+    select: {
+      imageKitUpload: {
+        select: {
+          url: true,
+        },
+      },
+    },
+  },
+}
 
 const pigmentSelect: Prisma.PigmentSelect = {
   id: true,
@@ -31,27 +87,7 @@ const pigmentSelect: Prisma.PigmentSelect = {
   paints: {
     select: {
       paint: {
-        select: {
-          slug: true,
-          uuid: true,
-          hex: true,
-          name: true,
-          manufacturer: {
-            select: {
-              name: true,
-            },
-          },
-          swatchCard: {
-            take: 1,
-            select: {
-              imageKitUpload: {
-                select: {
-                  url: true,
-                },
-              },
-            },
-          },
-        },
+        select: limitedPaintSelect,
       },
     },
   },
@@ -85,7 +121,7 @@ const swatchCardSelect: Prisma.SwatchCardSelect = {
     },
   },
   author: {
-    select: userBasicSelect,
+    select: limitedUserSelect,
   },
   description: true,
   imageKitUpload: true,
@@ -99,18 +135,13 @@ const paletteSelect: Prisma.PaletteSelect = {
   title: true,
   description: true,
   owner: {
-    select: userBasicSelect,
+    select: limitedUserSelect,
   },
   paintsInPalette: {
     select: {
       order: true,
       paint: {
-        select: {
-          uuid: true,
-          slug: true,
-          name: true,
-          hex: true,
-        },
+        select: limitedPaintSelect,
       },
     },
   },
@@ -121,7 +152,7 @@ const paintSelect: Prisma.PaintSelect = {
   createdAt: true,
   updatedAt: true,
   author: {
-    select: userBasicSelect,
+    select: limitedUserSelect,
   },
   slug: true,
   manufacturer: {
@@ -199,7 +230,7 @@ const paintSelect: Prisma.PaintSelect = {
       createdAt: true,
       updatedAt: true,
       author: {
-        select: userBasicSelect,
+        select: limitedUserSelect,
       },
       approved: true,
       content: true,
@@ -208,7 +239,7 @@ const paintSelect: Prisma.PaintSelect = {
           createdAt: true,
           updatedAt: true,
           author: {
-            select: userBasicSelect,
+            select: limitedUserSelect,
           },
           approved: true,
           content: true,
@@ -228,6 +259,9 @@ const paintSelect: Prisma.PaintSelect = {
   //   },
   // },
 };
+
+
+
 
 const createPaintSelect: Prisma.PaintSelect = {
   slug: true,
@@ -730,7 +764,7 @@ export async function getUserProfileSavedPalettes(data): Promise<{
               title: true,
               description: true,
               owner: {
-                select: userBasicSelect,
+                select: limitedUserSelect,
               },
               _count: true,
               paintsInPalette: {
