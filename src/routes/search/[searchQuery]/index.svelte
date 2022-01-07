@@ -1,7 +1,5 @@
 <script context="module">
-  export async function load({ page }) {
-    const { params } = page;
-
+  export async function load({ params }) {
     return {
       props: {
         searchQuery: params.searchQuery,

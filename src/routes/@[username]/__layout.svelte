@@ -1,6 +1,6 @@
 <script context="module">
-  export async function load({ page, session, fetch }) {
-    const url = `/@${page.params.username}.json`;
+  export async function load({ params, session, fetch }) {
+    const url = `/@${params.username}.json`;
     const response = await fetch(url);
 
     if (response.ok) {
@@ -26,7 +26,6 @@
   export let userData;
 
   $: user = userData;
-
 </script>
 
 <div class="container mx-auto px-4 sm:px-6">

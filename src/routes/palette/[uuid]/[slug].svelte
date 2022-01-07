@@ -1,12 +1,12 @@
 <script context="module" lang="ts">
-  export async function load({ page, fetch }) {
-    const url = `/palette/${page.params.uuid}.json`;
+  export async function load({ params, fetch }) {
+    const url = `/palette/${params.uuid}.json`;
     const response = await fetch(url);
 
     if (response.ok) {
       return {
         props: {
-          uuid: page.params.uuid,
+          uuid: params.uuid,
           paletteData: await response.json(),
         },
       };

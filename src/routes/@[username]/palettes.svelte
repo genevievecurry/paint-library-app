@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
-  export async function load({ page, session, fetch }) {
-    const url = `/@${page.params.username}/palettes.json`;
+  export async function load({ params, fetch }) {
+    const url = `/@${params.username}/palettes.json`;
     const response = await fetch(url);
 
     if (response.ok) {
@@ -24,7 +24,6 @@
   export let paletteData;
 
   $: data = paletteData;
-
 </script>
 
 <div class="grid grid-cols-3 gap-6">

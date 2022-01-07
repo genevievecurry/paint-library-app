@@ -1,13 +1,13 @@
 <script context="module" lang="ts">
-  export async function load({ page, fetch }) {
-    const url = `/paint/${page.params.uuid}/${page.params.slug}.json`;
+  export async function load({ params, fetch }) {
+    const url = `/paint/${params.uuid}/${params.slug}.json`;
     const response = await fetch(url);
 
     if (response.ok) {
       return {
         props: {
-          slug: page.params.slug,
-          uuid: page.params.uuid,
+          slug: params.slug,
+          uuid: params.uuid,
           paint: await response.json(),
         },
       };

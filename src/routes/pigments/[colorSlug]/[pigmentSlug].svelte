@@ -1,12 +1,12 @@
 <script context="module" lang="ts">
-  export async function load({ page, fetch }) {
-    const url = `/pigments/${page.params.colorSlug}/${page.params.pigmentSlug}.json`;
+  export async function load({ params, fetch }) {
+    const url = `/pigments/${params.colorSlug}/${params.pigmentSlug}.json`;
     const response = await fetch(url);
 
     if (response.ok) {
       return {
         props: {
-          slug: page.params.pigmentSlug,
+          slug: params.pigmentSlug,
           pigment: await response.json(),
         },
       };
