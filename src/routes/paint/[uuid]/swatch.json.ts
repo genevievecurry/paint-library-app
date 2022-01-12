@@ -17,3 +17,9 @@ export async function post({ body: data, locals, params }) {
 
   return response;
 }
+
+export async function del({ url }) {
+  const response = await api.deleteSwatchCard(url.searchParams);
+
+  return response;
+}

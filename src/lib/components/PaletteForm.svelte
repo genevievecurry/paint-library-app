@@ -82,7 +82,7 @@
         Name your new palette.
       </small>
       <input
-        class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
+        class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500"
         id="title"
         name="title"
         type="text"
@@ -96,7 +96,7 @@
         Describe it?
       </small>
       <textarea
-        class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
+        class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500"
         id="description"
         name="description"
         placeholder="Description"

@@ -30,8 +30,9 @@
         </div>
       </div>
       <div>
-        {pigmentCode(pigment.type, pigment.number, pigment.color?.code)}
-        <span class="decorate-link">{pigment.name}</span>
+        <span class="decorate-link"
+          >{pigmentCode(pigment.type, pigment.number, pigment.color?.code)}
+          {pigment.name}</span>
         <span class="block text-gray-500 text-xs">{pigment.color?.label}</span>
       </div>
     </a>

@@ -2,13 +2,14 @@
   export async function load({ params, fetch }) {
     const url = `/paint/${params.uuid}/${params.slug}.json`;
     const response = await fetch(url);
+    const paintData = await response.json();
 
-    if (response.ok) {
+    if (response.ok && paintData) {
       return {
         props: {
           slug: params.slug,
           uuid: params.uuid,
-          paint: await response.json(),
+          paintData,
         },
       };
     }
@@ -22,7 +23,7 @@
 
 <script lang="ts">
   import { session } from '$app/stores';
-  import { setContext } from 'svelte';
+  import { setContext, onMount } from 'svelte';
   import { connect, generateUrl } from '$lib/utility';
   import { clickOutside } from '$lib/actions';
   import Header from '$lib/components/Header.svelte';
@@ -35,44 +36,33 @@
 
   export let slug: string;
   export let uuid: string;
-  export let paint: PaintComponent;
+  export let paintData: PaintComponent;
 
-  setContext('paintName', paint.name);
+  $: paint = paintData;
+  $: editableSwatchCard = {};
+
   setContext('uuid', uuid);
   setContext('slug', slug);
   setContext('editable', true);
-
-  if (paint) setContext('hex', paint.hex);
-
-  const {
-    lightfastRating,
-    transparencyRating,
-    stainingRating,
-    granulationRating,
-    name,
-    manufacturer,
-    manufacturerDescription,
-    communityDescription,
-  } = paint;
 
   let addToPaletteMenuOpen = false;
   let userPalettesPromise: Promise<any>;
   let newlyAddedPalette;
   let showPaletteModal = false;
   let showUploadSwatchModal = false;
-  let swatchCardSectionClasses;
 
-  $: editableSwatchCard = {};
-
-  if (paint.swatchCard.length) {
-  }
   function setEditableSwatchCard(event) {
     editableSwatchCard = event.detail;
     showUploadSwatchModal = true;
   }
 
+  function handleSwatchUpdate() {
+    paint = paint;
+    showUploadSwatchModal = false;
+  }
+
   const checkAlignment = (height, width) => {
-    if (height === width) {
+    if (height === width || !height || !width) {
       return 'square';
     }
     if (height > width) {
@@ -105,7 +95,7 @@
         type: 'success',
         visible: true,
         message: `
-        Added <span class="font-bold">${name}</span> to
+        Added <span class="font-bold">${paint.name}</span> to
         <a href="${url}" class="underline">${newlyAddedPalette.title}</a>
         `,
       };
@@ -147,6 +137,7 @@
     title={editableSwatchCard?.id ? 'Edit Swatch' : 'Contribute Swatch'}>
     <div class="col-span-12">
       <SwatchUpload
+        on:success={handleSwatchUpdate}
         paintUuid={paint.uuid}
         paintSlug={paint.slug}
         swatchCard={editableSwatchCard} />
@@ -157,8 +148,8 @@
 <div class="container mx-auto px-4 sm:px-6">
   {#if paint}
     <Header
-      title={name}
-      subtitle={manufacturer.name}
+      title={paint.name}
+      subtitle={paint.manufacturer.name}
       description={null}
       owner={null}>
       {#if $session?.user}
@@ -287,12 +278,16 @@
         class="grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-6">
         {#each paint.swatchCard as swatchCard}
           <Card
+            paintUuid={paint.uuid}
+            paintName={paint.name}
+            paintHex={paint.hex}
             {swatchCard}
             alignment={checkAlignment(
-              swatchCard.imageKitUpload.height,
-              swatchCard.imageKitUpload.width,
+              swatchCard.imageKitUpload?.height,
+              swatchCard.imageKitUpload?.width,
             )}
-            on:notify={setEditableSwatchCard} />
+            on:deleteCard={handleSwatchUpdate}
+            on:setSwatchCard={setEditableSwatchCard} />
         {/each}
       </section>
     {:else}
@@ -342,9 +337,9 @@
               <th class="text-left border border-gray-400 px-4 py-3"
                 >Lightfastness</th>
               <td class="border border-gray-400 px-4 py-3">
-                {lightfastRating.label}
-                {#if lightfastRating.description}
-                  - {lightfastRating.description}
+                {paint.lightfastRating.label}
+                {#if paint.lightfastRating.description}
+                  - {paint.lightfastRating.description}
                 {/if}
               </td>
             </tr>
@@ -352,9 +347,9 @@
               <th class="text-left border border-gray-400 px-4 py-3"
                 >Transparency</th>
               <td class="border border-gray-400 px-4 py-3">
-                {transparencyRating.label}
-                {#if transparencyRating.description}
-                  - {transparencyRating.description}
+                {paint.transparencyRating.label}
+                {#if paint.transparencyRating.description}
+                  - {paint.transparencyRating.description}
                 {/if}
               </td>
             </tr>
@@ -362,9 +357,9 @@
               <th class="text-left border border-gray-400 px-4 py-3"
                 >Staining</th>
               <td class="border border-gray-400 px-4 py-3">
-                {stainingRating.label}
-                {#if stainingRating.description}
-                  - {stainingRating.description}
+                {paint.stainingRating.label}
+                {#if paint.stainingRating.description}
+                  - {paint.stainingRating.description}
                 {/if}
               </td>
             </tr>
@@ -372,29 +367,29 @@
               <th class="text-left border border-gray-400 px-4 py-3"
                 >Granulation</th>
               <td class="border border-gray-400 px-4 py-3">
-                {granulationRating.label}
-                {#if granulationRating.description}
-                  - {granulationRating.description}
+                {paint.granulationRating.label}
+                {#if paint.granulationRating.description}
+                  - {paint.granulationRating.description}
                 {/if}
               </td>
             </tr>
           </table>
         </section>
 
-        {#if manufacturerDescription}
+        {#if paint.manufacturerDescription}
           <section class="mt-8">
             <h2 class="font-bold text-2xl">Manufacturer Description</h2>
             <span class="text-xs text-gray-500 mt-4 block">
-              From {manufacturer.name}:
+              From {paint.manufacturer.name}:
             </span>
-            <div class="mt-2">{@html manufacturerDescription}</div>
+            <div class="mt-2">{@html paint.manufacturerDescription}</div>
           </section>
         {/if}
 
-        {#if communityDescription}
+        {#if paint.communityDescription}
           <section class="mt-8">
             <h2 class="font-bold text-2xl">Community Description</h2>
-            <div class="mt-2">{@html communityDescription}</div>
+            <div class="mt-2">{@html paint.communityDescription}</div>
           </section>
         {/if}
       </div>

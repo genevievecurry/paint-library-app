@@ -96,7 +96,7 @@
           name="hex"
           id="hex"
           value="#FFFFFF"
-          class="mt-1 block w-full border border-black focus:outline-none focus:ring-green-400 focus:border-green-400" />
+          class="mt-1 block w-full border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
       </div>
     </div>
   </fieldset>
@@ -114,7 +114,7 @@
           on:keyup={updateSlug}
           id="name"
           name="name"
-          class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400" />
+          class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
       </div>
       <div class="col-span-6 sm:col-span-3">
         <span class="block font-extrabold text-2xl">Slug</span>
@@ -145,7 +145,7 @@
               id="author1"
               name="authorUuid"
               type="radio"
-              class="focus:ring-green-400 focus:border-green-400 border-gray-300 mr-3"
+              class="focus:ring-lime-500 focus:border-lime-500 border-gray-300 mr-3"
               value={$session.user.uuid} />
             {$session.user.username}
           </label>
@@ -164,7 +164,7 @@
               id="paintType1"
               name="paintTypeId"
               type="radio"
-              class="focus:ring-green-400 focus:border-green-400 border-gray-300 mr-3"
+              class="focus:ring-lime-500 focus:border-lime-500 border-gray-300 mr-3"
               value={1} />
             Watercolor
           </label>
@@ -189,7 +189,7 @@
             <select
               id="manufacturerId"
               name="manufacturerId"
-              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400">
+              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500">
               {#each manufacturers as manufacturer}
                 <option value={manufacturer.id}>
                   {manufacturer.name}
@@ -208,7 +208,7 @@
           <textarea
             id="manufacturerDescription"
             name="manufacturerDescription"
-            class="mt-2 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400" />
+            class="mt-2 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
         </div>
       </div>
     </div>
@@ -226,7 +226,7 @@
           <textarea
             id="communityDescription"
             name="communityDescription"
-            class="mt-2 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400" />
+            class="mt-2 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
         </div>
       </div>
     </div>
@@ -249,7 +249,7 @@
               multiple
               id="pigments"
               name="pigments"
-              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400">
+              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500">
               {#each pigments as pigment}
                 <option value={pigment.id}>
                   {pigment.slug}
@@ -282,7 +282,7 @@
             <select
               id="lightfastRatingId"
               name="lightfastRatingId"
-              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400">
+              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500">
               {#each lightfastRatings as lightfastRating}
                 <option value={lightfastRating.id}>
                   {lightfastRating.label} -
@@ -305,7 +305,7 @@
             <select
               id="transparencyRatingId"
               name="transparencyRatingId"
-              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400">
+              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500">
               {#each transparencyRatings as transparencyRating}
                 <option value={transparencyRating.id}>
                   {transparencyRating.label} -
@@ -328,7 +328,7 @@
             <select
               id="stainingRatingId"
               name="stainingRatingId"
-              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400">
+              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500">
               {#each stainingRatings as stainingRating}
                 <option value={stainingRating.id}>
                   {stainingRating.label}
@@ -350,7 +350,7 @@
             <select
               id="granulationRatingId"
               name="granulationRatingId"
-              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400">
+              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500">
               {#each granulationRatings as granulationRating}
                 <option value={granulationRating.id}>
                   {granulationRating.label}
@@ -368,7 +368,7 @@
   <div class="mt-6 px-4 py-3 text-right sm:px-6 border-t border-black">
     <button
       type="submit"
-      class="inline-flex justify-center py-2 px-4 border-4 border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 font-extrabold text-2xl">
+      class="inline-flex justify-center py-2 px-4 border-4 border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-500 font-extrabold text-2xl">
       Save
     </button>
   </div>

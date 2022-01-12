@@ -18,7 +18,6 @@
   let email = '';
   let password = '';
   $: combined = { email: email, password: password };
-  $: error = false;
 
   async function authenticate() {
     const response = await fetch('/auth/login', {
@@ -35,11 +34,20 @@
     });
 
     if (response.status == 200) {
-      error = false;
+      $session.notification = {
+        type: 'success',
+        visible: true,
+        message: `Successfully logged in.`,
+      };
       goto('/');
       return response.json();
     } else {
-      error = true;
+      $session.notification = {
+        type: 'error',
+        visible: true,
+        message: `Uh oh, looks like we either couldn't find your account, or your
+        password was entered incorrectly. Try again?`,
+      };
     }
   }
 
@@ -54,20 +62,12 @@
 <div class="container mx-auto px-4 sm:px-6">
   <Header title="Login" />
 
-  {#if error}
-    <div class="bg-red-400 p-3 mb-3 text-white">
-      <p
-        >Uh oh, looks like we either couldn't find your account, or your
-        password was entered incorrectly. Try again?</p>
-    </div>
-  {/if}
-
   <form on:submit|preventDefault={submitHandler}>
     <div class="grid lg:grid-cols-2 gap-12 xl:gap-32">
       <div>
         <fieldset class="form-group">
           <input
-            class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
+            class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500"
             id="email"
             name="email"
             type="email"
@@ -77,7 +77,7 @@
         </fieldset>
         <fieldset class="form-group">
           <input
-            class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
+            class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500"
             id="password"
             name="password"
             type="password"

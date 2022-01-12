@@ -163,7 +163,7 @@
                     <div
                       class="block px-4 pb-2 pt-2 text-sm border-t border-gray-300">
                       <span
-                        class="decorate-link"
+                        class="decorate-link cursor-pointer"
                         role="menuitem"
                         tabindex="-1"
                         on:click={logoutHandler}>Sign Out</span>

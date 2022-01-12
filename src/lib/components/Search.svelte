@@ -21,7 +21,7 @@
   on:submit|preventDefault={handleQuery}
   class="w-full flex align-middle border-2 {reverse
     ? 'bg-gray-900 border-white'
-    : 'bg-white  border-black'} focus:outline-none focus:ring-green-400 focus:border-green-400">
+    : 'bg-white  border-black'} focus:outline-none focus:ring-lime-500 focus:border-lime-500">
   <button class="p-3 flex-none">
     <svg
       width="24"

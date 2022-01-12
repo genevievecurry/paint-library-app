@@ -26,8 +26,13 @@
   $: data = paletteData;
 </script>
 
-<div class="grid grid-cols-3 gap-6">
-  {#each data.savedPalettes as savedPalette}
-    <PalettePreview palette={savedPalette.palette} />
-  {/each}
-</div>
+{#if data.savedPalettes.length === 0}
+  <span class="text-gray-400 font-light"
+    >This user has not yet saved any palettes.</span>
+{:else}
+  <div class="grid grid-cols-3 gap-6">
+    {#each data.savedPalettes as savedPalette}
+      <PalettePreview palette={savedPalette.palette} />
+    {/each}
+  </div>
+{/if}

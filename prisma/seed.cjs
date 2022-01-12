@@ -64,21 +64,6 @@ async function main() {
     ],
   });
 
-  const unknownPaper = await prisma.paper.create({
-    data: {
-      paperTypeId: 1,
-      weightInLbs: 0,
-    },
-  });
-
-  const paper = await prisma.paper.create({
-    data: {
-      paperTypeId: 2,
-      weightInLbs: 140,
-      manufacturerId: 1,
-    },
-  });
-
   const paintType = await prisma.paintType.upsert({
     where: { slug: 'watercolor' },
     update: {},
@@ -309,8 +294,6 @@ async function main() {
     colorImport,
     pigmentImport,
     paperType,
-    unknownPaper,
-    paper,
     paintType,
     granulationRatings,
     lightfastRatings,

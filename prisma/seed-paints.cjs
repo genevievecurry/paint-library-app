@@ -125,10 +125,22 @@ async function main() {
             createMany: {
               data: [
                 {
-                  paperId: 1,
+                  paperTypeId: j,
+                  paperWeightInLbs: 140,
+                  paperManufacturerId: j,
+                  paperLineId: j,
                   authorUuid: '37287234987',
-                  description: 'Blah blah blah',
-                  imageKitUploadId: 1,
+                  description: 'This is actually a cat, not a swatch.',
+                  imageKitUploadId: j,
+                },
+                {
+                  paperTypeId: j + 1,
+                  paperWeightInLbs: 140,
+                  paperManufacturerId: j + 1,
+                  paperLineId: j + 1,
+                  authorUuid: '37287234987',
+                  description: 'This is actually a cat, not a swatch.',
+                  imageKitUploadId: j + 1,
                 },
               ],
             },

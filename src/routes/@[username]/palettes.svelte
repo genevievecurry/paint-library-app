@@ -26,8 +26,13 @@
   $: data = paletteData;
 </script>
 
-<div class="grid grid-cols-3 gap-6">
-  {#each data.ownedPalettes as ownedPalette}
-    <PalettePreview palette={ownedPalette} />
-  {/each}
-</div>
+{#if data.ownedPalettes.length === 0}
+  <span class="text-gray-400 font-light"
+    >This user has not yet created any palettes.</span>
+{:else}
+  <div class="grid grid-cols-3 gap-6">
+    {#each data.ownedPalettes as ownedPalette}
+      <PalettePreview palette={ownedPalette} />
+    {/each}
+  </div>
+{/if}

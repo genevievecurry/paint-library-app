@@ -34,6 +34,24 @@ export function generateUrl({ prefix, target }) {
   }
 }
 
+export const timeAgo = (time: string | number | Date): string => {
+  const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+  const now = new Date();
+  const updated = new Date(time);
+
+  const secondsBetween = Math.abs(Number(updated) - Number(now)) / 1000;
+  const minutesBetween = Math.floor(secondsBetween / 60);
+  const hoursBetween = Math.floor(secondsBetween / (60 * 60));
+  const daysBetween = Math.floor(secondsBetween / (60 * 60 * 24));
+
+  if (daysBetween === 0 && hoursBetween < 12 && hoursBetween > 0) {
+    return rtf.format(-hoursBetween, 'hour');
+  } else if (daysBetween === 0 && hoursBetween === 0) {
+    return rtf.format(-minutesBetween, 'minute');
+  }
+  return rtf.format(-daysBetween, 'day');
+};
+
 export async function connect({
   method = 'post',
   endpoint,

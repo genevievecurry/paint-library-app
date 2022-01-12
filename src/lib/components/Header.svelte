@@ -1,5 +1,6 @@
 <script lang="ts">
   import { afterUpdate } from 'svelte';
+  import { adminIcon } from '$lib/icons';
 
   export let title;
   export let subtitle = null;
@@ -33,6 +34,9 @@
     {#if owner}
       By <a href="/@{owner.username}" class="decorate-link"
         >@{owner.username}</a>
+      {#if owner.role === 'ADMIN'}
+        {@html adminIcon('h-5 w-5 inline-block')}
+      {/if}
     {/if}
   </div>
   <div>

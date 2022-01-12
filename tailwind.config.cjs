@@ -1,6 +1,12 @@
 module.exports = {
   content: ['./src/**/*.svelte', './src/**/*.css'],
-  theme: {},
+  theme: {
+    extend: {
+      fontSize: {
+        xxs: '.6rem',
+      },
+    },
+  },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/typography'),

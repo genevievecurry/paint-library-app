@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="p-1">
-      <span class="block font-medium">{paint.manufacturer?.name}</span>
+      <span class="decorate-link">{paint.manufacturer?.name}</span>
       <span class="block text-sm">{paint.name}</span>
     </div>
   </a>
