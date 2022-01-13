@@ -5,8 +5,7 @@
   export let paintOnPalette;
   export let showText: boolean;
   export let listView: boolean;
-  export let draggable: boolean = false;
-  export let removable: boolean = false;
+  export let editPaletteMode: boolean = false;
 
   const dispatch = createEventDispatcher();
 
@@ -16,7 +15,6 @@
 
   function remove() {
     dispatch('remove', id);
-    deleted = true;
   }
 </script>
 
@@ -61,10 +59,10 @@
   <div
     class="grid border-2 p-1 mb-3 w-full relative {showText
       ? 'h-full'
-      : ''} {draggable
-      ? 'cursor-move border-dashed border-gray-400'
-      : 'border-black'} {removable ? 'border-orange-500' : ''}">
-    {#if draggable}
+      : ''} {editPaletteMode
+      ? 'cursor-move border-dashed border-orange-500'
+      : 'border-black'}">
+    {#if editPaletteMode}
       <div
         class="absolute left-2 top-2 z-10 h-6 w-6 bg-white border-2 border-black">
         <svg
@@ -85,8 +83,7 @@
             x2="22"
             y2="12" /><line x1="12" y1="2" x2="12" y2="22" /></svg>
       </div>
-    {/if}
-    {#if removable}
+
       <div class="absolute top-2 right-2 z-10">
         <button
           class="h-6 w-6 bg-white border-2 hover:text-orange-500 border-black hover:border-orange-500 cursor-pointer"
@@ -107,11 +104,11 @@
       </div>
     {/if}
     <a
-      href={draggable || removable
+      href={editPaletteMode
         ? '#'
         : generateUrl({ prefix: 'paint', target: paint })}
-      draggable={!draggable}
-      class="h-full flex flex-col {draggable || removable
+      draggable={!editPaletteMode}
+      class="h-full flex flex-col {editPaletteMode
         ? 'pointer-events-none'
         : 'pointer-events-auto'}">
       <div class="flex-1">
@@ -120,10 +117,10 @@
           style={`background-color: ${paint.hex};`}>
           {#if swatchImage}
             <img
-              draggable={!draggable}
+              draggable={!editPaletteMode}
               loading="lazy"
               src={swatchImage}
-              class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all {draggable
+              class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all {editPaletteMode
                 ? ''
                 : 'opacity-100 hover:opacity-0'}"
               alt={paint.name} />

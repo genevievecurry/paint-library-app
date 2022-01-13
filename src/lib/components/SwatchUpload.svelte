@@ -398,7 +398,6 @@
             id="description"
             name="description"
             placeholder="Description"
-            on:change={() => console.log(formData)}
             bind:value={description} />
         </div>
       </div>

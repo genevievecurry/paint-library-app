@@ -24,5 +24,10 @@ export function getSession({ locals }) {
       type: locals.notification.type,
       message: locals.notification.message,
     },
+    toast: locals.toast && {
+      visible: locals.toast.visible,
+      type: locals.toast.type,
+      message: locals.toast.message,
+    }
   };
 }

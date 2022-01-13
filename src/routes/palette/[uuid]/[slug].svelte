@@ -43,14 +43,12 @@
   $: saved = false;
   $: showText = false;
   $: listView = false;
-  $: inlineNotification = '';
 
   let editable = false;
   let editMenuOpen = false;
+  $: editPaletteMode = false;
   let showEditPaletteModal = false;
   let showDeletePaletteDialog = false;
-  let reordering = false;
-  let removing = false;
   let paletteReorderData = [];
 
   $: sortPaintsInPalette = (event) => {
@@ -78,7 +76,11 @@
   }
 
   async function updatePaintInPaletteOrder() {
-    inlineNotification = 'Saving...';
+    $session.toast = {
+      type: 'loading',
+      visible: true,
+      message: `Saving...`,
+    };
     const response = await connect({
       method: 'post',
       endpoint: `/palette/${uuid}.json`,
@@ -86,16 +88,21 @@
     });
 
     if (response.ok) {
-      inlineNotification =
-        '<div class="text-sm text-lime-600">Order saved.</div>';
+      $session.toast = {
+        type: 'success',
+        visible: true,
+        message: `Order updated!`,
+      };
     } else {
-      inlineNotification =
-        '<div class="text-sm text-orange-500">Uh oh, there was a problem saving the order.</div>';
+      $session.toast = {
+        type: 'success',
+        visible: true,
+        message: `Uh oh, there was a problem saving the order.`,
+      };
     }
   }
 
   async function removePaintInPalette(event) {
-    inlineNotification = 'Removing...';
     const response = await connect({
       method: 'post',
       endpoint: `/palette/${uuid}.json`,
@@ -103,12 +110,21 @@
     });
 
     if (response.ok) {
-      handleEditedPalette();
-      inlineNotification =
-        '<div class="text-sm text-lime-600">Paint removed!</div>';
+      const filteredPaintsInPalette = paintsInPalette.filter(
+        (paintInPalette) => paintInPalette.id !== event.detail,
+      );
+      paintsInPalette = filteredPaintsInPalette;
+      $session.toast = {
+        type: 'success',
+        visible: true,
+        message: `Paint removed!`,
+      };
     } else {
-      inlineNotification =
-        '<div class="text-sm text-orange-500">Uh oh, there was a problem removing that paint.</div>';
+      $session.toast = {
+        type: 'success',
+        visible: true,
+        message: `Uh oh, there was a problem removing that paint.`,
+      };
     }
   }
 
@@ -305,27 +321,22 @@
   {#if paintsInPalette.length > 0}
     <section
       class="flex justify-between w-full items-center pb-3 mb-3 border-b-2 border-black">
-      <div>
-        {@html inlineNotification}
-      </div>
-      <div class="flex justify-end items-center">
+      <div class="flex justify-start items-center">
         {#if !listView}
           {#if editable}
             <div
-              on:click={() => (removing = !removing)}
+              on:click={() => (editPaletteMode = !editPaletteMode)}
               class="text-sm mr-3 link">
-              {removing ? 'Done Removing' : 'Remove'}</div>
-            <div
-              on:click={() => (reordering = !reordering)}
-              class="text-sm mr-3 link">
-              {reordering ? 'Done Reordering' : 'Reorder'}</div>
+              {editPaletteMode ? 'Done Editing' : 'Edit Swatches'}</div>
           {/if}
           <div
             on:click={() => (showText = !showText)}
             class="text-sm mr-3 link">
             {showText ? 'Hide' : 'Show'} Details</div>
         {/if}
+      </div>
 
+      <div class="flex justify-end items-center">
         <button
           aria-label="List View"
           title="List View"
@@ -394,7 +405,7 @@
         </table>
       {:else}
         <SortableList
-          draggable={reordering}
+          draggable={editPaletteMode}
           list={paintsInPalette}
           key="id"
           on:sort={sortPaintsInPalette}
@@ -404,8 +415,7 @@
             {showText}
             {listView}
             on:remove={removePaintInPalette}
-            removable={removing}
-            draggable={reordering} />
+            {editPaletteMode} />
         </SortableList>
       {/if}
     </section>

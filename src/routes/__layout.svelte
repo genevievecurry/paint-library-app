@@ -16,6 +16,7 @@
   import { goto } from '$app/navigation';
   import { clickOutside } from '$lib/actions';
   import Notification from '$lib/components/Notification.svelte';
+  import Toast from '$lib/components/Toast.svelte';
 
   export let menuOpen: boolean;
 
@@ -50,6 +51,8 @@
 <svelte:head>
   <title>Paint Library</title>
 </svelte:head>
+
+<Toast />
 
 <div class="bg-white">
   <div class="relative">
