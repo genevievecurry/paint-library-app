@@ -8,4 +8,4 @@ ALTER TABLE "SwatchCardTypesOnSwatchCard" DROP CONSTRAINT "SwatchCardTypesOnSwat
 ALTER TABLE "SwatchCardTypesOnSwatchCard" ADD CONSTRAINT "SwatchCardTypesOnSwatchCard_swatchCardId_fkey" FOREIGN KEY ("swatchCardId") REFERENCES "SwatchCard"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "PaintsInPalette" ADD CONSTRAINT "PaintsInPalette_paletteUuid_fkey" FOREIGN KEY ("paletteUuid") REFERENCES "Palette"("uuid") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "PaintsInPalette" ADD CONSTRAINT "PaintsInPalette_paletteUuid_fkey" FOREIGN KEY ("paletteUuid") REFERENCES "Palette"(uuid) ON UPDATE NO ACTION ON DELETE CASCADE;

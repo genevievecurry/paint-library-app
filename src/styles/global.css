@@ -46,7 +46,7 @@
 }
 
 .link {
-  @apply text-gray-500 underline hover:text-pink-400 transition-colors cursor-pointer;
+  @apply font-medium text-cyan-600 hover:text-black transition-colors cursor-pointer;
 }
 
 .decorate-link {
@@ -132,8 +132,12 @@
   );
 }
 
-.pop:hover,
-.pop.active {
+.pop:disabled {
+  @apply text-gray-300 cursor-auto;
+}
+
+.pop:hover:not(:disabled),
+.pop.active:not(:disabled) {
   transform: translate(0, 0);
   clip-path: polygon(
     0% var(--c),

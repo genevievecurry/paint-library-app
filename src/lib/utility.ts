@@ -19,19 +19,9 @@ export function pigmentCode(
   return convertedType + colorCode + pigmentNumber.toString();
 }
 
-export function generateUrl({ prefix, target }) {
-  if (prefix && target.uuid && target.slug) {
-    return `/${prefix}/${target.uuid}/${target.slug}`;
-  }
-  if (prefix && target.uuid) {
-    return `/${prefix}/${target.uuid}`;
-  }
-  if (prefix && target.slug) {
-    return `/${prefix}/${target.slug}`;
-  }
-  if (!prefix && target.slug) {
-    return `/@${target.slug}`;
-  }
+export const pluralize = (count: number, word:string): string => {
+  if(count !== 1) return `${count} ${word}s`
+  return `${count} ${word}`
 }
 
 export const timeAgo = (time: string | number | Date): string => {

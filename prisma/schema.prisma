@@ -272,6 +272,7 @@ model Color {
   label     String    @unique
   slug      String    @unique
   code      String    @unique
+  hex       String    @default("#ffffff")
   pigments  Pigment[]
 }
 
@@ -279,6 +280,7 @@ model LightfastRating {
   id          Int       @id @default(autoincrement())
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+  code        String    @unique
   label       String
   description String?
   paint       Paint[]
@@ -289,6 +291,7 @@ model TransparencyRating {
   id          Int       @id @default(autoincrement())
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+  code        String    @unique
   label       String
   description String?
   paint       Paint[]
@@ -299,6 +302,7 @@ model StainingRating {
   id          Int      @id @default(autoincrement())
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  code        String   @unique
   label       String
   description String?
   paint       Paint[]
@@ -308,6 +312,7 @@ model GranulationRating {
   id          Int      @id @default(autoincrement())
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  code        String   @unique
   label       String
   description String?
   paint       Paint[]

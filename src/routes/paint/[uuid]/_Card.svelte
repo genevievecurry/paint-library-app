@@ -3,9 +3,9 @@
   import { onMount, createEventDispatcher } from 'svelte';
   import Modal from '$lib/components/Modal.svelte';
   import Dialog from '$lib/components/Dialog.svelte';
-  import { editIcon, deleteIcon } from '$lib/icons';
+  import { removeIcon, editIcon, adminIcon } from '$lib/icons';
   import { connect } from '$lib/utility';
-  import { adminIcon } from '$lib/icons';
+  import { successNotifier, warningNotifier } from '$lib/notifier';
 
   export let swatchCard: SwatchCardComponent;
   export let alignment: string;
@@ -36,9 +36,12 @@
   let aspectRatioClasses: string;
 
   onMount(() => {
-    editable =
-      (author && author?.uuid === $session.user.uuid) ||
-      $session.user.role === 'ADMIN';
+    if ($session.user) {
+      if ($session.user.role === 'ADMIN') editable = true;
+      if (author) {
+        if (author.uuid === $session.user.uuid) editable = true;
+      }
+    }
   });
 
   if (alignment === 'square') {
@@ -62,19 +65,13 @@
       showSwatchCardModal = false;
       showDeleteSwatchDialog = false;
       dispatch('deleteCard', true);
-      $session.notification = {
-        type: 'success',
-        visible: true,
-        message: `Successfully deleted swatch.`,
-      };
+      successNotifier(`Successfully deleted swatch.`);
     } else {
       showSwatchCardModal = false;
       showDeleteSwatchDialog = false;
-      $session.notification = {
-        type: 'error',
-        visible: true,
-        message: `Uh oh, there was a problem deleting swatch. ${response.statusText}.`,
-      };
+      warningNotifier(
+        `Uh oh, there was a problem deleting swatch. ${response.statusText}.`,
+      );
     }
   }
 
@@ -170,7 +167,7 @@
           <button
             class="pop inline-flex justify-center py-1 px-2 text-xs mt-2 text-orange-600"
             on:click={() => (showDeleteSwatchDialog = true)}>
-            {@html deleteIcon('h-5 w-5 mr-1')}
+            {@html removeIcon('h-5 w-5 mr-1')}
             Delete</button>
         {/if}
       {/if}

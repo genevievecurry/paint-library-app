@@ -10,7 +10,7 @@
 
 <script lang="ts">
   import Header from '$lib/components/Header.svelte';
-  import { session } from '$app/stores';
+  import { successNotifier, warningNotifier } from '$lib/notifier';
 
   let email = '';
   let password = '';
@@ -53,11 +53,8 @@
 
     if (response.status === 200) {
       success = true;
-      $session.notification = {
-        type: 'success',
-        visible: true,
-        message: `Successfully registered new user.`,
-      };
+      successNotifier(`Successfully registered new user.`);
+
       // Clear out form fields
       email = '';
       password = '';
@@ -67,11 +64,9 @@
 
       return response.json();
     } else {
-      $session.notification = {
-        type: 'error',
-        visible: true,
-        message: `There was a ${response.status} error with registration: ${response.statusText}.`,
-      };
+      warningNotifier(
+        `There was a ${response.status} error with registration: ${response.statusText}.`,
+      );
     }
   }
 

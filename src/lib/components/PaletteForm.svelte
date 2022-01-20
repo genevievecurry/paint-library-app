@@ -3,6 +3,7 @@
   import { session } from '$app/stores';
   import { connect } from '$lib/utility';
   import { goto } from '$app/navigation';
+  import { successNotifier, warningNotifier } from '$lib/notifier';
 
   // paintUuid is a seed to create a new palette via a paint
   // This functionality will need to be modified if we add ability to create
@@ -42,6 +43,8 @@
 
     if (response.status == 200) {
       return response.json();
+    } else {
+      warningNotifier(response.statusText);
     }
   }
 
@@ -51,13 +54,7 @@
       const promise = await handlePost();
 
       if (promise.uuid) {
-        $session.notification = {
-          type: 'success',
-          visible: true,
-          message: `
-          Hoorah! Palette was ${action}d successfully.
-          `,
-        };
+        successNotifier(`Hoorah! Palette was ${action}d successfully.`);
 
         goto(`/palette/${promise?.uuid}/${promise?.slug}`);
         success();

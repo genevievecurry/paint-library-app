@@ -2,6 +2,8 @@
   export let palette;
   import { adminIcon } from '$lib/icons';
   import { onMount } from 'svelte';
+  import PaintPreview from './PaintPreview.svelte';
+  import { pluralize } from '$lib/utility';
 
   const visiblePaints = 18;
 
@@ -30,25 +32,16 @@
     on:mouseenter={() => (hovered = true)}
     on:mouseleave={() => (hovered = false)}>
     <div class="grid grid-cols-6 grid-rows-3 gap-1">
-      {#each palette?.paintsInPalette as paintPalette}
-        <div
-          class="aspect-w-16 aspect-h-16 "
-          style={`background-color: ${paintPalette.paint.hex};`}>
-          {#if paintPalette.paint.swatchCard[0].imageKitUpload?.thumbnailUrl}
-            <img
-              loading="lazy"
-              src={paintPalette.paint.swatchCard[0].imageKitUpload
-                ?.thumbnailUrl}
-              class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 {hovered
-                ? 'opacity-0'
-                : ''}"
-              alt={paintPalette.paint.name} />
-          {/if}
-        </div>
+      {#each palette?.paintsInPalette as paintPalette, index}
+        <PaintPreview
+          type="simple"
+          paint={paintPalette.paint}
+          {index}
+          {hovered} />
       {/each}
       {#if shadowPaints.length > 0}
         {#each shadowPaints as _shadowPaint}
-          <div class="paint-item bg-stone-100" />
+          <div class="placeholder bg-stone-100" />
         {/each}
       {/if}
     </div>
@@ -69,7 +62,7 @@
       <p class="text-sm">{palette.description}</p>
     {/if}
     <div class="text-sm my-3">
-      {palette?._count?.paintsInPalette} paints
+      {pluralize(palette._count.paintsInPalette, 'paint')}
       {#if palette.owner}
         | by @<a href={`/@${palette.owner.username}`} class="decorate-link"
           >{palette.owner.username}</a>
@@ -82,7 +75,7 @@
 </div>
 
 <style>
-  .paint-item {
+  .placeholder {
     aspect-ratio: 1;
   }
 </style>

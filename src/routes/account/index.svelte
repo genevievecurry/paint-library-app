@@ -17,6 +17,7 @@
   import { session } from '$app/stores';
   import { connect } from '$lib/utility';
   import Header from '$lib/components/Header.svelte';
+  import { successNotifier } from '$lib/notifier';
 
   export let user: User;
 
@@ -42,13 +43,7 @@
 
     if (error) {
     } else {
-      $session.notification = {
-        type: 'success',
-        visible: true,
-        message: `
-          Hoorah! @${user.username} was updated successfully.
-        `,
-      };
+      successNotifier(`Hoorah! @${user.username} was updated successfully.`);
     }
   }
 </script>

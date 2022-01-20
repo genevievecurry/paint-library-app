@@ -2,13 +2,12 @@
   import { createEventDispatcher, onDestroy } from 'svelte';
   import { session } from '$app/stores';
   import { connect } from '$lib/utility';
-  import { goto } from '$app/navigation';
   import imagekit from '$lib/config/imagekit';
   import type { Manufacturer } from '@prisma/client';
   import Dropzone from './Dropzone.svelte';
+  import { successNotifier, warningNotifier } from '$lib/notifier';
 
   export let paintUuid: string;
-  export let paintSlug: string;
   export let swatchCard: SwatchCardComponent = null;
 
   let editMode = swatchCard?.id !== undefined;
@@ -156,8 +155,7 @@
         if (err === null) {
           imageKitUpload = result;
         } else {
-          // Todo: Handle error
-          console.log(err);
+          warningNotifier(err.message);
         }
       },
     );
@@ -174,13 +172,7 @@
       return response.json();
     }
     if (response.status !== 200) {
-      $session.notification = {
-        type: 'error',
-        visible: true,
-        message: `
-          Uh oh, something went wrong
-          `,
-      };
+      warningNotifier(response.statusText);
     }
   }
 
@@ -204,14 +196,7 @@
       const response = await handlePost();
 
       if (response?.id) {
-        $session.notification = {
-          type: 'success',
-          visible: true,
-          message: `
-          Hoorah! Swatch was ${action}d successfully.
-          `,
-        };
-        // goto(`/paint/${paintUuid}/${paintSlug}`);
+        successNotifier(`Hoorah! Swatch was ${action}d successfully.`);
         success();
       }
     };

@@ -14,6 +14,7 @@
   import Header from '$lib/components/Header.svelte';
   import { session } from '$app/stores';
   import { goto } from '$app/navigation';
+  import { successNotifier, warningNotifier } from '$lib/notifier';
 
   let email = '';
   let password = '';
@@ -34,20 +35,15 @@
     });
 
     if (response.status == 200) {
-      $session.notification = {
-        type: 'success',
-        visible: true,
-        message: `Successfully logged in.`,
-      };
+      successNotifier(`Successfully logged in.`);
       goto('/');
       return response.json();
     } else {
-      $session.notification = {
-        type: 'error',
-        visible: true,
-        message: `Uh oh, looks like we either couldn't find your account, or your
+      warningNotifier(
+        `Uh oh, looks like we either couldn't find your account, or your
         password was entered incorrectly. Try again?`,
-      };
+        { persist: true },
+      );
     }
   }
 

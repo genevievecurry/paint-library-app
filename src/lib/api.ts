@@ -2,9 +2,8 @@ import type { ReadOnlyFormData } from '@sveltejs/kit/types/helper';
 import type { Prisma } from '@prisma/client';
 
 import { prisma } from '$lib/prisma';
-import { generateSlug, generateUUID } from '$lib/slug';
+import { generateSlug, generateUuid} from '$lib/generate';
 import bcrypt from 'bcrypt';
-import { trusted } from 'svelte/internal';
 
 const limitedUserSelect: Prisma.UserSelect = {
   username: true,
@@ -170,30 +169,10 @@ const paintSelect: Prisma.PaintSelect = {
   name: true,
   communityDescription: true,
   manufacturerDescription: true,
-  lightfastRating: {
-    select: {
-      label: true,
-      description: true,
-    },
-  },
-  transparencyRating: {
-    select: {
-      label: true,
-      description: true,
-    },
-  },
-  stainingRating: {
-    select: {
-      label: true,
-      description: true,
-    },
-  },
-  granulationRating: {
-    select: {
-      label: true,
-      description: true,
-    },
-  },
+  lightfastRating: true,
+  transparencyRating: true,
+  stainingRating: true,
+  granulationRating: true,
   pigmentsOnPaints: {
     select: {
       pigment: {
@@ -205,6 +184,7 @@ const paintSelect: Prisma.PaintSelect = {
               slug: true,
             },
           },
+          id: true,
           hex: true,
           slug: true,
           name: true,
@@ -483,6 +463,43 @@ export async function getPaints(query): Promise<{
   };
 }
 
+export async function updatePaint(uuid, data): Promise<{
+  body: SwatchCard;
+  status: number;
+}> {
+  let body = null;
+  let status = 500;
+
+  const dataQuery = data;
+
+  // Todo: handle these better using Prisma's guidelines for null & undefined values
+  if(data.updatePigments){
+    dataQuery.pigmentsOnPaints = {
+      deleteMany: {},
+      createMany: {
+        data: data.updatePigments,
+      }
+    }
+    delete data.updatePigments;
+  }
+
+  body = await prisma.paint.update({
+    where: {
+      uuid: uuid,
+    },
+    data: dataQuery,
+  });
+
+  if (body !== null) {
+    status = 200;
+  }
+
+  return {
+    body,
+    status,
+  };
+}
+
 // This will return everything in the model that is passed in as an argument
 // Intended to be used for form input options
 export async function getOption(
@@ -492,10 +509,15 @@ export async function getOption(
   let body;
   let status = 404;
   const queryArray = [];
+  let orderBy;
 
   for (const pair of query.entries()) {
     const key = pair[0];
-    queryArray.push({ [key]: pair[1] });
+    if(key === 'orderBy') {
+      orderBy = JSON.parse(pair[1])
+    } else {
+      queryArray.push({ [key]: pair[1] });
+    }
   }
 
   if (queryArray.length > 0) {
@@ -504,6 +526,10 @@ export async function getOption(
         AND: queryArray,
       },
     });
+  } else if (orderBy) {
+    body = await prisma[model].findMany({
+      orderBy: orderBy
+    })
   } else {
     body = await prisma[model].findMany();
   }
@@ -531,7 +557,7 @@ export async function createUser(data: {
   const salt = bcrypt.genSaltSync(10);
   const hashedPassword = bcrypt.hashSync(data.password, salt);
 
-  const uuid = generateUUID();
+  const uuid = generateUuid();
 
   const user = await prisma.user.create({
     data: {
@@ -744,6 +770,17 @@ export async function getUserProfileOwnedPalettes(data): Promise<{
                   uuid: true,
                   slug: true,
                   hex: true,
+                  swatchCard: {
+                    take: 1,
+                    select: {
+                      imageKitUpload: {
+                        select: {
+                          url: true,
+                          thumbnailUrl: true,
+                        },
+                      },
+                    },
+                  },
                 },
               },
             },
@@ -821,7 +858,7 @@ export async function getUserProfileSavedPalettes(data): Promise<{
   };
 }
 
-export async function createPaint(data: ReadOnlyFormData): Promise<{
+export async function createPaint(data: ReadOnlyFormData, user): Promise<{
   status: number;
   body: Record<string, unknown>;
 }> {
@@ -836,13 +873,10 @@ export async function createPaint(data: ReadOnlyFormData): Promise<{
     });
   }
 
-  const uuid = generateUUID();
+  console.log("user", user)
+  console.log("data.get('authorUuid')", data.get('authorUuid'))
 
-  // if (data.getAll('tags')) {
-  //   tags = data.getAll('tags')?.map((tagId) => {
-  //     return { tagId: Number(tagId) };
-  //   });
-  // }
+  const uuid = generateUuid();
 
   body = await prisma.paint.create({
     data: {
@@ -859,11 +893,6 @@ export async function createPaint(data: ReadOnlyFormData): Promise<{
       manufacturerDescription: data.get('manufacturerDescription'),
       communityDescription: data.get('communityDescription'),
       hex: data.get('hex'),
-      pigmentsOnPaints: {
-        createMany: {
-          data: pigments,
-        },
-      },
     },
     select: createPaintSelect,
   });
@@ -971,6 +1000,7 @@ export async function updateSwatchCard(data): Promise<{
     description: data.description,
   };
 
+  // Todo: handle these better using Prisma's guidelines for null & undefined values
   if (data.paperLine?.id) {
     dataQuery.paperLine = {
       connect: {
@@ -1075,7 +1105,7 @@ export async function createPalette(data): Promise<{
   let status = 404;
 
   const slug = generateSlug({ value: data.title, uuid: false });
-  const uuid = generateUUID();
+  const uuid = generateUuid();
 
   const palette = await prisma.palette.create({
     data: {
@@ -1196,8 +1226,6 @@ export async function updatePalette(uuid: string, data) {
   let body = null;
   let status = 404;
   let dataQuery;
-
-  console.log(data);
 
   if (data.paintUuid) {
     dataQuery = {

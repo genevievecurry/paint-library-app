@@ -1,12 +1,11 @@
 <script lang="ts">
   import { session } from '$app/stores';
-  import { generateUrl } from '$lib/utility';
   import { goto } from '$app/navigation';
-  import { generateSlug } from '$lib/slug';
+  import { generateUrl, generateSlug } from '$lib/generate';
   import type { Manufacturer } from '@prisma/client';
+  import { warningNotifier } from '$lib/notifier';
 
   let manufacturerPromise: Promise<Manufacturer[]> = getModel('manufacturer');
-  let pigmentPromise: Promise<Pigment[]> = getModel('pigment');
   let lightfastRatingPromise: Promise<LightfastRating[]> =
     getModel('lightfastRating');
   let transparencyRatingPromise: Promise<TransparencyRating[]> =
@@ -22,12 +21,14 @@
   // let publishing = false;
 
   async function getModel(model: string) {
-    const res = await fetch(`/model/${model}.json`);
+    const response = await fetch(`/model/${model}.json`);
 
-    if (res.ok) {
-      return res.json();
+    if (response.ok) {
+      return response.json();
     } else {
-      throw new Error('granulation rating: nope on that'); // Todo: do better
+      warningNotifier(
+        `There was an error fetching ${model}: ${response.statusText}`,
+      );
     }
   }
 
@@ -42,6 +43,8 @@
   async function onresponse(res: any): Promise<void> {
     if (res.ok) {
       return res.json();
+    } else {
+      warningNotifier(res.statusText);
     }
     // Todo: Handle when things go wrong?
   }
@@ -224,42 +227,10 @@
           <label for="communityDescription" class="block text-sm text-gray-500">
             Is there another common description of this paint?</label>
           <textarea
+            maxlength="500"
             id="communityDescription"
             name="communityDescription"
             class="mt-2 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
-        </div>
-      </div>
-    </div>
-  </fieldset>
-
-  <fieldset class="mt-10 pt-10 border-t border-black">
-    <div>
-      <legend class="font-extrabold text-2xl">Pigment Information</legend>
-    </div>
-    <div class="grid grid-cols-6 gap-6">
-      <div class="col-span-6 sm:col-span-3">
-        <div class="mt-6">
-          <label for="pigments" class="block text-sm text-gray-500">
-            Pigments
-          </label>
-          {#await pigmentPromise}
-            <p>Loading pigments...</p>
-          {:then pigments}
-            <select
-              multiple
-              id="pigments"
-              name="pigments"
-              class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500">
-              {#each pigments as pigment}
-                <option value={pigment.id}>
-                  {pigment.slug}
-                  {pigment.name}
-                </option>
-              {/each}
-            </select>
-          {:catch error}
-            <p>Something went wrong! {error}</p>
-          {/await}
         </div>
       </div>
     </div>
@@ -285,8 +256,8 @@
               class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500">
               {#each lightfastRatings as lightfastRating}
                 <option value={lightfastRating.id}>
-                  {lightfastRating.label} -
-                  {lightfastRating.description}
+                  {lightfastRating.code} -
+                  {lightfastRating.label}
                 </option>
               {/each}
             </select>
@@ -308,8 +279,8 @@
               class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500">
               {#each transparencyRatings as transparencyRating}
                 <option value={transparencyRating.id}>
-                  {transparencyRating.label} -
-                  {transparencyRating.description}
+                  {transparencyRating.code} -
+                  {transparencyRating.label}
                 </option>
               {/each}
             </select>
@@ -331,7 +302,7 @@
               class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500">
               {#each stainingRatings as stainingRating}
                 <option value={stainingRating.id}>
-                  {stainingRating.label}
+                  {stainingRating.code} - {stainingRating.label}
                 </option>
               {/each}
             </select>
@@ -353,6 +324,7 @@
               class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500">
               {#each granulationRatings as granulationRating}
                 <option value={granulationRating.id}>
+                  {granulationRating.code} -
                   {granulationRating.label}
                 </option>
               {/each}

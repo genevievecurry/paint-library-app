@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { generateUrl } from '$lib/utility';
+  import { generateUrl } from '$lib/generate';
   import { createEventDispatcher } from 'svelte';
 
   export let paintOnPalette;
