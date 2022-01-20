@@ -2,4 +2,9 @@
   let activeSection = 'swatches';
 </script>
 
-<h2>Swatch Card Contributions</h2>
+{#if 0 === 0}
+  <span class="text-gray-400 font-light"
+    >This user has not yet contributed any swatch cards.</span>
+{:else}
+  x
+{/if}

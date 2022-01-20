@@ -29,7 +29,7 @@
 </script>
 
 <div class="container mx-auto px-4 sm:px-6">
-  <Header title={user.username} />
+  <Header title="@{user.username}" />
 
   <Section _count={user._count}>
     <slot />

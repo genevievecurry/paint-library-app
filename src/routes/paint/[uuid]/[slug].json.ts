@@ -4,9 +4,23 @@ export async function get({
   params,
   locals,
 }): Promise<{ status: number; body: Record<string, unknown> }> {
-  const { slug, uuid } = params;
-
+  const { uuid } = params;
   const response = await api.getPaint(uuid, locals.user);
+
+  return response;
+}
+
+export async function post({ body: data, locals, params }) {
+  if (!locals.user) {
+    return {
+      status: 401,
+    };
+  }
+  const { uuid } = params;
+
+  console.log("postData", data)
+
+  const response = await api.updatePaint(uuid, data);
 
   return response;
 }

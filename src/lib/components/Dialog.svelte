@@ -34,7 +34,7 @@
 
 <!-- This example requires Tailwind CSS v2.0+ -->
 <div
-  class="fixed z-10 inset-0 overflow-y-auto"
+  class="fixed z-30 inset-0 overflow-y-auto"
   aria-labelledby="modal-title"
   role="dialog"
   aria-modal="true"
@@ -74,7 +74,7 @@
       <div class="bg-white px-6 pt-6 pb-8">
         <div class="sm:flex sm:items-start">
           <div
-            class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-600 sm:mx-0 sm:h-10 sm:w-10">
+            class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-orange-600 sm:mx-0 sm:h-10 sm:w-10">
             <!-- Heroicon name: outline/exclamation -->
             <svg
               class="h-6 w-6 text-white"
@@ -104,13 +104,13 @@
         class="border-t-2 border-black px-4 pt-4 pb-5 sm:px-6 sm:flex sm:flex-row-reverse">
         <button
           type="button"
-          class="w-full pop hover:text-red-600 "
+          class="pop py-1 px-3 hover:text-orange-600"
           on:click={confirm}>
           <slot name="confirm">Confirm</slot>
         </button>
         <button
           type="button"
-          class="w-full pop text-gray-400 py-2"
+          class="py-1 px-3 text-gray-500 hover:underline py-2 mx-3"
           on:click={close}>
           <slot name="cancel">Cancel</slot>
         </button>

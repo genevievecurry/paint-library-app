@@ -72,7 +72,7 @@
 
 <div class="flex items-center justify-center w-full">
   <label
-    class="flex flex-col border border-dashed w-full h-60 p-4 group text-center"
+    class="dropzone flex flex-col border border-dashed w-full p-4 group text-center"
     class:isActive={isActive && !dropOnPage}
     class:isLoading
     class:disabled
@@ -115,26 +115,16 @@
                 stroke-width="2"
                 d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
-          {:else if imagePreview !== null}
-            <div>
-              <img src={imagePreview} alt="Swatch Preview" />
-            </div>
           {/if}
-          <div class="p-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-12 w-12 mx-auto mb-4 text-pink-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width=".5"
-                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-            </svg>
-            <div>Upload successful!</div>
-            <div class="text-sm">{fileTitle}</div>
+
+          <div class="p-2 flex items-center flex-col max-w-md">
+            {#if imagePreview !== null}
+              <div>
+                <img src={imagePreview} alt="Swatch Preview" />
+              </div>
+            {/if}
+            <div class="text-sm mt-2 font-mono text-ellipsis overflow-hidden"
+              >{fileTitle}</div>
           </div>
         </div>
         {#if error}
@@ -163,6 +153,9 @@
 
 <style>
   /* To do: convert to tailwind */
+  .dropzone {
+    min-height: 200px;
+  }
   .fullPageText {
     font-family: var(--preferred-font);
     font-size: 24px;

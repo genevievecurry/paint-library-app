@@ -2,7 +2,7 @@ import type { ReadOnlyFormData } from '@sveltejs/kit/types/helper';
 import type { Prisma } from '@prisma/client';
 
 import { prisma } from '$lib/prisma';
-import { generateSlug, generateUUID } from '$lib/slug';
+import { generateSlug, generateUuid} from '$lib/generate';
 import bcrypt from 'bcrypt';
 
 const limitedUserSelect: Prisma.UserSelect = {
@@ -50,8 +50,8 @@ const limitedPaintSelect: Prisma.PaintSelect = {
           color: {
             select: {
               slug: true,
-            }
-          }
+            },
+          },
         },
       },
     },
@@ -62,11 +62,12 @@ const limitedPaintSelect: Prisma.PaintSelect = {
       imageKitUpload: {
         select: {
           url: true,
+          thumbnailUrl: true,
         },
       },
     },
   },
-}
+};
 
 const pigmentSelect: Prisma.PigmentSelect = {
   id: true,
@@ -108,18 +109,10 @@ const swatchCardSelect: Prisma.SwatchCardSelect = {
       },
     },
   },
-  paper: {
-    select: {
-      manufacturer: {
-        select: {
-          name: true,
-        },
-      },
-      line: true,
-      weightInLbs: true,
-      paperType: true,
-    },
-  },
+  paperManufacturer: true,
+  paperLine: true,
+  paperType: true,
+  paperWeightInLbs: true,
   author: {
     select: limitedUserSelect,
   },
@@ -138,7 +131,11 @@ const paletteSelect: Prisma.PaletteSelect = {
     select: limitedUserSelect,
   },
   paintsInPalette: {
+    orderBy: {
+      order: 'asc',
+    },
     select: {
+      id: true,
       order: true,
       paint: {
         select: limitedPaintSelect,
@@ -172,30 +169,10 @@ const paintSelect: Prisma.PaintSelect = {
   name: true,
   communityDescription: true,
   manufacturerDescription: true,
-  lightfastRating: {
-    select: {
-      label: true,
-      description: true,
-    },
-  },
-  transparencyRating: {
-    select: {
-      label: true,
-      description: true,
-    },
-  },
-  stainingRating: {
-    select: {
-      label: true,
-      description: true,
-    },
-  },
-  granulationRating: {
-    select: {
-      label: true,
-      description: true,
-    },
-  },
+  lightfastRating: true,
+  transparencyRating: true,
+  stainingRating: true,
+  granulationRating: true,
   pigmentsOnPaints: {
     select: {
       pigment: {
@@ -207,6 +184,7 @@ const paintSelect: Prisma.PaintSelect = {
               slug: true,
             },
           },
+          id: true,
           hex: true,
           slug: true,
           name: true,
@@ -259,9 +237,6 @@ const paintSelect: Prisma.PaintSelect = {
   //   },
   // },
 };
-
-
-
 
 const createPaintSelect: Prisma.PaintSelect = {
   slug: true,
@@ -488,6 +463,43 @@ export async function getPaints(query): Promise<{
   };
 }
 
+export async function updatePaint(uuid, data): Promise<{
+  body: SwatchCard;
+  status: number;
+}> {
+  let body = null;
+  let status = 500;
+
+  const dataQuery = data;
+
+  // Todo: handle these better using Prisma's guidelines for null & undefined values
+  if(data.updatePigments){
+    dataQuery.pigmentsOnPaints = {
+      deleteMany: {},
+      createMany: {
+        data: data.updatePigments,
+      }
+    }
+    delete data.updatePigments;
+  }
+
+  body = await prisma.paint.update({
+    where: {
+      uuid: uuid,
+    },
+    data: dataQuery,
+  });
+
+  if (body !== null) {
+    status = 200;
+  }
+
+  return {
+    body,
+    status,
+  };
+}
+
 // This will return everything in the model that is passed in as an argument
 // Intended to be used for form input options
 export async function getOption(
@@ -497,10 +509,15 @@ export async function getOption(
   let body;
   let status = 404;
   const queryArray = [];
+  let orderBy;
 
   for (const pair of query.entries()) {
     const key = pair[0];
-    queryArray.push({ [key]: pair[1] });
+    if(key === 'orderBy') {
+      orderBy = JSON.parse(pair[1])
+    } else {
+      queryArray.push({ [key]: pair[1] });
+    }
   }
 
   if (queryArray.length > 0) {
@@ -509,6 +526,10 @@ export async function getOption(
         AND: queryArray,
       },
     });
+  } else if (orderBy) {
+    body = await prisma[model].findMany({
+      orderBy: orderBy
+    })
   } else {
     body = await prisma[model].findMany();
   }
@@ -536,7 +557,7 @@ export async function createUser(data: {
   const salt = bcrypt.genSaltSync(10);
   const hashedPassword = bcrypt.hashSync(data.password, salt);
 
-  const uuid = generateUUID();
+  const uuid = generateUuid();
 
   const user = await prisma.user.create({
     data: {
@@ -607,6 +628,37 @@ export async function updateUser(
     body,
     status,
   };
+}
+
+export async function getUsers(searchParams) {
+  let body = null;
+  let status = 500;
+
+  body = await prisma.user.findMany({
+    orderBy: {
+      createdAt: 'desc',
+    },
+    select: {
+      id: true,
+      createdAt: true,
+      updatedAt: true,
+      deleted: true,
+      email: true,
+      firstName: true,
+      lastName: true,
+      username: true,
+      uuid: true,
+      role: true,
+      status: true,
+      _count: true,
+    },
+  });
+
+  if (body !== null) {
+    status = 200;
+  }
+
+  return { body, status };
 }
 
 export async function getUser(data: {
@@ -718,6 +770,17 @@ export async function getUserProfileOwnedPalettes(data): Promise<{
                   uuid: true,
                   slug: true,
                   hex: true,
+                  swatchCard: {
+                    take: 1,
+                    select: {
+                      imageKitUpload: {
+                        select: {
+                          url: true,
+                          thumbnailUrl: true,
+                        },
+                      },
+                    },
+                  },
                 },
               },
             },
@@ -795,7 +858,7 @@ export async function getUserProfileSavedPalettes(data): Promise<{
   };
 }
 
-export async function createPaint(data: ReadOnlyFormData): Promise<{
+export async function createPaint(data: ReadOnlyFormData, user): Promise<{
   status: number;
   body: Record<string, unknown>;
 }> {
@@ -810,13 +873,10 @@ export async function createPaint(data: ReadOnlyFormData): Promise<{
     });
   }
 
-  const uuid = generateUUID();
+  console.log("user", user)
+  console.log("data.get('authorUuid')", data.get('authorUuid'))
 
-  // if (data.getAll('tags')) {
-  //   tags = data.getAll('tags')?.map((tagId) => {
-  //     return { tagId: Number(tagId) };
-  //   });
-  // }
+  const uuid = generateUuid();
 
   body = await prisma.paint.create({
     data: {
@@ -833,11 +893,6 @@ export async function createPaint(data: ReadOnlyFormData): Promise<{
       manufacturerDescription: data.get('manufacturerDescription'),
       communityDescription: data.get('communityDescription'),
       hex: data.get('hex'),
-      pigmentsOnPaints: {
-        createMany: {
-          data: pigments,
-        },
-      },
     },
     select: createPaintSelect,
   });
@@ -856,72 +911,179 @@ export async function createSwatchCard(
   status: number;
   body: Record<string, unknown>;
 }> {
-  const body = await prisma.swatchCard.create({
-    data: {
-      paint: {
-        connect: {
-          uuid: uuid,
-        },
+  let body = null;
+  let status = 500;
+
+  const dataQuery = {
+    paint: {
+      connect: {
+        uuid: uuid,
       },
-      author: {
-        connect: {
-          uuid: data.author.uuid,
-        },
+    },
+    author: {
+      connect: {
+        uuid: data.author.uuid,
       },
-      paper: {
-        create: {
-          line: {
-            connect: {
-              id: data.paper.lineId,
-            },
-          },
-          manufacturer: {
-            connect: {
-              name: data.paper.manufacturerName,
-            },
-          },
-          paperType: {
-            connect: {
-              id: Number(data.paper.paperTypeId),
-            },
-          },
-          weightInLbs: Number(data.paper.weightInLbs),
-        },
+    },
+    description: data.description,
+    imageKitUpload: {
+      create: {
+        fileId: data.imageKitUpload.fileId,
+        filePath: data.imageKitUpload.filePath,
+        name: data.imageKitUpload.name,
+        thumbnailUrl: data.imageKitUpload.thumbnailUrl,
+        url: data.imageKitUpload.url,
+        height: data.imageKitUpload.height,
+        width: data.imageKitUpload.width,
       },
-      swatchCardTypesOnSwatchCard: {
-        createMany: {
-          data: data.swatchCardNamesFormData,
-        },
+    },
+  };
+
+  if (data.paperLine?.id) {
+    dataQuery.paperLine = {
+      connect: {
+        id: Number(data.paperLine.id),
       },
-      description: data.description,
-      imageKitUpload: {
-        create: {
-          fileId: data.imageKitUpload.fileId,
-          filePath: data.imageKitUpload.filePath,
-          name: data.imageKitUpload.name,
-          thumbnailUrl: data.imageKitUpload.thumbnailUrl,
-          url: data.imageKitUpload.url,
-          height: data.imageKitUpload.height,
-          width: data.imageKitUpload.width,
-        },
+    };
+  }
+
+  if (data.paperManufacturer?.name) {
+    dataQuery.paperManufacturer = {
+      connect: {
+        name: data.paperManufacturer.name,
       },
+    };
+  }
+
+  if (data.paperType?.id) {
+    dataQuery.paperType = {
+      connect: {
+        id: Number(data.paperType.id),
+      },
+    };
+  }
+
+  if (data.paperWeightInLbs) {
+    dataQuery.paperWeightInLbs = Number(data.paperWeightInLbs);
+  }
+
+  if (data.swatchCardNamesAdded.length > 0) {
+    dataQuery.swatchCardTypesOnSwatchCard = {
+      createMany: {
+        data: data.swatchCardNamesAdded,
+      },
+    };
+  }
+
+  body = await prisma.swatchCard.create({
+    data: dataQuery,
+    select: {
+      id: true,
     },
   });
 
-  return { status: 200, body };
+  if (body !== null) {
+    status = 200;
+  }
+
+  return { status, body };
 }
 
-export async function updateSwatchCard(data: SwatchCard) {
+export async function updateSwatchCard(data): Promise<{
+  body: SwatchCard;
+  status: number;
+}> {
   let body = null;
   let status = 500;
+
+  const dataQuery = {
+    description: data.description,
+  };
+
+  // Todo: handle these better using Prisma's guidelines for null & undefined values
+  if (data.paperLine?.id) {
+    dataQuery.paperLine = {
+      connect: {
+        id: Number(data.paperLine.id),
+      },
+    };
+  }
+
+  if (data.paperManufacturer?.id) {
+    dataQuery.paperManufacturer = {
+      connect: {
+        id: Number(data.paperManufacturer.id),
+      },
+    };
+  }
+
+  if (data.paperType?.id) {
+    dataQuery.paperType = {
+      connect: {
+        id: Number(data.paperType.id),
+      },
+    };
+  }
+
+  if (data.paperWeightInLbs) {
+    dataQuery.paperWeightInLbs = Number(data.paperWeightInLbs);
+  }
+
+  // I feel like I'm not reading the Prisma documentation correctly
+  // This is wacky
+  // Todo: Get smarter & fix
+  if (
+    data.swatchCardNamesAdded.length > 0 &&
+    data.swatchCardNamesRemoved.length > 0
+  ) {
+    dataQuery.swatchCardTypesOnSwatchCard = {
+      createMany: {
+        data: data.swatchCardNamesAdded,
+      },
+      deleteMany: data.swatchCardNamesRemoved,
+    };
+  } else if (
+    data.swatchCardNamesAdded.length > 0 &&
+    data.swatchCardNamesRemoved.length === 0
+  ) {
+    dataQuery.swatchCardTypesOnSwatchCard = {
+      createMany: {
+        data: data.swatchCardNamesAdded,
+      },
+    };
+  } else if (
+    data.swatchCardNamesRemoved.length > 0 &&
+    data.swatchCardNamesAdded.length === 0
+  ) {
+    dataQuery.swatchCardTypesOnSwatchCard = {
+      deleteMany: data.swatchCardNamesRemoved,
+    };
+  }
 
   body = await prisma.swatchCard.update({
     where: {
       id: data.id,
     },
-    data: {
-      paperId: Number(data.paperId),
-      description: data.description,
+    data: dataQuery,
+  });
+
+  if (body !== null) {
+    status = 200;
+  }
+
+  return {
+    body,
+    status,
+  };
+}
+
+export async function deleteSwatchCard(searchParams) {
+  let body = null;
+  let status = 500;
+
+  body = await prisma.swatchCard.delete({
+    where: {
+      id: Number(searchParams.get('id')),
     },
   });
 
@@ -943,7 +1105,7 @@ export async function createPalette(data): Promise<{
   let status = 404;
 
   const slug = generateSlug({ value: data.title, uuid: false });
-  const uuid = generateUUID();
+  const uuid = generateUuid();
 
   const palette = await prisma.palette.create({
     data: {
@@ -982,9 +1144,32 @@ export async function getAllPalettes(): Promise<{
   return {
     body: await prisma.palette.findMany({
       orderBy: {
-        createdAt: 'asc',
+        createdAt: 'desc',
       },
-      select: paletteSelect,
+      select: {
+        _count: true,
+        uuid: true,
+        visible: true,
+        slug: true,
+        title: true,
+        description: true,
+        owner: {
+          select: limitedUserSelect,
+        },
+        paintsInPalette: {
+          take: 18,
+          orderBy: {
+            order: 'asc',
+          },
+          select: {
+            id: true,
+            order: true,
+            paint: {
+              select: limitedPaintSelect,
+            },
+          },
+        },
+      },
     }),
     status: 200,
   };
@@ -1070,6 +1255,18 @@ export async function updatePalette(uuid: string, data) {
     dataQuery = {
       savedByUsers: {
         deleteMany: [{ userUuid: data.unsavedByUser.uuid }],
+      },
+    };
+  } else if (data.paletteReorderData) {
+    dataQuery = {
+      paintsInPalette: {
+        update: data.paletteReorderData,
+      },
+    };
+  } else if (data.removePaintInPaletteId) {
+    dataQuery = {
+      paintsInPalette: {
+        delete: [{ id: data.removePaintInPaletteId }],
       },
     };
   }

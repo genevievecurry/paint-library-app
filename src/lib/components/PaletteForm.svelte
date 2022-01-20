@@ -3,6 +3,7 @@
   import { session } from '$app/stores';
   import { connect } from '$lib/utility';
   import { goto } from '$app/navigation';
+  import { successNotifier, warningNotifier } from '$lib/notifier';
 
   // paintUuid is a seed to create a new palette via a paint
   // This functionality will need to be modified if we add ability to create
@@ -42,6 +43,8 @@
 
     if (response.status == 200) {
       return response.json();
+    } else {
+      warningNotifier(response.statusText);
     }
   }
 
@@ -51,13 +54,7 @@
       const promise = await handlePost();
 
       if (promise.uuid) {
-        $session.notification = {
-          type: 'success',
-          visible: true,
-          message: `
-          Hoorah! Palette was ${action}d successfully.
-          `,
-        };
+        successNotifier(`Hoorah! Palette was ${action}d successfully.`);
 
         goto(`/palette/${promise?.uuid}/${promise?.slug}`);
         success();
@@ -82,7 +79,7 @@
         Name your new palette.
       </small>
       <input
-        class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
+        class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500"
         id="title"
         name="title"
         type="text"
@@ -96,7 +93,7 @@
         Describe it?
       </small>
       <textarea
-        class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400 focus:border-green-400"
+        class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500"
         id="description"
         name="description"
         placeholder="Description"

@@ -8,7 +8,7 @@
         props: {
           slug: params.slug,
           uuid: params.uuid,
-          paint: await response.json(),
+          paintData: await response.json(),
         },
       };
     }
@@ -22,57 +22,83 @@
 
 <script lang="ts">
   import { session } from '$app/stores';
-  import { setContext } from 'svelte';
-  import { connect, generateUrl } from '$lib/utility';
+  import { afterUpdate, onMount, setContext } from 'svelte';
+  import { generateUrl } from '$lib/generate';
+  import { connect } from '$lib/utility';
   import { clickOutside } from '$lib/actions';
+  import {
+    chevronRightIcon,
+    circleAddIcon,
+    circleCheckmarkIcon,
+    closeIcon,
+    editIcon,
+  } from '$lib/icons';
   import Header from '$lib/components/Header.svelte';
   import Modal from '$lib/components/Modal.svelte';
   import PaletteForm from '$lib/components/PaletteForm.svelte';
-  import SwatchUpload from '$lib/components/SwatchUpload.svelte';
+  import SwatchUploadForm from '$lib/components/SwatchUploadForm.svelte';
+  import PigmentUpdateForm from '$lib/components/PigmentUpdateForm.svelte';
   import Card from './_Card.svelte';
   import Pigments from './_Pigments.svelte';
   import Notes from './_Notes.svelte';
+  import { successNotifier, warningNotifier } from '$lib/notifier';
+  import RatingsUpdateForm from '$lib/components/RatingsUpdateForm.svelte';
 
   export let slug: string;
   export let uuid: string;
-  export let paint: PaintComponent;
+  export let paintData: PaintComponent;
 
-  setContext('paintName', paint.name);
+  // Editable baseline
+  let editable = false;
+  let editableField = '';
+
+  // Editable Fields baseline
+
+  let paint = paintData;
+  $: pigmentsOnPaints = paint.pigmentsOnPaints || [];
+
+  $: editableSwatchCard = {};
+
+  // Todo: Update these to paintUuid & paintSlug & updated child components where
+  // this data was passed in as prompts to use getContext()
   setContext('uuid', uuid);
   setContext('slug', slug);
   setContext('editable', true);
 
-  if (paint) setContext('hex', paint.hex);
-
-  const {
-    lightfastRating,
-    transparencyRating,
-    stainingRating,
-    granulationRating,
-    name,
-    manufacturer,
-    manufacturerDescription,
-    communityDescription,
-  } = paint;
-
-  let addToPaletteMenuOpen = false;
   let userPalettesPromise: Promise<any>;
   let newlyAddedPalette;
+
+  // Modals
   let showPaletteModal = false;
   let showUploadSwatchModal = false;
-  let swatchCardSectionClasses;
+  let showPigmentUpdateModal = false;
+  let showRatingsUpdateModal = false;
 
-  $: editableSwatchCard = {};
+  // Menu
+  let addToPaletteMenuOpen = false;
 
-  if (paint.swatchCard.length) {
-  }
-  function setEditableSwatchCard(event) {
-    editableSwatchCard = event.detail;
-    showUploadSwatchModal = true;
-  }
+  onMount(() => {
+    editable = $session.user?.role === 'ADMIN';
+  });
+
+  afterUpdate(() => {
+    if (editable) {
+      pigmentsOnPaints = paint.pigmentsOnPaints;
+    }
+  });
+
+  let formData = {
+    manufacturerDescription: paint.manufacturerDescription,
+    communityDescription: paint.communityDescription,
+    name: paint.name,
+    lightfastRatingId: paint.lightfastRating.id,
+    transparencyRatingId: paint.transparencyRating.id,
+    stainingRatingId: paint.stainingRating.id,
+    granulationRatingId: paint.granulationRating.id,
+  };
 
   const checkAlignment = (height, width) => {
-    if (height === width) {
+    if (height === width || !height || !width) {
       return 'square';
     }
     if (height > width) {
@@ -82,6 +108,60 @@
       return 'horizontal';
     }
   };
+
+  function setEditableSwatchCard(event) {
+    editableSwatchCard = event.detail;
+    showUploadSwatchModal = true;
+  }
+
+  function toggleEditableField(field) {
+    if (editableField === field) {
+      // On click cancel, reset these vars
+      editableField = '';
+      formData.communityDescription = paint.communityDescription;
+      formData.manufacturerDescription = paint.manufacturerDescription;
+    } else {
+      // Set the current field as editable
+      editableField = field;
+    }
+  }
+
+  function checkPaletteStatus(palette) {
+    const matchUuid = (paintInPalette) =>
+      paintInPalette.paint.uuid === paint.uuid;
+
+    return palette.paintsInPalette.some(matchUuid);
+  }
+
+  async function refreshIt() {
+    const response = await fetch(`/paint/${paint.uuid}/${paint.slug}.json`);
+
+    if (response.ok) {
+      return response.json();
+    } else {
+      warningNotifier(`There was an error fetching: ${response.statusText}`);
+    }
+  }
+
+  async function refresh() {
+    let updatedPaint = await refreshIt();
+    successNotifier('Paint updated successfully.');
+    paint = updatedPaint;
+    updatedPaint = null;
+  }
+
+  function handleEditUpdate() {
+    // Close Modals
+    showUploadSwatchModal = false;
+    showPigmentUpdateModal = false;
+    showRatingsUpdateModal = false;
+
+    // Close Editable Field
+    editableField = '';
+
+    // Refresh data
+    refresh();
+  }
 
   async function addToPalette(paletteUuid: string) {
     const response = await connect({
@@ -93,6 +173,8 @@
     });
     if (response.status === 200) {
       return response.json();
+    } else {
+      warningNotifier(response.statusText);
     }
   }
 
@@ -100,21 +182,15 @@
     newlyAddedPalette = await addToPalette(paletteUuid);
 
     if (newlyAddedPalette.uuid) {
-      const url = generateUrl({ prefix: 'palette', target: newlyAddedPalette });
-      $session.notification = {
-        type: 'success',
-        visible: true,
-        message: `
-        Added <span class="font-bold">${name}</span> to
-        <a href="${url}" class="underline">${newlyAddedPalette.title}</a>
-        `,
-      };
-    } else {
-      $session.notification = {
-        type: 'error',
-        visible: true,
-        message: 'Something went wrong!',
-      };
+      const url = generateUrl({
+        prefix: 'palette',
+        target: newlyAddedPalette,
+      });
+      successNotifier(
+        `Added <span class="font-bold">${paint.name}</span> to
+        <a href="${url}" class="underline">${newlyAddedPalette.title}</a>`,
+        { persist: true },
+      );
     }
   }
 
@@ -124,15 +200,79 @@
 
     if (response.status == 200) {
       return response.json();
+    } else {
+      warningNotifier(response.statusText);
     }
   }
 
   async function fetchPalettes() {
     userPalettesPromise = getUserPalettes();
   }
+
+  function handleRatingUpdate(ratingFormData) {
+    const ratingData = ratingFormData.detail;
+    formData = Object.assign(formData, ratingData);
+    handlePost();
+  }
+
+  async function handlePost() {
+    const response = await connect({
+      method: 'post',
+      endpoint: `/paint/${paint.uuid}/${paint.slug}.json`,
+      data: formData,
+    });
+
+    if (response.status == 200) {
+      return response.json();
+    }
+
+    if (response.status !== 200) {
+      warningNotifier(`There was a problem saving: ${response.statusText}.`);
+    }
+  }
+
+  async function updateEditableField() {
+    const response = await handlePost();
+
+    if (response?.uuid) {
+      handleEditUpdate();
+    }
+  }
 </script>
 
-{#if showPaletteModal}
+{#if showRatingsUpdateModal && editable}
+  <Modal
+    title="Manage Ratings"
+    on:close={() => (showRatingsUpdateModal = false)}>
+    <div class="col-span-12">
+      <RatingsUpdateForm
+        on:ratingFormData={handleRatingUpdate}
+        on:success={refresh}
+        on:success={handleEditUpdate}
+        lightfastRating={paint.lightfastRating}
+        transparencyRating={paint.transparencyRating}
+        stainingRating={paint.stainingRating}
+        granulationRating={paint.granulationRating} />
+    </div>
+  </Modal>
+{/if}
+
+{#if showPigmentUpdateModal && editable}
+  <Modal
+    title="Manage Pigments"
+    fullWidth={true}
+    on:close={() => (showPigmentUpdateModal = false)}>
+    <div class="col-span-12">
+      <PigmentUpdateForm
+        on:success={handleEditUpdate}
+        {pigmentsOnPaints}
+        paintUuid={paint.uuid}
+        paintSlug={paint.slug} />
+    </div>
+  </Modal>
+{/if}
+
+{#if showPaletteModal && editable}
   <Modal on:close={() => (showPaletteModal = false)} title="Create New Palette">
     <div class="col-span-12">
       <PaletteForm paintUuid={paint.uuid} />
@@ -146,9 +286,9 @@
     on:close={() => (editableSwatchCard = {})}
     title={editableSwatchCard?.id ? 'Edit Swatch' : 'Contribute Swatch'}>
     <div class="col-span-12">
-      <SwatchUpload
+      <SwatchUploadForm
+        on:success={handleEditUpdate}
         paintUuid={paint.uuid}
-        paintSlug={paint.slug}
         swatchCard={editableSwatchCard} />
     </div>
   </Modal>
@@ -157,8 +297,8 @@
 <div class="container mx-auto px-4 sm:px-6">
   {#if paint}
     <Header
-      title={name}
-      subtitle={manufacturer.name}
+      title={paint.name}
+      subtitle={paint.manufacturer.name}
       description={null}
       owner={null}>
       {#if $session?.user}
@@ -209,7 +349,7 @@
             <div
               class="transition ease-out duration-100 {addToPaletteMenuOpen
                 ? 'opacity-100 scale-100'
-                : 'opacity-0 scale-95'} z-10 border border-black origin-top-right absolute right-0 mt-2 w-64 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                : 'opacity-0 scale-95'} z-10 border border-black origin-top-right absolute right-0 mt-2 w-72 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="menu-button"
@@ -218,30 +358,33 @@
                 {#await userPalettesPromise then value}
                   {#if value?.ownedPalettes}
                     {#each value.ownedPalettes as palette}
-                      <div
-                        class="action-link border-t border-black px-4 py-2 text-sm flex">
-                        <!-- {#if alreadyInPalette(palette.slug)}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="h-6 w-6 mr-2"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M5 13l4 4L19 7" />
-                          </svg>
-                          <a href="/palette/{palette.slug}">{palette.title}</a>
-                        {:else} -->
-                        <span
-                          class="text-black block"
-                          role="menuitem"
-                          tabindex="-1"
-                          on:click={() => addToPaletteHandler(palette.uuid)}
-                          >{palette.title}</span>
-                        <!-- {/if} -->
+                      <div class="p-2 text-sm relative">
+                        {#if checkPaletteStatus(palette)}
+                          <div
+                            class="absolute left-1 translate -translate-y-1/2 top-1/2 text-lime-600">
+                            {@html circleCheckmarkIcon()}
+                          </div>
+                          <a
+                            href="/palette/{palette.uuid}/{palette.slug}"
+                            class="link inline-block px-7 w-full"
+                            >{palette.title}
+                            <div
+                              class="absolute right-1 -translate-y-1/2 top-1/2">
+                              {@html chevronRightIcon('h-4 w-4 ml-2')}
+                            </div></a>
+                        {:else}
+                          <div
+                            class="absolute left-1 translate -translate-y-1/2 top-1/2">
+                            {@html circleAddIcon()}
+                          </div>
+                          <span
+                            class="font-medium text-black hover:text-cyan-600 transition-colors cursor-pointer inline-block px-7 w-full"
+                            role="menuitem"
+                            tabindex="-1"
+                            on:click={() => addToPaletteHandler(palette.uuid)}
+                            >{palette.title}
+                          </span>
+                        {/if}
                       </div>
                     {/each}
                   {/if}
@@ -255,25 +398,12 @@
                       future reference.</p>
                   </div>
                 {/await}
-                <div class="border-t border-gray-300">
-                  <span
-                    on:click={() => (showPaletteModal = true)}
-                    class="action-link block px-4 py-2 text-sm flex"
-                    role="menuitem"
-                    tabindex="-1">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-6 w-6 mr-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor">
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Create Palette</span>
+                <div
+                  on:click={() => (showPaletteModal = true)}
+                  role="menuitem"
+                  tabindex="-1"
+                  class="border-t border-gray-300 py-2 px-2 cursor-pointer col-span-2 text-center mt-2">
+                  <span class="">Create New Palette</span>
                 </div>
               </div>
             </div>
@@ -287,12 +417,16 @@
         class="grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-6">
         {#each paint.swatchCard as swatchCard}
           <Card
+            paintUuid={paint.uuid}
+            paintName={paint.name}
+            paintHex={paint.hex}
             {swatchCard}
             alignment={checkAlignment(
-              swatchCard.imageKitUpload.height,
-              swatchCard.imageKitUpload.width,
+              swatchCard.imageKitUpload?.height,
+              swatchCard.imageKitUpload?.width,
             )}
-            on:notify={setEditableSwatchCard} />
+            on:deleteCard={handleEditUpdate}
+            on:setSwatchCard={setEditableSwatchCard} />
         {/each}
       </section>
     {:else}
@@ -334,84 +468,241 @@
     <div class="md:flex">
       <div class="flex-auto">
         <section class="mt-8">
-          <h2 class="font-bold text-2xl">Ratings</h2>
-
+          <div class="flex justify-start items-center">
+            <h2 class="font-bold text-2xl">Ratings</h2>
+            {#if editable}
+              <button
+                aria-label="Manage Ratings"
+                title="Manage Ratings"
+                on:click={() => (showRatingsUpdateModal = true)}
+                class="pop inline-flex justify-center ml-3 p-1 text-sm {showRatingsUpdateModal
+                  ? 'text-pink-600'
+                  : 'text-black'}">
+                {@html editIcon('h-5 w-5')}
+              </button>
+            {/if}
+          </div>
           <table
-            class="table-fixed border-collapse border border-gray-400 mt-4">
+            class="table-auto border-collapse border border-gray-400 mt-4 w-full">
             <tr>
               <th class="text-left border border-gray-400 px-4 py-3"
                 >Lightfastness</th>
               <td class="border border-gray-400 px-4 py-3">
-                {lightfastRating.label}
-                {#if lightfastRating.description}
-                  - {lightfastRating.description}
+                {#if paint.lightfastRating.code !== 'X'}
+                  <span class="border-2 border-black font-bold px-1 mr-1"
+                    >{paint.lightfastRating.code}</span>
+                {:else}
+                  <span
+                    class="border-2 border-gray-400 font-bold px-1 mr-1 text-gray-500"
+                    >?</span>
                 {/if}
+              </td>
+              <td class="border border-gray-400 px-4 py-3 w-full">
+                {paint.lightfastRating.label}
+                <p class="text-gray-500 font-light text-sm"
+                  >{paint.lightfastRating.description}</p>
               </td>
             </tr>
             <tr>
               <th class="text-left border border-gray-400 px-4 py-3"
                 >Transparency</th>
               <td class="border border-gray-400 px-4 py-3">
-                {transparencyRating.label}
-                {#if transparencyRating.description}
-                  - {transparencyRating.description}
+                {#if paint.transparencyRating.code !== 'X'}
+                  <span class="border-2 border-black font-bold px-1"
+                    >{paint.transparencyRating.code}</span>
+                {:else}
+                  <span
+                    class="border-2 border-gray-400 font-bold px-1 mr-1 text-gray-500"
+                    >?</span>
                 {/if}
+              </td>
+              <td class="border border-gray-400 px-4 py-3">
+                {paint.transparencyRating.label}
+                <p class="text-gray-500 font-light text-sm"
+                  >{paint.transparencyRating.description}</p>
               </td>
             </tr>
             <tr>
               <th class="text-left border border-gray-400 px-4 py-3"
                 >Staining</th>
               <td class="border border-gray-400 px-4 py-3">
-                {stainingRating.label}
-                {#if stainingRating.description}
-                  - {stainingRating.description}
+                {#if paint.stainingRating.code !== 'X'}
+                  <span class="border-2 border-black font-bold px-1"
+                    >{paint.stainingRating.code}</span>
+                {:else}
+                  <span
+                    class="border-2 border-gray-400 font-bold px-1 mr-1 text-gray-500"
+                    >?</span>
                 {/if}
+              </td>
+              <td class="border border-gray-400 px-4 py-3">
+                {paint.stainingRating.label}
+                <p class="text-gray-500 font-light text-sm"
+                  >{paint.stainingRating.description}</p>
               </td>
             </tr>
             <tr>
               <th class="text-left border border-gray-400 px-4 py-3"
                 >Granulation</th>
               <td class="border border-gray-400 px-4 py-3">
-                {granulationRating.label}
-                {#if granulationRating.description}
-                  - {granulationRating.description}
+                {#if paint.granulationRating.code !== 'X'}
+                  <span class="border-2 border-black font-bold px-1"
+                    >{paint.granulationRating.code}</span>
+                {:else}
+                  <span
+                    class="border-2 border-gray-400 font-bold px-1 mr-1 text-gray-500"
+                    >?</span>
                 {/if}
+              </td>
+              <td class="border border-gray-400 px-4 py-3">
+                {paint.granulationRating.label}
+                <p class="text-gray-500 font-light text-sm"
+                  >{paint.granulationRating.description}</p>
               </td>
             </tr>
           </table>
         </section>
 
-        {#if manufacturerDescription}
+        {#if paint.manufacturerDescription || editable}
           <section class="mt-8">
-            <h2 class="font-bold text-2xl">Manufacturer Description</h2>
-            <span class="text-xs text-gray-500 mt-4 block">
-              From {manufacturer.name}:
-            </span>
-            <div class="mt-2">{@html manufacturerDescription}</div>
+            <div class="flex justify-start items-center">
+              <h2 class="font-bold text-2xl">Manufacturer Description</h2>
+              {#if editable}
+                <button
+                  aria-label="Update Manufacturer Description"
+                  title="Update Manufacturer Description"
+                  disabled={editableField !== '' &&
+                    editableField !== 'manufacturerDescription'}
+                  on:click={() =>
+                    toggleEditableField('manufacturerDescription')}
+                  class="pop inline-flex justify-center p-1 text-sm ml-3 {editableField ===
+                  'manufacturerDescription'
+                    ? 'text-pink-600 pr-2'
+                    : 'text-black'}">
+                  {@html editableField === 'manufacturerDescription'
+                    ? closeIcon('h-5 w-5')
+                    : editIcon('h-5 w-5')}
+                  {editableField === 'manufacturerDescription' ? 'Cancel' : ''}
+                </button>
+              {/if}
+            </div>
+            {#if editableField === 'manufacturerDescription'}
+              <div class="mt-2 mr-1">
+                <label
+                  for="manufacturerDescription"
+                  class="block text-sm text-gray-500 font-light">
+                  This should be directly pulled from {paint.manufacturer
+                    .name}'s description of the paint.</label>
+                <textarea
+                  maxlength="500"
+                  id="manufacturerDescription"
+                  name="manufacturerDescription"
+                  bind:value={formData.manufacturerDescription}
+                  class="mt-2 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
+              </div>
+
+              <div class="mt-2 text-right">
+                <button
+                  aria-label="Save"
+                  title="Save"
+                  on:click={() => updateEditableField()}
+                  class="pop px-4 py-3 text-xl hover:text-pink-500">
+                  Save Changes
+                </button>
+              </div>
+            {:else if paint.manufacturerDescription}
+              <span class="text-xs text-gray-500 mt-4 block">
+                From {paint.manufacturer.name}:
+              </span>
+              <div class="mt-2">{paint.manufacturerDescription}</div>
+            {:else}
+              <p class="my-4 text-gray-500 font-light"
+                >No manufacturer description added yet.
+              </p>
+              <p class="text-gray-500 font-light text-sm"
+                >This should be directly pulled from {paint.manufacturer.name}'s
+                description of the paint.</p>
+            {/if}
           </section>
         {/if}
-
-        {#if communityDescription}
+        {editableField}
+        {#if paint.communityDescription || editable}
           <section class="mt-8">
-            <h2 class="font-bold text-2xl">Community Description</h2>
-            <div class="mt-2">{@html communityDescription}</div>
+            <div class="flex justify-start items-center">
+              <h2 class="font-bold text-2xl">Community Description</h2>
+              {#if editable}
+                <button
+                  aria-label="Update Community Description"
+                  title="Update Community Description"
+                  disabled={editableField !== '' &&
+                    editableField !== 'communityDescription'}
+                  on:click={() => toggleEditableField('communityDescription')}
+                  class="pop inline-flex justify-center p-1 text-sm ml-3 {editableField ===
+                  'communityDescription'
+                    ? 'text-pink-600 pr-2'
+                    : 'text-black'}">
+                  {@html editableField === 'communityDescription'
+                    ? closeIcon('h-5 w-5')
+                    : editIcon('h-5 w-5')}
+                  {editableField === 'communityDescription' ? 'Cancel' : ''}
+                </button>
+              {/if}
+            </div>
+            {#if editableField === 'communityDescription'}
+              <div class="mt-2 mr-1">
+                <label
+                  for="communityDescription"
+                  class="block text-sm font-light text-gray-500">
+                  This should be a thoughtful, albiet unofficial, description of
+                  this particular paint.</label>
+                <textarea
+                  maxlength="500"
+                  id="communityDescription"
+                  name="communityDescription"
+                  bind:value={formData.communityDescription}
+                  class="mt-2 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
+              </div>
+
+              <div class="mt-2 text-right">
+                <button
+                  aria-label="Save"
+                  title="Save"
+                  on:click={() => updateEditableField()}
+                  class="pop px-4 py-3 text-xl hover:text-pink-500">
+                  Save Changes
+                </button>
+              </div>
+            {:else if paint.communityDescription}
+              <div class="mt-2">{paint.communityDescription}</div>
+            {:else}
+              <p class="my-4 text-gray-500 font-light"
+                >No community description added yet.
+              </p>
+              <p class="text-gray-500 font-light text-sm"
+                >This should be a thoughtful, albiet unofficial, description of
+                this particular paint.</p>
+            {/if}
           </section>
         {/if}
       </div>
-      <div class="flex-none md:w-96 md:pl-8">
-        <Pigments pigmentsOnPaints={paint.pigmentsOnPaints} />
-        <!-- <section class="mt-8">
-          <h2 class="font-bold text-2xl">Artist Tags</h2>
-          <ul class="mt-4">
-            {#each tags as tag}
-              <li class="inline-block">
-                <a
-                  class="m-1 py-2 px-3 border border-black"
-                  href="{`/tag/${tag.tag.slug}`}">{tag.tag.label}</a>
-              </li>
-            {/each}
-          </ul>
-        </section> -->
+      <div class="flex-none md:w-96 md:pl-10">
+        <section class="mt-8">
+          <div class="flex justify-start items-center">
+            <h2 class="font-bold text-2xl">Pigments</h2>
+            {#if editable}
+              <button
+                aria-label="Manage Pigments"
+                title="Manage Pigments"
+                on:click={() => (showPigmentUpdateModal = true)}
+                class="pop inline-flex justify-center ml-3 p-1 text-sm {showPigmentUpdateModal
+                  ? 'text-pink-600'
+                  : 'text-black'}">
+                {@html editIcon('h-5 w-5')}
+              </button>
+            {/if}
+          </div>
+          <Pigments {pigmentsOnPaints} />
+        </section>
       </div>
     </div>
     <Notes notes={paint.notes} />

@@ -64,21 +64,6 @@ async function main() {
     ],
   });
 
-  const unknownPaper = await prisma.paper.create({
-    data: {
-      paperTypeId: 1,
-      weightInLbs: 0,
-    },
-  });
-
-  const paper = await prisma.paper.create({
-    data: {
-      paperTypeId: 2,
-      weightInLbs: 140,
-      manufacturerId: 1,
-    },
-  });
-
   const paintType = await prisma.paintType.upsert({
     where: { slug: 'watercolor' },
     update: {},
@@ -90,60 +75,66 @@ async function main() {
 
   const lightfastRatings = await prisma.lightfastRating.createMany({
     data: [
-      { label: 'Unknown', description: 'No data available.' },
+      { code: 'X', label: 'Unknown', description: 'No data available.' },
+      { code: 'NR', label: 'Not Rated', description: 'Not rated by the ASTM or by blue wool test.'},
       {
-        label: 'I',
+        code: 'I',
+        label: 'Excellent',
         description:
-          'Excellent lightfastness. Blue wool 7-8. The pigment will remain unchanged for more than 100 years of light exposure with proper mounting and display. (Suitable for artistic use.)',
+          'Blue wool 7-8. The pigment will remain unchanged for more than 100 years of light exposure with proper mounting and display. (Suitable for artistic use.)',
       },
       {
-        label: 'II',
+        code: 'II',
+        label: 'Very Good',
         description:
-          'Very good lightfastness. Blue wool 6. The pigment will remain unchanged for 50 to 100 years of light exposure with proper mounting and display. (Suitable for artistic use.)',
+          'Blue wool 6. The pigment will remain unchanged for 50 to 100 years of light exposure with proper mounting and display. (Suitable for artistic use.)',
       },
       {
-        label: 'III',
+        code: 'III',
+        label: 'Fair (Impermanent)',
         description:
-          'Fair lightfastness (Impermanent). Blue wool 4-5. The pigment will remain unchanged for 15 to 50 years with proper mounting and display. ("May be satisfactory when used full strength or with extra protection from exposure to light.")',
+          'Blue wool 4-5. The pigment will remain unchanged for 15 to 50 years with proper mounting and display. ("May be satisfactory when used full strength or with extra protection from exposure to light.")',
       },
       {
-        label: 'IV',
+        code: 'IV',
+        label: 'Poor (Fugitive)',
         description:
-          'Poor lightfastness (Fugitive). Blue wool 2-3. The pigment begins to fade in 2 to 15 years, even with proper mounting and display. (Not suitable for artistic use.)',
+          'Blue wool 2-3. The pigment begins to fade in 2 to 15 years, even with proper mounting and display. (Not suitable for artistic use.)',
       },
       {
-        label: 'V',
+        code: 'V',
+        label: 'Very Poor (Fugitive)',
         description:
-          'Very poor lightfastness (Fugitive). Blue wool 1. The pigment begins to fade in 2 years or less of light exposure, even with proper mounting and display. (Not suitable for artistic use.)',
+          'Blue wool 1. The pigment begins to fade in 2 years or less of light exposure, even with proper mounting and display. (Not suitable for artistic use.)',
       },
     ],
   });
 
   const transparencyRatings = await prisma.transparencyRating.createMany({
     data: [
-      { label: 'Unknown', description: 'No data available.' },
-      { label: '1', description: 'Opaque' },
-      { label: '2', description: 'Semi-Opaque' },
-      { label: '3', description: 'Semi-Transparent' },
-      { label: '4', description: 'Transparent' },
+      { code: 'X', label: 'Unknown', description: 'No data available.' },
+      { code: 'T', label: 'Transparent', description: 'Transparent' },
+      { code: 'S/T', label: 'Semi-Transparent', description: 'Semi-Transparent' },
+      { code: 'S/O', label: 'Semi-Opaque', description: 'Semi-Opaque' },
+      { code: 'O', label: 'Opaque', description: 'Opaque' },
     ],
   });
 
   const stainingRatings = await prisma.stainingRating.createMany({
     data: [
-      { label: 'Unknown', description: 'No data available.' },
-      { label: 'High-Staining' },
-      { label: 'Medium-Staining' },
-      { label: 'Low-Staining' },
-      { label: 'Non-Staining' },
+      { code: 'X', label: 'Unknown', description: 'No data available.' },
+      { code: '1', label: 'Non-Staining', description: 'Liftable or completely removable once dry.' },
+      { code: '2', label: 'Low-Staining', description: 'Mostly liftable once dry.' },
+      { code: '3', label: 'Medium-Staining', description: 'Partially liftable once dry.' },
+      { code: '4', label: 'High-Staining', description: 'Difficult to lift once dry.'},      
     ],
   });
 
   const granulationRatings = await prisma.granulationRating.createMany({
     data: [
-      { label: 'Unknown', description: 'No data available.' },
-      { label: 'Yes' },
-      { label: 'No' },
+      { code: 'X', label: 'Unknown', description: 'No data available.' },
+      { code: 'Y', label: 'Granulating', description: 'Pigment particles are uneven and clearly visible.' },
+      { code: 'N', label: 'Non-Granulating', description: 'Pigment particles are smooth and even.' },
     ],
   });
 
@@ -249,56 +240,56 @@ async function main() {
         fileId: 'test-id-string',
         filePath: 'kitten.jpg',
         name: 'kitten.jpg',
-        thumbnailUrl: 'https://placekitten.com/50/50',
+        thumbnailUrl: 'https://placekitten.com/100/150',
         url: 'https://placekitten.com/750/350',
       },
       {
         fileId: 'test-id-string',
         filePath: 'kitten.jpg',
         name: 'kitten.jpg',
-        thumbnailUrl: 'https://placekitten.com/50/50',
+        thumbnailUrl: 'https://placekitten.com/150/100',
         url: 'https://placekitten.com/650/250',
       },
       {
         fileId: 'test-id-string',
         filePath: 'kitten.jpg',
         name: 'kitten.jpg',
-        thumbnailUrl: 'https://placekitten.com/50/50',
+        thumbnailUrl: 'https://placekitten.com/150/100',
         url: 'https://placekitten.com/450/650',
       },
       {
         fileId: 'test-id-string',
         filePath: 'kitten.jpg',
         name: 'kitten.jpg',
-        thumbnailUrl: 'https://placekitten.com/50/50',
+        thumbnailUrl: 'https://placekitten.com/150/100',
         url: 'https://placekitten.com/150/350',
       },
       {
         fileId: 'test-id-string',
         filePath: 'kitten.jpg',
         name: 'kitten.jpg',
-        thumbnailUrl: 'https://placekitten.com/50/50',
+        thumbnailUrl: 'https://placekitten.com/150/100',
         url: 'https://placekitten.com/250/450',
       },
       {
         fileId: 'test-id-string',
         filePath: 'kitten.jpg',
         name: 'kitten.jpg',
-        thumbnailUrl: 'https://placekitten.com/50/50',
+        thumbnailUrl: 'https://placekitten.com/150/100',
         url: 'https://placekitten.com/350/350',
       },
       {
         fileId: 'test-id-string',
         filePath: 'kitten.jpg',
         name: 'kitten.jpg',
-        thumbnailUrl: 'https://placekitten.com/50/50',
+        thumbnailUrl: 'https://placekitten.com/150/100',
         url: 'https://placekitten.com/350/350',
       },
       {
         fileId: 'test-id-string',
         filePath: 'kitten.jpg',
         name: 'kitten.jpg',
-        thumbnailUrl: 'https://placekitten.com/50/50',
+        thumbnailUrl: 'https://placekitten.com/150/100',
         url: 'https://placekitten.com/450/350',
       },
     ],
@@ -309,8 +300,6 @@ async function main() {
     colorImport,
     pigmentImport,
     paperType,
-    unknownPaper,
-    paper,
     paintType,
     granulationRatings,
     lightfastRatings,

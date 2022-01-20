@@ -19,20 +19,28 @@ export function pigmentCode(
   return convertedType + colorCode + pigmentNumber.toString();
 }
 
-export function generateUrl({ prefix, target }) {
-  if (prefix && target.uuid && target.slug) {
-    return `/${prefix}/${target.uuid}/${target.slug}`;
-  }
-  if (prefix && target.uuid) {
-    return `/${prefix}/${target.uuid}`;
-  }
-  if (prefix && target.slug) {
-    return `/${prefix}/${target.slug}`;
-  }
-  if (!prefix && target.slug) {
-    return `/@${target.slug}`;
-  }
+export const pluralize = (count: number, word:string): string => {
+  if(count !== 1) return `${count} ${word}s`
+  return `${count} ${word}`
 }
+
+export const timeAgo = (time: string | number | Date): string => {
+  const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+  const now = new Date();
+  const updated = new Date(time);
+
+  const secondsBetween = Math.abs(Number(updated) - Number(now)) / 1000;
+  const minutesBetween = Math.floor(secondsBetween / 60);
+  const hoursBetween = Math.floor(secondsBetween / (60 * 60));
+  const daysBetween = Math.floor(secondsBetween / (60 * 60 * 24));
+
+  if (daysBetween === 0 && hoursBetween < 12 && hoursBetween > 0) {
+    return rtf.format(-hoursBetween, 'hour');
+  } else if (daysBetween === 0 && hoursBetween === 0) {
+    return rtf.format(-minutesBetween, 'minute');
+  }
+  return rtf.format(-daysBetween, 'day');
+};
 
 export async function connect({
   method = 'post',

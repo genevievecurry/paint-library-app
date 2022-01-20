@@ -1,8 +1,6 @@
 import * as api from '$lib/api';
 
-export async function get({
-  url,
-}): Promise<{ status: number; body: unknown }> {
+export async function get({ url }): Promise<{ status: number; body: unknown }> {
   const response = await api.getPaints(url.searchParams);
 
   if (response.status === 404) {

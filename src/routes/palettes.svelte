@@ -24,13 +24,11 @@
 </script>
 
 <div class="container mx-auto px-4 sm:px-6">
-  <Header title="Palettes"></Header>
+  <Header title="Palettes" />
 
   <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
     {#each palettes as palette}
-
-        <PalettePreview {palette} />
-
+      <PalettePreview {palette} />
     {/each}
   </div>
 </div>

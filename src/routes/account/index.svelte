@@ -17,6 +17,7 @@
   import { session } from '$app/stores';
   import { connect } from '$lib/utility';
   import Header from '$lib/components/Header.svelte';
+  import { successNotifier } from '$lib/notifier';
 
   export let user: User;
 
@@ -42,13 +43,7 @@
 
     if (error) {
     } else {
-      $session.notification = {
-        type: 'success',
-        visible: true,
-        message: `
-          Hoorah! @${user.username} was updated successfully.
-        `,
-      };
+      successNotifier(`Hoorah! @${user.username} was updated successfully.`);
     }
   }
 </script>
@@ -67,7 +62,7 @@
             type="text"
             required
             bind:value={user.username}
-            class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400" />
+            class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500" />
         </div>
         <div class="mt-6">
           <label for="firstName" class="block">First Name</label>
@@ -77,7 +72,7 @@
             type="text"
             required
             bind:value={user.firstName}
-            class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400" />
+            class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500" />
         </div>
         <div class="mt-6">
           <label for="lastName" class="block">Last Name</label>
@@ -86,7 +81,7 @@
             name="lastName"
             type="text"
             bind:value={user.lastName}
-            class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-green-400" />
+            class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500" />
         </div>
         <div class="mt-6 py-3 text-right border-t border-black">
           <button

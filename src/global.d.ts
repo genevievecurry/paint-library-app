@@ -12,6 +12,8 @@ declare type Palette = import('.prisma/client').Palette;
 declare type PaintsInPalette = import('.prisma/client').PaintsInPalette;
 declare type PaperType = import('.prisma/client').PaperType;
 declare type Line = import('.prisma/client').Line;
+declare type SwatchCardTypesOnSwatchCard =
+  import('.prisma/client').SwatchCardTypesOnSwatchCard;
 
 interface ImportMetaEnv
   extends Readonly<Record<string, string | boolean | undefined>> {
@@ -21,14 +23,21 @@ interface ImportMetaEnv
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
+interface SwatchCardTypesOnSwatchCardComponent
+  extends SwatchCardTypesOnSwatchCard {
+  swatchCardType: import('.prisma/client').SwatchCardType;
+}
 
 interface SwatchCardComponent extends SwatchCard {
   swatchCardType: import('.prisma/client').SwatchCardType;
-  paper: import('.prisma/client').Paper;
+  paperManufacturer: import('.prisma/client').Manufacturer;
+  paperLine: Line;
+  paperType: PaperType;
+  paperWeightInLbs: number;
   author: import('.prisma/client').User;
   imageKitUpload: import('.prisma/client').ImageKitUpload;
   tags: import('.prisma/client').Tag[];
-  swatchCardTypesOnSwatchCard: import('.prisma/client').SwatchCardTypesOnSwatchCard[];
+  swatchCardTypesOnSwatchCard: SwatchCardTypesOnSwatchCardComponent[];
 }
 interface PaintComponent extends Paint {
   uuid: string;

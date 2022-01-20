@@ -15,7 +15,9 @@
   import { session } from '$app/stores';
   import { goto } from '$app/navigation';
   import { clickOutside } from '$lib/actions';
-  import Notification from '$lib/components/Notification.svelte';
+  import Notifications from '$lib/components/Notifications.svelte';
+  import { successNotifier } from '$lib/notifier';
+  import { menuIcon, swatchesIcon } from '$lib/icons';
 
   export let menuOpen: boolean;
 
@@ -35,15 +37,20 @@
       body: JSON.stringify({}),
     });
     if (response.ok) {
-      goto('/');
+      return true;
     }
   }
 
   async function logoutHandler() {
-    await logout();
     menuOpen = false;
 
-    $session.user = null;
+    const response = await logout();
+
+    if (response) {
+      successNotifier('Logged out.');
+      $session.user = null;
+      goto('/');
+    }
   }
 </script>
 
@@ -61,18 +68,7 @@
           <div class="flex items-center">
             <div class="flex items-center justify-between w-full md:w-auto">
               <a href="/">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-16 w-16"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1"
-                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                </svg>
+                {@html swatchesIcon('h-16 w-16')}
               </a>
             </div>
           </div>
@@ -101,18 +97,7 @@
                   class="pop inline-flex justify-center px-2 py-1 text-sm {menuOpen
                     ? 'text-pink-400 active'
                     : 'text-black'}">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-                  </svg>
+                  {@html menuIcon()}
                 </button>
               </div>
               {#if menuOpen}
@@ -163,7 +148,7 @@
                     <div
                       class="block px-4 pb-2 pt-2 text-sm border-t border-gray-300">
                       <span
-                        class="decorate-link"
+                        class="decorate-link cursor-pointer"
                         role="menuitem"
                         tabindex="-1"
                         on:click={logoutHandler}>Sign Out</span>
@@ -182,7 +167,7 @@
       </div>
     </header>
     <main>
-      <Notification />
+      <Notifications />
 
       <slot />
     </main>

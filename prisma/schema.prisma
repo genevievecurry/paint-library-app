@@ -167,21 +167,28 @@ model TagsOnSwatchCards {
 }
 
 model SwatchCard {
-  id                          Int                           @id @default(autoincrement())
-  createdAt                   DateTime                      @default(now())
-  updatedAt                   DateTime?                     @updatedAt
-  deleted                     Boolean                       @default(false)
-  paper                       Paper?                        @relation(fields: [paperId], references: [id])
-  paperId                     Int?
-  author                      User?                         @relation(fields: [authorUuid], references: [uuid])
-  authorUuid                  String?
-  description                 String?
-  imageKitUpload              ImageKitUpload?               @relation(fields: [imageKitUploadId], references: [id])
-  imageKitUploadId            Int?
-  tags                        TagsOnSwatchCards[]
-  paint                       Paint                         @relation(fields: [paintId], references: [id])
-  paintId                     Int
+  id                  Int                 @id @default(autoincrement())
+  createdAt           DateTime            @default(now())
+  updatedAt           DateTime?           @updatedAt
+  deleted             Boolean             @default(false)
+  author              User?               @relation(fields: [authorUuid], references: [uuid])
+  authorUuid          String?
+  description         String?
+  imageKitUpload      ImageKitUpload?     @relation(fields: [imageKitUploadId], references: [id])
+  imageKitUploadId    Int?
+  tags                TagsOnSwatchCards[]
+  paint               Paint               @relation(fields: [paintId], references: [id])
+  paintId             Int
+  paperManufacturer   Manufacturer?       @relation(fields: [paperManufacturerId], references: [id])
+  paperManufacturerId Int?
+  paperLine           Line?               @relation(fields: [paperLineId], references: [id])
+  paperLineId         Int?
+  paperType           PaperType?          @relation(fields: [paperTypeId], references: [id])
+  paperTypeId         Int?
+  paperWeightInLbs    Int?
+
   swatchCardTypesOnSwatchCard SwatchCardTypesOnSwatchCard[]
+
 }
 
 model SwatchCardType {
@@ -202,26 +209,12 @@ model SwatchCardTypesOnSwatchCard {
   swatchCardTypeName SwatchCardTypeName?
 }
 
-model Paper {
-  id             Int           @id @default(autoincrement())
-  createdAt      DateTime      @default(now())
-  updatedAt      DateTime?     @updatedAt
-  swatchCards    SwatchCard[]
-  manufacturer   Manufacturer? @relation(fields: [manufacturerId], references: [id])
-  manufacturerId Int?
-  line           Line?         @relation(fields: [lineId], references: [id])
-  lineId         Int?
-  weightInLbs    Int
-  paperType      PaperType     @relation(fields: [paperTypeId], references: [id])
-  paperTypeId    Int
-}
-
 model PaperType {
-  id        Int       @id @default(autoincrement())
-  createdAt DateTime  @default(now())
-  updatedAt DateTime? @updatedAt
-  name      String
-  Paper     Paper[]
+  id         Int          @id @default(autoincrement())
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime?    @updatedAt
+  name       String
+  swatchCard SwatchCard[]
 }
 
 model Note {
@@ -240,14 +233,14 @@ model Note {
 }
 
 model Manufacturer {
-  id        Int       @id @default(autoincrement())
-  createdAt DateTime  @default(now())
-  updatedAt DateTime? @updatedAt
-  name      String    @unique
-  website   String?
-  paints    Paint[]
-  papers    Paper[]
-  lines     Line[]
+  id         Int          @id @default(autoincrement())
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime?    @updatedAt
+  name       String       @unique
+  website    String?
+  paints     Paint[]
+  lines      Line[]
+  swatchCard SwatchCard[]
 }
 
 model Line {
@@ -257,10 +250,8 @@ model Line {
   manufacturer     Manufacturer @relation(fields: [manufacturerName], references: [name])
   manufacturerName String
   name             String
-  papers           Paper[]
   paints           Paint[]
-
-
+  swatchCard       SwatchCard[]
 
   @@unique([manufacturerName, name])
 }
@@ -281,6 +272,7 @@ model Color {
   label     String    @unique
   slug      String    @unique
   code      String    @unique
+  hex       String    @default("#ffffff")
   pigments  Pigment[]
 }
 
@@ -288,6 +280,7 @@ model LightfastRating {
   id          Int       @id @default(autoincrement())
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+  code        String    @unique
   label       String
   description String?
   paint       Paint[]
@@ -298,6 +291,7 @@ model TransparencyRating {
   id          Int       @id @default(autoincrement())
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+  code        String    @unique
   label       String
   description String?
   paint       Paint[]
@@ -308,6 +302,7 @@ model StainingRating {
   id          Int      @id @default(autoincrement())
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  code        String   @unique
   label       String
   description String?
   paint       Paint[]
@@ -317,6 +312,7 @@ model GranulationRating {
   id          Int      @id @default(autoincrement())
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  code        String   @unique
   label       String
   description String?
   paint       Paint[]
@@ -356,7 +352,7 @@ model Palette {
 model PaintsInPalette {
   id          Int      @id @default(autoincrement())
   setAt       DateTime @default(now())
-  order       Int?
+  order       Int?     @default(autoincrement())
   palette     Palette  @relation(fields: [paletteUuid], references: [uuid])
   paletteUuid String
   paint       Paint    @relation(fields: [paintUuid], references: [uuid])

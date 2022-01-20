@@ -80,11 +80,11 @@
         To: "opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
     -->
     <div
-      class="flex text-base text-left transition w-full md:inline-block md:max-w-2xl md:px-4 md:my-8 md:align-middle {fullWidth
+      class="flex text-base text-left transition w-full md:inline-block  md:px-4 md:my-8 md:align-middle {fullWidth
         ? 'lg:max-w-full'
-        : 'lg:max-w-4xl'}">
+        : 'md:max-w-2xl lg:max-w-4xl'}">
       <div
-        class="w-full relative flex items-center bg-white px-4 pt-14 pb-8 overflow-hidden shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
+        class="border-2 border-black w-full relative flex items-center bg-white px-4 pt-14 pb-8 overflow-hidden sm:px-6 sm:pt-8 md:p-6 lg:p-8">
         <button
           type="button"
           class="absolute top-4 right-4 text-black hover:text-pink-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8"

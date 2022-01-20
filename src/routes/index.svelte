@@ -26,7 +26,7 @@
 </svelte:head>
 
 <div class="relative mb-8">
-  <div class="absolute h-full w-full bg-gradient-to-t from-black">
+  <div class="absolute h-full w-full bg-gradient-to-t from-black ">
     <div class="container mx-auto px-4 sm:px-6 mt-32 mb-20">
       <h1 class="text-white font-bold text-5xl">Paint Library</h1>
       <p class="text-white text-xl font-light mt-6">

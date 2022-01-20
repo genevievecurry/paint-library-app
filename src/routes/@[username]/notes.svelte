@@ -2,4 +2,9 @@
   let activeSection = 'notes';
 </script>
 
-<h2>Notes</h2>
+{#if 0 === 0}
+  <span class="text-gray-400 font-light"
+    >This user has not yet contributed any notes.</span>
+{:else}
+  x
+{/if}

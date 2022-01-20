@@ -1,30 +1,48 @@
 <script lang="ts">
   import { session } from '$app/stores';
-  import { getContext, createEventDispatcher } from 'svelte';
+  import { onMount, createEventDispatcher } from 'svelte';
   import Modal from '$lib/components/Modal.svelte';
+  import Dialog from '$lib/components/Dialog.svelte';
+  import { removeIcon, editIcon, adminIcon } from '$lib/icons';
+  import { connect } from '$lib/utility';
+  import { successNotifier, warningNotifier } from '$lib/notifier';
 
   export let swatchCard: SwatchCardComponent;
   export let alignment: string;
+  export let paintName: string;
+  export let paintHex: string;
+  export let paintUuid: string;
 
   const {
     id,
     updatedAt,
     swatchCardTypesOnSwatchCard,
-    paper,
+    paperManufacturer,
+    paperLine,
+    paperType,
+    paperWeightInLbs,
     author,
     description,
     imageKitUpload,
   } = swatchCard;
 
   const dispatch = createEventDispatcher();
-  const paintName: string = getContext('paintName');
 
   let showSwatchCardModal = false;
-  // let saving = false; // Todo handle waiting state
-  // let papers = []; // Todo fix paper problems
+  let showDeleteSwatchDialog = false;
+  let editable = false;
 
-  let swatchCardClasses;
-  let aspectRatioClasses;
+  let swatchCardClasses: string;
+  let aspectRatioClasses: string;
+
+  onMount(() => {
+    if ($session.user) {
+      if ($session.user.role === 'ADMIN') editable = true;
+      if (author) {
+        if (author.uuid === $session.user.uuid) editable = true;
+      }
+    }
+  });
 
   if (alignment === 'square') {
     swatchCardClasses = 'col-span-1 row-span-1';
@@ -35,6 +53,26 @@
   } else if (alignment === 'horizontal') {
     swatchCardClasses = 'col-span-1 md:col-span-2 row-span-1';
     aspectRatioClasses = 'aspect-w-16 aspect-h-16 md:aspect-h-8';
+  }
+
+  async function deleteSwatch() {
+    const response = await connect({
+      method: 'DELETE',
+      endpoint: `/paint/${paintUuid}/swatch.json?id=${id}`,
+    });
+
+    if (response.ok) {
+      showSwatchCardModal = false;
+      showDeleteSwatchDialog = false;
+      dispatch('deleteCard', true);
+      successNotifier(`Successfully deleted swatch.`);
+    } else {
+      showSwatchCardModal = false;
+      showDeleteSwatchDialog = false;
+      warningNotifier(
+        `Uh oh, there was a problem deleting swatch. ${response.statusText}.`,
+      );
+    }
   }
 
   const timeAgo = () => {
@@ -56,6 +94,17 @@
   };
 </script>
 
+{#if showDeleteSwatchDialog && editable}
+  <Dialog
+    on:close={() => (showDeleteSwatchDialog = false)}
+    on:confirm={deleteSwatch}>
+    <span slot="title">Are you sure you want to delete this swatch?</span>
+    <p slot="confirmationText">
+      This cannot be undone. The good news is that you can easily make another
+      swatch just like it if you have regrets!</p>
+  </Dialog>
+{/if}
+
 {#if showSwatchCardModal}
   <Modal
     on:close={() => (showSwatchCardModal = false)}
@@ -63,7 +112,7 @@
     fullWidth={true}>
     <div class="col-span-8">
       <img
-        src={imageKitUpload.url}
+        src={imageKitUpload?.url}
         alt="{paintName} Swatch"
         title="{paintName} Swatch" />
     </div>
@@ -73,14 +122,16 @@
         <div class="text-sm">{@html description}</div>
         <hr class="my-3" />
       {/if}
-      {#if paper}
-        <h3 class="text-lg font-bold my-2">Paper</h3>
-        <div class="text-sm"
-          >{paper.manufacturer ? paper.manufacturer.name : ''}
-          <span class="font-medium">{paper.paperType.name}</span>
-          ({paper.weightInLbs} lbs.)</div>
-        <hr class="my-3" />
-      {/if}
+
+      <h3 class="text-lg font-bold my-2">Paper</h3>
+      <div class="text-sm">
+        {paperLine?.name ? paperLine.name : ''}
+        <span class="font-medium">{paperType?.name}</span>
+        ({paperWeightInLbs} lb.)
+        {paperManufacturer?.name ? `by ${paperManufacturer.name}` : ''}
+      </div>
+      <hr class="my-3" />
+
       {#if swatchCardTypesOnSwatchCard.length > 0}
         <h3 class="text-lg font-bold my-2">Includes Tests</h3>
         <ul class="">
@@ -96,18 +147,28 @@
 
       {#if author}
         <p class="text-xs mt-2 leading-tight my-2"
-          >Contributed by <a href="/@{author.username}" class="link"
+          >Contributed by @<a href="/@{author.username}" class="decorate-link"
             >{author?.username}</a>
+          {#if author.role === 'ADMIN'}
+            {@html adminIcon('h-3 w-3 inline-block')}
+          {/if}
           {timeAgo()}.</p>
       {:else}
         <p class="text-xs mt-2 leading-tight">Uploaded {timeAgo()}.</p>
       {/if}
       {#if $session.user}
-        {#if (author && author?.uuid === $session.user.uuid) || $session.user.role === 'ADMIN'}
+        {#if editable}
           <button
-            class="border border-black py-1 px-2 text-xs mt-2"
-            on:click={() => dispatch('notify', swatchCard)}
-            on:click={() => (showSwatchCardModal = false)}>Edit</button>
+            class="pop inline-flex justify-center py-1 px-2 text-xs mt-2"
+            on:click={() => dispatch('setSwatchCard', swatchCard)}
+            on:click={() => (showSwatchCardModal = false)}>
+            {@html editIcon('h-5 w-5 mr-1')}
+            Edit</button>
+          <button
+            class="pop inline-flex justify-center py-1 px-2 text-xs mt-2 text-orange-600"
+            on:click={() => (showDeleteSwatchDialog = true)}>
+            {@html removeIcon('h-5 w-5 mr-1')}
+            Delete</button>
         {/if}
       {/if}
     </div>
@@ -119,6 +180,6 @@
   <div class={aspectRatioClasses}>
     <div
       class="h-full w-full bg-cover bg-center"
-      style={`background-image: url(${imageKitUpload.url})`} />
+      style={`background-image: url(${imageKitUpload?.url}); background-color: ${paintHex}`} />
   </div>
 </div>

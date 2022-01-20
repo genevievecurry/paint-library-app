@@ -19,10 +19,5 @@ export function getSession({ locals }) {
       status: locals.user.status,
       uuid: locals.user.uuid,
     },
-    notification: locals.notification && {
-      visible: locals.notification.visible,
-      type: locals.notification.type,
-      message: locals.notification.message,
-    },
   };
 }
