@@ -12,6 +12,7 @@ declare type Palette = import('.prisma/client').Palette;
 declare type PaintsInPalette = import('.prisma/client').PaintsInPalette;
 declare type PaperType = import('.prisma/client').PaperType;
 declare type Line = import('.prisma/client').Line;
+declare type Note = import('.prisma/client').Note;
 declare type SwatchCardTypesOnSwatchCard =
   import('.prisma/client').SwatchCardTypesOnSwatchCard;
 
@@ -41,6 +42,7 @@ interface SwatchCardComponent extends SwatchCard {
 }
 interface PaintComponent extends Paint {
   uuid: string;
+  line?: Line;
   swatchCard?: SwatchCardComponent[];
   pigmentsOnPaints?: { pigment: Pigment }[];
   manufacturer?: import('.prisma/client').Manufacturer;
@@ -56,6 +58,7 @@ type ListPaint = {
   slug: string;
   hex: string;
   name: string;
+  published: boolean;
   manufacturer: {
     name: string;
   };
@@ -91,6 +94,8 @@ type PigmentListingByColor = {
 type User = {
   slug: string;
   username: string;
+  firstName: string;
+  lastName: string;
   uuid: string;
   email: string;
   role: string;
@@ -113,6 +118,11 @@ interface PaletteComponent extends Palette {
   paintsInPalette?: PaintsInPaletteComponent[];
   owner: DisplayUser;
   savedByUser: boolean;
+}
+
+interface NoteComponent extends Note {
+  author: User;
+  paint: Paint;
 }
 
 type PaletteListing = {

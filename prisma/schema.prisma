@@ -188,7 +188,6 @@ model SwatchCard {
   paperWeightInLbs    Int?
 
   swatchCardTypesOnSwatchCard SwatchCardTypesOnSwatchCard[]
-
 }
 
 model SwatchCardType {

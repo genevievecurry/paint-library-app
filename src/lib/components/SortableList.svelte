@@ -78,28 +78,30 @@
 
 {#if list && list.length}
   {#each list as item, index (getKey(item))}
-    <div
-      class="col-span-1 grid grid-cols-1 gap-0"
-      class:over={!hoverFinalItem && getKey(item) === isOver}
-      data-index={index}
-      data-id={JSON.stringify(getKey(item))}
-      on:dragover={draggable && over}
-      on:dragleave={() => (isOver = false)}
-      on:dragend={() => (activeItem = -1)}
-      on:drop={draggable && drop}>
-      <div class="dropzone" />
+    {#if item.paint.published}
       <div
+        class="col-span-1 grid grid-cols-1 gap-0"
+        class:over={!hoverFinalItem && getKey(item) === isOver}
         data-index={index}
         data-id={JSON.stringify(getKey(item))}
-        {draggable}
-        on:dragstart={draggable && start}
-        class="item"
-        class:dragged={Number(activeItem) === index}>
-        <slot {item} {index}>
-          <div class="block">{getKey(item)}</div>
-        </slot>
+        on:dragover={draggable && over}
+        on:dragleave={() => (isOver = false)}
+        on:dragend={() => (activeItem = -1)}
+        on:drop={draggable && drop}>
+        <div class="dropzone" />
+        <div
+          data-index={index}
+          data-id={JSON.stringify(getKey(item))}
+          {draggable}
+          on:dragstart={draggable && start}
+          class="item"
+          class:dragged={Number(activeItem) === index}>
+          <slot {item} {index}>
+            <div class="block">{getKey(item)}</div>
+          </slot>
+        </div>
       </div>
-    </div>
+    {/if}
   {/each}
 
   <div

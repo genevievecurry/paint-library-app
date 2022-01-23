@@ -1,13 +1,16 @@
 <script context="module" lang="ts">
-  export async function load({ params, fetch }) {
-    const url = `/pigments/${params.colorSlug}/${params.pigmentSlug}.json`;
-    const response = await fetch(url);
+  export async function load({ params, fetch, url }) {
+    const response = await fetch(
+      `/pigments/${params.colorSlug}/${params.pigmentSlug}.json`,
+    );
+    const { pathname } = url;
 
     if (response.ok) {
       return {
         props: {
           slug: params.pigmentSlug,
           pigment: await response.json(),
+          pathname,
         },
       };
     }
@@ -20,33 +23,15 @@
 </script>
 
 <script lang="ts">
+  import Header from '$lib/components/Header.svelte';
   import PaintPreview from '$lib/components/PaintPreview.svelte';
 
   export let pigment: PigmentComponent;
+  export let pathname;
 </script>
 
 <!-- Todo: figure out breadcrumbs and use Header component -->
-<header class="my-7 md:flex justify-between">
-  <div class="mb-4">
-    <div class="mb-4 font-light">
-      <a href="/" class="decorate-link inline-block pr-2">Paint Library</a>
-      <span class="text-gray-400">/</span>
-      <a href="/pigments" class="decorate-link inline-block px-2">Pigments</a>
-      <span class="text-gray-400">/</span>
-      <a
-        href="/pigments/{pigment.color.label.toLowerCase()}"
-        class="decorate-link inline-block px-2">
-        {pigment.color.label}
-      </a>
-      <span class="text-gray-400">/</span>
-      <span class="inline-block pl-2">{pigment.name}</span>
-    </div>
-    <h1 class="font-extrabold text-5xl">
-      {pigment.slug}
-      {pigment.name}
-    </h1>
-  </div>
-</header>
+<Header title="{pigment.slug} {pigment.name}" {pathname} />
 
 <section class="grid gap-3 grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6">
   <div class="border-2 border-black p-1 relative h-56 col-span-2 lg:col-span-1">
@@ -109,7 +94,9 @@
     <div
       class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-3">
       {#each pigment.paints as paint, index}
-        <PaintPreview paint={paint.paint} {index} />
+        {#if paint.paint.published}
+          <PaintPreview paint={paint.paint} {index} />
+        {/if}
       {/each}
     </div>
   {/if}

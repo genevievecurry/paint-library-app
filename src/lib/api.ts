@@ -1,5 +1,4 @@
-import type { ReadOnlyFormData } from '@sveltejs/kit/types/helper';
-import type { Prisma } from '@prisma/client';
+import type { Note, Prisma } from '@prisma/client';
 
 import { prisma } from '$lib/prisma';
 import { generateSlug, generateUuid} from '$lib/generate';
@@ -17,6 +16,7 @@ const limitedPaintSelect: Prisma.PaintSelect = {
   uuid: true,
   hex: true,
   name: true,
+  published: true,
   manufacturer: {
     select: {
       name: true,
@@ -97,6 +97,7 @@ const pigmentSelect: Prisma.PigmentSelect = {
 
 const swatchCardSelect: Prisma.SwatchCardSelect = {
   id: true,
+  createdAt: true,
   updatedAt: true,
   swatchCardTypesOnSwatchCard: {
     select: {
@@ -118,6 +119,18 @@ const swatchCardSelect: Prisma.SwatchCardSelect = {
   },
   description: true,
   imageKitUpload: true,
+  paint: {
+    select: {
+      slug: true,
+      uuid: true,
+      name: true,
+      manufacturer: {
+        select: {
+          name: true,
+        }
+      }
+    }
+  }
 };
 
 const paletteSelect: Prisma.PaletteSelect = {
@@ -148,10 +161,12 @@ const paintSelect: Prisma.PaintSelect = {
   uuid: true,
   createdAt: true,
   updatedAt: true,
+  published: true,
   author: {
     select: limitedUserSelect,
   },
   slug: true,
+  line: true,
   manufacturer: {
     select: {
       name: true,
@@ -199,12 +214,17 @@ const paintSelect: Prisma.PaintSelect = {
     select: swatchCardSelect,
   },
   notes: {
-    where: {
-      noteId: {
-        equals: null,
-      },
+    // Comment in if we allow replies
+    // where: {
+    //   noteId: {
+    //     equals: null,
+    //   },
+    // },
+    orderBy: {
+      createdAt: 'desc'
     },
     select: {
+      id: true,
       createdAt: true,
       updatedAt: true,
       author: {
@@ -241,6 +261,7 @@ const paintSelect: Prisma.PaintSelect = {
 const createPaintSelect: Prisma.PaintSelect = {
   slug: true,
   name: true,
+  published: true,
   authorUuid: true,
   paintTypeId: true,
   lightfastRatingId: true,
@@ -271,6 +292,11 @@ export async function getSearchResults(
       name: {
         search: unsluggedQuery,
       },
+      AND: [
+        {
+          published: true,
+        }
+      ]
     },
   });
 
@@ -279,6 +305,11 @@ export async function getSearchResults(
       name: {
         search: unsluggedQuery,
       },
+      AND: [
+        {
+          published: true,
+        }
+      ]
     },
     skip: set,
     take: set + 50,
@@ -328,6 +359,35 @@ export async function getPigment(slug: string) {
 }
 
 export async function getAllPigments(): Promise<{
+  status: number;
+  body: PigmentListingByColor[];
+}> {
+  return {
+    body: await prisma.pigment.findMany({
+      select: {
+        id: true, 
+        updatedAt: true,
+        createdAt: true,
+        color: {
+          select: {
+            label: true,
+            slug: true,
+          }
+        },
+        slug: true,
+        hex: true,
+        name: true,
+        number: true,
+        _count: true,
+      },
+
+    }),
+    status: 200,
+  };
+}
+
+
+export async function getAllPigmentsByColor(): Promise<{
   status: number;
   body: PigmentListingByColor[];
 }> {
@@ -431,22 +491,36 @@ export async function getPaints(query): Promise<{
     };
   }[];
 }> {
-  const set = Number(query.get('set'));
+  const set = query.get('set') ? Number(query.get('set')) : 0;
+  const take = query.get('take') ? Number(query.get('take')) : 50;
+  const showAll = JSON.parse(query.get('all')) ? undefined : true;
 
   return {
     status: 200,
     body: await prisma.paint.findMany({
       skip: set,
-      take: set + 50,
+      take: take + set,
+      where: {
+        published: showAll,
+      },
       orderBy: {
         createdAt: 'desc',
       },
       select: {
+        createdAt: true,
+        updatedAt: true,
+        id: true,
+        published: true,
         uuid: true,
         slug: true,
         hex: true,
         name: true,
         _count: true,
+        line: {
+          select: {
+            name: true,
+          }
+        },
         manufacturer: {
           select: {
             name: true,
@@ -463,7 +537,7 @@ export async function getPaints(query): Promise<{
   };
 }
 
-export async function updatePaint(uuid, data): Promise<{
+export async function updatePaint(uuid: string, data): Promise<{
   body: SwatchCard;
   status: number;
 }> {
@@ -497,6 +571,133 @@ export async function updatePaint(uuid, data): Promise<{
   return {
     body,
     status,
+  };
+}
+
+export async function createNote(data, uuid, user) {
+  let body = null;
+  let status = 404;
+  let noteConnect;
+
+  if(data.parentNoteId){
+    noteConnect = { connect: { id: data.parentNoteId }}
+  }
+
+  body = await prisma.note.create({
+    data: {
+      author: {
+        connect: {
+          uuid: user.uuid,
+        }
+      },
+      paint: {
+        connect: {
+          uuid: uuid,
+        }
+      },
+      content: data.content,
+      note: noteConnect,
+    }
+  })
+
+
+  if (body !== null) {
+    status = 200;
+  }
+
+  return {
+    body,
+    status,
+  };
+}
+
+export async function updateNote(data): Promise<{
+  body: Note;
+  status: number;
+}> {
+  let body = null;
+  let status = 500;
+
+  body = await prisma.note.update({
+    where: {
+      id: data.id
+    },
+    data: {
+      approved: data.approved,
+    }
+  })
+
+  if (body !== null) {
+    status = 200;
+  }
+
+  return {
+    body,
+    status,
+  };
+}
+
+export async function deleteNote(data) {
+  let body = null;
+  let status = 500;
+
+  body = await prisma.note.delete({
+    where: {
+      id: data,
+    },
+  });
+
+  if (body !== null) {
+    status = 200;
+  }
+
+  return {
+    body,
+    status,
+  };
+}
+
+export async function getAllNotes(searchParams) {
+  let whereQuery;
+  const queryArray = [];
+
+  for (const pair of searchParams.entries()) {
+    const key = pair[0];
+    let value = pair[1];
+
+    if (value === 'true' || value === 'false') {
+      value = JSON.parse(pair[1])
+    }
+
+    queryArray.push({ [key]: value });
+  }
+  
+  if(queryArray.length > 0){
+    whereQuery = {
+      AND: queryArray
+    }
+  }
+
+
+  return {
+    body: await prisma.note.findMany({
+      where: whereQuery,
+      select: {
+        id: true,
+        author: {select: limitedUserSelect},
+        paint: {
+          select: {
+            uuid: true,
+            slug: true,
+            name: true,
+          }
+        },
+        approved: true,
+        content: true,
+        createdAt: true,
+      }
+    }),
+    status: 200,
   };
 }
 
@@ -591,23 +792,51 @@ export async function createUser(data: {
 }
 
 export async function updateUser(
-  data: User,
+  data,
   user: User,
 ): Promise<{
   body: User | null;
   status: number;
 }> {
   let body = null;
-  let status = 404;
+  let status = 400;
+  let hashedNewPassword;
+
+  if (data.currentPassword && data.newPassword){
+    if (data.currentPassword.length > 0 && data.newPassword.length > 0) {
+      const { hashedPassword } = await prisma.user.findUnique({
+        where: {
+          uuid: user.uuid,
+        },
+        select: {
+          hashedPassword: true,
+        },
+      });
+
+      const match = await bcrypt.compare(data.currentPassword, hashedPassword);
+
+      if(match){
+        const salt = bcrypt.genSaltSync(10);
+        hashedNewPassword = bcrypt.hashSync(data.newPassword, salt);
+      } else {
+        return {
+          body, status
+        }
+      }
+    }
+  }
 
   const response = await prisma.user.update({
     where: {
-      email: user.email,
+      uuid: user.uuid,
     },
     data: {
       username: data.username,
       firstName: data.firstName,
       lastName: data.lastName,
+      hashedPassword: hashedNewPassword,
+      status: data.status,
+      role: data.role
     },
     select: {
       firstName: true,
@@ -616,6 +845,7 @@ export async function updateUser(
       email: true,
       role: true,
       status: true,
+      uuid: true,
     },
   });
 
@@ -630,11 +860,53 @@ export async function updateUser(
   };
 }
 
+export async function deleteUser(uuid) {
+  let body = null;
+  let status = 500;
+
+  body = await prisma.user.delete({
+    where: {
+      uuid,
+    }
+  });
+
+  if (body !== null) {
+    status = 200;
+  }
+
+  return {
+    body,
+    status,
+  };
+}
+
 export async function getUsers(searchParams) {
   let body = null;
   let status = 500;
 
+  let whereQuery;
+  const queryArray = [];
+
+  for (const pair of searchParams.entries()) {
+    const key = pair[0];
+    let value = pair[1];
+
+    if (value === 'true' || value === 'false') {
+      value = JSON.parse(pair[1])
+    }
+
+    queryArray.push({ [key]: value });
+  }
+  
+  if(queryArray.length > 0){
+    whereQuery = {
+      AND: queryArray
+    }
+  }
+
+
   body = await prisma.user.findMany({
+    where: whereQuery,
     orderBy: {
       createdAt: 'desc',
     },
@@ -669,7 +941,7 @@ export async function getUser(data: {
   status: number;
 }> {
   let body = null;
-  let status = 404;
+  let status = 401.1;
 
   const { hashedPassword } = await prisma.user.findUnique({
     where: {
@@ -727,6 +999,91 @@ export async function getUserProfile(data): Promise<{
     },
   });
 
+  if (response !== null) {
+    body = response;
+    status = 200;
+  }
+
+  return {
+    status,
+    body,
+  };
+}
+
+export async function getUserProfileNotes(username: string): Promise<{
+  status: number;
+  body: Record<string, unknown>;
+}> {
+  let body = {};
+  let status = 500;
+
+  const response = await prisma.user.findUnique({
+    where: {
+      username,
+    },
+    select: {
+      uuid: true,
+      username: true,
+      role: true,
+      notes: {
+        orderBy: {
+          createdAt: 'desc'
+        },
+        select: {
+          id: true,
+          author: { select: limitedUserSelect },
+          approved: true,
+          content: true,
+          createdAt: true,
+          paint: {
+            select: {
+              manufacturer: {
+                select: {
+                  name: true,
+                }
+              },
+              name: true,
+              slug: true,
+              uuid: true,
+            }
+          }
+        }
+      }
+    }
+  })
+  if (response !== null) {
+    body = response;
+    status = 200;
+  }
+
+  return {
+    status,
+    body,
+  };
+}
+
+export async function getUserProfileSwatches(username: string): Promise<{
+  status: number;
+  body: Record<string, unknown>;
+}> {
+  let body = {};
+  let status = 500;
+
+  const response = await prisma.user.findUnique({
+    where: {
+      username,
+    },
+    select: {
+      uuid: true,
+      username: true,
+      swatchCards: {
+        orderBy: {
+          createdAt: 'desc'
+        },
+        select: swatchCardSelect
+      }
+    }
+  })
   if (response !== null) {
     body = response;
     status = 200;
@@ -858,41 +1215,33 @@ export async function getUserProfileSavedPalettes(data): Promise<{
   };
 }
 
-export async function createPaint(data: ReadOnlyFormData, user): Promise<{
+export async function createPaint(data, user): Promise<{
   status: number;
   body: Record<string, unknown>;
 }> {
   let body = {};
   let status = 500;
-  let pigments = [];
-  // const tags = [];
-
-  if (data.getAll('pigments')) {
-    pigments = data.getAll('pigments')?.map((pigmentId) => {
-      return { pigmentId: Number(pigmentId) };
-    });
-  }
-
-  console.log("user", user)
-  console.log("data.get('authorUuid')", data.get('authorUuid'))
 
   const uuid = generateUuid();
+  const slug = generateSlug({ value: data.name, uuid: false });
+  const lineSelect = data.line.id !== null ? { connect: { id: Number(data.line.id)}} : undefined;
 
   body = await prisma.paint.create({
     data: {
+      published: data.published,
+      author: {connect: {uuid: user.uuid}},
       uuid: uuid,
-      slug: data.get('slug'),
-      name: data.get('name'),
-      authorUuid: data.get('authorUuid'),
-      paintTypeId: Number(data.get('paintTypeId')),
-      lightfastRatingId: Number(data.get('lightfastRatingId')),
-      transparencyRatingId: Number(data.get('transparencyRatingId')),
-      stainingRatingId: Number(data.get('stainingRatingId')),
-      granulationRatingId: Number(data.get('granulationRatingId')),
-      manufacturerId: Number(data.get('manufacturerId')),
-      manufacturerDescription: data.get('manufacturerDescription'),
-      communityDescription: data.get('communityDescription'),
-      hex: data.get('hex'),
+      slug: slug,
+      manufacturer: { connect: { name: data.manufacturer.name }},
+      paintType: { connect: { id: 1 }},
+      line: lineSelect,
+      name: data.name,
+      productUrl: data.productUrl ? data.productUrl : undefined,
+      hex: data.hex,
+      lightfastRating: { connect: { id: 1}},
+      transparencyRating: { connect: { id: 1}},
+      stainingRating: { connect: { id: 1}},
+      granulationRating: { connect: { id: 1}},
     },
     select: createPaintSelect,
   });
@@ -1113,6 +1462,7 @@ export async function createPalette(data): Promise<{
       slug: slug,
       title: data.title,
       description: data.description,
+      visible: data.visible,
       paintsInPalette: {
         create: {
           paintUuid: data.paintUuid,
@@ -1137,12 +1487,42 @@ export async function createPalette(data): Promise<{
   };
 }
 
-export async function getAllPalettes(): Promise<{
+export async function getPalettes(): Promise<{
   status: number;
   body: Palette[];
 }> {
   return {
     body: await prisma.palette.findMany({
+      orderBy: {
+        createdAt: 'desc',
+      },
+      select: {
+        id: true,
+        createdAt: true,
+        updatedAt: true,
+        _count: true,
+        uuid: true,
+        visible: true,
+        slug: true,
+        title: true,
+        owner: {
+          select: limitedUserSelect,
+        },
+      },
+    }),
+    status: 200,
+  };
+}
+
+export async function getPublicPalettes(): Promise<{
+  status: number;
+  body: Palette[];
+}> {
+  return {
+    body: await prisma.palette.findMany({
+      where: {
+        visible: true,
+      },
       orderBy: {
         createdAt: 'desc',
       },
@@ -1244,6 +1624,7 @@ export async function updatePalette(uuid: string, data) {
       title: data.title,
       description: data.description,
       slug: generateSlug({ value: data.title }),
+      visible: data.visible,
     };
   } else if (data.savedByUser) {
     dataQuery = {

@@ -101,7 +101,7 @@
         </div>
       </div>
       <div
-        class="border-t-2 border-black px-4 pt-4 pb-5 sm:px-6 sm:flex sm:flex-row-reverse">
+        class="border-t border-gray-400 px-4 pt-4 pb-5 sm:px-6 sm:flex sm:flex-row-reverse">
         <button
           type="button"
           class="pop py-1 px-3 hover:text-orange-600"

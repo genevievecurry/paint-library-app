@@ -17,9 +17,6 @@
 
   let slug: string;
 
-  // Todo: Handle waiting UI
-  // let publishing = false;
-
   async function getModel(model: string) {
     const response = await fetch(`/model/${model}.json`);
 

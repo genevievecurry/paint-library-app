@@ -13,6 +13,7 @@
 
   let title = palette?.title || '';
   let description = palette?.description || '';
+  let visible = palette?.visible;
   let action;
   let endpoint;
 
@@ -32,6 +33,7 @@
     title: title,
     description: description,
     paintUuid: paintUuid,
+    visible,
   };
 
   async function handlePost() {
@@ -54,9 +56,6 @@
       const promise = await handlePost();
 
       if (promise.uuid) {
-        successNotifier(`Hoorah! Palette was ${action}d successfully.`);
-
-        goto(`/palette/${promise?.uuid}/${promise?.slug}`);
         success();
       }
     };
@@ -75,9 +74,6 @@
   <div>
     <div>
       <label for="title" class="block">Title</label>
-      <small class="leading-5 block mt-1 text-sm text-gray-500 mb-3">
-        Name your new palette.
-      </small>
       <input
         class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500"
         id="title"
@@ -89,15 +85,33 @@
     </div>
     <div class="mt-6">
       <label for="description" class="block">Description</label>
-      <small class="leading-5 block mt-1 text-sm text-gray-500 mb-3">
-        Describe it?
-      </small>
       <textarea
         class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500"
         id="description"
         name="description"
         placeholder="Description"
         bind:value={description} />
+    </div>
+
+    <div class="mt-6">
+      <label for="description" class="block">Public</label>
+
+      <div
+        class="relative rounded-full w-12 h-6 transition duration-200 ease-linear {visible
+          ? 'bg-green-400'
+          : 'bg-gray-400'}">
+        <label
+          for="toggle"
+          class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer {visible
+            ? 'translate-x-full border-green-400'
+            : 'translate-x-0 border-gray-400'}" />
+        <input
+          type="checkbox"
+          id="toggle"
+          name="toggle"
+          class="appearance-none w-full h-full active:outline-none focus:outline-none"
+          on:click={() => (visible = !visible)} />
+      </div>
     </div>
   </div>
 

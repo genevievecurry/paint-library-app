@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
-  export function load({ session }) {
+  export function load({ session, url }) {
     const { user } = session;
+    const { pathname } = url;
     if (!user) {
       return {
         status: 302,
@@ -8,62 +9,120 @@
       };
     }
     return {
-      props: { user },
+      props: { user, pathname },
     };
   }
 </script>
 
 <script lang="ts">
   import { session } from '$app/stores';
-  import { connect } from '$lib/utility';
+  import { connect, validatePassword, validateUsername } from '$lib/utility';
   import Header from '$lib/components/Header.svelte';
-  import { successNotifier } from '$lib/notifier';
+  import { successNotifier, warningNotifier } from '$lib/notifier';
+  import {
+    circleCheckmarkIcon,
+    circleErrorIcon,
+    emptyCircleIcon,
+    hideIcon,
+    showIcon,
+  } from '$lib/icons';
+  import PasswordQuality from '$lib/components/PasswordQuality.svelte';
+  import UsernameQuality from '$lib/components/UsernameQuality.svelte';
 
   export let user: User;
+  export let pathname: string;
 
-  $: error = false;
+  let username = user.username;
+  let firstName = user.firstName;
+  let lastName = user.lastName;
+  let currentPassword = '';
+  let newPassword = '';
+
+  let showCurrentPassword = false;
+  let showNewPassword = false;
+  let allowSubmission = true;
+
+  $: formData = {
+    username,
+    firstName,
+    lastName,
+    currentPassword,
+    newPassword: '',
+  };
+
+  let passwordValidation = validatePassword(newPassword);
+  let usernameValidation = validateUsername(username);
+
+  function toggleAllowSubmission() {
+    if (newPassword.length > 0 && !passwordValidation.passes) {
+      allowSubmission = false;
+    }
+
+    if (newPassword.length > 0 && passwordValidation.passes) {
+      allowSubmission = true;
+      formData.newPassword = newPassword;
+    }
+
+    if (newPassword.length === 0) {
+      allowSubmission = true;
+    }
+  }
 
   async function update() {
     const response = await connect({
       method: 'post',
       endpoint: '/auth/update',
-      data: user,
+      data: formData,
     });
 
-    if (response.status == 200) {
-      error = false;
+    if (response.status === 200) {
       return response.json();
     } else {
-      error = true;
+      warningNotifier(`There was an issue: ${response.statusText}`, {
+        persist: true,
+      });
     }
   }
 
   async function submitHandler() {
-    $session.user = await update();
-
-    if (error) {
-    } else {
-      successNotifier(`Hoorah! @${user.username} was updated successfully.`);
+    if (allowSubmission) {
+      let userResponse = await update();
+      if (userResponse?.uuid) {
+        $session.user = userResponse;
+        successNotifier(
+          `Hoorah! @${userResponse?.username} was updated successfully.`,
+          { persist: true },
+        );
+      }
     }
   }
 </script>
 
 <div class="container mx-auto px-4 sm:px-6">
-  <Header title="Account Settings" />
+  <Header title="Account Settings" {pathname} />
 
   <form on:submit|preventDefault={submitHandler}>
     <div class="mt-10 grid lg:grid-cols-2 gap-12 xl:gap-32">
       <div>
+        <h2 class="text-xl font-bold">Member Details</h2>
         <div class="mt-6">
-          <label for="username" class="block">Display Name</label>
+          <label for="username" class="block">Username</label>
           <input
             id="username"
             name="username"
             type="text"
             required
-            bind:value={user.username}
-            class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500" />
+            bind:value={username}
+            on:keyup={() => (usernameValidation = validateUsername(username))}
+            class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
         </div>
+      </div>
+      <div>
+        <UsernameQuality validation={usernameValidation} {username} />
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-12 xl:gap-32">
+      <div>
         <div class="mt-6">
           <label for="firstName" class="block">First Name</label>
           <input
@@ -71,26 +130,107 @@
             name="firstName"
             type="text"
             required
-            bind:value={user.firstName}
-            class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500" />
+            bind:value={firstName}
+            class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
         </div>
         <div class="mt-6">
-          <label for="lastName" class="block">Last Name</label>
+          <label for="lastName" class="block">
+            Last Name <span class="text-gray-400 font-light">(Optional)</span>
+          </label>
           <input
             id="lastName"
             name="lastName"
             type="text"
-            bind:value={user.lastName}
-            class="mt-1 block w-full py-2 px-3 border border-black focus:outline-none focus:ring-lime-500" />
-        </div>
-        <div class="mt-6 py-3 text-right border-t border-black">
-          <button
-            type="submit"
-            class="pop px-6 py-2 text-2xl hover:text-pink-500">
-            Update Settings
-          </button>
+            bind:value={lastName}
+            class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
         </div>
       </div>
+    </div>
+    <div class="mt-10 grid lg:grid-cols-2 gap-12 xl:gap-32">
+      <div>
+        <h2 class="text-xl font-bold">Update Password</h2>
+        <div class="mt-6">
+          <label for="currentPassword" class="block">Current Password</label>
+          <div class="flex">
+            {#if showCurrentPassword}
+              <input
+                id="currentPassword"
+                name="currentPassword"
+                type="text"
+                bind:value={currentPassword}
+                class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
+            {:else}
+              <input
+                id="currentPassword"
+                name="currentPassword"
+                type="password"
+                bind:value={currentPassword}
+                class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
+            {/if}
+            <button
+              type="button"
+              title="Toggle password visibility"
+              class="pop text-xs ml-2 px-2 {showCurrentPassword
+                ? 'active'
+                : ''}"
+              id="menu-button"
+              on:click={() => (showCurrentPassword = !showCurrentPassword)}>
+              {@html showCurrentPassword
+                ? hideIcon('h-5 w-5')
+                : showIcon('h-5 w-5')}
+            </button>
+          </div>
+        </div>
+        <div class="mt-6">
+          <label for="currentPassword" class="block">New Password</label>
+          <div class="flex">
+            {#if showNewPassword}
+              <input
+                id="currentPassword"
+                name="currentPassword"
+                type="text"
+                on:keyup={toggleAllowSubmission}
+                on:keyup={() =>
+                  (passwordValidation = validatePassword(newPassword))}
+                bind:value={newPassword}
+                class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
+            {:else}
+              <input
+                id="currentPassword"
+                name="currentPassword"
+                type="password"
+                on:keyup={toggleAllowSubmission}
+                on:keyup={() =>
+                  (passwordValidation = validatePassword(newPassword))}
+                bind:value={newPassword}
+                class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
+            {/if}
+            <button
+              type="button"
+              title="Toggle password visibility"
+              class="pop text-xs ml-2 px-2 {showNewPassword ? 'active' : ''}"
+              id="menu-button"
+              on:click={() => (showNewPassword = !showNewPassword)}>
+              {@html showNewPassword
+                ? hideIcon('h-5 w-5')
+                : showIcon('h-5 w-5')}
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="my-6">
+        <PasswordQuality
+          validation={passwordValidation}
+          password={newPassword} />
+      </div>
+    </div>
+    <div class="mt-6 py-3 text-right border-t border-black">
+      <button
+        type="submit"
+        class="pop px-6 py-2 text-2xl"
+        disabled={!allowSubmission}>
+        Update Settings
+      </button>
     </div>
   </form>
 </div>

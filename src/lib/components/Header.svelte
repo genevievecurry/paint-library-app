@@ -1,17 +1,27 @@
 <script lang="ts">
-  import { afterUpdate } from 'svelte';
   import { adminIcon } from '$lib/icons';
 
   export let title;
   export let subtitle = null;
   export let description = null;
   export let owner = null;
+  export let pathname = '';
 
-  afterUpdate(() => {
-    title = title;
-    subtitle = subtitle;
-    description = description;
-    owner = owner;
+  const pathElements = pathname.slice(1).split('/');
+
+  const breadcrumbs = pathElements.map((el, index) => {
+    let url = '';
+
+    for (let i = 0; i < index; i++) {
+      url += `/${pathElements[i]}`;
+    }
+
+    url += `/${el}`;
+
+    return {
+      url,
+      title: el,
+    };
   });
 </script>
 
@@ -20,7 +30,17 @@
     <div class="mb-4 font-light">
       <a href="/" class="decorate-link inline-block pr-2">Paint Library</a>
       <span class="text-gray-400">/</span>
-      <span class="inline-block ml-2">{title}</span>
+      {#each breadcrumbs as breadcrumb, index}
+        {#if index < breadcrumbs.length - 1}
+          <a
+            href={breadcrumb.url}
+            class="decorate-link inline-block mx-2 capitalize"
+            >{breadcrumb.title}</a>
+          <span class="text-gray-400">/</span>
+        {:else}
+          <span class="inline-block mx-2">{title}</span>
+        {/if}
+      {/each}
     </div>
     <h1 class="font-extrabold text-5xl">
       {title}

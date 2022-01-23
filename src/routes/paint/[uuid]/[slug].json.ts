@@ -17,9 +17,6 @@ export async function post({ body: data, locals, params }) {
     };
   }
   const { uuid } = params;
-
-  console.log("postData", data)
-
   const response = await api.updatePaint(uuid, data);
 
   return response;

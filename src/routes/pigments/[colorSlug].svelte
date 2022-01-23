@@ -1,13 +1,14 @@
 <script context="module">
-  export async function load({ params, fetch }) {
-    const url = `/pigments/${params.colorSlug}.json`;
-    const response = await fetch(url);
+  export async function load({ params, fetch, url }) {
+    const response = await fetch(`/pigments/${params.colorSlug}.json`);
+    const { pathname } = url;
 
     if (response.ok) {
       return {
         props: {
           results: await response.json(),
           slug: params.colorSlug,
+          pathname,
         },
       };
     }
@@ -20,26 +21,16 @@
 </script>
 
 <script lang="ts">
+  import Header from '$lib/components/Header.svelte';
+
   export let results: { pigments: ListPigment[]; currentColor: string };
   export let slug: string;
+  export let pathname: string;
 
   const { pigments, currentColor } = results;
 </script>
 
-<header class="my-7 md:flex justify-between">
-  <div class="mb-4">
-    <div class="mb-4 font-light">
-      <a href="/" class="decorate-link inline-block pr-2">Paint Library</a>
-      <span class="text-gray-400">/</span>
-      <a href="/pigments" class="decorate-link inline-block px-2">Pigments</a>
-      <span class="text-gray-400">/</span>
-      <span class="inline-block ml-2">{currentColor}</span>
-    </div>
-    <h1 class="font-extrabold text-5xl">
-      {currentColor} Pigments
-    </h1>
-  </div>
-</header>
+<Header title="{currentColor} Pigments" {pathname} />
 
 <section
   class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
