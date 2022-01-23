@@ -34,13 +34,54 @@ export const timeAgo = (time: string | number | Date): string => {
   const hoursBetween = Math.floor(secondsBetween / (60 * 60));
   const daysBetween = Math.floor(secondsBetween / (60 * 60 * 24));
 
-  if (daysBetween === 0 && hoursBetween < 12 && hoursBetween > 0) {
+  if (daysBetween === 0 && hoursBetween < 23 && hoursBetween > 0) {
     return rtf.format(-hoursBetween, 'hour');
   } else if (daysBetween === 0 && hoursBetween === 0) {
     return rtf.format(-minutesBetween, 'minute');
   }
   return rtf.format(-daysBetween, 'day');
 };
+
+export function validateUsername(username: string): {
+  checkCharacters: boolean;
+  checkLength: boolean;
+  passes: boolean;
+}{
+  // allow alphanumeric + underscores + dashes
+  const minimumRequirements = /^[a-zA-Z0-9]([a-zA-Z0-9_-])+$/
+  const checkLength = username.length > 1 && username.length < 51;
+  return {
+    checkCharacters: minimumRequirements.test(username),
+    checkLength: checkLength,
+    passes: minimumRequirements.test(username) && checkLength
+  }
+}
+
+export function validatePassword(password: string): {
+  digits: boolean;
+  special: boolean;
+  lowercase: boolean;
+  uppercase: boolean;
+  length: boolean;
+  passes: boolean;
+} {
+  const minimumRequirements =
+    /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,24})/;
+  const checkDigits = /\d/;
+  const checkSpecial = /[^A-z\d][\\\^]?/;
+  const checkLowercase = /[a-z]/;
+  const checkUppercase = /[A-Z]/;
+  const checkLength = password.length > 7 && password.length < 25;
+
+  return {
+    digits: checkDigits.test(password),
+    special: checkSpecial.test(password),
+    lowercase: checkLowercase.test(password),
+    uppercase: checkUppercase.test(password),
+    length: checkLength,
+    passes: minimumRequirements.test(password) && checkLength,
+  };
+}
 
 export async function connect({
   method = 'post',

@@ -1,7 +1,6 @@
 <script context="module" lang="ts">
   export async function load({ params, fetch }) {
-    const url = `/paint/${params.uuid}/${params.slug}.json`;
-    const response = await fetch(url);
+    const response = await fetch(`/paint/${params.uuid}/${params.slug}.json`);
 
     if (response.ok) {
       return {
@@ -22,7 +21,7 @@
 
 <script lang="ts">
   import { session } from '$app/stores';
-  import { afterUpdate, onMount, setContext } from 'svelte';
+  import { afterUpdate, beforeUpdate, onMount, setContext, tick } from 'svelte';
   import { generateUrl } from '$lib/generate';
   import { connect } from '$lib/utility';
   import { clickOutside } from '$lib/actions';
@@ -32,17 +31,21 @@
     circleCheckmarkIcon,
     closeIcon,
     editIcon,
+    menuIcon,
   } from '$lib/icons';
+  import { successNotifier, warningNotifier } from '$lib/notifier';
   import Header from '$lib/components/Header.svelte';
   import Modal from '$lib/components/Modal.svelte';
   import PaletteForm from '$lib/components/PaletteForm.svelte';
   import SwatchUploadForm from '$lib/components/SwatchUploadForm.svelte';
   import PigmentUpdateForm from '$lib/components/PigmentUpdateForm.svelte';
+  import RatingsUpdateForm from '$lib/components/RatingsUpdateForm.svelte';
   import Card from './_Card.svelte';
   import Pigments from './_Pigments.svelte';
   import Notes from './_Notes.svelte';
-  import { successNotifier, warningNotifier } from '$lib/notifier';
-  import RatingsUpdateForm from '$lib/components/RatingsUpdateForm.svelte';
+  import PaintForm from '$lib/components/PaintForm.svelte';
+  import Ratings from './_Ratings.svelte';
+  import Spinner from '$lib/components/Spinner.svelte';
 
   export let slug: string;
   export let uuid: string;
@@ -52,12 +55,16 @@
   let editable = false;
   let editableField = '';
 
-  // Editable Fields baseline
-
   let paint = paintData;
-  $: pigmentsOnPaints = paint.pigmentsOnPaints || [];
-
-  $: editableSwatchCard = {};
+  const headerSubtitle = () => {
+    if (paint.line) {
+      return `${paint.line.name} by ${paint.manufacturer.name}`;
+    } else {
+      return paint.manufacturer.name;
+    }
+  };
+  let pigmentsOnPaints = paint.pigmentsOnPaints || [];
+  let editableSwatchCard = {};
 
   // Todo: Update these to paintUuid & paintSlug & updated child components where
   // this data was passed in as prompts to use getContext()
@@ -73,9 +80,11 @@
   let showUploadSwatchModal = false;
   let showPigmentUpdateModal = false;
   let showRatingsUpdateModal = false;
+  let showPaintUpdateModal = false;
 
   // Menu
   let addToPaletteMenuOpen = false;
+  let editMenuOpen = false;
 
   onMount(() => {
     editable = $session.user?.role === 'ADMIN';
@@ -88,9 +97,13 @@
   });
 
   let formData = {
+    published: paint.published,
     manufacturerDescription: paint.manufacturerDescription,
     communityDescription: paint.communityDescription,
     name: paint.name,
+    productUrl: paint.productUrl,
+    hex: paint.hex,
+    lineId: paint.line ? paint.line.id : null,
     lightfastRatingId: paint.lightfastRating.id,
     transparencyRatingId: paint.transparencyRating.id,
     stainingRatingId: paint.stainingRating.id,
@@ -109,30 +122,6 @@
     }
   };
 
-  function setEditableSwatchCard(event) {
-    editableSwatchCard = event.detail;
-    showUploadSwatchModal = true;
-  }
-
-  function toggleEditableField(field) {
-    if (editableField === field) {
-      // On click cancel, reset these vars
-      editableField = '';
-      formData.communityDescription = paint.communityDescription;
-      formData.manufacturerDescription = paint.manufacturerDescription;
-    } else {
-      // Set the current field as editable
-      editableField = field;
-    }
-  }
-
-  function checkPaletteStatus(palette) {
-    const matchUuid = (paintInPalette) =>
-      paintInPalette.paint.uuid === paint.uuid;
-
-    return palette.paintsInPalette.some(matchUuid);
-  }
-
   async function refreshIt() {
     const response = await fetch(`/paint/${paint.uuid}/${paint.slug}.json`);
 
@@ -143,24 +132,22 @@
     }
   }
 
-  async function refresh() {
+  async function refresh({ notify, message }) {
     let updatedPaint = await refreshIt();
-    successNotifier('Paint updated successfully.');
     paint = updatedPaint;
     updatedPaint = null;
+
+    if (notify) {
+      if (!message) message = 'Paint updated!';
+      successNotifier(message);
+    }
   }
 
-  function handleEditUpdate() {
-    // Close Modals
-    showUploadSwatchModal = false;
-    showPigmentUpdateModal = false;
-    showRatingsUpdateModal = false;
+  function checkPaletteStatus(palette) {
+    const matchUuid = (paintInPalette) =>
+      paintInPalette.paint.uuid === paint.uuid;
 
-    // Close Editable Field
-    editableField = '';
-
-    // Refresh data
-    refresh();
+    return palette.paintsInPalette.some(matchUuid);
   }
 
   async function addToPalette(paletteUuid: string) {
@@ -209,10 +196,49 @@
     userPalettesPromise = getUserPalettes();
   }
 
-  function handleRatingUpdate(ratingFormData) {
-    const ratingData = ratingFormData.detail;
-    formData = Object.assign(formData, ratingData);
+  function setEditableSwatchCard(event) {
+    editableSwatchCard = event.detail;
+    showUploadSwatchModal = true;
+  }
+
+  function toggleEditableField(field) {
+    if (editableField === field) {
+      // On click cancel, reset these vars
+      editableField = '';
+      formData.communityDescription = paint.communityDescription;
+      formData.manufacturerDescription = paint.manufacturerDescription;
+    } else {
+      // Set the current field as editable
+      editableField = field;
+    }
+  }
+
+  function handleEditUpdate(event = null) {
+    // Close Modals
+    showUploadSwatchModal = false;
+    showPigmentUpdateModal = false;
+    showRatingsUpdateModal = false;
+    showPaintUpdateModal = false;
+
+    // Close Editable Field
+    editableField = '';
+
+    // Refresh data
+    refresh({ notify: true, message: event ? event.detail : null });
+  }
+
+  function handleFormUpdate(incomingFormData) {
+    const incomingData = incomingFormData.detail;
+    formData = Object.assign(formData, incomingData);
     handlePost();
+  }
+
+  async function updateEditableField() {
+    const response = await handlePost();
+
+    if (response?.uuid) {
+      handleEditUpdate();
+    }
   }
 
   async function handlePost() {
@@ -230,15 +256,26 @@
       warningNotifier(`There was a problem saving: ${response.statusText}.`);
     }
   }
-
-  async function updateEditableField() {
-    const response = await handlePost();
-
-    if (response?.uuid) {
-      handleEditUpdate();
-    }
-  }
 </script>
+
+{#if showPaintUpdateModal && editable}
+  <Modal
+    title="Update Paint Details"
+    on:close={() => (showPaintUpdateModal = false)}>
+    <div class="col-span-12">
+      <PaintForm
+        on:paintFormData={handleFormUpdate}
+        on:success={() => refresh({ notify: false })}
+        on:success={handleEditUpdate}
+        published={paint.published}
+        name={paint.name}
+        manufacturer={paint.manufacturer}
+        hex={paint.hex}
+        productUrl={paint.productUrl}
+        line={paint.line} />
+    </div>
+  </Modal>
+{/if}
 
 {#if showRatingsUpdateModal && editable}
   <Modal
@@ -246,9 +283,9 @@
     on:close={() => (showRatingsUpdateModal = false)}>
     <div class="col-span-12">
       <RatingsUpdateForm
-        on:ratingFormData={handleRatingUpdate}
-        on:success={refresh}
-        on:success={handleEditUpdate}
+        on:ratingFormData={handleFormUpdate}
+        on:update={() => refresh({ notify: false })}
+        on:update={handleEditUpdate}
         lightfastRating={paint.lightfastRating}
         transparencyRating={paint.transparencyRating}
         stainingRating={paint.stainingRating}
@@ -298,7 +335,7 @@
   {#if paint}
     <Header
       title={paint.name}
-      subtitle={paint.manufacturer.name}
+      subtitle={headerSubtitle()}
       description={null}
       owner={null}>
       {#if $session?.user}
@@ -306,7 +343,7 @@
           <div class="mr-2 inline">
             <button
               type="button"
-              class="pop inline-flex justify-center px-4 py-2 text-sm"
+              class="pop inline-flex justify-center px-3 py-1 text-sm"
               on:click={() => (showUploadSwatchModal = true)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -321,14 +358,14 @@
               Contribute Swatch</button>
           </div>
           <div
-            class="inline"
+            class="mr-2 inline"
             use:clickOutside={{
               enabled: addToPaletteMenuOpen,
               cb: () => (addToPaletteMenuOpen = false),
             }}>
             <button
               type="button"
-              class="pop inline-flex justify-center px-4 py-2 text-sm"
+              class="pop inline-flex justify-center px-3 py-1 text-sm"
               id="menu-button"
               aria-expanded={addToPaletteMenuOpen}
               aria-haspopup="true"
@@ -349,7 +386,7 @@
             <div
               class="transition ease-out duration-100 {addToPaletteMenuOpen
                 ? 'opacity-100 scale-100'
-                : 'opacity-0 scale-95'} z-10 border border-black origin-top-right absolute right-0 mt-2 w-72 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                : 'opacity-0 scale-95'} z-10 border-2 border-black origin-top-right absolute right-0 mt-2 w-72 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="menu-button"
@@ -402,10 +439,75 @@
                   on:click={() => (showPaletteModal = true)}
                   role="menuitem"
                   tabindex="-1"
-                  class="border-t border-gray-300 py-2 px-2 cursor-pointer col-span-2 text-center mt-2">
+                  class="border-t border-gray-300 py-2 px-2 cursor-pointer col-span-2 text-center">
                   <span class="">Create New Palette</span>
                 </div>
               </div>
+            </div>
+          {/if}
+
+          {#if editable}
+            <div class="relative inline-block text-left">
+              <div
+                use:clickOutside={{
+                  enabled: editMenuOpen,
+                  cb: () => (editMenuOpen = false),
+                }}>
+                <button
+                  type="button"
+                  class="pop inline-flex justify-center px-3 py-1 text-sm {editMenuOpen
+                    ? 'active'
+                    : ''}"
+                  id="menu-button"
+                  aria-expanded={editMenuOpen}
+                  aria-haspopup="true"
+                  on:click={() => (editMenuOpen = true)}>
+                  {@html menuIcon('h-5 w-5 mr-1')}
+                  <span>Settings</span>
+                </button>
+              </div>
+
+              {#if editMenuOpen}
+                <div
+                  class="transition ease-out duration-100 {editMenuOpen
+                    ? 'opacity-100 scale-100'
+                    : 'opacity-0 scale-95'} z-10 border-2 border-black origin-top-right absolute right-0 mt-2 w-48 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                  tabindex="-1">
+                  <div
+                    on:click={() => (showPaintUpdateModal = true)}
+                    class="block px-4 py-2 text-sm cursor-pointer"
+                    role="menuitem"
+                    tabindex="-1">
+                    <span class="decorate-link">Update Paint Details</span>
+                  </div>
+                  <div
+                    on:click={() => (showRatingsUpdateModal = true)}
+                    class="block px-4 py-2 text-sm cursor-pointer"
+                    role="menuitem"
+                    tabindex="-1">
+                    <span class="decorate-link">Manage Ratings</span>
+                  </div>
+                  <div
+                    on:click={() => (showPigmentUpdateModal = true)}
+                    class="block px-4 py-2 text-sm cursor-pointer"
+                    role="menuitem"
+                    tabindex="-1">
+                    <span class="decorate-link">Manage Pigments</span>
+                  </div>
+                  <div
+                    class="block px-4 pb-2 pt-2 text-sm border-t border-gray-300">
+                    <span
+                      class="decorate-link cursor-pointer"
+                      role="menuitem"
+                      tabindex="-1"
+                      on:click={() => (showPaintUpdateModal = true)}
+                      >Delete Palette</span>
+                  </div>
+                </div>
+              {/if}
             </div>
           {/if}
         </div>
@@ -434,33 +536,37 @@
         style="border-color:{paint.hex}"
         class="p-3 grid place-items-center border-2">
         <div class="text-center m-3">
-          <div class="mb-4">
-            <p class="font-bold text-2xl mb-4">No swatches added yet.</p>
-
-            <p class="text-sm mb-1">
-              Have you swatched <span class="font-bold">{paint.name}</span> by {paint
-                .manufacturer.name}?
-            </p>
-            <p class="text-sm">If so, please share!</p>
-          </div>
-
           <div>
-            <button
-              type="button"
-              class="pop inline-flex justify-center px-4 py-2 text-lg"
-              on:click={() => (showUploadSwatchModal = true)}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 mr-1"
-                viewBox="0 0 20 20"
-                fill="currentColor">
-                <path
-                  fill-rule="evenodd"
-                  d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
-                  clip-rule="evenodd" />
-              </svg>
-              Contribute Swatch</button>
+            <p class="font-bold text-2xl">No swatches added yet.</p>
+
+            {#if $session.user}
+              <p class="text-sm mb-1 mt-4">
+                Have you swatched <span class="font-bold">{paint.name}</span> by {paint
+                  .manufacturer.name}?
+              </p>
+              <p class="text-sm">If so, please share!</p>
+            {/if}
           </div>
+
+          {#if $session.user}
+            <div class="mt-4">
+              <button
+                type="button"
+                class="pop inline-flex justify-center px-4 py-2 text-lg"
+                on:click={() => (showUploadSwatchModal = true)}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8 mr-1"
+                  viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
+                    clip-rule="evenodd" />
+                </svg>
+                Contribute Swatch</button>
+            </div>
+          {/if}
         </div>
       </div>
     {/if}
@@ -482,85 +588,7 @@
               </button>
             {/if}
           </div>
-          <table
-            class="table-auto border-collapse border border-gray-400 mt-4 w-full">
-            <tr>
-              <th class="text-left border border-gray-400 px-4 py-3"
-                >Lightfastness</th>
-              <td class="border border-gray-400 px-4 py-3">
-                {#if paint.lightfastRating.code !== 'X'}
-                  <span class="border-2 border-black font-bold px-1 mr-1"
-                    >{paint.lightfastRating.code}</span>
-                {:else}
-                  <span
-                    class="border-2 border-gray-400 font-bold px-1 mr-1 text-gray-500"
-                    >?</span>
-                {/if}
-              </td>
-              <td class="border border-gray-400 px-4 py-3 w-full">
-                {paint.lightfastRating.label}
-                <p class="text-gray-500 font-light text-sm"
-                  >{paint.lightfastRating.description}</p>
-              </td>
-            </tr>
-            <tr>
-              <th class="text-left border border-gray-400 px-4 py-3"
-                >Transparency</th>
-              <td class="border border-gray-400 px-4 py-3">
-                {#if paint.transparencyRating.code !== 'X'}
-                  <span class="border-2 border-black font-bold px-1"
-                    >{paint.transparencyRating.code}</span>
-                {:else}
-                  <span
-                    class="border-2 border-gray-400 font-bold px-1 mr-1 text-gray-500"
-                    >?</span>
-                {/if}
-              </td>
-              <td class="border border-gray-400 px-4 py-3">
-                {paint.transparencyRating.label}
-                <p class="text-gray-500 font-light text-sm"
-                  >{paint.transparencyRating.description}</p>
-              </td>
-            </tr>
-            <tr>
-              <th class="text-left border border-gray-400 px-4 py-3"
-                >Staining</th>
-              <td class="border border-gray-400 px-4 py-3">
-                {#if paint.stainingRating.code !== 'X'}
-                  <span class="border-2 border-black font-bold px-1"
-                    >{paint.stainingRating.code}</span>
-                {:else}
-                  <span
-                    class="border-2 border-gray-400 font-bold px-1 mr-1 text-gray-500"
-                    >?</span>
-                {/if}
-              </td>
-              <td class="border border-gray-400 px-4 py-3">
-                {paint.stainingRating.label}
-                <p class="text-gray-500 font-light text-sm"
-                  >{paint.stainingRating.description}</p>
-              </td>
-            </tr>
-            <tr>
-              <th class="text-left border border-gray-400 px-4 py-3"
-                >Granulation</th>
-              <td class="border border-gray-400 px-4 py-3">
-                {#if paint.granulationRating.code !== 'X'}
-                  <span class="border-2 border-black font-bold px-1"
-                    >{paint.granulationRating.code}</span>
-                {:else}
-                  <span
-                    class="border-2 border-gray-400 font-bold px-1 mr-1 text-gray-500"
-                    >?</span>
-                {/if}
-              </td>
-              <td class="border border-gray-400 px-4 py-3">
-                {paint.granulationRating.label}
-                <p class="text-gray-500 font-light text-sm"
-                  >{paint.granulationRating.description}</p>
-              </td>
-            </tr>
-          </table>
+          <Ratings {paint} />
         </section>
 
         {#if paint.manufacturerDescription || editable}
@@ -684,6 +712,12 @@
             {/if}
           </section>
         {/if}
+
+        <Notes
+          notes={paint.notes}
+          paintUuid={paint.uuid}
+          on:update={() => refresh({ notify: false })}
+          on:update={handleEditUpdate} />
       </div>
       <div class="flex-none md:w-96 md:pl-10">
         <section class="mt-8">
@@ -705,8 +739,7 @@
         </section>
       </div>
     </div>
-    <Notes notes={paint.notes} />
   {:else}
-    LOADING!
+    <Spinner />
   {/if}
 </div>

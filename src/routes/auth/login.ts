@@ -7,7 +7,8 @@ export async function post({ body }) {
 
   return {
     headers: {
-      'set-cookie': `jwt=${token}; Path=/; HttpOnly`,
+      credentials: 'same-origin',
+      'set-cookie': `jwt=${token}; path=/; HttpOnly; SameSite=Lax; Secure`,
     },
     body: response.body,
     status: response.status,

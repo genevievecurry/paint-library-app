@@ -39,7 +39,7 @@
   }
 
   function submit() {
-    dispatch('success');
+    dispatch('update', 'Paint ratings have been saved.');
     dispatch('ratingFormData', formData);
   }
 

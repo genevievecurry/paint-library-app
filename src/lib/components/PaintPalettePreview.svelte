@@ -9,7 +9,7 @@
 
   const dispatch = createEventDispatcher();
 
-  let { paint, order, id } = paintOnPalette;
+  let { paint, id } = paintOnPalette;
 
   $: swatchImage = paint.swatchCard[0].imageKitUpload?.thumbnailUrl || '';
 

@@ -36,25 +36,23 @@
     editIcon,
     removeIcon,
     menuIcon,
-    hiddenIcon,
-    visibleIcon,
+    hideIcon,
+    showIcon,
   } from '$lib/icons';
 
   export let uuid: string;
   export let paletteData: PaletteComponent;
 
-  $: palette = paletteData;
-  $: title = palette.title || '';
-  $: owner = palette.owner || { uuid: '' };
-  $: description = palette.description || '';
-  $: paintsInPalette = palette.paintsInPalette || [];
-  $: saved = false;
-  $: showText = true;
-  $: listView = false;
+  let palette = paletteData;
+  let owner = palette.owner || { uuid: '' };
+  let paintsInPalette = palette.paintsInPalette || [];
+  let saved = false;
+  let showText = true;
+  let listView = false;
 
   let editable = false;
   let editMenuOpen = false;
-  $: editPaletteMode = false;
+  let editPaletteMode = false;
   let showEditPaletteModal = false;
   let showDeletePaletteDialog = false;
   let paletteReorderData = [];
@@ -126,19 +124,39 @@
     });
 
     if (response.ok) {
-      successNotifier(`Successfully deleted ${title}`);
+      successNotifier(`Successfully deleted ${palette.title}`);
       goto(`/@${$session.user.username}`);
     } else {
       warningNotifier(
-        `Uh oh, there was a problem deleting ${title}. ${response.statusText}.`,
+        `Uh oh, there was a problem deleting ${palette.title}. ${response.statusText}.`,
       );
     }
   }
 
+  async function refreshIt() {
+    const response = await fetch(`/palette/${palette.uuid}.json`);
+
+    if (response.ok) {
+      return response.json();
+    } else {
+      warningNotifier(`There was an error fetching: ${response.statusText}`);
+    }
+  }
+
+  async function refresh({ notify }) {
+    let updatedPalette = await refreshIt();
+    palette = updatedPalette;
+    updatedPalette = null;
+
+    if (notify) {
+      successNotifier('Paint updated successfully.');
+    }
+  }
+
   function handleEditedPalette() {
-    palette = palette;
-    paintsInPalette = palette.paintsInPalette;
     showEditPaletteModal = false;
+    // Refresh data
+    refresh({ notify: true });
   }
 
   async function savePalette() {
@@ -197,7 +215,10 @@
 {/if}
 
 <div class="container mx-auto px-4 sm:px-6">
-  <Header {title} {owner} {description}>
+  <Header
+    title={palette.title}
+    owner={palette.owner}
+    description={palette.description}>
     {#if $session.user}
       <button
         on:click={toggleSavedPalette}
@@ -297,8 +318,8 @@
               ? 'text-pink-600 active'
               : 'text-black'}">
             {@html showText
-              ? visibleIcon('h-5 w-5 mr-1')
-              : hiddenIcon('h-5 w-5 mr-1')}
+              ? showIcon('h-5 w-5 mr-1')
+              : hideIcon('h-5 w-5 mr-1')}
             <span>Details</span>
           </button>
         {/if}
@@ -364,10 +385,12 @@
           </thead>
           <tbody>
             {#each paintsInPalette as paintInPalette}
-              <PaintPalettePreview
-                paintOnPalette={paintInPalette}
-                {showText}
-                {listView} />
+              {#if paintInPalette.paint.published}
+                <PaintPalettePreview
+                  paintOnPalette={paintInPalette}
+                  {showText}
+                  {listView} />
+              {/if}
             {/each}
           </tbody>
         </table>

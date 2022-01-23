@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
-  export async function load({ fetch }) {
+  export async function load({ fetch, url }) {
     const response = await fetch('/pigments.json');
+    const { pathname } = url;
     let sections = {};
     const colors: PigmentListingByColor[] = await response.json();
 
@@ -12,6 +13,7 @@
         props: {
           colors,
           sections,
+          pathname,
         },
       };
     }
@@ -30,6 +32,7 @@
 
   export let sections: [];
   export let colors: PigmentListingByColor[];
+  export let pathname;
 
   const sectionKeys = Object.keys(sections);
 
@@ -72,7 +75,7 @@
 </script>
 
 <div class="container mx-auto px-4 sm:px-6">
-  <Header title="Pigments" />
+  <Header title="Pigments" {pathname} />
 
   <div class="grid grid-cols-6">
     <aside class="col-span-1">

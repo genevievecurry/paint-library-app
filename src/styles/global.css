@@ -91,6 +91,15 @@
   );
 }
 
+input,
+input[type='select'] {
+  @apply bg-teal-50;
+}
+
+input[type='checkbox'] {
+  background-color: transparent;
+}
+
 /* Pop Buttons */
 .pop {
   --b: 2px; /* border length */

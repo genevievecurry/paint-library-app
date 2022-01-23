@@ -9,14 +9,21 @@ export async function post({ body: data, locals }) {
   const response = await api.updateUser(data, locals.user);
 
   // Update token with new deets
-  const json = JSON.stringify(response.body);
-  const token = Buffer.from(json).toString('base64');
+  if (response.status === 200) {
+    const json = JSON.stringify(response.body);
+    const token = Buffer.from(json).toString('base64');
 
-  return {
-    headers: {
-      'set-cookie': `jwt=${token}; Path=/; HttpOnly`,
-    },
-    body: response.body,
-    status: response.status,
-  };
+    return {
+      headers: {
+        'set-cookie': `jwt=${token}; Path=/; HttpOnly`,
+      },
+      body: response.body,
+      status: response.status,
+    };
+  } else {
+    return {
+      body: null,
+      status: response.status,
+    }
+  }
 }

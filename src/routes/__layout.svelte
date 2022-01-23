@@ -15,9 +15,9 @@
   import { session } from '$app/stores';
   import { goto } from '$app/navigation';
   import { clickOutside } from '$lib/actions';
-  import Notifications from '$lib/components/Notifications.svelte';
   import { successNotifier } from '$lib/notifier';
   import { menuIcon, swatchesIcon } from '$lib/icons';
+  import Notifications from '$lib/components/Notifications.svelte';
 
   export let menuOpen: boolean;
 
@@ -120,6 +120,15 @@
                         >@{$session.user.username}</a>
                     </div>
                     {#if $session.user?.role === 'ADMIN'}
+                      <div class="block px-4 py-2 text-sm"
+                        ><a
+                          href="/admin"
+                          class="decorate-link"
+                          role="menuitem"
+                          tabindex="-1"
+                          on:click={() => (menuOpen = false)}
+                          >Paint Library Admin</a
+                        ></div>
                       <div class="block px-4 py-2 text-sm"
                         ><a
                           href="/creator"
