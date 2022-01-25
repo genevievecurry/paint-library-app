@@ -1,0 +1,781 @@
+slug,colorCode,type,number,name,alternateNames,ciConstitutionNumber,composition,description,transparencyRatingCode,lightfastRatingCode,toxicity,notes
+NBr3,Br,CINATURAL,3,Catechin,"Black Catechu;
+ Catechin;
+ Catechou [KP.p];
+ Catechu [KP.p];
+ Catechu-Arten;
+ C.I. Natural Brown 3;
+ Cutch;
+ Gambier;
+ Katha;
+ Kattha;
+ Kavari; 
+ Natural Brown 3",75250,"Catechinic acid from the left over of katha made from Acacia catechu;
+ CAS 154-23-4 (Hydrate)
+ CAS 100786-01-4",Brown,T,X,A,
+NBr6,Br,CINATURAL,6,Ganga,"C.I. Natural Brown 6;
+ Ganga;
+ Harda;
+ Natural Brown 6",,"Chebulinic Acid; Extracted from the dried fruits of Terminalia chebula (Myrobalan);
+ CAS 114921-10-7",Yellow brown,T,X,A,
+NBr7,Br,CINATURAL,7,Juglone,"Akhnot;
+ C.I. Natural Brown 7;
+ Iuglon;
+ Juglane;
+ Juglone;
+ Natural Brown 7;
+ Natural walnut stain powder [KA.p];
+ Oil Red BS;
+ Nucin;
+ Regianin;
+ Walnut extract;
+ Yuglon",75500,"Extract from the nut-shells, roots, leaves, bark and wood of trees of the Juglandaceae family, usually Black Walnut.; Naphtoquinone;
+ CAS 481-39-0",Dark brown,T,IV,A,"Historically used for inks and stains more than artist's paint. Sometimes used as a natural herbicide.
+ * (Ref)"
+NBr8,Br,CINATURAL,8,Van Dyke Brown,"Bruno Vandyck;
+ Caledonian Brown;
+ Cappagh Brown;
+ Cassel Brown;
+ Cassel Brown, Van Dyck Brown [KP.p]; 
+ Cassel Earth [NP.p];
+ Cassel's Earth [KA.p];
+ Cassel Umber;
+ Caste Earth;
+ Castle Earth;
+ C.I. Natural Brown 8;
+ Coal Brown;
+ Cologne Brown;
+ Cologne Earth;
+ Cologne Umber;
+ Collens Earth;
+ Cullen Earth;
+ Cullens Earth;
+ Czechia;
+ Genuine Cassel's Earth [KA.p];
+ Humic Earth;
+ Kassel Earth;
+ Kassel Umber;
+ Lignite;
+ Mineral Brown;
+ Natural Brown 8;
+ Preto de Frandes;
+ Rubens' Brown;
+ Sap Brown;
+ Spanish Brown;
+ Terre de Cassel;
+ Terra di Colonia;
+ Ulmin Brown;
+ Van Dyck Braun;
+ Van Dyck Brown [KP.p];
+ Van Dyke Brown [GEN, HO.w | NP.p | SH.w | WL.o];
+ Vandyke brown [HO.w | SH.w];",77727,"Lignite;
+ Brown earth with Peat and Coal residues (Ref @ CAMEO Art Material Database);
+ Composition varies;
+ Making pigments: Van Dyke Brown?* at webexhibits.org;
+ CAS 72669-22-8",Dull dark earth brown,S/O,III,A,"Named after the artist Van Dyke who used it extensivly;
+ May be as much as 90% organic matter (Ref. webexhibits.org)
+ Genuine Van Dyke Brown is NBr8. Sennelier's Van Dyck Brown dry pigment, Utrecht's Van Dyke Brown oil paint and Schminke's Cassel Earth oil color all indicate they are PBr8, which is a more stable pigment but not the genuine Van Dyke Brown.
+ The Color Index (Third Edition 1997) lists Van Dyke Brown or Cassel Earth as Natural Brown 8 (NBr8), and lists Pigment Brown 8 (PBr8) as Manganese hydroxide and oxides (the natural form usually also contains iron oxides and clays). 
+ This seems to be a common point of confusion even among pigment and paint manufacturers. see PBr8
+ * Not rated by the AMST, usually though of as fugitive, but some old paintings have survived in fairly good shape, though it can cause sagging in oil paints. Kremer's BWS seems to indicate excellent lightfastness.
+ Rated III (fair) in lightfastness tests on watercolor by Bruce MacEvoy @ handprint.com. See Natural Brown 8 @ Handprint.com;
+ May be more stable in oil paints when mixed with resins (Ref. Natural Pigments);"
+NBr9,Br,CINATURAL,9,Sepia,"C.I. Natural Brown 9;
+ Natural Brown 9;
+ Sepia [KP.p];
+ Sepia fine [KP.p]; 
+ Sepia Ink [KP.p]; 
+ Sepia very fine [KP.p];",75500,"from the ink sac of adriatic cuttlefish; Sepia Officinalis;
+ CAS 8030-69-1",Dark Reddish Brown black,T,IV,A,
+NBr11,Br,CINATURAL,11,Bistre,"Birchwood Soot;
+ Bister;
+ Bister Ink [KP.p];
+ Bistre [KP.p];
+ C.I. Natural Brown 11;
+ Genuine Birchwood Soot; 
+ Soot of Wood",,Prepared from birchwood soot (Ref),Deep brown,T,IV,A,
+PBr1,Br,CIPIGMENT,1,Permanent Brown FG,"BON Brown;
+ C.I. Pigment Brown 1;
+ Microdis Brown MGR;
+ Permanent Brown FG;
+ Pigment Brown 1",12480,"Monoazo;
+ Azomethine;
+ CAS 6410-40-8",Reddish brown,X,X,A,
+PBr6,Br,CIPIGMENT,6,Iron Oxide Hydroxide Brown,"Antique Cypress Bark;
+ Antique Smoked Bamboo;
+ Blue Ridge Burnt Umber [NP.p];
+ Blue Ridge Raw Umber [NP.p];
+ Brown Iron Oxide [SCH.a];
+ Brown Magnetite Iiron Oxide;
+ Brown Ochre [DS.o];
+ Brown Ochre Goethite [DV.o];
+ Brown Oxide [KA.p]; 
+ Brown Oxide Medium [GU];
+ Brown Ochre Goethite [DV.o];
+ Burnt Sienna [GEN];
+ Burnt Umber [GEN | DR.a(s3hb).a(s3mb) | HO.ag.a(gesso)];
+ Burnt Umber Xtra Dark [GU];
+ C.I. Pigment Brown 6;
+ Cyprus Burnt Umber [NP.p];
+ Cyprus Burnt Umber Warm [NP.p];
+ Cyprus Raw Umber Light [NP.p]; 
+ Cyprus Raw Umber Medium [NP.p];
+ Cyprus Raw Umber Dark [NP.p];
+ Dark Goethite [DV.o];
+ Deep Brown [LA.a];
+ Dutch Brown [WL.o];
+ Dutch Brown (Transparent) [WL.p];
+ Dutch Brown (Transparent) [WL.o];
+ Enviro-Friendly Brown Iron Oxide [DS.o.w];
+ Enviro-Friendly Iron Oxide [DS.o.w];
+ Enviro-Friendly Red Iron Oxide [DS.o.w];
+ Enviro-Friendly Yellow Iron Oxide [DS.o.w];
+ Environox Dark Brown1 [EP.p]; 
+ Ferric oxide;
+ German Umber [KA.p];
+ Goethite;
+ Goethite Genuine [DV.o];
+ Iron Oxide Brown;
+ Iron Oxide Hydroxide;
+ Italian Burnt Sienna [NP.p];
+ Italian Raw Sienna [NP.p];
+ Italian Burnt Umber [NP.p];
+ Italian Burnt Umber Warm [NP.p];
+ Italian Green Raw Umber [NP.p];
+ Italian Raw Umber [NP.p];
+ Light Brown [LA.a];
+ Luberon Burnt Sienna [NP.p];
+ Luberon Burnt Umber [NP.p];
+ Luberon Raw Sienna [NP.p];
+ Luberon Raw Sienna Light [NP.p];
+ Luberon Raw Umber [NP.p];
+ Magnetite;
+ Maroon Oxide [GU];
+ Mars Brown;
+ Mars Yellow [GO.a.ao];
+ Mineral Brown;
+ Monte Amiata Natural Sienna [DS.w];
+ Natural Black Iron Ore;
+ Natural Brown Oxide [CAS.k];
+ Nicosia Burnt Sienna [NP.p];
+ Nicosia Burnt Sienna Dark [NP.p];
+ Nicosia Raw Sienna [NP.p];
+ Nicosia Burnt Umber CC [NP.p];
+ Nicosia Burnt Umber NC [NP.p];
+ Nicosia Burnt Umber WN [NP.p];
+ Nicosia Burnt Umber WW [NP.p];
+ Nicosia Raw Umber [NP.p];
+ Oxide Brown Medium [LA.a];
+ Pigment Brown 6;
+ Pompeii Red;
+ Raw Siena [KA.o];
+ Raw Sienna [NP.p | KA.o];
+ Raw Umber [NP.p | KA.o];
+ Rhombehedral Magnetite;
+ Red Oxide Dark [GU];
+ Turkey Umber;
+ Van Dyke Brown (hue) [ KA.o.p | MGd]
+ Van Dyke Brown (Synthetic) [CAS.k];","77491
+ 77492 
+ 77499","Synthetic Inorganic;
+ Brown magnetite iron oxide
+ ""Produced by controlled oxidation of Pigment Black 11(Black Iron Oxide). Chemically Fe2Oa-xFeO.yH20.""
+ (Ref. Paint and Coating Testing Manual: 14th ed. of the Gardner-Sward handbook/Joseph V. Koleske, editor; p.212)
+ Synthetic Feric oxide and Ferroso-ferric hydroxide;
+ The Preparation of Magnetite, goethite, hematite and magnemite of pigment quality from mill scale iron waste.
+ Goethite - (Ref at Mindat.org)
+ Magnetite - (mindat.org Ref);
+ Making pigments: Umbers at webexhibits.org;
+  Fe2O3, FeO·Fe2O3, Fe(OH)2·Fe2O3
+ CAS 52357-70-7
+ EU 257-870-1","Brown to dull red;
+ Very staining, w/ good tinting strength
+ † Fades in tints; 
+ Oil paints and watercolors using PBr6 and PBr 7 exist in almost any shade of yellow orange, red and violet brown to green brown, depending on the ratios of hydrated iron (yellower) to anhydrous iron (Redder), and other clays & minerals in the sample.",X,II,A,"1 Environox Dark Brown from Earth Pigments is Iron Oxide produced from reclaimed iron sludge.
+ * Rated with 'very good' (equivalent AMST II) in lightfastness tests on watercolor by Bruce MacEvoy @ handprint.com. See Pigment Brown 6 @ Handprint.com;
+ ** Excess iron can cause the skin to take on a 'ruddy' appearance if ingested in large quantities.
+ Do not ingest in large quantities;
+ Avoid dust."
+PBr7,Br,CIPIGMENT,7,Brown Iron Oxide,"Antique Cypress Bark [HO.w(ant)];
+ Antique Smoked Bamboo [HO.w(ant)];
+ Bauxite Mummy [NP.p*];
+ Bloodstone;
+ Blue Ridge Violet Hematite [NP.p];
+ Bohemian Green Earth [SCM];
+ Burnt Hematite [DV.o];
+ Bauxite;
+ Brown Earth [CR.a(jo) | JO.a];
+ Brown Earth from Florence [MA.o];
+ Brown Earth from Otranto [KP.p];
+ Brown Ochre [BX.o | RGH.o.p | SE | WL.o.p | WN.o.o.w.wp];
+ Brown Orche Deep [OH.o];
+ Brown Ochre from Elba [KP.p];
+ Brown Ochre Light [BX.o | OH.o.w | WNd];
+ Brown Umber [WL.o.p];
+ Burnt Hematite [DV.o];
+ Burnt Natural Earth;
+ Burnt Sienna No.3 [KP.p];
+ Burnt Sienna [GEN | BA.a.w | CAS.k | CR.a(jo).a ao.o | DS.a.o.i.w | DV.a.af.k.o.w | GB.o.o.p | GO.a.ab.af.ag.ao | GR.w.w | GU | HO.a.o.o.w.wo| JO.a | KA.ad.o.p | KP.p | LB.o | LK | LQ.a | MA.o(It).o(Puro).o(artis).o.p.w.w | MG.a.g.o.w | MH.o | MR.o | OH.a.o.w | PF.o.o | MW.o.wo | RF.e | RGH.o.p | ROSS.o | RT.o.w | SCH.o.p | SH.w | SE.p.t.w | SQ.a | TA.a.af | UT.w | WL.o.p | WN.o];
+ Burnt Sienna Dark [GU];
+ Burnt Sienna Deep [BX.o.w];
+ Burnt Sienna, England , brown-red [KP.p];
+ Burnt Sienna, from England [KP.p];
+ Burnt Sienna, from France [KP.p];
+ Burnt Sienna Light [BX.o.w]; 
+ Burnt Sienna Natural [AS];
+ Burnt Umber [GEN | AS | BA.a.o.w | BX.o.w | CAS.k | CL | CR.a(jo).a ao.o | DR.a.g.o.o(georg).o. w.w.t | DS.a.i.o.w | DV.a.af.k..o.w | GB.o.o.p | GO.a.af.ag.ao | GR.o.o.w.w.wo | GU | HO.g.o.o.w.wo.| JO.a | KA.ad.o.p | LB.av.o | LQ.a | MA.o.o(artis).o.p.w.w | MG.a.g.o.w | MH.o | MR.o | MT | MW.o.wo | OH.a.o.w | PF.o | RF.e | RGH.o.p | ROSS.o | RT.o.w |SCH.o.o(Mus).p.w | SE.p.t.w | SH.w | SV | SQ.a | TA.a.af | UT.a.o.w | WL.o.p | WN.a.a.k.o.wo.w.wp.wp(L)];
+ Burnt Umber Dark [RGH.o];
+ Burnt Umber Dark Brown [KP.p];
+ Burnt Umber (Cyprian) [KP.p];
+ Burnt Umber, Cyprian, dark brown [KP.p];
+ Burnt Umber Light [GO.a.af | GU];
+ [GU];
+ Calcined Earth;
+ Calcined Natural Sienna;
+ Calcined Natural Umber;
+ Calcined Original Natural Earth;
+ Caledonian Brown;
+ Cappagh Brown;
+ Cassel Earth [BX.o | CH | MA.p | MR.o | NP.p]; 
+ Cassel Brown Earth;
+ Cat-Tail Brown [GU];
+ Chestnut Brown;
+ C.I. Pigment Brown 7;
+ Colonial Burgundy [EP.p];
+ Colonial Burnt Umber [EP.p];
+ Colonial Raw Umber [EP.p];
+ Colonial Red [EP.p];
+ Colonial Violet [EP.p];
+ Cote d'Azur Violet (Natural Light Caput Mortuum) [DS.w];
+ Cyprus Burnt Umber [NP.p];
+ Cyprus Burnt Umber Green [NP.p]; 
+ Cyprus Burnt Umber Warm [NP.p];
+ Cyprus Orange [WL.o];
+ Cyprus Raw Umber Dark [NP.p];
+ Cyprus Raw Umber Medium [NP.p];
+ Cyprus Raw Umber Light [NP.p];
+ Cyprus Umber;
+ Dark Sienna [ROSS.o];
+ Deep Ochre [OH.o];
+ Euchrome;
+ Elba Brown Ochre [KP.p];
+ French Burnt Sienna [NP.p];
+ French Raw Sienna [NP.p];
+ French Raw Umber [NP.p];
+ Gamboge Hue [MA.o(artis)];
+ Genuine Cassel's Earth [KA]; 
+ German Greenish Raw Umber [DS.w];
+ German Umber [KA];
+ Gold Ochre [BX.o.w];
+ Green Ochre [WL.o];
+ Green Umber [KA.p];
+ Grüne Erde natur [SCH];
+ Hematite [DS.o | NP.o.p];
+ Hematite Burnt Scarlet [DV.o];
+ Hematite Burnt Scarlet Genuine[DS.o.w**];
+ Hematite Genuine[DS.w** | DV.o];
+ Hematite Violet [DV.o];
+ Hematite Violet Genuine[DS.w**];
+ Iseo Brown [KP.p];
+ Italian Burnt Sienna [DS.w | KP.p | NP.p | WL.o.p];
+ Italian Brown Earth;
+ Italian Earth [BX.o.w | OH.o.w | SQ.a];
+ Italian Green Ochre [WL.p];
+ Italian Raw Sienna [NP.p];
+ Italian Raw Umber [WL.o];
+ Jacaranta Brown;
+ Mars Brown [RGH.o.p];
+ Monte Amiata Natural;
+ Monte Amiata Natural Sienna [DS.w];
+ Mummy [NP.o];
+ Mummy Bauxite [DS.w**];
+ Mauve Umber [RGH.o]; 
+ Native Earth;
+ Natural Bohemian Green Earth [SCH.o(Mus)];
+ Natural Brown Iron Oxide;
+ Natural Burnt Sienna [SCH.o(Mus);
+ Natural Burnt Umber [SCH.a.o(Mus)];
+ Natural Earth;
+ Natural Green Earth [SCH.a];
+ Natural Iron-Manganese Oxide;
+ Natural Iron Oxide;
+ Ocher;
+ Ochre [GEN] [OH.o.w];
+ Old Holland Ochre [OH.o.w];
+ Original Natural Earth;
+ Pigment Brown 7;
+ Pompeii Red [DS.w];
+ Raw Brown;
+ Raw Sienna [GEN | AS | BA.a.w | CAS.k | CR.a(jo) | DR.o.w | DS.a.i.o.w | DV.a.af.k.o.w | GB.o.o.p | GR.a.o.o.w.wo | JO.a | KA.p | LB.o | LK | LQ.a | MA.o.o.p.w.w | MG.a.g.o.w | MH.o | MR.o | MW.o.wo | OH.a.o.w | PF | RF.e | RGH.o.p | SCH.p.w | SE.p.t.w | SQ.a | TA.a.af | UT.a.o.w | WL.o.p | WN];
+ Raw Sienna Dark [CR.ao.o];
+ Raw Sienna Deep [MA.o.p | OH.o];
+ Raw Sienna Natural Dark;
+ Raw Sienna Light [MA.o.o(artis).p | OH.w]; 
+ Raw Umber [GEN | AS | BA.a .o | CAS.k | CL | CR.a(jo).ao.o | DS.a.i.o.w | DR.a.a(s3hb).a(s3mb).o.o.w.w.t | DV.a.af.k.o.w | GB.o.o.p | GO.a.ab.af.ag.ao | GR.o | GU | HO.a.g.o.o.w.wo | JO.a | KA.ad.p | LB.o | LQ.a | MA.o.p.w.w | MG.a.g.o.w | MH.o | MR.o | MT | MW.o.wo | OH.a.o.w | PF.w | RF.e | RGH.o.p | ROSS.o | RT.o.w | SCH.a.o.w | SE.p.t.w | SV | SH.w | SQ.a | TA.a. | UT.a.o.w | WL.o.p | WN.a.a.o.wo.w.w.wp.wp(L)];
+ Raw Umber Greenish [SCH.p];
+ Raw Umber (Green Shade) [WN.o];
+ Raw Umber Light [SCH.o(Mus) | WN.a.o.w];
+ Raw Umber Natural [ DV.w];
+ Raw Umber (Rare Earth) [GU];
+ Red Brown [SE];
+ Red Ochre [WL.o]; 
+ Red Umber [MH.o | OH.o.w | WL.o];
+ Sard Red Earth [MA.o];
+ Sardinian Red Earth [MA.o];
+ Sienna;
+ Sicilian Brown;
+ Spanish Earth [MH | WL.p];
+ Spanish Earth (Purple Ochre) [WL.o];
+ Terra d'Ombre;
+ Terre d'Ombre Brulee (Brûlée) [LB.o];
+ Terra Di Sienna;
+ Terre de Sienne Brulee (Brûlée) [LB.o];
+ Transparent Brown Iron Oxide[GO.a];
+ Transparent Red Oxide [CL];
+ Turkey Brown; 
+ Turkey Umber [RGH.o | WL.o];
+ Turkey Umber Greenish [RF.e];
+ Umber [GEN | HO.w];
+ Van Dijck Brown (hue) [BX]
+ Van Dyck Brown (hue) [BXw | DS.o | GR | LK | MR.o];
+ Van Dyke Brown (hue) [TA.a. | KA.p | MT];
+ Velvet Brown;
+ Violet Hematite [NP.o.p]
+ Yavapai Genuine [DS.w];
+ Yellow Ochre Burnt [ OH.o.w | WL.o]","77491 
+ 77492","Processed Inorganic;
+ ""Ferrosoferric oxide produced from ores containing 25% manganese dioxide with a distinct composition as Fe2Oa.xMnO in varying proportions of clay. Classical names include such as raw umber, burnt umber, and Turkish umber."" (Ref. Paint and Coating Testing Manual: 14th ed. of the ASTM Gardner-Sward handbook / Joseph V. Koleske, ed.; p.212)
+ Natural Brown Iron Oxide and/or Calcined natural Iron Oxide, usually with varying ratios of hydrated Iron Oxide to anhydrous Iron Oxide, along with Manganese Oxide, Aluminum, silica clays and other natural minerals depending on mine site.; Many brands substitute or confuse the synthetic pigment for the natural one, giving both the same Common names and C.I. names interchangeably, PBr7 is the name for the Natural Pigment & PBr6 is the synthetic one.
+ LBNLPigment Database Spectral radiative properties;
+ Burnt Sienna;
+ Raw Sienna;
+ Raw Umber
+ How Umber is made at webexhibits.org;
+ CAS 12713-03-0","Yellow brown to brown to dull red (see above);
+ Staining to non-staining w/ weak to good tinting strength;
+ Oil paints and watercolors using PBr6 and PBr 7 exist in almost any shade of yellow orange, red and violet brown to green brown, depending on the ratios of hydrated iron (yellower) to anhydrous iron (Redder), and other clays & minerals in the sample.",X,I,A,"Natural product can contain Manganese which acts as a drier in oils;
+ Brown Iron Oxide (PBr7) watercolor swatches, brand comparisons & mixing info @ In Liquid Color, Youtube Channel
+ * Lots more info on PBr6 and PBr-7 including lightfastness tests on branded watercolor paints by Bruce MacEvoy @ handprint.com. See Pigment Brown 7 @ Handprint.com;
+  Lots more info on mummy & bauxite at the Natural Pigments website.
+ ** more info on the Dan Smith PrimaTek™ artist paints and other minerals used for art pigments at the watercolor Handprint.com site. 
+ ** Although most soluble mineral salts have been washed out during washing, processing & levigation. Natural forms may still have small traces of toxic minerals.
+ ** Ingesting more than 1/2 gram (500mg.) of iron can induce cardiac collapse; such overdoses most commonly occur in children and may result in death within 24 hours.[101]; (Ref. Heavy Metals, Toxicity Info @ Wikipedia)
+ Excess iron can cause the skin to take on a 'ruddy' appearance if ingested over a long period.
+ Do not ingest;
+ Avoid dust"
+PBr8,Br,CIPIGMENT,8,Manganese Brown,"Black Manganese Oxide;
+ Bog Manganese;
+ Braunstein;
+ Bruinsteen;
+ Burnt Umber | Cyprus [KP.p];
+ Burnt Umber light reddish-brown [KP.p];
+ Burnt Umber Reddish [KP.p];
+ Caledonian Brown;
+ Cappagh Brown;
+ Cassel Earth [SCH..p*?];
+ Cassler/Van Dyke Brown [SCH.p*?]; 
+ Cement Black;
+ C.I. Pigment Brown 8;
+ Mangaanbioxyde;
+ Mangaandioxyde;
+ Mangandioxid
+ Manganese Binoxide;
+ Manganese (biossido Di);
+ Manganese (bioxyd De);
+ Manganese Brown Intense [KP.p]
+ Manganese Black;
+ Manganese (diossido Di);
+ Manganese (dioxyde De);
+ Manganese(iv) Oxide;
+ Manganese Peroxide;
+ Manganese Superoxide;
+ Manganese Brown;
+ Manganese Brown Intense [KP.p];
+ Manganese Dioxide;
+ Manganite;
+ Mineral Brown Black (Pyrolusite) [NP.p];
+ Natural Brown Earth;
+ Pigment Black 14;
+ Pigment Brown 8;
+ Pyrolusite;
+ Pyrolusite Brown;
+ Raw Umber [KP.p]
+ Raw Umber dark [KP.p];
+ Raw Umber | from Cyprus [KP.p];
+ Sepia;
+ Umber Reddish | OK 46 [KP.p];
+ Van Dyck Brown (hue)*? [GR.o | SE.p | SCH.p | [UT.o]","77730
+ 77728","Inorganic;
+ ""Manganic hydroxide, Mn(OH), together with manganese manganite."", ""Occurs naturally as manganite but the commercial product is usually synthetic."" (Ref Inorganic Colouring Matters, Color Index 3rd Ed.)
+ Manganese hydroxide and oxides, the natural form usually also contains iron oxides and clays;
+ Manganic oxide;
+ Manganic hydroxide;
+ Making pigments: Umbers at webexhibits.org;
+ CAS 317-35-7
+ CAS 1313-13-9",Reddish brown to brownish black,S/O,I,B,"* Sennelier's Van Dyck Brown dry pigment, Utrecht's Van Dyke Brown oil paint and Schminke's Cassel Earth oil color, may be NBr8 and just misprinted or mistakenly labeled as PBr8 (Pigment Brown 8}, They all claim to be genuine Van Dyke Brown which would actually be NBr8 (Natural Brown 8). They also claim moderate or average light fastness which is more consistent with Natural Brown 8. Pigment Brown 8 is highly lightfast.
+ There seems to be a curtain amount of confusion about this pigment even among manufacturers and art suppliers.
+ ** Any paint containing Manganese could require a PROP 65 label in CA."
+PBr9,Br,CIPIGMENT,9,Copper Ferrocyanide*,"Copper Ferrocyanide;
+ C.I. Pigment Brown 9;
+ Florence brown;
+ Florentine Brown;
+ Hatchett´s Brown;
+ Pigment Brown 9;
+ Van Dyke Brown (hue***) [BA.w | GR.w | WL.o?**];
+ Vandyke Red;
+ Van Dyke Red;
+ Vandyke Brown;",77430,"Inorganic;
+ Copper hexacyanoferrate(II);
+ Cupric ferrocyanide Cu2Fe(CN)6·xH2O
+ Cupric potassium ferrocyanide CuK2Fe(CN)6
+ CAS 8014-85-5
+ CAS 13601-13-3",Blackish brown,X,III,B,"* According to the Color Index International Pigments & Solvent Dyes, By The Society of Dyers and colourists, third edition, PBr9 is Copper Ferrocyanide;
+ According to their web site Williamsburg's Van Dyke Brown is PBr9. This might be a typo. In the copy they claim it to be genuine Van Dyke Brown which would be NBr8, although the Colour Index (3rd. Ed. 1997) describes the first known use as being called Vandyke Brown. 
+ However ""Van Dyke Red"" is indicated to be Copper Ferrocyanide in A Treatise on Color Manufacture By George Zerr, Robert Rübencamp, 1908, and said to be a ""shade that can be imitated cheaply and very easily with red ferric oxide colours"" indicating a brownish nature. So it seems there might be a historical justification for labeling PBr9 as genuine Van Dyke Brown in paints, even though it is not the pigment generally thought to be the ""genuine"" Van Dyke brown."
+PBr10,Br,CIPIGMENT,10,Calcium Orthoplumbate,"Calcium Plumbate;
+ Calcium Orthoplumbate;
+ Caldiox;
+ C.I. Pigment Brown 10;
+ Pigment Brown 10",77227,"Synthetic Inorganic;
+ Calcium lead oxide; 
+ Calcium Orthoplubate; 
+ Dicalcium lead tetraoxide;
+ CAS 12013-69-3;
+ CAS 12774-29-7",Light Yellowish Brown,X,I,C,"Oxidizing agent; 
+ promotes adhesion; 
+ Used as rust inhibitor and primer;
+ * Contains insoluble lead so there may not be much of lead hazard."
+PBr11,Br,CIPIGMENT,11,Magnesium Ferrite,"C.I. Pigment Brown 11;
+ Iron Magnesium Oxide;
+ Lunar Earth [DS.w];
+ Magnesium Brown [WN.w.wp]?*;
+ Magnesium Ferrite [DS.o]; 
+ Mars Yellow [HO.o];
+ Mapico Tan;
+ Pigment Brown 11",77495,"Synthetic Inorganic;
+ Magnesium ferrite is made by calcining a blend of ferric oxide and magnesium oxide. Chemically 19% MgO × 79% Fe2O3 
+ Ferric magnesium oxide;
+ Iron Magnesium Oxide;
+ CAS 64294-89-9;
+ EC 613-571-1","Reddish brown;
+ lightly staining w/ fair tinting strength",O,I,A,"?* The winsor and newton specifications for this paint list it as being PY119 (Zinc Ferrite Brown Spinel), but list the chemical name as 'Iron magnesium oxide', most likely there is a typo in their technical specs, and this should actually be labeled PBr11, which is Iron Magnesium Oxide;
+ * More info on PBr-11 including a lightfastness test in watercolor by Bruce MacEvoy @ handprint.com. See Pigment Brown 11 @ Handprint.com;"
+PBr12,Br,CIPIGMENT,12,Cassel Brown,"Cassel Brown [KP.p];
+ Cassel Brown Stain [KP.p];
+ C.I. Pigment Brown 12;
+ Oak Stain;
+ Van Dyck Brown;
+ Walnut Stain",,"Sodium salts of humic acid;
+ CAS 68131-04-04",Dark brown,X,X,B,* Skin irritant
+PBr22,Br,CIPIGMENT,22,Pigment Brown 22,"C.I. Pigment Brown 22;
+ Pigment Brown 22;
+ Pigment Brown 2R",10407,"Nitro;
+ CAS 29398-96-7",Reddish brown,X,X,A,
+PBr23,Br,CIPIGMENT,23,Pigment Brown 23,"Azo Russet [GU];
+ Brown Madder (hue) [SE.o];
+ C.I. Pigment Brown 23;
+ Cromophtal Brown 5R;
+ Disazo Brown;
+ Gubbio Red [KP.p.w];
+ Light Brown [HO.a];
+ Madder Brown [SE];
+ Microlith Brown 5R;
+ Pigment Brown 23;
+ Transparent Brown [HO.o]; 
+ Van Dyke Brown (hue);",20060,"Synthetic Organic;
+ Disazo Condensation;
+ Possess two azo red molecules linked to diamine by means of carbonamide groups (SpecialChem);
+ For more Chemical Composition & Structure Information See Pigment Brown 23 @ PubChem Open Chemical Database.
+ C40-H23-Cl3-N8-O8
+ CAS 35869-64-8
+ EC 252-772-5","Dull reddish brown;
+ Staining w/ good tinting strength;",S/T,I,A,"""Excellent heat stability and good solvent resistance"";
+ ""Used in industrial and vehicle refinishing paints"" (SpecialChem)
+ ""Diazo Brown possesses good lightfastness, heat resistance, acid, alkali resistance and high grease, oil, and wax resistance. More expensive than the Brown Iron Oxides, they are occasionally used instead of them where enhanced resistance and lightfastness properties are required"" (PrintWiki)
+ * Not rated by the ASTM, my rating of 'I' (excellent) is based on pigment suppliers blue wool scales, various paint brand's own ratings and anecdotal evidence, but not actual personal tests.
+ I would suggest making your own tests in the binder or brand of choice to verify fastness."
+PBr24,Br,CIPIGMENT,24,Chrome Antimony Titanate,"Bohemian Ochre Light;
+ Chrome Titanate;
+ Chrome Antimony Titanate;
+ Chrome Antimony Titanium Buff Rutile;
+ Chrome Titanate;
+ Chrome Titanate Brown;
+ Chrome Titanate Orange[
+ Chrome Titanate Yellow [GR.o];
+ Chrome Titanium Yellow;
+ Chrome Yellow Titanium [SCH.p];
+ Chrome Yellow Rutile; 
+ Chromium Rutile;
+ Chromium Titanate Yellow [GR.o];
+ C.I. Pigment Brown 24;
+ Daipyroxide Yellow;
+ Ferro Autumn Gold V;
+ Fragonard Earth Yellow [PF.o];
+ Gold Ochre [LA.a]; 
+ Honey Gold Yellow;
+ Ironstone Brown No.39;
+ Jaune Brilliant [KA.p]; 
+ Light Yellow 3R;
+ Light Yellow Ochre [BA.o | SE.o];
+ Marigold Yellow;
+ Mars Yellow Light [SE.a];
+ Meteor® Plus Yellow Buff 9371;
+ Naples Yellow (hue) [MG.w | MH.o | WN];
+ Naples Yellow Deep (hue) [DV.w | KA.o |  SCH.a.o.o(Mus) | WN.a.g.o.w.wp];
+ Naples Yellow Deep (Imitation) [KA.p];
+ Naples Yellow Deep Extra [OH.a.o.w];
+ Naples Yellow Italian (hue) [WL.o.p];
+ Pigment Brown 24;
+ SICOTAN® Yellow;
+ Titanate Gold Ochre;
+ Titanium Gold Ochre [SCH.g.w];
+ Titanium Orange [KP.p];
+ Yellow Ochre Light [BA | RT.o]",77310,"Synthetic Complex Inorganic;
+ (Ti,Cr,Sb)O2
+ Chrome Antimony Titanium Buff Rutile, is created by calcination of Titanium (IV) Oxide, Chromium (III) Oxide, and Antimony (V) Oxide in varied ratios creating a mixed phase system with a Rutile structure. It may include one or more of the modifiers Al2O3, MnO, NiO, WO3 and/or ZnO. (Ref Color Index 4th edition);
+ Mixed Metal Oxide (MMO) (PCImag Ref):
+  Cr/Sb/Ti-oxide
+ Complex inorganic coloured pigment based on titanium oxide; in the rutile lattice, titanium ions are partially replaced by chromium (III) and antimony (V) ions.(Ref. SIDS INITIAL ASSESSMENT PROFILE.PDF)
+ Chrome Antimony Titanium oxide mixed phase system having a rutile structure;
+ Chrome Antimony Titanium Buff Rutile;
+ LBNL Pigment Database Spectral radiative properties;
+ Chrome Antimony Titanium Buff Rutile (i);
+ Chrome Antimony Titanium Buff Rutile (ii);
+ Chrome Antimony Titanium Buff Rutile (iii);
+ Chrome Titanate Yellow;
+ (Ti, Cr, Sb) O2
+ CPMA 11-17-6
+ CAS 68186-90-3;
+ EC 269-052-1","Light valued yellowish to reddish brown to light golden orange or tan;
+ Shades are varied by modifiers added during production, see chem. props. to the left.
+ Staining w/ fair tinting strength",O,I,A,"Said to make a good non-toxic Naples Yellow substitute in artist colors.
+ A interesting pigment color in it's own right.
+ BASF TDS PDF
+ * More info on PBr-24 in watercolor, including a lightfastness test by Bruce MacEvoy @ handprint.com. See Pigment Brown 24 @ Handprint.com;
+ ** Rutile pigments are not regarded as antimony compounds which must be labelled as dangerous substances.  The antimony is tightly bond in the Rutile Lattice and insoluble in water or acids, so is not bioavailable.
+ The acute toxicity of C.I. Pigment Brown 24 after oral exposure is negligible. (Ref. SIDS INITIAL ASSESSMENT PROFILE.PDF)
+ Do not ingest;
+ Avoid dust & spray"
+PBr25,Br,CIPIGMENT,25,Benzimidazolone Brown,"Benzimidazo Brown [GU];
+ Benzimidazolone Brown;
+ Brown [SH.w];
+ C.I. Pigment Brown 25;
+ Fragonard Red Brown [PF.o];
+ Hostaperm Brown HFR 01;
+ Imidazolone Brown [HO.w.wo];
+ Mahogany Brown [KP.p];
+ Microdis Brown;
+ Permanent Brown [DS.w];
+ Pigment Brown 25;
+ Renol Brown;
+ SICOTAN® Yellow1 [BASF];
+ Transparent Brown [DV.af | SQ.a]; 
+ Transparent Maroon [WN.o];
+ Transparent Red Ochre [LB.o];
+ Van Dyke Red [LQ.a]; 
+ Viscofil Brown",12510,"Synthetic Organic;
+ Monoazo;
+ Benzimidazolone;
+ CAS 6992-11-6","Deep dull, red-violet brown;
+ very staining w/ weak to average tinting strength;",T,I,A,"Nice rich brown, great for glazing.
+ * Not rated by the ASTM, most brands containg PBr-25 give it their highest lightfast rating, and pigment supplier blue wool scales agree.
+ Also rated excellent (AMST I equivalent) in watercolor light fastness tests by Bruce MacEvoy @ handprint.com. See More about Pigment Brown 25 @ Handprint.com;"
+PBr27,Br,CIPIGMENT,27,Thioindigoid Brown,"Calcotone Brown 2R;
+ C.I. Pigment Brown 27;
+ Pigment Brown 27;
+ Various brand names prefixes to Red Brown or Bordeaux",73410,"Thioindigoid;
+ Lake of C.I Vat Brown 5; 
+ C24-H12-O2-S2
+ CAS 3989-75-1",Brownish Brown,X,X,A,
+PBr29,Br,CIPIGMENT,29,Chrome Iron Brown,"Chromium Iron Oxide;
+ Chromium Iron Oxide Black;
+ C.I. Pigment Brown 29;
+ Iron Chromite;
+ Iron Chrome brown;
+ Naples Yellow [RGH.o.p];
+ Pigment Brown 29;
+ Shepherd Black 411;
+ Sicopal® Black K 0095;
+ Sicopal® Brown K 2795 FG",77500,"Synthetic Complex Inorganic;
+ Chrome Iron Brown Hematite;
+ Iron Chromite;
+ Iron Chromium Oxide;
+ An IR reflective black powder produced by high temperature calcination of iron oxide & chromium oxide to form a hematite structure. It has good UV and visible opacity (Lansco TDS PDF)
+ Chromium Iron Brown: 
+ mixed phase pigment based on iron oxide-chromium oxide and corresponding approximately to the formula. (Fe, Cr)2O3. (Ref Color Index 4th edition); 
+ A complex inorganic pigment of black mixed oxide of Iron (III) and Chrome (III) with chemical formula (Cr, Fe)2O3 and a hematite structure. (Ferro)
+ LBNL Pigment Database Spectral radiative properties;
+ Chromium Iron Oxide (i);
+ Chromium Iron Oxide (ii);
+ CAS 109414-04-2;
+ CAS 12737-27-8","Very dark brown almost black;
+ Blueish Black;",S/O,I,A,"* Not rated by the ASTM, BWS indicate excellent lightfastness and other closely related pigments (ie. PG-17, Chromium oxide & PBk-11, Iron Oxide) have exceptional light fastness.
+ It is not used currently in any artist paint I could find, but is used industrially as a 'cool color': It exhibits low heat build-up (especially for a black), has exceptional durability and hiding power, it is generally used in applications where resistance to heat, light, and weather are required. (Lansco).
+  I would suggest making your own tests in the binder of choice to verify fastness."
+PBr30,Br,CIPIGMENT,30,Pigment Brown 30,"C.I. Pigment Brown 20;
+ Graphtol Red Brown Cl-RL;
+ Pigment Brown 30;",,"Synthetic Complex Inorganic;
+ Nickel, iron and chromium mixed metal complex in a Spinel structure. Reflects less of the near IR than PBr-29 (see above) giving it a blueish tint. (Ref. Industrial Inorganic Pigments Edited by G. Buxbaum and G. Pfaff 2005)",Dark blueish brown,O,I,B,"* Not rated by the ASTM, but should perform as excellent as other chemically simliar pigments designed for applications where resistance to heat, light, and weather are required.
+ I would suggest making your own tests in the binder of choice to verify fastness. 
+ ** Any paint containing nickel would require a PROP 65 label in CA. However, the Nickel and Chromium are tightly bound in the spinel structure and unlikely to be of any hazard."
+PBr31,Br,CIPIGMENT,31,Zinc Ferrite Brown,"C.I. Pigment Brown;
+ Pigment Brown 31;
+ Zinc Ferrite;
+ Zinc Ferrite Brown;
+ Zinc Ferrite Brown Spinel;",77496,"Synthetic Complex Inorganic;
+ Zinc Ferrite Brown Spinel, formula (Zn,Fe)Fe2O4 is created by high temperature calcination of a mixture of zinc oxides with ferrous and ferric iron in varying ratios to make a crystalline matrix of spinel. Its composition may include any one or more of the modifiers Al2O3, NiO, SiO2, SnO2 or TiO2. (Ref Color Index 4th edition);
+ CAS 68187-51-9","Brown;
+ Exact color tint & shade varies by modifiers added during manufacture (see chem. props. left)",X,I,A,"* Not rated by the ASTM, but should perform as excellent as other chemically simliar pigments designed for applications where resistance to heat, light, and weather are required.
+ I would suggest making your own tests in the binder of choice to verify fastness."
+PBr33,Br,CIPIGMENT,33,Zinc Iron Chromite Brown,"Brown 10P8571;
+ Calf Skin Brown No.6;
+ Chromium Iron Zinc Brown;
+ Chromium Iron Zinc Brown Spinel;
+ C.I. Pigment Brown 33;
+ Cocoa Brown No.157;
+ Daipyroxide Brown 9220;
+ Dark Brown;
+ Mahogany Brown No.12;
+ Mineral Brown [SCH.o(Mus)];
+ Pigment Brown 33;
+ Shepherd Brown 12;
+ Shepherd Brown 157;
+ Zinc-Iron Chrome Brown [KP.p];
+ Zinc-Iron Chrome Brown, light, spinel; 
+ Zinc Iron Chromite;
+ Zinc Iron Chromite Brown Spinel;
+ Walnut Brown [SCH.w]",77503,"Synthetic Complex Inorganic;
+ Zinc Iron Chromite Brown Spinel (Zn,Fe)(Fe,Cr)2O4 is made by the high temperature calcining of a mixture of Zinc (II) Oxide, Iron (II) Oxide, Iron (III) Oxide, and Chromium (III) Oxide in varying ratios to create a crystalline spinel matrix. Its composition may include any one or more of the modifiers Al2O3, NiO, SiO2, SnO2 and/or TiO2. (Ref Color Index 4th edition);
+ Mixed Metal Oxide (MMO) (PCImag Ref): 
+ Zinc Iron Chromite Brown Spinel;
+ LBNLPigment Database Spectral radiative properties;
+ Zinc Iron Chromite Brown Spinel (i);
+ Zinc Iron Chromite Brown Spinel (ii);
+ ""The ability of iron to occur on both the tetrahedral and octahedral sites of the spinel structure leads to a versatile system yielding a variety of related shades."" (Zinc Iron Chromite Pigments
+ Stephen H. Murdock Richard A. Eppler; April 1988)
+ Generic formula:
+ (Zn,Fe)(Fe,Cr)2O4
+ CPMA 13-37-7;
+ CAS 68186-88-9
+ EC 269-050-0","Dark; blueish brown to reddish brown; Color varies by modifiers added during manufacture (see chem. props. left)
+ very staining w/ good tinting strength",O,I,A,"Opaque to visible light & UV with high near infrared reflectance, a ""cool"" pigment. (Ferro)
+ * Not rated by the ASTM, BWS suggest high light fastness. Rated excellent (AMST I equivalent) in watercolor light fastness tests by Bruce MacEvoy @ handprint.com. See PBr-33 @ Handprint.com;
+ Most mixed metal oxides in a spinel matrix perform well and are fast to weather, heat & light.
+ ** Chromate content may require a PROP 65 warning in CA.? But the it is tightly bound in the crystalline spinel matrix and unlikely to pose a hazard."
+PBr34,Br,CIPIGMENT,34,Nickel Ferrite Brown,"C.I. Pigment Brown 34;
+ Daipyroxide Brown 9270;
+ Iron Nickel Brown;
+ Iron Nickel Brown Spinel;
+ Nickel Ferrite Brown Spinel;
+ Pigment Brown 34",77497,"Synthetic Complex Inorganic;
+ Nickel Ferrite Brown, created by the reaction of calcining Iron (III) Oxide and Nickel (11) Oxide in varying ratios creating a spinel form crystalline matrix. The addition of either/or A12O3, FeO, SiO2, SnO2, and/or TiO2 are used as modifiers during the creation process;
+ CPMA 13-35-7;
+ CAS 68187-10-0",Brown,X,NR,B,** Nickel content may require a PROP 65 warning in CA. But the it is tightly bound in the crystalline spinel matrix and unlikely to pose a hazard.
+PBr35,Br,CIPIGMENT,35,Iron Chromite Brown,"Chromium Iron Brown;
+ Chromium Iron Brown Spinel;
+ C.I. Pigment Brown 35;
+ Iron Chromite Brown;
+ Iron Chromite Brown Spinel;
+ Pigment Brown 35",77501,"Synthetic Complex Inorganic;
+ Iron Chromite Brown Spinel Fe(Fe,Cr)2O4 is created by high temperature calcination of a mixture of Iron (II) Oxide, Iron (III) Oxide, and Chromium (III) Oxide in varied amounts creating a crystalline matrix of spinel. Its composition may include any one or more of the modifiers Al2O3, B2O3, NiO, SiO2, SnO2 and/or TiO2. (Ref Color Index 4th edition);
+ Mixed Metal Oxide (MMO) (PCImag Ref):
+ Iron chromite spinel;
+ CPMA 13-33-7;
+ CAS 68187-09-7",Dark reddish brown to blue Black,X,I,A,"?* Not rated by the ASTM, but should perform as excellent as other chemically simliar pigments designed for applications where resistance to heat, light, and weather are required.
+ ** Chromate content may require a PROP 65 warning in CA. But the it is tightly bound in the crystalline spinel matrix and unlikely to pose a hazard."
+PBr37,Br,CIPIGMENT,37,Manganese Niobium Titanium Brown,"C.I. Pigment Brown 37;
+ Manganese Niobium;
+ Manganese Niobium Brown Rutile;
+ Manganese Niobium Titanium Brown Rutile
+ Pigment Brown 37;
+ Titanium Brown Rutile;",77890,"Synthetic Complex Inorganic;
+ Manganese Niobium Titanium Brown Rutile is made by calcining Manganese (II) Oxide, Niobium (V) Oxide, and Titanium (IV) Oxide in varied ratios creating a interdiffused crystalline rutile, It may have the modifier Sb2O5 (Reference: 4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments).;
+ CPMA 11-47-7
+ CAS 70248-09-8",Dull reddish brown,X,I,B,"?* Not rated by the ASTM, but should perform as excellent as other chemically simliar pigments designed for applications where resistance to heat, light, and weather are required.
+ ** Manganese content may require a PROP 65 warning in CA. But the mang. is tightly bound in the crystalline rutile matrix and unlikely to pose a hazard."
+PBr39,Br,CIPIGMENT,39,Zinc Manganese Chromate,"C.I. Pigment Brown 39;
+ Chrome Manganese Zinc Brown Spinel;
+ Chromium Manganese Zinc Brown;
+ Meteor Brown Light Iron Free 7739;
+ Pigment Brown 39",77312,"Synthetic Complex Inorganic;
+ Zinc Manganese Chromate;
+ Chrome Manganese Zinc Brown Spinel, is created by calcining a mixture of Chromium (III) Oxide, Manganese (II) Oxide and Zinc (II) Oxide in various ratios creating a spinel type crystalline matrix. It can be modified by A12O3, NiO, SiO2, SnO2, and/or TiO2 during the creation faze. (Reference: 4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments).;.
+ CPMA 13-51-7
+ CAS 71750-83-9",Reddish brown,X,NR,B,"** Manganese content may require a PROP 65 warning in CA.
+ The mang. is tightly bound in the spinel matrix and unlikely to pose a hazard."
+PBr40,Br,CIPIGMENT,40,Manganese chrome antimony titanium brown rutile,"Antimony Chromium Manganese Brown Rutile;
+ C.I. Pigment Brown 40;
+ Manganese Chrome Antimony Titanium Brown Rutile;
+ Meteor Brown (iron and Zinc free);
+ Pigment Brown 40",77897,"Synthetic Complex Inorganic;
+ Manganese chrome antimony titanium brown rutile is the product of calcining Titanium (IV) Oxide, Manganese (II) Oxide; Chromium (III) Oxide, and Antimony (V) Oxide, forming an interdiffused crystalline rutile matrix. 
+ CPMA 11-46-7;
+ CAS 71750-83-9",Dark brown,X,I,B,"?* Not rated by the ASTM, but should perform as excellent as other chemically simliar pigments designed for applications where resistance to heat, light, and weather are required.
+ ** Manganese & antimony content may require a PROP 65 warning in CA.
+ The mang.& antimony are tightly bound in the crystalline rutile matrix and unlikely to pose a hazard."
+PBr41,Br,CIPIGMENT,41,Disazo Condensation Brown,"C.I. Pigment Brown 41;
+ Disazo Condensation Brown;
+ Translucent Brown [SCH.w];
+ Pigment Brown 41;
+ Sandorin Brown RL;
+ Translucent Brown [SCH.w]",,"Synthetic Organic;
+ Disazo Condensation;
+ CAS 68516-75-6","Very dark yellowish to Reddish Brown;
+ very staining w/ good tinting strength
+ † Fades in tints; can 'bronze' over slightly in masstone",S/O,I,A,* Not rated by the ASTM. The ASTM equivalent of I rating is based on Schmincke's rating and a rating of 'excellent' on Handprint.com. See more of info about PBr-41 @ Handprint.com;
+PBr42,Br,CIPIGMENT,42,Azo Golden Brown,"Azo Golden Brown [GU.pd];
+ C.I. Pigment Brown 42;
+ Pigment Brown 42",,"Synthetic Organic;
+ Disazocondensation;
+ CAS 80648-58-4",Dark yellowish Brown,S/T,I,,* Not rated by ASTM. The ASTM I (equivalent) rating based on BWS
+PBr43,Br,CIPIGMENT,43,Iron-Manganese Oxide,"Bayferrox 645T;
+ C.I. Pigment Brown 43;
+ Pigment Brown 43;
+ Yellow Ochre (hue*)",77536,"Synthetic Complex Inorganic;
+ Synthetic iron-manganese mixed oxide;
+ Manganic ferric oxide;
+ CAS 12062-81-6",Brown,O,I,B,"*Similar chemical make-up as the natural yellow ochres and brown umbers
+ ** Manganese content may require a PROP 65 warning in CA."
+PBr44,Br,CIPIGMENT,44,Cobalt Tungsten Titanium Buff,"C.I. Pigment Brown 44;
+ Cobalt Tungsten Titanium Buff Rutile;
+ Meteor Plus Yellow Buff;
+ Pigment Brown 44",778955,"Synthetic Complex Inorganic;
+ Cobalt Tungsten Titanium Buff Rutile mixed metal oxides;
+ Made by calcining at high temperature a mixture of Titanium Oxide, Cobalt Oxide, and Tungsten Oxide in various ratios to produce a crystal rutile matrix.
+ MMO pigment (Mixed Metal Oxides)
+ 
+ CAS 144437-67-2",Dark yellowish brown,S/O,I,B,"?* Not rated by the ASTM, but should perform as excellent as other Titanium based MMO pigments designed for applications where resistance to heat, light, and weather are requirements.
+ ** Cobalt content requires a PROP 65 warning in CA.
+ However, the Cobalt is tightly bound in the crystalline rutile matrix and unlikely to pose a hazard.
+ Avoid dust, do not ingest."
+PBr45,Br,CIPIGMENT,45,Manganese Tungsten Titanium Brown,"C.I. Pigment Brown 45;
+ Manganese Tungsten Titanium Brown Rutile;
+ Meteor Plus High IR Brown 9730;
+ Pigment Brown 45",778965,"Synthetic Complex Inorganic;
+ Manganese Tungsten Titanium Rutile;
+  MMO pigment (Mixed Metal Oxides);
+ CAS 144437-66-1",Reddish brown,X,I,B,"?* Not rated by the ASTM, but should perform as excellent as other Titanium based MMO pigments designed for applications where resistance to heat, light, and weather are requirements.
+ ** Manganese content may require a PROP 65 warning in CA.
+ However, the manganese is tightly bound in the crystalline rutile matrix and unlikely to pose a hazard."
+PBr46,Br,CIPIGMENT,46,Chrome Iron Manganese Brown Spinel,"C. I. Pigment Brown 46;
+ Chrome Iron Manganese Brown Spinel;
+ Chromium Iron Manganese Brown;
+ Chromium Iron Manganese Zinc Brown;
+ Pigment Brown 46;",774945,"Synthetic Complex Inorganic;
+ Chrome Iron Manganese Brown Spinel, is created by calcining Chromium (III) Oxide, Iron (II & III) Oxide, and Manganese (II & III) Oxide in varied ratios creating a spinel form crystal matrix. May be modified by Zinc Oxide (Reference: 4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments).; 
+ CPMA 13-48-7
+ Chromium iron manganese:
+ CAS 68555-06-6;
+ Chromium iron manganese zinc brown:
+ CAS 68186-96-9",Brown,X,I,B,"?* Not rated by the ASTM, but should perform as excellent as other Titanium based MMO pigments designed for applications where resistance to heat, light, and weather are requirements.
+ ** Chromium & Manganese content may require a PROP 65 warning in CA.
+ However, they are both tightly bound in the crystalline spinel matrix and unlikely to pose a hazard."
+PBr48,Br,CIPIGMENT,48,Aluminum Iron Titanate,"Aluminum Iron Titanate;
+ C.I. Pigment Brown 48;
+ Pigment Brown 48;
+ Yellow 10P256",775435,"Aluminum Iron Titanate
+ (Fe, Al)2TiO5
+ CAS 1310-39-0 12789-64-9",Dark to orange shade brown,X,NR,A,"(Ref. Tomatec Co.Pigment Brown48.pdf);
+ (Ref. Shepherd Color Yellow 2010P256 20TDS.PDF)
+ ?* Reported good light fastness but no data
+ ** FDA Compliant"

@@ -1,0 +1,1320 @@
+slug,colorCode,type,number,name,alternateNames,ciConstitutionNumber,composition,description,transparencyRatingCode,lightfastRatingCode,toxicity,notes
+NB1,B,CINATURAL,1,Indigo,"Baghdad Indigo;
+ C.I. Natural Blue 1 (natural);
+ C.I. Pigment Blue 66 (synthetic);
+ Dyer's woad;
+ Indaco;
+ Inde Blew;
+ Inde Blue;
+ Indian Blue;
+ Indigo [NP.p];
+ Indigo Blue;
+ Indigo, Genuine Indian [KP.p];
+ Indigo, Genuine, pieces [KP.p];
+ Indigo, made of Woad [KP.p];
+ Indicum;
+ Indigotin;
+ Lombardy Indigo;
+ Lulax; 
+ Natural Blue 1;
+ Pastel;
+ Rich Indigo;
+ Rock Indigo;
+ Stone Blue;
+ see PB66",75780,"Natural Indigotin; 
+ Fermented extract from the leaves of Indigofera tinctoria or Baphicacanthus cusia (Ref Pigment Extraction Techniques from the Leaves of Indigofera tinctoria, CMU. Journal (2002) Vol. 1, p.149)","Dark Greenish to reddish Blue
+ † Fades",T,III,A,"The dye used for blue jeans
+ ** Natural indigo may be slightly toxic (Ref at Blick Art Materials)"
+NB2,B,CINATURAL,2,Indigo Carmine,"Blue Carmine;
+ Blue of England;
+ Blue of Holland;
+ CI Acid Blue 74;
+ Chemic Blue;
+ C.I. Natural Blue 2;
+ C.I. Natural Blue 63;
+ Composition Blue;
+ FD&C Blue No. 2;
+ Food Blue 1;
+ Indigo Carmine;
+ Indigo Purple;
+ Indigotine;
+ Indigotin Blue [KP.p];
+ Sodium Indigotin Disulfonate;
+ Saxon Blue;
+ Saxony Blue;
+ Sulphate of Indigo;
+ Indigo Disulphonic Acid (Br.);
+ Natural Blue 63 (aluminum salt);
+ Natural Blue 2",73015,"Natural Sodium Indigotin Disulfonate;
+ Sulphoindigotic acid;
+ Natural Indigo treated with sulfuric acid (Ref Pigment Compendium, 2008, p.201);
+ CAS 860-22-0",Dark blueish purple,X,III,A,Indigo Carmine (Ref at Boston Fine Art)
+PB1,B,CIPIGMENT,1,Victoria Blue,"Cascade Blue;
+ Fast blue Toner BR;
+ C.I. Pigment Blue 1; 
+ Fast Blue Lake BO;
+ Fast Royal Blue Lake;
+ Pigment Blue 1;
+ Ultra Blue B;
+ Victoria Blue PMA;",42595:2,"Organic;
+ Triphenylmethane Phospho-tungstomolybdic acid salt;
+ CAS 1325-87-7",Bright reddish blue,T,IV,A,
+PB1:2,B,CIPIGMENT,1.2,Victoria Blue SMA,"C.I. Pigment Blue 1:2;
+ Lamprolac Blue RM;
+ Pigment Blue 1:2;
+ Victoria Blue SMA;",42595:3,"Organic;
+ Triphenylmethane Silicomolybdic acid salt;
+ CAS 69980-72-9",Bright reddish blue,T,IV,A,
+PB9,B,CIPIGMENT,9,Pigment Blue 9,"C.I. Pigment Blue 9;
+ Pigment Blue 9",42025:1,"Organic;
+ Triphenylmethane Phospho-tungstomolybdic acid salt;
+ CAS 1325-74-2",Bright Greenish Blue,X,X,A,
+PB15,B,CIPIGMENT,15,Phthalocyanine Blue,"Alizarin Blue Lake;
+ Antique Sky Blue [HO];
+ Azure Blue (hue) [LA.a];
+ Azure Hue [SE.p];
+ Blue MC [EP.p];
+ Bleu Minéral [SE];
+ Blue Compose;
+ Blue Lake [OH.o];
+ Cerulean Blue Hue [CR.a | WN.w]; 
+ Cerulean Blue (Substitute) [SE.p];
+ Cerulean Blue Phthalo;
+ C.I. Pigment Blue 15; 
+ Cobalt Blue (hue) [HO.af];
+ Cobalt Teal (Hue) [DV.k];
+ Cyanine Blue B;
+ Gafast Pigment Blue 15;
+ Heliogen Blue [SI.p];
+ Hogar Blue [LB.av.o];
+ Hoggar Blue [LB.av.o];
+ Horizon Blue;
+ Hortensia Blue [LB.o];
+ Hydranger Blue;
+ Hydrangea Blue [HO.o];
+ Intense Blue [WN.w.];
+ Katsura Blue [HO.a];
+ Lonocyanine Alpha Blue;
+ Manganese Blue Hue [DS.o.w | DV.k.o | WN.w.wp];
+ Manganese Blue Nova [HO.w];
+ Marine Blue [HO.wo];
+ Monestial Blue [DR.o];
+ Monestial Blue (Phthalo) [DR.o.t];
+ Monestial Turquoise [DR.o];
+ Monestial Turquoise (Phthalo) [DR];
+ Old Holland Blue [OH.o];
+ Opaque Cerulean (hue) [HO.af];
+ Oriental Blue [HO.o];
+ Permanent Blue [LA.a];
+ Phthalo Blue [GEN | BA.o.a | DR.a.a(s3hb).a(s3mb).o | DS.o | DV.a.af.k..o.w | HO.wo | MW.o | RT.a.a.o.wo | SE.w | SI.p | WN.k.w];
+ Phthalo Blue Deep [LA.a];
+ Phthalo Blue Green [RT.w]; 
+ Phthalo Blue (Green Shade) [DS.ad.o | DR.a | UT.a.o];
+ Phthalo Blue (GS) [DS.ad.o];
+ Phthalo Blue Red [GU | RT.w]; 
+ Phthalo Blue (Red Shade) [CR.ao.o | DS.ad.o | DR.a.w | DV.w | HO.w | MG.w | WN.wo];
+ Phthalo Blue (Yellow Shade) [HO.w ];
+ Phthalo Blue (RS) [CR.ao.o | DS.ad.o | DR];
+ Phthalocyanine Blue [GEN | BA.a | PF | SE.p];
+ Phthalocyanine Blue (Green Shade) [LQ.a];
+ Phthalocyanine Blue Red Shade [MG];
+ Pigment Blue 15;
+ Primary Blue [BA.a | DR.a | SE.p | WN.g];
+ Primary Cyan [HO,g];
+ Primary Phthalo Blue [PF.o];
+ Process Cyan;
+ Prussian Blue (hue) [LA.a];
+ Prussian Blue Hue [MR.o];
+ Prussian Blue Phthalo [MR.o];
+ Scheveningen Blue Deep [OH.o];
+ Shiva Blue Deep [SV];
+ Thalo Blue [BR | GRd];
+ Transparent Blue [HO.o];
+ Winsor Blue [WN.a.a.g]; 
+ Winsor Blue (Green Shade) [WN.o.w.wp.wp(L)];
+ Winsor Blue (Red Shade) [WN.o.w.wp.wp(L)];
+ Plus numerous hues of less lightfast or more expensive pigments (i.e. Cerulean; Cobalt; etc.) alone and In mixtures","74160
+ a form","Synthetic organic;
+ Copper Phthalocyanine;
+ Tetracholoro Phthalocyanine;
+ The organic colorant is precipitated on aluminum hydrate base to form a intense dark blue lake pigment. Color variations are achieved by adjusting the formulation, for example chlorinating the copper phthalocyanine produces greener pigments. (Ref: CAMEO Database at Boston MFA)
+ Download the Gharda Pigments Tech Data Sheet PDF (Ref)
+ (Ref: PCImag.com Article);
+ LBNLPigment Database Spectral radiative properties;
+ Phthalo Blue (i);
+ Phthalo Blue (ii);
+ Synthesis of Copper Phthalocyanine on the UC235 Youtube Channel: [YouTube Video]
+ Synthesis of Copper Phthalocyanine the Texium YouTube Channel: [YouTube Video] CAS 147-14-8","Intense deep blue in mass tone reddish to greenish bright blue in shades, has 'green shade' & 'blue shade' varieties.
+ Heavily staining w/ over powering tinting strength, unless extended.;
+ † Darkens, Dulls, Fades*; These effects are inherent to their light fastness and may take decades or centuries to have any noticeable effects.",T,I,A,"Extremely powerful tint strength, usually extended to some degree; 
+ * Most of the Phthalocyanine pigments can ""bronze"" over in masstone, usually additives & modern manufacturing techniques help prevent this.
+ Phthalocyanines Have a tendency to flocculate (granulate) extremely, paint makers usually add additives like Surfactants & flow improvers to counteract this, as a result they usually are non-granulating in watercolors.
+ Particle size effects color and light fastness (Ref handprint.com)
+ ** Rated with excellent lightfastness in watercolors in tests by Bruce MacEvoy @ handprint.com. See PB-15 @ Handprint.com;
+ *** Phthalo Blues have no significant hazards, may have traces of suspected carcinogen, teratogen. Before 1982 samples may be contaminated with traces of PCB (Ref Blick Art Materials pigment info);
+ (Ref: CAMEO Materials Database at Boston Fine Arts);"
+PB15:1,B,CIPIGMENT,15.1,Phthalocyanine Blue RS,"Berlin Blue [MA.o.w];
+ Blockx Blue [BX.o.w];
+ Cerulean Blue Hue [MA.g];
+ C.I. Pigment Blue 15:1; 
+ Cyanine Blue BS;
+ Cyan Thalo [CH];
+ Indigo [SE.a];
+ Intense Blue [CH];
+ Noblesse Blue [MA.o(HD)];
+ Permanent Blue [LK];
+ Phthalocyanine Alpha Blue;
+ Phthalo Blue [BA.o | GB.o.o | KP.p | LK | MA.a.p | SCH.w | SE.o | WN.o];
+ Phthalo Blue GS [RGH.o];
+ Phthalo Blue, Primary Blue [KP.p];
+ Phthalo Blue Red [RT]; 
+ Phthalo Blue (Reddish) [SQ.a];
+ Phthalo Blue (Red Shade) [GO.a.af.ao | TA.a.af | KA.p | SE.a | WN.a];
+ Phthalo Blue RS [DR.w | GO.a.af.ao | RGH.o];
+ Phthalo Cyan [CH];
+ Pigment Blue 15:1;
+ Prussian Blue (hue) [LK];
+ Tetra-Chloro Perywinkle [GU.pd];
+ Thalo Blue RS;
+ Transparent Blue [OH.a];
+  Turquois (Phthalo) [GO.ab];
+ Winsor Blue RS [WN]; 
+ Plus numerous hues of less lightfast or more expensive pigments (i.e. Cerulean; Cobalt; etc.) alone and In mixtures","74160
+ a form","Synthetic Organic;
+ Copper Phthalocyanine;
+  
+ C32H16CuN8
+  
+ CAS 12239-87-1","Intense deep blue in mass tone reddish bright blue in shades;
+ Heavily staining w/ over powering tinting strength, unless extended.
+ † Darkens, Dulls (see above)",T,II,A,"Extremely powerful tint strength, usually extended to some degree; 
+ Particle size effects color and lightfastness (Ref handprint.com)
+ **Phthalo Blues have no significant hazards, may have traces of suspected carcinogen, teratogen. Before 1982 samples may be contaminated with traces of PCB (Ref Blick Art Materials pigment info);
+ (Ref: CAMEO Materials Database at Boston Fine Arts);"
+PB15:2,B,CIPIGMENT,15.2,Phthalocyanine Blue,"Alpha Blue - NC;
+ Antique Bronze Blue [HO.w];
+ Blue Green;
+ Blue Lake [OH.w];
+ C.I. Pigment Blue 15:2; 
+ Phthalo Blue [GB.o | OH.a];
+ Phthalo Blue Red Shade [CAS.k];
+ Phthalocyanine;
+ Phthalocyanine Blue;
+ Pigment Blue 15:2;
+ Scheveningen Blue Deep [OH.w];
+ XSL Phthalo Blue, Royal Blue [KP.p];
+ Plus numerous hues of less lightfast or more expensive pigments (i.e. Cerulean; Cobalt; etc.) alone and In mixtures","74160
+ a form","Synthetic Organic;
+ Copper Phthalocyanine;
+ CAS 12239-87-1","Intense deep blue in mass tone reddish to greenish bright blue in shades;
+ Heavily staining w/ over powering tinting strength, unless extended.;
+ † Darkens, Dulls (see PB15 above)",T,II,A,"Extremely powerful tint strength, usually extended to some degree; 
+ Particle size effects color and light fastness (Ref handprint.com)
+ *Phthalo Blues have no significant hazards, may have traces of suspected carcinogen, teratogen. Before 1982 samples may be contaminated with traces of PCB (Ref Blick Art Materials pigment info);
+ (Ref: CAMEO Materials Database at Boston Fine Arts);"
+PB15:3,B,CIPIGMENT,15.3,Phthalocyanine Blue BGS,"Alizarin Blue Lake [SE.o];
+ Avatar Blue [MA.o(HD)];
+ Azure (hue) [LK];
+ Bleu Phtalocyanine [LB.o];
+ Bleu Primaire [LB.o];
+ Blockx Blue [BX]; 
+ Blue Lake [SE.os];
+ Brilliant Blue [UT.a]; 
+ Cerulean Blue (hue) [HO.af];
+ Cerulean Blue Hue [UT.a | SH.w];
+ C.I. Pigment Blue 15:3 
+ Cobalt Blue (hue) [HO.ag]; 
+ Cobalt Blue Hue (Primary Blue) [DR.o];
+ Cyan (Primary) [LK];
+ Cyanin Blue [PF.w];
+ Cyanine Blue [PF.w];
+ Cyanine Blue BGS;
+ Dark Blue [KP.p];
+ Dark Blue Medium [BA.ag];
+ Helio Blue [SCH.g];
+ Helio Cerulean [SCH.w];
+ Heliogen® Blue [KP.p];
+ Marine Blue;
+ Manganese Blue Hue [AS | UT | WN];
+ Manganese Blue Nova [HO.a];
+ Oriental Blue [HO.a];
+ Peacock Blue [SH.w];
+ Phthalo Blue [AS | CR.a(jo).a .ao.o | DR.w | DS.ad.i.o.w | GO.ab | DV | JO.a | LB.o | LK | MA.o(artis) | MG.g.w | RF.e | ROSS.o | SCH.a.o.p | UT.w | WL.o.p];
+ Phthalo Blue (Blue Shade) [MW.wo];
+ Phthalo Blue Cyan [SCH.a]; 
+ Phthalo Blue Green [GU | RT];
+ Phthalo Blue (Greenish) [SQ.a];
+ Phthalo Blue Green Shade [DR.w | DS.w | KA.p | RGH.o.p | SE.a | TA.a.af | WN.a];
+ Phthalo Blue (GS) [ DR.w | DS.w];
+ Phthalo Blue Lake [MH.o];
+ Phthalo Blue Primary Blue [SI.p];
+ Phthalo Blue Red Shade [RGH.o.p];
+ Pthalo Blue Slight Red [GU];
+ Phthalo Blue royal blue [KP.p];
+ Phthalocyanine Beta Blue;
+ Phthalocyanine Blue [ KA.ad | LQ.a | MG.a.o | MT | UT];
+ Phthalocyanine Blue (G.S.) [KA.o];
+ Phthalocyanine Blue (Green Shade) [LQ.a];
+ Phthalocyanine Blue Lake [MH];
+ Phthalocyanine Turquoise [MA.p];
+ Phthalo Turquoise [WNd];
+ Pigment Blue 15:3;
+ Primary Blue [BX.o.w | LB.o | LK | LQ.a];
+ Primary Blue (Cyan) [LK | MA.a.g.o.w.w];
+ Primary Phthalo Blue [PF.o];
+ Primary Phthalocyanine Blue [PF.o];
+ Process Cyan [DR | WN.a];
+ Prussian Blue (hue) [LA.a];
+ Richeson Blue [SQ.a];
+ Royal Blue;
+ Scheveningen Blue [OH.o.w];
+ Sky-Blue [KP.p | MA];
+ Thalo Blue GS;
+ Translucent Cyan [SCH.o(Mus)];
+ Transparent Phthalo Blue (Green Shade) [];
+ Winsor Blue GS [WN]; 
+ Plus numerous hues of less lightfast or more expensive pigments (i.e. Cerulean; Cobalt; etc.) alone and In mixtures","74160
+ b form","Synthetic Organic;
+ Beta Copper Phthalocyanine;
+  
+ C32H16CuN8
+  
+ CAS 147-14-8","Intense deep blue in mass tone greenish bright blue in shades;
+ Heavily staining w/ over powering tinting strength, unless extended.
+ † Darkens, Dulls (see PB15 above)",T,II,A,"Extremely powerful tint strength, usually extended to some degree; 
+ * Appears to have slightly less lightfastness in some brands of watercolors than plain old PB-15, but still rated as excellent in watercolor tests by Bruce MacEvoy @ handprint.com. See PB-15 @ Handprint.com;
+ Particle size effects color and light fastness (Ref handprint.com) 
+ ** ""Phthalo Blues have no significant hazards, although those made before 1982 contained some PCBs (polychlorinated biphenyls)"" (Ref Blick Art Materials pigment info)"
+PB15:4,B,CIPIGMENT,15.4,Phthalocyanine Blue NCF,"Blue Phthalocyanine Beta Form;
+ Cerulean Blue Hue (primaire) [SE.o];
+ C.I. Pigment Blue 15:4 
+ Copper Phthalocyanine Blue; 
+ Cyanine Blue NCF;
+ Manganese Blue Hue [BA.w | GB.o]; 
+ Manganese Blue Phthalo [RT.o];
+ Phthalo Blue [CL | BA.w | GR.o.o.w.w.wo?* | RT];
+ Phthalo Blue Green [RT.o];
+ Phthalo Blue (Green Shade) [CAS.k | GO.a.ab.af.ag.ao];
+ Phthalo Blue G.S. [GO.a.ab.af.ag.ao ];
+ Phthalocyanine Beta Blue NCF; 
+ Phthalocyanine Blue NCF;
+ Phthalo Blue (NCFβ-Form);
+ Phthalo Blue G (NCNF);
+ Pigment Blue 15:4;
+ Primary Cyan;
+ Shiva Blue Light [SV];
+ Thalo Blue [GR.o.o.w.w.wo];
+ Transparent Phthalo Blue G.S. [GO.ab];
+ Transparent Phthalo Blue (Green Shade) [GO.ab];
+ Plus numerous hues of less lightfast or more expensive pigments (i.e. Cerulean; Cobalt; etc.) alone and In mixtures","74160
+ b form","Synthetic Organic;
+ Beta Copper Phthalocyanine;
+ CAS 147-14-8","Intense deep blue in mass tone reddish to greenish bright blue in shades;
+ Heavily staining w/ over powering tinting strength, unless extended.;
+ † Darkens, Dulls (see PB15 above)",T,II,A,"Extremely powerful tint strength, usually extended to some degree; 
+ Staining; 
+ Particle size effects color and lightfastness (Ref handprint.com) 
+ *Phthalo Blues have no significant hazards, may have traces of suspected carcinogen, teratogen. Before 1982 samples may be contaminated with traces of PCB (Ref Blick Art Materials pigment info);
+ (Ref: CAMEO Materials Database at Boston Fine Arts);"
+PB15:6,B,CIPIGMENT,15.6,Phthalocyanine Blue,"C.I. Pigment Blue 15:6;
+ Cobalt Blue (Phthalo) [LK];
+ Helio Blue Reddish [SCH.p];
+ Helio Blue RS [SCH]; 
+ Old Holland Blue [OH.w];
+ Phthalo Blue [LK];
+ Phthalo Blue Red [RT.o];
+ Phthalo Blue Red Shade [DS.w | OH.a];
+ Phthalo Blue RS [DS.w];
+ Phthalo Blue Reddish [KP.p | SCH.p];
+ Phthalocyanine Blue;
+ Phthalocyanine Blue Epsilon;
+ Phthalocyanine Blue (red shade) [LQ.a];
+ Pigment Blue 15:6;
+ Translucent Oriental Blue [SCH.o(Mus)];
+ Plus numerous hues of less lightfast or more expensive pigments (i.e. Cerulean; Cobalt; etc.) alone and In mixtures","74160
+ e form","Synthetic Organic;
+ Epsilon Copper Phthalocyanine;
+ CAS 147-14-8","Intense deep blue in mass tone reddish to greenish bright blue in shades;
+ Heavily staining w/ over powering tinting strength, unless extended.;
+ † Darkens, Dulls (see PB15 above)",T,II,A,"Extremely powerful tint strength, usually extended to some degree; 
+ * Appears to have slightly less lightfastness in some brands of watercolors than plain old PB-15, but still rated as excellent in watercolor tests by Bruce MacEvoy @ handprint.com. See PB-15 @ Handprint.com;
+ Particle size effects color and lightfastness (Ref handprint.com)
+ ** Phthalo Blues have no significant hazards, may have traces of suspected carcinogen, teratogen. Before 1982 samples may be contaminated with traces of PCB (Ref Blick Art Materials pigment info);
+ (Ref: CAMEO Materials Database at Boston Fine Arts);"
+PB16,B,CIPIGMENT,16,"Heliogen Blue L 7560;
+ Phthalocyanine turquoise","Brilliant Green Blue [LK];
+ Caribbean Blue [OH.o.w];
+ C.I. Pigment Blue 16;
+ Free Base Phthalocyanine;
+ Gafast Pigment Blue 16;
+ Green Blue [HO.wo.];
+ Heliogen Blue L 7560 [BASF];
+ Helio Turquoise [SCH.g.w];
+ Marine Blue [HO.w];
+ Phthalo Blue Green Shade [ OH.a];
+ Phthalocyanine Turquoise;
+ Phthalo Turquoise [DV.w | GU | LK | SCH.a.p | WN.w.wp]; 
+ Pigment Blue 16;
+ Sapphire blue [LB.o];
+ Translucent Turquoise [SCH.o(Mus)];
+ Turquoise [LK]; 
+ Turquoise Green [MA.o.w | UT.w];",74100,"Synthetic Organic;
+ Metal Free Phthalocyanine;
+ Free Base Phthalocyanine;
+ (Ref: Industrial Organic Pigments: Production, Properties, Applications, By Willy Herbst, Klaus Hunger, ©2004, pg. 423); Buy Printed Version at Amazon 
+  
+ (Ref: Tech Data PDF at ghardapigments.com)
+ CAS 574-93-6","Intense deep greenish / turquoise blue in mass tone, greenish bright blue in shades;
+ Heavily staining w/ high tinting strength;
+ † Darkens, Dulls* but only after many years of exposure.",S/T,II,A,"* Most of the Phthalocyanine pigments can ""bronze"" over (develope a distracting dull iridescent sheen) in masstone, usually additives & modern manufacturing techniques help prevent or eliminate this. Cheap student grade paints may exhibit bronzing.
+ Phthalocyanines Have a tendency to flocculate (granulate) extremely, but paint makers usually add additives like surfactants & flow improvers to counteract this, as a result, they are usually non-granulating in watercolors.;
+ ** Not rated by the ASTM in watercolors. Lightfastness rated as excellent in tests by Bruce MacEvoy @ handprint.com. Appears to be slightly less light fast than PB-16 in watercolor. See PB-16 @ Handprint.com;
+ *** Phthalo Blues have no significant hazards (Ref Blick Art Materials pigment info);"
+PB17,B,CIPIGMENT,17,Phthalocyanine Cyan,"Antique Turquoise [HO.w(ant)];
+ Blue Lake;
+ C.I. Pigment Blue 17 
+ Cyan Blue;
+ Fast Sky Blue Lake;
+ Katsura Blue [HO.g];
+ Malachite Blue Lake;
+ Peacock Blue [HO.wd];
+ Phthalo Cyan;
+ Phthalocyanine Blue;
+ Phthalocyanine Cyan;
+ Pigment Blue 17;
+ Pure Blue (Primary Blue) [HO.g]; 
+ Seikalight Blue A612;
+ Sky Blue;
+ Sky Blue Lake;","74180
+ 74200","Synthetic Organic;
+ Barium salt of trisulphonated phthalocyanine blue; C.I. 74160;
+ Copper phthalocyanine heated with 40% Sulfuric acid above 60 ℃, di-or tri-sulfonated, then precipitated on a barium salt;
+ Made using concentrated sulfuric acid for the green shade, diluted SO4 for a greener blue, and olive green. (Ref. DyeStuff)
+ C32-H16-CuN-8-O6-S2
+ CAS 71799-04-7","Bright greenish blue*
+ Heavily staining w/ high tinting strength;
+ † Darkens, Dulls* but only after many years of exposure.",S/T,I,A,"** Most of the Phthalocyanine pigments can ""bronze"" over (develope a distracting dull iridescent sheen) in masstone, usually additives & modern manufacturing techniques help prevent or eliminate this. Cheap student grade paints may exhibit this bronzing.
+ Phthalocyanines Have a tendency to flocculate (granulate) extremely, but paint makers usually add additives like surfactants & flow improvers to counteract this, as a result, they are usually non-granulating in watercolors.;
+ ** Not rated by the ASTM. Lightfastness rated as excellent in tests by Bruce MacEvoy @ handprint.com.  See PB-17 @ Handprint.com;
+ *** Phthalo Blues have no significant hazards, Before 1982 samples may be contaminated with traces of PCB (Ref Blick Art Materials pigment info);"
+PB17:1,B,CIPIGMENT,17.1,Fast Sky Blue Lake,"Fast Blue 4230;
+ Fast Sky Blue Lake;
+ Greenish Blue Lake;
+ Sky Blue Lake",74180,"Barium salt of trisulphonated phthalocyanine blue; C.I. 74160;
+ Barium copper(2+) phthalocyanine-29,31-diide-8,22-disulfonate (1:1:1)
+ C32-H14-CuN8-O6-S2, Ba
+ CAS 67340-41-4
+ EC 266-653-0",Bright green blue;,X,II,A,"see above;
+ There seems to be confusion in the literature, PB-17 and PB-17:1 seem to be referred to each other as the same pigment, with the references sometimes using the same CAS no. & Brand names and sometimes using different CAS numbers for each pigment.?
+ * Blue wool scale seems low for a phthalocyanine
+ ** see above"
+PB22,B,CIPIGMENT,22,Indanthrone Blue,"Rubber Blue GD;
+ C.I.Vat Blue 4;
+ C.I. Pigment Blue 22;
+ Indanthrone Blue;
+ Pigment Blue 22",69810,"Synthetic Oraganic;
+ anthraquinones;
+ Indanthrone chlorinated with sulfuryl chloride, modified with concentrated sulfuric acid for yellow brown, diluted SO4 for blue and In a basic solution for reddish blue shades*;
+ C.I.Vat Blue 4, C.I. 69800 with Sulfuryl chloride chlorination.
+ C28-H13-Cl-N2-O4
+ CAS 1324-27-2",Reddish light navy blue,X,I,A,"Not used in any artist paints currently, but is used in auto finishes, plastics and inks. There is probably no advantage to using this pigment as opposed to PB-60, they both seem to be similar shades and PB 60 is readily available.
+ * seems to indicate sensitivity to acids or bases?
+ **? Not rated by ASTM, the only sources I could find indicated excellent lightfastness. (DyeStuff)
+ ***? anthraquinones & Indanthrones, in general, are not considered toxic, however i have not been able to confirm this in regards to this specific pigment."
+PB24,B,CIPIGMENT,24,Ichomine Turquoise Blue G,"C.I. Pigment Blue 24;
+ Erioglaucine;
+ FD & C Blue 1;
+ Ichomine Turquoise Blue G;
+ Peacock Blue;
+ Pigment Blue 24;
+ Symuler Fast Blue 4198;",42090:1,"Inorganic; Triphenylmethane;
+ CAS 6548-12-5",Bright greenish blue,X,IV,,"used in color process inks, colored pencils and low cost watercolors"
+PB25,B,CIPIGMENT,25,Pigment Blue 25,"C.I. Pigment Blue 25;
+ Congo Blue;
+ Pigment Blue 25;
+ Symuler Fast Blue 4198",21180,"Synthetic organic;
+ Disazo;
+ CAS 10127-03-4",Reddish navy,X,II,A,-
+PB27,B,CIPIGMENT,27,Prussian Blue,"American Blue;
+ Ammonium Prussian Blue;
+ Antwerp Blue [AS | WN.w.wp.wp(L)];
+ Antwerpener Blau;
+ Antwerpener Blue;
+ Ariabel Dark Blue;
+ Azul de Amberes;
+ Azul de Prusia;
+ Berlin Blue;
+ Berlinisch Blau;
+ Berlin Green;
+ Bleu d'Anversa;
+ Bleu de prusse [LB.o];
+ Bleu di Prussia;
+ Bleu Mineral;
+ Blue Ferrite;
+ Blue Solfort Milori;
+ Bronze Blue;
+ Brunswick Blue;
+ Celestial Blue;
+ C.I. Pigment Blue 27;
+ China Blue; 
+ Chinese Blue;
+ Delfter blue;
+ Engineer's Blue;
+ Erlanger blue;
+ French Blue;
+ Gas Blue;
+ Haarlem Blue;
+ Haerlem Blue;
+ Hamburg Blue;
+ Ink Blue; 
+ Iron Blue;
+ Konjo;
+ Lacquer Blue;
+ Leitch's Blue;
+ Louise Blue;
+ Laundry Blue;
+ Mansa Blue;
+ Mineral Blue;
+ Miloriblau;
+ Milori Blue;
+ Milori Blue Micronised;
+ Monthier Blue;
+ Monthier's Blue;
+ New Blue;
+ Oriental Blue;
+ Paste Blue; 
+ Paris Blue [KP.p];
+ Parisian Blue;
+ Parisian (Prussian) Blue Extra [OH.w];
+ Persian Blue;
+ Pigment Blue 27;
+ Potash Blue;
+ Preußisch blau;
+ Preussisch blau; 
+ Prussian Blue [GEN | AS | BA.o.o.w | CAS.k | CH | CL |DR.o.o(georg).o. w.w | DS.i.o.pd.w | DV.o.w | GR.o.o.w.w.wo | GU | HO.g.o.w.wo | KA.o.p | KP.p | LB.o | LK | MA.g.o(artis).o.p.w.w | MG.g.o.w | MH.o | MT | MR.o | MW.o.wo | PF.o.o | RGH.o.p | RF.e | ROSS.o | RT.o.o.w.wo | SCH.g.o.o(Mus).p.w | SE.o.os.p.t.w | SH.w | SV | SQ.a | UT.o.w | WL.o.p | WN.g.k.o.wo.w.w.wp.];
+ Prussian Blue (Milori) [KA.p | WL.o];
+ Prussian Blue (Milori blue) [SI.p]; 
+ Prussian/Paris Blue [SCH.o(Mus).p];
+ Steel Blue;
+ Soluble Blue;
+ Soul Blue [MA.o(HD)];
+ Toning Blue;
+ True Prussian Blue [PF];
+ Turnbull's Blue;
+ VossenblauNach;
+ Vossen Blue® ;
+ Wasserblau;
+ Water Blue;
+ Wilkinson’s Blue",77510,"Synthetic Inorganic;
+ ""Produced by oxidation of ferrous ferrocyanide salts. It contains ferric hexacyanoferrate(II) in a cubic lattice crystal structure""  (Ref. DrugBank.com)
+ PB-27 Ferric Ferrocyanide @ PubChem Chemical Database
+ iron(III) hexacyanoferrate(II);
+ Ferric Ammonium Ferrocyanide; (Ref webexhibits.org); 
+ Spectral radiative properties @ LBNL Pigment Database ; 
+ Making pigments: Prussian Blue at webexhibits.org;
+ Manufacture and Info on Chemical synthesis at YouTube-NileRed channel
+ Fe4-[Fe(CN)6]3 or
+ C18-Fe7-N18;
+ CAS 14038-43-8;
+ CAS 12240-15-2 (Chemical Book); 
+ CAS 25869-00-5;
+ EC 237-875-5","Deep blue, greenish undertone1
+ Staining w/ good tinting strength
+ 1  The exact hue depends on the method of preparation, and particle size.
+ † Fades; ""turns brownish in the presence of alkalis or heat"" (CAMEO)",S/T,I,A,"First synthesized by the paint maker Diesbach in Berlin around 1706, accidentally created when Diesbach used potash tainted with blood to create some red cochineal dye. (Ref. Wikipedia);
+ Prussian Blue, PB 27@ CAMEO Art Materials Database) 
+ Found on Nazi gas chamber walls as evidence of cyanide gas (Ref. VHO.org); 
+ Milori Blue is the most common variety (usually still named Prussian Blue), is said to be a more stable form (Ref at Blue Ridge oil paints); 
+ Antwerp Blue ""is a derivative of Prussian Blue. The color strength is weaker than that of Prussian Blue for it has been reduced with Alumina"". (Ref Dictionary of Artists' Oil Pigments: Their Chemical and Physical Properties by R. Bruce Handlong, 1969)
+ Brunswick Blue is ""Prussian blue precipitated onto a base of barium sulfate (barytes)"". Probably a weaker shade as it has been essentially diluted. (Ref Pigment Compendium p.95, amazon link);
+ Turnbull's Blue is the same substance, but is made from different reagents, and its slightly different color stems from different impurities (Ref. Wikipedia); 
+ Chinese Blue ""is considered the finest grade of Prussian Blue, it has a greenish undertone"" (Ref. Pigment Compendium);
+ ""Bronze Blue is a variety of Prussian Blue showing a sheen when viewed from an angle."";
+ ""Gas Blue is made direct from gas liquors instead of crystallized ferrocyanide."";
+ Steel Blue is the grey-blue form (Ref Colorindex 3rd Ed., V.4, Inorganic colourants CI 77510)
+ Berlin Green is described as Ferric ferricyanide a ""Precipitate potassium ferricyanide with ferric chloride"" in the Colorindex 3rd Ed., V.4, Inorganic colorants chemical constitution numbers CI 77533; 
+ * In watercolors tested by Bruce MacEvoy, of handprint.com, lightfastness tested 8; 8 (excellent) in many brands of watercolor paints, but it was ""unusually variable both within and across brands"" with some brands being almost fugitive. Find out more about PB-27 in watercolor @ handprint.com
+ The Blue Wool Scales listed indicate a fair amount of drop off in light fastness for heavy tints.
+ Purity may have an effect on stability (Ref: Industrial chemistry: a manual for the student and manufacturer, edited by Allen Rogers, 1919, p 398); See free art Books Page
+ ** ""Despite the fact that it is prepared from cyanide salts, Prussian blue is not toxic because the cyanide groups are tightly bound to iron"". (Ref. Wikipedia)
+  Can produce highly toxic hydrogen cyanide gas if heated to very high temperatures or treated with concentrated acid or ultraviolet radiation (Ref Tucson Art Hazards); (Ref. CAMEO Art Materials Database)
+ Prussian blue is also used as a 'Chelating' Drug: ""orally administered for clinical purposes to be used as an antidote for certain kinds of heavy metal poisoning, such as thallium and radioactive isotopes of caesium. Prussian blue is included in the World Health Organization Model List of Essential Medicines as a specific antidote used in poisonings to provide symptomatic and supportive treatment."" (Ref. DrugBank.com). (Artist grade pigments are not made to pharmaceutical standards. DO NOT try this at home! ...unless it's WW III and you really need to get that radioactive caesium out of your system fast...)."
+PB27:1,B,CIPIGMENT,27.1,Prussian Blue,"C.I. Pigment Blue 27:1;
+ Prussian Blue [DV.k. | GB.o.p];
+ Pigment Blue 27:1
+ see above PB27 for other names",77510:1,Ferri-ammonium ferrocyanide,Dark greenish blue,T,I,B,"I couldn't find a definitive statement, but my guess the PB-27:1 variety is one or both of the following:
+ Brunswick Blue, Prussian blue precipitated onto a base of barium sulfate (barytes). (Ref Pigment Compendium p.95);
+ Turnbull's Blue is Ferri-ammonium ferrocyanide, made from different reagents (Ref. Wikipedia); 
+ * see above, it's possible that this version has different light fastness. Many brands don't differentiate between the colon numbers and just call everything the main C.I. name."
+PB28,B,CIPIGMENT,28,Cobalt Blue,"Aluminate;
+ Arctic Blue No.3;
+ Azul de Cobalto;
+ Binder’s Cobalt Blue;
+ Bleu Cobalto;
+ Bleu de Cobalt;
+ Blue de Thenard;
+ Blue cobalt aluminate;
+ Cerulean Blue (hue);
+ Cerulean Blue Light (hue) [RGH.o];
+ C.I. Pigment Blue 28; 
+ Cobalt Aluminate;
+ Cobalt Aluminate Blue Spinel;
+ Cobalt Bermuda Blue [GU.pd]; 
+ Cobalt Blue [GEN | AS | BA.a.w | BX.o.w | BR | CAS.k | CL | CR.ao.o |DR.a.t.w | DS.ad.o.w | DV.a.af.k.o.w | GB.o.p | GO.a.af.ag.ao | GR.o.w.wo | HO.a.g.o.w.wo | KA.o.p | LA.a | LB.o | LK | LQ.a | MA.a | MG.a.g.o.w | MH.o | MR.o | MT | MW.o | OH.a.o.w | RF.e | RGH.o.p | RT.a.o.w.wo | TA.a.af | SH.w | SV | SE.a.w | SQ.a | TA.a. | UT.a.o.w | WL.o.p | WN.a.g.k.o.wo.w.w.wp.wp(L)];
+ Cobalt Blue Dark [GU.pd | SI.p | KP.p]; 
+ Cobalt Blue Dark, light greenish hue [KP.p];
+ Cobalt Blue Dark (red shade) [GU];
+ Cobalt Blue Deep [DV.w | HO.o | MA.o.o(artis).p.w | WL.o.p];
+ Cobalt Blue (Genuine) [CH];
+ Cobalt Blue Light [DV | GU | KP.p | MA.o.o(artis).p.w | RT.o | SCH.a.g.o.o(Mus).p.w | SI.p];
+ Cobalt Blue, Medium [SI.p | KP.p]; 
+ Cobalt Blue Medium (red shade) [GU];
+ Cobalt Blue Pale [HO.o | KP.p];
+ Cobalt Blue (Primary Blue) [HO];
+ Cobalt Blue Pure [UT.o];
+ Cobalt Blue Red [GU];
+ Cobalt Blue, Sapporo [KP.p];
+ Cobalt Blue Turquoise, light [KP.p]; 
+ Cobalt Colanyl Oxide Blue;
+ Cobalt Teal [GB.o | MG.w]; 
+ Cobalt Turquoise [GR.o.wo| HO.g.wo];
+ Cobalt Turquoise Light [HO.w | KA.o];
+ Cobalt Ultramarine;
+ Daipyroxide Blue;
+ Gahn’s Ultramarine;
+ Kings Blue;
+ Kobaltblau;
+ Leithner Blue;
+ Leyden Blue;
+ Light Cobalt Blue (Genuine) [CH]; 
+ Midnight Blue No.1;
+ Murano Blue [MA.o(Ren)];
+ Pigment Blue 28;
+ Primary Blue;
+ Royal Blue [PF.o;
+ Royal Blue 299;
+ Shepherd Artic Blue;
+ Shepherd Blue;
+ Smalt Blue;
+ Thénard's Blue*;
+ True Blue;
+ True Cobalt Blue [PF.o]",77346,"Inorganic;
+ Cobalt Aluminate Blue Spinel (CoAl2O4) is produced by calcining, at high temperature, a mixture of Cobalt (II) Oxide, and Aluminum (III) Oxide in varyied ratios forming a interdiffused crystalline spinel. It may include any one or more of the modifiers MgO, ZnO, Li2O and/or TiO2. (Ref Color Index 4th edition);
+ More information at Boston Fine Arts CAMEO Art Materials Database;
+ Mixed Metal Oxide (MMO) (Ref: The Use of Mixed Metal Oxide Pigments in Industrial Coatings
+ By Kevin Biller, PCI mag, April, 2010, PCImag.com):
+ Synthetic Cobaltous Aluminate;
+ Oxides of Cobalt and Aluminum;
+ Cobalt Aluminate Blue Spinel;
+ LBNLPigment Database Spectral radiative properties;
+ Cobalt Aluminate Blue Spinel (i);
+ Cobalt Aluminate Blue Spinel (ii);
+ Cobalt Aluminate Blue Spinel (iii); 
+ Cobalt Aluminum Blue;
+ Cobalt Blue;
+ Making Cobalt Blue Pigment at webexhibits.org
+  
+ CoO + Al2O3
+ CPMA 13-26-2
+  
+ CAS 1333-88-6; 
+ CAS 1345-16-0","Greenish to Mid-shade Blue;
+ Med. Staining w/ fair tinting strength
+ † over time it may whiten slightly to a more pastel shade, but also could darken when mixed with Lead White.",S/O,I,B,"Discoved in 1882;
+ A more in depth discussion about PB-28 in watercolors can be found @ handprint.com by Bruce MacEvoy.  See PB-28 @ Handprint.com;
+ * Thénard's blue was actually a specific process for making a deep blue Cadmium pigment invented by Louis Jaques Thénard. In time, it has come to be used as a term for ""cobalt blue"" in general. (Reference Pigment Compendium, 2008);
+ (Ref: at webexhibits.org)
+ ** Pigments containing Cobalt require a PROP 65 label in California.
+ Cobalt Spinel is not soluble in water, and so, probably poses little hazard in normal artistic use.
+ Avoid dust & spray. Do not put a point on your brush with your mouth. Don't lick the paint off your fingers, use a Gov. certified soap and water to wash your hands. Danger to the environment is minuscule, but try to get all of the paint on the painting, ...and not on your clothes or pets."
+PB29,B,CIPIGMENT,29,Ultramarine Blue,"Armenian Blue;
+ Antique Pale Blue;
+ Antique Ultramarine [HO.w(ant)];
+ Armenian blue;
+ Artificial Ultramarine;
+ Ash Blue;
+ Azure blue;
+ Aazur d'Acre;
+ Azzuro oltramarino; 
+ Azzurrum transmarinum;
+ Azzurrum ultramarine;
+ Bleu Outremer [LB.o];
+ Blue (Ultramarine) [DV];
+ Blue Violet Deep [RGH.o];
+ Brilliant Blue [DR.g];
+ Brilliant Blue Purple;
+ Brilliant Ultramarine;
+ Cerulean Blue Hue;
+ Capri Blue [MA.o(Med)];
+ C.I. Pigment Blue 29; 
+ Cobalt Blue (hue);
+ Cobalt Blue Hue [DR | GR.w | MA | UT.a.o];
+ Cobalt Blue (ultram) [RT];
+ Cobalt Blue Ultramarine [RT.a.o];
+ Cool Blue [MA.o(HD)];
+ Dark Ultramarine Blue (Red Shade) [SE.a];
+ Deep Ultramarine [PF.o];
+ Deep Ultramarine Blue [CH | PF.o];
+ Dolly Blue;
+ Extra Pure Ultramarine Blue [MR.o];
+ Factitious Ultramarine;
+ French Blue;
+ French Ultra Blue [BA.o.w];
+ French Ultra Light Extra [OH.o.w];
+ French Ultramarine [AS | BA.o | DS.ad.o.pd.w | DR.o.o.t.w | DV.af.w | GR.w | KA | RT.w | SE.o | WN.k.o.wo.w.wp.wp(L)];
+ French Ultramarine Blue [GEN | BA.o.w | CR.ao.o |DR | GR.o.o.wo | MW.o.wo | RT | SE.o | UT.o.w | WN.w.wp.wp(L)];
+ French Ultramarine Blue Deep [BX.w];
+ French Ultramarine Extra [OH.a];
+ French Ultramarine Light [BX.w | OH];
+ French Ultramarine Light Extra [OH.o.w];
+ French Ultramarine (R.S.) [KA.o]; 
+ French Ultramarine (Red Shade) [DV.w]; 
+ Genuine Lapis Lazuli [WL.o];
+ Genuine Lapis Lazuli (natural Ultramarine) [DS.ad.o.w];
+ German Ultramarine;
+ Gmelin's Blue;
+ Guimet’s Blue;
+ Lapis Lazuli* [GEN |OH];
+ Lapis Lazuli (hue* see notes) [BX.o];
+ Lapis Lazuli (Afghanistan, standard, genuine) [NP.p];
+ Lapis Lazuli (Baikal, Russia, geniune) [NP.p];
+ Lapis Lazuli from Chile (geniune)[KP.p]; 
+ Lapis Lazuli Genuine [GEN | DS.ad.o.w | DV.o.w];
+ Lapis Lazuli, greyish-blue (geniune) [KP.p];
+ Lapis Lazuli (premium geniune) [NP.p];
+ Lapis Lazuli, pure (geniune) [KP.p];
+ Lapis Lazuli, sky-blue (geniune) [KP.p];
+ Lapis Lazuli (standard geniune) [NP.p];
+ Lapiz Ultramarine;
+ Lazuline Blue;
+ Lazurstein;
+ Lazurite (Lapis Lazuli) [NP.p];
+ Lefranc Blue [LB.o];
+ Light Ultramarine [PF.o.w];
+ Light Ultramarine Blue [CH | GO.a | PF.o];
+ Lime Blue**;
+ Laundry Blue;
+ Michelangelo Blue [MA.o(Ren)];
+ Navy Blue;
+ New Blue;
+ Oltramarino;
+ Oriental Blue;
+ Permanent Blue [DS.o | DR.o.o.w | GR.o.wo];
+ Permanent Blue (Ultramarine) [GR.o]; 
+ Permanent Blue (Ultramarine Blue) [GR.o]; 
+ Pierre d'azur;
+ Pigment Blue 29;
+ Primary Blue; 
+ Royal Blue [CH];
+ Sky Blue;
+ Sky Blue Ultramarine [MA.p.w];
+ Spanish Ultramarine [GU];
+ Synthetic Ultramarine;
+ True Ultramarine Blue [PF];
+ Ultra Blue [AS];
+ Ultra Blue Deep [OH.w];
+ Ultra Green Shade [DV.w | WN.o];
+ Ultra Red [GR.o];
+ Ultramarine [GEN | AS | DR.a.a.a(s3hb).a(s3mb).o.w | HO.o.af | LB.o | LK | MA.a.a.o(artis) | RT.a.o.wo | WN.a.a.g.w];
+ Ultramarine Deep [HO.o | MA.p];
+ Ultramarine Light [HO.o | MA.p | SH.w];
+ Ultramarine (Green Shade) [DV.w | WN.w.wp.];
+ Ultramarine Blue [GEN | AS | BA.a.a.o.w | BR | CAS.k | CH | CL | CR.a |DS.ad.i.o.pd.w | DV.a.af.k.o.w | EP.p | GB.o.o.p | GO.a.ab.af.ag.ao | GR.w.w | HO.a.ag.o.o.w.wo | KA.ad.o.p | KP.p | LA.a | LB.av | LQ.a | MA.o(artis) | MG.a.g.o.w | MH.o | MT | OH.a.o.w | PF.o.w | RGH.o.p | RF.e | ROSS.o | SCH.a | SE.os.o.t | SQ.a | TA.a.af | UT.a.o.w | WL.o.p | WN.a];
+ Ultramarine Blue Classic [TA.a.af ];
+ Ultramarine Blue Dark [BR | KP.p | SI.p]; 
+ Ultramarine Blue Deep [BX.o | CR.a(jo) | DS.o | GR.wo | GU | HO.g.o | JO.a | LK | MA.o(artis) | MG | MR.o | OH.a.o.w | ROSS.o | SCH.o.o(Mus).p | SE.o.p | SV | SH.w];
+ Ultramarine Blue (French) [WL.o];
+ Ultramarine Blue Greenish Extra [KP.p];
+ Ultramarine Blue Greenish Light [KP.p | SI.p];
+ Ultramarine Blue (Green Shade) [LB.o | LQ.a | SE.a | WN.w.wp];
+ Ultramarine Blue Light [BX.o | BR | HO.g.o | KA.p | KP.p | LK | SCH.o.o(Mus).p | SE.p | SV];
+ Ultramarine Blue Light (Green Shade) [KA.o];
+ Ultramarine Blue Medium [GU];
+ Ultramarine Blue (Primary) [HO.ag];
+ Ultramarine Blue R2 [GU];
+ Ultramarine Blue R4 [GU]; 
+ Ultramarine Blue R6 [GU];
+ Ultramarine Blue R8 [GU];
+ Ultramarine Blue Red Shade [KA.p | LQ.a | RGH.o];
+ Ultramarine Blue Reddish [KA | SI.p];
+ Ultramarine Blue RS [RGH.o];
+ Ultramarine Blue, very dark [KA];
+ Ultramarine Deep [BX.o | HO.ag.g.o.w.wo | LB.o | LK | MA.g.o.o(artis).o.p.w.w | MR.o | RT.o.w | SE.w | SCH.g| WN];
+ Ultramarine Finest [SCH.w];
+ Ultramarine Green [RGH.o];
+ Ultramarine (Green Shade) [DV | WN.g.o];
+ Ultramarine Light [HO.ag.g.o.w.wo | LB.o | LK | MA.g.o.o.p.w | RT.o | SCH.g | SE.o.w];
+ Ultramarine Primary [OH.ag];
+ Ultramarine Red [GR.o.wo?**];
+ Ultramarine Violet [GR.o?**];
+ Victramarine Blue;
+ Vein Stone
+ See Lapis Lazuli.
+  See Ultramarine ash;
+  Also used in many hues of more expensive pigments (i.e. Cerulean; Cobalt; etc.) alone and In mixtures",77007,"Ultramarine Blue can be either the pigment extracted from Lapis Lazuli or the synthetic form polysulfide of sodium, potassium, lithium or silver alumino-silicate** (Reference from Natural Pigments); (Wikipedia Ref); (Webexhibits.org);
+ Synthetic ultramarine is made by mixing anhydrous sodium sulfate or sodium carbonate with charcoal, clay, rosin, silica, sulfur, and slowly calcined in a reducing atmosphere to 1,380º F (750º C). The various shades of blues, greens, reds and violets are produced by varying heating times and temperatures, mixture proportions, and/or other modifiers. For example Ultramarine Green is the ""first product of ignition in the manufacture of Ultramarine blue by the indirect process (Ref Color Index 3rd Ed., V.4, Inorganic colorants CI 77013). Synthetic ultramarine blue has particles that rounder, finer and more even in size than the natural ultramarine. (Ref at Boston Fine Arts CAMEO Materials Database);
+ Ultra-marine, means ‘from over-seas’ (Ref: Chpt.2 of The Alchemy of Paint - Ultramarine: from over the seas by Spike Bucklow);
+ Lapis Lazuli (Ref at Boston Fine Arts CAMEO Art Materials Database);
+ Ultramarine blue, natural (Ref at Boston Fine Arts CAMEO Materials Database);
+ Ultramarine blue, synthetic (Ref at Boston Fine Arts CAMEO Materials Database);
+ (Ref: Analysis of natural and artificial ultramarine blue pigments using laser
+ induced breakdown and pulsed Raman spectroscopy, statistical analysis and
+ light microscopy, © 2008 Elsevier B.V - PDF); 
+  
+ ""Since 1828 it is created by fusing together a mixture of kaolin, soda ash, Glauber's salt, sulfur, carbon and kieselguhr. The mixture being fused by heating without air for 7-10 hrs. The resulting Ultramarine Green (PG24) is cooled, then ground and mixed with 7-10% of sulfur, the blue hue develops after heating the mixture for about an hour. The resulting blue colored mass is cooled and washed, then wet ground, levigated and finally ground to a fine powder."" (Reference Color index 3rd Ed., V.4, Inorganic colorants CI 77007)
+ LBNLPigment Database Spectral radiative properties;
+ French Ultramarine Blue;
+ Making pigments: Ultramarine at webexhibits.org;
+  
+ Na8-10Al6Si6O24S2-4 ;
+  
+  Na6-8Al6Si6O24S2-4
+  
+ CAS 1317-97-1;
+ CAS 57455-37-5","Bright, deep blue, usually violet to mid shade blue, can be in greenish shades too***;
+ Staining w/ good tinting strength;
+ Usually slightly duller in natural forms, but much duller to grey in poor quality natural forms and ultramarine ash.***",S/T,I,A,"The natural Lapis has an ancient history, Ultramarine was first synthesized in 1828;
+ Find out more about PB-29 in watercolor @ handprint.com
+ * Although Lapis Lazuli (after purifying) and Ultramarine Blue are essentially the same chemically, Lapis Lazuli is the natural mineral source and has different working properties, it also contains iron pyrite crystals that can give it a slight 'sparkle'. Lapis Lazuli is also a much more expensive pigment so it is misleading to label Synthetic PB29 as Lapis Lazuli. 
+ ** Lime Blue is a ""variety of ultramarine"" according to 'Outlines of Paint Technology by Noel Heaton, 1928'.
+ *** .the color of ultramarine blue can be varied all the way from a pale greenish blue to reddish blue and on through to violet . The creation of the specific hue desired depends on the ratios of silica and alumina (Ref. Pigment Compendium, 2008 Amazon link).;
+ Avoid mixing with chrome yellow."
+PB30,B,CIPIGMENT,30,Copper Carbonate,"Ash Blue;
+ Azul*;
+ Azul Ceniza;
+ Azurite*;
+ Azurite Genuine* [DS.w];
+ Azurite-deep blue*;
+ Azurite Greenish Grey Blue*;
+ Azurium Citramarinum
+ Azzurro*;
+ Azzurro di Biadetti;
+ Bergblau;
+ Biadetti;
+ Bice;
+ Blue Ashes;
+ Blue Bice2 [GEN | KP.p | NP.p];
+ Blue Verditer2 [KP.p];
+ Bremen Blue;
+ Brunswick Green;
+ Cenere Blue;
+ Cendre Blue;
+ Cendres Bleu;
+ Cendres Bleues;
+ Cendres Blue;
+ Chessylite;
+ Chessylite Lime Blue;
+ C.I. Pigment Blue 30; 
+ Copper Blue;
+ Copper Carbonate;
+ Lapis Armenius;
+ Lime Blue;
+ Mountain Blue;
+ Neuwied Blue;
+ Pigment Blue 30;
+ Sanders Blue;
+ Verditer;
+ Verditer Blue [NP.w];
+ Zuni Blue
+ see Azurite",77420,"Basic copper carbonates: CuCOs.Cu(OH), - Malachite, 2CuC03.Cu(OH), - Azurite; 
+ (Reference: Color Index Chemical Constitutions, 3rd Ed.)
+ Copper(II)- hydroxide carbonate;
+ Malachite: occurs naturally. one method of synthetic creation involves precipitating copper sulfate with soda.
+ Azurite: occurs naturally. The ground mineral is purified by levigating and is sky blue. The synthetic pigment is created by exposing cupric oxide to air.
+ Blue or Green Verditer or Blue Bice is a highly basic copper carbonate produced by varied methods. it can be made by precipitating copper chloride with lime, then washing the precipitate and reacting with potassium carbonate and lime, or precipitating copper sulfate with calcium chloride and treating with lime. (Reference: Color Index Chemical Constitutions, 3rd Ed.)
+ *Azurite is the natural mineral.
+ Making Azurite info at webexhibits.org
+ CAS 12069-69-1",Bright blue to greenish blue,T,I,B,"* Lightfast but may be affected by acids and atmospheric Sulfides. May darken or become greenish in oil binders (Reference Natural Pigments).
+ Making Basic Copper Carbonate Video on the NileRed Channel: [YouTube Video]"
+PB31,B,CIPIGMENT,31,Egyptian Blue,"Alexandrian blue;
+ Blue Frit;
+ Chrysocolla**[KP.p2];
+ C.I. Pigment Blue 31; 
+ Copper frit;
+ Cuprorivaite* [KP.p];
+ Egyptian Blue1 [KP.p | NP.p];
+ Egyptian Green, copper glass [KP.p];
+ Egyptian Smalt [OH];
+ Italian Blue;
+ Pigment Blue 31;
+ Pompeian blue;
+ Pozzuoli blue;
+ Vestorian blue
+ see Egyptian Green",77437,"Copper Calcium Silicate is the earliest synthetic pigment (Ref Pigment Compendium p.153)
+ *Cuprorivaite (Mineral Ref) is the rare natural copper silicate;
+ **Chrysocolla (Mineral Ref) (wikipedia Ref) is the natural hydrated form
+ Method of making Egyptian Blue at webexhibits.org;",Bright; light blue to blueish green,S/T,II,B,"Very transparent in oils, less transparent in other binders. 
+ (Ref & Source)"
+PB32,B,CIPIGMENT,32,Smalt,"C.I. Pigment Blue 32;
+ Couleur;
+ Dumont's blue;
+ Enamel Blue;
+ Émail;
+ Eschel;
+ Esmalte;
+ Pigment Blue 32;
+ Royal Smalt (superior fine grade) [NP.p.w];
+ Smalt [KP.p | NP.p | WNd];
+ Smalt, standard grind [KP.p];
+ Smalt, very fine grind [KP.p];
+ Smalte;
+ Smalt Genuine [DS.w]; 
+ Starch Blue",77365,"Pulverized and ground potassium glass colored blue by cobalt; 
+ Potassium cobaltous silicate of varying composition (Ref Color index 3rd Ed., V.4, Inorganic colorants CI 77365)
+ How Smalt is made at webexhibits.org",Mid-Blue,T,I,B,* Lightfast but may fade due to chemical processes. May not fade if ratio of potassium to cobalt is 1:1 or higher; high potassium smalt available from Natural Pigments
+PB33,B,CIPIGMENT,33,Manganese Blue,"C.I. Pigment Blue 33;
+ Barium Manganate(VI) sulfate;
+ Barium Manganese Oxide;
+ Barium manganosulfate;
+ Bleu Azural;
+ Bong’s Blue;
+ Cement Blue;
+ Kuhlmann’s Blue;
+ Manga Blue;
+ Manganblau;
+ Manganese Blue [GEN | BX.od | GB.od | HO.od | KA.p | LC.p | LK.od | OH.a.od.wd | RF.e | VA.o];
+ Manganese Blue Deep (mixture PB33 & PV16) [OH.o.w]
+ Mineral Blue;
+ Pigment Blue 33;
+ Turquoise Blue;",77112,"Barium Sulphate-Permanganate;
+ Made by fixing barium manganate on a barium sulfate base. (Ref. CAMEO art materials Database)
+ Barium manganate(VI) sulfate; Mixed crystals of 11% Barium Manganate and 89% Barium Sulphate (Colour Index, 1973);
+ ""Made by calcining sodium sulfate with potassium permanganate and barium nitrate at 750–800ºC (Gettens and
+ Stout, 1966)""
+ ""Reacting nitric acid, sulfuric acid plus barium carbonate with potassium permanganate & hydrochloric acid""
+ ""Calcining a mixture of barium sulfate, pyrolusite and barium nitrate at 680–700ºC"" 
+ ""Calcining manganese oxide, barium nitrate, kaolin (a clay) and silica with red hot heat. (Colour Index)."" (Ref. The Pigment Compendium, 2004 by Nicholas Eastaugh, Valentine Walsh, Tracey Chaplin and Ruth Siddall; p.44)
+ IRUG Infared Spectrum can be found here.
+ Chemical formula:
+ BaMnO4 + BaSO4 (not a simple mixture)
+ CAS 8046-59-1
+ EC 617-078-2","Bright intense mid. blue w/ greenish undertones
+ † Slight hue shift towards green may be due to yellowing of binder. Best to use walnut or poppy seed oil for grinding this pigment.",S/O,I,B,"First discovered in 1907 but not patented until 1935; 
+ Pigment Blue 33, often considered by artists' as a near ""perfect"" blue, is now extinct. It was manufactured from 1935 to the 1990's. (Ref. ChemComm Article, issue.97, 2014);
+ Some paint brands & pigment suppliers may still have limited stock available.
+ May be able to find old stock on Ebay (Manganese Blue, ebay affil. link) or other online shops, beware of Manganese Blue 'hue' & mixtures that are not genuine PB33.
+ For more info about PB-33 in watercolor see Handprint.com
+ Addition Manganese Blue info at ColorLex.com
+ Manganese Blue is a brilliant, clear, semi-opaque to transparent blue pigment with a greenish undertone. Its saturation and texture varies across manufacturers ( Ref. Blick Art Materials), Old Holland still has a supply in Acrylic @ Blick Art Materials.
+ May be affected by sodium and aluminium sulfates (Ref . The painter's handbook By Mark David Gottsegen; 2004 p.167)
+ ** Avoid dust & spray. Manganese is an essential micro nutrient in the human body, but Ingesting, injecting or snorting too much manganese can cause diarrhea and a progressive nervous disorder which is similar to Parkinson's disease. (Ref. Gov. NCBA)
+ ""shown to cause reproductive toxicity in animals when exposure is inadequate. Requiring a Proposition 65 warning on levels of a nutrient that may be essential for normal reproductive health would be contrary to good public health"" (p.5, Manganese, in prop 65 lawsuit 2009)"
+PB34,B,CIPIGMENT,34,Copper sulfide,"C.I. Pigment Blue 34;
+ Copper Blue;
+ Copper sulfide;
+ Covelline Covellite;
+ Cupric sulfide;
+ Horace Vernet's Blue;
+ Indigo Copper;
+ Oil Blue","77450
+ 77449*","Copper monosulfide; 
+ Copper sulfide;
+ CAS 1317-40-4",-,X,X,B,"The natural form is the mineral covellite
+ * CI 77449 is the black form (Ref Colorindex 3rd Ed., V.4, Inorganic colourants CI 77449)"
+PB35,B,CIPIGMENT,35,Cerulean Blue,"Azul Celeste;
+ Bleu Celeste;
+ Blue Ceruleum;
+ Caeruleum;
+ Cerulean [RF.e];
+ Cerulean Blue [GEN | AS | BA.o.w | DR.a.w.t | DS.w | GB.o | GR.o.w.wo | HO.a.g.o.w.wo | LB.o | MW.o | OH.a.o.w | RGH.o | RT.o.o.w.wo | SCH.p | SE.a.o.p.w | UT.o.w | WL.o.p | WN.a.g.k.o.wo.w.w.wp];
+ Cerulean Blue Genuine [ GR.o | MW.o | SE.t | WL.o.p];
+ Cerulean Blue Medium [GU.pd]
+ Cerulean Blue Light [BR | RGH.o | OH.o.w];
+ Cerulean Blue Red [HO,o];
+ Cerulean Blue Reddish [HO.o];
+ Cerulean Blue Red Shade [HO.o | WN.w.wp];
+ Cerulean Grey [BX.w];
+ C.I. Pigment Blue 35; 
+ Cobalt Blue Green [GU]; 
+ Cobalt Blue light [KP.p];
+ Cobalt Cerulean Blue [KP.p | SCH.o.o(Mus).p];
+ Cobalt Cerulean (blue shade) [KA];
+ Cobalt Cerulean (green shade) [KA];
+ Cobalt Tin Blue-Gray Spinel;
+ Cobalt Tin Grey**;
+ Cobalt Tin Gray Spinel;
+ Cobaltous Stannate;
+ Coelin;
+ Coelinblau;
+ Coeruleum [DR.a.o.w.t];
+ Coerulium;
+ Genuine Cerulean [CH];
+ Höpfner Blue;
+ Manganese Blue Nova?*[HO];
+ Pigment Blue 35;
+ True Cerulean Blue [PF.o];
+ Utrecht 60th Anniversary Cerulean Blue Pure [UT.o];",77368,"Cobalt Stannate;
+ Cobalt tin oxide;
+ Oxides of Cobalt and Tin;
+ Originally composed of cobalt stannate. Cerulean blue is made by roasting cobalt and tin oxides. Cerulean blue (Ref at Boston Fine Arts CAMEO Art Materials Database); 
+  
+ Cobalt Tin Grey Co2SnO4 is an inorganic pigment that is the reaction product of calcining a mixture of different amounts of both cobalt (II) oxide and tin (III) oxide. They are homogeneously, ionically entwined forming a crystalline spinel type matrix. The constitution may additionally have Al2O3, Fe2O3, and/or NiO as modifiers that are used to adjust color hue and other properties that may be needed in specific applications.  (Ref IPConsortium);
+ How Cerulean Blue is made at webexibits.org;
+ CPMA 13-27-2;
+ CAS 1345-19-3;
+ CAS 68187-05-3;
+ CAS 83712-59-8","Light mid to greenish blue, with a grayish cast;
+ lightly staining w/ weak tinting strength
+ † May whiten in water colors (Handprint)",O,I,B,"Sold as an artists pigment in 1860 by Rowney and Company under the name of coeruleum [DR.a.o.w.t];
+ The quintessential 'Sky Blue' 
+ * not rated by the ASTM, but Blue Wool Scales and handprint all show excellent light fastness. See more on PB-35 in watercolors at Handprint.com by Bruce MacEvoy
+ ** all paints w/ cobalt as an ingredient require a PROP 65 label in CA., Cobalt may be hazardous if ingested, Effects can be accumulative. A suspected carcinogen.
+ Avoid spray & dust."
+PB36,B,CIPIGMENT,36,Cobalt Chromite,"Aluminum Chromium Cobalt Bluegreen;
+ Aluminum Chromium Cobalt Bluegreen Spinel;
+ Amazon Blue;
+ Aquamarine;
+ Atlantic Blue;
+ Bonnard Blue [SE.o];
+ Blue 10F545;
+ Blue 30C527;
+ Cerulean Blue (hue*) [BA.a | BX.o.w | CAS.k | CL |DS.ad.o.w |DV.a.k.w | LK | LQ.a | MA.a.o.o(artis).p.w | MG.a.g.o.w | MH.o | MT | PF.w | SV];
+ Cerulean Blue Chromite;
+ Cerulean Blue Chromium [DS.ad.o.w | GRd | UT.a.o.w | WN.a];
+ Cerulean Blue Chromium Pure [UT.o];
+ Cerulean Blue Cobalt;
+ Cerulean Blue Dark (hue*) [GU]; 
+ Cerulean Blue Deep (hue*) [GO.a.af | MG.w | OH.a.o.w];
+ Cerulean Blue French [WL.o.o(SF).p];
+ Cerulean Blue Genuine (hue*) [DV.a.k.w]; 
+ Cerulean Blue Green (hue*) [GU | GRd];
+ Cerulean Blue GS (hue*) [DSd]; 
+ C.I. Pigment Blue 36; 
+ Cobalt Blue [MR.o];
+ Cobalt Blue Green [GU.pd]
+ Cobalt Blue Greenish [KP.p];
+ Cobalt Blue, Greenish Light [SI.p]; 
+ Cobalt Blue Light [MR.o];
+ Cobalt Chromite Blue Green Spinel; 
+ Cobalt Blue Turquoise [LB.o | OH.a.o.w | SE.p];
+ Cobalt Blue Turquoise Dark [KA];
+ Cobalt Cerulean (hue*) [SCH | KA.o.p];
+ Cobalt Cerulean (BS) (hue*) [KA.o.p];
+ Cobalt Cerulean (Blue Shade) (hue*) [KA.p];
+ Cobalt Cerulean (Green Shade) (hue*) [KA.p];
+ Cobalt Chromate;
+ Cobalt Chromite;
+ Cobalt Chromite Green [GRd]; 
+ Blue Green Spinel;
+ Cobalt Green [CL]; 
+ Cobalt Green Deep [ DR.o.w ];
+ Cobalt Green Turquoise [SCH.w]; 
+ Cobalt Titanate Blue [GR.o.wo];
+ Cobalt Titanate Blue Green [GU];
+ Cobalt Titanate Blue Red [GU];
+  Cobalt Turquois [ GO.a.af.ag.ao ];
+ Cobalt Turquoise [BA.w | DR.w | DS.o.w | DV.a.w | GO.a.af.ag.ao | GR.w | GU | HO.o | LQ.a | MT | RF.e |SE.a.p | SI.p | WN.a.o.w.wp];
+ Cobalt Turquoise (GS) [ DR.w ];
+ Cobalt Turquoise (RS) [ DR.w ];
+ Cobalt Turquoise Blue [RT.o]; 
+ Cobalt Turquoise Deep [DV.w | KA.p];
+ Cobalt Turquoise Bluish [WL.o.p];
+ Cobalt Turquoise Greenish [WL.o.p];
+ Cobalt Turquoise Light [KA.p];
+ Coeruleum Blue (hue*) [BX];
+ Ercolondo Blue [MA.o(Med)];
+ Light Blue;
+ Magnesium Green [GR.o.w];
+ Midnight Blue [SE];
+ Olympic Blue No.190;
+ Pigment Blue 36;
+ Robinhood Green No.9;
+ SF Cerulean Blue French [WL.o.o(SF)];
+ Shepherd Blue;
+ Shepherd Green;
+ Teal Green;
+ Topaz Blue;
+ True Cobalt Green [PF.o];
+ Turquoise Blue [BX.o.w | SE];
+ Turquoise Green [BX.o.w];",77343,"Inorganic;
+ Cobalt Chromite Blue Green Spinel Co(Al,Cr)2O4 is made by calcining at 2400°F a mixture of Cobalt (II) Oxide, Chromium (III) Oxide, and Aluminum (III) Oxide in varied ratios forming a interdiffused crystalline spinel matrix. Its constitution may also include one or more of the modifiers ZnO, MgO, SiO2, TiO2 and/or ZrO2 to adjust color hue or other properties. (Ref Color Index 4th edition);
+ Mixed Metal Oxide (MMO) (PCImag Ref):
+ Cobalt Chromite Blue-Green Spinel;
+ Cobaltous Chromium; 
+ Oxides of Cobalt and Aluminum;
+ Cobalt Aluminum Chromium Oxide;
+ LBNLPigment Database Spectral radiative properties;
+ Cerulean Blue;
+ Cobalt Chromite Blue;
+ Cobalt Chromite Blue-Green Spinel (i);
+ Cobalt Chromite Blue-Green Spinel (ii);
+ Cobalt Chromite Blue-Green Spinel (iii);
+ CPMA 13-29-2;
+ CAS 68187-11-1","Varying light greenish blues
+ Med. staining w/ good tinting strength",S/O,I,B,"Very nice blue-green pigment, I personally like it better than PB35 (true Cerulean Blue) which can be dull, Cobalt Chromite (PB 36) is a brighter and ""cleaner"" color in my opinion.
+ See more on PB-36 in watercolors at Handprint.com by Bruce MacEvoy
+ ""Cobalt chromate is used for it's excellent permanency and fastness to weather"" (Reference: Coatings Technology handbook, Third Edition, Edited by Arthur A. Tracton, 2006 by CRC Press);
+ * PB 36 (Cobalt Chromite Blue-Green Spinel) is often substituted for the historically genuine Cerulean Blue (PB35, Cobalt Stannate) by Colormen, in some cases even claiming it to be ""genuine"", however C.I. Pigment Blue 36 is not the traditional pigment named Cerulean Blue PB-35.; 
+ C. I. Pigment Blue 36 (Cobalt Chromite) is usually greener, and brighter than C. I. Pigment Blue 35, with a higher tinting strength. 
+ PB36 (Cobalt Chromite) is said to be a lower cost pigment to manufacture (due it's lower cobalt content). Additionally it's higher tinting strength may also tempt some manufacturers to dilute it with adulterants. 
+ PB36 is a nice color in it's own right, but the cheaper pigment cost should be reflected in the price of any paint made from PB36 and called ""Cerulean Blue"", unfortunately, it is often priced similar to the genuine Cerulean Blue (PB35) which is a costly pigment. 
+ ** All Cobalt paints require a PROP 65 label in CA.
+ This pigment is not very soluble in water or solvents, so it stands to reason, that real world risks are quite low for this pigment, even though it contains cobalt. One form called ""Blue 10F545"" by Shepherd Color Company has even been approved by the FDA for indirect food contact. (Reference @ shepherdcolor.com);
+ Avoid spray & dust."
+PB36:1,B,CIPIGMENT,36.1,Zinc Cobalt Chrome Aluminum Spinel,"Aluminum Chromium Cobalt Zinc Blue;
+ Aluminum Chromium Cobalt Zinc Blue Spinel;
+ Cerulean Blue (hue*) [SQ.a | TA.a.af];
+ Cerulean Blue, Chromium [ GO.a.af.ag.ao];
+ C.I. Pigment Blue 36:1;
+ Cobalt Chromite;
+ Cobalt Zinc Blue [NP.w];
+ Pigment Blue 36:1;
+ Zinc Chrome Cobalt Aluminum Spinel;
+ Zinc Cobalt Chrome Aluminum Spinel",77343:1,"Inorganic;
+ Zinc Cobalt Chrome Aluminum Spinel (Ref at Natural Pigments) is a varied intimate mixture of Zinc (II) Oxide, Chromium (III) Oxide, and Cobalt (II) Oxide calcined at very high temperatures forming an ionically interdiffused crystalline spinel like matrix. MgO, SrO2, TiO2, ZnO and/or ZrO2 may be used as modifiers (Reference: 4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments).;
+ CPMA 13-53-2;
+ CAS 74665-01-3",Light bright reddish blue to greenish blue,S/O,I,B,"* Pigment Blue 36:1 is often substituted for the historical genuine Cerulean Blue (PB35) by Colormen, however C.I. Pigment Blue 36:1 is not the traditional pigment called Cerulean Blue.
+ C.I. Pigment Blue 36:1 is often greener and brighter than PB35 with a higher tinting strength.
+ PB 36: is a lower cost pigment to manufacture due to it's much lower cobalt content.
+ ** see above"
+PB60,B,CIPIGMENT,60,Indanthrone Blue,"Anthraquinone Blue [GO.a.ab.af.ag.ao | MG.a.o.w | SE.a];
+ C.I. Pigment Blue 60;
+ C.I. Vat Blue 4;
+ Cromophtal Blue A3R;
+ Delft Blue [BA.w | SCH.a.g.o(Mus).w.| UT.o];
+ Dark Blue Indigo (hue) [SCH.g.w];
+ Faience Blue [MA.o.w];
+ Gafast Pigment Blue 60;
+ Indanthren® Blue [KP.p];
+ Indanthrene Blue [BX.o.w | CAS.k | DR.a.o | DV.w | GR.o | HO.wo | LB.o | LQ.a | MA.a.o(artis) | RT.o.w | SCH.o | SQ.a | WN.a.o.w.wp];
+ Indanthrone Blue [GEN | BR | DS.ad.i.o.w | GB.o | GR.o.wo | LA.a | LK | MW.o];
+ Indanthrone Blue Green [GU.pd];
+ Indanthrone Blue Green Xtra [GU];
+ Indanthrone Blue Red [GU.p];
+ Indian Blue;
+ Indigo Blue (hue) [SE.p];
+ Indo Blue [GU];
+ Matisse Indigo [MT];
+ Old Delft Blue [OH.a.o.w];
+ Old Delft Blue Deep [OH.a];
+ Old Holland Delft Blue [OH.o.w];
+ Paliogen® Blue;
+ Pigment Blue 60;
+ Rich Blue [DV.af];
+ Royal Blue [HO.w];
+ Vat Blue 4",69800,"Synthetic organic Indanthrone;
+ Lake of C.I. Vat Blue 4 Dye.
+ 6,15-dihydroanthrazine-5,9,14,18-tetrone;
+ Indanthrene chemical info @ PubChem Dtabase
+  Molecular Formula: 
+ C28-H14-N2-O4
+ Gafast Pigment Blue 60 (Tech Data Sheet PDF);
+ CAS 81-77-6
+ EC 201-375-5","Dark blue, comes in reddish & greenish shades;
+ † Fades, Dulls over over a very long time",S/T,I,A,"* Tested w/ excellent lightfastness in most watercolor brands at Handprint, however a few brands seemed a little under par. See more on PB-60 in watercolors at Handprint.com by Bruce MacEvoy
+ ** no known hazards, avoid dust"
+PB61,B,CIPIGMENT,61,Modorant Blue R,"Alkali Blue;
+ C.I. Pigment Blue 61; 
+ Modorant Blue R;
+ Pigment Blue 61;
+ Reflex Blue;
+ Reflex Blue A5H-R;
+ Spirite Blue",42765:1,"Sulfonated derivative of Triphenylmethane;
+ CAS 1324-76-1",Deep Reddish Blue,T,I,A,
+PB61:1,B,CIPIGMENT,61.1,Reflex Blue A5L-G,"C.I. Pigment Blue 61:1;
+ Pigment Blue 61:1;
+ Pigment Radiant Blue;
+ Reflex Blue A5L-G",-,Sulfonated derivative of Triphenylmethane,Deep Reddish Blue,T,X,A,
+PB62,B,CIPIGMENT,62,Brilliant Blue CF,"Brilliant Blue CF;
+ C.I. Pigment Blue62; 
+ Flexobrite Blue AD62;
+ Pigment Blue 62",42595:4,"Copper ferrocyanide salt of Triphenylmethane;
+ CAS 82338-76-9;
+ CAS 57485-98-0",Reddish blue to mid-Blue,X,II,A,
+PB63,B,CIPIGMENT,63,Ariabel Blue 11.42,"Ariabel Blue 11.42;
+ C.I. Pigment Blue 63; 
+ Conalake Indigotine;
+ FD&C Blue No. 2 Aluminium Lake;
+ Indigotine;
+ Indigo Carmine;
+ Indigo Carmine Aluminium Lake;
+ Natural Blue 2; 
+ Pigment Blue 63",73015:1,"Synthetic Indigoid Carmine;
+ CAS 16521-38-3",Bluish red,T,III,A,
+PB66,B,CIPIGMENT,66,Indigo,"C.I. Pigment Blue 66;
+ FD&C Blue No. 2;
+ Indian Blue;
+ Indigo [BA.w | GR.o.w | NP.p1 | SCH.o(Mus).p | UT.o.w*];
+ Indigo, Genuine Indian [KP.p];
+ Indigo Lake;
+ Intense Blue;
+ Microsol Navy Blue BRN;
+ Pigment Blue 66;
+ Synthetic Indigo;
+ Vat blue 1 [UT.o.w*];
+ Vitrum",73000,"Synthetic Indigo, Indigoid;
+ How to make the pigment indigo at webexhibits.org;
+ CAS 482-89-3",Deep Dark Blue,S/T,II,A,"* Utrecht rate their Indigo in oil color and watercolor with their highest grade of light fastness. Schmincke also rate the light fastness very high in oil paint but low in watercolor, and Grumbacher rate theirs as ""very good"". These ratings suggest method of manufacture or formulation may effect light fastness. Oil binder may provide some protection. Generally the light fastness of indigo is not considered high. I Suggest making your own tests on the paint or pigment you have.
+ ** Natural indigo may be slightly toxic (Ref Blick Art Materials)"
+PB68,B,CIPIGMENT,68,Fastogen Blue 5007*,"C.I. Pigment Blue 68;
+ Fastogen Blue 5007*;
+ KET Blue 107?;
+ Phthalocyanine Blue;
+ Pigment Blue 15;
+ Pigment Blue 68",73015?*,Phthalocyanine,Bright greenish blue,X,X,A,"* Information available on this pigment seems to be conflicting, but it appears that it is the exact same pigment as PB15 or very closely related."
+PB71,B,CIPIGMENT,71,Zirconium Vanadium Blue,"Blue Zircon;
+ Cerulean Blue Zircon;
+ Turquoise;
+ C.I. Pigment Blue 71; 
+ Pigment Blue 71;
+ Vanadium Blue;
+ Vanadium Blue Zircon;
+ Vanadium Zircon Blue;
+ Vanadium Zirconate;
+ Vanadium-Zirconium Turquoise;
+ Zirconium Vanadium Blue Zircon; 
+ Zirconium Cerulean Blue [KP.p];
+ Zirconium-Spinel Cerulean Blue;
+ Zirconium Vanadium Blue Zircon;
+ Zirconium Vanadium Silicate;",77998,"Inorganic; 
+ Zirconium Vanadium Blue Zircon (Zr,V)SiO4 is created by calcining at high temperature a mixture of Zirconium (IV) Oxide, Silicon (IV) Oxide, and Vanadium (IV) Oxide in varying ratios to create a zircon form crystalline matrix. Its composition may include less than than 5% of one or a combination of alkali and/or alkaline earth halides as modifiers. (Ref Color Index 4th edition);
+ Patent # US 5252126A (Ref Patent Info) 
+ CPMA 14-42-2
+ CAS 68186-95-8","Light blue, greenish undertone",S/O,I,A,"Said to be a good non-toxic Cerulean Blue substitute.
+ Most often used as pigment for ceramics, but has good potential as a artists paint . (Ref Google Search)
+ A example of Zirconium Vanadium Blue (PB71) hand mulled into an paint from Perry Johnson at http://perryjohnson.net"
+PB72,B,CIPIGMENT,72,Cobalt Zinc Aluminate Blue,"Aluminum Cobalt Zinc Blue;
+ Aluminum Cobalt Zinc Blue Spinel;
+ C.I. Pigment Blue 72;
+ Cobalt Blue [BA.o | SE.o.os.p];
+ Cobalt Blue Deep [DR];
+ Cobalt Blue Genuine [SE.o.t];
+ Cobalt Zinc Aluminate Blue Spinel;
+ Pigment Blue 72",77347,"Inorganic;
+ Cobalt Zinc Aluminate Blue Spinel (Co,Zn)Al2O4 is produced by calcining at high temperature a intimate mixture of Cobalt (II) Oxide, Zinc (II) Oxide, and Aluminum (III) Oxide in varied ratios forming a crystalline spinel like matrix . It may include any one or more of the modifiers Li2O, MgO, SiO2, SnO and/or TiO2. (Ref Color Index 4th edition);
+ Cobalt Zinc Aluminate;
+ Cobalt Zinc Aluminate Spinel;
+ Zinc aluminocobaltite;
+ CPMA 13-28-2
+ CAS 68186-87-8","Deep blue, dark in masstone, but bright in tints;
+ med. staining w/ only fair tinting strength",S/T,I,B,"* ""varieties of cobalt blue deep, indexed as PB72, PB73 or PB74, are all very lightfast"" See more on PB-72 in watercolors at Handprint.com by Bruce MacEvoy;
+ ** All Cobalt paints require a PROP 65 label in CA.
+ May cause an allergic skin reaction; Avoid spray & dust."
+PB73,B,CIPIGMENT,73,Cobalt Silicate Blue,"C.I. Pigment Blue 73;
+ Cobalt Blue Deep [DR.w | WN.a];
+ Cobalt Silicate Blue Olivine;
+ Smalt Blue;
+ Pigment Blue 73",77364,"Inorganic;
+ Cobalt Silicate Blue Olivine Co2SiO4 is made by high temperature calcination of a mixture of the oxides of cobalt and silicon in varied quantities to form a olivine crystalline matrix. It may include any one or more of the modifiers Al2O3, B2O3 or ZnO. (Ref Color Index 4th edition);
+ Cobalt Orthosilicate;
+ Cobalt Silicate;
+ CPMA 5-08-2 (4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments)
+ CAS 68187-40-6","Deep Reddish navy;
+ med. staining w/ only fair tinting strength",S/O,I,B,"* See more on PB-73 in watercolors at Handprint.com by Bruce MacEvoy;
+ ** All Cobalt paints require a PROP 65 label in CA.
+ May cause an allergic skin reaction; Avoid spray & dust."
+PB74,B,CIPIGMENT,74,Cobalt Zinc Silicate Blue,"C.I. Pigment Blue 74;
+ Cobalt Zinc Silicate;
+ Cobalt Zinc Silicate Blue Phenacite;
+ Sapphire Blue;
+ Cobalt Blue Dark [BX.o.w | KP.p];
+ Cobalt Blue Deep [AS | SQ.a | OH.a.o.w | RT.o | SCH.g.o.o(Mus).p | SE.p | WN.o.w.wp];
+ Cobalt Blue, Sapporo [KP.p]
+ Pigment Blue 74",77366,"Cobalt Zinc Silicate Blue Phenacite (Co,Zn)2SiO4 is obtained by the calcining a mixture of cobalt oxide, zinc oxide and silicon oxides in varied ratios to make a phenacite crystalline matrix. It may include B2O3 as a modifier. (Ref Color Index 4th edition);
+ CAS 68412-74-8","Deep or dark mid-shade to reddish blue;
+ med. staining w/ only fair tinting strength",S/T,I,B,"* See more on PB-74 in watercolors at Handprint.com by Bruce MacEvoy;
+ ** All Cobalt paints require a PROP 65 label in CA.
+ May cause an allergic skin reaction; Avoid spray & dust."
+PB75,B,CIPIGMENT,75,Chromofine Blue 5000P,"Chromofine Blue 5000P;
+ Chromofine Blue 5000PK;
+ C.I. Pigment Blue 75; 
+ Cobalt Phthalocyanine Blue;
+ Cobaltous Phthalocyanine; 
+ Pigment Blue 75",74160:2,"Phthalocyanine cobalt complex;
+ CAS 3317-67-7",Deep red shade blue,X,I,B,"Unique blue shade;
+ * not rated by ASTM, should perform similar to other phthalocyanine & Cobalt pigments; Recommend making your own tests.
+ ** All Cobalt containing paints require a PROP 65 label if sold in CA.
+ May cause an allergic skin reaction; Avoid spray & dust."
+PB76,B,CIPIGMENT,76,Fastogen Blue 10GN,"C.I. Pigment Blue 76;
+ Decachlor Blue;
+ Diane Blue; 
+ Fastogen Blue 10GN;
+ Phthalocyanine Blue;
+ Pigment Blue 76",742520,"Synthetic Organic;
+ Chlorinated Copper Phthalocyanine
+ IRUG Spectrum Analisis @ IRUG.org
+ CAS 68987-63-3",Turquoise blue shade,X,I,A,"Not currently in production;
+ ""A novel pigment type only recently assigned a Colour Index Name by the Colour Index International. Described as a ""decachlor"" blue, this product is half way between a blue and a green in that if offers the user a unique turquoise shade""
+ ""Whilst this color can be matched by blending copper phthalocyanine blue and green, the blend will not be as clean and transparent "" Ref ""Sun Chemical Corporation Pigments Division"", Ink World, March, Pigment Blue 76, 2000;
+ * Not rated by ASTM only know source of this pigment claims excellent lightfastness. (Sun Chem.)
+ ** Aparently some HCBs' are produced as a by-product of Phthalocyanine pigment manufacture and so could potentually have trace amounts in the final product. There is also some concern about disposing of the watse product. ""However, since the companies reported that PB-76 is not being produced now and they are considering halting the use of it, the Committee did not investigate the BAT Levels."" (Ref. Report on BAT Levels concerning By-product HCB in Other Pigments Derived from TCPA and Phthalocyanine... 2007 PDF)"
+PB79,B,CIPIGMENT,79,Aluminum Chloro-phthalocyanine,"Aluminum Chlorophthalocyanine;
+ Aluminum Chlorophthalocyanine SNCG;
+ C.I. Pigment Blue 79; 
+ Phthalocyanine Blue;
+ Pigment Blue 79",761300,"Phthalocyanine; Aluminum Chlorophthalocyanine;
+ CAS 14154-42-8","Greenish blue;
+ very good tinting strenght",X,I,A,"A copper free alternate to copper phthalocyanine blue
+ * not rated by ASTM, should perform similar to other phthalocyanines
+ ** no known hazards, avoid dust. May have traces of HCBs. See above."
+PB80,B,CIPIGMENT,80,Hostaperm Blue R5R,"Benzi Blue;
+ Benzimidazo R5R [GU.pd];
+ Blau R5R VP 2548;
+ C.I. Pigment Blue 80; 
+ Hostaperm Blue R5R;
+ Pigment Blue 80",-,"Synthetic Organic;
+ Chloranil --> N-ethyl
+ Benzimidazolone;
+ Benzimidazolone Dioxazine;
+ CAS 391663-82-4","Deep reddish blue;
+ staining w/ high tiniting strength",T,I,A,"** no known hazards, avoid dust."
+PB81,B,CIPIGMENT,81,Cobalt Tin Alumina Blue Spinel,"Aluminum Cobalt Tin Blue;
+ Aluminum Cobalt Tin Blue Spinel;
+ C.I. Pigment Blue 81;
+ Cobalt Tin Alumina Blue Spinel;
+ Pigment Blue 81;",773465,"Synthetic Inorganic;
+ Cobalt Tin Alumina Blue Spinel; Mixed metal oxide. CoA12-O4 / Co2-Sn-O4, can be created by calcining Aluminum (III) Oxide, Cobalt (II) Oxide, and Tin (IV) Oxide in varied ratios that creates a reaction in which a spinel crystalline matrix is formed. The pigment creation can be modified by one or both of the modifiers SiO2 and/or ZnO;
+ CPMA 13-49-2;
+ CAS 68608-09-3",Blue,X,I,B,"* Not rated by ASTM, should perform similar to other cobalt pigments.
+ ** All Cobalt containing paints require a PROP 65 label if sold in CA.
+ The Spinel form is not soluble in water, so hazard to humans is minimal.
+ May cause an allergic skin reaction; Avoid spray & dust."
+PB82,B,CIPIGMENT,82,MayaCrom Blue B2050,"C.I. Pigment Blue 82;
+ Genuine Mayan Indigo Blue [SI.p]
+ Maya Blue;
+ MayaCrom Blue B2050;
+ MayaCrom Blue B2000F;
+ Mayan Dark Blue [DS.w];
+ Pigment Blue 82",-,"Patented Organic-Inorganic hybred based on the chemistry of Mayan Blue with a unique nano crystal lattice. Reference the Tech data sheet, and Patent application.;
+ Article about Hybred Pigments and Mayan Blue in New Journal of Chemistry 2005, 29, p.57–58 (Article Reference PDF);
+ CAS# 14808-60-7",Greenish Blue,S/T,I,A,"""evolved from work done at the University of Texas-El Paso to reconstruct the unique vibrant blue color developed by the Maya civilization more than 1000 years ago, using an inorganic and organic component to produce a highly stable hybrid pigment.""
+ - Mayan Pigments site is down since 2015 and info on these pigments seem to have disappeared
+ (Tech Specs); ( Press release); (Ref Mayan Pigments, Inc. on the Wayback Machine); (Ref Science Daily); (Ref);"
+PB84,B,CIPIGMENT,84,MayaPure Blue B 8000F,"C.I. Pigment Blue 84;
+ MayaPure Blue B 8000F;
+ Pigment Blue 84",-,"Patented Organic- Inorganic hybred based on the chemistry of Mayan Blue, Reference the Patent application.;
+ Article about Hybred Pigments and Mayan Blue in New Journal of Chemistry 2005, 29, p.57–58 (Article Reference PDF);",Greenish Blue,X,II,A,"New pigment based on Mayan Blue (see above) (Ref. Science Daily);
+ Announcement of CI Names allocated - Press release [PDF]"
+PB86,B,CIPIGMENT,86,YinMn Blue,"Blue 10G513;
+ Bluetiful Blue (Crayola);
+ C.I. Pigment Blue 86;
+ MasBlue;
+ Oregon Blue;
+ Pigment Blue 86;
+ Yinmn Blue;
+ YlnMn Blue;
+ Yttrium Indium Manganese Oxide ;",-,"Inorganic;
+ Yttrium Indium Manganese Oxide
+ YIn0.8 Mn 0.2O3
+ Prepared by calcination of oxides of the elements yttrium, indium, and manganese to a temperature of approximately 1,200 °C (2,200 °F)","Bright reddish blue
+ Color said to be between Cobalt Blue and Ultramarine Blue, although different shades are possible by varying element ratios during manufacture.
+ [Ref @ Oregon State University Dept. of Chemistry];",O,I,A,"Blue 10G513 is a high temperature calcined pigment based on yttrium, indium and manganese. It has a bright red-shade blue masstone, and high tint strength with excellent UV and visible opacity
+ [Beauty Is Beyond The Eye Of The Beholder article @ Shepherd Color];
+ [Ref Shepherd Color];
+ [Ref Shepherd Color]; 
+  YinMn Blue is an inorganic blue pigment that was accidentally discovered by Professor Mas Subramanian and his then graduate student Andrew E. Smith at Oregon State University in 2009 and is being commercialized by the Shepherd Color Company. As of 06/2018 it does not appear to be commercially available except in U.S. as a Crayola Crayon? and Austraklia by Derivan as a Matisse professional artists acrylic paint (? does not appear to be listed in their Color Chart PDF); [Ref OreigonState.edu site];
+ [Ref article at ArtNet News (news.artnet.com)]; [Ref Derivan YinMn Page];
+ May be offered by Gamblin Artist Colors as a limited edition oil color in the near future [Ref @ Gamblin]
+ The Story of YInMn Blue [Ref @ Oregon State University Dept. of Chemistry]
+ Shephard Color Co. YinMn Blue page
+ YinMn Blue Wikipedia page
+ YouTube Video on the Derivan Matisse Channel [YouTube Video];
+ YouTube Video on the JerrysArtarama Channel [YouTube Video];
+ More Videos>"
+PB128,B,CIPIGMENT,128,Basalt,"Basalt;
+ C.I. Pigment Blue 128; 
+ China Black;
+ Lava;
+ Noire;
+ Noir de Mazy;
+ Pigment Blue 128",77428,Cooled Lava Rock,Gray to Blue to Black,X,I,A,-

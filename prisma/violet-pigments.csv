@@ -1,0 +1,600 @@
+slug,colorCode,type,number,name,alternateNames,ciConstitutionNumber,composition,description,transparencyRatingCode,lightfastRatingCode,toxicity,notes
+NV1,V,CINATURAL,1,Tyrian Purple,"Argaman;
+ Byzantium Purple;
+ C.I. Natural Violet 1;
+ French Purple;
+ Genuine, Imperial Purple [KP.p];
+ Grecian Purple;
+ Imperial Purple; 
+ Murex Purple;
+ Ostrum;
+ Purpurissum [KP.p]; 
+ Purple Fish;
+ Purple of Mollusca;
+ Purple of the Ancients;
+ Roman Ostrum;
+ Royal Purple;
+ Shellfish Purple;
+ Tekhelet; 
+ Tyrian Purple;",75800,"Preparation from the ink of the shellfish Murex trunculis and Murex brandaris; 
+ 6,6´-dibromindigo with other impurities;
+  
+ CAS 19201-53-7",Reddish to Bluish Deep Purple,T,III,A,"1 gram of this dye
+ is made from the secretion of 10,000 sea snails. (Ref).;Synthesized from Coal Tar in 1904"
+PV1,V,CIPIGMENT,1,Rhodamine Violet,"Basic Violet 10;
+ Blue Violet;
+ Brilliant Purple [WN.g];
+ Brilliant Red Violet [SCH.w | WN.g];
+ C.I. Pigment Violet 1;
+ Fast Rose Lake;
+ Pigment Violet 1;
+ Purple Violet;
+ Rhodamine;
+ Rhodamine 610;
+ Tyrian Rose [SE.w]","45170:2
+ 12475","Rhodamine Phosphotungsto-
+ molybdic acid salt;
+ CAS 1326-03-0",Bright fluorescent reddish violet,T,IV,B,"* ""The fluorescent dye Rhodamine B is toxic, and its use is banned in food, textiles, and cosmetics."" ""With proper preparation, the pigment Rhodamine B Lake is considered harmless, even if ingested."" -Blick Art Materials Site (Ref).;
+  
+ **Fluorescent paints are not recommended for permanent art work unless it will be completely protected from light."
+PV1:1,V,CIPIGMENT,1.1,Pigment Violet 1:1,"C.I. Pigment Violet 1:1;
+ Pigment Violet 1:1;
+ Rhodamine",,"Rhodamine Phosphotungsto-
+ molybdic acid salt",Bright reddish violet,T,III,A,
+PV1:2,V,CIPIGMENT,1.2,Rhodamine B Molybdate,"C.I. Pigment Violet 1:2;
+ Normandy Magenta;
+ Rhodamine B Molybdate",45170:4,Rhodamine B Molybdate,,X,IV,A,
+PV2,V,CIPIGMENT,2,Purple,"Brillfast Vivid Magenta 6B;
+ C.I. Pigment Violet 2;
+ Fanal Violet D 5460;
+ Light Purple;
+ Parma Violet;
+ Pigment Violet 2;
+ Purple Lake;
+ Rhodamine;
+ Purple; 
+ Vivid Magenta 6B;
+ Xanthene PTMA;",45175:1,"Rhodamine Phosphotungsto-
+ molybdic acid salt;
+  
+ CAS 1326-04-1",Bright reddish violet,X,III,A,
+PV2:2,V,CIPIGMENT,2.2,Pigment Violet 2:2,"C.I. Pigment Violet 2:2;
+ Pigment Violet 2:2;
+ Rhodamine 3B PTMA",45174:2,"Rhodamine Phosphotungsto-
+ molybdic acid salt",,X,III,A,
+PV3,V,CIPIGMENT,3,M Methyl Violet,"Blue Violet [SE];
+ Brilliant Blue Violet [SCH.w];
+ C.I. Pigment Violet 3;
+ Fast Violet Lake;
+ Gentian Violet;
+ Light Purple;
+ Methyl Violet;
+ Methyl Violet Tungstomolybdate;
+ Methyl Violet SMA;
+ M Methyl Violet;
+ Parma Violet;
+ Pigment Violet 3;
+ Purple Lake;
+ Spectrum Violet [WN.g];
+ Triarylcarbonium",42535:2,"Triphenylmethane Phosphotungsto-
+ molybdic acid salt;
+  
+ CAS 1325-82-2",Bright bluish violet,T,IV,B,"""Methyl Violet 2B is harmful to living cells and organisms, so it is diluted in medical and biological applications as a topical fungicide or disinfectant.""= Blick Art Materials Website (Ref)"
+PV3:1,V,CIPIGMENT,3.1,Methyl Violet,"C.I. Pigment Violet 3:1;
+ Lamprolac Violet BM;
+ Methyl Violet;
+ Methyl Violet Molybdate;
+ Pigment Violet 3:1",42535:4,"Triphenylmethane Silicomolybdic acid salt;
+  
+ CAS 68647-35-8",Bright bluish violet,T,IV,B,
+PV3:3,V,CIPIGMENT,3.3,Methyl Violet Tannate,"C.I. Pigment Violet 3:3;
+ Methyl Violet Tannate;
+ Pigment Violet 3:3",42535:5,"Triphenylmethane Tannic acid salt;
+  
+ CAS 68308-41-8",Bright bluish violet,T,IV,B,
+PV5,V,CIPIGMENT,5,Alizarine Violet,"Alizarine Violet [KP.p];
+ Alizarin Violet Lake (hue) [SE.os];
+ C.I. Pigment Violet 5;
+ Fanchon Maroon;
+ Pigment Violet 5;
+ Quinizarin Maroon [DS.o]",58055,"Anthraquinone;
+  
+ CAS 22297-70-7",Bright Violet,T,II,A,* Good lightfastness in mass tone but poor in tints
+PV5:1,V,CIPIGMENT,5.1,Quinazarine Super Maroon,"Alizarine Violet (hue) [GU | KP.p];
+ C.I. Pigment Violet 5:1;
+ Pigment Violet 5:1;
+ Quinazarine Super Maroon;",58055:1,"Anthraquinone;
+  
+ CAS 1328-04-7",Bright reddish violet,X,II,A,"*Blue wool scale 7-8 in mass tone, 5-6 in tints"
+PV7,V,CIPIGMENT,7,Anthraquinone violet,"Anthraquinone violet;
+ C.I. Pigment Violet 7;
+ Pigment Violet 7",,Anthraquinone,,X,III,A,
+PV13,V,CIPIGMENT,13,Transparent Violet B,"Anthraquinone;
+ C.I. Pigment Violet 13;
+ Pigment Violet 13",,"Naphthol;
+ Anthraquinone",Maroon Violet-,T,II,A,
+PV14,V,CIPIGMENT,14,Cobalt violet,"Caprice Violet [GU.p];
+ C.I. Pigment Violet 14;
+ Cobalt Magenta [DR.w];
+ Cobalt Phosphate;
+ Cobalt Pink;
+ Cobalt Raspberry [GU.p]
+ Cobalt Red;
+ Cobalt Red Violet;
+ Cobalt Rose [GR.o];
+ Cobalt Violet [GEN | AS | BA.w | BX.o.w | CL |DR.o |DV.k.o.w | GB.o | GR.w | GU | LK | MG.o.w | PF.w | RGH.o.p | RT.o.w | SCH.o(Mus) | SQ.a | UT | WN.o.w.w.wp.];
+ Cobalt Violet Brilliant, dark [KP.p]
+ Cobalt Violet Dark [AS | KP.p | MH.o | OH.o.w | SI.p | WNd];
+ Cobalt Violet Deep [BX.o | BR | DS.o.w | HO.o | KA.p | MA.o.o(artis).p | LB.o | RF.e | SE.p | WL.o.p];
+ Cobalt Violet Light [HO.o.w | MH.o | OH.o.w];
+ Cobalt Violet Pale [MA.o.o(artis).p];
+ Cobalt Violet Phosphate;
+ Cobalt Violet Pink Shade [BR];
+ Cobalt Violet Pink Shade Light [BR];
+ Cobalt Violet Medium [GU.p];
+ Cobalt Violet Rose [DV];
+ Cobalto Violeta;
+ Kobalt Violet;
+ Light True Cobalt Violet [PF.o];
+ Pigment Violet 14;
+ True Cobalt Violet Light [PF.o];
+ Violet de Cobalt;
+ Violetto cobalto","77360
+ 77362","Synthetic Inorganic Mineral;
+ Cobaltous phosphate; Chemical properties @ PubChem Open Chemical Database;
+ Cobalt phosphate; 
+ Calcined Cobalt (II) Oxide and Phosphorus (V) Oxide forming an inter-diffused, homogeneous crystalline phosphate; 
+ How Cobalt Violet is made at webexhibits.org
+ Co3(PO4)2. 
+ CPMA 8-11-1 
+ CAS 13455-36-2;
+ EC 236-655-6;","Light reddish to Deep dark blue Violet;
+ Non staining w/ low tinting strength and fast drying rate in oils where the cobalt content acts as a drier.
+ † May darken when mixed with Lead White",S/T,I,B,"""First prepared in 1859. It is a permanent pigment but it has low tinting strength. It dries quickly in oil paints."" See Cobaltous phosphate at CAMEO art materials database.
+ More info on Pigment Violet 14 in watercolor @ Handprint.com;
+ ** All paints containing cobalt require a PROP 65 warning label in CA.
+ Avoid dust and spray.
+ Do Not ingest.
+ Do not confuse the PV-14 (Cobalt phosphate) pigment with the poisonous pigment 'Cobalt Arsenate' (Co3(AsO4)2), sometimes also called 'Cobalt Violet' see above
+ Also see Cobalt Violet @ ColorLex.com"
+PV15,V,CIPIGMENT,15,Ultramarine Violet,"Cobalt Violet (hue) [LK];
+ C.I. Pigment Violet 15;
+ Grasse Violet [MA.o(Med)];
+ Mineral Violet [HO.w | SH.w];
+ Pigment Violet 15;
+ SF Ultramarine Pink [WL.o(SF).];
+ SF Ultramarine Violet [WL.o(SF).];
+ Ultra Violet;
+ Ultramarine Pink [WL.o.o(SF).p];
+ Ultramarine Red [DS.w | MA.o(artis) | SCH.p];
+ Ultramarine Red B, dark pink [KP.p]
+ Ultramarine Rose [MA.p]; 
+ Ultramarine Violet [GEN | AS | BA.o | BX.o.w | CAS.k | DR.w | DS.ad.o.w | DV.k.w | EP.p | GB.o.o |GO.a.af.ao | GU.pd | KA.p | LK | MA.o.o(artis).p.w | MG.a.o | MH.o | OH.a.o.w | RF.e | RGH.o.p | RT.o.w | SCH.p | SE.a.o.p | SQ.a | UT.o | WL.o.o(SF).p | WN.a.o.w.wp];
+ Ultramarine Violet Blue Shade [GU];
+ Ultramarine Violet Dark [KP.p];
+ Ultramarine Violet Deep [GU | MG.w];
+ Ultramarine Violet Light reddish [KP.p];
+ Ultramarine Violet Medium [KP.p];
+ Ultramarine Violet, Reddish dark [SI.p];
+ Ultramarine Violet, Reddish light [SI.p];
+ Ultramarine Violet Red Shade [GU.p]; 
+ Ultra Violet [WN.o];
+ Ultra Violet Reddish [SQ.a];
+ Ultra Violet Blue Shade [ TA.a.af ];
+ Ultra Violet Red Shade [ TA.a.af ];
+ Violet Outremer;
+ Violet Ultramarine",77007,"Inorganic; 
+ Sodium aluminium sulfosilicate (blue shade); sodium aluminium sulfur silicate (red shade); 
+ The creation of Ultramarine Violet is carried out by heating at 200–250°C a mixture of ultramarine blue and 2.5–5% ammonium chloride. It takes 4 days of calcining while being exposed to the air until a purple hue is created. 
+ Ultramarine Red is derived from ultramarine violet by heating it for four hours with gaseous hydrochloric acid at 200°C. It's creation can also be accomplished by heating ultramarine violet at a even higher temperatures with gaseous nitric acid (Reference Pigment Compendium, 2008);
+ Ultramarine Violet; Chemical properties @ PubChem Open Chemical Database;
+ Al6-Na6-O24-S8-Si6 
+ CAS 12769-96-9;
+ EC 235-811-0;","Blue shade to mid-shade, pinkish to violet, color varies by ratios of components during manf.;
+ Staining w/ low tinting strength
+  † some tests have shown it to whiten slightly after a long period of time",S/T,I,A,"* Rated I (excellent) in oil, acrylic & watercolor by the ASTM.
+ Lightfastness found to be excellent in watercolor, in all but one brand which had only 'good' results when tested by Bruce MacEvoy @ handprint.com"
+PV16,V,CIPIGMENT,16,Manganese Violet,"Burgundy Violet;
+ C.I. Pigment Violet 16;
+ Cosmetic Manganese Violet [GU.p];
+ Manganese Dark Violet;
+ Manganese Violet [GEN | BA.o | BX.o.w | CH | DR | DS.o.w | DV.k.w | GB.o.p | KP.p | MA.o(artis).p | MH.o | RGH.o.p | RF.e | SCH.p.w | SE.o.os.w | SI.p | SQ.a | SV | UT.o.w | WL.o.p];
+ Manganese Violet Bleuness [OH.o.w];
+ Manganese Violet Blue Shade [GU];
+ Manganese Violet-Blueness [OH.o.w];
+ Manganese Violet Deep [KA.p]; 
+ Manganese Violet Reddish [OH.o.w]; 
+ Manganese Violet Red Shade [GU]; 
+ Manganese Violet Bleuness [OH.o.w];
+ Mineral Violet [AS | DR.o | HO.o.wo | MA.o.w | MG.w | SE.p];
+ Mineral Violet Light [LB.o];
+ Nuernberger Violet;
+ Nurnberg Violet;
+ Nürnberg Violet;
+ Permanent Blue Violet [RT.o];
+ Permanent Mauve [WN.o.w.wp];
+ Permanent Violet [WNd];
+ Permanent Violet Light [CH];
+ Phosphate of Manganese;
+ Pigment Violet 16;",77742,"Inorganic;
+ A double salt of Phosphuric Acid with Manganese and Ammonium; 
+ Manganese ammonium pyrophosphate;
+ Ammonium manganic pyrophosphate;
+ Manganese Violet; Chemical properties @ PubChem Open Chemical Database;
+ H4-MnNO7-P2
+ CAS 10101-66-3
+ EC 233-257-4","Red shade to blue shade deep purple;
+ Weak staining w/ weak tinting strength; fast drying, Manganese May act as a siccative in oils
+ † Oils and Gum Arabic are slightly acidic, and may have a slight effect on this color over the long run.",S/T,I,B,"Decomposed by strong acids and alkalis.
+ * Also rated with excellent light fastness in all brands of watercolors tested on Handprint.com. See PV16 on Handprint.com
+ ** Avoid dust & spray. Ingesting or injecting too much (yes, intravenously delivered) manganese can cause diarrhea and a progressive nervous disorder which is similar to Parkinson's disease. (Ref. Gov. NCBA PDF)
+ Manganese is an essential micro nutrient in the human body:
+ ""Requiring a Proposition 65 warning on levels of a nutrient that may be essential for normal reproductive health would be contrary to good public health"" (p.5, Manganese, in prop 65 lawsuit 2009)"
+PV18,V,CIPIGMENT,18,Ferro Light Violet,"C.I. Pigment Violet 18;
+ Ferro Light Violet;
+ Pigment Violet 18",,,,X,X,,
+PV19,V,CIPIGMENT,19,Quinacridone Violet,"Acra Crimson;
+ Acra Violet;
+ Acridone Red;
+ Alizarin Crimson (hue) [DV.af];
+ Alizarin Crimson (Quinacridone) [DV.a.o.w];
+ Alizarin Rose (hue) [BA.w | GR.w];
+ Alps Red [HO.a.o]; 
+ Antique Pink [HO];
+ Australian Red Violet [MT]; 
+ Bocour Red;
+ Cad. Red Deep Hue (Primaire) [SE.o.];
+ Cadmium Red Deep Hue (Primaire) [SE.o.];
+ Caesar Purple [SCH.o(Mus).];
+ Carmine (hue) [HO.af | SCH.g.p];
+ Carmine (quinacridone) [DV.o.w]; 
+ Carmine Hue [GR.w];
+ Chinacridon;
+ C.I. Pigment Violet 19;
+ Cinquasia Red (Y/B/R shades);
+ Cinquasia® Violet RT 201 D [KP.p]; 
+ Cinquasia® Violet [KP.p]; 
+ Cinquasia Violet (B/R shades);
+ Dark violet;
+ Deep Rose [RT]; 
+ Flinders Red Violet [AS];
+ Garnet (hue) [PF.o];
+ Garnet Red [LB.o];
+ Genuine Rose (hue) [LK];
+ Hostaperm® Red [KP.p];
+ Lefranc Crimson [LB.o];
+ Luxury Red [MA.o(HD)];
+ Madder Red (hue) [SCH];
+ Magenta [BA.o | BX.o.w | DV | SE.o | SQ.a];
+ Matisse Rose Madder [MT];
+ Mauve [LK]; 
+ Monastral Red;
+ Monastral Violet;
+ Permanent Carmine [SCH.w];
+ Permanent Magenta [AS | DR.o.w | HO.w | PF.w | RT| SE.w | SH.w | WN.o];
+ Permanent Red Violet [RT.w];
+ Permanent Red Purple [RT.a]; 
+ Permanent Rose [AS | DR.w.t | DV.w | RT | WN.a.g.k.o.wo.w.w.wp.wp(L)];
+ Permanent Rose Quinacridone [DV.w];
+ Permanent Violet [LK];
+ Permanent Violet Medium [RT.o];
+ Pigment Violet 19;
+ Phthalo Crimson [GR.w?*]; 
+ Phthalo Red [GR.w?*];
+ Phthalo Red Rose [GR.o.wo?*];
+ Primary Magenta [GO.a.af | RT.a.wo];
+ Primary Red [LB.o | SE.a.os.p ];
+ Primary Red - Magenta [MA.a.o.w.w]; 
+ Pink Quinacridone;
+ Process Magenta [WN.a];
+ Purple [MR.o | LK];
+ Purple Lake [WNd];
+ Quinacridone 195 [GU];
+ Quinacridone Alizarin Crimson [DV.o.w];
+ Quinacridone Blue Violet [LQ.a];
+ Quinacridone Carmine [DV.w];
+ Quinacridone Crimson [LQ.a];
+ Quinacridone Garnet [CH];
+ Quinacridone Magenta [CH | DR |GO.a.ab.ao | HO.w | RF.e | WN];
+ Quinacridone Magenta (Rose Violet) [HO.w];
+ Quinacridone Permanent Rose [DV.w];
+ Quinacridone Purple [OH.a];
+ Quinacridone Red [GEN | BA.a.w | CAS.k | CL |DS.ad.i.o.w | DV.k | GB.o |GO.a.ab.af.ag.ao | GR.o.w.wo | GU | HO.w.wo | KA.o.p | MA.o(artis) | MW.o | RF.e | RGH.o.p | SCH.a | SE.a | SQ.a | TA.a.af | UT.a.o.w | WL.o];
+ Quinacridone Red Violet [CR.ao.o | RGH.o.p];
+ Quinacridone Rose [BA.w | DS.ad.o.w | GR.w | LK | MA.o(artis).p | MG.a.g.o.w | RT.a.a.o.o.w | SQ.a | UT.o];
+ Quinacridone Rose Deep [DV.w | OH.a];
+ Quinacridone Rose Light [OH.a];
+ Quinacridone Rose Red [GU];
+ Quinacridone Violet [GEN | CAS.k | CL | DR.a | DS.ad.i.o.pd.w | DV.k.w | GB.o | GO.a.af.ag | GU | HO.wo | KA.o.p | MG.a.g.o.w | MW.o | PF | RGH.o.p | SCH.a.g.p.w | SI.p | SQ.a | TA.a.af | UT.a.o.w | WL.o.p];
+ Quinacridone Violet B;
+ Quinacridone Violet Deep [RGH.o]; 
+ Quindo® Pink D [KP.p];
+ Quindo® Red R 6713 [KP.p]; 
+ Quindo® Violet;
+ Red Rose [DV];
+ Red Rose Deep [DV.a.af.o.w];
+ Red Rose Deep (Quinacridone) [DV.a.o.w];
+ Red Violet [CR.a(jo) | HO | JO.a | PF.w];
+ Rose [RT]; 
+ Rose Doré (hue) [AS];
+ Rose Doré (Quinacridone) [DV.w];
+ Rose Lake [BX.o.w | MA.o.w.w];
+ Rose Madder (hue) [AS | DV.o];
+ Rose Madder Lake (hue) [SE.t]
+ Rose Madder (Quinacridone) [DV.o];
+ Rose Pale Lake [BX.w];
+ Rose Permanent [BX.o.w 
+ MW.wo ];
+ Rose Violet [HO.o.];
+ Rouge Primaire [LB.o]; 
+ Rowney Rose [DR.o];
+ Rowney Red Violet [DR.o];
+ Royal Purple Lake [OH]; 
+ Ruby Red [LB.av.o | SCH.w];
+ Scheveningen Rose Deep [OH.o.w];
+ Scheveningen Violet [OH.o.w];
+ Solid Madder (hue) [PF];
+ Spectrum Crimson [AS];
+ Thalo Crimson [GR.w]; 
+ Thalo Red [GR.w]; 
+ Thalo Red Rose [GR.o.wo];
+ Thio Violet [AS];
+ Trans Quin Red Yellow [GU]; 
+ Trans Quin Yellow Shade; 
+ Transparent Quinacridone Red [GO.a.ab];
+ Violet [DR.o];","73900
+ 46500","Synthetic Organic;
+ Quinacridone Red B;
+ Similar to PR-107 with different cryatal structure & particle size. 
+ (Ref:LBNL Pigment Database Spectral radiative properties);
+ (Ref: Monastral Red at coolcolors.lbl.gov);
+  
+ C20H12N2O2
+  
+ CAS 1047-16-1","Bright to deep blueish to reddish violet;
+ Staining w/ good tinting strength
+ †Dulls, Fades, Hue shift towards blue",S/T,II,A,"Extensively used for high-grade industrial paints, implement enamels, agricultural equipment and powder coatings applications. 1419 is also frequently used in water, solvent, UV, and ink jet inks as well as for polyester films, offset inks and metal deco printing. (Lansco)
+ * Lightfastness appears to be only good to very good in watercolors & inks, but Excellent in oils & acrylics.
+ ** FDA approved"
+PV23,V,CIPIGMENT,23,Dioxazine Violet,"Aubergine Violet [SI.p];
+ Antique Violet [HO.w(ant)];
+ Aubergine Violet;
+ Blue Violet [SE.os | SCH.p]; 
+ Brilliant violet [SCH]; 
+ Calbizol Violet;
+ Carbazole Dioxazine;
+ Carbazole Violet [GEN | BR | CL | DS.ad.i.o.w | KA.ad | RGH.o.p];
+ Carbazole Violet (dioxanine) [KA.p]; 
+ Chromothal Violet;
+ C.I. Pigment Violet 23;
+ Cobalt Violet Hue [MR.o | LK];
+ Cyanadur Violet;
+ Da Vinci Violet [DV.w];
+ Deep Oriental Violet [PF]; 
+ Deep Violet [CH | DR.a.a(s3hb).a(s3mb) | HO.ag];
+ Diox Purple [CR];
+ Dioxide Purple [CR | JO.a];
+ Dioxacine Violet [MR.o];
+ Dioxanine Violet [KA.o];
+ Dioxazine Mauve [BX.o.w | OH.o.w];
+ Dioxazine Purple [GEN | BA.a.o.w | CR.a(jo).a.ao.o | DV.a.af.k | GB.o.o | GO.a.af.ag.ao | GR.o.o.wo | JO.a | LQ.a | MGd | MT | MW.o.wo | PF.o | SE.a | TA.a.af | UT.a.o.w | WN.a.k..wo];
+ Dioxazine Violet [GEN | BA.a | CAS.k | GU.pd.p | HO.wo | LK | OH.a | SE.o | SQ.a | TA.a | WN.w];
+ Dioxazine Violet Deep [LA.a]; 
+ Econo Dioxazine Violet [GU];
+ Egypt Violet [LB.av]
+ Egypte Violet [LB.o];
+ Egyptian Violet [LB.o | RF.e | WL.o];
+ Fragonard Violet [PF.w]; 
+ Flinders Blue Violet [AS];
+ Game Over Purple [MA.o(HD)];
+ Heliogen Violet;
+ Lilac;
+ Mauve [DR.w | GR.w | SQ.a | SCH.w];
+ Mauve (Dioxazine Purple) [GR]; 
+ Opaque Violet [HO.af.];
+ Oriental Violet Deep [PF.o];
+ Permanent Mauve [DR.o.o.];
+ Permanent Violet [HO.o.w | MA.p | SCH | UT];
+ Permanent Violet Blueish [MA.o.w.w]; 
+ Pigment Violet 23;
+ Pigment Violet 23 (blue shade);
+ Pigment Violet 23 (red shade);
+ Proprietary Purple (Dioxazine Purple) [GRd];
+ PV23RS;
+ Studio Violet [KP.p]; 
+ Translucent Violet [SCH.o(Mus)];
+ Transparent Garnet [HO.o];
+ Transparent Dioxazine Purple[GO.ab];
+ Transparent Violet [HO.o];
+ Violet [DR.a | HO.a.af | MA.a | SCH.a.g];
+ Violet Bleu [LB.o]; 
+ Violet (Blue Shade) [LB.o];
+ Violet Dark [SCH.o]; 
+ Violet Lake [MA.o];
+ Violet Permanent [PF.w];
+ Winsor Violet [WN.a.a.g.w];
+ Winsor Violet (Dioxazine) [WN.o.w.wp.wp(L)]
+ Note: many of the names above may have an additional BS or RS designation to distinguish between the Red shade & Blue shades.",51319,"Synthetic Organic;
+ Dioxazine;
+ Prepared by condensation of chloranil and 3-amino-N-ethylcarbazole (Ref. Wikipedia)
+ Pigment Violet 23; Chemical properties @ PubChem Open Chemical Database;
+ LBNLPigment Database Spectral radiative properties;
+ Dioxazine Purple;
+ C34-H22-Cl2-N4-O2
+ CAS 215247-95-3
+ CAS 6358-30-1 (no longer used, see Wikipedia)","Deep dark blue or red shade purple;
+ there are blue shade & red shade versions of this pigment.
+ Very staining w/ excellent tinting strength
+ † Fades",S/T,II,A,"* PV23 Red Shade has ASTM I 'excellent' in oils & acrylics (2003), but less in watercolor with a rating of ASMT II 'very good' (2003), the Blue Shade has poorer lightfastness and is only ASTM II 'very good' (2003) in oils and IV 'poor' (ASMT ca. 1999) in watercolor.
+ Most Paint manufactures give it a 'very good' light fastness rating.
+ 
+ In real world tests on watercolor paints, Bruce MacEvoy of Handprint.com gives this pigment a II (very good), with a wide variation between brands, with most getting very good results and some with mediocre results and one giving very poor results. It also appears that, in some brands, the pigment was highly extended (diluted) which, almost certainly, was the cause of their poorer light fastness. Also variances might be due to brands using different RS or BS varieties of this pigment, and not accurately marking it on the paints. (Ref Handprint.com).
+ Guerra Paint & Pigment rate their water dispersion as a blue wool scale of 8 in mass tone and 7-8 in tints which is clearly in the excellent category (probably a red shade). 
+ It stands to reason that source, extenders, manufacturing process or impurities also play a role in the light fastness of this pigment. Different mediums or binders may also give different results.
+ I would suggest making your own tests on the formulation or brand of artist paint you have."
+PV25,V,CIPIGMENT,25,Pigment Violet 25,"C.I. Pigment Violet 25;
+ Pigment Violet 25;
+ Suimei Fast Violet B",12321,"Synthetic Organic;
+ Monoazo;
+ CAS 6358-46-9",Bright violet,X,X,A,
+PV27,V,CIPIGMENT,27,Permanent Violet,"C.I. Pigment Violet 27;
+ Permanent Violet;
+ Pigment Violet 27;
+ Methyl Violet;
+ Violet Toner",42535:3,"Triphenylmethane Copper Ferrocyanide Salt;
+  
+ CAS 12237-62-6",Violet,X,IV,B,
+PV29,V,CIPIGMENT,29,Perylene Violet,"Amaranthine;
+ Anthraquinone Violet [GU];
+ C.I. Pigment Violet 29;
+ Fast Bordeaux;
+ Luprafil Violet;
+ Palamid Violet;
+ Perrindo Violet [GU];
+ Perylene Violet [DS.w | WN.a.g.w.w.wp];
+ Pigment Violet 29;
+ Sunfast Violet;",71129,"Synthetic Organic;; 
+ Perylene;
+ Anthraquinone;
+  
+ CAS 81-33-4",Dark dull red purple,S/T,I,A,
+PV31,V,CIPIGMENT,31,Isoviolanthrone Violet,"C.I. Pigment Violet 31;
+ C.I. Vat Violet 1;
+ Isoviolanthrone Violet;
+ Pigment Violet 31;
+ Polysolve Brilliant Violet;
+ Vat Violet 1;",60010,"Synthetic Organic;
+ Isoviolanthrone Dichloro derivative;
+ Dichloro-benzanthrone treated with alkali and precipitated.
+ lake of C.I. Vat Violet 1 
+ CAS 1324-55-6",Bluish violet;,T,NR,A,May be out of production
+PV32,V,CIPIGMENT,32,Benzimiazolone Violet,"Benzimiazolone Violet;
+ Bordeaux [DS.o.w];
+ C.I. Pigment Violet 32;
+ Novoperm Bordeaux HF3R;
+ Pigment Violet 32",12517,"Synthetic Organic;
+ Monoazo; 
+ Benzimiazolone;
+  
+ CAS 12225-08-0","Bluish red or violet
+  
+ † Darkens",S/T,II,A,"* apparently has only fair lightfastness with tints in alkyd-melamine paints, but very good (blue scale 7 of 8) in inks (watercolors?) (Ref: p.366, Industrial organic pigments, By Willy Herbst, Klaus Hunger, Gerhard Wilker)"
+PV36,V,CIPIGMENT,36,Indanthrene Violet,"Bayeux Violet;
+ C.I. Pigment Violet 36;
+ C.I. Vat Violet 2;
+ Indanthrene Violet;
+ Indanthrene Brilliant Violet RR; 
+ Pigment Violet 36;
+ Thioindigoid;
+ Thioindigo red;
+ Thioindigo red violet;
+ Thio Violet [GU.pd];
+ Vat violet 2",73385,"Synthetic Organic;
+ Indanthrene;
+ Thioindigoid;
+ Indigoid based ;",Red Shade Violet,S/T,I,A,-
+PV37,V,CIPIGMENT,37,Dioxazine Violet,"Blue Violet [HO.wo];
+ Chromothal Violet;
+ C.I. Pigment Violet 37;
+ Dioxazine Purple [MG.a.g.o.w];
+ Dioxazine Violet [KP.p];
+ Dioxazine Violet Red Shade [GU]; 
+ Pigment Violet 37",51345,"Synthetic Organic;
+ Dioxazine;
+  
+ CAS 57971-98-9","Red and blue shades of dark deep purple;
+ Very staining w/ excellent tinting strength
+ † Fades in tints",S/T,II,A,"More info on Pigment Violet 37 in watercolor @ Handprint.com; 
+ May be more lightfast than PV23 in artist's paints; (Blick Art Materials Ref);"
+PV39,V,CIPIGMENT,39,Crystal Violet,"Blue Violet [SE.w];
+ C.I. Pigment Violet 39;
+ Crystal Violet;
+ Pigment Violet 39;
+ Triphenylmethane Violet;",42555:2,"Triphenylmethane Phosphomolybdic salt;
+  
+ CAS 64070-98-0;
+ CAS 467-63-0;
+ CAS 67953-39-3;
+ CAS 68477-21-4","Bright Violet.; †Dulls, Darkens, Fades",S/T,III,B,"* More info on Pigment Violet 39 in watercolor @ Handprint.com;
+ ** Several studies have linked long-term exposure to Crystal Violet with cancer (Ref. Blick Art Materials)"
+PV42,V,CIPIGMENT,42,Quinacridone Violet,"C.I. Pigment Violet 42;
+ Magenta [SCH.w];
+ Monastral Maroon B;
+ Pigment Violet 42;
+ Quinacridone Maroon;
+ Quinacridone Pink [DS.ad.o.w];
+ Quinacridone Pink Madder [GU.pd.p];
+ Quinacridone Rose Madder [GU]; 
+ Royal Purper Lake [OH.o.w];
+ Royal Purple Lake [OH.o.w];
+ Trans Quin Blue Shade;
+ Trans Quin Red Blue [GU.pd.p];",,"Synthetic Organic;
+ Quinacridone","Dull reddish violet;
+ Good tinting strength",S/T,I,A,
+PV44,V,CIPIGMENT,44,Pigment Violet 44,"C.I. Pigment Violet 44;
+ Pigment Violet 44;
+ Symuler Fast Violet 4142",,"Synthetic Organic;
+ Monoazo; 
+ CAS 87209-55-0",Mid shade Violet,X,X,,
+PV47,V,CIPIGMENT,47,Cobalt Lithium Violet Phosphate,"C.I. Pigment Violet 47;
+ Cobalt Violet [HO.o.wo];
+ Cobalt Violet Light [HO.w | KP.p]; 
+ Cobalt Lithium Violet Phosphate;
+ Pigment Raspberry PK 5031;
+ Pigment Violet 47",77363,"Inorganic; 
+ Cobalt lithium violet phosphate;
+ Made by the calcination of Cobalt (II) Oxide, Lithium (I) Oxide, and Phosphorus (V) Oxide to give a crystalline phosphate with the constitution CoLiPO4. 
+ CPMA 8-12-1 
+ CAS 68610-13-9",Red shade Violet,X,I,C,"** All paints containing cobalt require a PROP 65 warning label in CA.
+ Avoid dust and spray.
+ Do Not ingest."
+PV48,V,CIPIGMENT,48,Cobalt Magnesium Borate,"C.I. Pigment Violet 48;
+ Cobalt Magnesium Borate;
+ Cobalt Magnesium Red-Blue Borate;
+ Pigment Violet 48;
+ Raspberry",77352,"inorganic;
+ Cobalt magnesium red-blue borate;
+ Obtained from high temperature calcination of a mixture with varied amounts of Cobalt (II) Oxide, Magnesium (II) Oxide, and Boron (III) Oxide to make a ionic and homogeneous intertwined crystalline borate; 
+ How Cobalt Violet is made at webexhibits.org 
+ CPMA 2-02-1  (4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments) 
+ CAS 68608-93-5",Light mid shade to reddish Violet,X,X,B,"** All paints containing cobalt require a PROP 65 warning label in CA.
+ Avoid dust and spray.
+ Do Not ingest."
+PV49,V,CIPIGMENT,49,Cobalt Pale Violet,"C.I. Pigment Violet 49;
+ Cobalt Red Violet [LB.o];
+ Cobalt Violet [DS.w];
+ Cobalt Violet Brilliant;
+ Cobalt Violet Brilliant Light [KP.p]; 
+ Cobalt Pale Violet;
+ Cobalt Violet Light [DS.o | GB.o | RF.e | SV | UTd | WL.o.o(SF)];
+ Cobalt Violet Light (Reddish) [WL.o.p];
+ Caprice Violet No.102;
+ Pigment Violet 49;
+ SF Cobalt Violet Light [WL.o.o(SF)];",77362,"Cobalt ammonium phosphate 
+ How Cobalt Violet is made at webexhibits.org
+  
+ CAS 14590-13-7","Light reddish to Deep blue violet;
+ Non staining w/ weak tinting strength;
+ † May darken when mixed with Lead White",S/T,I,B,"* Rated with excellent light fastness in all brands of watercolors tested on Handprint.com. See PV49 on Handprint.com
+ ** All paints containing cobalt require a PROP 65 warning label in CA.
+ Avoid dust and spray.
+ Do Not ingest."
+PV50,V,CIPIGMENT,50,Pigment Violet 50,"C.I. Pigment Violet 59;
+ Fast Violet B;
+ Pigment Violet 50",12322,"Monoazo;
+  
+ CAS 76233-81-3",Bright bluish violet,X,X,,
+PV55,V,CIPIGMENT,55,Quinacridone Purple,"C.I. Pigment Violet 55;
+ Pigment Violet 55; 
+ Quinacridone Purple [DS.w];
+ Quindo® Violet 55;",,"Organic;
+ A ""solid solution"" formed from the mixing of 2,9-dimethoxyquinacridone and 2,9-dichloroquinacridone resulting in a unique crystal form. (Ref);",Bluish violet to violet blue,X,I,A,"Claimed to be superior to Quinacridone Violet PV 19 (Ref Coating Tech June 2010, pg 48); The hue is said to be closer to carbazole violet (PV 23) than PV 19 and PV 29 (Ref)"
+PV58,V,CIPIGMENT,58,MayaCrom Violet V2001F,"C.I. Pigment Violet 58;
+ MayaCrom Violet V2001F;
+ Mayan Violet [DS.w];
+ Pigment Violet 58",,Patented Organic/Inorganic hybred based on the chemistry of Mayan Blue,,X,II,A,"""evolved from work done at the University of Texas-El Paso to reconstruct the unique vibrant blue color developed by the Maya civilization more than 1000 years ago, using an inorganic and organic component to produce a highly stable hybrid pigment.""
+ (Tech Specs)
+ - TOR Minerals International Press release, (Ref),;"
+PV171,V,CIPIGMENT,171,Pigment Violet 171,"C.I. Pigment Violet 171;
+ Azoic Plum Violet [GU];
+ Pigment Violet 171",,Organic,Deep red violet,X,X,A,

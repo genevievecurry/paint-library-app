@@ -1,0 +1,900 @@
+slug,colorCode,type,number,name,alternateNames,ciConstitutionNumber,composition,description,transparencyRatingCode,lightfastRatingCode,toxicity,notes
+NG1,G,CINATURAL,1,Chinese Green,"C.I. Natural Green 1;
+ Charvin's Grun;
+  Chinese Green; 
+  Lokao;
+  Natural Green 1",-,"Extract from the bark of Rhamnus tinctoria and R. dahurica, R. chlorophorm (globorus) and R. utilis treated with lime (Ref A dictionary of applied chemistry, Vol. 3, By Sir Thomas Edward Thorpe, 1912);
+  ""the juice of some Chinese species of buckthorn. The berries are pressed and the juice mixed with alum and dried."" (Ref: - Dictionary of Chemicals and Raw Products Used in the Manufacture of Paints (1917)",Dark blueish green,X,IV,A,
+NG2,G,CINATURAL,2,Sap Green,"Archin;
+  Bladder Green;
+  Buckthorn Lake;
+  C.I. Natural Green 2; 
+  Green Buckthorn Berries[KP.p];
+  Natural Green 2;
+  Natural Yellow 13;
+  Pasta Green;
+  Persian Lake; 
+  Persian Berry Lake;
+  Saftgrien;
+  Saftgrün;
+  Sap Green [KP.p];
+  Verde di Veschia;
+  Vert de Vessie;
+  Verde Vejiga;
+  Verde Vessie;
+  
+  
+ see Stil de grain NY13 
+  also compare NG1 Chinese Green","75440
+  75700
+  75695","Laked extract of ripe Buckthorn berries (Rhamnus catharticus), Stil de Grain (NY13) is made from unripe berries;
+  Coloring constitutes of Sap Green:
+  Chlorophyll (green);
+  Emodin or Frangulaemodin (red-orange powder); 
+  Xanthorhamnin, a glucoside extracted from Persian berries as a yellow crystalline powder, used as a dyestuff. (Ref dictionary.reference.com);
+  According to The Organic Chemistry of Museum Objects by J.S. Mills; R. White, 1994, the color of sap green is almost entirely due to chlorophyll.
+  ""Similar pigments, prepared from coffee-berries, and called Venetian and Emerald greens, are of a colder color, very fugitive, and equally defective as pigments"" (Reference Field's Chromatography, by George Field, 1841, pg.238, Printed version @ Amazon.com, see also the Free Art Books page of this site);
+  Chlorophyll:
+  CAS 1406-65-1;
+  Emodin:
+  CAS 518-82-1;
+  xanthorhamnin:
+  CAS 1324-63-6",Deep dull yellow green,T,IV,A,Replaced by many modern pigment mixes in most modern artist paints
+PG1,G,CIPIGMENT,1,Pigment Green 1,"Brilliant Green;
+  C.I. Pigment Green 1;
+  Emerald Green (hue);
+  Fanal Green D;
+  Fanatone Bronze Green;
+  Pigment Green 1",42040:1,"Triphenylmethane Phosphotungsto-
+  molybdic acid salt;
+  CAS 1325-75-3",Bright bluish green,X,III,,
+PG2,G,CIPIGMENT,2,Fast Green Lake,"C.I. Pigment Green 2;
+  Fast Green Lake;
+  Permanent Green;
+  Pigment Green 2","42040:1+
+  42005:1","Phosphotungsto-
+  molybdic acid salt of Triphenylmethane and Thiazole;
+  Intimate mixture of PG1 and PY18; 
+  CAS 1325-75-3;
+  CAS 12213-69-3",Bright green,X,III,,
+PG4,G,CIPIGMENT,4,3606 Fast Green Lake,"C.I. Pigment Green 4;
+  Fanatone Green M;
+  Fast Green Lake;
+  Malachite Green (hue);
+  Pigment Green 4",42000:2,"Triphenylmethane Phosphotungsto-
+  molybdic acid salt;
+  CAS 61725-50-6",Bright blue shade green,X,III,,
+PG7,G,CIPIGMENT,7,Phthalocyanine Green BS,"Alizarin Green Lake;
+  Antique Jasper Green [HO.w(ant)];
+  Armor Green [LB.av.o];
+  Aubusson Green;
+  Brilliant Green;
+  Brilliant Green Deep [MA.a.a];
+ Brilliant Green Light [MA.];
+  Blockx Green [BX.o.w];
+  Bright Aqua Green [LQ.a];
+  Chlorinated Copper Phthalocyanine;
+  C.I. Pigment Green 7;
+  Cupric Green Deep [MA.o.w];
+  Cyan Green;
+  Cyanine Green [PF.w];
+ Dark Green Medium [BA.ag];
+  Emerald Green (hue) [SCH.a];
+ Emerald Green Substitute [SE.p];
+  Endurophthal Green B;
+ Hazard Green [MA.o(Oilio)];
+  Heliogen® Green [KP.p];
+  Leaf Green;
+  Monestial Green [DR];
+  Monestial Green (Phthalo) [DR];
+  Cinnabar Green (hue);
+  Helio Green Bluish [SCH.g];
+  Helio Green Deep [SCH.o(Mus];
+  Heliogen® Green K 8730;
+  Hooker's Green Hue [UT.a];
+  Intense Green;
+  Monastral Green [DR.o.t.];
+  Mueller's Green Light[KP.p];
+  Mueller's Green Medium[KP.p];
+  Opaque. Viridian (hue) [HO.af.];
+  Oriental Green [HO.a.o];
+  Permanent Green Deep;
+  Phthalo Emerald [PF.o];
+  Phthalo Green [GEN | AS | BA.a .o.w | CAS.k | CL | CR.a(jo).ao.o |DR.a.a.a(s3hb).a(s3mb).o.w | DV.a.af.k.o.w | GB.o.o | GO.ab | GR.w?* | HO.wo | JO.a | KA.p | KP.p | MA.a.o.p.w | MG.g.w | MW.o | RGH.o.p | ROSS.o | RT.o.w.wo | SCH.o.p.w | SQ.a | TA.a.af | UT.w | WL.o.p | WN.k];
+  Phthalo Green Blue [GU.pd | RT.o];
+  Phthalo Green (Blue Shade) [DS.ad.i.o.w | GO.a.ab.af.ag.ao | GR.o.o.w.w.wo?* | LQ.a | MW.wo | OH.a | SCH.a | SE.a | UT.a.o | WN.a.wo];
+  Phthalo Green (BS) [DS.ad.i.o.w];
+ Phthalo Green B.S. [GO.a.ab.af.ag.ao];
+ Phtalo Viridian [CH];
+  Phthalo Green Cool [SE.o];
+  Phthalo Green Dark [KP.p];
+  Phthalo Green Deep [LA.a];
+  Pthalo Green Lake [MH.o};
+  Phthalocyanine Green [GEN | BA.a | KA.ad.o | MG.a.o | SE.p];
+  Phthalocyanine Green BS [GEN];
+  Phthalocyanine Green Lake;
+  Pigment Green 7;
+  Pigment Green 42;
+  Scheveningen Green Deep [OH.o.w];
+  Shiva Green [SV];
+  Rembrandt Green [RT];
+  Richeson Green [SQ.a];
+  Sap Green (hue) [HO.o];
+  Thalo Green [BR | GR.w];
+  Thalo Green (Blue Shade) [GR.o.o.w.w.wo];
+ Thalo Green Blue [GU.pd]
+  Transparent Green [HO.o];
+ Transparent Phthalo Green BS [GO.ab];
+ Transparent Phthalo Green Blue Shade [GO.ab]; 
+  Viridian (hue) [CL | MG.a | MR.o | SE.o.os | SH.w];
+  Viridian Green (hue) [HO.af | DV.a | MR.o];
+  Viridian Hue [BA.o | DR.o.w | HO.o.w.wo | MA.g | UT.a | WN.o.w];
+  Viridian Hue Permanent [LQ.a];
+  Winsor Green [WN.o.g];
+  Winsor Green (Blue Shade) [WN.w.wp.wp(L)];",74260,"Polyclorinated Copper Phthalocyanine;
+ Made by chlorination of Copper Phthalocyanine in the presence of a catalyst.
+ Chemical Prop. @ PubChem Chemical Database
+  LBNLPigment Database Spectral radiative properties;
+  Phthalo Green (i);
+  Phthalo Green (ii);
+  
+ C32H3Cl13CuN8 to 
+ C32HCl15CuN8; 
+ C32H16CuN8Cl15;
+  
+  C32Br6Cl10CuN8 (PG36)
+  
+  CAS 1328-53-6
+ CAS 14832-14-5
+ EC 238-897-8","Deep green blue shade;
+ Heavily staining w/ over powering tinting strength, unless extended.
+ † Darkens, Dulls, Fades; Can 'bronze' over (develope a iridescent sheen). These effects are inherent to their light fastness and may take decades or centuries to have any noticeable effects.",T,I,A,"introduced in 1935;
+ Extremely strong in tints; Artist paint makers usually add fillers to help control this unusually strong color.
+ Same pigment as Pigment Green 42?
+ Can ""bronze"" over in masstone, usually additives help prevent this.
+ Phthalocyanines Have a tendency to flocculate (granulate) extremely, paint makers usually add additives like Surfactants & flow improvers to counteract this, as a result they usually are non-granulating in watercolors.
+ Rated excellent in in all brands of watercolors in tests by Bruce MacEvoy @ handprint.com. See Pigment Green 7 @ Handprint.com;"
+PG8,G,CIPIGMENT,8,Nitroso Green,"C.I. Pigment Green 8;
+  Green MC [EP.p];
+ Green Pantelleria [MA.o(Med)];
+  Green Sap [MR.o];
+  Hooker's Green (hue*) [GU.p.pd | HO.a | UT.wd];
+  Ichomine Olive Green;
+  Nitroso Green ST;
+  Olive Green [LB.o];
+  Pigment Green 8;
+  Pigment Green B;
+ Reset Green [MA.o(HD)];
+  Sap Green [MA.g | MR.o | PF.o.o | RT.a];",10006,"Synthetic Organic Azo;
+  PG-8 is the bisufite complex of 1-nitroso-2-naphthol reacted with ferrous sulfate and then with sodium hydroxide (Ref. Paint and Coating Testing Manual: 14th ed. of the Gardner-Sward handbook/Joseph V. Koleske, ed.1995; p.204)
+  Ferrous complex of 1-nitroso-2-naphthol and 1- nitroso-2-naphthol-3-carboxylic acid (Ref: Paint Film Components, National Environmental Health Monographs by M van Alphen, 1998, p141);
+ Chem. info @ PubChem
+ C30H18FeN3O6Na
+  
+  Ferrous beta naphthol;
+  Nitroso Iron complex;
+  CAS 16143-80-9
+ CAS 15635-53-7
+ EC 240-299-7","Slightly dull Yellowish to blueish dark green;
+ Staining w/ good tinting strength",S/T,III,B,"No longer in production was one of the oldest chelate-based pigments;
+ Very beautiful rich deep dark green color, in hue, it makes an excellent substitute for hookers green*, unfortunately it has very marginal lightfastness; 
+ Affected by acids.;
+  * Traditional pigment Hooker's green was a mixture of Prussian Blue and Gamboge;
+  ** ""permanence and lightfastness of Hooker’s Green (PG8) varies by brand"" -Blick Art Materials Ref.
+ On a tube of the discontinued Utrecht watercolor ""Hookers Green"" PG-8, it states a light fastness of 1, their highest rating.
+ Rated only fair to poor by the ASTM and Bruce MacEvoy in watercolor @ handprint.com. See PG-8 @ Handprint.com;
+  ***depends on manufacture, see Blick Art Materials Ref.
+ Generally thought to be safe as it is used in clothing, leather, printing inks, crayons, colored chalk (Ref. Food Additives World)."
+PG10,G,CIPIGMENT,10,Nickel Azo Yellow,"Australian Green Gold [AS.wd]
+ C.I. Pigment Green 10;
+  Gold Bronze;
+  Green Gold [DS.wd | WL.o | WNd];
+  Green Gold Bronze;
+  Indian Yellow (Substitute);
+  Nickel Azo [GU.pd];
+  Nickel Azo Dark [GU.pd];
+  Nickel Azo Xtra [GUd];
+  Nickel Azo Yellow;
+  Nickel Complex Azo;
+  Nickel Monazo Yellow;
+  Pale Gold Bronze;
+  Pigment Green 10;
+  Rich Gold Bronze",12775,"Synthetic organic;
+ Nickel Chelated Azo complex;
+  Nickel complex of p-chloroaniline coupled with 2,4-quinolinediol; 
+  Powdered Nickel Chelated Azo; 68-92% copper; 6-31% zinc; 0.25-10% aluminum; 
+  CAS 51931-46-5","Dark to yellowish green
+ heavily staining w/ only fair tinting strength
+ † Fades (over a long long time)",T,I,B,"Invented in 1905, has seen little artistic use;
+ No longer in production;
+ Daniel smith & Art Spectrum discontinued PG 10 in their watercolor lines in 2000 & 2005 respectively.
+ * Any paint containing nickel requires a PROP 65 warning label. 
+ Probably totally safe in normal artist use. Keep your mouth off your brushes and don't lick your wet paintings."
+PG13,G,CIPIGMENT,13,Phthalochrome Green,"Chromastral Green H-M;
+  C.I. Pigment Green 13;
+  Delta Phthalochrome Green D661;
+  Mineral Green;
+  Pigment Green 13","74200+
+  77603","Inorganic; Phthalocyanine;
+  CAS 148092-61-9",Yellowish green to middle green,O,I,B,
+PG14,G,CIPIGMENT,14,Cadmium Green,"Cadmium Green [ GB.o.o | HO.o? | RF.e.os?* | WL.o?*];
+  Cadmium Green Dark [KP.p];
+  Cadmium Green Deep [HO.o? | OH.o.w?*];
+  Cadmium Green Light [HO.o? | KP.p | WL.o?*];
+  Cadmium Green Pale [HO.o.w?* | RF.e ?* | WN.o?*];
+  Cadmium Sulfide Chromoxyd;
+  Cadmium Chrome Oxide;
+  C.I. Pigment Green 14;
+ Permanent Green;
+  Pigment Green 14;
+ Verde de cadmio (Esp.);
+ Vert de cadmium (Fr.);
+ Verde bario (It.);
+ Verde de cádmio (Port.);","77199+
+  77346","Inorganic;
+  Intimate mixture* of varying composition 
+  According to the Color Index 3rd. ed. 1997: 
+ Pigment Green 14 is co-precipitated Cadmium sulfide CdS (Cadmium Yellow, PY37, PY35) and Cobaltous aluminate (Cobalt Blue, PB28, PB35, PG36, Colbalt Green PG26, PG50) of varying composition 4CoO·3Al2O3 **(Ref: Colour Index Third Ed., published by SDC, AATCC, CII, 1997);
+ ""Cadmium green (PG14) is a chemically fused mixture of cadmium yellow (PY35) and cobalt aluminum oxide (PB28)"", this color can be made in the studio by simply mixing the 2 components. (Ref Handprint.com, Cadmiums);
+ ""Cadmium Green"" is a co-precipitated hydrated oxide of chromium (Viridian, PG18) with cadmium sulfide (PY37, PY35);
+ (Ref Pigment Compendium, by Nicholas Eastaugh, Valentine Walsh, Tracey Chaplin and Ruth Siddall, Copyright © 2008, p.74);
+  (Ref: Boston Fine Arts, CAMEO Materials Database);
+ Cadmium Green:
+ a pigment used in painting, consisting of a mixture of hydrated oxide of chromium with cadmium sulfide, and characterized by its strong green color and slow drying rate. (Ref: Random House Unabridged Dictionary, Copyright © 1997, by Random House, Inc.);
+  
+  CAS 1306-23-6",Varied Greens depending on exact ratio of components,O,I,B,"?* there appears to be a few different mixtures that can be historically considered ""Cadmium Green"", although the Color Index only lists one. Some artist oil paints that are labeled Cadmium Green are mixtures of PG18 (Viridian) and PY37 or PY35 (Cadmium Yellow), in those cases they could rightly be named ""Cadmium Green"" according to Heaton (1928) and Kittel (1953), but according to the Color Index, Pigment Green 14 (Cadmium Green) is a mixture of ""Cadmium sulfide (Cadmium Yellow) and Cobaltous aluminate (Cobalt Blue) of ""varied"" composition"".
+ 
+ (Ref Pigment Compendium, by Nicholas Eastaugh, Valentine Walsh, Tracey Chaplin and Ruth Siddall, Copyright © 2008, p.74);
+ 
+ (Ref: Colour Index Third Ed., published by SDC, AATCC, CII, 1997);
+  **Many newer mixtures named ""Cadmium Green"" still use cadmium yellow as a base but substitute Phthalocyanine Green PG7, Ultramarine blue PB29, or Prussian Blue PB27 instead of using Viridian or Cobalt Blue. It appears that Cadmium Green has become a generic term that means any green color made with cadmium yellow as the base."
+PG15,G,CIPIGMENT,15,Chrome Green,"Bismark Green;
+  Brunswick Green;
+  Chrome Green;
+  C.I. Pigment Green 15;
+  Chromgrun;
+  English Green;
+  Green Cinnabar;
+  Green Vermilion; 
+  Institutional Green;
+  Mineral Green;
+  Pigment Green 15;
+  Prussian Green;
+  Vert de Chrome;
+  Victoria Green;
+  Zinnober Green;
+  Zinnobergrün;","77520+
+  77601+
+  77603","Inorganic;
+  Prussian blue precipitated on chrome yellow base or an Intimate mixture of Chrome yellow and Prussian blue; 
+  Potassium ferric ferrocyanide (PB27), Basic lead chromate (PY34), and Lead sulfochromates;
+  CAS 12224-92-9;
+  CAS 1344-37-2;
+  CAS 25869-00-5","Yellowish green;
+  † in time the chromate decomposes the blue, rendering it ‘unfit for fine art’",O,II,C,"Used to paint walls in Insane asylums, prisons and hospitals for it's supposed ""calming"" effect.
+  * good lightfastness, but in time the chromate decomposes the blue, rendering it ‘unfit for fine art’. (Reference Field's Chromatography, by George Field, 1841, pg.238, Printed version, see also the Free Art Books page of this site);
+ ** Contains lead;"
+PG16,G,CIPIGMENT,16,Zinc Green,"Bleu de Turnbull;
+  C.I. Pigment Green 16;
+  English Green;
+  Milori Green;
+  Pigment Blue 29;
+  Pigment Green 16;
+  Turnbull's Blue;
+  Ultramarine Green;
+  Vert de Zinc;
+  Zinc Green;
+  Zinkgrum","77955 plus 77525 or 77007
+  70800
+  77007
+  77510;","Mixture of PY36 (zinc yellow} and a blue pigment of varied composition (possibly one of the below pigments)
+ Potassium Ferrocyanide PB27*; 
+  Complex of Sodium Aluminum Sulfosilicates PB29* ;
+  Copper phthalocyanine PB15 or PG7*; 
+  Zerr, Rübencamp, 1908, State that Zinc Green is ""a mixture of Zinc chromate (PY36), Prussian Blue (PB27) and barytes (PW21) it is made on similar lines to the chrome greens, except that the character of the zinc chromate replacing lead chromate in the mixture requires a somewhat longer mechanical treatment of the mixture."" (Reference A Treatise on Color Manufacture, p 251-253 By George Zerr, Robert Rübencamp, 1908)
+  CAS 12769-96-9?;
+  CAS 65505-26-2?;","Yellow to blueish green;
+ † Fades, hue shift towards yellow;",S/T,II,A,"This pigment is listed in the Color Index as a mixture of PY36 and a blue component (Pigment Compendium p.413; p.415) 
+  the Color index 3rd Ed., V.4, Inorganic colorants (chemical constitution numbers} lists 77007 (PB29, Ultramarine), 77525 (Ferrous ferricyanide, Prussian blue), and 77955 (PY36, Zinc chromate) as ""components"" of C.I. Pigment Green 16.
+ * Not rated by the AMST, General lightfastness will depend on the blue used.
+  ** Slightly toxic if ingested in large amounts according to The Daniel Smith MSDS sheet."
+PG17,G,CIPIGMENT,17,Chrome Oxide Green,"Acanthus Green [HO.a];
+  Acqua Blue;
+  Arnaudon's Green;
+  Chrome Green [BX.w];
+  Chrome Oxide [KP.p];
+  Chrome Oxide Green [CH | BA.a.o| DV | KA.o | KP.p | LA.a | MA.a.a.o.o(artis).o.p | MW.o.wo | SQ.a | TA.a.af ];
+  Chrome Oxide Opaque;
+  Chrome Sesquioxide;
+  Chromia;
+  Chromic Oxide;
+  Chromium Green Black;
+  Chromium Green Oxide [CAS.k | CR.ao.o | DS.ad.o.pd.w];
+  Chromium Oxide [WL.o.p];
+  Chromium Oxide Green [GEN | BA.a.o.w | DV.k.o.w | GB.o.p | GO.a.af.ag.ao | GR.o.w.w.wo | KA.p | LB.av.o | LQ.a | NP.p | OH.a.o.w | RGH.o.p | RT.a.o.o.w.wo | SCH.g.o.p.w | SE.o.os.p.w | TA.a. | UT.a.o.w | WN.a];
+  Chromium Oxide Green Dark [GO.a.ao ];
+ Green Dragon (MA.o(HD)];
+  Chromium Oxide Green Deep [KA.p | SCH.o(Mus) | SV];
+  Chromium Oxide Green (Opaque) [GR];
+  Chromium Oxide Light [GU];
+  Chromium Oxyd Green [CH];
+  Chromium Oxyde Green [SE.a];
+  Chromium Sesquioxide;
+  C.I. Pigment Green 17;
+  Dingler's Green;
+  Eskolaite**;
+  Green Oxide [CR.a(jo) | JO.a];
+  Green Rouge; 
+  Gruenes Chromoxyd;
+  Institutional Green;
+  Lamoriniere Green [BX.o];
+  Leaf Green; 
+  Nicosia Green [EP.p];
+  Oil Green;
+  Olive Green [MA.w];
+ Olivegrun;
+  Opaque Oxide of Chromium [DR.a,o];
+  Ossido di Cromo Verde;
+  Oxide Chromium [ HO.o | MA.p];
+  Oxide of Chromium [AS | DR.a.o.w | HO.o | MA.o(artis).p | MH.o | WN.g.k.o.w.wp];
+  Oxide of Chromium Green [ DR.a.a(s3hb).a(s3mb).w ];
+  Oxido de Cromo Verde;
+  Oxyde vert de chrome;
+  Permanent Green;
+  Pigment Green 17;
+  Plessy's Green;
+ Salento Green [MA.o(MED)];
+  Schnitzer's Green;
+ Terre Verte (hue) [HO.a(gesso)];
+  True Chrome Green;
+  Ultramarine Green;
+  Victoria Green2 [NP.o.p.w];
+  Viridian (hue) [EP.p?];",77288,"Inorganic;
+  Chromic Oxide;
+ Made by reducing Potassium Dichromate at high temperature.
+  (Ref: Chromic oxide at Boston Fine Arts CAMEO);
+  Chromium(III) oxide (Ref Wikipedia);
+  ** Eskolaite is a natural mineral Cr2-O3.
+  Mixed Metal Oxide (MMO) (PCImag Ref):
+  Anhydrous Chromic oxide or Chromium sesquioxide;
+  LBNLPigment Database Spectral radiative properties;
+  Chrome Green;
+  Chromium Oxide Green;
+  
+ Cr2O3
+  
+  CAS 1308-38-9; 
+  CAS 68909-79-5","Dull yellowish green to mid Green;
+ very staining w/ weak tinting strength",O,I,A,"The color of money - was used in ink on US Currency and in the Army green camouflage paint.
+ For more info on PG-17 in watercolors see handprint.com
+  ? according to the Earth Pigments Site their Viridian is PG17 - this may be a typo Viridian is Hydrated Chrome Oxide PG18.
+ * if poorly manufactured, it may contain trace amounts of free chromium, a suspected carcinogen."
+PG18,G,CIPIGMENT,18,Viridian,"Casali's Green;
+  Chrome Green Lake;
+  Chrome Oxide (Hydrated) Green;
+  Chromium Hydrate Green;
+  Chromium Oxide Green Brilliant [SCH.a.g.o.o(Mus).p];
+  C.I. Pigment Green 18;
+  Emerald Chromium Oxide;
+  Emerald Green (hue*) [BX | MA.o.o(artis).p| SE.a.p | SQ.a];
+  Emerald Oxide of Chromium;
+  Emeraude Green (hue*);
+  Feuriges Chromoxyd;
+  French Veronese Green;
+  Guignet Green;
+  Guignet's Green;
+  Hydrated Chrome Oxide Green;
+  Hydrous Chromic Oxide;
+  Leaf Green;
+  Mittler's Green;
+  Oxide of Chromium, Transparent;
+  Oxyde Verte;
+  Pannetier's Green;
+  Permanent Green;
+  Permanent Green Light [UT.w];
+  Pigment Green 18;
+  Smaragd Green;
+  Transparent Oxide of Chromium;
+  Verde Esmeralda;
+  Verde Smeraldo;
+  Vert Emeraude***;
+  Viridian [GEN | AS | BX.o.w |BR | BA.ag.o.w | DR.o.w.t | DS.o.pd.w | DV.k.o.w | GB.o.p | GR.o.w.wo | GU | HO.g.o.w | KA.o.p | MA.o.o(artis).p.w | MG.g.o | MH.o | MW.o.wo | | LB.o | RGH.o.p | RT.o.w | SCH.g | SE.o.t | SV | UT.o.w | WL.o.p | WN.g.k.o.wo.w.w.wp.wp(L)];
+  Viridian Green [DV.k.o.w | KP.p | ROSS.o];
+  Viridian Green Deep [OH.o];",77289,"Inorganic; 
+  Hydrated chromium(III) oxide (Ref Wikipedia);
+  Hydrated chromium sesquioxide;
+ Chemical Info @ PubChem Chemistry Database
+  Chromium(III)-oxide dihydrate (Ref webexhibits.org);
+  Making pigments: Viridian at webexhibits.org; 
+ (Ref: Chromium oxide hydrate, CAMEO Materials Database MFA, Boston);
+ (Ref: Viridian, CAMEO Materials Database MFA, Boston);
+  
+  CAS 12001-99-9
+ EC 601-657-1","Dull or deep mid green to bluish green;
+ lightly staining w/ weak tinting stregth.",T,I,B,"Brighter and more transparent than PG-17, but weaker tinting strength
+ More info about Viridian @ ColorLex
+ For more info on PG-18 in watercolors see handprint.com
+ * There is some justification of using Emerald Green as a color name for Viridian. Some historical sources list the french term ""Vert émeraude"" as meaning a ""transparent chromium oxide"" otherwise known as Hydrated chromium oxide (Viridian). The literal translation of ""Vert émeraude"" is ""Green Emerald"" or Emerald Green. (Ref Pigment Compendium, 2008);
+ ** as a by-product of manufacture it may contain trace amounts of soluble Hexavalent Chromium, a suspected carcinogen, considered a known carcinogen in California, and may require a warning label.
+ It should be safe in normal artist use, avoid dust, wear a mask working with the dry powdered pigment or spraying, limit exposure to skin & eyes or other mucus membranes, don't eat it or point up your brushes with your mouth.
+ Seems to be considered safe in Australia where it is used in medicines for topical and oral use. (Ref. Therapeutic Goods Assoc..)"
+PG19,G,CIPIGMENT,19,Cobalt Green Pale,"C.I. Pigment Green 19;
+  Cobalt Green [GEN | BX | BR | CL | GB.o | GR.o | HO.a.o | RGH.o.p | RT.w | UT.o];
+  Cobalt Green Bluish A [KP.p];
+  Cobalt Green Deep [HO.o.wo | MA.o(artis).p | SE.p];
+  Cobalt Green Light [BA.o | HO.wo | MA.p | SCH.g.p |SE.o.p];
+  Cobalt Green Pale [HO.o | DS.o.w];
+  Cobalt Green Pure [SCH.w | UT.o];
+  Cobalt Green Turquoise [OH.o.w];
+  Cobalt Green Turquoise Light;
+  Cobalt Turquoise Deep [MH.o];
+  Cobalt Zinc Oxide;
+  Cobalt Zincate;
+  Gellert Green;
+  Oriental Green [SCH.a.o(Mus)];
+  Pigment Green 19;
+  Rinmann's Green;
+  Zinc Green",77335,"Inorganic;
+  Cobalt Zinc Oxide:
+  isomorphous mixture of cobalt zincate and zinc oxide heated at high temperatures which cannot be chemically separated. Paler tints requiring greater amounts of zinc oxide. (Ref Color index 3rd Ed., V.4, Inorganic colorants CI 77335);
+  How Cobalt green is made from webexhibits.org
+  CAS 8011-87-8","Pale, slightly dull, yellowish to bluish green;
+ Med. staining w/ weak tinting strength;",O,I,B,"For more info on PG-19 in watercolors see handprint.com
+ * Requires a PROP 65 label in California, US. 
+  Skin contact may cause allergies, especially on elbows, neck and ankles. Chronic inhalation may cause asthma. Ingestion may cause vomiting, diarrhea and the sensation of hotness. (Ref. CAMEO Art Material Database)
+ Contains only trace amounts of soluble Cobalt, should not be a hazard in normal artist use. Avoid dust, avoid spraying, don't use your mouth to point up your brushes, and for heaven's sake stop licking your paintings."
+PG20,G,CIPIGMENT,20,Verdigris,"Aeruca;
+ Aerugo;
+ C.I. Pigment Green 20;
+ Copper Acetate;
+ Copper Green;
+ Crystallized Verdigris;
+ Distilled Verdigris;
+ French Verdigris;
+ German Verdigris;
+ Green of Greece;
+  Grünspan;
+ Neutral Verdigris;
+ Pigment Green 20;
+ Swedish Verdigris;
+ Synthetic Verdigris;
+ Verdigris [KP.p];
+ Verdete;
+ Viride Aeris;
+ Viride Graecum;
+ Viride Hispanicum;
+ Viride Rothomagense;
+ Viride Salsum;
+ See Ploss Blue",77408,"Made by the action of acetic acid on copper to cause corrosion and depending on the creation process contains varying amounts of the compounds: Basic copper acetate and Blue Verdigris together with smaller amounts of Green Verdigris and Neutral Verdigris. The color varies from bluish green to deep emerald green;
+ Synthetic basic copper acetate (Ref);
+ Loosely defined as ""corrosion products formed from copper and copper alloys"" (Ref Pigment Compendium)
+ Making pigments: Verdigris at webexhibits.org;
+ CAS 6046-93-1","Bluish green to deep emerald green;
+ † Fades; sensitive to atmospheric sulfides",S/T,II,B,"More info on Verdigris can be found at ColourLex.com
+ * ""Until the 19th century, verdigris was the most vibrant green pigment available and was frequently used in painting. Verdigris is lightfast in oil paint, as numerous examples of 15th-century paintings show. However, its lightfastness and air resistance are very low in other media."" (Wikipedia)
+ ** large amounts of ingested copper can be toxic;
+ Do Not ingest;
+ Avoid dust & spray;"
+PG21,G,CIPIGMENT,21,Emerald Green,"African Green;
+ Arseniate of Copper;
+ Arsenic Green;
+ Basel Green;
+ Beautiful Green;
+ Braconnot’s green;
+ Brunswick green;
+ Casslergrün;
+ Cenere Verde;
+ C.I. Pigment Green 21;
+ Copper Acetate Arsenite Green;
+ Eisenach Green;
+ Eisleben Green;
+ Emerald Green;
+ Emerald Oxide;
+ Emperor Green;
+ French Green;
+ Haystack Green;
+ Imperial Green;
+ Jasmine Green;
+ Jasniger Green;
+ King's Green;
+ Kirchberg Green;
+ May Green;
+ Meadow Green;
+ Mineral Green;
+ Mitis Green;
+ Moss Green;
+ Mountian Green;
+ New Green;
+ Original Green;
+ Paint Green;
+ Paris Green;
+ Parrot Green;
+ Patent Green,
+ Pigment Green 21;
+ Powder Green;
+ Saalfeldergrün;
+ Schweinfurt green;
+ Scheele's Green;
+ Smargdgrun;
+ Smaragdinus;
+ Swedish Green;
+ Urania Green;
+ Vienna Green;
+ Veronese green;
+ Vert Cendre;
+ Vert Emeraude;
+ Vert Paul Veronese;
+ Verde Ceniza;
+ Wuerzberg Green;
+ Würzburg Green;
+ Zwickau Green",77410,"Copper acetoarsenite; (Ref. Paris Green); (Webexhibits.org Ref), 
+ Scheele's Green was Invented in 1775.
+ Made by heating sodium carbonate, adding arsenious oxide, stirring until the mixture was dissolved, and then adding copper sulfate to the final solution.
+ ** (Ref. Article in the Paris Review; Scheele’s Green, the Color of Fake Foliage and Death; By Katy Kelleher May 2, 2018) 
+ Paris Green (Ref at Wikipedia);
+ Method of making Emerald Green at webexhibits.org;
+ CAS 12002-03-8",Vivid Bright Green,S/O,II,D,"Interesting historical information on the green pigment Emerald Green at the ""Jane Austen's World"" Blog (Reference).; 
+ ""Of all known mineral colors scarcely one can be compared in beauty and brightness with the brilliant shade of emerald green. Whilst nearly all shades of the known mineral colors can be imitated by means of coal-tar colors, none of the green lakes obtained from organic coloring matters is bright enough to bear comparison with emerald green. Unfortunately, however, emerald green, on account of its high content of arsenic, is one of the most poisonous colors known, if not the most poisonous of all."" (Reference: A Treatise on Colour Manufacture By Gorge Zerr, Robert Rübencamp, 1908)
+ * light fast but should not be mixed with sulfur containing colors. Turns black in heat.
+ Said to be more permanent in oils and with resin based mediums (Ref webexhibits.org).
+ ** EXTREMELY TOXIC AND POSINIOUS. Once used as a rat poison and to preserve wood. If impure it can emit deadly arsenic gas. May be affected by atmospheric sulfides (Ref wikipedia);
+ Once used in clothing & wallpaper with disastrous effects. (Ref. Paris Green: The Trendy Color That Killed Many in Victorian Society; Article in Town & Country by By MARCO SUMAYAO)"
+PG22,G,CIPIGMENT,22,Copper Arsenite,"C.I. Pigment Green 22;
+ Brunswick Green; 
+ Copper Arsenite;
+ Green Verditer;
+ Lime Green *;
+ Patent Green *;
+ Pigment Green 22;
+ Scheele's Green",77412,"Copper Arsenite;
+ ""The composition of the commercial products varies, the more alkali used in the manufacture the more copper oxide in the product"" (Ref Colorindex 3rd Ed., V.4, Inorganic colourants CI 77412)",-,X,X,D,"* Lime Green and Patent Green are copper arsenite precipitated with calcium sulfate (Ref Colorindex 3rd Ed., V.4, Inorganic colorants CI 77412)
+ ** See above."
+PG23,G,CIPIGMENT,23,Green Earth,"Aegirine2 [KP.p];
+ Ancient Green Earth [EP.p];
+ Antica (Prun) Green Earth1 [NP.p];
+ Antique Green Earth [HO];
+ Antique Green Earth from Verona [MA.o.p];
+ Appianum;
+ Armenian Green Earth [KA.p];
+ Bavarian Green Earth [KP.p];
+ Belgian Earth;
+ Bluish Green Earth [KP.p];
+ Bohemian Earth;
+ Bohemian Green Earth [DS.w | KP.p | SCH.p | WL.o];
+ Brimisvellir Green [KP.p];
+ Burnt Green Earth;
+ Calcined Green Earth;
+ Cedar Green;
+ Celadon Green;
+ Celadonite [KP.p | NP.p];
+ Chrysocolla [KP.p];
+ C.I. Pigment Green 23;
+ Creta Viridis;
+ Cyprian Earth;
+ Cyprus Cold Green Earth1 [NP.p];
+ Cyprus Green Earth1 [NP.p];
+ Epidot* [KP.p];
+ Epidote*;
+ Florentine Green [KP.p];
+ Giotto Green Earth [KA.p];
+ Glauconite1 [NP.p];
+ Green Bice;
+ Green Chalk**;
+ Green Earth1 [GEN | BX.o.w | BA.o | KP.p | MA.o.p | OH.a.o.w | RT.w | SE.o.p];
+ Green Earth from France [KP.p];
+ Green Earth from Verona [KP.p | MA.o];
+ Green Earth, German [KP.p];
+ Green Earth (natural form);
+ Green Earth (terra verte) [GU]
+ Green Earth Verona [MA.o]; 
+ Green Jaspar4[KP.p];
+ Green Ocher***;
+ Green Porphyry;
+ Green Quartz [KP.p];
+ Green Stone;
+ Green Umber Earth from Armenia [SI.p];
+ Grünerde;
+ Hessian Earth;
+ Holly Green;
+ Holy Green;
+ Hungarian Green;
+ Italian Terra Verte [WL.o(SF).p];
+ Natural Bohemian Green Earth [SCH.o(Mus)****];
+ Nero Bernino3 [KP.p];
+ Nicosia Green;
+ Nicosia Green Earth (natural mineral glauconite)1 [NP.p];
+ Pigment Green 23;
+ Pure Green Earth, bluish from Cyprus [SI.p];
+ Pure Pale Green Earth from Cyprus [SI.p];
+ Rare Green Earth [DS.w];
+ Rhenish Earth;
+ Russian Green Earth [KP.p];
+ Saxon Earth;
+ SF Italian Terra Verte [WL.o(SF)];
+ Stone Green;
+ Terra di Verona;
+ Terre Vert;
+ Terre Verte [GEN | BX | HO.o.o | MH.o | SE.w | UT.w | WL.o];
+ Terre Verte Verona [HO.o];
+ Terre Verte (Yellow Shade) [WN.w.wp];
+ Terra Verdi;
+ Theodoteion;
+ Transparent Brown*****;
+ Tyrolean Earth;
+ Tyrolian Green Earth;
+ VerdeTerra;
+ Verdeterra;
+ Verdetta;
+ Verdetto;
+ Verona Brown;
+ Verona Green Earth [KP.p | NP.p1];
+ Verona Green Earth, standard [KP.p];
+ Verona Green, very fine [KP.p];
+ Veronese Green;
+ Veronese Green Earth [KP.p];
+ Volkonskoite [KP.p; SI.p]; Wide variety of names based on source and/or location of manufacture, etc.",77009,"Terre Verte is defined as ""natural earth containing both ferric and ferrous oxides, the variety mined at Monte Baldo near Verona, owes its colour to glauconite, a hydrated silicate of iron, aluminium and potassium. Widely distributed in Germany, etc. as Green Sand and Green Stone"" (Ref Colorindex 3rd Ed., V.4, Inorganic colourants CI 77009);
+ Natural green or mineral earths are colored by Iron-II-silicates, copper silicates, Aluminum, Iron Oxides, Magnesium, Potassium, Hydrated Iron Potassium Silicate or calcium iron/aluminium silicates of varying composition;
+ Al-, K-, Mg-, Ca- and Fe-Silicate;
+ Composition of what can be called ""Green Earth"" can vary widely being a product of a multitude of weathered greenish minerals. The most common are the natural green clay minerals Glauconite and Celadonite****(Ref Pigment Compendium).;
+ ""Green Earth is a decomposition product of augite and hornblende in the Mendip Hills and in France, Bohemia, Cyprus, etc. 
+ Green earths could also include many other weathered mineral deposits, and mixtures of clays ochres and others, conceivably containing alone or in mixtures of any of the following: Adamite, Aegirine, Amazonite, Amphiboles, Azurite, Celadonite, Chlorite, Chrysocolla, Conichalcite, Cronstedtite, Copper ore and it's naturally occurring salts, Copper Carbonate etc., Cuprorivaite, Dioptase, Diopside, Epidote, Eskolaite, Feldspar, Fuchsite, Glauconite, Green Apatite, Greenschist, Illite, Jade, Jaspar, Kaolinite, Iron oxides & Hydrated Iron oxides, limonite, Malachite, Montmorillonite, Olivenite, Quartz, Saponite, Serpentine, Verdelite, Volkonskoite, green tinged Yellow Ochres and umbers and Zoisite. 
+ More green minerals at webmineral.com.
+ How Green earth is made and more green earth pigment information at webexhibits.org;
+ CAS 1344-98-5","Wide variety of dull to bright, dark blueish to light yellow greens;
+ lightly staining w/ very weak tinting strength;",S/T,I,A,"For more info on PG-23 in watercolors see handprint.com
+ Additional info on green earths: (kremerpigments.com Ref);
+ Classically used for under paintings especially flesh by the old masters;
+ * Epidote/Pistacite is a specific mineral complex of calcium iron/aluminium silicates and can be found as pure crystals (Ref Kremer), (Ref.Webmineral);
+ **Green Chalk (Ref Pigment Compendium);
+ *** Green Ocher is also known to be used as a name for an artificial green earth made from yellow ocher (p.180 The Manufacture of Earth Colours Ref) 
+ **** Schmincke list their 'Natural Bohemian Green Earth' as PBr7 in their color charts, however if it is indeed 'Natural Bohemian Green Earth' it could also be considered PG23
+ ***** ""Transparent Brown"" is calcined green earth according to The Artist's Handbook of Materials and Techniques, by Mayer, 1991
+  
+ ****** Because of the wide variety of earths that can be labeled PG23, there are varying degrees of potential toxicity or allergic reactions. Those colored by copper may be a slight hazard if ingested in very large amounts. Some earths may also have minute trace amounts of lead, arsenic or other toxic minerals but not at dangerous levels."
+PG24,G,CIPIGMENT,24,Ultramarine Green,"C.I. Pigment Green 24;
+ Pigment Green 24;
+ Ultramarine Green [RT.od;]
+ Ultramarine Green, genuine [KP.pd.w];",77013,"Sodium-aluminium-
+ sulfo-silicate;
+ ""A double silicate of aluminium and sodium containing sulfur, constitution unknown"". Ultramarine Green is the ""first product of ignition in the manufacture of Ultramarine blue by the indirect process"" (Ref Color Index 3rd Ed., V.4, Inorganic colourants CI 77013);
+ CAS 57455-37-5;
+ CAS 101357-30-6","Slightly dull, deep bluish green",S/T,I,A,"Manufactured 1828 to 1960
+ 
+ Mostly discontinued due to limited supply, Kremer Pigments still has watercolor pans available (05/20/18)"
+PG26,G,CIPIGMENT,26,Cobalt Chromite Green,"Camouflage Green No.179;
+ C.I. Pigment Green 26;
+ Chromium Cobalt Green;
+ Chromium Cobalt Green Spinel;
+ Cobalt Chromite Dark [GU.pd];
+ Cobalt Chromite Green [WN.o];
+ Cobalt Chromite Green Spinel;
+ Cobalt Bottle Green [KP.p]
+ Cobalt Green [GEN | GO.a.ag.ao | RT.o | SQ.a | TA.a.af];
+ Cobalt Green Blue [GU];
+ Cobalt Green Dark [  | SCH.w];
+ Cobalt Green Deep [DS.ad.o | OH.w | SCH.g.p | SE.a.o | WN.a]; 
+ Cobalt Oxide Green [KP.p];
+ Cobalt Turquoise;
+ Cyprus Green [HO.a];
+ Daipyroxide Green 9430;
+ Fragonard Chrome Green [PF.o];
+ Military Green;
+ Pigment Green 26;
+ Turkish Green;
+ Turmaline Green [SCH.a.o(Mus)]",77344,"Inorganic;
+ Cobalt Chromite Green Spinel (CoCr2O4) is obtained by calcining, at high temperature, a mixture of Cobalt (II) Oxide and Chromium (III) Oxide in varied amounts that creates a spinel form crystalline matrix. It may include one or more of the modifiers Al2O3, B2O3, CaO, MgO, PbO, SiO2, TiO2, ZnO, and/or ZrO2. (Ref Color Index 4th edition);
+ Mixed Metal Oxide (MMO) (PCImag Ref):
+ Cobalt Chromite; 
+ Oxides of Cobalt and Chromium;
+ Cobalt Chromite Green Spinel;
+ LBNLPigment Database Spectral radiative properties;
+ CPMA 13-30-3;
+ CAS 68187-49-5","Somewhat dull bluish green to brighter pale green;
+ staining w/ average tinting strength",S/T,I,B,"For more info on PG-26 in watercolors see handprint.com
+ * Requires a PROP 65 label in California, US. 
+  Skin contact may cause allergies, especially on elbows, neck and ankles. Chronic inhalation may cause asthma. Ingestion may cause vomiting, diarrhea and the sensation of hotness. (Ref. CAMEO Art Material Database)
+ Contains only trace amounts of soluble Cobalt or Chromium, should not be a hazard in normal artist use. Avoid dust, avoid spraying, Don't put a point on your brushes by putting them in your mouth."
+PG36,G,CIPIGMENT,36,Phthalocyanine Green YS,"Bamboo Green [HO.w];
+ Bocour Green;
+ C.I. Pigment Green 36;
+ Cinnabar Green;
+ Cupric Green [MA]; 
+ Cupric Green Light [MA.o.w];
+ Cyan Green;
+ English Green Deep [SE.p];
+ Emerald Green (hue) [RT.w | SE.w];
+ Phthalo Emerald (Green Yellow Shade) (hue) [GB.o];
+ Helio Green [SCH.w];
+ Helio Green Light [SCH.o(Mus)];
+ Helio Green Yellowish [SCH.g];
+ Heliogen® Green;
+ Intense Green;
+ Light Green [LB.av];
+ Lonocyanine Green;
+ Monastral Green;
+ Permanent Green Deep [OH.w];
+ Phthalo Armor Green [LB.o];
+ Phthalo Green [BX.o | KP.p | SQ.a | WN.w];
+ Phthalo Green Light [SCH.p];
+ Phthalo Green Warm [SE.o];
+ Phthalo Green Yellowish [ KP.p | WL.o.p];
+ Phthalo Green Yellow [GU.pd | RT.o];
+ Phthalo Green Yellow Shade [CAS.k | DS.ad.i.o.w | DV.w | GO.a.af.ag | GR.o.wo?* | HO.wo | LQ.a | MG.w | MH.o | OH.a | TA.a.af | SCH.a | SE.a | WN.a.k.wo];
+ Phthalo Green YS [DS.ad.i.o.w | GO.a.af.ag];
+ Phthalocyanine Green;
+ Phthalocyanine Green Yellow Shade;
+ Phthalocyanine Green YS;
+ Pigment Green 36;
+ Rembrandt Green;
+ Sap Green (hue) [BA.o | SE.o];
+ Scheveningen Green [OH.o.w];
+ Thalo Green;
+ Thalo Green (Yellow Shade) [GR.o.wo];
+ Thalo Green YS [GR.o.wo];
+ XSL Phthalo Green, yellowish [KP.p];
+ Winsor Green (Yellow Shade) [WN.o.w.wp];
+ Zulu Green",74265,"Inorganic;
+ Bromated and Chlorinated Copper Phthalocyanine; 
+ A Polyhalogened derivative of Phthalocyanine; Various modifiers can adjust the color during production.
+ (Ref: KEMI Swedish Chemical Agency);
+  
+ C32Br6Cl10CuN8
+  
+ CAS 14302-13-7","High chroma Green to Yellowish green;
+ Heavily staining w/ over powering tinting strength, unless extended. slightly less staining & tinting than PG-7
+  † Darkens, Dulls, Fades; Can 'bronze' over (develope a iridescent sheen). These effects are inherent to their light fastness and may take decades or centuries to have any noticeable effects.",T,I,A,"For more info on what Bruce MacEvoy has to say about PG-36 in watercolors see handprint.com
+ Extremely strong tint strength; usually fillers/ extenders are added in most paint brands."
+PG39,G,CIPIGMENT,39,Copper Carbonate Hydroxide,"Berggruen;
+ Block Green;
+ Bremen Green;
+ Chrysocolla;
+ C.I. Pigment Green 39;
+ Copper Green;
+ Cupric Green;
+ Cupric Carbonate;
+ Green Bice2 [NP.p];
+ Green Copper Carbonate;
+ Green Verditer;
+ Hungarian Green;
+ Iris Green;
+ Malachite [KP.p];
+ Malchite, Arabian [KP.p];
+ Malachite Fibres [KP.p];
+ Malachite (fine grade) [NP.p];
+ Malachite Genuine [DS.o.w];
+ Malachite Green;
+ Malachite MATSUBA-ROKUSYOU [KP.p];
+ Malachite natural [KP.p];
+ Malachite (Natural Mineral) [NP.p];
+ Malachite MP [KP.p];
+ Malachitgruen;
+ Mineral Green;
+ Mountain Green;
+ Olympian Green;
+ Pigment Blue 30;
+ Pigment Green 39;
+ Pin Lu;
+ Refiner’s Verditer;
+ Verde Azuro;
+ Verde Minerale;
+ Verditer;
+ Vert de Montagne;
+ Vert mineral;
+ See Green Bice and Malachite",77492,"A basic carbonate of copper:
+ Basic copper(II) carbonate;
+ Copper Carbonate Hydroxide or Natural Mineral Malachite
+ (Ref) Malachite at Natural Pigments.
+ Making pigments: Malachite at webexhibits.org;
+ CAS 12069-69-1",Bluish green,T,I,B,"Becomes lighter and duller the finer it is ground
+ *light fast but may darken due to atmospheric sulfides
+ Manufacture and Info on Chemical synthesis at YouTube NileRed channel"
+PG42,G,CIPIGMENT,42,Phthalocyanine Green G,"C.I. Pigment Green 42;
+ Copper Phthalocyanine;
+ Non-flocculating Green G;
+ Phthalo green;
+ Phthalocyanine Green (yellow shade);
+ Pigment Green 7?*;
+ Pigment Green 42;
+ Polychloro copper phthalocyanine;
+ Rembrandt green",74260,"Polychloro copper phthalocyanine;
+ CAS 85256-45-7",Deep bluish Green,T,I,A,"?* Apparently the same pigment as PG7 ?
+ Note: sometimes chemicals can be described as the same or similar pigment although manufacturing processes and/or modifiers used in production and other chemical properties may vary."
+PG45,G,CIPIGMENT,45,Copper Ferrocyanide,"C.I. Pigment Green 45;
+ Copper Ferrocyanide;
+ Pigment Green 45;",-,Triphenylmethane Copper ferrocyanide complex,Deep mid-shade green,X,X,,
+PG48,G,CIPIGMENT,48,Chromocyanine Green,"Bus Green;
+ Chromocyanine Green;
+ Chrome Fast Green;
+ C.I. Pigment Green 48;
+ Mint Green;
+ Pigment Green 48","77600 + 
+ 77603 and 74160 +
+ 74260","Synthetic inorganic; 
+ Intimate pigment mixture, a combination of chrome yellow (PY34 Lead Chromate) and phthalocyanine green (PG7) or/and phthalocyanine blue (PB15)",yellow green to blue green*,S/T,II,A,*depends on ratios of the mixed pigments
+PG50,G,CIPIGMENT,50,Cobalt Titanate Green,"Australian Turquoise [AS];
+ C.I. Pigment Green 50;
+ Cobalt Bottle Green [KP.p];
+ Cobalt Blue Turquoise Light [OH.a.o.w];
+ Cobalt Green [BX.w | CR.ao.o | DS.ad.w | KP.p | LQ.a | MG.w | OH.a.o.w | SQ.a | WN.a.w.wp];
+ Cobalt Green Deep [MA.o.o(artis).w | MH.o];
+ Cobalt Green Yellow 5Y [GU];
+ Cobalt Green (Yellow Shade) [HO.w];
+ Cobalt Green Light [BX.o | KA.p | MA.o.w ];
+ Cobalt Green Pale;
+ Cobalt Green Xtra Deep [KA.p];
+ Cobalt Nickel Green [GU | LA.a ];
+ Cobalt Nickel Titanate Green [GU];
+ Cobalt Oxide Green Blue [KP.p];
+ Cobalt Teal [GO.a | LQ.a | SE.a | SQ.a | TA.a.af | UT.w | WL.o.p];
+ Cobalt Teal Blue [DS.ad.o.w];
+ Cobalt Teal Pure [UT.w];
+ Cobalt Titanate Green [GO.a | GR.o];
+ Cobalt Titanate Green Spinel;
+ Cobalt Titanite Green Spinel;
+ Cobalt Titanium Green;
+ Cobalt Titanium Green Spinel;
+ Cobalt Turquoise [SCH.o.o(Mus).p.w | RGH.p | UT.o];
+ Cobalt Turquoise Green [RT.o];
+ Cobalt Turquoise Light [CR.ao.o | RGH.o | WN.a.g.o.w.wp];
+ Cobalt Turquoise Pure [UT.o];
+ Emerald Green No.186;
+ Daipyroxide Green 9320;
+ Fragonard Turquoise Blue [PF.o];
+ Greek Green [MA.o(Ren)];
+ Jade Green;
+ Light Green Oxide [MA.p];
+ Pigment Green 50;
+ Turquoise [SCH.a];
+ Turquoise Green;
+ Turquoise Light [BA.o | SE.o];
+ Shamrock Green;
+ Sherwood Green;",77377,"Inorganic; 
+ Cobalt Titanate Green Spinel (Co)2TiO4 is light green powder produced by high temperature calcination of a mixture of Cobalt (II) Oxide and Titanium (IV) Oxide in varied ratios creating a crystalline matrix of inverse spinel. It may include any one or more of the modifiers Al2O3, CaO, Cr2O3, Fe2O3, Li2O3, MgO, NiO, Sb2O5, and/or ZnO. (Ref Color Index 4th edition);
+ Mixed Metal Oxide (MMO) (PCImag Ref):
+ Cobalt Titanate;
+ Cobalt Titanate Green Spinel;
+ Oxides of nickel, Cobalt and Titanium;
+ LBNLPigment Database Spectral radiative properties;
+ Cobalt Teal;
+ Cobalt Titanate Green Spinel (i);
+ Cobalt Titanate Green Spinel (ii);
+  
+ Co2TiO4
+  
+ CPMA 13-31-3;
+  
+ CAS 68186-85-6","Dull Olive green to bright mid green,
+ comes in Blue shade & Yellow shade versions.
+ Med. staining with average tinting strength;",S/O,I,B,"For more info on what Bruce MacEvoy has to say about PG-50 in watercolors see handprint.com
+ * Requires a PROP 65 label in California, US. 
+  Skin contact may cause allergies, especially on elbows, neck and ankles. Chronic inhalation may cause asthma. Ingestion may cause vomiting, diarrhea and the sensation of hotness. (Ref. CAMEO Art Material Database)
+  Avoid dust or wear a NIOSH certified dusk mask and gloves when working with the dry pigment (Ref: Blick Art Materials pigment info)
+ The pigment is not soluble in water and so probably poses little hazard in normal use.
+ Do not point up your brush with your mouth. Don't lick the paint off your fingers, use a Gov. certified soap and water to wash your hands. Danger to the environment is minuscule, but try to get all the paint on the painting, and not on your hands or pets."
+PG51,G,CIPIGMENT,51,Victoria Green Garnet,"Chrome Garnet;
+ C.I. Pigment Green 51;
+ Emerald Green (hue);
+ Garnet;
+ Ouvarovite;
+ Pigment Green 51;
+ Uvarovite;
+ Uwarowite;
+ Uwarowite Garnet;
+ Victoria Green [NP.p];
+ Victoria Green Garnet",77300,"Victoria Green Garnet 3CaOáCr2O3á3SiO2 is produced by high temperature calcinating a mixture of calcium oxide, chromium oxide and silicon oxides in varied ratios to form a crystalline garnet matrix. It may include Al2O3, B2O3, CaF2, CoO, PbO or ZrO2 as modifiers. (Ref Color Index 4th edition);
+ Calcium Chromium Silicate; Uwarowite, Uvarovite or Ouvarovite are the natural forms (google images Ref); (mindat.org Ref);
+ CPMA 4-07-3 (4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments);
+ CAS 68553-01-5",Green,T,I,A,
+PG55,G,CIPIGMENT,55,Ultramarine Green,"C.I. Pigment Green 55;
+ Pigment Green 55;
+ Ultramarine Green;
+ Ultramarine Green HPL",77007,"Polysulfide of sodium, potassium, lithium or silver alumino-silicate",Blue Green,T,I,A,
+PG56,G,CIPIGMENT,56,Nickel Green Olivine,"Nickel Green Olivine;
+ Nickel Olivine Green;
+ Nickel Silicate Green Olivine;
+ Olivine, Nickel Green;",777850,"Nickel Silicate Green Olivine
+ CPMA 5-45-3 (4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments);
+ CAS 685I5-84-4",Green*,X,X,B,"* The samples made from industrial wastes show a stronger and darker green (Reference: Use of industrial wastes in the formulation of olivine green pigments, 2010).;
+  
+ ** Pigments & Paints containing nickel require a PROP 65 label in Califoria.
+ Should use a dust mask when handling the dry pigment. Ingested there is only low toxicity, may have a cumulative effects in the case of long term exposure. See the MSDS."
