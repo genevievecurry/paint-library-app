@@ -24,7 +24,9 @@
 
   async function getLines() {
     const response = await fetch(
-      `/model/line.json?manufacturerName=${manufacturer.name}`,
+      `/model/line.json?manufacturerName=${encodeURIComponent(
+        manufacturer.name,
+      )}`,
     );
 
     if (response.ok) {

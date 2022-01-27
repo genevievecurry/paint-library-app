@@ -1,6 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { closeIcon } from '$lib/icons';
+  import { pigmentCode } from '$lib/utility';
   export let pigment: Pigment;
   export let selected: boolean;
 
@@ -16,20 +17,24 @@
 <div
   class="cursor-pointer mb-2 w-full border border-gray-400 p-1 relative"
   on:click={handleSelection}>
-  <div class="flex items-stretch">
-    <div class="w-8 mr-2">
+  <div class="flex  items-center" title={pigment.name}>
+    <div class="w-6 mr-2">
       <div
-        class="aspect-w-16 aspect-h-16"
-        style={`background-color: ${pigment.hex}; color: ${pigment.hex}`} />
+        class="aspect-w-12 aspect-h-16"
+        style={`background-color: ${
+          pigment.hex ? pigment.hex : pigment.color?.hex
+        }; color: ${pigment.hex}`} />
     </div>
 
     <div class="max-w-full">
-      <div class="block text-sm leading-tight font-bold flex-grow"
-        >{pigment.slug}</div>
       <div
-        class="pigment-name text-xxs leading-none mt-px overflow-hidden text-ellipsis  whitespace-nowrap mr-3">
+        class="pigment-name text-xs leading-none mt-px overflow-hidden text-ellipsis  whitespace-nowrap mr-3">
         {pigment.name}
       </div>
+      <div class="block text-xs leading-tight font-bold flex-grow"
+        >{pigmentCode(pigment.type, pigment.number, pigment.colorCode, {
+          html: false,
+        })}</div>
     </div>
   </div>
 

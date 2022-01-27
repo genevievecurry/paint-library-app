@@ -15,18 +15,30 @@ export function send(
   notification.set({ type, message, options });
 }
 
-export function dangerNotifier(message: string, options?: NotificationOptions): void {
+export function dangerNotifier(
+  message: string,
+  options?: NotificationOptions,
+): void {
   send(message, 'danger', options);
 }
 
-export function warningNotifier(message: string, options?: NotificationOptions): void {
+export function warningNotifier(
+  message: string,
+  options?: NotificationOptions,
+): void {
   send(message, 'warning', options);
 }
 
-export function infoNotifier(message: string, options?: NotificationOptions): void {
+export function infoNotifier(
+  message: string,
+  options?: NotificationOptions,
+): void {
   send(message, 'info', options);
 }
 
-export function successNotifier(message: string, options?: NotificationOptions): void {
+export function successNotifier(
+  message: string,
+  options?: NotificationOptions,
+): void {
   send(message, 'success', options);
 }

@@ -10,7 +10,7 @@ export async function get({
       status: 401,
     };
   }
-  
+
   const response = await api.getAllNotes(url.searchParams);
 
   if (response.status !== 200) {

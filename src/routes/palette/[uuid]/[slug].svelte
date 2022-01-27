@@ -149,11 +149,11 @@
     updatedPalette = null;
 
     if (notify) {
-      successNotifier('Paint updated successfully.');
+      successNotifier('Palette updated successfully.');
     }
   }
 
-  function handleEditedPalette() {
+  function handleEditedPalette(event) {
     showEditPaletteModal = false;
     // Refresh data
     refresh({ notify: true });
@@ -198,7 +198,7 @@
 {#if showEditPaletteModal && editable}
   <Modal on:close={() => (showEditPaletteModal = false)} title="Edit Palette">
     <div class="col-span-12">
-      <PaletteForm {palette} on:success={handleEditedPalette} />
+      <PaletteForm {palette} on:update={handleEditedPalette} />
     </div>
   </Modal>
 {/if}
@@ -374,7 +374,7 @@
           <thead>
             <tr>
               <td>&nbsp;</td>
-              <td class="font-bold p-3">Manufacturer</td>
+              <td class="font-bold p-3 pl-1">Manufacturer</td>
               <td class="font-bold p-3">Name</td>
               <td class="font-bold p-3">Lightfastness</td>
               <td class="font-bold p-3">Transparency</td>

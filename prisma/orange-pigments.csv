@@ -1,0 +1,737 @@
+slug,colorCode,type,number,name,alternateNames,ciConstitutionNumber,composition,description,transparencyRatingCode,lightfastRatingCode,toxicity,notes
+NO2,O,CINATURAL,2,Kamala,"Kamala;
+ Natural Orange 2;
+ Resina Kamala [KP.p]",,From the fruit of the plant Mallotus philippensis,Brilliant yellow to red orange,T,III,B,
+NO4,O,CINATURAL,4,Annatto,"Annatto;
+ Annatto extract;
+ C.I. Natural
+ Orange 4;
+ Natural Orange 4;",75120,"Extract of the seeds of the plant Bixa orellana; Norbiksiini annatto; Primary coloring due to bixin and norbixin; A bright orange lake is prepared by precipitating annatto on alumina trihydrate.
+ Annatto- A natural orange dye obtained from the lipstick plant which is a small tree, Bixa orellana, native to Central and South America. (Ref at Boston Fine Arts CAMEO Database);
+ CAS 8015-67-6",Bright Orange brown to golden yellow,T,III,A,
+NO5,O,CINATURAL,5,Carajurin,"Carajurin;
+ Carucru;
+ Chica;
+ C.I. Natural Orange 5;
+ Natural Orange 5",75180,Xanthone Carajurin; Extract from the leaves of Bignonia Chica,"Red, Orange Yellow",T,III,A,
+NO6,O,CINATURAL,6,Henna,"C.I. Natural Orange 6;
+ Henna;
+ Lawsone;
+ Natural Orange 6",75486,"Lawsonia Inermis; 
+ 2- hydroxy-1, 4- naphthoquinone;
+ lawsone:
+ CAS 83-72-7;",Yellow brown,T,III,A,
+PO1,O,CIPIGMENT,1,Hansa Orange,"C.I. Pigment Orange 1;
+ Dinitroaniline orange;
+ Hansa Yellow 3R;
+ Pigment Orange 1;
+ Orthonitroaniline Orange",11725,"Monoazo;
+ Dinitroaniline; orthonitroaniline;
+ mono-nitro compound, specifically ortho-substituted
+ CAS 6371-96-6",Bright yellowish orange,X,NR,A,
+PO2,O,CIPIGMENT,2,Pigment Orange 2,"C.I. Pigment Orange 2;
+ Hansa Orange RN;
+ Federal Orange 1002;
+ Kromon Azo Orange;
+ Orthonitraniline Orange;
+ Orthotone Orange Toner RA 5630;
+ Ozark Orange X 1481;
+ Permanent Orange;
+ Pigment Orange 2",12060,"Monoazo;
+ Orthonitraniline;
+ Naphthol;
+ Mono-nitro compound, specifically ortho-substituted;
+ Prepared by coupling o-nitroaniline with -naphthol (Ref Pigment Compendium, Copyright © 2008, p.38)
+ 2-Naphthalenol,1-[(2-nitrophenyl)azo]- (9CI); 2-Naphthol, 1-(o-nitrophenylazo)- (6CI);
+ 1-[(2-Nitrophenyl)azo]-2-naphthol;1-[(o-Nitrophenyl)azo]-2-naphtho
+  
+ NSC 65821
+ CAS 6410-09-9",Bright reddish orange,X,NR,A,
+PO3,O,CIPIGMENT,3,Hansa Orange,"C.I. Pigment Orange 3; 
+ Pigment Orange 3; 
+ Orthonitroaniline Orange",12105,"Monoazo; Orthonitroaniline; 
+ (Ref GuideChem.com);
+ (Ref from dyestuffintermediates.com)
+ CAS 6410-15-7",Brite reddish orange,X,NR,A,
+PO5,O,CIPIGMENT,5,Hansa Orange RN,"Azo Orange;
+ C.I. Pigment Orange 5;
+ D & C Orange No. 17;
+ D.N.A. [GU];
+ Dinitraniline Orange [KA.p];
+ Dinitroaniline Orange;
+ Dinitroaniline Red;
+ Dinitronialine Orange [KA.ad]; 
+ DNA Orange [GU.ad];
+ DNA Orange RN-B;
+ Firewall Red [MA.o(HD)];
+ Hansa Orange;
+ Oasis Orange;
+ Permanent Orange [KA.o];
+ PERMANENT ORANGE 5;
+ Permanent Red GG;
+ Permanent Red Light [LKd]; 
+ Permanent Red Orange [WL.o];
+ Pigment Orange 5;
+ Seville Red [MA.o(Med)];
+ Studio Orange [KP.p];
+ Vermilion (hue) [CR.ao.o];
+ Vermilion Orange [CR]",12075,"Synthetic Organic;
+ Monoazo; 2-Naphthalenol; 1-[(2;4-dinitrophenyl) azo;
+ Dinitroaniline;
+ Orthonitroaniline;
+ Magruder® Pigments for imagination ""Oasis Orange"" (PO5) technical bulletin
+  
+ C16H10N4O5
+  
+ CAS 3468-63-1
+ EC 222-429-4","Bright reddish orange;
+ Staining w/ med. tinting strength
+ † Fades",S/T,NR,B,
+PO13,O,CIPIGMENT,13,Benzidine Orange,"Brilliant Orange [HO.g];
+ Cadmium Red Orange Hue [SE.o];
+ C.I. Pigment Orange 13;
+ Diarylide Orange;
+ Disazo Orange;
+ FAST ORANGE RG;
+ Vibfast Orange 4051;
+ Orange [AS | HO.ag];
+ Orange Lake [MH];
+ Orange Lake Light [WN.g]; 
+ Orange no.204;
+ Permanent Orange G;
+ Persian Orange Light [LB.o];
+ Pigment Orange 13;
+ Pyrazolone Orange;
+ Red Orange [SCH];
+ Spec Orange [AS];
+ Vibfast Orange 4051",21110,"Synthetic Organic;
+ Dichlorobenzidine; 
+ Pyrazolone; 
+ Disazopyrazolone;
+ CAS 3520-72-7","Bright yellow orange;
+ Good tinting strength",S/T,NR,A,
+PO16,O,CIPIGMENT,16,Benzidine Orange,"Benzidine Orange R;
+ C.I. Pigment Orange 13;
+ Dianisidine Orange;
+ Dianisidine Orange 2915;
+ Fast Orange RDN;
+ Orange (Turner);
+ Orange Lake Light;
+ Pigment Orange 16",21160,"Synthetic Organic;
+ Disazopyrazolone;
+ (Ref: Lansco Pigment tech specs);
+ CAS 6505-28-8",Bright yellowish thru reddish orange,S/O,IV,A,
+PO17,O,CIPIGMENT,17,Persian Orange,"C.I. Pigment Orange 17; 
+ Dainichi Naphthol Orange;
+ 
+ Eljon Orange P;
+ 
+ Isol Orange GR;
+ 
+ Isol Orange GRT;
+ Lake Orange;
+ 
+ Lake Orange GR;
+ 
+ Ohio Orange;
+ 
+ Perca Orange GR;
+ 
+ Persian Orange;
+ Pigment Orange G;
+ 
+ Pigment Orange 17;
+ 
+ VulcafixOrange R;
+ 
+ Vulcafor Orange P;
+ 
+ Vulcol Orange GR",15510,"Synthetic Organic;
+ Monoazo; 
+ Barium lake of azomethine dye;
+ CAS 15782-04-4",Bright orange to reddish,X,II,A,
+PO17:1,O,CIPIGMENT,17,Persian Orange,"C.I. Pigment Orange 17:1;
+ Persian Orange;
+ Pigment Orange 17:1",15510:1,"Synthetic Organic;
+ Monoazo; 
+ Barium lake of an azo dye",Bright reddish orange,X,II,A,
+PO20,O,CIPIGMENT,20,Cadmium Orange,"C.I. Pigment Orange 20;
+ C.P. Cadmium Orange [GO.a.ag.ao | SQ.a | TA.a. | WL.o.p ];
+ Cadmium Orange [GEN | AS | BX.o.w | CAS.k | CR.a(jo).ao.o | DR.a.t | DSd | DV.k.o.w | GB.o | GR.o* | HO.o | JO.a | LK | LQ.a | MA.o.o(artis).p.w | MG.a.g.o.w | MH.o | MR.o | MT | RGH.o.p | RF.e | RT.a.o.wo | SCH.a.g.o.o(Mus).p | SE.a.os | SH.w | SQ.a | UT.a.o.w | WL.o.p | WN.a];
+ Cadmium Orange (CP) [GO.a.ao];
+ Cadmium Orange Dark [GU.pd];
+ Cadmium Orange Deep [GB.o | KA.o.p | SCH.w];
+ Cadmium Orange Light [BR | GU.pd | KA.o.p | LA.a | SCH.w];
+ Cadmium Orange Light CP [GU.p];
+ Cadmium Orange Medium [BR | LA.a];
+ Cadmium Orange Medium CP [GU.pd];
+ Cadmium Orange Medium CP (red shade);
+ Cadmium Orange Medium Xtra [GU];
+ Cadmuim Medium No. 1 [KP.p]
+ Cadmium Orange Pure [ UT.o.w];
+ Cadmium Orange Xtra Light C.P. [GU];
+ Cadmium Orange Yellow [HO.o | SE.p];
+ Cadmium Orange Yellow Shade [BR | HO.o];
+ Cadmium Red Light [GR.a?* | LK | SE.a | SCH.a.o.p];
+ Cadmium Red Orange [BA.o | | BX.o.w | SCH.w | SE.a.o.p | SQ.a];
+ Cadmium Red Orange Genuine [SCH];
+ Cadmium Red Scarlet;
+ Cadmium Scarlet;
+ Cadmium Selenium Sulfide;
+ Cadmium Sulfide;
+ Cadmium Yellow Extra Deep;
+ Cadmium Yellow Deep [AS | HO.o.wo | LK | SCH.a.g.o.p | UT.a.o.w];
+ Cadmium Yellow Deep Pure [UT.o.w];
+ Cadmium Yellow 3 Deep [ SCH.o(Mus)];
+ Cadmium Yellow Orange [BX.w | LB.o | SE];
+ Cadmium Yellow Orange Genuine [SE.t];
+ Chinese Orange;
+ Greenokite;
+ Orange Cadmium (Genuine) [CH];
+ Orange Cadmium Yellow [PF.w];
+ True Cadmium Orange [PF.o];
+ Pigment Orange 20",77202,"Synthetic Inorganic;
+ Cadmium Selenosulphide;
+ LBNL Pigment Database Spectral radiative properties;
+ Cadmium Orange @ the Cool Color Database;
+ How Cadmium yellow/red is made at webexhibits.org;
+ ""Cadmium Orange is a color modification of cadmium sulphide (Cadmium Yellow). (Ref. Toch; The Chemistry and Technology of Paints, p.73) by making the solution slightly acid a yellow shade is produced, by altering acid ratios and adding ammonium sulphide deeper orange shades may be made."" (Ref. Painting Materials: A Short Encyclopaedia; By Rutherford John Gettens, George Leslie Stout, 1966, p.100-101)
+ Some brands of cadmium paints may in fact be composed of Cadmium-Barium Pigments even if indicated on the label as pure PO 20* (Reference: A Critical Analysis of Commercial Pigments, by M. Pérez, K. Castro, M.D. Rodríguez2, MA. Olazabal and J.M. Madariaga, University of the Basque Country, Dept. Analytical Chemistry and Dept. Painting).
+ CAS 12656-57-4","Bright yellowish thru to reddish orange, (depends on modifiers used during synthesis);
+ Very staining with very good tinting strength;
+ † Fades, whithens, may fade or whiten when exposed to very damp conditions and excessive direct sunlight, Indoor lights have little or no effect.",S/O,I,B,
+PO20:1,O,CIPIGMENT,20,Cadmium-Barium Orange,"Cadmium-Barium Maroon [GR.o.wo?*];
+ Cadmium-Barium Orange [GR.o.wo?*];
+ Cadmium-Barium Red Deep [GR.o.wo?*; 
+ Cadmium-Barium Red Light [GR.o.wo?*];
+ Cadmium-Barium Red Medium [GR.o.wo?*];
+ Cadmium-Barium Red (Vermilion Hue) [GR.o.wo?*];
+ Cadmium-Barium Yellow Orange [GR.o.wo?*];
+ Cadmium litho Orange Dark [GU.pd];
+ Cadmium litho Orange Light [GU.pd];
+ Cadmium litho Orange Medium [GU.pd];
+ Cadmium Orange (hue) [BA.a | CL | SV];
+ Cadmium Orange #1, medium (hue) [SI.p]; 
+ Cadmium Orange dark LITHO (red shade);
+ Cadmium Orange Light LITHO (yellow shade);
+ Cadmium Orange medium LITHO (red shade);
+ Cadmium Orange No.0 Very Light (hue) [KP.p];
+ Cadmium Orange No. 0.5, light (hue) [KP.p];
+ Cadmium Orange No. 1, medium (hue) [KP.p];
+ Cadmium Orange No. 2 Deep (hue) [KP.p]; 
+ Cadmium Red Medium (hue) [GR.o?*];
+ Cadmium Red Pale (hue);
+ C.I. Pigment Orange 20:1;
+ Vermilion (hue);
+ Pigment Orange 20:1",77202:1,"Synthetic Inorganic;
+ Cadmium Selenosulphide 
+ co-precipitated with Barium Sulfide","Bright Yellowish thru to reddish orange;
+ Staining w/ good tinting strength
+ † Fades, whitens, may fade or whiten when exposed to very damp conditions and excessive light.",O,I,B,
+PO21,O,CIPIGMENT,21,Chrome Orange,"American Vermillion (hue);
+ Australian Cinnabar (hue);
+ Austrian Red;
+ Austrian Cinnabar (hue);
+ Chinese Red;
+ Chrome Cinnabar (hue);
+ Chrome Red;
+ Chrome Scarlet;
+ Chrome Orange;
+ Chrome Yellow;
+ Chromorange;
+ C.I. Pigment Orange 21;
+ Crocoite*;
+ Derby Red;
+ Garnet Chrome;
+ Golden Orange Yellow;
+ Lead Oxide Chromate;
+ Laque Mineral;
+ Molybdate Chrome Orange;
+ Molybdate Orange; 
+ Molybdate Red
+ Orange Chrome;
+ Orange Paste;
+ Persian Red;
+ Pigment Orange 21;
+ Pigment Orange 45;
+ Pigment Red 103;
+ Pigment Red 104;
+ Red Lead;
+ Rouge de Perse;
+ Rosetto Chrome;
+ Ruby Red Chrome;
+ Vauquelin;
+ Victoria Red;
+ Vienna Red",77601,"Inorganic;
+ Basic lead (II) -chromate;
+ Method of making Chrome orange at webexhibits.org
+ CAS 1344-38-3",Bright intense yellowish thru reddish Orange,O,NR,C,
+PO21:1,O,CIPIGMENT,21,Chrome Orange,"Chrome Orange;
+ C.I. Pigment Orange 21:1;
+ Pigment Orange 21:1;",,"Inorganic;
+ lead (II) -chromate precipitated onto a silica base (Pigment Compendium, Ref)",Bright intense yellowish thru reddish Orange,O,NR,C,
+PO22,O,CIPIGMENT,22,Versal Orange GR,"C.I. Pigment Orange 22;
+ C.I.Pigment Orange 22 (8CI);
+ Microsol Orange GR
+ Pigment Orange 22;
+ Versal Orange GR","12470
+ CAS 6358-48-1","Synthetic Organic;
+ Single azo
+ C25 H19 Cl2 N3 O3
+ 2,5-Dichlorobenzenamine diazotization, and N-(2-ethoxyphenyl)-3-hydroxy-2-naphthamide coupling.",Red orange,X,X,,
+PO23,O,CIPIGMENT,23,Cadmium Vermilion Orange,"Cadmium Cinnabar;
+ Cadmium Mercury Orange;
+ Cadmium Mercury Sulfide;
+ Cadmium Vermilion Orange;
+ Cadmium Yellow Orange;
+ C.I. Pigment Orange 23;
+ Mercadium Orange;
+ Mercadium Orange Dark [GUd];
+ Mercury Cadmium Sulfide;
+ Pigment Orange 23",77201,"Inorganic;
+ Concentrated Cadmium Sulfide plus Mercuric Sulfide;
+ Calcined coprecipitate of Cadmium sulfide and Mercuric sulfide. The greater the mercuric sulfide content the deeper and redder the hue. (Ref Color index 3rd Ed., V.4, Inorganic colorants CI 77201)
+ Barium Sulfate content not to exceed 15%.
+ CAS 1345-09-1","Bright yellow to red orange;
+ Staining w/ good tinting strength, slow drying in oil.
+ † Whitens / darkens, May whiten when exposed to excessive sun over a long time, may darken by atmospheric Sulfides, if not properly covered in binder, or of poor manufacture.
+ Sensitive to acids, both oil binders & gum arabic are slightly acidic.",O,NR,D,
+PO23:1,O,CIPIGMENT,23,Cadmium-Barium Vermillion Orange,"Cadmium-Barium Vermillion Orange;
+ Cadmium Mercury
+ Lithopone Orange;
+ C.I. Pigment Orange 23:1;
+ Mercadium Litho Orange Medium [GU];
+ Mercadium Lithopone Orange;
+ Pigment Orange 23:1",77201:1,"Inorganic;
+ Concentrated Cadmium Sulfide plus Mercuric Sulfide co-precipitated with Barium Sulfate;
+ Can be up to 60% Barium Sulfate.","Bright red orange; slightly weaker and less saturated than PO23
+ Less Staining & tinting strength, than PO23 do to it's larger Barium content, slow drying in oil.",S/O,NR,D,
+PO31,O,CIPIGMENT,31,Chromo Orange 4R,"C.I. Pigment Orange 31;
+ Chromo Orange 4R [GU.pd.p];
+ Pigment Orange 31",20050,"Disazo Condensation;
+ Chemical structure and composition can be found at Pigment Orange 31 on PubChem Chemical Database
+ C46-H28-Cl4-N6-O4;
+ CAS 5280-74-0
+ 12286-58-7
+ EC 226-105-3
+ 602-899-0","Bright red orange;
+ Strong tinting strength",S/T,NR,,
+PO34,O,CIPIGMENT,34,Pyrazolone Orange,"Azo Red Light [RT.o];
+ Cadmium Orange (hue);
+ Cadmium Red Light Hue [LK];
+ C.I. Pigment Orange 34;
+ Cinnebar Red (hue) [LKd];
+ FastOrangeRL;
+ Marigold Opaque Orange [SI.p]; 
+ Permanent Orange RL;
+ Permanent Orange RLO;
+ Pigment Orange 34;
+ Pyrazolone Orange;
+ Pyrazalone Orange RL-70;
+ Pyrazalone Orange RLO;
+ Scheveningen Red Scarlet [OH.o.w]; 
+ Vermilion (hue) [LK | RT];
+ Vermilion Light (hue) [LK];
+ Vermilion Red (hue);
+ Vermilion Red Light (hue)",21115,"Synthetic Organic;
+ ""A diarylide pigment manufactured by coupling tetrazo 3,3'- dichloro-benzidine onto 3-methyl-l-(4'methylphenyl)-pyrazol-5-one. This orange is a bright, reddish shade offering moderate
+ lightfastness. (Ref Paint and Coating Testing Manual: 14th ed.; Ed. by J.
+ Koleske; ASTM; 1995; p.201.
+ Disazopyrazolone;
+ Pyrazolone (Diarylide)
+ Chemical data @ PubChem
+ CAS 15793-73-4
+ EC 239-898-6","Bright orange to orange red;
+ Staining w/ average tinting strength.
+ † Fades, darkens",X,NR,A,
+PO36,O,CIPIGMENT,36,Benzimidazolone Orange HSL,"Benzimida Orange Deep [DV.o.w];
+ Benzimidazolone Orange [WN];
+ Benzimidazolone Orange HL [GRd];
+ Brilliant Orange [MA.a.];
+ Cadmium Orange Hue [MR.o];
+ Cadmium Red Pale Hue;
+ C.I. Pigment Orange 36;
+ Fast Orange GWT;
+ Imidazolone Orange [HO.wo]; 
+ Orange Red [HO.a];
+ Permanent Orange [MA.w]; 
+ Permanent Orange HSL [GU];
+ Persian Yellow [MR.o];
+ Pigment Orange 36;
+ Pyranthrone Orange [KP.P]
+ Red Orange [SCH.p];
+ Scarlet Orange [CAS.k];
+ Vermilion Permanent (hue) [AS]",11780,"Synthetic Organic;
+ Monoazo; Benzimidazolone;
+ CAS 12236-62-3
+ EC 235-462-4","Red shade scarlet orange;
+ Staining w/ average tinting strength.",S/T,NR,A,
+PO38,O,CIPIGMENT,38,Naphthol Orange,"Azo Burnt Orange [BR];
+ Azo Burnt Orange Transparent [RGH.o.p];
+ C.I. Pigment Orange 38;
+ Pigment Orange 38;
+ Naphthol Orange",12367,"Synthetic Organic;
+ Naphthol AS;
+ CAS 12236-64-5",Bright reddish to yellowish orange,T,II,A,
+PO40,O,CIPIGMENT,40,Pigment Orange 40,"C.I. Pigment Orange 40;
+ Pigment Orange 40;
+ Vat Orange 9",59700,"Synthetic Organic;
+ Unsubstituted pyranthrone;
+ Pyranthrene-8, 16-dione
+ CAS 128-70-1",,X,II,,
+PO41,O,CIPIGMENT,41,Pigment Orange 41,"C.I. Pigment Orange 41;
+ Pigment Orange 41;
+ Vat Orange 9",59700,"Synthetic Organic;
+ Pyranthrone; 
+ Pyranthrene-8, 16-dione
+ CAS 128-70-1",,X,X,,
+PO43,O,CIPIGMENT,43,Perinone Orange,"Brilliant Orange [MA.a];
+ Cadmium Orange Hue [WN.wo];
+ Cadmium Red Light Azo (hue);
+ C.I. Pigment Orange 43;
+ Indanthrene Orange [MA.o(artis)]; 
+ Indo Orange Red [BA.a | LQ.a | UT.a];
+ Orange [RT]; 
+ Orange Lake [MA.o.w];
+ Perinone [GU];
+ Perinone Orange [CAS.k | DS.a.o.w | DR.a| MW.o | WN | UT.w];
+ Permanent Red Light [MA]; 
+ Permanent Orange [MA.p]; 
+ Permanent Red Orange [MA.o]; 
+ Pigment Orange 43;
+ Vat Orange [ GO.a.af.ag ];
+ Vat Orange 7;
+ Vermilion (hue) [RT.wo]",71105,"Organic synthetic Anthraquinone;
+ Lake of Vat Orange 7 dye;
+ Isoindoline-Methine
+ Perinone; 
+ CAS 4424-06-0","Mid to red shade orange;
+ †Fades, darkens slightly",S/O,I,A,
+PO45,O,CIPIGMENT,45,Chrome Orange,"American Vermillion (hue);
+ Chrome Orange;
+ Chrome Yellow;
+ Chromorange;
+ C.I. Pigment Orange 45;
+ Crocoite*;
+ Derby Red;
+ Molybdate Chrome Orange;
+ Orange Chrome;
+ Persian Red;
+ Pigment Orange 21;
+ Pigment Orange 45;
+ Rosetto Chrome;
+ Vauquelin;
+ Victoria Red",77601,"Inorganic;
+ lead chromate;
+ CAS 1344-38-3",Bright intense yellowish thru reddish Orange,O,III,C,
+PO46,O,CIPIGMENT,46,Pigment Orange 46,"C.I. Pigment Orange 46;
+ Clar-All Red;
+ Clarion Red;
+ Lake Orange B;
+ Sunset Yellow;
+ Sunbright Yellow;
+ Pigment Orange 46",15602,"Synthetic Organic;
+ Monoazo;
+ Beta Naphthol;
+ Monoazo Beta-Naphthol Lake of Barium (Ferro)
+ CAS 63467-26-5",Bright reddish orange,S/T,IV,A,
+PO47,O,CIPIGMENT,47,Quinacridone Orange,"C.I. Pigment Orange 47;
+ Pigment Orange 47;
+ Quinacridone Orange [GU.pd];
+ Quinacridone Orange (red shade)",,"Synthetic Organic;
+ Quinacridone","Deep reddish orange;
+ Moderately staining w/ good tinting strength",S/T,NR,A,
+PO48,O,CIPIGMENT,48,Quinacridone Burnt Orange,"ACRA Gold;
+ C.I. Pigment Orange 48;
+ Cinquasia® Gold YT-923-D;
+ Cinquasia® Gold, red-gold [KP.p];
+ Cinquasia® Red Gold [KP.p];
+ Golden Orange [TA.a.af];
+ Monastral Gold;
+ Pigment Orange 48;
+ Quinacridone Burnt Orange [CAS.k | DS.a.o.w | DV.w];
+ Quinacridone Gold, Deep;
+ Quinacridone Orange [GR.o.wo];
+ Quinacridone Red Gold [GU];
+ Quinacridone Red Orange [OH.a];
+ Quinacridone Rust [MG.w];
+ Quindo Gold",73900+ 73920,"Synthetic Organic;
+ Not a simple mixture of pigments;
+ Oxidation of dihydroquinacridone under conditions that produce a mixed crystal phase of Quinacridone & Quinacridonequinone. The product produces a unique x-ray diffraction pattern that is different from either of the quinacridones on their own or in a mix.;
+ C.I.Pigment Violet 19 (C.I. 73900) and C.I.Pigment Red 206 (C.I. 73920) co-precipitated. The exact derivative has not been disclosed;
+ C20-H12-N2-O2 / C20-H10-N2-O4
+ CAS 1047-16-1;
+ CAS 1503-48-6;
+ CAS 71819-74-4","Deep golden reddish orange;
+ Moderately staining w/ Moderate tinting strength",S/T,II,A,
+PO49,O,CIPIGMENT,49,Quinacridone Gold,"C.I. Pigment Orange 49;
+ CIinquasia® Gold [KP.pd];
+ Golden Lake [MA.od.wd];
+ Monastral Deep Gold;
+ Pigment Orange 49;
+ Quinacridone Deep Gold;
+ Quinacridone Gold [DS.ad.od.wd | GU.pd.p | MA.a* | WN.a];
+ Quinacridone Gold (GS/Green Shade) [DS.a.o.w];
+ Quinacridone Sienna;
+ Quindo Gold Deep;
+ Quindo Red Gold;
+ Rowney Transparent Brown [DR.o]",73900+ 73920,"Synthetic organic; 
+ Oxidation of dihydroquinacridone under conditions that produce a mixed crystal phase of Quinacridone & Quinacridonequinone. The product produces a unique x-ray diffraction pattern that is different from either of the quinacridones on their own or in a mix.;
+ C.I.Pigment Violet 19 (C.I. 73900) and C.I.Pigment Red 206 (C.I. 73920) co-precipitated. The exact derivative has not been disclosed;
+ CAS 71819-75-5","Deep slightly dull golden yellowish orange;
+ Moderately staining w/ Moderate tinting strength",T,II,A,
+PO51,O,CIPIGMENT,51,Pyranthrone Orange,"C.I. Pigment Orange 51;
+ Paliogen® Orange [KP.p];
+ Paliogenorange;
+ Pigment Orange 51;
+ Pyranthrone Orange [GU]",,"Synthetic Organic;
+ 2, 10 dichloropyranthrone derivative",Mid shade to reddish orange,S/T,I,,
+PO52,O,CIPIGMENT,52,"Pyranthrone Orange, red shade","C.I. Pigment Orange 52;
+ Pigment Orange 52;
+ Pyranthrone Orange Red Shade",,"Synthetic Organic;
+ CAS 61512-62-7",Reddish orange,X,I,,
+PO53,O,CIPIGMENT,53,Pyranthrone Orange,"C.I. Pigment Orange 53;
+ Pyranthrone Orange;
+ Pigment Orange 53",,"Synthetic Organic;
+ Pyranthrone",,X,X,,
+PO59,O,CIPIGMENT,59,Pigment Orange 59,"C.I. Pigment Orange 59;
+ Dinitraniline Orange;
+ Organic Nickel Orange [GU.pd];
+ Paliotol® Orange [KP.p];
+ Permanent Orange;
+ Pigment Orange 59",12075,"Organic synthetic monoazo nickle complex;
+ Metal Complex / Azo Methine;","Light value yellowish to red orange;
+ fair tinting strength",S/T,NR,B,
+PO60,O,CIPIGMENT,60,Benzimidazolone Orange HGL,"Azo Orange;
+ Benzimidazolone Orange;
+ Cadmium Orange Tone (hue);
+ C.I. Pigment Orange 60;
+ Midazo HGL [GU.pd];
+ Midazo Orange HGL [GU.pd]
+ Pigment Orange 60",11782,"Synthetic Organic;
+ Monoazo; Benzimidazolone;
+ CAS 68399-99-5","Reddish orange;
+ Mid. staining w/ fair tinting strength",S/T,NR,A,
+PO61,O,CIPIGMENT,61,Isoindolol Orange,"Chinese Lake [SE.o];
+ C.I. Pigment Orange 61;
+ Chromophal 2G [GU.pd.p]; 
+ Indolinone Orange [OH.a];
+ Irgazin® Orange L ;
+ Isoindoline Orange 61;
+ Isoindol Orange [KP.p]; 
+ Permanent Orange;
+ Pigment Orange 61",11265,"Synthetic Organic;
+ Tetrachloro-isoindolinone;
+ CAS 40716-47-0","Reddish dark orange;
+ moderate tinting strength",S/T,NR,A,
+PO62,O,CIPIGMENT,62,Benzimidazolone Orange H5G,"Azo Orange [MG.w];
+ Benzimida Orange [DV.a.o.w];
+ Benzimidazo Orange [GU.pd.p];
+ Benzimidazolone Orange [WN];
+ Brilliant Orange;
+ Cadmium Orange (hue);
+ Cadmium Orange Hue [DV];
+ Cadmium Orange Tone [SCH.g];
+ Chrome Orange (hue) [SCH.w];
+ Chrome Orange, no lead [SCH.w];
+ C.I. Pigment Orange 62;
+ Helio Genuine Orange [LK];
+ Mono Orange [GB.o];
+ Novoperm Orange H5G;
+ Orange [DV | MA.g | SCH.p];
+ Orange HG5;
+ Orange Light [SCH]; 
+ Orange Yellow [MA.a]; 
+ Permanent Orange [AS | BX.o.w | DS.o.w. | MA.w | SQ.a];
+ Permanent Yellow Deep [LK]; 
+ Pigment Orange 62;
+ Pure Orange;
+ Trinacria Orange [MA.o(Med)];
+ Winsor Orange [WN.w.wp.];
+ Yellow Orange [LK]",11775,"Synthetic Organic;
+ Monoazo;
+ Benzimidazolone;
+  
+ C17H13ClN6O5
+  
+ CAS 52846-56-7","Light yellowish to mid-orange;
+ Mid. staining w/ fair to adverage tinting strength",S/O,I,A,
+PO64,O,CIPIGMENT,64,Benzimidazolone Orange,"Benzimidazolone;
+ Benzimida Orange [DV];
+ C.I. Pigment Orange 64;
+ Cromophtal Orange GP;
+ Pigment Orange 64",12760,"Synthetic Organic;
+ Monoazo; Benzimidazolone;
+ CAS 72102-84-2",Bright reddish orange,S/O,I,A,
+PO65,O,CIPIGMENT,65,Benzimidazolone Orange,"Benzimidazo Orange [GU];
+ C.I. Pigment Orange 65;
+ Cojanil Red;
+ Golden Barok Red [OH.w];
+ Irgazin Orange 3GL;
+ Methin Nickel Scarlet;
+ Nickel Orange Deep [GU.pd];
+ Nickel Red;
+ Pigment Orange 65",48528,"Azomethine nickel complex;
+ CAS 20437-10-9","Dull orange red or rich brown (described on handprint as ""not unlike blood as it begins to coagulate"");
+ Non-staining w/ good tinting strength",S/T,NR,B,
+PO66,O,CIPIGMENT,66,Irgazin Orange 3GL,"C.I. Pigment Orange 66;
+ Irgazin orange 3GL;
+ Isoindoline Orange Deep [GU.pd];
+ Pigment Orange 66",48210,"Synthetic Organic;
+ Diketo-pyrrolo-
+ pyrrole / Isoindoline",Red Orange,S/O,NR,A,
+PO67,O,CIPIGMENT,67,Pyrazoloquinazolone Orange,"Brilliant Orange [SCH.a];
+ C.I. Pigment Orange 67;
+ Chrome Orange Tone (hue) [SCH.o(Mus)];
+ Coral Orange [OH.o.w];
+ Enceprint Orange 2953;
+ Mono Azo Orange [GR.o]; 
+ Paliotol Orange D 2953; 
+ Paliotol Orange L;
+ Paliotol® Orange L 2930 HD; 
+ Pigment Orange 67;
+ Pyrazolo -
+ Chinazolone Orange;
+ Pyrazoloquinazolone Orange; 
+ Scheveningen Red Scarlet [OH];
+ Sico Fast Orange L2952HD;",12915,"Synthetic Organic;
+ azolone;
+ Pyrazolo quinazolone;
+ Quinazolo- pyrazolone;
+ Pyrazolo - Chinazolone Orange;
+ CAS 74336-59-7","Saturated red-orange;
+ Moderatly staining w/ average tinting strength
+ † Darkens, fades",S/O,NR,A,
+PO68,O,CIPIGMENT,68,Sandorin Orange,"Azo Methine Orange [GU.pd];
+ C.I. Pigment Orange 68;
+ Pigment Orange 68;
+ Sandorin Orange;",486150,"Nickel complex Methine;
+ Azo Methine Nickel Complex;
+ CAS 42844-93-9",Reddish orange;,S/T,NR,B,
+PO69,O,CIPIGMENT,69,Isoindoline Orange,"Cadmium Red Orange Hue;
+ C.I. Pigment Orange 69;
+ Isoindolinone Orange [GU.pd];
+ Naphthol red;
+ Paliogen Orange;
+ Pigment Orange 69;
+ Pyranthron Orange;
+ Pyranthrone orange;
+ Scarlet;
+ Scheveningen Orange [OH.wd]",56292,"Synthetic Organic;
+ Isoindolinone; Pyrazoloquinazolone;
+ CAS 85959-60-0","Saturated red-orange;
+ Moderately staining w/ moderate tinting strength
+ † Darkens in masstone, Fades in tints",O,NR,A,
+PO71,O,CIPIGMENT,71,Pyrrole Orange,"Cadmium Orange Hue [LK];
+ C.I. Pigment Orange 71;
+ Cromophtal DPP Orange TR;
+ Irgazin DPP Orange 398;
+ Orange [SCH]; 
+ Permanent Orange [LK]; 
+ Pigment Orange 71;
+ Poppy Red [SCH.o]; 
+ Translucent Orange [SCH.a.g.o(Mus).w.];
+ Transparent Orange [BA.w];
+ Transparent Indian Orange [LB.o];
+ Transparent Permanent Orange [TA.a.af];
+ Transparent Pyrrol Orange [DS.w | GO.a.af]",561200,"Synthetic Organic;
+ Diketopyrrolopyrrole orange;
+ C20-H10-N4-O2
+ CAS 84632-50-8
+ EC 276-057-2","Dull reddish to Mid-Orange;
+ Staining with average to good tinting strength
+ † Darkens in masstone slightly",X,NR,A,
+PO72,O,CIPIGMENT,72,Hostaprint Orange H4GL 32,"C.I. Pigment Orange 72;
+ Hostaprint Orange H4GL 32;
+ Pigment Orange 72",,"Synthetic Organic;
+ Benzimidazolone;
+ CAS 78245-94-0","Brilliant orange;
+ moderate tinting strength",S/T,NR,A,
+PO73,O,CIPIGMENT,73,Pyrrol Orange,"Aritint Orange;
+ Bright Orange;
+ Cadmium Orange Hue [BA.a | LQ.a];
+ C.I. Pigment Orange 73;
+  Cosmoray Orange*?
+ Da Vinci Orange [DV.w];
+ Dipyrrolopyrrol Orange;
+ Irgazin Orange;
+ Irgazin DPP Orange 16A;
+ Irgazin® DPP Orange RA;
+ Irgazine® Orange DPP RA [KP.p];
+ Matisse Orange DPP [MT];
+ Orange [JO.a];
+ Permanent Orange [MH.o | WL.o]; 
+ Permanent Vermilion (hue) [RT.o];
+ Pigment Orange 73;
+ Pyrrol Orange [DS.a.o.w | LQ.a]; 
+ Pyrrole Orange [CR | GO.a.ab.af.ao | LA.a | OH.a | TA.a. |WN.a];
+ Red Orange [SE.a];
+ Scarlet Pyrrol [MG.w];
+ Scheveningen Orange [OH.o];
+ Transparent Perinone Orange [CR.ao.o | GO.a];
+ Transparent Pyrrole Orange [GO.a];
+ Unisphere DPP Orange;
+ Vermillion (hue) [RT.a.o | SQ.a];
+ Vermillion Pyrrolo [BX.o.w];
+ Versal Orange RA
+ Warm orange [DR.w];
+ Winsor Orange [WN.o.w]
+ Winsor Orange (red shade) [WN.o.w.wp.]",561170,"Synthetic Organic;
+ Diketo-pyrrolo-pyrrole orange;
+ CAS 71832-85-4","Light bright Saturated red shade orange
+ † May slightly fade in tints, over long periods of being exposed to direct sunlight.",S/T,NR,A,
+PO74,O,CIPIGMENT,74,Pigment Orange 74,"C.I. Pigment Orange 74;
+ Graphtol Orange;
+ Pigment Orange 74",,"Synthetic Organic;
+ Azo;
+ CAS 85776-14-3",Bright reddish orange,O,NR,A,
+PO75,O,CIPIGMENT,75,Cerium Sulfide Orange,"Cerium Sulfide Orange;
+ C.I. Pigment Orange 75;
+ Neolor Orange
+ Pigment Orange 75",77283:1,"Inorganic; Cerium Sulfide;
+ CAS 12014-93-6",Reddish orange,X,NR,,
+PO77,O,CIPIGMENT,77,Vat Orange 23,"C.I. Pigment Orange 77;
+ Pigment Orange 77;
+ Vat Orange 1;
+ Vat Orange 23;",59105,"Synthetic Organic;
+ Dibromo derivative of Anthanthrone; 
+ CAS 1324-11-4",Bright yellowish orange,T,NR,,
+PO78,O,CIPIGMENT,78,Cerium Sulfide Orange,"Cerium Sulfide Orange;
+ C.I. Pigment Orange 78;
+ Neolor Light Orange S;
+ Pigment Orange 78",77285:0,"Inorganic;
+ Cerium Sulfide;
+ CAS 12014-93-6
+ 12031- 49-1
+ EC 234-603-7
+ 234-752-8",Mid-shade orange,O,NR,,
+PO79,O,CIPIGMENT,79,Pigment Orange 79,"C.I. Pigment Orange 79;
+ Engeltone Brilliant Orange;
+ Pigment Orange 79",,"Azo metal salt;
+ CAS IES 12736",Bright mid-shade orange,X,NR,A,
+PO80,O,CIPIGMENT,80,Pigment Orange 80,"C.I. Pigment Orange 80;
+ Pigment Orange 80",,thiazine indigo,,X,NR,,
+PO81,O,CIPIGMENT,81,IRGAZIN Orange 2038,"Irgazin Orange;
+ Pigment Orange 81",55714,"Synthetic Organic;
+ Diketo-pyrrolo-pyrrole",Bright reddish orange,O,NR,A,
+PO82,O,CIPIGMENT,82,Sicopal® Orange,"Brilliant Orange;
+ Sicopal Orange;
+ Sicopal® Orange L 2430",,"Inorganic/organic
+ Sn/Zn/Ti oxide
+ Tin-titanium-zinc oxide",Brilliant Orange;,O,NR,A,
+PO84,O,CIPIGMENT,84,MayaCrom® Orange OR7500,"C. I . Pigment Orange 84;
+ MayaCrom® Orange OR7500",,"Patented Organic-/Inorganic hybred based on the chemistry of Mayan Blue with a unique nano crystal lattice. Reference the Tech data sheet, and Patent application.;
+ Article about Hybred Pigments and Mayan Blue in New Journal of Chemistry 2005, 29 , p.57–58 (Article Reference PDF);",Bright yellow orange,X,NR,A,
+PO85,O,CIPIGMENT,85,Bismuth Oxyhalide Orange,"C.I. Pigment Orange 85;
+ Lysopac Orange;
+ Pigment Orange 85",,"Synthetic Inorganic;
+ Bismuth Oxyhalide Orange;
+ Bismuth-based inorganic pigment providing a unique yellowish orange shade with high chroma and color strength (Ferro)","Bright yellowish orange;
+ good tinting strength",S/O,NR,,
+PO86,O,CIPIGMENT,86,Bismuth Vanadate Orange,"Bismuth Vanadate;
+ Bismuth Vanadate Orange
+ C.I. Pigment Orange 86;
+ DCC® Orange ORS;
+ Isoindoline Orange Light ?*
+ Pigment Orange 86",771635.9,"Synthetic Inorganic;
+ Bismuth Vanadate",yellow shade orange,S/T,NR,,

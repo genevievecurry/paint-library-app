@@ -11,7 +11,7 @@
 
   let { paint, id } = paintOnPalette;
 
-  $: swatchImage = paint.swatchCard[0].imageKitUpload?.thumbnailUrl || '';
+  $: swatchImage = paint.swatchCard[0]?.imageKitUpload?.thumbnailUrl || '';
 
   function remove() {
     dispatch('remove', id);
@@ -20,32 +20,34 @@
 
 {#if listView}
   <tr>
-    <td class="w-16 border-2 border-black p-px">
-      <div
-        class="aspect-w-16 aspect-h-16 "
-        style={`background-color: ${paint.hex};`}>
-        <a href={generateUrl({ prefix: 'paint', target: paint })}>
-          {#if swatchImage}
-            <img
-              loading="lazy"
-              src={swatchImage}
-              class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 hover:opacity-0"
-              alt={paint.name} />
-          {/if}
-        </a>
+    <td class="py-1">
+      <div class="w-12 border-2 border-black p-px">
+        <div
+          class="aspect-w-16 aspect-h-16 "
+          style={`background-color: ${paint.hex};`}>
+          <a href={generateUrl({ prefix: 'paint', target: paint })}>
+            {#if swatchImage}
+              <img
+                loading="lazy"
+                src={swatchImage}
+                class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 hover:opacity-0"
+                alt={paint.name} />
+            {/if}
+          </a>
+        </div>
       </div>
     </td>
-    <td class="ml-3 px-3">{paint.manufacturer?.name}</td>
-    <td class="ml-3 px-3">
+    <td class="px-3 pl-1">{paint.manufacturer?.name}</td>
+    <td class="px-3">
       <a
         class="decorate-link"
         href={generateUrl({ prefix: 'paint', target: paint })}>{paint.name}</a>
     </td>
-    <td class="ml-3 px-3">{paint.lightfastRating.label}</td>
-    <td class="ml-3 px-3">{paint.transparencyRating.label}</td>
-    <td class="ml-3 px-3">{paint.stainingRating.label}</td>
-    <td class="ml-3 px-3">{paint.granulationRating.label}</td>
-    <td class="ml-3 px-3">
+    <td class="px-3">{paint.lightfastRating.label}</td>
+    <td class="px-3">{paint.transparencyRating.label}</td>
+    <td class="px-3">{paint.stainingRating.label}</td>
+    <td class="px-3">{paint.granulationRating.label}</td>
+    <td class="px-3">
       {#each paint.pigmentsOnPaints as pigmentsOnPaints, index}
         <a
           class="decorate-link"

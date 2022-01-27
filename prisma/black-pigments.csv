@@ -1,0 +1,637 @@
+slug,colorCode,type,number,name,alternateNames,ciConstitutionNumber,composition,description,transparencyRatingCode,lightfastRatingCode,toxicity,notes
+NBk1,Bk,CINATURAL,1,Logwood Lake,"C.I. Natural Black 1;
+ Log Wood Extract [KA.p];
+ Logwood [NP.p];
+ Logwood Extract Powder [KP.p];
+ Logwood Lake
+ Natural Black 1",75290,"Logwood Dye precipitated with various inert pigments to form a lake; 
+ Hematoxylin (leuco form);
+ Hematein (oxidized form)
+  
+ CAS 8005-33-2","Brown to reddish-brown, black to blue-black",T,IV,A,"Reddish brown turns blue-black in presence of alkalis
+  
+ *ingesting large amounts can be poisonous"
+NBk2,Bk,CINATURAL,2,Logwood Black Lake,"C.I. Natural Black 2;
+ Lakka;
+ Logwood Black Lake;
+ Natural Black 2 
+ Sinipuu-uute",75291,Hematoxylin oxidized to Hematein,Blue-purple black,X,X,A,*ingesting large amounts can be poisonous
+NBk3,Bk,CINATURAL,3,Logwood,"C.I. Natural Black 3;
+ Logwood extract;
+ Logwood Lake;
+ Natural Black 3;
+ Sinipuu-uute",75291,"Hematoxylin oxidized to Hematein (Ref), (Ref)",Blue-purple black,X,X,A,*ingesting large amounts can be poisonous
+NBk4,Bk,CINATURAL,4,Logwood,"C.I. Natural Black 4;
+ Logwood Lake;
+ Natural Black 4;
+ Sinipuu-uute","75290
+ 75291","Hematoxylin oxidized to Hematein (Ref)
+  
+ CAS 8005-33-2",Blue-purple black,X,X,A,*ingesting large amounts can be poisonous
+NBk6,Bk,CINATURAL,6,Asphaltum,"Alfalto (It.);
+ Antwerp Braun;
+ Antwerp Brown;
+ Asfalt (Ned.); 
+ Asfalto (Port.);
+ Asphalt paint;
+ Asfalto (Port.,Esp.);
+ Asfaltos (Gr.);
+ Asphalte (Fr.);
+ Asphaltum [KP.p];
+ Asphaltite;
+ Bitume (It.);
+ Bitumen** [ KA.ad.o.p | MA.o(artis) | MR.o];
+ Bitumen of Judea;
+ C.I. Natural Black 6;
+ Brown
+ Erdpech;
+ Gilsonite;
+ Gilsonite (Asphaltum) [NP.p];
+ Goudron;
+ Jew's Pitch;
+ Mineral Pitch;
+ Natural Black 6;
+ Pissasphaltum;
+ Shilajit;
+ Uintaite;",,"The natural form of a resinous hydrocarbon similar to petroleum asphalt; (Reference Pigment Compendium, 2008);
+ Asphaltum is defined by Child (per 1995) as different from petroleum asphalt. 'Asphaltum' being defined as the naturally occurring material (Nbk6), and the term 'asphalt' meaning those products derived from of coal tar. (Ref Pigment Compendium, 2008, p.32);
+  (Mindat.org Mineral Ref);
+ (Ref Natural Pigments);
+  (Ref: The Manufacture of Varnishes and Kindred Industries: Vol. 2, 1908 By Achille Livache);
+ (Asphaltum Ref at Boston Fine Arts, CAMEO: Conservation & Art Materials Encyclopedia Online); 
+ (Bitumen Ref at Boston Fine Arts, CAMEO: Conservation & Art Materials Encyclopedia Online);
+ (Ref: Asphaltum: Bitumen - Mineral Pitch - Antwerp Brown - Mummy - Mumie section of The Chemistry of Paints and Painting, By Arthur Herbert Church)
+ More Info on the free art e-books page.",Dark blackish red-brown with a yellow undertone,T,X,A,"Usually substituted with more permanent earth colors or iron oxides in artist paints.;
+  
+ Although dark brown in color and sometimes confused with PBr6, Asphaltum is Color index Natural Black 6.;
+  
+ ?* Unrated by ASTM, Asphaltum is reportedly light fast when used as oil color but has problems with shrinkage and cracking: see Wetcanvas.com Thread (Ref).; 
+  
+ Reportedly the oil paint never dries and causes ""dripping"" (Ref:Color: A Natural History of the Palette, By Victoria Finlay, ©2002, p.104);
+  
+ Highly refined asphaltum may be more stable when used in oilcolors. (Ref: Natural Pigments).
+  
+ ** Bitumen is actually a range of compounds described in the Pigment Compendium, 2008 as 'a complex group of synthetic or natural, solid or high viscosity mixtures of hydrocarbons and volatile substances, that include the asphalts'.
+ In an artistic sense, as a pigment , it most often refers to Asphaltum, but has also been used as a name for humic earths (eg. Cassel Earth, Van Dyke Brown) and lignites. (Reference Pigment Compendium, 2008)"
+PBk1,Bk,CIPIGMENT,1,Aniline Black,"Aniline Black [WNd];
+ Black #1;
+ Black Aniline; 
+ Black Lake [SE.p];
+ C.I. Pigment Black 1;
+ Diamond Black;
+ Intense Black [SE.a];
+ Jet Black [DR.g | HO.ag.g | WN.g];
+ Noir de Jais;
+ Negro de Asa Bache;
+ Paliotol Black;
+ Peach Black [HO.w];
+ Pigment Black 1",50440,"Azine;
+ CAS 13007-86-8",Black,X,I,,"* Not rated by the ASTM
+ ""As a clothing dye, it has been reported to have excellent lightfastness"" Blick Art Materials site (Ref).
+ In most available gouache paints lightfastness is rated at their top level.
+ In a watercolor mixture w/ lamp black it had good results on handprint, but this more likely due to the Lamp Black rather than the Aniline Black, see PBk-1 at Handprint.com"
+PBk6,Bk,CIPIGMENT,6,Carbon Black,"Antique Black [HO.w];
+ Black [DV]; 
+ Blacking;
+ Blue Black [SCH.w | WN];
+ Carbon Black [DV.af];
+ Carbon Black Lamp Black; 
+ Charcoal Grey [GR.w];
+ C.I. Pigment Black 6;
+ Gas Black;
+ Gas Soot;
+ Ivory Black [DV.k.o];
+ Ivory Black Hue [DV.k.o];
+ Kohlenschwarz;
+ Lamp Black [AS | BA.w | BX.w | DR | DS.ad.i.o.pd.w | DV.a.k..o.w | GR.o.w.wo | HO.o.w | MG.a.g.o.w | RT.w | UT.w | WL.o.p | WN.a.k.o.wo.w.w.wp];
+ Negro de carbon;
+ Nero Carbon;
+ Noir de Charbon;
+ Pigment Black 6;
+ Thermal Black;
+ Thermatomic Black;
+ Vegetable Black W9823;
+ Velvet Black",77266,"Inorganic;
+ Almost pure carbon made by burning petroleum residue (Ref: Color Index, Pigment and Solvent Dyes Edition, 1997);
+  
+ How Carbon Black is made at webexhibits.org
+  
+ CAS 1333-86-4","Black with Brown or Blue or Undertone;
+ heavy staining w/ very good tinting strength
+ slow drying",S/O,I,A,More info on PBk-6 in watercolors at Handprint.com
+PBk7,Bk,CIPIGMENT,7,Lamp black,"Antique Black [HO.w(ant)];
+ Bistre (hue) [MA.o(Ren)];
+ Bistro;
+ Black [DR.a | HO.af];
+ Black Hacker (MA.o(HD)];
+ Blacking;
+ Blue Black;
+ Bone Black [GU]; 
+ Candle Black [PF.w];
+ Caligo;
+ Carbon [GU];
+ Carbon Black [ CAS.k | CL | CR.a(jo).ao.o | GO.a.ab.af.ag.ao | GU | JO.a | KA.ad.o.p | MA.o.p.w | OH.a | SE.a | TA.a.af ];
+ Carbon Lampblack;
+ Carbon soot;
+ Carbon Water [GU];
+ Channel Black [GU];
+ Channel Extra Black [GU];
+ Charcoal Black [RGH.o];
+ Charcoal Gray [SCH.w];
+ C.I. Pigment Black 7;
+ Flame Black;
+ Flamruss;
+ Fuligino;
+ Fuligo;
+ Fullerene tubes;
+ Furnace Black;
+ Graphite Grey [WL.p];
+ Grey Shade [CH];
+ Ivory Black [CR.a | BA.a | HO.g | MA.a | MR.o | WL.p];
+ Ivory Black Imitation [PF.o]
+ Jet Black [AS];
+ Lamp Black[GEN | AS | BA.o.w | DR.o.o.w.w | DS.ad.i.o.pd.w | HO.a.ag | MH.o | MW.o | RT.a.o | SCH.o.o(Mus).p | WN.g];
+ Lampblack;
+ Lampenschwlarz;
+ Mars Black [BA.a | CR.ao.o | WL.p];
+ Mummy (hue) [MA.o(Ren)];
+ Negro de humo;
+ Nero di Lampa;
+ Nero Fiamma;
+ Nero Fume;
+ Noir de Bougie;
+ Noir de Fumeé;
+ Nnoir de Houille;
+ Noir de Lampe;
+ Oil Black;
+ Pigment Black 7;
+ Primary Black [OH.g];
+ Process Black [DR.a(s3hb).a(s3mb)];
+ Russ;
+ Scheveningen Intense Black [OH.o.w];
+ Sepia [MA.g]; 
+ Smoke Black;
+ Soot Black;
+ Transparent Black [HO.o];
+ Transparent Shading Gray [GO.ab];
+ Vegetable Black;
+ Velvet Black [DR.g];
+ XSL Black [KP.p]",77266,"Inorganic; 
+ Amorphous carbon from soot (Ref: Color Index, Pigment and Solvent Dyes Edition, 1997).
+ Almost pure carbon made by burning petroleum or natural gas and collecting the soot.
+ Lamp soot was the one manufacture method hence the name.(Ref Boston Fine arts);
+  
+ LBNLPigment Database Spectral radiative properties;
+ Carbon Black;
+  
+ CAS 1333-86-4","Deep Black, brown undertone;
+ Med. Staining w/ good tinting strength;
+ Slow drying in oils",S/O,I,A,"More info on PBk-7 in watercolors at Handprint.com
+ *Carbon is not hazardous, but there may be other combustion products that are hazardous and are can be present as impurities when produced from natural materials. Commercial preparations of the pigment should be considered as possibly slightly toxic. Avoid skin contact and inhalation. Where such impurities are present, Lamp Black is a possible human carcinogen. (Ref: Blick Art Materials pigment info)
+  
+ Very fine particle size (Ref Natural Pigments)"
+PBk8,Bk,CIPIGMENT,8,Vine Black,"Black Ochre;
+ Blue Black;
+ Carbon Black [SE.o];
+ Charcoal;
+ Charcoal Black;
+ Charcoal Grey [HO.o | WN.o];
+ C.I. Pigment Black 8;
+ Coke Black;
+ Cork Black**;
+ Drop Black;
+ Earth Black;
+ Frankfort Black;
+ German Black;
+ Grade Black;
+ Grape Black;
+ Kernel Black;
+ Marc Black;
+ Mineral Black;
+ Native Black;
+ Paper Black;
+ Peach Black [KP.p];
+ Pigment Black 8;
+ Prussian Black;
+ Roman Black [NP.p];
+ Roman Earth; 
+ Spanish Black;
+ Transparent Black [AS];
+ Vegetable Black;
+ Vine Black [GR.o | OH.o.w? | SCH.p | SE.os];
+ Wine Lees Black;
+ Yeast Coke;
+ Yeast Black",77268,"Inorganic;
+ Natural carbon of organic and mineral origin and may contain a substantial amount of impurities*** (Ref: Color Index, Pigment and Solvent Dyes Edition, 1997).; 
+ ""Impure carbon of organic and mineral origin""*** (Ref Color index 3rd Ed., V.4, Inorganic colorants CI 77268);
+ Made by burning vegetable matter in a low oxygen environment. Name comes from the grape vines* used in one method of manufacture., (Ref Pigment Compendium, 2008, p.396); , (Ref paint making at paintmaking.com);
+  
+ How Carbon Black is made at webexhibits.org
+  
+ CAS 1339-82-8","Black, Undertone depends on impurities can be blueish to brownish;
+ Very staining w/ good tinting strength;
+ Slow drying in oils",S/O,I,A,"* Similar to the vine charcoal sticks used in drawing, and just powdered
+  
+ ** Cork Black is also referred to as ‘beggar’s ultramarine’ or 'poor man's ultramarine' and said to be the 'bluest of blacks' (Ref Pigment Compendium, 2008, p.138); 
+  
+ *** this definition seems to indicate that the natural mineral blacks (i.e. Roman Earth, Black Ochre) as well as the blacks from burning vegetable matter (i.e. Vine Black, Cork Black) fit the designation of Pigment Black 8."
+PBk9,Bk,CIPIGMENT,9,Bone Black,"Abaiser;
+ Animal Black;
+ Animal Bone Charcoal;
+ Animal Charcoal;
+ Blue Black;
+ Bone Black [ DS.pd | GO.a.af.ag.ao | KP.p | WN];
+ Bone Black (Ivory) [DS.pd];
+ Bone Char; 
+ Bone Charcoal;
+ C.I. Pigment Black 9;
+ Carbone Animale; 
+ Drop Black;
+ Elfenbeinschwarz (Deut.);
+ Frankfort Black;
+ German Black;
+ ivoorzwart (Ned.); 
+ Ivory Black (hue*) [GEN | AS | BA.a.o.o.w | BX.o.w | BR | DR.a.o.o(georg).o.w.w.t | DS.ad.o.w | DV.w | GB.o.o.p | GR.o.o.w.w.wo | HO.w.wo | KA.o.p | LB.o | LQ.a | MA.o.o(artis).p.w.w | MG.a.g.o.w | MH.o | MW.o.wo | OH.a.o.w | RGH.o.p | ROSS.o | RT.a.o.wo | SE.a.o.o.p.w |  SCH.a.g.o.o(Mus).p | SH.w | TA.a.af | UT.a.o.w | WL.o | WN.a.a.g.k.o.wo.w.w.wp];
+ Ivory Black Extra [ OH.a.o.w ];
+ Lamp Black [AS | DR.g | SCH];
+ Mayro elefantodontoy (Gr.); 
+ Negro de Huesos;
+ Negro marfil (Esp.);
+ Negro de marfim (Port.); 
+ Nero Avorio;
+ Nero d'avorio (It.);
+ Nero d'ossa;
+ Noir Animal;
+ Noir d'os;
+ Noir d'ivoire (Fr.);
+ Ossa Sepiae;
+ Paris Black;
+ Pigment Black 9;
+ Sepia Extra [OH.o];
+ Velvet black",77267,"Inorganic; 
+ Amorphous Charred-Bone Carbon;
+ Calcined animal bones consisting of a ""Mixture of carbon (10%), calcium phosphate (78%), calcium carbonate (8%) with small quantities of calcium sulphate, magnesium phosphate, calcium sulfide and other soluble salts"" (Ref: Color Index, Pigment and Solvent Dyes Edition, 1997);
+ Ivory Black (Ref at Boston Fine Arts CAMEO Database);
+ Bone Black (Ref at Boston Fine Arts CAMEO);
+ Animal Black (Ref at Boston Fine Arts CAMEO);
+  
+ LBNLPigment Database Spectral radiative properties;
+ Ivory Black;
+  
+ How bone black is made at webexhibits.org
+  
+ CAS 8021-99-6",Brownish 'Peachy' Black;,S/O,I,A,"(Ref. @ CAMEO Art Material Database)
+ * Although similar in chemical composition, true Ivory black iused to be from calcined ivory. Ivory is now banned and illegal to import. Bone black and Ivory black have come to be used interchangeably to name artist paints made from Calcined (burnt) animal bones."
+PBk10,Bk,CIPIGMENT,10,Graphite,"Acheson Graphite;
+ Beech Charcoal [KP.p];
+ Black Graphite [KA.p];
+ Black lead;
+ Blacklead;
+ C.I. Pigment Black 10;
+ Graphite [SCH];
+ Graphite Gray [CAS.k | DS.ad.o.w | GO.a | RGH.o.p | SCH.p | SE.a | TA.a.af | WL.o.p | WN.a];
+ Graphitan 6154;
+ Graphitan 7525;
+ Natural Graphite Chunks [KA.p];
+ Liquid Graphite [GU];
+ Pigment Black 10;
+ Plumbago;
+ Silver Graphite [KA.p];
+ Stove Polish;",77265,"Inorganic; 
+ Crystallized Carbon;
+  
+ CAS 7782-42-5",Dark gray with metallic sheen,O,I,A,"The graphite grey oil paint can be used to make wonderful pencil like oil sketches.; 
+ There are unverified rumored reports of migration of graphite to other layers in oil colors, it's unknown at this time if this is actually the graphite particles moving up through the layers or just being able to see the pencil sketch coming through the other layers of paint better as the oil paint becomes more translucent with age. More research or tests may be needed.
+ * Not rated by the ASTM; Blue wool scales from pigment suppliers indicate excellent lightfastness.
+ Rated Excellent in watercolors by handprint.com See PBk-10 at Handprint.com"
+PBk11,Bk,CIPIGMENT,11,Mars Black,"Anthracite Black [LA.a];
+ Ash Black;
+ C.I. Pigment Black 11;
+ Black [HO.a(gesso)];
+ Black 318 [EP.p];
+ Black Iron Oxide [SCH.o.p];
+ Black Oxide;
+ Black Oxide of Iron;
+ Ferrite Black;
+ Ferroso-ferric Black;
+ German Earth [WL.o.p];
+ Heavy Metal [MA.o(HD)];
+ Intense Black [PF.o];
+ Iron Black;
+ Iron Oxide;
+ Iron Oxide Black [CAS.k];
+ Italian Black Roman Earth [WL.p];
+ Lunar Black [DS.w];
+ Mars Black [GEN | BA.a.o | BX.o | CH | CL | DR.a.a(s3hb).a(s3mb). | DS.ad.o.pd | DV.k | GB.o.o.p | GO.a.ag | GR.o.o.wo| HO.a.wo | KA.o.p | LB.o | LQ.a | MA.a.o.o(artis).o.p | MG.a.o | MR.o | MW.o.wo | OH.a.o.w | RGH.o.p | SE.a.o.p | TA.a.af | UT.a.o | WL.o.p | WN.a.a.o.w.w.wp];
+ Mars Black Hue [GR.a]
+ Magnetite**;
+ Magnetite Genuine [DV.o**];
+ Magnetic Black;
+ Magnetic Black S 0045 [BASF];
+ Magnetic Oxide;
+ Magnetic pigment [BASF];
+ Mapico Black;
+ Natural Black [EP.p];
+ Natural Iron Oxide;
+ Noir naturel;
+ Oxide Black [RT.a.a.o];
+ Pigment Black 11;
+ Raw Umber [BA.o | SE.o];
+ Rhombehedral Magnetite;
+ Roman Earth [WL.o];
+ Synthetic Black Oxide;
+ Transparent Mars Black [GU.pd]
+ Urban Grey [MA.o(HD)];
+ Vine Black [BX.o]","77489
+ 77499","Inorganic; 
+ Synthetic or natural magnetic black Iron Oxide with traces of SiO2 and Al2O3 in natural forms (Ref Paint Film Components, National Environmental Health Monographs by M van Alphen, 1998); 
+ Ferroso-ferric oxide; 
+ Ferroso-ferric hydroxide; 
+ **Magnetite is the natural form (mindat.com Ref); (Webmineral.com Ref); 
+ LBNLPigment Database Spectral radiative properties;
+ Mars Black @ Cool Colors Pigment Database of colors that don't absorb heat from the sun;
+ Magnetic FeO; Fe2O3 
+ CAS 12227-89-3","Dark grey or black w/ bluish to yellowish undertones;
+ heavily granulating and weakly staining w/ weak tinting strength,",S/T,I,A,"* Rated by ASTM as excellent in oils & acrylics but not rated by the ASTM in watercolor; Blue wool scales from pigment suppliers indicate excellent lightfastness.
+ Rated Excellent in watercolors by handprint.com. See more info on PBk-11 at Handprint.com"
+PBk12,Bk,CIPIGMENT,12,Iron Titanium Brown Spinel,"Brown 20C8191;
+ Autumn Brown No.156;
+ Battleship Gray No.6;
+ Chestnut Brown;
+ Chocolate Brown [GU];
+ C.I. Pigment Black 12;
+ Golden Brown;
+ Iron Titanate;
+ Iron Titanium Brown;
+ Iron Titanium Brown Spinel;
+ Llmenite*;
+ Mars Black Red [GU.pd]
+ Natural iron ore*;
+ Pigment Black 12;
+ Russet Brown;
+ Shepherd Brown",77543,"Inorganic;
+ Iron Titanium Brown Spinel is an inorganic pigment that is the created by calcining iron (II) oxide and titanium (IV) oxide, in varied ratios, that react to create an inverse crystalline spinel matrix. Its composition may include any one or more of the modifiers Al2O3, Fe2O3, MnO, and/or ZnO (Ref IPConsortium);
+  
+ Iron titanate in a spinel crystal lattice;
+  
+ The Natural mineral is ilmenite or titaniferous iron ore. ""It is not so heavy as black iron oxide and free from the tendency to 'float'"" like carbon blacks can do. (Ref Color index 3rd Ed., V.4, Inorganic colorants CI 77543)
+ * Natural iron ore has impurities;
+  
+ LBNLPigment Database Spectral radiative properties;
+ Iron Titanium Brown Spinel (i);
+ Iron Titanium Brown Spinel (ii);
+ Iron Titanium Brown Spinel (iii);
+  
+ CPMA 13-34-7;
+  
+ CAS 68187-02-0","Dark red to brownish yellow black;
+ Lightly staining w/ weak tinting strength",S/O,I,A,
+PBk13,Bk,CIPIGMENT,13,Cobalt Black,"Black Cobalt Oxide;
+ C.I. Pigment Black 13;
+ Cobalt Sesquioxide;
+ Cobalt Oxide, gray /grey;
+ Cobalt Tetraoxide;
+ Cobalt Black;
+ Cobalt(III)Oxide;
+ Cobaltic Tetraoxide;
+ Cobaltic Oxide;
+ Cobalt(III) Oxide Black
+ Pigment Black 13;",77322,"Inorganic;
+ Cobaltous oxide;
+ Cobalt Tetraoxide;
+ Cobalt(II,III) Oxide;
+ Cobalt(III)Oxide;
+ Cobalt(+2,+3)Oxide;
+ Cobalt(2,3) Oxide;
+ Cobaltic Tetraoxide;
+ Cobalt(II)-Cobalt(III)-Oxide;
+  
+ CAS 1307-96-6",Grayish black,S/O,I,B,
+PBk14,Bk,CIPIGMENT,14,Manganese Black,"Black Umber;
+ Brown Umber;
+ Bog manganese;
+ Cement black;
+ C.I. Pigment Black 14;
+ Manganese Black
+ Manganese Dioxide;
+ Manganese peroxide;
+ Manganese (VI) oxide;
+ Mineral Brown Black [NP.p];
+ Pyrolusite;
+ Pigment Black 14",77728,"Manganese Dioxide;
+ ""Occurs naturally as pyrolusite and polianite but the commercial product is usually prepared from a mixture of pyrolusite, hausmannite, braunite and other manganese ores."" (Ref Inorganic Colouring Matters, Color Index 3rd Ed.)
+  
+ ""the second major component of umbers. It occurs in some ochres and is present in small quantity in the siennas."" (Ref Inorganic Colouring Matters, Color Index 3rd Ed.)
+  
+ Manganese(IV) oxide (Ref wikipedia);
+  
+ CAS 1313-13-9",Black,X,I,B,
+PBk17,Bk,CIPIGMENT,17,Zinc Sulfide,"Black Jack;
+ C.I. Pigment Black 17;
+ C.I. Pigment White 7;
+ Zinc Blende;
+ Zinc Sulfide",77975,Zinc sulfide,Grey to brownish grey,X,X,,
+PBk18,Bk,CIPIGMENT,18,Mineral Black,"C.I. Pigment Black 18;
+ Flake Black;
+ Mineral Black;
+ Oil Black;
+ Pigment Black 18;
+ Slate Black (hue) [WL.p];",77011,"""Carbonaceous hydrated aluminium silicate which may contain up to 30% of carbon."" (Ref Colorindex 3rd Ed., V.4, Inorganic colourants CI 77011);
+  
+ CAS 12001-98-8",Grey to black,X,X,,
+PBk19,Bk,CIPIGMENT,19,Slate Black,"Ardoise;
+ Nero Bernino [KP.p];
+ Black chalk;
+ C.I. Pigment Black 19;
+ Davy's Grey [WNd];
+ Davy's Grey Deep [WL.o.o(SF).p];
+ French Ardoise Grey [WL.o(SF)];
+ Gray Hydrated Aluminum Silicate;
+ Ground Schist;
+ Mineral Black;
+ Mineral Grey;
+ Neutral Grey
+ Pigment Black 19;
+ Powdered Slate;
+ Slate [EP.p];
+ Slate Black; 
+ Slate Black (Davy's Grey Extra Deep) [WL.o.p] ;
+ Slate Gray;
+ Slate Grey;
+ Slate Grey, dark [KP.p];
+ Steel Grey;
+ Stone Chalk",77017,"Inorganic; 
+ Powdered Slate; 
+ Hydrated Aluminum Silicate; (Ref), (Ref)",Greenish to blueish grey to black,S/O,I,A,
+PBk22,Bk,CIPIGMENT,22,Copper Chromite Black,"C.I. Pigment Black 22;
+ Copper chromite black spinel;
+ Fast Black 100;
+ Pigment Black 22",77429,"Inorganic; 
+ Copper chromite created in a spinel crystalline form;
+  
+ CAS 55353-02-1",Black,T,I,B,
+PBk23,Bk,CIPIGMENT,23,Tin Antimony Gray,"Antimony Gray Cassiterite;
+ C.I. Pigment Black 23;
+ Tin Antimony Cassiterite;
+ Tin Antimony Grey;
+ Tin Antimony Grey Cassiterite;
+ Pigment Black 23",77865,"Inorganic;
+ Tin Antimony Grey (gray) Cassiterite (Sn,Sb)O2 is made by calcining a mixture of Tin (IV) Oxide and Antimony (V) Oxide in varied ratios creating a interdiffused crystalline matrix of cassiterite. Its may include any one or more of the modifiers MnO, SiO2, TiO2, V2O5 to adjust color hue and/or other properties (Reference: 4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments). . 
+  
+ CPMA 11-24-8;
+  
+ CAS 68187-54-2",Bluish Gray,X,X,B,
+PBk24,Bk,CIPIGMENT,24,Titanium Vanadium Antimony Gray,"Antimony Vanadium Gray Rutile;
+ C.I. Pigment Black 24;
+ Pigment Black 24;
+ Titanium Vanadium Antimony Gray Rutile;
+ Vanadium Antimony Gray; 
+ Vanadium Antimony Gray Rutile;",77898,"Inorganic;
+ Titanium Vanadium Antimony Rutile, is obtained by combining a mixture of Titanium (IV) Oxide, Vanadium (IV) Oxide, and Antimony (V) Oxide at high temperature creating a homogeneous, interdiffused crystalline rutile form;
+  
+ CPMA 11-21-8
+  
+ CAS 68187-00-8",Bluish Gray,X,X,B,
+PBk25,Bk,CIPIGMENT,25,Cobalt Nickel Gray,"C.I. Pigment Black 25;
+ Cobalt Nickel Gray;
+ Cobalt Nickel Gray Periclase;
+ Gun-Metal Grey 6591;
+ Pigment Black 25;
+ Sicocer® F Gray 1985 [BASF]",77332,"Inorganic;
+ Cobalt Nickel complex;
+ Cobalt (II) Oxide and Nickel (II) Oxide calcined to create a periclase crystalline matrix. It may include Al2O3, CaO, Cr2O3, FeO, Fe2O3, MgO, MnO, SiO2, TiO2, ZnO, and/or ZrO2 as modifiers.
+  
+ CAS 68186-89-0",Neutral Dark Gray,X,X,B,
+PBk26,Bk,CIPIGMENT,26,Manganese Ferrite Black,"Black 20F9441;
+ C.I. Pigment Black 26;
+ Copper Iron Manganese Oxide Spinel;
+ Iron Manganese Black;
+ Iron Manganese Black Spinel;
+ Manganese Ferrite Black;
+ Manganese Ferrite Black Spinel;
+ Daipyroxide Black 9550;
+ Pigment Black 26;
+ Spinel Black [KP.p | SI.p]",77494,"Inorganic;
+ Manganese Ferrite Black Spinel (Fe,Mn)(Fe,Mn)2O4 is made by calcining, at high temperature, a mixture of oxides of ferrous iron and ferric iron, divalent and trivalent manganese in differing amounts to create a crystalline spinel matrix. Its composition may include any one or more of the modifiers Al2O3, CoO, CuO, NiO3, SiO2 or TiO2 used during the creation process to tailor properties (Ref Color Index 4th edition);
+ Mixed Metal Oxide
+ Manganese Ferrite; 
+  
+ CPMA 13-41-9;
+  
+ CAS 68186-94-7",Jet black,O,I,A,"""true black, reflects virtually no color"" -Sinopia.com
+ * Not rated by the ASTM, blue wool scales indicate excellent light fastness. Should perform as excellent as other simliar MMO spinel pigments designed for applications where resistance to heat, light, and weather are required."
+PBk27,Bk,CIPIGMENT,27,Iron Cobalt Chromite Black,"C.I. Pigment Black 27;
+ Chromium Cobalt Iron Black;
+ Chromium Cobalt Iron Black Spinel;
+ Iron Cobalt Chromite Black;
+ Iron Cobalt Chromite Black Spinel;
+ Pigment Black 27;
+ Sicopal® Black 0090 [BASF];
+ Sicocer® F Black 10901 [BASF];",77502,"Inorganic; 
+ Iron Cobalt Chromite Black Spinel (Fe,Co)(Fe,Cr)2O4 is created by the high temperature calcination of a mixture of oxides of ferrous iron, cobalt, ferric iron and chromium in varying amounts, that creates a spinel form crystalline matrix. Its composition may have one or more of the modifiers Al2O3, B2O3, MnO, NiO and/or SiO2. (Ref Color Index 4th edition);
+  
+ CPMA 13-40-9;
+  
+ CAS 68186-97-0",Black,X,X,B,
+PBk28,Bk,CIPIGMENT,28,Copper Chromite Black,"Black 30C9652;
+ Black Spinel [GB.o];
+ Chromium Copper [GU];
+ Chromium Copper Black;
+ Chromium Copper Black Spinel;
+ C.I. Pigment Black 28;
+ Copper Chromite Black;
+ Copper Chromite Black Spinel;
+ Daipyroxide Black 9510;
+ Ebony Black;
+ Fragonard Black [PF.o];
+ Jet Black;
+ Mineral Black [ SCH.o(Mus)];
+ Neutral Black;
+ Pigment Black 28;
+ Shepherd Black;
+ Spinel Black [HO.wo];
+ Transoxide black [LA.a]",77428,"Inorganic;
+ Copper Chromite Black Spinel CuCr2O4 is obtained by calcining at high temperature a mixture of copper oxides and chromium oxides in varying ratios to create a crystalline spinel matrix. The constitution may include any one or more of the modifiers Fe2O3 or MnO. (Ref Color Index 4th edition);
+  
+ Mixed Metal Oxide (MMO) (PCImag Ref):
+ Copper Chromite Spinel;
+  
+ LBNLPigment Database Spectral radiative properties;
+ Copper Chromite Black;
+  
+ CPMA 13-38-9;
+  
+ CAS 68186-91-4",Blueish black to jet black,O,I,B,
+PBk29,Bk,CIPIGMENT,29,Iron Cobalt Black,"C.I. Pigment Black 29;
+ Cobalt Iron Black;
+ Cobalt Iron Black Spinel;
+ Iron Cobalt Black;
+ Iron Cobalt Black Spinel;
+ Pigment Black 29",77498,"Inorganic; 
+ Iron Cobalt Black, created by calcination of Iron (II) Oxide, Cobalt (II) Oxide, and Iron (III) Oxide in varied ratios creating a ionically interdiffused spinel form crystalline matrix. In can be modified with the addition of any or either of the chemicals Al2O3, B2O3, MnO, NiO, SiO2 and/or SnO2 during the creation process;
+  
+ CPMA 13-39-9
+  
+ CAS 68187-50-8",Black,O,I,B,
+PBk30,Bk,CIPIGMENT,30,Chrome Iron Nickel Black,"Black 376A1;
+ Cavern Black;
+ Chrome Iron Nickel Black;
+ Chrome Iron Nickel Black Spinel;
+ Chromium Iron Nickel Black;
+ C.I. Pigment Black 30;
+ Onyx Black;
+ Pigment Black 30;
+ Shepherd Black;
+ Spinel Black No. 43 [KP.p]",77504,"Inorganic;
+ Chrome Iron Nickel Black Spinel (Ni,Fe)(Cr,Fe)2O4 is created by the calcining at high-temperature a mixture of Chromium (II) Oxide, Iron (II) Oxide, Iron (III) Oxide in varied ratios creating a crystalline spinel matrix. Its composition may include one or more of the modifiers CuO, MnO or Mn2O3.(Ref Color Index 4th edition); 
+ Mixed Metal Oxide (MMO) (PCImag Ref):
+ Chrome Iron Nickel Black Spinel; 
+ LBNLPigment Database Spectral radiative properties;
+ Chrome Iron Nickel Black Spinel; 
+ CPMA 13-50-9; 
+ CAS 71631-15-7",Blue shade black to jet black,O,I,A,"* Not rated by the ASTM. Should perform as excellent as other MMO spinel pigments that were designed for applications where resistance to heat, light, and weather are required."
+PBk31,Bk,CIPIGMENT,31,"Paliogen® Black;
+ Perylene Green;","Atrament black [ SCH.a.o(Mus)];
+ C.I. Pigment Black 31;
+ Paliogen® Black;
+ Paliogen® Black L0084 [BASF];
+ Paliogen® Black S 0084 [BASF];
+ Perylene Black [WN.g.o];
+ Perylene Green [DS.w | DV.w | WN.a.w.wp];
+ Perylene Green Black [GU.pd.p];
+ Pigment Black 31;
+ Shadow Green [HO.w.wo | SH.w];",71132,"Synthetic organic; 
+ Perylene; (Ref BASF)
+  
+ CAS 67075-37-0","Intense very dark bluish green;
+ Very staining w/ high tinting strength;
+ † Slightly fading in tints (Handprint);",S/T,I,A,"Very deep green, almost black in masstone, nice for cool shadows and glazes.
+ * Not rated by ASTM.
+ Blue wool scales from pigment suppliers indicate excellent lightfastness. Most, if not all, paint brands that use this pigment give it their highest lightfast rating.
+ Also rated Eexcellent in watercolors by handprint.com. See more info on PBk-31 at Handprint.com"
+PBk32,Bk,CIPIGMENT,32,Perylene Black,"BASF Paliogen Black L0086;
+ C.I. Pigment Black 32;
+ Paliogen® Black L0086 [BASF];
+ Perylene Green;
+ Pigment Black 32",71133,"Inorganic; 
+ Perylene; (Ref. TDS);
+  
+ LBNLPigment Database Spectral radiative properties;
+ Perylene Black;
+  
+ CAS 83524-75-8",Very dark blackish green or brown,S/O,I,A,
+PBk33,Bk,CIPIGMENT,33,Iron Manganese Oxide,"Bayferrox 303T;
+ C.I. Pigment Black 33;
+ Iron Manganese Oxide;
+ Pigment Black 33",77537,"Inorganic;
+ Synthetic mixed manganese oxide with a minimum of 58% iron oxide; CAS 68186-94-7
+ CAS 75864-23-2",Black,X,I,A,
+PBk34,Bk,CIPIGMENT,34,Molybdenum Disulfide,"C.I. Pigment Black 34;
+ Graphitan 7700;
+ Molybdenite; 
+ Moly Disulfide;
+ Pigment Black 34;",77770,Inorganic; Natural Molybdenum Disulfide; CAS 56780-54-2,Black,O,I,A,Used to give a “silk” effect mixed with mica or other colors in auto finishes
+PBk35,Bk,CIPIGMENT,35,Titanium Dioxide Black,"C.I. Pigment Black 35;
+ Tilac D;
+ TiLox-Black;
+ Pigment Black 35",77890,Inorganic; Reduced titanium oxide; CAS 51745-87-0,blueish Black,X,I,A,

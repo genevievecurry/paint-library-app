@@ -20,6 +20,7 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
     "seed": "prisma db seed",
     "seed:paints": "node prisma/seed-paints.cjs",
+    "seed:pigments": "node prisma/seed-pigments.cjs",
     "migrate:dev": "prisma migrate dev",
     "migrate:reset": "prisma migrate reset",
     "test": "uvu tests '.spec.ts' -r tsm -r tests/setup/register -i setup"

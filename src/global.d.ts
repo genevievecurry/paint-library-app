@@ -68,7 +68,11 @@ type ListPigment = {
   slug: string;
   hex?: string;
   name: string;
-  number?: string;
+  number?: number;
+  type: string;
+  colorCode: string;
+  lightfastRating: LightfastRating;
+  transparencyRating: TransparencyRating;
 };
 
 type SearchResults = {
@@ -83,11 +87,17 @@ type PigmentPaints = {
 interface PigmentComponent extends Pigment {
   color?: Color;
   paints: PigmentPaints;
+  imageKitUpload: import('.prisma/client').ImageKitUpload;
+  number: number;
 }
 
 type PigmentListingByColor = {
   label: string;
   slug: string;
+  hex: string;
+  _count: {
+    pigments: number;
+  };
   pigments: ListPigment[];
 };
 

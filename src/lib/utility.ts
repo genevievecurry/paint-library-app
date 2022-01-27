@@ -1,11 +1,19 @@
 export function pigmentCode(
-  pigmentType: string,
-  pigmentNumber: string,
+  type: string,
+  number: number,
   colorCode: string,
+  { html = false }: { html: boolean },
 ): string {
   let convertedType: string;
 
-  switch (pigmentType) {
+  if (number < 1) {
+    if (html) return '<span class="text-gray-400">N/A</span>';
+    if (!html) return '';
+  }
+
+  const ciNumber = number.toString().replace('.', ':');
+
+  switch (type) {
     case 'CIPIGMENT':
       convertedType = 'P';
       break;
@@ -16,13 +24,13 @@ export function pigmentCode(
       convertedType = '';
   }
 
-  return convertedType + colorCode + pigmentNumber.toString();
+  return convertedType + colorCode + ciNumber;
 }
 
-export const pluralize = (count: number, word:string): string => {
-  if(count !== 1) return `${count} ${word}s`
-  return `${count} ${word}`
-}
+export const pluralize = (count: number, word: string): string => {
+  if (count !== 1) return `${count} ${word}s`;
+  return `${count} ${word}`;
+};
 
 export const timeAgo = (time: string | number | Date): string => {
   const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
@@ -46,15 +54,15 @@ export function validateUsername(username: string): {
   checkCharacters: boolean;
   checkLength: boolean;
   passes: boolean;
-}{
+} {
   // allow alphanumeric + underscores + dashes
-  const minimumRequirements = /^[a-zA-Z0-9]([a-zA-Z0-9_-])+$/
+  const minimumRequirements = /^[a-zA-Z0-9]([a-zA-Z0-9_-])+$/;
   const checkLength = username.length > 1 && username.length < 51;
   return {
     checkCharacters: minimumRequirements.test(username),
     checkLength: checkLength,
-    passes: minimumRequirements.test(username) && checkLength
-  }
+    passes: minimumRequirements.test(username) && checkLength,
+  };
 }
 
 export function validatePassword(password: string): {

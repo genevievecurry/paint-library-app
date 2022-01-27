@@ -36,12 +36,19 @@
   <a class="flex my-4" href={`/pigments/${pigment.color.slug}/${pigment.slug}`}>
     <div class="mr-4">
       <div class="border-2 border-black p-0.5 relative">
-        <div class="w-12 h-12" style={`background: ${pigment.hex}`} />
+        <div
+          class="w-12 h-12"
+          style={`background: ${
+            pigment.hex ? pigment.hex : pigment.color.hex
+          }`} />
       </div>
     </div>
     <div>
-      <span class="decorate-link"
-        >{pigmentCode(pigment.type, pigment.number, pigment.color?.code)}
+      <span
+        class="transition text-teal-600 font-semibold hover:text-black inline-block leading-tight"
+        >{pigmentCode(pigment.type, pigment.number, pigment.color?.code, {
+          html: false,
+        })}
         {pigment.name}</span>
       <span class="block text-gray-500 text-xs">{pigment.color?.label}</span>
     </div>

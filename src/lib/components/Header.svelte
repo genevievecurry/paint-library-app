@@ -42,7 +42,7 @@
         {/if}
       {/each}
     </div>
-    <h1 class="font-extrabold text-5xl">
+    <h1 class="font-extrabold text-5xl mb-2">
       {title}
     </h1>
     {#if description}

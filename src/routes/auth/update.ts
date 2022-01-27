@@ -24,6 +24,6 @@ export async function post({ body: data, locals }) {
     return {
       body: null,
       status: response.status,
-    }
+    };
   }
 }

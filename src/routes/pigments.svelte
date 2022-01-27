@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
   export async function load({ fetch, url }) {
-    const response = await fetch('/pigments.json');
+    const response = await fetch('/pigments.json?byColor=true');
     const { pathname } = url;
     let sections = {};
     const colors: PigmentListingByColor[] = await response.json();
@@ -29,6 +29,7 @@
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
   import Header from '$lib/components/Header.svelte';
+  import { pigmentCode } from '$lib/utility';
 
   export let sections: [];
   export let colors: PigmentListingByColor[];
@@ -85,13 +86,16 @@
           {#each colors as color}
             <li class="my-1">
               <a
-                class={`hover:text-white hover:bg-black inline-block px-2 ${
+                class={`pr-2 transition-all ${
                   color.slug === activeSectionId
-                    ? 'text-pink-500 font-bold'
-                    : 'text-gray-500 font-light'
+                    ? 'pl-6 font-medium'
+                    : 'pl-2 text-gray-500 font-light'
                 }`}
                 href={`#${color.slug}`}>
-                {color.label}
+                <span class="decorate-link inline-block">
+                  {color.label}
+                </span>
+                <span class="text-sm">{color._count.pigments}</span>
               </a>
             </li>
           {/each}
@@ -108,9 +112,11 @@
             <thead class="text-left border-b-2 border-black">
               <tr>
                 <th class="pl-1 pr-3 py-3" />
-                <th class="px-3 whitespace-nowrap">CI #</th>
+                <th class="px-3 whitespace-nowrap">#</th>
                 <th class="px-3 py-3 whitespace-nowrap">CI Code</th>
                 <th class="px-3 w-full">Common Name</th>
+                <th class="px-3 w-full">Lightfast</th>
+                <th class="px-3 w-full">Transparency</th>
               </tr>
             </thead>
             {#each color.pigments as pigment}
@@ -124,18 +130,40 @@
                     href={`/pigments/${color.slug}/${pigment.slug}`}>
                     <div
                       class="w-8 h-8 border border-black"
-                      style={`background-color: ${pigment.hex}`} />
+                      style={`background-color: ${
+                        pigment.hex ? pigment.hex : color.hex
+                      }`} />
                   </a>
                 </td>
                 <td class="px-3">
-                  <span>{pigment.number}</span>
+                  <span
+                    >{@html pigment.number > 0
+                      ? pigment.number
+                      : '<span class="text-gray-400">N/A</span>'}</span>
                 </td>
                 <td class="px-3">
-                  <span>{pigment.slug}</span>
+                  <span>
+                    {@html pigmentCode(
+                      pigment.type,
+                      pigment.number,
+                      pigment.colorCode,
+                      { html: true },
+                    )}
+                  </span>
                 </td>
                 <td class="px-3 w-full">
                   <span class="decorate-link">{pigment.name}</span>
                 </td>
+
+                <td class="px-3" title={pigment.lightfastRating.label}
+                  >{@html pigment.lightfastRating.code !== 'X' &&
+                  pigment.lightfastRating.code !== 'NR'
+                    ? pigment.lightfastRating.code
+                    : '<span class="text-gray-400">&bull;</span>'}</td>
+                <td class="px-3" title={pigment.transparencyRating.label}
+                  >{@html pigment.transparencyRating.code !== 'X'
+                    ? pigment.transparencyRating.code
+                    : '<span class="text-gray-400">&bull;</span>'}</td>
               </tr>
             {/each}
           </table>

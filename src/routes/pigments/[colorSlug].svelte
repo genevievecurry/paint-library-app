@@ -22,6 +22,7 @@
 
 <script lang="ts">
   import Header from '$lib/components/Header.svelte';
+  import { pigmentCode } from '$lib/utility';
 
   export let results: { pigments: ListPigment[]; currentColor: string };
   export let slug: string;
@@ -42,10 +43,18 @@
         class="relative">
         <div
           class="aspect-w-16 aspect-h-16"
-          style={`background-color: ${pigment.hex}`} />
+          style={`background-color: ${
+            pigment.hex ? pigment.hex : pigment.color.hex
+          }`} />
         <div class="p-2">
           <span class="block font-medium">{pigment.name}</span>
-          <span class="block text-sm">{pigment.slug}</span>
+          <span class="block text-sm"
+            >{@html pigmentCode(
+              pigment.type,
+              pigment.number,
+              pigment.colorCode,
+              { html: false },
+            )}</span>
         </div>
       </a>
     </div>
