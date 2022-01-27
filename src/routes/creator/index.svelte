@@ -16,7 +16,8 @@
   import type { Manufacturer } from '@prisma/client';
   import Header from '$lib/components/Header.svelte';
 
-  let manufacturerPromise: Promise<Manufacturer[]> = getModel('manufacturer');
+  let manufacturerPromise: Promise<Manufacturer[]> =
+    getManufacturer('manufacturer');
 
   let line = {
     id: null,
@@ -41,8 +42,8 @@
     published: published,
   };
 
-  async function getModel(model: string) {
-    const response = await fetch(`/model/${model}.json`);
+  async function getManufacturer(model: string) {
+    const response = await fetch(`/model/manufacturer.json?sellPaint=true`);
 
     if (response.ok) {
       return response.json();
@@ -55,7 +56,9 @@
 
   async function getLines() {
     const response = await fetch(
-      `/model/line.json?manufacturerName=${manufacturer.name}`,
+      `/model/line.json?manufacturerName=${encodeURIComponent(
+        manufacturer.name,
+      )}`,
     );
 
     if (response.ok) {

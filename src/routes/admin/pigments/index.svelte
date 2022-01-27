@@ -38,15 +38,16 @@
       <tr class="border-b-2 border-black">
         <td class="p-1"><input type="checkbox" /></td>
         <td class="font-bold p-1">ID</td>
-        <td class="font-bold p-1" />
 
-        <td class="font-bold p-1">CI Name</td>
+        <td class="font-bold p-1">Slug</td>
         <td class="font-bold p-1">Name</td>
+
         <td class="font-bold p-1">Color</td>
+        <td class="font-bold p-1">Description</td>
+
         <td class="font-bold p-1 leading-tight">In<br />Paints</td>
-        <td class="font-bold p-1 leading-tight">Created</td>
-        <td class="font-bold p-1 leading-tight">Updated</td>
-        <td class="font-bold p-1" />
+
+        <td class="font-bold p-1">Reviewed</td>
         <td />
       </tr>
     </thead>
@@ -55,25 +56,31 @@
         <tr class="border-b border-gray-300">
           <td class="p-1"><input type="checkbox" /></td>
           <td class="p-1">{pigment.id}</td>
-          <td>
-            <div class="w-5 mr-2">
-              <div
-                class="aspect-w-16 aspect-h-16"
-                style={`background-color: ${pigment.hex};`} />
-            </div>
-          </td>
+
           <td class="p-1">{pigment.slug}</td>
           <td class="p-1">{pigment.name}</td>
-          <td class="p-1">{pigment.color.label}</td>
+          <td class="p-1">
+            <div class="flex">
+              <div class="w-5 mr-2">
+                <div
+                  class="aspect-w-16 aspect-h-16"
+                  style={`background-color: ${
+                    pigment.hex ? pigment.hex : pigment.color.hex
+                  };`} />
+              </div>
+              {pigment.color.label}</div
+            ></td>
+          <td class="p-1 w-full">{pigment.description}</td>
           <td class="p-1" class:muted={pigment._count.paints === 0}
             >{pigment._count.paints}</td>
-
-          <td class="p-1">{timeAgo(pigment.createdAt)}</td>
-          <td class="p-1">{timeAgo(pigment.updatedAt)}</td>
-          <td class="p-1">
+          <td class="p-1 w-full">{pigment.reviewed}</td>
+          <td class="p-1 whitespace-nowrap">
+            <a href={`/admin/pigments/${pigment.slug}`} class="decorate-link"
+              >Edit</a>
+            |
             <a
               href={`/pigments/${pigment.color.slug}/${pigment.slug}`}
-              class="decorate-link">Public Link</a>
+              class="decorate-link">View</a>
           </td>
         </tr>
       {/each}

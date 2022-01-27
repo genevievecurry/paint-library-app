@@ -21,7 +21,7 @@
 
 <script lang="ts">
   import { session } from '$app/stores';
-  import { afterUpdate, beforeUpdate, onMount, setContext, tick } from 'svelte';
+  import { afterUpdate, onMount, setContext } from 'svelte';
   import { generateUrl } from '$lib/generate';
   import { connect } from '$lib/utility';
   import { clickOutside } from '$lib/actions';
@@ -219,6 +219,7 @@
     showPigmentUpdateModal = false;
     showRatingsUpdateModal = false;
     showPaintUpdateModal = false;
+    showPaletteModal = false;
 
     // Close Editable Field
     editableField = '';
@@ -265,7 +266,7 @@
     <div class="col-span-12">
       <PaintForm
         on:paintFormData={handleFormUpdate}
-        on:success={() => refresh({ notify: false })}
+        on:success={() => refresh({ notify: false, message: '' })}
         on:success={handleEditUpdate}
         published={paint.published}
         name={paint.name}
@@ -284,7 +285,7 @@
     <div class="col-span-12">
       <RatingsUpdateForm
         on:ratingFormData={handleFormUpdate}
-        on:update={() => refresh({ notify: false })}
+        on:update={() => refresh({ notify: false, message: '' })}
         on:update={handleEditUpdate}
         lightfastRating={paint.lightfastRating}
         transparencyRating={paint.transparencyRating}
@@ -301,7 +302,7 @@
     on:close={() => (showPigmentUpdateModal = false)}>
     <div class="col-span-12">
       <PigmentUpdateForm
-        on:success={handleEditUpdate}
+        on:update={handleEditUpdate}
         {pigmentsOnPaints}
         paintUuid={paint.uuid}
         paintSlug={paint.slug} />
@@ -312,7 +313,7 @@
 {#if showPaletteModal && editable}
   <Modal on:close={() => (showPaletteModal = false)} title="Create New Palette">
     <div class="col-span-12">
-      <PaletteForm paintUuid={paint.uuid} />
+      <PaletteForm paintUuid={paint.uuid} on:update={handleEditUpdate} />
     </div>
   </Modal>
 {/if}
@@ -497,15 +498,15 @@
                     tabindex="-1">
                     <span class="decorate-link">Manage Pigments</span>
                   </div>
-                  <div
+                  <!-- <div
                     class="block px-4 pb-2 pt-2 text-sm border-t border-gray-300">
                     <span
                       class="decorate-link cursor-pointer"
                       role="menuitem"
                       tabindex="-1"
                       on:click={() => (showPaintUpdateModal = true)}
-                      >Delete Palette</span>
-                  </div>
+                      >Delete Paint</span>
+                  </div> -->
                 </div>
               {/if}
             </div>

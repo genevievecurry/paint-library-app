@@ -26,9 +26,7 @@ async function main() {
   // const manufacturers = await prisma.manufacturer.count();
   const manufacturers = 3;
   const paintCsv = `${__dirname}/temp-paints.csv`;
-  const lineCsv = `${__dirname}/line.csv`;
   const parsedPaintCsv = await processFile(paintCsv);
-  const parsedLineCsv = await processFile(lineCsv);
 
   function setPigmentOnPaint() {
     const numberOfPigments = Math.floor(Math.random() * 6);
@@ -47,6 +45,14 @@ async function main() {
 
     return popArray;
   }
+
+  const tags = await prisma.tag.createMany({
+    data: [
+      { label: 'tropical', slug: 'tropical' },
+      { label: 'bird feathers', slug: 'bird-feathers' },
+      { label: 'nautical', slug: 'nautical' },
+    ],
+  });
 
   const tagsForPaint = [
     {
@@ -75,32 +81,81 @@ async function main() {
     },
   ];
 
-  const lineImport = parsedLineCsv.forEach(async (line) => {
-    let lineItem = await prisma.line.upsert({
-      where: {
-        manufacturerName_name: {
-          name: line.name,
-          manufacturerName: line.manufacturer,
-        },
+  const imageKitUploads = await prisma.imageKitUpload.createMany({
+    data: [
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/100/150',
+        url: 'https://placekitten.com/750/350',
+        width: 750,
+        height: 350,
       },
-      update: {
-        name: line.name,
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/150/100',
+        url: 'https://placekitten.com/650/250',
+        width: 650,
+        height: 250,
       },
-      create: {
-        name: line.name,
-        manufacturer: {
-          connectOrCreate: {
-            create: {
-              name: line.manufacturer,
-            },
-            where: {
-              name: line.manufacturer,
-            },
-          },
-        },
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/150/100',
+        url: 'https://placekitten.com/450/650',
+        width: 450,
+        height: 650,
       },
-    });
-    console.log('lineItem', lineItem);
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/150/100',
+        url: 'https://placekitten.com/150/350',
+        width: 150,
+        height: 350,
+      },
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/150/100',
+        url: 'https://placekitten.com/250/450',
+        width: 250,
+        height: 450,
+      },
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/150/100',
+        url: 'https://placekitten.com/350/350',
+        width: 350,
+        height: 350,
+      },
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/150/100',
+        url: 'https://placekitten.com/350/350',
+        width: 350,
+        height: 350,
+      },
+      {
+        fileId: 'test-id-string',
+        filePath: 'kitten.jpg',
+        name: 'kitten.jpg',
+        thumbnailUrl: 'https://placekitten.com/150/100',
+        url: 'https://placekitten.com/450/350',
+        width: 450,
+        height: 350,
+      },
+    ],
   });
 
   const paintImport = parsedPaintCsv.forEach(async (paint, i) => {

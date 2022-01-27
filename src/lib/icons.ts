@@ -18,7 +18,10 @@ export function removeIcon(
   return icon;
 }
 
-export function editIcon(klass = 'h-6 w-6', currentColor = 'currentColor'): string {
+export function editIcon(
+  klass = 'h-6 w-6',
+  currentColor = 'currentColor',
+): string {
   const icon = `
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +140,10 @@ export function emptyCircleIcon(
   return icon;
 }
 
-export function infoIcon(klass = 'h-6 w-6', currentColor = 'currentColor'): string {
+export function infoIcon(
+  klass = 'h-6 w-6',
+  currentColor = 'currentColor',
+): string {
   const icon = `
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -306,7 +312,6 @@ export function circleCheckmarkIcon(
   `;
   return icon;
 }
-
 
 export function addIcon(
   klass = 'h-6 w-6',

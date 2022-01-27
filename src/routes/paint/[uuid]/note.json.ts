@@ -11,7 +11,7 @@ export async function post({
       status: 401,
     };
   }
-  
+
   const { uuid } = params;
   let response;
 

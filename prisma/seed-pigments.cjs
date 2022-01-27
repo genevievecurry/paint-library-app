@@ -34,6 +34,7 @@ async function main() {
   const brownPigmentCsv = `${__dirname}/brown-pigments.csv`;
   const blackPigmentCsv = `${__dirname}/black-pigments.csv`;
   const whitePigmentCsv = `${__dirname}/white-pigments.csv`;
+  const additionalPigmentCsv = `${__dirname}/additional-pigments.csv`;
 
   // Process CSV files
   const parsedYellowPigmentCsv = await processFile(yellowPigmentCsv);
@@ -45,138 +46,164 @@ async function main() {
   const parsedBrownPigmentCsv = await processFile(brownPigmentCsv);
   const parsedBlackPigmentCsv = await processFile(blackPigmentCsv);
   const parsedWhitePigmentCsv = await processFile(whitePigmentCsv);
+  const parsedAdditionalPigmentCsv = await processFile(additionalPigmentCsv);
 
+  const yellowPigmentImport = parsedYellowPigmentCsv.forEach(
+    async (pigment, i) => {
+      console.log('=========');
+      const pigments = await prisma.pigment.upsert({
+        where: { slug: pigment.slug },
+        update: pigment,
+        create: pigment,
+      });
+      console.log('index:', i);
+      console.log(pigment.name);
+      console.log(pigment.lightfastRatingCode);
 
-  const yellowPigmentImport = parsedYellowPigmentCsv.forEach(async (pigment, i) => {
-    console.log("=========")
-    const pigments = await prisma.pigment.upsert({
-      where: {slug: pigment.slug},
-      update: pigment,
-      create: pigment,
-    });
-    console.log("index:", i)
-    console.log(pigment.name)
-    console.log(pigment.lightfastRatingCode)
+      console.log('=========');
+    },
+  );
 
-    console.log("=========")
-  })
+  const orangePigmentImport = parsedOrangePigmentCsv.forEach(
+    async (pigment, i) => {
+      console.log('=========');
+      const pigments = await prisma.pigment.upsert({
+        where: { slug: pigment.slug },
+        update: pigment,
+        create: pigment,
+      });
+      console.log('orangePigmentImport index:', i);
+      console.log(pigment.name);
+      console.log(pigment.lightfastRatingCode);
 
-  const orangePigmentImport = parsedOrangePigmentCsv.forEach(async (pigment, i) => {
-    console.log("=========")
-    const pigments = await prisma.pigment.upsert({
-      where: {slug: pigment.slug},
-      update: pigment,
-      create: pigment,
-    });
-    console.log("index:", i)
-    console.log(pigment.name)
-    console.log(pigment.lightfastRatingCode)
-
-    console.log("=========")
-  })
+      console.log('=========');
+    },
+  );
 
   const redPigmentImport = parsedRedPigmentCsv.forEach(async (pigment, i) => {
-    console.log("=========")
+    console.log('=========');
     const pigments = await prisma.pigment.upsert({
-      where: {slug: pigment.slug},
+      where: { slug: pigment.slug },
       update: pigment,
       create: pigment,
     });
-    console.log("index:", i)
-    console.log(pigment.name)
-    console.log(pigment.lightfastRatingCode)
+    console.log('redPigmentImport index:', i);
+    console.log(pigment.name);
+    console.log(pigment.lightfastRatingCode);
 
-    console.log("=========")
-  })
+    console.log('=========');
+  });
 
-  const violetPigmentImport = parsedVioletPigmentCsv.forEach(async (pigment, i) => {
-    console.log("=========")
-    const pigments = await prisma.pigment.upsert({
-      where: {slug: pigment.slug},
-      update: pigment,
-      create: pigment,
-    });
-    console.log("index:", i)
-    console.log(pigment.name)
-    console.log(pigment.lightfastRatingCode)
+  const violetPigmentImport = parsedVioletPigmentCsv.forEach(
+    async (pigment, i) => {
+      console.log('=========');
+      const pigments = await prisma.pigment.upsert({
+        where: { slug: pigment.slug },
+        update: pigment,
+        create: pigment,
+      });
+      console.log('violetPigmentImport index:', i);
+      console.log(pigment.name);
+      console.log(pigment.lightfastRatingCode);
 
-    console.log("=========")
-  })
+      console.log('=========');
+    },
+  );
 
   const bluePigmentImport = parsedBluePigmentCsv.forEach(async (pigment, i) => {
-    console.log("=========")
+    console.log('=========');
     const pigments = await prisma.pigment.upsert({
-      where: {slug: pigment.slug},
+      where: { slug: pigment.slug },
       update: pigment,
       create: pigment,
     });
-    console.log("index:", i)
-    console.log(pigment.name)
-    console.log(pigment.lightfastRatingCode)
+    console.log('bluePigmentImport index:', i);
+    console.log(pigment.name);
+    console.log(pigment.lightfastRatingCode);
 
-    console.log("=========")
-  })
+    console.log('=========');
+  });
 
-  const greenPigmentImport = parsedGreenPigmentCsv.forEach(async (pigment, i) => {
-    console.log("=========")
-    const pigments = await prisma.pigment.upsert({
-      where: {slug: pigment.slug},
-      update: pigment,
-      create: pigment,
-    });
-    console.log("index:", i)
-    console.log(pigment.name)
-    console.log(pigment.lightfastRatingCode)
+  const greenPigmentImport = parsedGreenPigmentCsv.forEach(
+    async (pigment, i) => {
+      console.log('=========');
+      const pigments = await prisma.pigment.upsert({
+        where: { slug: pigment.slug },
+        update: pigment,
+        create: pigment,
+      });
+      console.log('greenPigmentImport index:', i);
+      console.log(pigment.name);
+      console.log(pigment.lightfastRatingCode);
 
-    console.log("=========")
-  })
+      console.log('=========');
+    },
+  );
 
+  const brownPigmentImport = parsedBrownPigmentCsv.forEach(
+    async (pigment, i) => {
+      console.log('=========');
+      const pigments = await prisma.pigment.upsert({
+        where: { slug: pigment.slug },
+        update: pigment,
+        create: pigment,
+      });
+      console.log('brownPigmentImport index:', i);
+      console.log(pigment.name);
+      console.log(pigment.lightfastRatingCode);
 
-  const brownPigmentImport = parsedBrownPigmentCsv.forEach(async (pigment, i) => {
-    console.log("=========")
-    const pigments = await prisma.pigment.upsert({
-      where: {slug: pigment.slug},
-      update: pigment,
-      create: pigment,
-    });
-    console.log("index:", i)
-    console.log(pigment.name)
-    console.log(pigment.lightfastRatingCode)
+      console.log('=========');
+    },
+  );
 
-    console.log("=========")
-  })
+  const blackPigmentImport = parsedBlackPigmentCsv.forEach(
+    async (pigment, i) => {
+      console.log('=========');
+      const pigments = await prisma.pigment.upsert({
+        where: { slug: pigment.slug },
+        update: pigment,
+        create: pigment,
+      });
+      console.log('blackPigmentImport index:', i);
+      console.log(pigment.name);
+      console.log(pigment.lightfastRatingCode);
 
-  const blackPigmentImport = parsedBlackPigmentCsv.forEach(async (pigment, i) => {
-    console.log("=========")
-    const pigments = await prisma.pigment.upsert({
-      where: {slug: pigment.slug},
-      update: pigment,
-      create: pigment,
-    });
-    console.log("index:", i)
-    console.log(pigment.name)
-    console.log(pigment.lightfastRatingCode)
+      console.log('=========');
+    },
+  );
 
-    console.log("=========")
-  })
+  const whitePigmentImport = parsedWhitePigmentCsv.forEach(
+    async (pigment, i) => {
+      console.log('=========');
+      const pigments = await prisma.pigment.upsert({
+        where: { slug: pigment.slug },
+        update: pigment,
+        create: pigment,
+      });
+      console.log('whitePigmentImport index:', i);
+      console.log(pigment.name);
+      console.log(pigment.lightfastRatingCode);
 
-  const whitePigmentImport = parsedWhitePigmentCsv.forEach(async (pigment, i) => {
-    console.log("=========")
-    const pigments = await prisma.pigment.upsert({
-      where: {slug: pigment.slug},
-      update: pigment,
-      create: pigment,
-    });
-    console.log("index:", i)
-    console.log(pigment.name)
-    console.log(pigment.lightfastRatingCode)
+      console.log('=========');
+    },
+  );
 
-    console.log("=========")
-  })
+  const additionalPigmentImport = parsedAdditionalPigmentCsv.forEach(
+    async (pigment, i) => {
+      console.log('=========');
+      const pigments = await prisma.pigment.upsert({
+        where: { slug: pigment.slug },
+        update: pigment,
+        create: pigment,
+      });
+      console.log('additionalPigmentImport index:', i);
+      console.log(pigment.name);
+      console.log('colorCode', pigment.colorCode);
 
+      console.log('=========');
+    },
+  );
 }
-
-
 
 main()
   .catch((e) => {

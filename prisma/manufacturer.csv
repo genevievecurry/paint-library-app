@@ -1,59 +1,60 @@
-name,website
-American Journey,https://www.cheapjoes.com/american-journey-artists-watercolor.html
-Arches,
-Art Spectrum,https://artspectrum.com.au/product_type/watercolours/
-Bee Paper,
-Bienfang,
-Blick,https://www.dickblick.com/
-Blockx,https://www.blockx.be
-Canson,
-Cartiera Magnani,
-Crescent,
-Da Vinci,https://www.davincipaints.com
-Daler Rowney,https://www.daler-rowney.com/art-materials/watercolour-paint/
-Daniel Smith,https://danielsmith.com/
-Derwent,
-Faber-Castell,
-Fabriano,
-Finetec,https://finetecus.com/
-Fluid,
-Grumbacher ,http://grumbacher.chartpak.com/
-Hahnemühle,
-Hand Book Paper Co,
-Holbein,https://holbeinartistmaterials.com/
-Indigo Artpapers,
-Isaro,https://www.isaro.be/shop/gb/
-Kuratake,http://www.gansaitambi.jp/en/
-Lanaquarelle,
-Legion Papers,
-Lukas,https://www.lukas.eu/art-paint/aquarell-studio-watercolor-paint/
-M. Graham,https://mgraham.com/
-Maimeri Blu,https://www.maimeri.it/en
-Mijello MISSION,http://www.mijello.com/en/main.php
-Moleskine,
-Old Holland,https://www.oldholland.com/
-Pelikan,https://www.pelikan.com
-Pentalic,
-QoR,https://www.qorcolors.com/
-Rembrandt,https://www.royaltalens.com/en/brands/rembrandt/rembrandt-watercolour
-Richeson,
-Roaring Spring,
-Roman Szmal,https://www.facebook.com/RomanSzmalArt/
-Rosa,https://rosa.ua
-Royal Talens,https://www.royaltalens.com
-Sakura,https://www.sakuraofamerica.com
-Saunders Waterford,
-Schmincke,https://www.schmincke.de/en.html
-Schut,
-Sennelier,http://www.sennelier-colors.com/en/Home_1.html
-ShinHan,http://www.shinhanart.com
-Shizen,
-SMLT Art,
-Stillman & Birn,
-Stoneground,https://stonegroundpaint.com/
-Strathmore,
-The Master's Choice,
-Utrecht,https://www.utrechtart.com/
-Van Gogh,https://www.royaltalens.com/en/brands/van-gogh/watercolour
-Winsor & Newton,https://www.winsornewton.com/na/
-Yarka,https://products.richesonart.com/collections/watercolor/products/st-petersburg-wc
+name,website,sellPaper,sellPaint
+American Journey,https://www.cheapjoes.com/american-journey-artists-watercolor.html,,true
+Arches,,true,
+Art Spectrum,https://artspectrum.com.au/product_type/watercolours/,,true
+Bee Paper,,true,
+Bienfang,,true,
+Blick,https://www.dickblick.com/,true,true
+Blockx,https://www.blockx.be,,true
+Canson,,true,
+Magnani,,true,
+Crescent,,true,
+Da Vinci,https://www.davincipaints.com,,true
+Daler Rowney,https://www.daler-rowney.com/art-materials/watercolour-paint/,,true
+Daniel Smith,https://danielsmith.com/,,true
+Derwent,,true,
+Faber-Castell,,true,
+Fabriano,,true,
+Finetec,https://finetecus.com/,,true
+Fluid,,true,
+Grumbacher ,http://grumbacher.chartpak.com/,,true
+Hahnemühle,,true,
+Hand Book Paper Co,,true,
+Holbein,https://holbeinartistmaterials.com/,,true
+Indigo Artpapers,,true,
+Isaro,https://www.isaro.be/shop/gb/,,true
+Kuratake,http://www.gansaitambi.jp/en/,,true
+Lanaquarelle,,true,
+Legion Papers,,true,
+Lukas,https://www.lukas.eu/art-paint/aquarell-studio-watercolor-paint/,,true
+M. Graham,https://mgraham.com/,,true
+Maimeri Blu,https://www.maimeri.it/en,,true
+Mijello MISSION,http://www.mijello.com/en/main.php,,true
+Moleskine,,true,
+Old Holland,https://www.oldholland.com/,,true
+Pelikan,https://www.pelikan.com,,true
+Pentalic,,true,
+QoR,https://www.qorcolors.com/,,true
+Rembrandt,https://www.royaltalens.com/en/brands/rembrandt/rembrandt-watercolour,,true
+Richeson,,true,
+Roaring Spring,,true,
+Roman Szmal,https://www.facebook.com/RomanSzmalArt/,,true
+Rosa,https://rosa.ua,,true
+Royal Talens,https://www.royaltalens.com,,true
+Sakura,https://www.sakuraofamerica.com,,true
+Saunders Waterford,,true,
+Schmincke,https://www.schmincke.de/en.html,,true
+Schut,,true,
+Sennelier,http://www.sennelier-colors.com/en/Home_1.html,,true
+ShinHan,http://www.shinhanart.com,,true
+Shizen,,true,
+SMLT Art,,true,
+Stillman & Birn,,true,
+Stoneground,https://stonegroundpaint.com/,,true
+Strathmore,,true,
+The Master's Choice,,true,
+Utrecht,https://www.utrechtart.com/,,true
+Van Gogh,https://www.royaltalens.com/en/brands/van-gogh/watercolour,,true
+Winsor & Newton,https://www.winsornewton.com/na/,,true
+Yarka,https://products.richesonart.com/collections/watercolor/products/st-petersburg-wc,,true
+Unknown,,true,true

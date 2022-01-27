@@ -1,8 +1,8 @@
 import * as api from '$lib/api';
 
 export async function get({
-  url,
   locals,
+  params,
 }): Promise<{ status: number; body: unknown }> {
   if (locals.user?.role !== 'ADMIN') {
     return {
@@ -10,9 +10,8 @@ export async function get({
       status: 401,
     };
   }
-
-  const response = await api.getUsers(url.searchParams);
-
+  const { slug } = params;
+  const response = await api.getPigment(slug);
   if (response.status !== 200) {
     return {
       status: response.status,
@@ -22,7 +21,7 @@ export async function get({
   return response;
 }
 
-export async function post({ body, locals }) {
+export async function post({ body: data, locals }) {
   if (locals.user?.role !== 'ADMIN') {
     return {
       body: { message: 'unauthorized' },
@@ -30,19 +29,12 @@ export async function post({ body, locals }) {
     };
   }
 
-  const response = await api.updateUser(body.formData, body.user);
-
-  return response;
-}
-
-export async function del({ locals, body: data }) {
-  if (locals.user?.role !== 'ADMIN') {
+  const response = await api.upsertPigment(data);
+  if (response.status !== 200) {
     return {
-      body: { message: 'unauthorized' },
-      status: 401,
+      status: response.status,
+      body: {},
     };
   }
-  const response = await api.deleteUser(data);
-
   return response;
 }

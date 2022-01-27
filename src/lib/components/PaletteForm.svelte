@@ -26,7 +26,6 @@
   }
 
   const dispatch = createEventDispatcher();
-  const success = () => dispatch('success');
 
   $: formData = {
     owner: $session.user,
@@ -56,7 +55,7 @@
       const promise = await handlePost();
 
       if (promise.uuid) {
-        success();
+        dispatch('update', 'New palette created!');
       }
     };
 

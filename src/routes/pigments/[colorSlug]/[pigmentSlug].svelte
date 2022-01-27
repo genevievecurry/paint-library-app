@@ -25,59 +25,178 @@
 <script lang="ts">
   import Header from '$lib/components/Header.svelte';
   import PaintPreview from '$lib/components/PaintPreview.svelte';
+  import { pigmentCode } from '$lib/utility';
 
   export let pigment: PigmentComponent;
   export let pathname;
+
+  const displayHex = pigment.hex ? pigment.hex : pigment.color.hex;
 </script>
 
 <!-- Todo: figure out breadcrumbs and use Header component -->
-<Header title="{pigment.slug} {pigment.name}" {pathname} />
+<Header title={pigment.name} {pathname} />
 
 <section class="grid gap-3 grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6">
-  <div class="border-2 border-black p-1 relative h-56 col-span-2 lg:col-span-1">
-    <div class="empty-swatch h-full" style={`background: ${pigment.hex}`} />
+  <div class="relative col-span-2 lg:col-span-1">
+    <div class="border-2 border-black p-1">
+      <div
+        class="aspect-w-16 aspect-h-16 "
+        style={`background-color: ${displayHex};`}>
+        {#if pigment.imageKitUploadId}
+          <img
+            loading="lazy"
+            src={pigment.imageKitUpload.url}
+            class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 hover:opacity-0"
+            alt={pigment.name} />
+        {/if}
+      </div>
+    </div>
   </div>
   <div class="ml-0 lg:ml-3 col-span-2 lg:col-span-3 xl:col-span-3">
-    <table class="table-fixed border-collapse border border-gray-400 w-full">
+    <table class="table-auto border-collapse border border-gray-400 w-full">
       <tr>
-        <th class="text-left border border-gray-400 px-4 py-3"
-          ><span class="whitespace-nowrap">C.I. Generic Name</span></th>
-        <td class="border border-gray-400 px-4 py-3">
-          {#if pigment.type === 'CIPIGMENT'}
-            Pigment {pigment.color.label} {pigment.number}, {pigment.name}
-          {/if}
-          {#if pigment.type === 'CINATURAL'}
-            Natural {pigment.color.label} {pigment.number}, {pigment.name}
+        <th class="text-left border border-gray-400 px-4 py-3 align-top"
+          ><span class="whitespace-nowrap">CI Name</span></th>
+        <td class="border border-gray-400 px-4 py-3 text-center align-top">
+          <span class="border-2 border-black font-bold px-2">
+            {@html pigmentCode(
+              pigment.type,
+              pigment.number,
+              pigment.color.code,
+              {
+                html: true,
+              },
+            )}
+          </span>
+        </td>
+        <td class="border border-gray-400 px-4 py-3 w-full align-top">
+          <p class="mb-2">
+            CI stands for "Color Index". It's a short code that easily
+            identifies the pigment. Not all pigments have one.
+          </p>
+
+          {#if pigment.number}
+            <ul class="list-disc ml-3 pl-3 text-gray-600 font-light text-sm">
+              {#if pigment.type === 'CIPIGMENT'}
+                <li class="mb-1 leading-snug">
+                  <strong>P</strong> designates that this pigment may be organic
+                  or inorganic, and may be composed of naturally occuring minerals,
+                  synthetic materials, or lakes.
+                </li>
+              {/if}
+
+              {#if pigment.type === 'CINATURAL'}
+                <li class="mb-1 leading-snug">
+                  <strong>N</strong> designates that this is a naturally occuring
+                  pigment, composed of plant, animal, or organic natural earths.
+                </li>
+              {/if}
+
+              <li class="mb-1 leading-snug">
+                <strong>{pigment.color.code}</strong> is shorthand for {pigment
+                  .color.label}.
+              </li>
+              <li class="mb-1 leading-snug"
+                ><strong>{pigment.number.toString().replace('.', ':')}</strong> is
+                the CI serial number.</li>
+            </ul>
           {/if}
         </td>
       </tr>
+      <tr>
+        <th class="text-left border border-gray-400 px-4 py-3 align-top"
+          ><span class="whitespace-nowrap">Toxicity</span></th>
+        <td class="border border-gray-400 px-4 py-3 text-center align-top">
+          <span class="border-2 border-black font-bold px-2">
+            {#if pigment.toxicity === 'A'}
+              Low
+            {:else if pigment.toxicity === 'B'}
+              Possible
+            {:else if pigment.toxicity === 'C'}
+              High
+            {:else if pigment.toxicity === 'D'}
+              Extreme
+            {:else}
+              ?
+            {/if}
+          </span></td>
+        <td class="border border-gray-400 px-4 py-3 w-full align-top">
+          <p
+            >The general rule of thumb to follow is to not inhale, ingest, feed
+            to pets or babies, pour on the ground, or leave on skin.</p>
+          <p class="text-gray-600 font-light text-sm mt-2">
+            All pigments should be assumed to be dangerous, and potentially
+            lethal if mishandled. If the pigment has high or extreme toxicity,
+            it might be better not to use it at all.</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="text-left border border-gray-400 px-4 py-3 align-top"
+          >Lightfastness</th>
+        <td class="border border-gray-400 px-4 py-3 text-center align-top">
+          {#if pigment.lightfastRating.code !== 'X'}
+            <span class="border-2 border-black font-bold px-2"
+              >{pigment.lightfastRating.code}</span>
+          {:else}
+            <span class="border-2 border-black font-bold px-2 text-gray-500"
+              >?</span>
+          {/if}
+        </td>
+        <td class="border border-gray-400 px-4 py-3 w-full align-top">
+          {pigment.lightfastRating.label}
+          <p class="text-gray-600 font-light text-sm"
+            >{pigment.lightfastRating.description}</p>
+        </td>
+      </tr>
+      <tr>
+        <th class="text-left border border-gray-400 px-4 py-3 align-top"
+          >Transparency</th>
+        <td class="border border-gray-400 px-4 py-3 text-center align-top">
+          {#if pigment.transparencyRating.code !== 'X'}
+            <span class="border-2 border-black font-bold px-2"
+              >{pigment.transparencyRating.code}</span>
+          {:else}
+            <span class="border-2 border-black font-bold px-2 text-gray-500"
+              >?</span>
+          {/if}
+        </td>
+        <td class="border border-gray-400 px-4 py-3 align-top">
+          {pigment.transparencyRating.label}
+          <p class="text-gray-600 font-light text-sm"
+            >{pigment.transparencyRating.description}</p>
+        </td>
+      </tr>
+      {#if pigment.reviewed && pigment.description}
+        <tr>
+          <th class="text-left border border-gray-400 px-4 py-3 align-top"
+            >Description</th>
+
+          <td class="border border-gray-400 px-4 py-3" colspan="2">
+            {pigment.description}
+          </td>
+        </tr>
+      {/if}
+      {#if pigment.reviewed && pigment.composition}
+        <tr>
+          <th class="text-left border border-gray-400 px-4 py-3 align-top"
+            >Composition</th>
+
+          <td class="border border-gray-400 px-4 py-3" colspan="2">
+            {pigment.composition}
+          </td>
+        </tr>
+      {/if}
+      {#if pigment.reviewed && pigment.alternateNames}
+        <tr>
+          <th class="text-left border border-gray-400 px-4 py-3 align-top"
+            >Alternate Names</th>
+
+          <td class="border border-gray-400 px-4 py-3" colspan="2">
+            {pigment.alternateNames}
+          </td>
+        </tr>
+      {/if}
     </table>
-    {#if pigment.type === 'CIPIGMENT'}
-      <p class="mt-6">
-        Pigments can be organic or Inorganic. Most modern pigments are given
-        this usage designation by the Color Index. They can be completely
-        synthetic, naturally occurring minerals, or lakes based on the synthetic
-        derivatives of natural dyes. Pigments are designated with C.I. Generic
-        name which consists of the usage class "Pigment" and the basic hue
-        followed by the CI serial number (i.e. Pigment Red 106, Cadmium Red).
-        The pigment CI generic names are often abbreviated with the usage class
-        P + the hue abbreviation + the serial number. (i.e. PR83 for Pigment Red
-        83)
-      </p>
-    {/if}
-    {#if pigment.type === 'CINATURAL'}
-      <p class="mt-6">
-        These are naturally occurring organic pigments and dyes. With a few
-        exceptions, most are plant or animal extracts or dyes that need to be
-        fixed to a substrate to become pigments (i.e. Madder Lake). A few are
-        organic natural earths such as Cassel earth (Van Dyke Brown). They are
-        designated with C.I. Generic name of which consists of the usage class
-        "Natural" and basic hue, followed by the CI serial number (i.e. Natural
-        Brown 8). Natural pigment CI generic names are often abbreviated with
-        the usage class N + the hue abbreviation + the serial number. (i.e. NBr
-        8)
-      </p>
-    {/if}
   </div>
 </section>
 
@@ -100,4 +219,36 @@
       {/each}
     </div>
   {/if}
+</section>
+
+<section class="mt-10">
+  <h2 class="font-bold text-3xl">More Information</h2>
+  <p class="font-light my-4">
+    Information on this website related to pigments has the distict possibility
+    of being incorrect, out of date, or baffling. It is offered for the main
+    purpose of being able to thoughtfully compare paints based on their
+    composition, which also might be incorrect or out of date.
+  </p>
+  <p class="font-light my-4">
+    Please do your own independent research about pigments if you are interested
+    in mixing your own paints. Check out the <a
+      href="http://www.artiscreation.com/Color_index_names.html"
+      class="decorate-link"
+      target="_blank"
+      rel="noreferrer noopener">Art is Creation Pigment Database</a
+    >, for example.
+  </p>
+  <p class="font-light my-4">
+    If you want to help update pigment information, or want to just share
+    something that can be fixed,
+    <span
+      class="decorate-link cursor-pointer"
+      on:click={() =>
+        window.open(
+          'mailto:' + 'paint-library' + '@' + 'protonmail.com',
+          '_blank',
+        )}>
+      you can send an email</span
+    >.
+  </p>
 </section>
