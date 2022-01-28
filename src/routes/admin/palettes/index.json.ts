@@ -1,8 +1,8 @@
-import * as api from '$lib/api';
+import { getPalettes } from '$lib/api';
 
 export async function get({
   locals,
-}): Promise<{ status: number; body: unknown }> {
+}: RequestEvent): Promise<{ status: number; body: unknown }> {
   if (locals.user?.role !== 'ADMIN') {
     return {
       body: { message: 'unauthorized' },
@@ -10,7 +10,7 @@ export async function get({
     };
   }
 
-  const response = await api.getPalettes();
+  const response = await getPalettes();
 
   if (response.status !== 200) {
     return {

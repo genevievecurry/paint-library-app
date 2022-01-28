@@ -177,9 +177,11 @@
   });
 </script>
 
-<div class="pigment-form grid grid-cols-4 gap-5 w-full">
-  <div class="col-span-4 xl:col-span-3">
-    <div class="w-full flex justify-between">
+<div class="pigment-form grid grid-cols-4 gap-5 w-full overflow-y-auto">
+  <div class="order-2 lg:order-1 col-span-4 lg:col-span-3">
+    <!-- Filter Options -->
+    <div
+      class="w-full flex justify-between z-20 sticky top-0 self-start bg-white pb-1">
       <div class="flex border-2 border-black bg-teal-50 ml-1 mr-6">
         <button
           class="py-2 px-1 {query ? 'visible' : 'invisible'}"
@@ -271,9 +273,10 @@
       </div>
     </div>
 
+    <!-- Pigment Search Results -->
     <div class="p-1 mt-3">
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-2">
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-5 gap-x-2">
         {#if pigmentOptions.length > 0}
           {#each pigmentOptions as pigmentOption}
             {#if pigmentOption.colorCode === selectedColor.code || showAllColorOptions}
@@ -288,7 +291,8 @@
     </div>
   </div>
   <!-- These are the pigments that are or will be attached to the paint on submit -->
-  <div class="col-span-4 xl:col-span-1 p-3 border-2 border-black mt-1">
+  <div
+    class="order-1 lg:order-2 col-span-4 lg:col-span-1 p-3 border-2 border-black mt-1 lg:sticky lg:self-start top-0 right-0">
     <h3 class="font-bold text-lg">Current Pigments</h3>
     <div class="mt-4">
       {#each pigmentSelections as pigmentSelection}
@@ -310,7 +314,7 @@
 <style>
   .pigment-form {
     height: calc(100vh - 20rem);
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
   }
 
   .selected {

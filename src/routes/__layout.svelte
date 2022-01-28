@@ -16,7 +16,7 @@
   import { goto } from '$app/navigation';
   import { clickOutside } from '$lib/actions';
   import { successNotifier } from '$lib/notifier';
-  import { menuIcon, swatchesIcon } from '$lib/icons';
+  import { menuIcon, logoIcon } from '$lib/icons';
   import Notifications from '$lib/components/Notifications.svelte';
 
   export let menuOpen: boolean;
@@ -68,7 +68,7 @@
           <div class="flex items-center">
             <div class="flex items-center justify-between w-full md:w-auto">
               <a href="/">
-                {@html swatchesIcon('h-16 w-16')}
+                {@html logoIcon('h-16 w-16')}
               </a>
             </div>
           </div>
@@ -131,7 +131,7 @@
                         ></div>
                       <div class="block px-4 py-2 text-sm"
                         ><a
-                          href="/creator"
+                          href="/admin/paints/create"
                           class="decorate-link"
                           role="menuitem"
                           tabindex="-1"

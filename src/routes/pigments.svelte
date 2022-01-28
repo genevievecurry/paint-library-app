@@ -75,7 +75,11 @@
   });
 </script>
 
-<div class="container mx-auto px-4 sm:px-6">
+<svelte:head>
+  <title>Pigments - Paint Library</title>
+</svelte:head>
+
+<div class="lg:container mx-auto px-4 sm:px-6">
   <Header title="Pigments" {pathname} />
 
   <div class="grid grid-cols-6">
@@ -112,11 +116,12 @@
             <thead class="text-left border-b-2 border-black">
               <tr>
                 <th class="pl-1 pr-3 py-3" />
-                <th class="px-3 whitespace-nowrap">#</th>
+
                 <th class="px-3 py-3 whitespace-nowrap">CI Code</th>
                 <th class="px-3 w-full">Common Name</th>
-                <th class="px-3 w-full">Lightfast</th>
-                <th class="px-3 w-full">Transparency</th>
+                <th class="px-3 text-xs text-center">Lightfast</th>
+                <th class="px-3 text-xs text-center">Transparency</th>
+                <th class="px-3 text-xs text-center">Toxicity</th>
               </tr>
             </thead>
             {#each color.pigments as pigment}
@@ -136,12 +141,6 @@
                   </a>
                 </td>
                 <td class="px-3">
-                  <span
-                    >{@html pigment.number > 0
-                      ? pigment.number
-                      : '<span class="text-gray-400">N/A</span>'}</span>
-                </td>
-                <td class="px-3">
                   <span>
                     {@html pigmentCode(
                       pigment.type,
@@ -155,15 +154,32 @@
                   <span class="decorate-link">{pigment.name}</span>
                 </td>
 
-                <td class="px-3" title={pigment.lightfastRating.label}
+                <td
+                  class="px-3 text-center"
+                  title={pigment.lightfastRating.label}
                   >{@html pigment.lightfastRating.code !== 'X' &&
                   pigment.lightfastRating.code !== 'NR'
                     ? pigment.lightfastRating.code
                     : '<span class="text-gray-400">&bull;</span>'}</td>
-                <td class="px-3" title={pigment.transparencyRating.label}
+                <td
+                  class="px-3 text-center"
+                  title={pigment.transparencyRating.label}
                   >{@html pigment.transparencyRating.code !== 'X'
                     ? pigment.transparencyRating.code
                     : '<span class="text-gray-400">&bull;</span>'}</td>
+                <td class="px-3 text-center text-sm">
+                  {#if pigment.toxicity === 'A'}
+                    Low
+                  {:else if pigment.toxicity === 'B'}
+                    Possible
+                  {:else if pigment.toxicity === 'C'}
+                    High
+                  {:else if pigment.toxicity === 'D'}
+                    Extreme
+                  {:else}
+                    <span class="text-gray-400">&bull;</span>
+                  {/if}
+                </td>
               </tr>
             {/each}
           </table>

@@ -1,9 +1,9 @@
-import * as api from '$lib/api';
+import { updateUser, deleteUser, getUsers } from '$lib/api';
 
 export async function get({
   url,
   locals,
-}): Promise<{ status: number; body: unknown }> {
+}: RequestEvent): RequestEvent {
   if (locals.user?.role !== 'ADMIN') {
     return {
       body: { message: 'unauthorized' },
@@ -11,7 +11,7 @@ export async function get({
     };
   }
 
-  const response = await api.getUsers(url.searchParams);
+  const response = await getUsers(url.searchParams);
 
   if (response.status !== 200) {
     return {
@@ -30,7 +30,7 @@ export async function post({ body, locals }) {
     };
   }
 
-  const response = await api.updateUser(body.formData, body.user);
+  const response = await updateUser(body.formData, body.user);
 
   return response;
 }
@@ -42,7 +42,7 @@ export async function del({ locals, body: data }) {
       status: 401,
     };
   }
-  const response = await api.deleteUser(data);
+  const response = await deleteUser(data);
 
   return response;
 }

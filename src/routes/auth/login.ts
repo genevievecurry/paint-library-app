@@ -1,7 +1,7 @@
-import * as api from '$lib/api';
+import { getUser } from '$lib/api';
 
 export async function post({ body }) {
-  const response = await api.getUser(body);
+  const response = await getUser(body);
   const json = JSON.stringify(response.body);
   const token = Buffer.from(json).toString('base64');
 

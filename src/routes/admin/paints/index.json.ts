@@ -1,9 +1,9 @@
-import * as api from '$lib/api';
+import { getPaints } from '$lib/api';
 
 export async function get({
   url,
   locals,
-}): Promise<{ status: number; body: unknown }> {
+}: RequestEvent): Promise<{ status: number; body: unknown }> {
   if (locals.user?.role !== 'ADMIN') {
     return {
       body: { message: 'unauthorized' },
@@ -11,7 +11,7 @@ export async function get({
     };
   }
 
-  const response = await api.getPaints(url.searchParams);
+  const response = await getPaints(url.searchParams);
 
   if (response.status !== 200) {
     return {

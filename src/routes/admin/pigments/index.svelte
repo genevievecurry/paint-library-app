@@ -25,7 +25,7 @@
 
 <script lang="ts">
   import Header from '$lib/components/Header.svelte';
-  import { timeAgo } from '$lib/utility';
+  import { pigmentCode, timeAgo } from '$lib/utility';
   export let pathname;
   export let pigments;
 </script>
@@ -38,16 +38,12 @@
       <tr class="border-b-2 border-black">
         <td class="p-1"><input type="checkbox" /></td>
         <td class="font-bold p-1">ID</td>
-
-        <td class="font-bold p-1">Slug</td>
+        <td class="font-bold p-1">CI</td>
         <td class="font-bold p-1">Name</td>
-
         <td class="font-bold p-1">Color</td>
         <td class="font-bold p-1">Description</td>
-
-        <td class="font-bold p-1 leading-tight">In<br />Paints</td>
-
         <td class="font-bold p-1">Reviewed</td>
+        <td class="font-bold p-1 whitespace-nowrap">In Paints</td>
         <td />
       </tr>
     </thead>
@@ -57,8 +53,16 @@
           <td class="p-1"><input type="checkbox" /></td>
           <td class="p-1">{pigment.id}</td>
 
-          <td class="p-1">{pigment.slug}</td>
-          <td class="p-1">{pigment.name}</td>
+          <td class="p-1"
+            >{@html pigmentCode(
+              pigment.type,
+              pigment.number,
+              pigment.colorCode,
+              {
+                html: true,
+              },
+            )}</td>
+          <td class="p-1 whitespace-nowrap">{pigment.name}</td>
           <td class="p-1">
             <div class="flex">
               <div class="w-5 mr-2">
@@ -70,10 +74,14 @@
               </div>
               {pigment.color.label}</div
             ></td>
-          <td class="p-1 w-full">{pigment.description}</td>
+          <td class="p-1"
+            >{pigment.description && pigment.description.length > 1
+              ? 'Yes'
+              : 'No'}</td>
+
+          <td class="p-1 w-full">{pigment.reviewed ? 'Yes' : 'No'}</td>
           <td class="p-1" class:muted={pigment._count.paints === 0}
             >{pigment._count.paints}</td>
-          <td class="p-1 w-full">{pigment.reviewed}</td>
           <td class="p-1 whitespace-nowrap">
             <a href={`/admin/pigments/${pigment.slug}`} class="decorate-link"
               >Edit</a>

@@ -56,7 +56,7 @@
 
 {#if notification?.visible}
   <div class="{bgColor} py-3 text-white font-light">
-    <div class="container mx-auto px-4 sm:px-6">
+    <div class="lg:container mx-auto px-4 sm:px-6">
       <div class="flex justify-between items-center">
         <div class="flex items-center mr-6">
           {@html icon}

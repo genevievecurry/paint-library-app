@@ -7,12 +7,16 @@
   import Dropzone from './Dropzone.svelte';
   import { successNotifier, warningNotifier } from '$lib/notifier';
 
+  export let swatchCardCount: number;
   export let paintUuid: string;
   export let swatchCard: SwatchCardComponent = null;
 
   let editMode = swatchCard?.id !== undefined;
   let initialSwatchCardNames = [];
   // Form data
+  let setAsPrimary =
+    swatchCard.primaryOnPaintUuid || swatchCardCount === 0 ? true : false;
+  let disableSetAsPrimary = swatchCardCount === 0;
   let author = swatchCard?.author || $session.user;
   let id = swatchCard?.id;
   let paperManufacturer = {
@@ -43,9 +47,12 @@
   let description = swatchCard?.description;
 
   // Promises
-  let swatchTypesPromise: Promise<any> = getModel('swatchCardType');
-  let manufacturerPromise: Promise<Manufacturer[]> = getModel('manufacturer');
-  let paperTypePromise: Promise<PaperType[]> = getModel('paperType');
+  let swatchTypesPromise: Promise<any> = getModel('swatchCardType', '');
+  let manufacturerPromise: Promise<Manufacturer[]> = getModel(
+    'manufacturer',
+    '?sellPaper=true',
+  );
+  let paperTypePromise: Promise<PaperType[]> = getModel('paperType', '');
   let lineOptions: Promise<Line[]> = getLines();
 
   let swatchCardNames = [];
@@ -90,6 +97,7 @@
     tags,
     imageKitUpload,
     description,
+    setAsPrimary,
   };
 
   $: lineOptions = [];
@@ -120,8 +128,8 @@
   }
 
   // todo... maybe utility?
-  async function getModel(model: string) {
-    const res = await fetch(`/model/${model}.json`);
+  async function getModel(model: string, options: string) {
+    const res = await fetch(`/model/${model}.json${options}`);
 
     if (res.ok) {
       return res.json();
@@ -131,7 +139,9 @@
   async function getLines() {
     let url;
     if (paperManufacturer?.name) {
-      url = `/model/line.json?manufacturerName=${paperManufacturer.name}`;
+      url = `/model/line.json?manufacturerName=${encodeURIComponent(
+        paperManufacturer.name,
+      )}`;
     } else {
       url = '/model/line.json';
     }
@@ -242,6 +252,33 @@
     {#if imageKitUpload.thumbnailUrl}
       <div class="mt-6">
         <label for="description" class="block font-bold text-lg"
+          >Set as Primary Swatch Card</label>
+        <small
+          class="leading-5 block mt-1 text-sm font-light text-gray-500 mb-3">
+          This will set it up as the swatch that appears first in search results
+          & palettes. Ideally, it will really show off the color.
+        </small>
+        <div
+          class="relative rounded-full w-12 h-6 transition duration-200 ease-linear {setAsPrimary
+            ? 'bg-green-400'
+            : 'bg-gray-400'}">
+          <label
+            for="toggle"
+            class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer {setAsPrimary
+              ? 'translate-x-full border-green-400'
+              : 'translate-x-0 border-gray-400'}" />
+          <input
+            type="checkbox"
+            id="toggle"
+            name="toggle"
+            disabled={disableSetAsPrimary}
+            class="appearance-none w-full h-full active:outline-none focus:outline-none"
+            on:click={() => (setAsPrimary = !setAsPrimary)} />
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <label for="description" class="block font-bold text-lg"
           >Swatch Tests</label>
         <small
           class="leading-5 block mt-1 text-sm font-light text-gray-500 mb-3">
@@ -290,6 +327,7 @@
                 bind:value={paperManufacturer.name}
                 on:change={updateLineOptions}
                 class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500">
+                <option value={undefined} />
                 {#each manufacturers as manufacturer}
                   <option value={manufacturer.name}>
                     {manufacturer.name}
@@ -313,6 +351,7 @@
                     name="paperLineId"
                     class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500"
                     bind:value={paperLine.id}>
+                    <option value={undefined} />
                     {#each lineOpts as lineOption}
                       <option value={lineOption.id}>
                         {lineOption.name}
@@ -338,6 +377,7 @@
                 name="paperLineId"
                 class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500"
                 bind:value={paperType.id}>
+                <option value={undefined} />
                 {#each paperTypes as paperTypeOption}
                   <option value={paperTypeOption.id}>
                     {paperTypeOption.name}

@@ -1,4 +1,389 @@
 slug,colorCode,type,number,name,alternateNames,ciConstitutionNumber,composition,description,transparencyRatingCode,lightfastRatingCode,toxicity,notes
+NY10,Y,CINATURAL,10,Quercitron Lake,"American bark;
+ Black oak;
+ C.I. Natural Yellow 10;
+ Flavine;
+ Gallstone;
+ Gulizaleel;
+ Italian pink;
+ Meletin;
+ Natural Yellow 10;
+ Quercetin;
+ Quercitrón; 
+ Quercitron;
+ Quercitron bark;
+ Quercitron Lake;
+ Querzitron;
+ Sophoretin;
+ Yellow lake;","75640
+ 75650
+ 75670
+ 75680
+ 75710
+ 75720
+ 75730
+ 75750
+ 75570","Laked extract from the bark of Black Oak, or oxgall; 
+ A yellow vegetable dye extracted from the black or dark brown bark of the black oak, Quercus velutina formerly Quercus nigra; (Ref: Quercitron, CAMEO Materials Database MFA, Boston);
+ The dye principal colorants: Quercetin, Quercetagetin, Quercimeritrin and flavine
+ Quercetin produces a bright yellow with aluminum and tin, a tan with chrome, and an olive green with iron.
+ Quercetagetin produces shades of orange
+ Flavine gives a brilliant yellow with alum or tin
+ (Ref CAMEO Materials Database MFA, Boston);","Bright yellow
+  
+ † Hue shift towards brown",T,IV,A,"Quercetin is often found in many yellow fruits and vegetables, considered a antioxidant, and may have other health benefits as well. (google search);"
+NY11,Y,CINATURAL,11,Fustic,"Aurantica; 
+ Aurantine;
+ Bois Jaune (Fr.);
+ C.I. Natural Yellow 11;
+ Carmin de Cuba;
+ Cuba wood;
+ Cubawood;
+ Dyer´s Mulberry;
+ Geelhout (Ned.);
+ Gaud (It.);
+ Gelbholz;
+ Gelholz (Deut.); 
+ Extract of Fustik [KP.p];
+ Fustic (Esp.);
+ Fustik;
+ Fustiikki;
+ Gelbholz;
+ Geschnitten;
+ Keltapuu; 
+ Madera amilla de Cuba (Esp.);
+ Mora;
+ Moriini Morin;
+ Old Fustic;
+ Old Fustik;
+ Natural Yellow 11;
+ Natural Yellow Wood [KP]; 
+ Yellow Wood;
+ Yellowwood;","75240
+ 75660
+ 75710
+ 75720
+ 75730
+ 75750","Made from the heartwood of dyer's mulberry, a tropical tree of the Mulberry family Chlorophora tinctoria (formerly Morus tinctoria);, or Maclura tinctoria; Soaking the wood for long periods produces a stronger color. Fustic contains the yellow flavonol colorant morin. (Ref CAMEO Materials Database MFA, Boston);
+ (Ref: Extract of Fusic Info from Kremer Pigments);
+  
+ Main coloring from Morin (C.I.75660)and Maclurin (C.I.75240): Crystallized from ethanol to form colorless needles, turning intense yellow in alkaline solutions.
+ 2',3,4,5,7-pentahydroxyflavone;
+ Benzophenone, 2,3',4,4',6-pentahydroxy-
+  
+ CAS 480-16-0","Greenish yellow-brown to bright orange yellow*
+  
+ † Hue shift towards brown; Fades",T,III,A,*Dye colors can range from a pale yellow with alum to a dark tan with copper. Morin will react with aluminum to produce a green fluorescent compound.
+NY12,Y,CINATURAL,12,Datiscetin,"Acalbir;
+ Akalbir;
+ C.I. Natural Yellow 12;
+ Natural Yellow 12",75630,"Plant dye found in the leaves, branches and roots of Datisca Cannabis*, also known as False Cannabis, False Hemp or Bastard Hemp, because it resembles Cannabis Sativa, however it is completely unrelated.
+  
+ Datiscetin",,X,X,,* Apparently becoming a popular plant in home gardens
+NY13,Y,CINATURAL,13,"Stil de Grain*
+ Dutch Pink
+ Yellow Lake","Brown Lake;
+ Brown Pink**; 
+ Buckthorn Lake;
+ C.I. Natural Yellow 13;
+ Citrine Lake;
+ Dutch Pink**;
+ Dutch Yellow;
+ English Pink**; 
+ Indigo Yellow, 
+ Italian Pink**;
+ Natural Green 2
+ Natural Yellow 13;
+ Persian Lake;
+ Persian Berry Lake;
+ Pink**;
+ Pinke***;
+ Quercitron Lake;
+ Rhamno lake;
+ Rhamnin;
+ Spincervino lake; 
+ Stil de Grain?;
+ Stil de Grain Brown;
+ Stil de grain E [KP.p];
+ Stil de grain lake; 
+ Stil de Grain light [KP.p];
+ Stil de Grain, Schützenberger [KP.p];
+ Turkey Berries;
+ Yellow Berries;
+ Yellow Carmine;
+ Yellow Lake;
+ Yellow Madder;
+  
+ also see Sap Green NG2","75430
+ 75640
+ 75660
+ 75670
+ 75690
+ 75695","""The sources of yellow lake are numerous, but the best kind is obtained from quercitron bark from Quercus tinctoria, Qu. nigra, and Qu. citrina, three species of North American oak."" (see below NY14)
+ – from ""The Chemistry Of Paints And Painting"", by Arthur H. Church, 1901, provided by chest of books, or see my free ebooks page here to download the full book
+  
+ Generally, the colorant, mainly Quercitron, was absorbed on chalk or alumina trihydrate to form the lake.
+  
+ also extracted from the black or dark brown bark of the black oak, Quercus velutina (formerly Quercus nigra) with Quercitron as the main coloring component; (Ref: Dutch Pink, CAMEO Materials Database MFA, Boston); (Ref: Quercitron, CAMEO Materials Database MFA, Boston);
+  
+ Quercitron (Ref:wikipedia) Quercitrin (Ref:wikipedia):
+ CAS 522-12-3 
+ Rhamnetin:
+ CAS 90-19-7; 
+ Xanthorhamnin:
+ CAS 1324-63-6; 
+ Rhamnazin:
+ CAS 552-54-5 
+ Rhamnolutin, Kaempferol 7-methyl ether 
+ CAS 569-92-6","Greenish yellow to brown*** (see below)
+ Bright yellow in tints and thin layers, brownish in mass tone
+  
+ † Hue shift towards brown; Fades",T,IV,A,"* see below NY14
+ ** see below NY14"
+NY14,Y,CINATURAL,14,Stil de Grain*,"Brown Lake;
+ Brown Pink***;
+ Brown Stil de Grain;
+ Buckthorn Lake;
+ C.I. Natural Yellow 13;
+ C.I. Natural Yellow 14;
+ Citrine Lake;
+ Dutch Pink***;
+ Dutch Yellow;
+ English Pink***;
+ English Stil de Grain; 
+ Italian Pink***;
+ Jaune-de-graine (yellow de seed);
+ Natural Green 2
+ Natural Yellow 13;
+ Natural Yellow 14;
+ Persian Lake;
+ Persian Berry Lake;
+ Pink**;
+ Pinke***;
+ Quercitron Lake;
+ Rhamno lake;
+ Rhamnin;
+ Spincervino lake;
+ Stil de Grain (Fr.) [GEN | KP.p];
+ Stil de Grain Brown;
+ Stil de Grain Brun;
+ Stil de grain E [KP.p];
+ Stil de grain lake; 
+ Stil de Grain light [KP.p];
+ Stil de Grain, 
+ Schijtgroen litter (Dutch), (Ref);
+ Schützenberger [KP.p];
+ Turkey Berries;
+ Yellow Berries;
+ Yellow Carmine;
+ Yellow Lake;
+ Yellow Madder;
+ Yellow Stil de Grain;
+  
+ also see Sap Green NG2",75440,"Lake extract of unripe Buckthorn or Purging Berries (Rhamnus catharticus, R. cathartica, R.infectorius, R. oleoides, R. saxatilis, R. amygdalinus, R. catharticus, Rhamnus frangula, ) 
+ Sap green (NG2) is made from ripe berries; 
+ (Historical Pigments: Stil de grain Ref @ Natural Pigments Blog);
+ (Ref from Kremer Pigments)
+ (Ref from Kremer Pigments)
+ Other common names of the berries: Avignon Berries, Black plum, Blackthorn, Dyer's Bucktorn, Persian Berries, Purging Berries, Hungarian Berries, Turkish Berries
+  
+ ""The sources of yellow lake are numerous, but the best kind is obtained from quercitron bark from Quercus tinctoria, Qu. nigra, and Qu. citrina, three species of North American oak.""
+ ""Yellow lake was formerly made from the fruits of various species of buckthorn, known as Persian, Turkish, or Avignon berries.""
+ "" 'Stil de grain,' and several of the continental yellow lakes, are made from the above-named berry""
+ ""Italian pink, Dutch pink, and deep yellow madder are names usually given to the richer yellow lakes of quercitron, although some of these pigments are occasionally prepared from Turkish or Avignon berries.""
+ – from ""The Chemistry Of Paints And Painting"", by Arthur H. Church, 1901, provided by chest of books, or see my free ebooks page here to download the full book
+  
+ Generally, the colorant was absorbed on clay, chalk or alumina trihydrate to form the lake, mixed with alum and precipitated with an alkali (sodium carbonate) (Ref: pigments-historiques.blogspot, here is an english translation)
+  
+ After 1819, it was also extracted from the black or dark brown bark of the black oak, Quercus velutina (formerly Quercus nigra) with Quercitron as the main coloring component; (Ref: Dutch Pink, CAMEO Materials Database MFA, Boston); (Ref: Quercitron, CAMEO Materials Database MFA, Boston);
+  
+ Main coloring from Emodin, Frangula-emodin (from Buckthorn) (Ref: Chemicalbook.com)
+ CAS 518-82-1 
+ Rhamnetin:(Ref: Chemicalbook.com)
+ CAS 90-19-7
+ Quercitron (Quercitrin): (main coloring in Oak)
+ CAS 522-12-3","Greenish yellow to brown
+  
+ Bright yellow in tints and thin layers, brownish in mass tone
+  
+ Munsell: 
+ 5Y 9/10 (approximate) 
+  
+ † Hue shift towards brown; Fades",T,IV,A,"* there is inconsistent and confusing literature and information on NY13 and NY14. Many sources seem to use both interchangeably.
+ It appears that most often what is called Natural Yellow 14 (NY14), is what was originally called ""still de grain"" made from Buckthorn Berries (Rhamnus catharticus).
+ But, later, after appox. 1819, the pigment extracted from Black Oak was called ""still de grain"".
+ As far as I can determine, It seems Natural Yellow 13 (NY13), most often refers to that made with Black Oak and Quercitron as the main coloring matter. (Ref: Dutch Pink, CAMEO Materials Database MFA, Boston);
+ (Ref: Color Index Constitution Numbers Third Ed, 1998, numbers 75430, 75640; 75650; 75660, 75695; 75700; 75710;), 
+  
+ ** Pink in this sense refers to a yellow pigment based on natural yellow dyes, usually the lake of an extract from Buckthorn Berries with the but may have been used for other dyes based on Quercitron. The word pink came into use during the sixteenth century;
+ According to the 2008 version of the Pigment Compendium, ""there is speculation that because of the yellow color, it is derived from the German ""pinkeln"" translated in a dictionary of 1798 (by Adelung and Schwann) as ‘to piss, to make water’."" (Reference Pigment Compendium, 2008, by Nicholas Eastaugh, Valentine Walsh, Tracey Chaplin and Ruth Siddall)
+  
+ ***Color depends on ripeness of the berries and precipitant; Deep yellow lake on alum and yellow brown on carbonates (Reference: A practical treatise on the manufacture of colors for painting, 1874, also see the Free Art Books page under Pigments, Art Conservation and Art Materials.)"
+NY2,Y,CINATURAL,2,Reseda,"Anatolian Reseda lutea;
+ C.I. Natural Yellow 2;
+ Natural Yellow 2;
+ Reseda;
+ Reseda Lemon [KP.p]","75580;
+ 75590","Lake pigment, produced from weld (Ref: Natural History Museum, UK) (Reseda Luteola L.)(Ref: Natural Resources Conservation Service); (Pic: from APHOTOFLORA);
+  
+ apigenin: 
+ CAS 520-36-5;
+  
+ luteolin:
+ CAS 491-70-3",Lemon Yellow,T,IV,A,
+NY20,Y,CINATURAL,20,Indian Yellow,"Amarillo Indian;
+ Camel's Urine;
+ C.I. Natural Yellow 20;
+ Euxanthin;
+ Euxanthine;
+ Gaugoli;
+ Giallo Indiano;
+ Gogili;
+ Hardwari Peori;
+ Indian Yellow [GEN];
+ Indischgelb;
+ Jaune Indien;
+ Jaune Indien purifié;
+ Monghyr;
+ Natural Yellow 20;
+ Peoli;
+ Peori;
+ Pioury;
+ Piuri;
+ Purrea arabicu;
+ Purreie acid;
+ Purree;
+ Purée of India;
+ Snowshoe Yellow;",75320,"Extracted from urine of cows fed mango leaves?** (Reference Indian Yellow at Pigments through the ages);
+  (Ref: Indian Yellow, CAMEO Materials Database MFA, Boston);
+ ""Indian yellow, also called euxanthin or euxanthine, is a xanthonoid. It is transparent yellow pigment used in oil paint. Chemically it is a magnesium euxanthate, the magnesium salt of euxanthic acid"" (Ref wikipedia)
+ Euxanthic (purreic) acid (Reference Examination of a yellow substance from India called Purree, from which the pigment called Indian Yellow is manufactured. By John Stenhouse, Ph.D.);
+ Euxanthone;
+ Calcium salts and magnesium euxanthate*** (compare PY108 Anthrapyrimidine Yellow)(Reference Pigment Compendium, 2008, by Nicholas Eastaugh, Valentine Walsh, Tracey Chaplin and Ruth Siddall)",Bright reddish yellow,T,II,A,"* Untested by ASTM, reported by some sources to be a highly lightfast pigment (Ref: Painting Materials: A Short Encyclopaedia By Rutherford John Gettens, ©1966 by Dover Publications, p.119)
+  
+ ** Urine of cows origin Questioned (Ref Color: a natural history of the palette By Victoria Finlay, ©2002, published by Random House 2004, p.203-211); (Ref: Google); (Ref: wikipedia);
+ If Indian yellow did come from cows urine, the common claim that they were cruelly ""force fed"" mango leaves is probably false. Mango Leaves are high in minerals, vitamins and protein and also anti-viral and antibacterial. Mango leaves may have been a perfect feed for cattle and not ""cruel"" at all (Ref: Feeding Value of Mango Leaf (Mangifera indica) for Growing Rabbits, Journal of Animal and Veterinary Advances, 2006, Vol: 5, Issue: 10, Page No.: 800-804), 
+ (Ref: Effects of feeding mango (Mangifera indica) and shaora (Streblus asper) tree leaves to Black Bengal goats of Bangladesh, by M.A. Akbar, M.N. Alam, Small Ruminant Research, Volume 6, Issue 1, Pages 25-30, October 1991); 
+ (Ref: MDidea.com Herbal Extracts); 
+ (Ref: healthmad.com)
+  
+ ""Mangos grow well in pastures, although cattle will graze off lower leaves. It is necessary to fence off young trees for the first 3–4 years to protect them from livestock."", – In other words the Mango leaves need to be protected from the cattle, because the cattle love them! (Ref p.16 under Silvopasture, of ""Species Profiles for Pacific Island Agroforestry: Mangifera indica (mango""),
+ ***Daniel Smith has a water base paint containing magnesium euxanthate (PY108) as the pigment (Ref: at Daniel Smith).
+ Also see my blog article on Indian Yellow
+ Interesting discussion of Indian Yellow on the WetCanvas.com forum here."
+NY24,Y,CINATURAL,24,Gamboge,"Cadie Gum;
+ Cambadium; 
+ Camboge;
+ Cambogia;
+ Cambogium;
+ Camborge;
+ Ceylon gamboge;
+ C.I. Natural Yellow 24;
+ Drop Gum;
+ Gamboage;
+ Gamboge [GEN | KP.p];
+ Gamboge Genuine [WNd];
+ Gamboge, powder [KP.p]; 
+ Gambodium;
+ Gambogium;
+ Gamboji (Jap.);
+ Giallo Cambogia (It.)
+ Gomma Gutti; 
+ Gokatu Gamboge;
+ Gomaguta (Esp., Port.);
+ Gomma gutta (It.);
+ Gomme-gutte (Fr.);
+ Gum Gamboge Powder;
+ Gum Gutte;
+ Gummigutt (Deut.);
+ Guti ambar; 
+ Gutta gamba;
+ Gutto gumbo;
+ Kiyo (Jap.);
+ Natural Gamboge; 
+ Natural Yellow 24;
+ Pipe Gamboge [KP.p];
+ Rattan Yellow;
+ Siam gamboge;
+ Shio (Jap.);
+ Tom Rong;
+ Wisteria Yellow",,"""A yellow-orange gum-resin produced by several species of Garcinia tree"";
+ ""Gamboge is composed of a yellow resinous component (70-80%; morelloflavone) and a clear water-soluble gum (20%"") - (Ref: Gamboge, CAMEO Materials Database MFA, Boston);
+ (Ref: Gokatu Gamboge, CAMEO Materials Database MFA, Boston);
+ Resin extract from the Garcinia hanburyi tree; (Ref wikipedia);
+ Coloring from Xanthones and Hydroxanthones
+ Gambogic acid 
+ Isogambogic acid
+ Morellic acid
+ Isomorellic acid
+ Morellin
+ Morellinol
+ Isomorellinol
+ Desoxymorellinol
+ Dihydroisomorellin
+ Neogambogic acid
+ (Ref: Winter, J. 1997. Gamboge. Artists' Pigments, a Handbook of their History and Characteristics vol 3: p.143–55. Washington, D.C.: National Gallery of Art.)
+  
+ CAS 9000-25-3
+ EC 232-533-1","Bright deep yellow to dullish yellow orange pigment;
+  
+ † Fades",T,IV,B,"Fades completely; Recommended only for books were it would rarely be exposed to light or temporary illustration.
+ W&N discontinued NY 24 in 2005, for more info on NY-24 in watercolors see handprint.com
+ * Ingesting 7 grams or more is poisonous, But in very small doses it is sometimes used as a Herbal hydragogue cathartic (Ref:Medical-dictionary). (Ref: henriettesherbal.com);
+ More heath info @ the Drug Information Portal"
+NY3,Y,CINATURAL,3,Curcumin,"C.I. Natural Yellow 3;
+ Curcumin;
+ Kurcum;
+ Natural Yellow 3;
+ Terra Merita;
+ Turmeric;
+ Turmeric Root [KP.p] 
+ Turmeric Powder [KP.p];
+ Turmeric Yellow",75300,"Diferuloylmethane from the root of; Curcuma Longa, C. Tinctoria, C. Rotunda, C. Vididiflora.; 
+ Demethoxy curcumin;
+  Bisdemethoxy curcumin;
+ Diferuloylmethane;
+ Methane dyes;
+ Generally;
+ known the spice Turmeric. (Ref: The Handbook of Natural Colorants); 
+ (Ref Natural Pigments Blog);
+ (Ref: wikipedia);
+  
+ CAS 91884-86-5
+ CAS 458-37-7",Bright reddish yellow,T,III,A,"Extracted From Tumeric, used to give the bright yellow coloring to typical American mustard; 
+  
+ CURCUMIN Chemical and Technical Assessment (CTA) First draft prepared by Ivan Stankovic © FAO 2004, PDF)
+  
+ Diferuloylmethane said to have extremely beneficial antioxidant effects, (so much for the ""If you can't pronounce it, don't eat it crowd"", hehe by the way, I can pronounce ""Naples Yellow"" and ""lead"" just fine, but just because it's easy to pronounce, you should not eat the stuff) (Ref: Google Search);"
+NY6,Y,CINATURAL,6,Saffron,"African Saffron;
+ C.I. Natural Yellow 6;
+ Crocetin;
+ Saffron; 
+ Natural Yellow 6;
+ Wild Saffron [KP.p];","75140
+ 75100","Color dye extracted from the stigmas Crocus Sativa then precipitated onto lake base; A kilogram of saffron requires 20,000 flowers (Ref; Kremer Pigments); (Ref wikipedia);
+  
+ Made from Curcuma, vibrant warm yellow (Ref: Kremer Pigments);
+  
+ ""The term saffron in a pigment context, refers to a dye derived from the stamens of the plant Crocus sativus L., 
+ The Borradailes stated in their notes to the fifteenth century Strasbourg MS that it was 'prized by illuminators’ .
+ The main dyestuff produced is crocetin."" (Ref Pigment Compendium, 2008, p.337);",Bright orange yellow,T,IV,A,Fades completely; Recommended only for books were it would rarely be exposed to light or temporary illustration.
+NY8,Y,CINATURAL,8,Morin,"C.I. Natural Yellow 8;
+ Calico Yellow*;
+  Moric acid;
+ Morin hydrate;
+ Morina (Esp., Port.);
+ Natural Yellow 8;
+ Natural Yellow 11;",75660,"2',3,4,5,7-pentahydroxyflavone;
+ (Ref CAMEO Materials Database MFA, Boston);
+  
+ Found in the wood of the Dyer's Mulberry (Chlorophora tinctoria), common in the Americas and the West Indies, also can be found in the wood of the Osage Orange tree (Maclura pomifera or Toxylon pomiferum), and Oak trees. It is the only coloring matter in the Jackwood tree (Artocarpus integrqolia), from Burma , Ceylon and India (Ref: Color Index Constitution Numbers Third Ed, 1998);
+  
+ CAS 480-16-0","Olive Green to Intense bright yellow**
+  
+ † Hue shift towards brown; Fades",T,IV,A,"*Calico Yellow is the bisulfite compound of morin
+  
+ **Color depends on lake base"
 PY1,Y,CIPIGMENT,1,Hansa Yellow G,"Arylide yellow G;
  Azo Yellow Orange [WNd]; 
  Blockx Yellow [BXd];
@@ -44,7 +429,7 @@ Staining w/ good tinting strength
 † Darkens in masstone, fades in tints (handprint)",S/T,V,A,"One of the first modern bright yellow azo pigments in artist's paints, introduced in Germany in 1911 (Ref PCImag).;
  More info on PY-1 in watercolors @ handprint.com
  * ASTM V (very poor) but some manfacturer literature and other tests put it at blue wool scale 6-5 (fair) but worse in in tints. May be best to avoid, PY 154 is similar shade and more light fast (Ref handprint)"
-PY1:1,Y,CIPIGMENT,1.2,Monolite Yellow G,"Arylide yellow G [DR.g];
+PY1:1,Y,CIPIGMENT,1.1,Monolite Yellow G,"Arylide yellow G [DR.g];
  Cadmium Yellow Deep Hue [DR.a(s3hb).a(s3mb)];
  Cadmium Yellow Orange Hue
  [SE.o.o]; 
@@ -58,9 +443,920 @@ PY1:1,Y,CIPIGMENT,1.2,Monolite Yellow G,"Arylide yellow G [DR.g];
  Pigment Yellow 1:1;
  Yellow Lake Deep [MH.o]",11680:1,Monoazo ; Arylamide; CAS 12240-03-8,Bright Light Medium to deep Yellow*,S/O,III,A,"* Usually slightly redder than PY1;
  Probably suffers the same poor light fastness of PY1"
+PY10,Y,CIPIGMENT,10,Hansa Yellow R,"Arylide Yellow;
+ C.I. Pigment Yellow 10;
+ Hansa Yellow;
+ Pigment Yellow 10",12710,"Pyrazolone azo;
+CAS 6407-75-6",Reddish yellow,X,X,A,
+PY100,Y,CIPIGMENT,100,Tartrazine Lake,"C.I. Pigment Yellow 100;
+ Conalake Tartrazine;
+ FD&C Yellow 5 Aluminum Lake;
+ Indian Yellow (hue) [KA.p | WN.od]; 
+ Pigment Yellow 100;
+ Tartrazine Lake;
+ Tartrazine Yellow;",19140:1,"Monoazo; Tartrazine Lake;
+CAS 12225-21-7",Orangey yellow,X,IV,A,
+PY101,Y,CIPIGMENT,101,Lumogen Yellow,"C.I. Pigment Yellow 101;
+ Lumogen Yellow;
+ Pigment Yellow 101",48052,"Disazomethine;
+CAS 2053-29-4",Brilliant florescent greenish yellow,T,II,A,
+PY104,Y,CIPIGMENT,104,FD&C Yellow 6,"C.I. Food Yellow 3;
+ C.I. Pigment Yellow 104;
+ Conalake Sunset Yellow;
+ FD&C Yellow 6 Aluminum Lake;
+ Pigment Yellow 104;
+ Sunset Yellow Lake",15985:1,"Monoazo;
+CAS 15790-07-5",Orange shade yellow,T,X,A,
+PY105,Y,CIPIGMENT,105,D&C Yellow No 10 lake,"C.I. Pigment Yellow 105;
+ D&C Yellow No 10 lake;
+ Monolite Fast Yellow 6G;
+ Pigment Yellow 105",11743,"Monoazo;
+CAS 12236-75-8",Bright greenish yellow,T,X,A,
+PY108,Y,CIPIGMENT,108,Anthrapyrimidine Yellow,"Anthra Golden [GU.pd];
+ Anthrapyrimidine Yellow;
+ C.I. Pigment Yellow 108;
+ C.I. Vat Yellow 20;
+ Gamboge Gum Modern;
+ Gamboge Modern [SCH];
+ Indanthren Yellow 4GF;
+ Indian Yellow (hue?*) [DS.wd];
+ Lasyrgula; 
+ Magnesium Euxanthate?;
+ Mikethrene Yellow 4GF
+ Natural Yellow 20 ?*;
+ Nihonthrene Yellow 4GFF
+ Palanthrene Yellow 4GF
+ Paliogen Yellow RT;
+ Paradone Yellow
+ Pigment Yellow 108;
+ Pyramid Yellow;
+ Pyramid-Yellow medium [KP.p];
+ Pyrimidoanthrone Yellow;
+ Romantrene Yellow F4G
+ Snoeshoe yellow;
+ Threne Yellow 4GF",68420,"Synthetic organic vat pigment; Anthrapyrimidine: IUPAC Name: N-(9,10-dihydro-9,10-dioxoanthracen-1-yl)-7-oxo-7H-benzo[e]perimidine-4-carboxamide ; Heterocyclic Anthraquinone;
+Syththetic form of euxanthate. Similar to Magnesium euxanthate?
+Chemical Composition of Vat Yellow 20 @ PubChem Chemical Database
+(compare NY20 Indian Yellow); Formula: C30H15N3O4 ?* CAS 4216-01-7
+EC 224-151-9","Bright mid to reddish yellow;
+ † Darkens, reddens",X,NR,A,"More info on PY-108 in watercolors @ handprint.com
+ ?* Magnesium Euxanthate is thought to be the main yellow coloring chemical of genuine natural Indian yellow. It is possible (ed. Probable) the urine of cow history of Indian Yellow is nothing more than an myth (see my blog article) and true Indian Yellow is simply euxanthate acid, isolated from a natural source, and precipitaded on a dolomite or other base cantaining magnesium., possibly from a plant source and mixed with magnesia or precipitated on a calcium base. The chemical formula for Vat Yellow 20 contains no Magnesium, the pigment is the Vat Yellow dye preciptated on a base, most likely Calcium carbonate or Magnesium hydroxide.
+ Interesting discussion of Indian Yellow on the WetCanvas.com forum here.
+ (compare NY20 Indian Yellow); 
+ (Ref Color: a natural history of the palette p.204), (Ref absoluteastronomy
+ .com), (Ref wikipedia). 
+ Incompatible with strong oxidizing agents, ammonia. (Ref Guidechem.com).
+ May need wetting agent (Ref The Artist's Handbook. by Pip Seymour,2003)
+ * Rated excellemt (BWS) 8;8;8 in some manufactures literature, rated only very good (BWS 7;6) in watercolors by handprint."
+PY109,Y,CIPIGMENT,109,Isoindole Yellow,"C.I. Pigment Yellow 109;
+ Foscolor Yellow 109;
+ Irgazin Yellow 2GLT [GU];
+ Isoindole Yellow [GEN | KP.p];
+ Isoindolgelb [KP.p];
+ Isoindolinone Yellow;
+ Pigment Yellow 109",56284,"Isoindolinone;
+Tetrachloro-isoindolinone;
+CAS 5045-40-9",Greenish to reddish yellow,S/T,I,A,
+PY110,Y,CIPIGMENT,110,Isoindolinone Yellow,"C.I. Pigment Yellow 110;
+ Gamboge (Hue) [MGd];
+ Indian Yellow (hue) [MG.a.o.w | RT.o.wo | SQ.a | TA.a.af];
+ Indian Yellow Orange Extra [OH.a];
+ Isoindolinone Yellow;
+ Isoindolinone Yellow R;
+ Isoindolinone Yellow Deep [ HO.w | KA.ad]; 
+ Irgazin Golden [GU.pd];
+ Irgazin® light orange 2 RLT [KP.p];
+ Irgazin Yellow;
+ Irgazin Yellow 2RLT;
+ Permanent Yellow [LA.a]; 
+ Permanent Yellow Deep [DS.w];
+ Pigment Yellow 110;
+ Rowney Orange [DR];
+ Stil de Grain Yellow (hue) [RT.o]",56280,"Synthetic organic;
+Tetrachholo-isoindolinone;
+CAS 5590-18-1","Light, deep yellow with red undertone;
+ Good tinting strength, moderately staining",X,I,A,"Nice deep yellow; 
+ Dry pigment may require wetting agent;
+ ""The first isoindoline pigments were patented in 1946, and commercial production of pigments in this group began in the 1960s. Several isoindoline yellow pigments are available"" (Ref. Blick Art Materials)
+ More info on PY 110 in watercolors @ handprint.com"
+PY111,Y,CIPIGMENT,111,Hansa Brilliant Yellow,"C.I. Pigment Yellow 111;
+ Hansa Brilliant Yellow 7GX;
+ Irgalite Yellow F4G;
+ Pigment Yellow 111",11745,"Monoazo; Arylamide;
+CAS 15993-42-7",Greenish yellow,X,III,A,
+PY112,Y,CIPIGMENT,112,Flavanthrone Yellow,"Anthraquinone Yellow;
+ C.I. Pigment Yellow 112;
+ Flavanthrene;
+ Flavanthrone (8CI);
+ Flavanthrone Yellow;
+ Indanthren Yellow GLP;
+ Indanthrene Yellow G;
+ Permanent Indian Yellow (hue) [LQ.ad.od];
+ Pigment Yellow 24*;
+ Pigment Yellow 112;
+ Vat Yellow 1",70600,"Naphthol; Anthraquinone;
+CAS 82601-32-9","Dull reddish yellow;
+ Good tinting strength;
+ † Darkens in masstone, fades in tints",T,I,A,"Originally known as Vat Yellow 1, one of the first lightfast Vat pigments.
+ * same pigment as PY24?(Ref)"
+PY113,Y,CIPIGMENT,113,Disazo Yellow 10HG,"C.I. Pigment Yellow 113;
+ Disazo 10HG [GU];
+ Disazo Yellow;
+ Pigment Yellow 113",,Disazo,Very Green Yellow,X,II,A,removed from market (Ref)
+PY115,Y,CIPIGMENT,115,D&C Yellow 10,"Ariabel Yellow 12.42;
+ C.I. Pigment Yellow 115;
+ D&C Yellow 10;
+ D&C Yellow 10 Aluminum Lake;
+ Pigment Yellow 115",47005:1,"Quinoline;
+Aluminum salt of sulfinated CAS 68814-04-0",Bright greenish yellow,T,NR,A,
+PY116,Y,CIPIGMENT,116,Helio Fast Yellow ER,"C.I. Pigment Yellow 116;
+ Helio Fast Yellow ER;
+ Golden 116 [GU];
+ Pigment Yellow 116;
+ Suimei Fast Yellow",11790,"organic;
+Monoazo;
+CAS 30191-02-7",Golden reddish yellow,X,II,A,* Not rated by the ASTM; rating based on blue wool scale.
+PY117,Y,CIPIGMENT,117,Paliotol Yellow,"Azo Methine Medium [GU.pd];
+ Azomethine; 
+ Greenish Yellow [HO.o.w.wo | SH.w];
+ Paliotol Yellow;
+ Pigment Yellow 117",,"Organic;
+ Azomethine copper complex;
+ Azomethine pigments patent no. US3700709","Bright, light green to midshade yellow
+ Staining w/ good tinting strength",X,NR,A,"Pigment manufacture has been discontinued. (Ref. Industrial Organic Pigments 3rd ed - W. herbst, K. Hunger (Wiley, 2004) p.396-397)
+ More info on PY-117 in watercolors @ handprint.com
+ ?* Not rated by the ASTM; but rated excellent by some manufacturers and pigment distributors. In real world tests on a single paint preparation in watercolor, it was rated very poorly at handprint.com; most other Azo Methine Pigments have acceptable lightfastness (i.e. PY 129)"
+PY118,Y,CIPIGMENT,118,Chromium Titan Yellow,"Chromium Titan Yellow;
+ C.I. Pigment Yellow 118;
+ Disazo H10?;
+ Pigment Yellow 118",77894,"Inorganic;
+ Chromium Titan Yellow;
+ Titanium, Nickel, Antimony, Chromium oxide as a mixed-phase pigment.;
+ Titanium dioxide with nickel oxide, antimony oxide-chromium oxide approximately corresponding to the formula (Ti,Ni,Sb,Cr)Oz (Ref Inorganic Colouring Matters, Color Index 3rd Ed.)",Reddish yellow,X,NR,B,"* Not rated by the ASMT, but most mixed metal oxides of this type have excellent lightfastness.
+ You may want to make your own light fastness tests of the color in your binder of choice, if you plan on experimenting with this pigment.
+ ** requires a PROP 65 label in CA. due to it's nickel content; in these types of pigment, the Nickel, Antimony & Chromium are usually tightly bound in the chemical structure, limiting the toxicity."
+PY119,Y,CIPIGMENT,119,Zinc Iron Yellow,"C.I. Pigment Yellow 119;
+ Daipyroxide Brown 9211;
+ Iron Zinc Brown;
+ Iron Zinc Brown Spinel;
+ Iron Zinc Oxide;
+ Magnesium Brown [WN.w.wp]?*;
+ Mars Yellow [HO.w];
+ Pigment Yellow 119;
+ Tuscan Earth [SE.o];
+ Zinc Ferrite Brown;
+ Zinc-Iron Brown, dark [KP.p];
+ Zinc Iron Brown, dark, spinel [KP.p]; 
+ Zinc Iron Brown, light [KP.p];
+ Zinc Iron Brown, light, spinel [KP.p];
+ Zinc Ferrite Brown;
+ Zinc Ferrite Brown Spinel;
+ Zinc Iron Brown;
+ Zinc Iron Oxide;
+ Zinc Iron Yellow",77496,"Inorganic;
+Iron zinc oxide (Zn,Fe)Fe2O4 or Fe2O4Zn Spinel Phase Pigment;
+Zinc Ferrite Brown Spinel, is created by the calcination of Zinc (II) Oxide, Iron (II) Oxide, and Iron (III) Oxide in varied ratios that create a homogeneous, ionically interdiffused spinel form crystalline matrix. All or either of the chemicals Al2O3, InO2, NiO, SiO2, SnO2 and/or TiO2 can be used as modifiers (Reference: 4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments).; Mixed Metal Oxide (MMO) (PCImag Ref): CPMA 13-36-7; CAS 12063-19-3;
+CAS 68187-51-9","Dark, dull reddish buff to light yellow buff;
+ Can be formulated in reddish & light yellow shades depending on the modifying metals used during manufacture.",S/T,I,A,"* Not rated by the ASMT, most brands of artist paints using PY-119 give it high lightfastness ratings, other similar pigments of this type generally have excellent lightfastness.
+ You may want to make your own light fastness tests of the paint in the binder you have."
+PY12,Y,CIPIGMENT,12,Benzidine Yellow G,"Benzidine Yellow G;
+ C.I. Pigment Yellow 12;
+ Dairylide Yellow 12;
+ Dairylide Yellow AAA;
+ Disazo Yellow;
+ Pigment Yellow 12",21090,"Disazo;
+CAS 6358-85-6",Brownish orange yellow,O,III,A,used mainly for inks
+PY120,Y,CIPIGMENT,120,PV Fast Yellow H2G,"Benzimidazo H2G [GU.p.pd];
+ Benzimidazolone Yellow;
+ C.I. Pigment Yellow 120;
+ Gafast Pigment Yellow 120;
+ Novoperm Yellow H2G;
+ Pigment Yellow 120;
+ PV Fast Yellow H2G;
+ Scheveningen Yellow Medium [OH.o.w]",11783,"Monoazo; 
+ Benzimidazolone;
+ Gafast Pigment Yellow 120 (Tech Sheet Reference);;
+ C21-H19-N5-O7
+ CAS 29920-31-8","Bright, light, mid-shade yellow;
+ †Darkens, browns",S/T,NR,A,"More info on PY-120 in watercolors @ handprint.com
+ * rated I (excellent, BWS 8) by some sources, rated only III (fair) in watercolor tests by handprint"
+PY126,Y,CIPIGMENT,126,Diarylide Yellow DGR,"C.I. Pigment Yellow 126;
+ Diarylide Yellow DGR;
+ Permanent Yellow 3G;
+ Permanent Yellow DGR;
+ Pigment Yellow 126",21101,"Disazo;
+CAS 90268-23-8",Bright yellow reddish undertone,S/O,III,A,
+PY127,Y,CIPIGMENT,127,Benzidine Yellow GRL,"Benzidine Yellow GRL;
+ C.I. Pigment Yellow 127;
+ Permanent Yellow GRL;
+ Pigment Yellow 127",21102,"Mixed coupling Disazo;
+CAS 68610-86-6",Bright greenish yellow,X,I,A,
+PY127:1,Y,CIPIGMENT,127.1,DCC Diarylide Yellow,"C.I. Pigment Yellow 127:1;
+ DCC 1232 Diarylide Yellow;
+ Pigment Yellow 127:1",21102:1,Mixed coupling Disazo,Bright greenish yellow,X,X,A,
+PY128,Y,CIPIGMENT,128,Azo Condensation Yellow,"Azo Condensation Yellow;
+ Azo Yellow;
+ C.I. Pigment Yellow 128;
+ Cromophtal Yellow 8G;
+ Indian Yellow Extra [ OH.a];
+ Pigment Yellow 128;
+ Transparent Yellow [WN.o];
+ Transparent Yellow Medium [RT.a.a.o.wo]",20037,"Disazo Condensation;
+ Technical Data Sheet (Epsilon)
+ C55-H37-Cl5-F6-N8-O8
+ CAS 79953-85-8
+ EC 279-356-6","Bright transparent yellow, comes in medium to reddish & greenish shades",T,NR,A,Alternative to Aureolin or Indian Yellow
+PY129,Y,CIPIGMENT,129,Irgazin Yellow,"Australian Green Gold;
+ Azo Green [MG.a.o.w];
+ Azo Methine Dark [GU];
+ Azo Methine Dark (yellow Shade);
+ Azomethine Yellow;
+ C.I. Pigment Yellow 129;
+ Golden Green [SE.o | OH.o.w];
+ Green Gold [ DR.w | DV.o.w | LQ.a | OH.a | WN.a.o.w.wp];
+ Green Yellow [LK]; 
+ Irgazin Yellow 5GT;
+ Irgazin® Yellow, greenish [KP.p];
+ Magnacryl Azomethine Yellow;
+ Old Holland Golden Green [OH.o.w];
+ Old Holland Green Gold [OH.a];
+ Pigment Yellow 129;
+ Rich Green Gold [DS.ad.o.w];
+ Transparent Yellow Green [RT.o]",48042,"Metal Complex (Copper Azomethine Green);
+ Azomethine Copper Complex;
+ 2-hydroxy-1-naphthaldehyde + o-aminophenol (imine formation)
+ C17-H11-Cu1-N1-O2
+ CAS 15680-42-9
+ EC 239-763-1","Slightly dull, light greenish yellow to yellowish green;
+ Medium tinting strength, staining;",T,I,B,"PY 129 @ handprint.com
+ * Becuase of the metal copper, it rmay have a Cautionary Label: Products may contain hazardous substances.
+ Harmful if inhaled
+ Harmful if swallowed"
+PY13,Y,CIPIGMENT,13,Benzidine Yellow GR,"Arylamide Yellow;
+ Benzidine Yellow GR;
+ C.I. Pigment Yellow 13;
+ Dairylide Yellow AAMX;
+ IRGALITE Yellow BAW;
+ Orange Red;
+ Pigment Yellow 13;
+ Vulcan Fast Yellow GR",21100,"Disazo; Diarylide m-xylidide;
+CAS 5102-83-0",Bright Reddish yellow,S/O,III,A,slightly more lightfast than PY12; used mainly for inks
+PY130,Y,CIPIGMENT,130,Pigment Yellow 130,"C.I. Pigment Yellow 130;
+ Pigment Yellow 130;
+ Symuler Fast Yellow 4119",,Monoazo,Reddish yellow,X,X,A,
+PY133,Y,CIPIGMENT,133,Pigment Yellow 133,"C.I. Pigment Yellow 133;
+ Pigment Yellow 133;
+ Symuler Lake Fast Yellow 6G",,"Monoazo; Strontium salt;
+CAS 132821-92-2",Greenish yellow,X,X,,
+PY134,Y,CIPIGMENT,134,Pigment Yellow 134,"C.I. Pigment Yellow 134;
+ Pigment Yellow 134;
+ Symuler Fast Yellow 2RF",,Disazo,Reddish yellow,X,X,A,
+PY136,Y,CIPIGMENT,136,Pigment Yellow 136,"C.I. Pigment Yellow 136;
+ Pigment Yellow 136;
+ Symuler Fast Yellow GRNF",,Disazo,Mid-shade yellow,X,X,A,
+PY137,Y,CIPIGMENT,137,Isoindoline Yellow,"C.I. Pigment Yellow 137;
+ Isoindoline Yellow;
+ Pigment Yellow 137",,"Quinophthalone;
+ Isoindoline",,X,X,,
+PY138,Y,CIPIGMENT,138,Quinophthalone Yellow,"C.I. Pigment Yellow 138;
+ Gafast Pigment Yellow 138 - OP;
+ Gafast Pigment Yellow 138 - TR ;
+ Isoindoline Yellow;
+ Lithol Fast Yellow;
+ Paliotol® Yellow K 0961 HD;
+ Permanent Lemon Yellow [PF.w]; 
+ Permanent Yellow [DR.w];
+ Pigment Yellow;
+ H.S. [GU.pd]
+ Quinopthalone Opaque [GUd]; 
+ Quinopthalone Yellow [DS.w | GU.pd]; 
+ Rape Yellow",56300,"Synthetic organic;
+Isoindoline;
+Gafast Pigment Yellow 138 - OP (Tech Sheet Reference);
+Gafast Pigment Yellow 138 - TR (Tech Sheet Reference);
+CAS 30125-47-4","Very light, bright, greenish to reddish yellow*;
+ Staining with high tinting strength
+ †Lightens",X,II,A,"More info on PY-138 in watercolors @ handprint.com
+ * The reddish yellow shade is extremely opaque. The greenish shade is transparent and has higher tinctorial strength (Ref: special chemical coatings.com color-handbook)."
+PY139,Y,CIPIGMENT,139,Isoindoline Yellow,"C.I. Pigment Yellow 139;
+ Deep Yellow [RT];
+ Gafast Pigment Yellow 139;
+ Indo Golden [GU.pd]; 
+ Indian Yellow (hue) [CR.a(jo). | JO.a | LQ.a | MAd | WN.k];
+ Isoidolinone Yellow [KA.o.p];
+ Isoindoline Yellow [DS.w];
+ Isoindolinone Yellow;
+ Lithol Fast Yellow;
+ Paliotol® Yellow;
+ Paliotol® Yellow-Orange [KP.p]; 
+ Permanent Yellow Deep [MA.w.w];
+ Pigment Yellow 139;
+ Yellow Deep [CAS.k];",56298,"Synthetic Organic;
+ Isoindoline;
+ Gafast Pigment Yellow 139 (Tech Sheet Reference);
+ Chemical Info @ PubChem Open Chemical Database
+ C16-H9-N5-O6
+ CAS 36888-99-0
+ EC 253-256-2","Light to deep reddish yellow*;
+ † slight fading",X,NR,A,"May be a good light fast Indian yellow substitute;
+ Dry pigment powder may require wetting agent to incorporate into binder.
+ More info on PY-139 in watercolors @ handprint.com
+ * Varies by particle size and formulation (Ref. Industrial Organic Pigments 3rd ed - W. herbst, K. Hunger (Wiley, 2004) p.415)
+ ** suitable for food contact (Ref. PALIOTOL™ YELLOW K 1841 BASF)"
+PY14,Y,CIPIGMENT,14,Diarylide Yellow AAOT,"Azo Yellow 13GX;
+ Benzidine Yellow AAOT;
+ C.I. Pigment Yellow 14;
+ Dairylide Yellow;
+ Diarylide Yellow OT;
+ Disazo Type 11;
+ Diacetanil Yellow;
+ lsol Diaryl Yellow;
+ PERMANENT YELLOW 2GB;
+ Pigment Yellow 14;
+ Transparent Lemon [HO.o];
+ Vulcan Fast Yellow G","21095
+ 21100? [Ref]","Disazo Type 11 Toluidide;
+CAS 5468-75-7",Yellow leaning towards green,S/T,NR,A,Used mainly in inks
+PY147,Y,CIPIGMENT,147,Pigment Yellow 147,"Anthra Brite Gold [GU];
+ Anthrapyrimidine Yellow; 
+ C.I. Pigment Yellow 147;
+ Cromophtal Yellow AGR;
+ Pigment Yellow 147;
+ Yellow AGR",60645,"Polycyclic Anthraquinone;
+Anthrapyrimidine;
+CAS 4118-16-5","Light, deep yellow",T,I,,
+PY148,Y,CIPIGMENT,148,Filamid Yellow 4G,"C.I. Pigment Yellow 148;
+ Filamid Yellow 4G;
+ Pigment Yellow 148",50600,"Polycyclic;
+CAS 20572-37-6",Greenish yellow,X,X,,
+PY150,Y,CIPIGMENT,150,Nickel Azo Yellow,"Aureoline (hue) [RT.o];
+ Azo Yellow;
+ C.I. Pigment Yellow 150;
+ Gamboge (hue);
+ Gamboge Hue;
+ Green Gold;
+ Helio Fast Yellow 4G;
+ Indian Yellow Deep (hue) [WN.o];
+ Indian Yellow Imitation [KP.p];
+ New Gamboge (hue);
+ Nickel Azo [WN.a];
+ Nickel Azo Brown Lemon [OH.a];
+ Nickel Azo Golden [GU.pd];
+ Nickel Azomethine Yellow;
+ Nickel Azo Yellow [GEN | DS.ad.o.w | DV.w | GO.a.ab.af.ag.ao | MG.w | SQ.a | TA.a.| WN.a];
+ Pigment Yellow 150;
+ Pyrimidine Yellow;
+ Transparent Yellow [WN.w.wp.];
+ Translucent Golden Yellow [SCH.a];
+ Translucent Yellow [SCH.o(Mus).w]",12764,"Synthetic Organic Azo Metal Complex;
+ Pyrimidine Yellow;
+ Nickel azomethine yellow;
+ Monoazo nickel complex;
+ Nickel Azomethine;
+ C8-H10-N6-O6
+ CAS 68511-62-6
+ CAS 25157-64-6 
+ EU 270-944-8","Deep dull reddish to green shade yellow, bright yellow in tints;
+ Good tinting strength Heavily staining (Soden)
+ † Slight fading",S/T,I,B,"Makes a good lightfast Indian Yellow or Gamboge substitute.
+ Nickel Azo Yellow (PY 150) watercolor swatches, brand comparisons & mixing info @ In Liquid Color, Youtube Channel
+ See PY 150 on Handprint.com for more paint & pigment information
+ * Some regulatory agencies (California) require a warning on paints containing the heavy metal nickel.
+ Nickel can be toxic if ingested in large amounts over many years, but unless you are eating your paint, spraying it, or creating dust clouds with the dry powdered pigment, there is very little hazard, Just use common sense.
+ Nickel can cause skin sensitization and allergies in some people.
+ Avoid Dust & Spray;
+ Avoid excessive skin contact;
+ Do not ingest."
+PY151,Y,CIPIGMENT,151,Benzimidazolone Yellow H4G,"Aureolin (hue) [SCH];
+ Aureolin Modern [SCH.w];
+ Aureolin Yellow (hue) [BA.w];
+ Azo Yellow [GEN | DS.o.w | MG.g.w]:
+ Azo Yellow (Aureolin) [MG.w];
+ Benzimidazo H4G [GU.pd];
+ Benzimidazo Yellow H4G (green shade);
+ Benzimidazolone Yellow;
+ Canary Yellow [SI.p];
+ C.I. Pigment Yellow 151;
+ DCC 7151 Benzimidazolone Yellow;
+ Gafast Pigment Yellow 151;
+ Hostaperm Yellow H4G;
+ John Deere Yellow;
+ Monoazo Yellow;
+ Permanent Yellow Light [KP.p];
+ Pigment Yellow 151;",13980,"Monoazo; 
+ Benzimidazolone;
+ Gafast Pigment Yellow 151 (Tech Sheet Reference);
+ Chemical information @ PubChem
+ C18-H15-N5-O5
+ CAS 31837-42-0;
+ EC 250-830-4","Intense light, mid to green shade yellow*;
+ Staining w/ Fair tinting strength
+ † Browns slightly",S/T,I,A,"Said to be a good lightfast and non-toxic subtitute for Aureolin PY 40 (Cobalt Yellow).
+ More info on PY-151 in watercolors @ handprint.com
+ * May have slight brownish cast;
+ ** oil absorption varies by manufacturer, particle size and formulation"
+PY152,Y,CIPIGMENT,152,Diarylide Yellow 152,"C.I. Pigment Yellow 152;
+ Diarylide Yellow 152;
+ Fast Diarylide Yellow;
+ Pigment Yellow 152",21111,"Disazo;
+CAS 31775-20-9",Reddish yellow,X,II,A,
+PY153,Y,CIPIGMENT,153,Nickel Dioxime Yellow,"Burnt Yellow [UT.w];
+ C.I. Pigment Yellow 153;
+ Dioxime [GU.pd];
+ Gamboge (hue) [LK];
+ Gamboge Hue [WN.w];
+ Indian Yellow (hue) [DR.w | RT | SE.a |SCH.a.g.o.o(Mus).p | UT.w | WNd];
+ Indian Yellow Hue [SE.w.];
+ New Gamboge [DS.ad.w | WN.w];
+ Nickel Dioxime Yellow;
+ Nickel Paliotol Yellow;
+ Lemon Yellow Hue;
+ Pigment Yellow 153",48545,"Nickel Dioxine Complex;
+ C20-H20-N6-NiO6
+ CAS 29204-84-0
+ EC 614-748-6","Bright, light, deep yellow w/ orange to brown undertone;
+ Medium tinting strength, mildly staining;",X,II,B,"Good Indian yellow (hue) substitute;
+ Manufacturing of this pigment was discontinued and supplies ran out in 2012?; However there are still brands that have this pigment in there lines.
+ PY 153 @ Handprint.com
+ * Some regulatory agencies (California) require a warning on paints containing the metal nickel. 
+ ** Rated II (very good) by thw ASTM in watercolor. Rated excellent in all brands tested by Handprint"
+PY154,Y,CIPIGMENT,154,Benzimidazolone Yellow 154,"Azo Yellow Light [RT.w];
+ Azo Yellow Medium [RT];
+ Azo Yellow Deep [RT]; 
+ Benzimidazo H3G [GU.pd];
+ Benzimidazo Yellow H3G (green shade);
+ Benzimidazolone Yellow [KA.o.p];
+ Brilliant Yellow [SCH.a.p];
+ Cadmium Yellow Pale Hue;
+ Cadmium Yellow Tone (hue) [SCH.g];
+ C.I. Pigment Yellow 154;
+ Da Vinci Yellow [DV.w];
+ Hostaperm Yellow H3G;
+ Imidazolone Yellow [HO.w];
+ Imidazolone Yellow Light [HO.wo];
+ Permanent Yellow Light [RT.o.wo];
+ Permanent Yellow Medium [KP.p | RT.wo];
+ Pigment Yellow 154;
+ Primary Yellow [BX.o.w];
+ Pure Yellow [SCH.w];
+ Sennelier Yellow Light [SE.w];
+ Sulphur Yellow;
+ Transparent Yellow [SQ.a]; 
+ Winsor Yellow [WN.w.wp.wp(L)]",11781,"Synthetic Organic;
+ Benzimidazolone;
+ C18-H14-F3-N5-O3
+ PY-154 @ PubChem Chemical Database;
+ CAS 68134-22-5
+ EC 268-734-6","Bright, light greenish to mid yellow;
+ Medium tinting strength, staining;",S/O,I,A,"Said to be good primary yellow;
+ PY 154 @ Handprint.com"
+PY155,Y,CIPIGMENT,155,Benzimidazolone Yellow 155,"Benzimidazolone Yellow;
+ Brilliant Yellow [SCH.o];
+ Cadmium Yellow Hue [LK];
+ Cadmium Yellow Tone [SCH.o(Mus)];
+ C.I. Pigment Yellow 155;
+ Opaque Yellow 155;
+ Permanent Yellow Light [LK];
+ Pigment Yellow 155;
+ Sandorin Yellow 4G",200310,"Synthetic Organic;
+ Disazo; Benzimidazolone;
+ Chemical Properties on PubChem Chemistry Database
+ CAS 68516-73-4;
+ CAS 77465-46-4",Bright mid yellow to green shade yellow w/ high tint strenght,O,NR,A,"* Not rated by the ASTM, This rating is based on blue wool scales and paint product ratings.
+ There doesn't appear to be any paint brands using this pigment in watercolors and pigments tend to be slightly less fast in water colors without the protection oil and acrylic mediums can give, however this is not always the case.
+ I would advise to make your own tests in your binder of choice before using for permanent art."
+PY156,Y,CIPIGMENT,156,Benzimidazolone Yellow 156,"Benzimidazolone Yellow;
+ C.I. Pigment Yellow 156;
+ Hostaperm Yellow HLR;
+ Midazo HLR [GU.p];
+ Pigment Yellow 156",,"Benzimidazolone;
+ Made by diazotization of 2,5-Dichloro-benzenamine 
+ C17-H13-Cl2-N5-O3
+ CAS 63661-26-7",Orange yellow,S/T,NR,A,"Extinct, Out of production, no longer made, Nada, went bye-bye;"
+PY157,Y,CIPIGMENT,157,Daipyroxide Yellow,"C.I. Pigment Yellow 157;
+ Daipyroxide Yellow;
+ Nickel Barium;
+ Nickel-Barium Titanate [HO];
+ Nickel Barium Titanium;
+ Nickel Barium Titanium Yellow;
+ Nickel Barium Titanium Primrose Priderite;
+ Nickel Titanate Yellow [GR.o];
+ Pigment Yellow 157;
+ Priderite Yellow;
+ Primrose Priderite;
+ Nickel Yellow [HO.o];
+ Titanium Primrose;
+ Yellow Green Ural",77900,"Inorganic;
+Nickel Barium Titanium Primrose Priderite, is a homogeneous, ionically interdiffused crystalline matrix of priderite created by calcining Nickel (II) Oxide, Barium (II) Oxide, and Titanium (IV) Oxide;
+Mixed Metal Oxide (MMO)
+CPMA 9-13-4
+CAS 68610-24-2","Greenish yellow
+† may brighten",S/O,NR,B,"?* Not rated by the ASTM, but should perform as excellent as other synthesized mineral MMO pigments designed for applications where resistance to heat, light, and weather are required.
+ I would advise to make your own tests in binder of choice before using in permanent artwork.
+ ** Some regulatory agencies require a warning on paints containing the heavy metal nickel.
+ Nickel can be toxic in large amounts, but unless you are eating your paint or creating dust clouds with the dry powdered pigment (along with not wearing a mask), there is very little hazard, Just use common sense."
+PY158,Y,CIPIGMENT,158,Tin Vanadium Yellow,"C.I. Pigment Yellow 158;
+ Pigment Yellow 158;
+ Tin Vanadium Yellow Cassiterite;
+ Vanadium Yellow Cassiterite;",77862,"Inorganic; Tin Vanadium Yellow Cassiterite (Sn.V)O2 is created by the high temperature calcining of a mixture of Tin (IV) Oxide and Vanadium (V) Oxides in different amounts to create a crystalline cassiterite matrix. Its composition can have Al2O3, Fe2O3, MgO, NiO, SiO2 and/or TiO2 as modifiers. (Ref Color Index 4th edition);
+Tin Vanadium;
+CPMA 11-22-4
+CAS 68186-93-6",mid-shade yellow,X,NR,,"?* Not rated by the ASTM, but should perform as excellent as other MMO pigments that were designed for applications where resistance to heat, light, and weather are required.
+ Advise to make your own tests in binder of choice."
+PY159,Y,CIPIGMENT,159,Zirconium Praesodymium Silicate Yellow,"C.I. Pigment Yellow 159;
+ Intensive Yellow [KP.p];
+ Lemon Yellow Deep [WN.w.wp.];
+ Pigment Yellow 159;
+ Praseodym Yellow [KP.p];
+ Zirconium Praseodymium Silicate [KP.p];
+ Zirkonium Praseodym Yellow [SI.p]; 
+ Zirconium Praesodymium Yellow Zircon;
+ Zirconium Yellow",77997,"Inorganic;
+ Zirconium Praesodymium Silicate or Zirconium Praeseodymium Yellow Zircon (Zr,Pr)SiO4 is created by the high temperature calcination of a various mixtures of oxides of Zirconium (IV) Oxide, Silicon (IV) Oxide, and Praseodymium (III, IV) Oxide to create a zircon crystalline form. It may include less than 5% of either one or both alkali and/or alkaline earth halides as modifiers. (Ref Color Index 4th edition);
+ C24-H41-NO5
+ CPMA 14-43-4; 
+ CAS 68187-15-5
+ EC 269-075-7","Very light shade lemon yellow;
+ Staining w/ good tinting strength",S/T,I,A,"* Not rated by the ASTM, My rating is based on BWS & paint manufacturer's ratings.
+ Rated with excellent light fastness in watercolors at Handprint. More info on PY-159 in watercolors @ handprint.com
+ Generally pigments tend to be more light fast in oils and acrylics because of the protection those mediums offer, but if in doubt, I would suggest making your own tests in those mediums."
+PY16,Y,CIPIGMENT,16,Permanent Yellow NCG,"C.I. Pigment Yellow 16;
+ Dairylide Yellow;
+ Pigment Yellow 16;
+ Permanent Yellow [GU]",20040,"Disazo;
+CAS 5979-28-2",Bright greenish yellow,S/T,III,A,Main use in inks
+PY160,Y,CIPIGMENT,160,Zirconium Vanadium Yellow,"Baddeleyite;
+ C.I. Pigment Yellow 160;
+ Pigment Yellow 160;
+ Vanadium Yellow
+ Zirconium Vanadium Yellow;
+ Zirconium Vanadium Yellow Baddeleyite",77991,"Inorganic;
+Zirconium Vanadium Yellow Baddeleyite (Zr,V)O2 is produced by high temperature calcination of a mixture of oxides of zirconium and vanadium in varied amounts to create a crystalline matrix of baddeleyite. It may include any one or more of the modifiers Al2O3, Fe2O3, In2O3, SiO2 and/or TiO2. (Ref Color Index 4th edition);
+CPMA 1-01-4 (4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments)
+CAS 68187-01-9",Mid-shade to reddish yellow,S/O,X,,"?* Not rated by the ASTM, but should perform as well as other Zirconium Vanadium MMO pigments designed for applications where resistance to heat, light, and weather are required.
+ Advise to make your own tests in binder of choice."
+PY161,Y,CIPIGMENT,161,Nickel Niobium Titanium Yellow,"C.I. Pigment Yellow 161;
+ Nickel Niobium Titanium Yellow Rutile;
+ Nickel Niobium Yellow Rutile;
+ Pigment Yellow 161",77895,"Inorganic; Nickel Niobium Titanium Yellow Rutile is prepared by the calcination of oxides of nickel, niobium, and titanium, (Ti,Ni,-Nb)O2 creating a rutile crystalline form. The composition may have Cr203 or SrO as modifiers. (Reference: Coatings Technology handbook, Third Edition, Edited by Arthur A. Tracton, 2006 by CRC Press);
+Mixed Metal Oxide (MMO) (PCImag Ref):
+CPMA 11-16-4
+CAS 68611-43-8",Greenish yellow,O,NR,B,"?* Not rated by the ASTM, but should perform as excellent as other Titanium based rutile MMO pigments designed for applications where resistance to heat, light, and weather are required.
+ Advise to make your own tests in binder of choice.
+ ** Nickel content requires a warning label in some localities. Can cause skin sensitivity."
+PY162,Y,CIPIGMENT,162,Chrome Niobium Titanium Buff Rutile,"Chrome Niobium Titanium Buff;
+ Chrome Niobium Titanium Buff Rutile;
+ C.I. Pigment Yellow 162;
+ Pigment Yellow 162",77896,"Inorganic; Chrome Niobium Titanium;
+Produced by calcining Titanium (IV) Oxide, Chromium (III) Oxide, and Niobium (V) Oxide, with the approximate formula of (Ti,Cr,Nb)O2. It may also have NiO and/or SrO as modifiers. (Reference: Coatings Technology handbook, Third Edition, Edited by Arthur A. Tracton, 2006 by CRC Press);
+CPMA 11-18-6
+CAS 68611-42-7",Reddish yellow,O,NR,A,"?* Not rated by the ASTM, but should perform as excellent as other Titanium based rutile MMO pigments designed for applications where resistance to heat, light, and weather are required.
+ Advise to make your own tests in binder of choice."
+PY163,Y,CIPIGMENT,163,Chromium Tungsten Titanium Buff,"Chrome Tungsten Titanium Buff Rutile;
+ Chromium Tungsten Titanium Buff Rutile;
+ C.I. Pigment Yellow 163;
+ Meteor Orange 7383;
+ Meteor® Orange Buff 9385;
+ Pigment Yellow 163",77897,"Inorganic; Chromium Tungsten Titanium Buff Rutile (Ti,Cr,W)O2 is created by the calcining at high temperature a mixture of Titanium (IV) Oxide, Chromium (III) Oxide, and Tungsten (VI) Oxide in various ratios to produce a crystal rutile matrix. It may also include Nickel(II) oxide as a modifier. (Ref Color Index 4th edition);
+MMO (Mixed Metal Oxide) Chromium Tungsten Titanium;
+tungsten-chrome-III-titanium dioxide rutile;
+CPMA 11-19-6
+CAS 68186-92-5",,O,NR,A,"?* Not rated by the ASTM, but should perform as excellent as other Titanium based rutile MMO pigments designed for applications where resistance to heat, light, and weather are required.
+ ** Sometimes paints made with Chromium will have a warning label because there is a slight chance of having trace amounts of unbound chromium which is a suspected carcinogen."
+PY164,Y,CIPIGMENT,164,Manganese Antimony Titanium Buff Rutile,"Antimony Manganese Buff Rutile;
+ Brown 10C873;
+ Chestnut Brown 400;
+ C.I. Pigment Yellow 164;
+ Cinnamon Brown 298;
+ Ferro Chestnut Brown V-10364;
+ Indian Brown No. 221;
+ Manganese Antimony;
+ Manganese Antimony Titanium Buff;
+ Manganese Antimony Titanium Buff Rutile;
+ Manganese Brown [GU]; 
+ Rembrandt Brown 352;
+ Titanium Buff Rutile;
+ Pigment Yellow 164",77899,"Inorganic; Manganese Antimony Titanium Buff Rutile (Ti, Mn, Sb)O2 is created by calcining at high temperature a mixture of oxides of manganese, titanium and antimony in varying amounts to create a crystalline rutile matrix. Its constitution may include one or more of the modifiers: Al2O3, Cr2O3, NiO, WO3 and/or ZnO. (Ref Color Index 4th edition);
+LBNLPigment Database Spectral radiative properties;
+Manganese Antimony Titanium Buff Rutile;
+CPMA 11-20-6
+CAS 68412-38-4",Brown,O,I,B,
+PY165,Y,CIPIGMENT,165,Sanyo Fast Yellow F5G,"C.I. Pigment Yellow 165;
+ Pigment Yellow 165;
+ Sanyo Fast Yellow F5G",,Monoazo,Reddish yellow,O,X,A,
+PY166,Y,CIPIGMENT,166,Cromofine Yellow,"C.I. Pigment Yellow 166;
+ Cromofine Yellow;
+ Pigment Yellow 166",20035,"Disazo Condensation;
+CAS 76233-82-4",mid-shade yellow,X,X,A,
+PY167,Y,CIPIGMENT,167,Seikafast Yellow A-3,"C.I. Pigment Yellow 167;
+ Pigment Yellow 167;
+ Seikafast Yellow A-3",11737,Monoazo; CAS 38489-24-6,Bright green yellow,X,X,A,
+PY168,Y,CIPIGMENT,168,Azo Yellow 168,"Azo Yellow;
+ C.I. Pigment Yellow 168;
+ Lionol Yellow K-5G;
+ Pigment Yellow 168",13960,"Synthetic Organic;
+ Monoazo; 
+ CAS 71832-85-4",Bright green yellow,S/T,I,A,
+PY169,Y,CIPIGMENT,169,Lionol Yellow K-2R,"C.I. Pigment Yellow 169;
+ Lionol Yellow K-2R;
+ Pigment Yellow 169",13955,"Synthetic Organic;
+ Monoazo;
+ CAS 73385-03-2",Reddish yellow,X,X,A,
+PY17,Y,CIPIGMENT,17,Dairylide Yellow 17,"Arylamide Yellow;
+ Benzidene Yellow G;
+ Benzidene Yellow GG;
+ C.I. Pigment Yellow 17;
+ Dairylide Yellow 17;
+ Damascus Yellow [MA.o(Med)];
+ Permanent Yellow 2G;
+ Pigment Yellow 17;
+ Transparent Yellow [MA.o(artis)];
+ Yellow Benzidine",21105,"Organic;
+ Disazo; 
+ Benzidene;
+ CAS 4531-49-1",Bright green shade yellow,T,NR,A,"* ""Procedures for preparing permanent yellow vary, when prepared with proper procedures, pigment yellow 17 has pretty good permanence to light.""
+ ""Artists may want to conduct their own lightfastness tests to verify that the manufacturer has selected quality pigment"" (Ref: Blick Art Materials Pigment Info);
+ ** benzidine dyes are believed to be so insoluble in water that they are unlikely to be absorbed (Ref: Blick Art Materials Pigment Info);"
+PY170,Y,CIPIGMENT,170,Pigment Yellow FRN,"C.I. Pigment Yellow 170;
+ Diarylide Yellow;
+ Lionol Yellow FR;
+ Permanent Yellow Orange;
+ Pigment Yellow FRN 170;
+ Pigment Yellow FRN",21104,"Synthetic Organic;
+ Disazo;
+ Chem. Properties @ PubChem
+ CAS 31775-16-3
+ EC 250-797-6",Reddish yellow;,S/O,NR,A,"Used in auto paints, inks and Industrial coatings
+ * Based on pigment manufacture's Blue Wool Scales, may be different once in a complete paint formula, less light fast in tints;
+ Recommend making your own tests in the binder of choice before using for permanent artwork."
+PY172,Y,CIPIGMENT,172,Lionol Yellow NBK,"C.I. Pigment Yellow 172;
+ Lionol Yellow NBK;
+ Pigment Yellow 172",21109,"Synthetic Organic;
+ Disazo; 
+ CAS 76233-80-2",Bright mid-shade yellow,X,III,A,
+PY173,Y,CIPIGMENT,173,Isoindolinone Yellow,"C.I. Pigment Yellow 173;
+ Isoindolinone Yellow;
+ Isoindolinon Yellow [KP.p];
+ Pigment Yellow 173;
+ Sandorin Yellow 6GL",561600,"Isoindolinone;
+CAS 96352-23-7",Greenish yellow,O,II,A,
+PY174,Y,CIPIGMENT,174,Irgalite Yellow LBT,"C.I. Pigment Yellow 174;
+ Diarylide Yellow AAoT 
+ Irgalite Yellow LBT;
+ Pigment Yellow 174",21098,"Synthetic Organic;
+ Disazo; 
+ CAS 78952-72-4",Bright mid-shade yellow,S/T,NR,A,"Reportedly Good primary yellow, however The light fastness of pigment yellow 174 is poor, and is not recommended for permanent art work. PY174 may have use for designers where permanence is not required or books that may have limited light exposure. (Ref Industrial organic pigments, 2004)
+ * Based on Reference (see above)"
+PY175,Y,CIPIGMENT,175,Benzimidazolone Yellow H6G,"Aureolin (hue) [LK];
+ Benzimidazolone Yellow;
+ Chrome Yellow Lemon (hue) [SCH.w];
+ Chrome Yellow Lemon, no lead [SCH.w];
+ C.I. Pigment Yellow 175;
+ Hostaperm Yellow H6G;
+ Imidazolone Lemon [HO.w];
+ Lemon Yellow [DS.ad.i.o.w | MA.a];
+ Lemon Yellow Hue;
+ Lemon Yellow Hue #1 [WN.w];
+ Permanent Lemon Yellow;
+ Permanent Yellow Lemon [MA.o.w.w];
+ Pigment Yellow 175;
+ Winsor Lemon [WN.w.wp.];",11784,"Synthetic Organic;
+ Benzimidazolone;
+ Made by Dimethyl 2-amino-terephthalate diazotization, or 3-Oxo-N-(2-oxo-2,3-dihydro-1H-benzo[d]imidazol-5-yl)butanamide coupling.
+ PY-175 Chemical Properties @ PubChem;
+ C21-H-19-N5-O7;
+ CAS 35636-63-6;
+ EC 252-650-1","Bright light value lemon yellow. greenish undertone;
+ Medium staining;",X,NR,A,"Benzimidazolone Dyes Info @ CAMEO Art Materials Database
+ * Not rated by ASTM. Light fastness rated highly on handprind.com. More on PY 175 in watercolors @ Handprint.com;"
+PY176,Y,CIPIGMENT,176,Diaryl Yellow,"C.I. Pigment Yellow 176;
+ Diaryl Yellow;
+ Isol Diaryl Yellow;
+ Permanent Yellow GRX;
+ Pigment Yellow 176",21103,"Mixed coupling Disazo;
+CAS 90268-24-9",Bright mid-shade yellow red undertone,T,NR,A,
+PY179,Y,CIPIGMENT,179,Pigment Yellow 179,"C.I. Pigment Yellow 179;
+ Cobalt azomethine;
+ Cobalt Indo Golden [GU];
+ Irgazin Yellow 3R;
+ Pigment Yellow 179",,"Cobalt azomethine metal complex;
+CAS 63287-28-5",Reddish yellow,T,NR,B,"* Not rated by the ASTM, based rating from BWS."
+PY180,Y,CIPIGMENT,180,Benzimidazolone Yellow,"C.I. Pigment Yellow 180;
+ PV Fast Yellow HG;
+ Isoindolinone Yellow [HO.wo]",21290,"Benzimidazolone disazo;
+CAS 77804-81-0",Greenish yellow,T,II,A,"* Not rated bt ASTM, based rating by Holbien for Isoindolinone Yellow"
+PY181,Y,CIPIGMENT,181,Benzimidazo Golden,"Benzimidazo Golden [GU.pd];
+ C.I. Pigment Yellow 181;
+ PV Fast Yellow H3R;
+ Pigment Yellow 181",11777,"Benzimidazolone monoazo;
+CAS 74441-05-7",Very reddish orange yellow,S/T,I,A,"* Not rated by the ASTM, based rating on BWS."
+PY182,Y,CIPIGMENT,182,Sandorin Yellow,"C.I. Pigment Yellow 182;
+ Pigment Yellow 182;
+ Sandorin Yellow G;
+ Zanderin Golden [GU.pd]",128300,"Monoazo;
+CAS 67906-31-4",Bright mid-shade yellow; red undertone,S/T,I,A,"* Not rated by ASTM, based rating on BWS."
+PY183,Y,CIPIGMENT,183,Paliotol Yellow K227,"C.I. Pigment Yellow 183;
+ Paliotol Yellow K2270;
+ Pigment Yellow 183;
+ Vynamon Yellow;",18792,"Monoazo;
+CAS 65212-77-3",Reddish yellow,X,II,A,
+PY184,Y,CIPIGMENT,184,Bismuth Vanadate Yellow,"Alfa yellow [KP.p];
+ Bismuth-Vanadate;
+ Yellow lemon [KP.p];
+ Bismuth Vanadate [GU.pd];
+ Bismuth Vanadate Yellow [GEN | DS.ad.w | GO.a.ao];
+ Bismuth Vanadate Yellow, Lemon [KP.p];
+ Bismuth Vanadate Yellow, Medium [KP.p];
+ Bismuth Vanadate Yellow, Dark [KP.p];
+ Bismuth Yellow [CAS.k | BA.w | DR.a.w | MG.w | SQ.a | TA.a.af | WN.a.o.w.wp.];
+ Bismuth Yellow lemon [OH.a];
+ Bismuth Yellow Light [ OH.a | SQ.a | TA.a.af];
+ Bismuth Yellow Medium [OH.a | SQ.a | TA.a.af];
+ Bismuth Yellow Deep [ OH.a | SQ.a | TA.a.af];
+ Bismuth-Vanadate Yellow Lemon [KP.p];
+ Bristol Yellow;
+ Cadmium Yellow Light Hue [LQ.a];
+ C.I. Pigment Yellow 184; 
+ Lefranc Yellow [LB.o];
+ Lemon Yellow [BX.o.w];
+ Permanent Lemon Yellow [RT.a.o.wo];
+ Permanent Yellow Lemon [RT.w];
+ Pigment Yellow 184;
+ Sicopal Yellow;
+ Vanadium Yellow [SCH.g.w];
+ Vanadium Yellow Deep [ SCH.a.o(Mus).p];
+ Vanadium Yellow Light [SCH.a.o.p];
+ XLX Bismuth Vanadate Yellow [KP.p}",771740,"Bismuth Vanadium;
+ Bismuth orthovanadate;
+ Bismuth-vanadium tetraoxide;
+ PY-184 Chemical Properties @ PubChem;
+ Mixed oxide of Bismuth and Vanadium;
+ Occurs in the natural minerals: Clinobisvanite, Deyerite and Pucherite;
+ BiO4-V
+ CAS 14059-33-7
+ EC 237-898-0","Bright light lemon yellow. greenish undertone, can be produced in warm mid shade yellows;
+ Staining w/ good tinting strength;
+ † Darkens",S/O,I,A,"Often used as a non-toxic substitute for Cadmium Yellow Lemon;
+ Widely used in many paints, inks, clothing, flooring, waxes, lacquers and many other common products. 
+ Bismuth Vanadate @ Wikipedia;
+ The New Yellow
+ Video on Periodic Videos YouTube Channel
+ 
+ ** Rated with excellent light fastness in watercolors by Bruce MacEvoy, PY 184 @ Handprint.com;
+ ** Bismuth based pigments are environmentally friendly and can replace more hazardous yellow formulations containing lead, chromium or cadmium pigments. They offer brilliant greenish yellow and orange shades with high opacity and high colour strength - Synthesis, Characterisation and Testing of Bismuth Vanadate - An Eco-friendly Yellow Pigment [JSIR Vol.59, October 2000 p.833-837 (PDF)]
+ May contain trace amounts of impurities that are suspected carcinogens."
+PY185,Y,CIPIGMENT,185,Isoindoline Yellow,"C.I. Pigment Yellow 185;
+ Isoindoline Yellow;
+ Pigment Yellow 185;
+ Sico Fast Yellow D",56290,"Isoindoline;
+CAS 76199-85-4",Bright greenish yellow,T,II,A,
+PY188,Y,CIPIGMENT,188,Irgalite Yellow,"C.I. Pigment Yellow 188;
+ Irgalite Yellow LBF;
+ Pigment Yellow 188",21094,"Disazo;
+CAS 23792-68-9",Bright greenish yellow,X,III,A,
+PY189,Y,CIPIGMENT,189,Nickel Titanate,"C.I. Pigment Yellow 189;
+ Meteor Golden 8304;
+ Nickel Titanate;
+ Nickel Titanium Tungsten;
+ Nickel Titanium Tungsten Yellow Rutile;
+ Nickel Tungsten Yellow Rutile;
+ Pigment Yellow 189",77902,"Inorganic;
+Nickel Tungsten Yellow Rutile or Nickel titanate (with trace tungsten), is a mixed phase pigment of Titanium (IV) Oxide, Nickel (II) Oxide, and Tungsten (VI) Oxide calcined at high temperatures to create a rutile matrix with the approximate formula of (Ti,Ni,W)O2. It may have CeO2, Li20 and/or MgO as modifiers. (4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments)
+CPMA 11-52-4
+CAS 69011-05-8",Dull greenish yellow,X,NR,,"* unrated by ASTM, but most other mixed phase pigments of this type have excellent light and weather fastness.
+ Currently used mostly in plastics. and enamels."
+PY190,Y,CIPIGMENT,190,Palitol Yellow K1570,"C.I. Pigment Yellow 190;
+ Palitol Yellow K1570;
+ Pigment Yellow 190",-,Monoazo,Bright mid-shade yellow,X,X,A,
+PY191,Y,CIPIGMENT,191,Pigment Brilliant Yellow HGR,"C.I. Pigment Yellow 191;
+ PV Fast Yellow HGR;
+ Pigment Brilliant Yellow HGR;
+ Pigment Yellow 191;
+ Pyrazolone yellow HGR",18795,"Monoazo;
+CAS 129423-54-7",Bright mid-shade yellow,X,I,B,"Good heat resistance;
+* Causes severe eye irritation. Harmful if swallowed. May be harmful if inhaled. May cause irritation to skin and respiratory tract. see MSDS."
+PY191:1,Y,CIPIGMENT,191.1,Cromophtal Yellow,"C.I. Pigment Yellow 191:1;
+ Cromophtal Yellow;
+ Pigment Yellow 191:1",-,"Monoazo;
+CAS 129423-54-7",Bright reddish yellow,X,X,A,
+PY192,Y,CIPIGMENT,192,Sandofil Yellow,"C.I. Pigment Yellow 192;
+ Pigment Yellow 192;
+ Sandofil Yellow",65412,Heterocyclic,Dull reddish yellow,X,X,,
+PY193,Y,CIPIGMENT,193,Anthraquinone Yellow,"Anthraquinone Yellow;
+ Chromofine Yellow AF-1300;
+ C.I. Pigment Yellow 193;
+ Pigment Yellow 193",65412,"Anthraquinone;
+CAS 70321-14-1",Dull reddish yellow,X,II,,
+PY194,Y,CIPIGMENT,194,Novoperm Yellow F2G,"C.I. Pigment Yellow 194;
+ Novoperm Yellow F2G;
+ Pigment Yellow 194",11785,"Benzimidazolone;
+CAS 82199-12-0",Bright green shade yellow,X,II,A,
 PY2,Y,CIPIGMENT,2,Hansa Yellow GR,"C.I. Pigment Yellow 2;
  Hansa Yellow GR;
  Pigment Yellow 2",11730,Monoazo ; Arylamide; CAS 6486-26-6,Bright yellow,X,X,A,
+PY200,Y,CIPIGMENT,200,Sunglow Yellow,"C.I. Pigment Yellow 200;
+ Pigment Yellow 200;
+ Sunglow Yellow",,Azo,Reddish Yellow,X,X,A,
+PY203,Y,CIPIGMENT,203,Arylide Yellow,"Arylide Yellow;
+ Azo Yellow 5RX;
+ C.I. Pigment Yellow 203;
+ Pigment Yellow 203",117390,Arylide,Mid-shade yellow,X,X,A,
+PY204,Y,CIPIGMENT,204,Pigment Yellow 204,"C.I. Pigment Yellow 204;
+ Pigment Yellow 204",,Monoazo,Medium yellow shade,X,X,A,commonly used for traffic paint
+PY207,Y,CIPIGMENT,207,Neolor Yellow,"C.I. Pigment Yellow 207;
+ Neolor Yellow;
+ Pigment Yellow 207",,Complex Inorganic,Medium yellow shade,X,X,A,
+PY21,Y,CIPIGMENT,21,C.I. Pigment Yellow 21,"C.I. Pigment Yellow 21; 
+ Pigment Yellow 21;",,Organic,Bright greenish yellow,X,II,,
+PY213,Y,CIPIGMENT,213,Hostaperm Yellow H5G,"C.I. Pigment Yellow 213;
+ Hostaperm Yellow H5G;
+ Pigment Yellow 213;",117875,"Quinoxalinedione monoazo
+ Chromophore
+ CAS: 220198-21-0
+ Formula: C21 H17 N5 O09
+ Chemical properties @ researchgate.net
+ Chemical Properties @ pubchem.ncbi.nlm.nih.gov","Greenish yellow;
+ Dullish, mustard-like masstone in oil paint*",S/T,I,A,"Technical specs [PDF]
+ PCI (Paint & Coatings Industry) article page
+ European Coatings Journal page
+ Clariant PY213 info page
+ Designed for Automotive coatings
+ * According to a report from an e-mail sent me on the appearance of PY213 in oil paint when compared to PY15:
+ • Greener than PY154, closer to PY151, but redder than PY175
+ • Cleaner tints than PY154
+ • Brilliant glaze tones
+ • Masstone of PY213 exhibits a slightly dull, mustard-like tone, PY154 is brighter
+ • PY213 is less transparent than PY154"
+PY216,Y,CIPIGMENT,216,Solaplex Yellow,"Chrome Yellow Hue Deep [SCH.o];
+ Chrome Yellow Hue Middle [SCH.o];
+ C.I. Pigment Yellow 216;
+ English Yellow [UT.w];
+ Orange 10P320;
+ Orange 10C341;
+ Pigment Yellow 216;
+ RTZ Orange 10C341;
+ Rutile Tin Zinc;
+ Solaplex Mid Yellow;
+ Solaplex Orange;
+ Turner's Yellow (hue) [WN.w.wp.]
+ Zinc-Tin Rutile",,"Inorganic; 
+ Spherical complex of a tin-zinc-titania compound produced by high temperature calcination;
+ Rutile Tin Zinc","Clean Bright Yellow to Dull Orange;
+ moderately staining with good tinting strength",S/O,I,A,"High whether, chemical and light fastness (Ref. shepherdcolor.com) Orange 10C341 reference page at Sheperd Color More info on PY-216 in watercolors @ handprint.com
+A example of a homemade Deep Yellow using Zinc-Tin Rutile (PY216) hand mulled into a paint and humorously named ""Winter’s Woe Deep Yellow Snow "" by Perry Johnson at http://perryjohnson.net"
+PY219,Y,CIPIGMENT,219,Titanium Zinc Antimony Stannate,"C.I. Pigment Yellow 219;
+ Pigment Yellow 219;
+ Titanium Zinc Antimony Stannate",,Titanium Zinc Antimony Stannate,,X,X,,
+PY223,Y,CIPIGMENT,223,MayaCrom Yellow Y2351RS,"C.I. Pigment Yellow 223;
+ MayaCrom Yellow Y2351RS;
+ MayaPure Yellow;
+ Mayan Yellow [DS.w | SI.p*?];
+ Mayan Yellow, Genuine [SI.p];
+ Pigment Yellow 223",,"Patented Organic-Inorganic hybred based on the chemistry of Mayan Blue with a unique nano crystal lattice. Reference the Tech data sheet, and Patent application.;
+ Article about Hybred Pigments and Mayan Blue in New Journal of Chemistry 2005, 29, p.57–58 (Article Reference PDF);",Reddish Yellow,T,NR,A,"""evolved from work done at the University of Texas El Paso to reconstruct the unique vibrant blue color developed by the Maya civilization more than 1000 years ago, using an inorganic and organic component to produce a highly stable hybrid pigment."" - press release
+ Announcement of C.I Names allocated - Press release [PDF]
+ 'Centuries-old Maya Blue mystery finally solved'
+ Article on eurekalert.org
+ See Mayan Blue and MayaCrom Blue PB-82 for more info.;
+ The original Mayan Pigments website seems to have been taken down, I could only find a facebook page and a squarespace site for Myan Pigments, Inc. [facebook];
+ Myan Pigments [squarespace];"
+PY224,Y,CIPIGMENT,224,MayaCrom Yellow Y2300F,"C.I. Pigment Yellow 224;
+ MayaCrom Yellow Y2300F;
+ MayaPure Yellow;
+ Pigment Yellow 224",,"Patented Organic-Inorganic hybred based on the chemistry of Mayan Blue with a unique nano crystal lattice. Reference the Tech data sheet, Patent application.",3,X,NR,A,"See above PY223
+ The original Mayan Pigments website seems to have been taken down, I could only find a facebook page and a squarespace site for Myan Pigments, Inc. [facebook];
+ Myan Pigments [squarespace];"
+PY226,Y,CIPIGMENT,226,MayaCrom® Yellow Y7300,"C. I . Pigment Yellow 226;
+ MayaCrom® Yellow Y7300;
+ MayaPure Yellow;",,"Patented Organic-Inorganic hybred based on the chemistry of Mayan Blue with a unique nano crystal lattice. Reference the Tech data sheet, and Patent application.;
+ Article about Hybred Pigments and Mayan Blue in New Journal of Chemistry 2005, 29, p.57–58 (Article Reference PDF);",,X,NR,A,"The original Mayan Pigments website seems to have been taken down, I could only find a facebook page and a squarespace site for Myan Pigments, Inc. [facebook];
+ Myan Pigments [squarespace];"
+PY227,Y,CIPIGMENT,227,NTP Yellow,"CI Pigment Yellow 227;
+ Niobium Sulfur Tin Zinc Oxide; 
+ Niobium Tin Pyrochlore;
+ NTP Yellow;
+ Yellow 10C150 1; 
+ Yellow 10C151 2;",,"Niobium Tin Pyrochlore;
+ Niobium Sulfur Tin Zinc Oxide; 
+ ""A chromatic yellow inorganic pigment produced by high temperature calcination""
+ A brand new crystal structure and a yellow color not seen in inorganic pigments before 
+ (Ref. Shepherd Color Company) 
+ patented under US Patent 8,192,541",Mid slightly reddish deep yellow similar to Lead Chromate,O,NR,A,"Ref. from the Shepherd Color Company website:
+ ""brand-new patented pigment technology that offers outstanding bright and opaque masstones and clean tints. It is the first high-performance alternative to have the coloristic and weathering performance to provide a viable replacement for lead chromate in wide selection of demanding applications""
+ ""This pigment has excellent UV and visible opacity, is chemically inert, heat resistant, and stable to ultraviolet light. It is non-bleeding and non-migratory. It has exceptional durability and hiding power, and is generally used in applications where resistance to heat, light, and weather are needed."" (Ref. NTP Yellow & RTZ Orange @ Shepher Color)"
+PY24,Y,CIPIGMENT,24,Flaventhrone Yellow,"C.I. Pigment Yellow 24;
+ Flaventhrone Yellow [GU.pd];
+ Flaventhrone Yellow Deep [GUd]; 
+ Pigment Yellow 24; 
+ Vat yellow 1",70600,"Dairylide;
+Anthraquinone;
+Flavanthrone;
+Heterocyclic Anthraquinone
+CAS 475-71-8","Mid-shade to reddish Yellow
+ Good tinting strength;
+ † Darkens in masstone",T,I,A,"Extinct, Out of production, no longer made;
+ Same Pigment as PY-112?
+ * appears to be more light fast in tints, this is unusual"
 PY3,Y,CIPIGMENT,3,Hansa Yellow 10G,"Antique Lemon [HO.w(ant)];
 Arylamide Yellow; Arylide yellow 10G;
 Arylide yellow light [SQ.a | TA.a.af ] Azo Yellow Lemon [OH.a.o.w | RT.a];
@@ -103,98 +1399,6 @@ EC 229-355-1","Bright light lemon yellow; Green undertone, does not lose chroma 
  ** ASTM II (Color Index third ed), and many paint suppliers put it at II (very good) with lightfastness lower in tints. 
  In watercolor, some brands perform worst (Ref see PY3 at handprint.com);
  ** Possible carcinogen"
-PY4,Y,CIPIGMENT,4,Arylide Yellow 13G,"Acetoacetyl;
- Arylide Yellow 13G;
- C.I. Pigment Yellow 4;
- Eljon Yellow 5G; 
- Hansa Yellow;
- Lemon Yellow [LB.av.o]
- Pigment Yellow 4",11665,"Monoazo; Arylamide;
-CAS 1657-16-5",Bright greenish yellow,X,II,A,
-PY5,Y,CIPIGMENT,5,Hansa Yellow 5G,"Arylide Yellow;
- C.I. Pigment Yellow 5;
- Hansa Yellow 5G;
- Pigment Yellow 5",11660,"Monoazo; Arylamide;
-CAS 4106-67-6",Bright greenish yellow,X,X,A,
-PY6,Y,CIPIGMENT,6,Hansa Yellow 3G,"C.I. Pigment Yellow 6;
- Hansa Golden Yellow;
- Permanent Yellow Orange [HO.g];
- Pigment Yellow 6",11670,Monoazo; Arylamide; CAS 4106-76-7,Bright yellow,X,III,A,
-PY9,Y,CIPIGMENT,9,Azo Yellow 2GX,"Azo Yellow 2GX;
- C.I. Pigment Yellow 9;
- Pigment Fast Yellow GRL;
- Pigment Yellow 9",11720,"Monoazo;
-CAS 6486-24-4",Yellow,X,X,A,
-PY10,Y,CIPIGMENT,10,Hansa Yellow R,"Arylide Yellow;
- C.I. Pigment Yellow 10;
- Hansa Yellow;
- Pigment Yellow 10",12710,"Pyrazolone azo;
-CAS 6407-75-6",Reddish yellow,X,X,A,
-PY12,Y,CIPIGMENT,12,Benzidine Yellow G,"Benzidine Yellow G;
- C.I. Pigment Yellow 12;
- Dairylide Yellow 12;
- Dairylide Yellow AAA;
- Disazo Yellow;
- Pigment Yellow 12",21090,"Disazo;
-CAS 6358-85-6",Brownish orange yellow,O,III,A,used mainly for inks
-PY13,Y,CIPIGMENT,13,Benzidine Yellow GR,"Arylamide Yellow;
- Benzidine Yellow GR;
- C.I. Pigment Yellow 13;
- Dairylide Yellow AAMX;
- IRGALITE Yellow BAW;
- Orange Red;
- Pigment Yellow 13;
- Vulcan Fast Yellow GR",21100,"Disazo; Diarylide m-xylidide;
-CAS 5102-83-0",Bright Reddish yellow,S/O,III,A,slightly more lightfast than PY12; used mainly for inks
-PY14,Y,CIPIGMENT,14,Diarylide Yellow AAOT,"Azo Yellow 13GX;
- Benzidine Yellow AAOT;
- C.I. Pigment Yellow 14;
- Dairylide Yellow;
- Diarylide Yellow OT;
- Disazo Type 11;
- Diacetanil Yellow;
- lsol Diaryl Yellow;
- PERMANENT YELLOW 2GB;
- Pigment Yellow 14;
- Transparent Lemon [HO.o];
- Vulcan Fast Yellow G","21095
- 21100? [Ref]","Disazo Type 11 Toluidide;
-CAS 5468-75-7",Yellow leaning towards green,S/T,NR,A,Used mainly in inks
-PY16,Y,CIPIGMENT,16,Permanent Yellow NCG,"C.I. Pigment Yellow 16;
- Dairylide Yellow;
- Pigment Yellow 16;
- Permanent Yellow [GU]",20040,"Disazo;
-CAS 5979-28-2",Bright greenish yellow,S/T,III,A,Main use in inks
-PY17,Y,CIPIGMENT,17,Dairylide Yellow 17,"Arylamide Yellow;
- Benzidene Yellow G;
- Benzidene Yellow GG;
- C.I. Pigment Yellow 17;
- Dairylide Yellow 17;
- Damascus Yellow [MA.o(Med)];
- Permanent Yellow 2G;
- Pigment Yellow 17;
- Transparent Yellow [MA.o(artis)];
- Yellow Benzidine",21105,"Organic;
- Disazo; 
- Benzidene;
- CAS 4531-49-1",Bright green shade yellow,T,NR,A,"* ""Procedures for preparing permanent yellow vary, when prepared with proper procedures, pigment yellow 17 has pretty good permanence to light.""
- ""Artists may want to conduct their own lightfastness tests to verify that the manufacturer has selected quality pigment"" (Ref: Blick Art Materials Pigment Info);
- ** benzidine dyes are believed to be so insoluble in water that they are unlikely to be absorbed (Ref: Blick Art Materials Pigment Info);"
-PY21,Y,CIPIGMENT,21,C.I. Pigment Yellow 21,"C.I. Pigment Yellow 21; 
- Pigment Yellow 21;",,Organic,Bright greenish yellow,X,II,,
-PY24,Y,CIPIGMENT,24,Flaventhrone Yellow,"C.I. Pigment Yellow 24;
- Flaventhrone Yellow [GU.pd];
- Flaventhrone Yellow Deep [GUd]; 
- Pigment Yellow 24; 
- Vat yellow 1",70600,"Dairylide;
-Anthraquinone;
-Flavanthrone;
-Heterocyclic Anthraquinone
-CAS 475-71-8","Mid-shade to reddish Yellow
- Good tinting strength;
- † Darkens in masstone",T,I,A,"Extinct, Out of production, no longer made;
- Same Pigment as PY-112?
- * appears to be more light fast in tints, this is unusual"
 PY30,Y,CIPIGMENT,30,Lead Oxychloride,"Cassel Yellow;
  C.I. Pigment Yellow 30;
  English Yellow;
@@ -623,6 +1827,14 @@ May react with other pigments (Ref);
 * Natural sources said to be more light fast (Ref);
 ** Natural orpiment said to be less toxic (Ref).
 *** In it's natural crystal state it is very transparent, but transparency can vary do to binder medium (more transparent in oils), processing and particle size."
+PY4,Y,CIPIGMENT,4,Arylide Yellow 13G,"Acetoacetyl;
+ Arylide Yellow 13G;
+ C.I. Pigment Yellow 4;
+ Eljon Yellow 5G; 
+ Hansa Yellow;
+ Lemon Yellow [LB.av.o]
+ Pigment Yellow 4",11665,"Monoazo; Arylamide;
+CAS 1657-16-5",Bright greenish yellow,X,II,A,
 PY40,Y,CIPIGMENT,40,Aureoline,"Aureolin [GEN | AS | BX.o | DR.o.w | GR.o | HO.o | MA.o(artis) | MH.o | RT.w | SE.o.w | UT.o | WN.w.wp.];
  Aureolina;
  Aureoline [ RT.w | SE.o];
@@ -982,6 +2194,11 @@ Lead Cyanate:
 CAS 592-05-2;
 Lead Cyanamide:
 CAS 20837-86-9",Bright Greenish yellow,X,X,D,"According to the Color Index (1997) Lead cyanamide is PY48, Other sources indicate that Lead Cyanide is PY 48 (Ref). They appear to be different chemicals with different CAS numbers.; Poisonous; Anticorrosive Paint; decomposed by acids to give off hydrogen cyanide"
+PY5,Y,CIPIGMENT,5,Hansa Yellow 5G,"Arylide Yellow;
+ C.I. Pigment Yellow 5;
+ Hansa Yellow 5G;
+ Pigment Yellow 5",11660,"Monoazo; Arylamide;
+CAS 4106-67-6",Bright greenish yellow,X,X,A,
 PY53,Y,CIPIGMENT,53,Nickel Antimony Titanium Yellow Rutile,"Antimony Nickel Titanium Oxide Yellow;
  C.I. Pigment Yellow 53;
  Juane Citron;
@@ -1041,6 +2258,10 @@ PY55,Y,CIPIGMENT,55,Diarylide Yellow AAPT,"Benzidine AAPT;
  Pigment Yellow 2RN;
  Yellow Deep",21096,"Disazo;
 CAS 6358-37-8",Slightly dull reddish yellow,X,III,B,
+PY6,Y,CIPIGMENT,6,Hansa Yellow 3G,"C.I. Pigment Yellow 6;
+ Hansa Golden Yellow;
+ Permanent Yellow Orange [HO.g];
+ Pigment Yellow 6",11670,Monoazo; Arylamide; CAS 4106-76-7,Bright yellow,X,III,A,
 PY61,Y,CIPIGMENT,61,Pigment Yellow 61,"C.I. Pigment Yellow 61;
  Heuco Yellow 106100;
  Pigment Yellow 61;
@@ -1242,6 +2463,11 @@ PY87,Y,CIPIGMENT,87,Diarylide Yellow 1285,"C.I. Pigment Yellow 87;
  Indian Yellow Transparent [RGH.o]; 
  Lionol Yellow FFR;",21107:1,"Disazo
  CAS 15110-84-6",Reddish yellow,S/T,II,A,
+PY9,Y,CIPIGMENT,9,Azo Yellow 2GX,"Azo Yellow 2GX;
+ C.I. Pigment Yellow 9;
+ Pigment Fast Yellow GRL;
+ Pigment Yellow 9",11720,"Monoazo;
+CAS 6486-24-4",Yellow,X,X,A,
 PY93,Y,CIPIGMENT,93,Disazo Yellow 3G,"Disazo Yellow 3G;
  Disazo Yellow 93;
  Chromopthal Yellow 3G [GU];
@@ -1297,1229 +2523,3 @@ PY98,Y,CIPIGMENT,98,Diarylide Yellow,"C.I. Pigment Yellow 98;
  Lemon Yellow [HO.af]; 
  Pigment Yellow 98",11727,"Monoazo; Diarylide;
 CAS 32432-45-4",Very light & bright lemon yellow,S/T,II,A,
-PY100,Y,CIPIGMENT,100,Tartrazine Lake,"C.I. Pigment Yellow 100;
- Conalake Tartrazine;
- FD&C Yellow 5 Aluminum Lake;
- Indian Yellow (hue) [KA.p | WN.od]; 
- Pigment Yellow 100;
- Tartrazine Lake;
- Tartrazine Yellow;",19140:1,"Monoazo; Tartrazine Lake;
-CAS 12225-21-7",Orangey yellow,X,IV,A,
-PY101,Y,CIPIGMENT,101,Lumogen Yellow,"C.I. Pigment Yellow 101;
- Lumogen Yellow;
- Pigment Yellow 101",48052,"Disazomethine;
-CAS 2053-29-4",Brilliant florescent greenish yellow,T,II,A,
-PY104,Y,CIPIGMENT,104,FD&C Yellow 6,"C.I. Food Yellow 3;
- C.I. Pigment Yellow 104;
- Conalake Sunset Yellow;
- FD&C Yellow 6 Aluminum Lake;
- Pigment Yellow 104;
- Sunset Yellow Lake",15985:1,"Monoazo;
-CAS 15790-07-5",Orange shade yellow,T,X,A,
-PY105,Y,CIPIGMENT,105,D&C Yellow No 10 lake,"C.I. Pigment Yellow 105;
- D&C Yellow No 10 lake;
- Monolite Fast Yellow 6G;
- Pigment Yellow 105",11743,"Monoazo;
-CAS 12236-75-8",Bright greenish yellow,T,X,A,
-PY108,Y,CIPIGMENT,108,Anthrapyrimidine Yellow,"Anthra Golden [GU.pd];
- Anthrapyrimidine Yellow;
- C.I. Pigment Yellow 108;
- C.I. Vat Yellow 20;
- Gamboge Gum Modern;
- Gamboge Modern [SCH];
- Indanthren Yellow 4GF;
- Indian Yellow (hue?*) [DS.wd];
- Lasyrgula; 
- Magnesium Euxanthate?;
- Mikethrene Yellow 4GF
- Natural Yellow 20 ?*;
- Nihonthrene Yellow 4GFF
- Palanthrene Yellow 4GF
- Paliogen Yellow RT;
- Paradone Yellow
- Pigment Yellow 108;
- Pyramid Yellow;
- Pyramid-Yellow medium [KP.p];
- Pyrimidoanthrone Yellow;
- Romantrene Yellow F4G
- Snoeshoe yellow;
- Threne Yellow 4GF",68420,"Synthetic organic vat pigment; Anthrapyrimidine: IUPAC Name: N-(9,10-dihydro-9,10-dioxoanthracen-1-yl)-7-oxo-7H-benzo[e]perimidine-4-carboxamide ; Heterocyclic Anthraquinone;
-Syththetic form of euxanthate. Similar to Magnesium euxanthate?
-Chemical Composition of Vat Yellow 20 @ PubChem Chemical Database
-(compare NY20 Indian Yellow); Formula: C30H15N3O4 ?* CAS 4216-01-7
-EC 224-151-9","Bright mid to reddish yellow;
- † Darkens, reddens",X,NR,A,"More info on PY-108 in watercolors @ handprint.com
- ?* Magnesium Euxanthate is thought to be the main yellow coloring chemical of genuine natural Indian yellow. It is possible (ed. Probable) the urine of cow history of Indian Yellow is nothing more than an myth (see my blog article) and true Indian Yellow is simply euxanthate acid, isolated from a natural source, and precipitaded on a dolomite or other base cantaining magnesium., possibly from a plant source and mixed with magnesia or precipitated on a calcium base. The chemical formula for Vat Yellow 20 contains no Magnesium, the pigment is the Vat Yellow dye preciptated on a base, most likely Calcium carbonate or Magnesium hydroxide.
- Interesting discussion of Indian Yellow on the WetCanvas.com forum here.
- (compare NY20 Indian Yellow); 
- (Ref Color: a natural history of the palette p.204), (Ref absoluteastronomy
- .com), (Ref wikipedia). 
- Incompatible with strong oxidizing agents, ammonia. (Ref Guidechem.com).
- May need wetting agent (Ref The Artist's Handbook. by Pip Seymour,2003)
- * Rated excellemt (BWS) 8;8;8 in some manufactures literature, rated only very good (BWS 7;6) in watercolors by handprint."
-PY109,Y,CIPIGMENT,109,Isoindole Yellow,"C.I. Pigment Yellow 109;
- Foscolor Yellow 109;
- Irgazin Yellow 2GLT [GU];
- Isoindole Yellow [GEN | KP.p];
- Isoindolgelb [KP.p];
- Isoindolinone Yellow;
- Pigment Yellow 109",56284,"Isoindolinone;
-Tetrachloro-isoindolinone;
-CAS 5045-40-9",Greenish to reddish yellow,S/T,I,A,
-PY110,Y,CIPIGMENT,110,Isoindolinone Yellow,"C.I. Pigment Yellow 110;
- Gamboge (Hue) [MGd];
- Indian Yellow (hue) [MG.a.o.w | RT.o.wo | SQ.a | TA.a.af];
- Indian Yellow Orange Extra [OH.a];
- Isoindolinone Yellow;
- Isoindolinone Yellow R;
- Isoindolinone Yellow Deep [ HO.w | KA.ad]; 
- Irgazin Golden [GU.pd];
- Irgazin® light orange 2 RLT [KP.p];
- Irgazin Yellow;
- Irgazin Yellow 2RLT;
- Permanent Yellow [LA.a]; 
- Permanent Yellow Deep [DS.w];
- Pigment Yellow 110;
- Rowney Orange [DR];
- Stil de Grain Yellow (hue) [RT.o]",56280,"Synthetic organic;
-Tetrachholo-isoindolinone;
-CAS 5590-18-1","Light, deep yellow with red undertone;
- Good tinting strength, moderately staining",X,I,A,"Nice deep yellow; 
- Dry pigment may require wetting agent;
- ""The first isoindoline pigments were patented in 1946, and commercial production of pigments in this group began in the 1960s. Several isoindoline yellow pigments are available"" (Ref. Blick Art Materials)
- More info on PY 110 in watercolors @ handprint.com"
-PY111,Y,CIPIGMENT,111,Hansa Brilliant Yellow,"C.I. Pigment Yellow 111;
- Hansa Brilliant Yellow 7GX;
- Irgalite Yellow F4G;
- Pigment Yellow 111",11745,"Monoazo; Arylamide;
-CAS 15993-42-7",Greenish yellow,X,III,A,
-PY112,Y,CIPIGMENT,112,Flavanthrone Yellow,"Anthraquinone Yellow;
- C.I. Pigment Yellow 112;
- Flavanthrene;
- Flavanthrone (8CI);
- Flavanthrone Yellow;
- Indanthren Yellow GLP;
- Indanthrene Yellow G;
- Permanent Indian Yellow (hue) [LQ.ad.od];
- Pigment Yellow 24*;
- Pigment Yellow 112;
- Vat Yellow 1",70600,"Naphthol; Anthraquinone;
-CAS 82601-32-9","Dull reddish yellow;
- Good tinting strength;
- † Darkens in masstone, fades in tints",T,I,A,"Originally known as Vat Yellow 1, one of the first lightfast Vat pigments.
- * same pigment as PY24?(Ref)"
-PY113,Y,CIPIGMENT,113,Disazo Yellow 10HG,"C.I. Pigment Yellow 113;
- Disazo 10HG [GU];
- Disazo Yellow;
- Pigment Yellow 113",,Disazo,Very Green Yellow,X,II,A,removed from market (Ref)
-PY115,Y,CIPIGMENT,115,D&C Yellow 10,"Ariabel Yellow 12.42;
- C.I. Pigment Yellow 115;
- D&C Yellow 10;
- D&C Yellow 10 Aluminum Lake;
- Pigment Yellow 115",47005:1,"Quinoline;
-Aluminum salt of sulfinated CAS 68814-04-0",Bright greenish yellow,T,NR,A,
-PY116,Y,CIPIGMENT,116,Helio Fast Yellow ER,"C.I. Pigment Yellow 116;
- Helio Fast Yellow ER;
- Golden 116 [GU];
- Pigment Yellow 116;
- Suimei Fast Yellow",11790,"organic;
-Monoazo;
-CAS 30191-02-7",Golden reddish yellow,X,II,A,* Not rated by the ASTM; rating based on blue wool scale.
-PY117,Y,CIPIGMENT,117,Paliotol Yellow,"Azo Methine Medium [GU.pd];
- Azomethine; 
- Greenish Yellow [HO.o.w.wo | SH.w];
- Paliotol Yellow;
- Pigment Yellow 117",,"Organic;
- Azomethine copper complex;
- Azomethine pigments patent no. US3700709","Bright, light green to midshade yellow
- Staining w/ good tinting strength",X,NR,A,"Pigment manufacture has been discontinued. (Ref. Industrial Organic Pigments 3rd ed - W. herbst, K. Hunger (Wiley, 2004) p.396-397)
- More info on PY-117 in watercolors @ handprint.com
- ?* Not rated by the ASTM; but rated excellent by some manufacturers and pigment distributors. In real world tests on a single paint preparation in watercolor, it was rated very poorly at handprint.com; most other Azo Methine Pigments have acceptable lightfastness (i.e. PY 129)"
-PY118,Y,CIPIGMENT,118,Chromium Titan Yellow,"Chromium Titan Yellow;
- C.I. Pigment Yellow 118;
- Disazo H10?;
- Pigment Yellow 118",77894,"Inorganic;
- Chromium Titan Yellow;
- Titanium, Nickel, Antimony, Chromium oxide as a mixed-phase pigment.;
- Titanium dioxide with nickel oxide, antimony oxide-chromium oxide approximately corresponding to the formula (Ti,Ni,Sb,Cr)Oz (Ref Inorganic Colouring Matters, Color Index 3rd Ed.)",Reddish yellow,X,NR,B,"* Not rated by the ASMT, but most mixed metal oxides of this type have excellent lightfastness.
- You may want to make your own light fastness tests of the color in your binder of choice, if you plan on experimenting with this pigment.
- ** requires a PROP 65 label in CA. due to it's nickel content; in these types of pigment, the Nickel, Antimony & Chromium are usually tightly bound in the chemical structure, limiting the toxicity."
-PY119,Y,CIPIGMENT,119,Zinc Iron Yellow,"C.I. Pigment Yellow 119;
- Daipyroxide Brown 9211;
- Iron Zinc Brown;
- Iron Zinc Brown Spinel;
- Iron Zinc Oxide;
- Magnesium Brown [WN.w.wp]?*;
- Mars Yellow [HO.w];
- Pigment Yellow 119;
- Tuscan Earth [SE.o];
- Zinc Ferrite Brown;
- Zinc-Iron Brown, dark [KP.p];
- Zinc Iron Brown, dark, spinel [KP.p]; 
- Zinc Iron Brown, light [KP.p];
- Zinc Iron Brown, light, spinel [KP.p];
- Zinc Ferrite Brown;
- Zinc Ferrite Brown Spinel;
- Zinc Iron Brown;
- Zinc Iron Oxide;
- Zinc Iron Yellow",77496,"Inorganic;
-Iron zinc oxide (Zn,Fe)Fe2O4 or Fe2O4Zn Spinel Phase Pigment;
-Zinc Ferrite Brown Spinel, is created by the calcination of Zinc (II) Oxide, Iron (II) Oxide, and Iron (III) Oxide in varied ratios that create a homogeneous, ionically interdiffused spinel form crystalline matrix. All or either of the chemicals Al2O3, InO2, NiO, SiO2, SnO2 and/or TiO2 can be used as modifiers (Reference: 4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments).; Mixed Metal Oxide (MMO) (PCImag Ref): CPMA 13-36-7; CAS 12063-19-3;
-CAS 68187-51-9","Dark, dull reddish buff to light yellow buff;
- Can be formulated in reddish & light yellow shades depending on the modifying metals used during manufacture.",S/T,I,A,"* Not rated by the ASMT, most brands of artist paints using PY-119 give it high lightfastness ratings, other similar pigments of this type generally have excellent lightfastness.
- You may want to make your own light fastness tests of the paint in the binder you have."
-PY120,Y,CIPIGMENT,120,PV Fast Yellow H2G,"Benzimidazo H2G [GU.p.pd];
- Benzimidazolone Yellow;
- C.I. Pigment Yellow 120;
- Gafast Pigment Yellow 120;
- Novoperm Yellow H2G;
- Pigment Yellow 120;
- PV Fast Yellow H2G;
- Scheveningen Yellow Medium [OH.o.w]",11783,"Monoazo; 
- Benzimidazolone;
- Gafast Pigment Yellow 120 (Tech Sheet Reference);;
- C21-H19-N5-O7
- CAS 29920-31-8","Bright, light, mid-shade yellow;
- †Darkens, browns",S/T,NR,A,"More info on PY-120 in watercolors @ handprint.com
- * rated I (excellent, BWS 8) by some sources, rated only III (fair) in watercolor tests by handprint"
-PY126,Y,CIPIGMENT,126,Diarylide Yellow DGR,"C.I. Pigment Yellow 126;
- Diarylide Yellow DGR;
- Permanent Yellow 3G;
- Permanent Yellow DGR;
- Pigment Yellow 126",21101,"Disazo;
-CAS 90268-23-8",Bright yellow reddish undertone,S/O,III,A,
-PY127,Y,CIPIGMENT,127,Benzidine Yellow GRL,"Benzidine Yellow GRL;
- C.I. Pigment Yellow 127;
- Permanent Yellow GRL;
- Pigment Yellow 127",21102,"Mixed coupling Disazo;
-CAS 68610-86-6",Bright greenish yellow,X,I,A,
-PY127:1,Y,CIPIGMENT,127.1,DCC Diarylide Yellow,"C.I. Pigment Yellow 127:1;
- DCC 1232 Diarylide Yellow;
- Pigment Yellow 127:1",21102:1,Mixed coupling Disazo,Bright greenish yellow,X,X,A,
-PY128,Y,CIPIGMENT,128,Azo Condensation Yellow,"Azo Condensation Yellow;
- Azo Yellow;
- C.I. Pigment Yellow 128;
- Cromophtal Yellow 8G;
- Indian Yellow Extra [ OH.a];
- Pigment Yellow 128;
- Transparent Yellow [WN.o];
- Transparent Yellow Medium [RT.a.a.o.wo]",20037,"Disazo Condensation;
- Technical Data Sheet (Epsilon)
- C55-H37-Cl5-F6-N8-O8
- CAS 79953-85-8
- EC 279-356-6","Bright transparent yellow, comes in medium to reddish & greenish shades",T,NR,A,Alternative to Aureolin or Indian Yellow
-PY129,Y,CIPIGMENT,129,Irgazin Yellow,"Australian Green Gold;
- Azo Green [MG.a.o.w];
- Azo Methine Dark [GU];
- Azo Methine Dark (yellow Shade);
- Azomethine Yellow;
- C.I. Pigment Yellow 129;
- Golden Green [SE.o | OH.o.w];
- Green Gold [ DR.w | DV.o.w | LQ.a | OH.a | WN.a.o.w.wp];
- Green Yellow [LK]; 
- Irgazin Yellow 5GT;
- Irgazin® Yellow, greenish [KP.p];
- Magnacryl Azomethine Yellow;
- Old Holland Golden Green [OH.o.w];
- Old Holland Green Gold [OH.a];
- Pigment Yellow 129;
- Rich Green Gold [DS.ad.o.w];
- Transparent Yellow Green [RT.o]",48042,"Metal Complex (Copper Azomethine Green);
- Azomethine Copper Complex;
- 2-hydroxy-1-naphthaldehyde + o-aminophenol (imine formation)
- C17-H11-Cu1-N1-O2
- CAS 15680-42-9
- EC 239-763-1","Slightly dull, light greenish yellow to yellowish green;
- Medium tinting strength, staining;",T,I,B,"PY 129 @ handprint.com
- * Becuase of the metal copper, it rmay have a Cautionary Label: Products may contain hazardous substances.
- Harmful if inhaled
- Harmful if swallowed"
-PY130,Y,CIPIGMENT,130,Pigment Yellow 130,"C.I. Pigment Yellow 130;
- Pigment Yellow 130;
- Symuler Fast Yellow 4119",,Monoazo,Reddish yellow,X,X,A,
-PY133,Y,CIPIGMENT,133,Pigment Yellow 133,"C.I. Pigment Yellow 133;
- Pigment Yellow 133;
- Symuler Lake Fast Yellow 6G",,"Monoazo; Strontium salt;
-CAS 132821-92-2",Greenish yellow,X,X,,
-PY134,Y,CIPIGMENT,134,Pigment Yellow 134,"C.I. Pigment Yellow 134;
- Pigment Yellow 134;
- Symuler Fast Yellow 2RF",,Disazo,Reddish yellow,X,X,A,
-PY136,Y,CIPIGMENT,136,Pigment Yellow 136,"C.I. Pigment Yellow 136;
- Pigment Yellow 136;
- Symuler Fast Yellow GRNF",,Disazo,Mid-shade yellow,X,X,A,
-PY137,Y,CIPIGMENT,137,Isoindoline Yellow,"C.I. Pigment Yellow 137;
- Isoindoline Yellow;
- Pigment Yellow 137",,"Quinophthalone;
- Isoindoline",,X,X,,
-PY138,Y,CIPIGMENT,138,Quinophthalone Yellow,"C.I. Pigment Yellow 138;
- Gafast Pigment Yellow 138 - OP;
- Gafast Pigment Yellow 138 - TR ;
- Isoindoline Yellow;
- Lithol Fast Yellow;
- Paliotol® Yellow K 0961 HD;
- Permanent Lemon Yellow [PF.w]; 
- Permanent Yellow [DR.w];
- Pigment Yellow;
- H.S. [GU.pd]
- Quinopthalone Opaque [GUd]; 
- Quinopthalone Yellow [DS.w | GU.pd]; 
- Rape Yellow",56300,"Synthetic organic;
-Isoindoline;
-Gafast Pigment Yellow 138 - OP (Tech Sheet Reference);
-Gafast Pigment Yellow 138 - TR (Tech Sheet Reference);
-CAS 30125-47-4","Very light, bright, greenish to reddish yellow*;
- Staining with high tinting strength
- †Lightens",X,II,A,"More info on PY-138 in watercolors @ handprint.com
- * The reddish yellow shade is extremely opaque. The greenish shade is transparent and has higher tinctorial strength (Ref: special chemical coatings.com color-handbook)."
-PY139,Y,CIPIGMENT,139,Isoindoline Yellow,"C.I. Pigment Yellow 139;
- Deep Yellow [RT];
- Gafast Pigment Yellow 139;
- Indo Golden [GU.pd]; 
- Indian Yellow (hue) [CR.a(jo). | JO.a | LQ.a | MAd | WN.k];
- Isoidolinone Yellow [KA.o.p];
- Isoindoline Yellow [DS.w];
- Isoindolinone Yellow;
- Lithol Fast Yellow;
- Paliotol® Yellow;
- Paliotol® Yellow-Orange [KP.p]; 
- Permanent Yellow Deep [MA.w.w];
- Pigment Yellow 139;
- Yellow Deep [CAS.k];",56298,"Synthetic Organic;
- Isoindoline;
- Gafast Pigment Yellow 139 (Tech Sheet Reference);
- Chemical Info @ PubChem Open Chemical Database
- C16-H9-N5-O6
- CAS 36888-99-0
- EC 253-256-2","Light to deep reddish yellow*;
- † slight fading",X,NR,A,"May be a good light fast Indian yellow substitute;
- Dry pigment powder may require wetting agent to incorporate into binder.
- More info on PY-139 in watercolors @ handprint.com
- * Varies by particle size and formulation (Ref. Industrial Organic Pigments 3rd ed - W. herbst, K. Hunger (Wiley, 2004) p.415)
- ** suitable for food contact (Ref. PALIOTOL™ YELLOW K 1841 BASF)"
-PY147,Y,CIPIGMENT,147,Pigment Yellow 147,"Anthra Brite Gold [GU];
- Anthrapyrimidine Yellow; 
- C.I. Pigment Yellow 147;
- Cromophtal Yellow AGR;
- Pigment Yellow 147;
- Yellow AGR",60645,"Polycyclic Anthraquinone;
-Anthrapyrimidine;
-CAS 4118-16-5","Light, deep yellow",T,I,,
-PY148,Y,CIPIGMENT,148,Filamid Yellow 4G,"C.I. Pigment Yellow 148;
- Filamid Yellow 4G;
- Pigment Yellow 148",50600,"Polycyclic;
-CAS 20572-37-6",Greenish yellow,X,X,,
-PY150,Y,CIPIGMENT,150,Nickel Azo Yellow,"Aureoline (hue) [RT.o];
- Azo Yellow;
- C.I. Pigment Yellow 150;
- Gamboge (hue);
- Gamboge Hue;
- Green Gold;
- Helio Fast Yellow 4G;
- Indian Yellow Deep (hue) [WN.o];
- Indian Yellow Imitation [KP.p];
- New Gamboge (hue);
- Nickel Azo [WN.a];
- Nickel Azo Brown Lemon [OH.a];
- Nickel Azo Golden [GU.pd];
- Nickel Azomethine Yellow;
- Nickel Azo Yellow [GEN | DS.ad.o.w | DV.w | GO.a.ab.af.ag.ao | MG.w | SQ.a | TA.a.| WN.a];
- Pigment Yellow 150;
- Pyrimidine Yellow;
- Transparent Yellow [WN.w.wp.];
- Translucent Golden Yellow [SCH.a];
- Translucent Yellow [SCH.o(Mus).w]",12764,"Synthetic Organic Azo Metal Complex;
- Pyrimidine Yellow;
- Nickel azomethine yellow;
- Monoazo nickel complex;
- Nickel Azomethine;
- C8-H10-N6-O6
- CAS 68511-62-6
- CAS 25157-64-6 
- EU 270-944-8","Deep dull reddish to green shade yellow, bright yellow in tints;
- Good tinting strength Heavily staining (Soden)
- † Slight fading",S/T,I,B,"Makes a good lightfast Indian Yellow or Gamboge substitute.
- Nickel Azo Yellow (PY 150) watercolor swatches, brand comparisons & mixing info @ In Liquid Color, Youtube Channel
- See PY 150 on Handprint.com for more paint & pigment information
- * Some regulatory agencies (California) require a warning on paints containing the heavy metal nickel.
- Nickel can be toxic if ingested in large amounts over many years, but unless you are eating your paint, spraying it, or creating dust clouds with the dry powdered pigment, there is very little hazard, Just use common sense.
- Nickel can cause skin sensitization and allergies in some people.
- Avoid Dust & Spray;
- Avoid excessive skin contact;
- Do not ingest."
-PY151,Y,CIPIGMENT,151,Benzimidazolone Yellow H4G,"Aureolin (hue) [SCH];
- Aureolin Modern [SCH.w];
- Aureolin Yellow (hue) [BA.w];
- Azo Yellow [GEN | DS.o.w | MG.g.w]:
- Azo Yellow (Aureolin) [MG.w];
- Benzimidazo H4G [GU.pd];
- Benzimidazo Yellow H4G (green shade);
- Benzimidazolone Yellow;
- Canary Yellow [SI.p];
- C.I. Pigment Yellow 151;
- DCC 7151 Benzimidazolone Yellow;
- Gafast Pigment Yellow 151;
- Hostaperm Yellow H4G;
- John Deere Yellow;
- Monoazo Yellow;
- Permanent Yellow Light [KP.p];
- Pigment Yellow 151;",13980,"Monoazo; 
- Benzimidazolone;
- Gafast Pigment Yellow 151 (Tech Sheet Reference);
- Chemical information @ PubChem
- C18-H15-N5-O5
- CAS 31837-42-0;
- EC 250-830-4","Intense light, mid to green shade yellow*;
- Staining w/ Fair tinting strength
- † Browns slightly",S/T,I,A,"Said to be a good lightfast and non-toxic subtitute for Aureolin PY 40 (Cobalt Yellow).
- More info on PY-151 in watercolors @ handprint.com
- * May have slight brownish cast;
- ** oil absorption varies by manufacturer, particle size and formulation"
-PY152,Y,CIPIGMENT,152,Diarylide Yellow 152,"C.I. Pigment Yellow 152;
- Diarylide Yellow 152;
- Fast Diarylide Yellow;
- Pigment Yellow 152",21111,"Disazo;
-CAS 31775-20-9",Reddish yellow,X,II,A,
-PY153,Y,CIPIGMENT,153,Nickel Dioxime Yellow,"Burnt Yellow [UT.w];
- C.I. Pigment Yellow 153;
- Dioxime [GU.pd];
- Gamboge (hue) [LK];
- Gamboge Hue [WN.w];
- Indian Yellow (hue) [DR.w | RT | SE.a |SCH.a.g.o.o(Mus).p | UT.w | WNd];
- Indian Yellow Hue [SE.w.];
- New Gamboge [DS.ad.w | WN.w];
- Nickel Dioxime Yellow;
- Nickel Paliotol Yellow;
- Lemon Yellow Hue;
- Pigment Yellow 153",48545,"Nickel Dioxine Complex;
- C20-H20-N6-NiO6
- CAS 29204-84-0
- EC 614-748-6","Bright, light, deep yellow w/ orange to brown undertone;
- Medium tinting strength, mildly staining;",X,II,B,"Good Indian yellow (hue) substitute;
- Manufacturing of this pigment was discontinued and supplies ran out in 2012?; However there are still brands that have this pigment in there lines.
- PY 153 @ Handprint.com
- * Some regulatory agencies (California) require a warning on paints containing the metal nickel. 
- ** Rated II (very good) by thw ASTM in watercolor. Rated excellent in all brands tested by Handprint"
-PY154,Y,CIPIGMENT,154,Benzimidazolone Yellow 154,"Azo Yellow Light [RT.w];
- Azo Yellow Medium [RT];
- Azo Yellow Deep [RT]; 
- Benzimidazo H3G [GU.pd];
- Benzimidazo Yellow H3G (green shade);
- Benzimidazolone Yellow [KA.o.p];
- Brilliant Yellow [SCH.a.p];
- Cadmium Yellow Pale Hue;
- Cadmium Yellow Tone (hue) [SCH.g];
- C.I. Pigment Yellow 154;
- Da Vinci Yellow [DV.w];
- Hostaperm Yellow H3G;
- Imidazolone Yellow [HO.w];
- Imidazolone Yellow Light [HO.wo];
- Permanent Yellow Light [RT.o.wo];
- Permanent Yellow Medium [KP.p | RT.wo];
- Pigment Yellow 154;
- Primary Yellow [BX.o.w];
- Pure Yellow [SCH.w];
- Sennelier Yellow Light [SE.w];
- Sulphur Yellow;
- Transparent Yellow [SQ.a]; 
- Winsor Yellow [WN.w.wp.wp(L)]",11781,"Synthetic Organic;
- Benzimidazolone;
- C18-H14-F3-N5-O3
- PY-154 @ PubChem Chemical Database;
- CAS 68134-22-5
- EC 268-734-6","Bright, light greenish to mid yellow;
- Medium tinting strength, staining;",S/O,I,A,"Said to be good primary yellow;
- PY 154 @ Handprint.com"
-PY155,Y,CIPIGMENT,155,Benzimidazolone Yellow 155,"Benzimidazolone Yellow;
- Brilliant Yellow [SCH.o];
- Cadmium Yellow Hue [LK];
- Cadmium Yellow Tone [SCH.o(Mus)];
- C.I. Pigment Yellow 155;
- Opaque Yellow 155;
- Permanent Yellow Light [LK];
- Pigment Yellow 155;
- Sandorin Yellow 4G",200310,"Synthetic Organic;
- Disazo; Benzimidazolone;
- Chemical Properties on PubChem Chemistry Database
- CAS 68516-73-4;
- CAS 77465-46-4",Bright mid yellow to green shade yellow w/ high tint strenght,O,NR,A,"* Not rated by the ASTM, This rating is based on blue wool scales and paint product ratings.
- There doesn't appear to be any paint brands using this pigment in watercolors and pigments tend to be slightly less fast in water colors without the protection oil and acrylic mediums can give, however this is not always the case.
- I would advise to make your own tests in your binder of choice before using for permanent art."
-PY156,Y,CIPIGMENT,156,Benzimidazolone Yellow 156,"Benzimidazolone Yellow;
- C.I. Pigment Yellow 156;
- Hostaperm Yellow HLR;
- Midazo HLR [GU.p];
- Pigment Yellow 156",,"Benzimidazolone;
- Made by diazotization of 2,5-Dichloro-benzenamine 
- C17-H13-Cl2-N5-O3
- CAS 63661-26-7",Orange yellow,S/T,NR,A,"Extinct, Out of production, no longer made, Nada, went bye-bye;"
-PY157,Y,CIPIGMENT,157,Daipyroxide Yellow,"C.I. Pigment Yellow 157;
- Daipyroxide Yellow;
- Nickel Barium;
- Nickel-Barium Titanate [HO];
- Nickel Barium Titanium;
- Nickel Barium Titanium Yellow;
- Nickel Barium Titanium Primrose Priderite;
- Nickel Titanate Yellow [GR.o];
- Pigment Yellow 157;
- Priderite Yellow;
- Primrose Priderite;
- Nickel Yellow [HO.o];
- Titanium Primrose;
- Yellow Green Ural",77900,"Inorganic;
-Nickel Barium Titanium Primrose Priderite, is a homogeneous, ionically interdiffused crystalline matrix of priderite created by calcining Nickel (II) Oxide, Barium (II) Oxide, and Titanium (IV) Oxide;
-Mixed Metal Oxide (MMO)
-CPMA 9-13-4
-CAS 68610-24-2","Greenish yellow
-† may brighten",S/O,NR,B,"?* Not rated by the ASTM, but should perform as excellent as other synthesized mineral MMO pigments designed for applications where resistance to heat, light, and weather are required.
- I would advise to make your own tests in binder of choice before using in permanent artwork.
- ** Some regulatory agencies require a warning on paints containing the heavy metal nickel.
- Nickel can be toxic in large amounts, but unless you are eating your paint or creating dust clouds with the dry powdered pigment (along with not wearing a mask), there is very little hazard, Just use common sense."
-PY158,Y,CIPIGMENT,158,Tin Vanadium Yellow,"C.I. Pigment Yellow 158;
- Pigment Yellow 158;
- Tin Vanadium Yellow Cassiterite;
- Vanadium Yellow Cassiterite;",77862,"Inorganic; Tin Vanadium Yellow Cassiterite (Sn.V)O2 is created by the high temperature calcining of a mixture of Tin (IV) Oxide and Vanadium (V) Oxides in different amounts to create a crystalline cassiterite matrix. Its composition can have Al2O3, Fe2O3, MgO, NiO, SiO2 and/or TiO2 as modifiers. (Ref Color Index 4th edition);
-Tin Vanadium;
-CPMA 11-22-4
-CAS 68186-93-6",mid-shade yellow,X,NR,,"?* Not rated by the ASTM, but should perform as excellent as other MMO pigments that were designed for applications where resistance to heat, light, and weather are required.
- Advise to make your own tests in binder of choice."
-PY159,Y,CIPIGMENT,159,Zirconium Praesodymium Silicate Yellow,"C.I. Pigment Yellow 159;
- Intensive Yellow [KP.p];
- Lemon Yellow Deep [WN.w.wp.];
- Pigment Yellow 159;
- Praseodym Yellow [KP.p];
- Zirconium Praseodymium Silicate [KP.p];
- Zirkonium Praseodym Yellow [SI.p]; 
- Zirconium Praesodymium Yellow Zircon;
- Zirconium Yellow",77997,"Inorganic;
- Zirconium Praesodymium Silicate or Zirconium Praeseodymium Yellow Zircon (Zr,Pr)SiO4 is created by the high temperature calcination of a various mixtures of oxides of Zirconium (IV) Oxide, Silicon (IV) Oxide, and Praseodymium (III, IV) Oxide to create a zircon crystalline form. It may include less than 5% of either one or both alkali and/or alkaline earth halides as modifiers. (Ref Color Index 4th edition);
- C24-H41-NO5
- CPMA 14-43-4; 
- CAS 68187-15-5
- EC 269-075-7","Very light shade lemon yellow;
- Staining w/ good tinting strength",S/T,I,A,"* Not rated by the ASTM, My rating is based on BWS & paint manufacturer's ratings.
- Rated with excellent light fastness in watercolors at Handprint. More info on PY-159 in watercolors @ handprint.com
- Generally pigments tend to be more light fast in oils and acrylics because of the protection those mediums offer, but if in doubt, I would suggest making your own tests in those mediums."
-PY160,Y,CIPIGMENT,160,Zirconium Vanadium Yellow,"Baddeleyite;
- C.I. Pigment Yellow 160;
- Pigment Yellow 160;
- Vanadium Yellow
- Zirconium Vanadium Yellow;
- Zirconium Vanadium Yellow Baddeleyite",77991,"Inorganic;
-Zirconium Vanadium Yellow Baddeleyite (Zr,V)O2 is produced by high temperature calcination of a mixture of oxides of zirconium and vanadium in varied amounts to create a crystalline matrix of baddeleyite. It may include any one or more of the modifiers Al2O3, Fe2O3, In2O3, SiO2 and/or TiO2. (Ref Color Index 4th edition);
-CPMA 1-01-4 (4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments)
-CAS 68187-01-9",Mid-shade to reddish yellow,S/O,X,,"?* Not rated by the ASTM, but should perform as well as other Zirconium Vanadium MMO pigments designed for applications where resistance to heat, light, and weather are required.
- Advise to make your own tests in binder of choice."
-PY161,Y,CIPIGMENT,161,Nickel Niobium Titanium Yellow,"C.I. Pigment Yellow 161;
- Nickel Niobium Titanium Yellow Rutile;
- Nickel Niobium Yellow Rutile;
- Pigment Yellow 161",77895,"Inorganic; Nickel Niobium Titanium Yellow Rutile is prepared by the calcination of oxides of nickel, niobium, and titanium, (Ti,Ni,-Nb)O2 creating a rutile crystalline form. The composition may have Cr203 or SrO as modifiers. (Reference: Coatings Technology handbook, Third Edition, Edited by Arthur A. Tracton, 2006 by CRC Press);
-Mixed Metal Oxide (MMO) (PCImag Ref):
-CPMA 11-16-4
-CAS 68611-43-8",Greenish yellow,O,NR,B,"?* Not rated by the ASTM, but should perform as excellent as other Titanium based rutile MMO pigments designed for applications where resistance to heat, light, and weather are required.
- Advise to make your own tests in binder of choice.
- ** Nickel content requires a warning label in some localities. Can cause skin sensitivity."
-PY162,Y,CIPIGMENT,162,Chrome Niobium Titanium Buff Rutile,"Chrome Niobium Titanium Buff;
- Chrome Niobium Titanium Buff Rutile;
- C.I. Pigment Yellow 162;
- Pigment Yellow 162",77896,"Inorganic; Chrome Niobium Titanium;
-Produced by calcining Titanium (IV) Oxide, Chromium (III) Oxide, and Niobium (V) Oxide, with the approximate formula of (Ti,Cr,Nb)O2. It may also have NiO and/or SrO as modifiers. (Reference: Coatings Technology handbook, Third Edition, Edited by Arthur A. Tracton, 2006 by CRC Press);
-CPMA 11-18-6
-CAS 68611-42-7",Reddish yellow,O,NR,A,"?* Not rated by the ASTM, but should perform as excellent as other Titanium based rutile MMO pigments designed for applications where resistance to heat, light, and weather are required.
- Advise to make your own tests in binder of choice."
-PY163,Y,CIPIGMENT,163,Chromium Tungsten Titanium Buff,"Chrome Tungsten Titanium Buff Rutile;
- Chromium Tungsten Titanium Buff Rutile;
- C.I. Pigment Yellow 163;
- Meteor Orange 7383;
- Meteor® Orange Buff 9385;
- Pigment Yellow 163",77897,"Inorganic; Chromium Tungsten Titanium Buff Rutile (Ti,Cr,W)O2 is created by the calcining at high temperature a mixture of Titanium (IV) Oxide, Chromium (III) Oxide, and Tungsten (VI) Oxide in various ratios to produce a crystal rutile matrix. It may also include Nickel(II) oxide as a modifier. (Ref Color Index 4th edition);
-MMO (Mixed Metal Oxide) Chromium Tungsten Titanium;
-tungsten-chrome-III-titanium dioxide rutile;
-CPMA 11-19-6
-CAS 68186-92-5",,O,NR,A,"?* Not rated by the ASTM, but should perform as excellent as other Titanium based rutile MMO pigments designed for applications where resistance to heat, light, and weather are required.
- ** Sometimes paints made with Chromium will have a warning label because there is a slight chance of having trace amounts of unbound chromium which is a suspected carcinogen."
-PY164,Y,CIPIGMENT,164,Manganese Antimony Titanium Buff Rutile,"Antimony Manganese Buff Rutile;
- Brown 10C873;
- Chestnut Brown 400;
- C.I. Pigment Yellow 164;
- Cinnamon Brown 298;
- Ferro Chestnut Brown V-10364;
- Indian Brown No. 221;
- Manganese Antimony;
- Manganese Antimony Titanium Buff;
- Manganese Antimony Titanium Buff Rutile;
- Manganese Brown [GU]; 
- Rembrandt Brown 352;
- Titanium Buff Rutile;
- Pigment Yellow 164",77899,"Inorganic; Manganese Antimony Titanium Buff Rutile (Ti, Mn, Sb)O2 is created by calcining at high temperature a mixture of oxides of manganese, titanium and antimony in varying amounts to create a crystalline rutile matrix. Its constitution may include one or more of the modifiers: Al2O3, Cr2O3, NiO, WO3 and/or ZnO. (Ref Color Index 4th edition);
-LBNLPigment Database Spectral radiative properties;
-Manganese Antimony Titanium Buff Rutile;
-CPMA 11-20-6
-CAS 68412-38-4",Brown,O,I,B,
-PY165,Y,CIPIGMENT,165,Sanyo Fast Yellow F5G,"C.I. Pigment Yellow 165;
- Pigment Yellow 165;
- Sanyo Fast Yellow F5G",,Monoazo,Reddish yellow,O,X,A,
-PY166,Y,CIPIGMENT,166,Cromofine Yellow,"C.I. Pigment Yellow 166;
- Cromofine Yellow;
- Pigment Yellow 166",20035,"Disazo Condensation;
-CAS 76233-82-4",mid-shade yellow,X,X,A,
-PY167,Y,CIPIGMENT,167,Seikafast Yellow A-3,"C.I. Pigment Yellow 167;
- Pigment Yellow 167;
- Seikafast Yellow A-3",11737,Monoazo; CAS 38489-24-6,Bright green yellow,X,X,A,
-PY168,Y,CIPIGMENT,168,Azo Yellow 168,"Azo Yellow;
- C.I. Pigment Yellow 168;
- Lionol Yellow K-5G;
- Pigment Yellow 168",13960,"Synthetic Organic;
- Monoazo; 
- CAS 71832-85-4",Bright green yellow,S/T,I,A,
-PY169,Y,CIPIGMENT,169,Lionol Yellow K-2R,"C.I. Pigment Yellow 169;
- Lionol Yellow K-2R;
- Pigment Yellow 169",13955,"Synthetic Organic;
- Monoazo;
- CAS 73385-03-2",Reddish yellow,X,X,A,
-PY170,Y,CIPIGMENT,170,Pigment Yellow FRN,"C.I. Pigment Yellow 170;
- Diarylide Yellow;
- Lionol Yellow FR;
- Permanent Yellow Orange;
- Pigment Yellow FRN 170;
- Pigment Yellow FRN",21104,"Synthetic Organic;
- Disazo;
- Chem. Properties @ PubChem
- CAS 31775-16-3
- EC 250-797-6",Reddish yellow;,S/O,NR,A,"Used in auto paints, inks and Industrial coatings
- * Based on pigment manufacture's Blue Wool Scales, may be different once in a complete paint formula, less light fast in tints;
- Recommend making your own tests in the binder of choice before using for permanent artwork."
-PY172,Y,CIPIGMENT,172,Lionol Yellow NBK,"C.I. Pigment Yellow 172;
- Lionol Yellow NBK;
- Pigment Yellow 172",21109,"Synthetic Organic;
- Disazo; 
- CAS 76233-80-2",Bright mid-shade yellow,X,III,A,
-PY173,Y,CIPIGMENT,173,Isoindolinone Yellow,"C.I. Pigment Yellow 173;
- Isoindolinone Yellow;
- Isoindolinon Yellow [KP.p];
- Pigment Yellow 173;
- Sandorin Yellow 6GL",561600,"Isoindolinone;
-CAS 96352-23-7",Greenish yellow,O,II,A,
-PY174,Y,CIPIGMENT,174,Irgalite Yellow LBT,"C.I. Pigment Yellow 174;
- Diarylide Yellow AAoT 
- Irgalite Yellow LBT;
- Pigment Yellow 174",21098,"Synthetic Organic;
- Disazo; 
- CAS 78952-72-4",Bright mid-shade yellow,S/T,NR,A,"Reportedly Good primary yellow, however The light fastness of pigment yellow 174 is poor, and is not recommended for permanent art work. PY174 may have use for designers where permanence is not required or books that may have limited light exposure. (Ref Industrial organic pigments, 2004)
- * Based on Reference (see above)"
-PY175,Y,CIPIGMENT,175,Benzimidazolone Yellow H6G,"Aureolin (hue) [LK];
- Benzimidazolone Yellow;
- Chrome Yellow Lemon (hue) [SCH.w];
- Chrome Yellow Lemon, no lead [SCH.w];
- C.I. Pigment Yellow 175;
- Hostaperm Yellow H6G;
- Imidazolone Lemon [HO.w];
- Lemon Yellow [DS.ad.i.o.w | MA.a];
- Lemon Yellow Hue;
- Lemon Yellow Hue #1 [WN.w];
- Permanent Lemon Yellow;
- Permanent Yellow Lemon [MA.o.w.w];
- Pigment Yellow 175;
- Winsor Lemon [WN.w.wp.];",11784,"Synthetic Organic;
- Benzimidazolone;
- Made by Dimethyl 2-amino-terephthalate diazotization, or 3-Oxo-N-(2-oxo-2,3-dihydro-1H-benzo[d]imidazol-5-yl)butanamide coupling.
- PY-175 Chemical Properties @ PubChem;
- C21-H-19-N5-O7;
- CAS 35636-63-6;
- EC 252-650-1","Bright light value lemon yellow. greenish undertone;
- Medium staining;",X,NR,A,"Benzimidazolone Dyes Info @ CAMEO Art Materials Database
- * Not rated by ASTM. Light fastness rated highly on handprind.com. More on PY 175 in watercolors @ Handprint.com;"
-PY176,Y,CIPIGMENT,176,Diaryl Yellow,"C.I. Pigment Yellow 176;
- Diaryl Yellow;
- Isol Diaryl Yellow;
- Permanent Yellow GRX;
- Pigment Yellow 176",21103,"Mixed coupling Disazo;
-CAS 90268-24-9",Bright mid-shade yellow red undertone,T,NR,A,
-PY179,Y,CIPIGMENT,179,Pigment Yellow 179,"C.I. Pigment Yellow 179;
- Cobalt azomethine;
- Cobalt Indo Golden [GU];
- Irgazin Yellow 3R;
- Pigment Yellow 179",,"Cobalt azomethine metal complex;
-CAS 63287-28-5",Reddish yellow,T,NR,B,"* Not rated by the ASTM, based rating from BWS."
-PY180,Y,CIPIGMENT,180,Benzimidazolone Yellow,"C.I. Pigment Yellow 180;
- PV Fast Yellow HG;
- Isoindolinone Yellow [HO.wo]",21290,"Benzimidazolone disazo;
-CAS 77804-81-0",Greenish yellow,T,II,A,"* Not rated bt ASTM, based rating by Holbien for Isoindolinone Yellow"
-PY181,Y,CIPIGMENT,181,Benzimidazo Golden,"Benzimidazo Golden [GU.pd];
- C.I. Pigment Yellow 181;
- PV Fast Yellow H3R;
- Pigment Yellow 181",11777,"Benzimidazolone monoazo;
-CAS 74441-05-7",Very reddish orange yellow,S/T,I,A,"* Not rated by the ASTM, based rating on BWS."
-PY182,Y,CIPIGMENT,182,Sandorin Yellow,"C.I. Pigment Yellow 182;
- Pigment Yellow 182;
- Sandorin Yellow G;
- Zanderin Golden [GU.pd]",128300,"Monoazo;
-CAS 67906-31-4",Bright mid-shade yellow; red undertone,S/T,I,A,"* Not rated by ASTM, based rating on BWS."
-PY183,Y,CIPIGMENT,183,Paliotol Yellow K227,"C.I. Pigment Yellow 183;
- Paliotol Yellow K2270;
- Pigment Yellow 183;
- Vynamon Yellow;",18792,"Monoazo;
-CAS 65212-77-3",Reddish yellow,X,II,A,
-PY184,Y,CIPIGMENT,184,Bismuth Vanadate Yellow,"Alfa yellow [KP.p];
- Bismuth-Vanadate;
- Yellow lemon [KP.p];
- Bismuth Vanadate [GU.pd];
- Bismuth Vanadate Yellow [GEN | DS.ad.w | GO.a.ao];
- Bismuth Vanadate Yellow, Lemon [KP.p];
- Bismuth Vanadate Yellow, Medium [KP.p];
- Bismuth Vanadate Yellow, Dark [KP.p];
- Bismuth Yellow [CAS.k | BA.w | DR.a.w | MG.w | SQ.a | TA.a.af | WN.a.o.w.wp.];
- Bismuth Yellow lemon [OH.a];
- Bismuth Yellow Light [ OH.a | SQ.a | TA.a.af];
- Bismuth Yellow Medium [OH.a | SQ.a | TA.a.af];
- Bismuth Yellow Deep [ OH.a | SQ.a | TA.a.af];
- Bismuth-Vanadate Yellow Lemon [KP.p];
- Bristol Yellow;
- Cadmium Yellow Light Hue [LQ.a];
- C.I. Pigment Yellow 184; 
- Lefranc Yellow [LB.o];
- Lemon Yellow [BX.o.w];
- Permanent Lemon Yellow [RT.a.o.wo];
- Permanent Yellow Lemon [RT.w];
- Pigment Yellow 184;
- Sicopal Yellow;
- Vanadium Yellow [SCH.g.w];
- Vanadium Yellow Deep [ SCH.a.o(Mus).p];
- Vanadium Yellow Light [SCH.a.o.p];
- XLX Bismuth Vanadate Yellow [KP.p}",771740,"Bismuth Vanadium;
- Bismuth orthovanadate;
- Bismuth-vanadium tetraoxide;
- PY-184 Chemical Properties @ PubChem;
- Mixed oxide of Bismuth and Vanadium;
- Occurs in the natural minerals: Clinobisvanite, Deyerite and Pucherite;
- BiO4-V
- CAS 14059-33-7
- EC 237-898-0","Bright light lemon yellow. greenish undertone, can be produced in warm mid shade yellows;
- Staining w/ good tinting strength;
- † Darkens",S/O,I,A,"Often used as a non-toxic substitute for Cadmium Yellow Lemon;
- Widely used in many paints, inks, clothing, flooring, waxes, lacquers and many other common products. 
- Bismuth Vanadate @ Wikipedia;
- The New Yellow
- Video on Periodic Videos YouTube Channel
- 
- ** Rated with excellent light fastness in watercolors by Bruce MacEvoy, PY 184 @ Handprint.com;
- ** Bismuth based pigments are environmentally friendly and can replace more hazardous yellow formulations containing lead, chromium or cadmium pigments. They offer brilliant greenish yellow and orange shades with high opacity and high colour strength - Synthesis, Characterisation and Testing of Bismuth Vanadate - An Eco-friendly Yellow Pigment [JSIR Vol.59, October 2000 p.833-837 (PDF)]
- May contain trace amounts of impurities that are suspected carcinogens."
-PY185,Y,CIPIGMENT,185,Isoindoline Yellow,"C.I. Pigment Yellow 185;
- Isoindoline Yellow;
- Pigment Yellow 185;
- Sico Fast Yellow D",56290,"Isoindoline;
-CAS 76199-85-4",Bright greenish yellow,T,II,A,
-PY188,Y,CIPIGMENT,188,Irgalite Yellow,"C.I. Pigment Yellow 188;
- Irgalite Yellow LBF;
- Pigment Yellow 188",21094,"Disazo;
-CAS 23792-68-9",Bright greenish yellow,X,III,A,
-PY189,Y,CIPIGMENT,189,Nickel Titanate,"C.I. Pigment Yellow 189;
- Meteor Golden 8304;
- Nickel Titanate;
- Nickel Titanium Tungsten;
- Nickel Titanium Tungsten Yellow Rutile;
- Nickel Tungsten Yellow Rutile;
- Pigment Yellow 189",77902,"Inorganic;
-Nickel Tungsten Yellow Rutile or Nickel titanate (with trace tungsten), is a mixed phase pigment of Titanium (IV) Oxide, Nickel (II) Oxide, and Tungsten (VI) Oxide calcined at high temperatures to create a rutile matrix with the approximate formula of (Ti,Ni,W)O2. It may have CeO2, Li20 and/or MgO as modifiers. (4th ed. CMPA Classification and Chemical Description of the Complex Inorganic Color Pigments)
-CPMA 11-52-4
-CAS 69011-05-8",Dull greenish yellow,X,NR,,"* unrated by ASTM, but most other mixed phase pigments of this type have excellent light and weather fastness.
- Currently used mostly in plastics. and enamels."
-PY190,Y,CIPIGMENT,190,Palitol Yellow K1570,"C.I. Pigment Yellow 190;
- Palitol Yellow K1570;
- Pigment Yellow 190",-,Monoazo,Bright mid-shade yellow,X,X,A,
-PY191,Y,CIPIGMENT,191,Pigment Brilliant Yellow HGR,"C.I. Pigment Yellow 191;
- PV Fast Yellow HGR;
- Pigment Brilliant Yellow HGR;
- Pigment Yellow 191;
- Pyrazolone yellow HGR",18795,"Monoazo;
-CAS 129423-54-7",Bright mid-shade yellow,X,I,B,"Good heat resistance;
-* Causes severe eye irritation. Harmful if swallowed. May be harmful if inhaled. May cause irritation to skin and respiratory tract. see MSDS."
-PY191:1,Y,CIPIGMENT,191,Cromophtal Yellow,"C.I. Pigment Yellow 191:1;
- Cromophtal Yellow;
- Pigment Yellow 191:1",-,"Monoazo;
-CAS 129423-54-7",Bright reddish yellow,X,X,A,
-PY192,Y,CIPIGMENT,192,Sandofil Yellow,"C.I. Pigment Yellow 192;
- Pigment Yellow 192;
- Sandofil Yellow",65412,Heterocyclic,Dull reddish yellow,X,X,,
-PY193,Y,CIPIGMENT,193,Anthraquinone Yellow,"Anthraquinone Yellow;
- Chromofine Yellow AF-1300;
- C.I. Pigment Yellow 193;
- Pigment Yellow 193",65412,"Anthraquinone;
-CAS 70321-14-1",Dull reddish yellow,X,II,,
-PY194,Y,CIPIGMENT,194,Novoperm Yellow F2G,"C.I. Pigment Yellow 194;
- Novoperm Yellow F2G;
- Pigment Yellow 194",11785,"Benzimidazolone;
-CAS 82199-12-0",Bright green shade yellow,X,II,A,
-PY200,Y,CIPIGMENT,200,Sunglow Yellow,"C.I. Pigment Yellow 200;
- Pigment Yellow 200;
- Sunglow Yellow",,Azo,Reddish Yellow,X,X,A,
-PY203,Y,CIPIGMENT,203,Arylide Yellow,"Arylide Yellow;
- Azo Yellow 5RX;
- C.I. Pigment Yellow 203;
- Pigment Yellow 203",117390,Arylide,Mid-shade yellow,X,X,A,
-PY204,Y,CIPIGMENT,204,Pigment Yellow 204,"C.I. Pigment Yellow 204;
- Pigment Yellow 204",,Monoazo,Medium yellow shade,X,X,A,commonly used for traffic paint
-PY207,Y,CIPIGMENT,207,Neolor Yellow,"C.I. Pigment Yellow 207;
- Neolor Yellow;
- Pigment Yellow 207",,Complex Inorganic,Medium yellow shade,X,X,A,
-PY213,Y,CIPIGMENT,213,Hostaperm Yellow H5G,"C.I. Pigment Yellow 213;
- Hostaperm Yellow H5G;
- Pigment Yellow 213;",117875,"Quinoxalinedione monoazo
- Chromophore
- CAS: 220198-21-0
- Formula: C21 H17 N5 O09
- Chemical properties @ researchgate.net
- Chemical Properties @ pubchem.ncbi.nlm.nih.gov","Greenish yellow;
- Dullish, mustard-like masstone in oil paint*",S/T,I,A,"Technical specs [PDF]
- PCI (Paint & Coatings Industry) article page
- European Coatings Journal page
- Clariant PY213 info page
- Designed for Automotive coatings
- * According to a report from an e-mail sent me on the appearance of PY213 in oil paint when compared to PY15:
- • Greener than PY154, closer to PY151, but redder than PY175
- • Cleaner tints than PY154
- • Brilliant glaze tones
- • Masstone of PY213 exhibits a slightly dull, mustard-like tone, PY154 is brighter
- • PY213 is less transparent than PY154"
-PY216,Y,CIPIGMENT,216,Solaplex Yellow,"Chrome Yellow Hue Deep [SCH.o];
- Chrome Yellow Hue Middle [SCH.o];
- C.I. Pigment Yellow 216;
- English Yellow [UT.w];
- Orange 10P320;
- Orange 10C341;
- Pigment Yellow 216;
- RTZ Orange 10C341;
- Rutile Tin Zinc;
- Solaplex Mid Yellow;
- Solaplex Orange;
- Turner's Yellow (hue) [WN.w.wp.]
- Zinc-Tin Rutile",,"Inorganic; 
- Spherical complex of a tin-zinc-titania compound produced by high temperature calcination;
- Rutile Tin Zinc","Clean Bright Yellow to Dull Orange;
- moderately staining with good tinting strength",S/O,I,A,"High whether, chemical and light fastness (Ref. shepherdcolor.com) Orange 10C341 reference page at Sheperd Color More info on PY-216 in watercolors @ handprint.com
-A example of a homemade Deep Yellow using Zinc-Tin Rutile (PY216) hand mulled into a paint and humorously named ""Winter’s Woe Deep Yellow Snow "" by Perry Johnson at http://perryjohnson.net"
-PY219,Y,CIPIGMENT,219,Titanium Zinc Antimony Stannate,"C.I. Pigment Yellow 219;
- Pigment Yellow 219;
- Titanium Zinc Antimony Stannate",,Titanium Zinc Antimony Stannate,,X,X,,
-PY223,Y,CIPIGMENT,223,MayaCrom Yellow Y2351RS,"C.I. Pigment Yellow 223;
- MayaCrom Yellow Y2351RS;
- MayaPure Yellow;
- Mayan Yellow [DS.w | SI.p*?];
- Mayan Yellow, Genuine [SI.p];
- Pigment Yellow 223",,"Patented Organic-Inorganic hybred based on the chemistry of Mayan Blue with a unique nano crystal lattice. Reference the Tech data sheet, and Patent application.;
- Article about Hybred Pigments and Mayan Blue in New Journal of Chemistry 2005, 29, p.57–58 (Article Reference PDF);",Reddish Yellow,T,NR,A,"""evolved from work done at the University of Texas El Paso to reconstruct the unique vibrant blue color developed by the Maya civilization more than 1000 years ago, using an inorganic and organic component to produce a highly stable hybrid pigment."" - press release
- Announcement of C.I Names allocated - Press release [PDF]
- 'Centuries-old Maya Blue mystery finally solved'
- Article on eurekalert.org
- See Mayan Blue and MayaCrom Blue PB-82 for more info.;
- The original Mayan Pigments website seems to have been taken down, I could only find a facebook page and a squarespace site for Myan Pigments, Inc. [facebook];
- Myan Pigments [squarespace];"
-PY224,Y,CIPIGMENT,224,MayaCrom Yellow Y2300F,"C.I. Pigment Yellow 224;
- MayaCrom Yellow Y2300F;
- MayaPure Yellow;
- Pigment Yellow 224",,"Patented Organic-Inorganic hybred based on the chemistry of Mayan Blue with a unique nano crystal lattice. Reference the Tech data sheet, Patent application.",3,X,NR,A,"See above PY223
- The original Mayan Pigments website seems to have been taken down, I could only find a facebook page and a squarespace site for Myan Pigments, Inc. [facebook];
- Myan Pigments [squarespace];"
-PY226,Y,CIPIGMENT,226,MayaCrom® Yellow Y7300,"C. I . Pigment Yellow 226;
- MayaCrom® Yellow Y7300;
- MayaPure Yellow;",,"Patented Organic-Inorganic hybred based on the chemistry of Mayan Blue with a unique nano crystal lattice. Reference the Tech data sheet, and Patent application.;
- Article about Hybred Pigments and Mayan Blue in New Journal of Chemistry 2005, 29, p.57–58 (Article Reference PDF);",,X,NR,A,"The original Mayan Pigments website seems to have been taken down, I could only find a facebook page and a squarespace site for Myan Pigments, Inc. [facebook];
- Myan Pigments [squarespace];"
-PY227,Y,CIPIGMENT,227,NTP Yellow,"CI Pigment Yellow 227;
- Niobium Sulfur Tin Zinc Oxide; 
- Niobium Tin Pyrochlore;
- NTP Yellow;
- Yellow 10C150 1; 
- Yellow 10C151 2;",,"Niobium Tin Pyrochlore;
- Niobium Sulfur Tin Zinc Oxide; 
- ""A chromatic yellow inorganic pigment produced by high temperature calcination""
- A brand new crystal structure and a yellow color not seen in inorganic pigments before 
- (Ref. Shepherd Color Company) 
- patented under US Patent 8,192,541",Mid slightly reddish deep yellow similar to Lead Chromate,O,NR,A,"Ref. from the Shepherd Color Company website:
- ""brand-new patented pigment technology that offers outstanding bright and opaque masstones and clean tints. It is the first high-performance alternative to have the coloristic and weathering performance to provide a viable replacement for lead chromate in wide selection of demanding applications""
- ""This pigment has excellent UV and visible opacity, is chemically inert, heat resistant, and stable to ultraviolet light. It is non-bleeding and non-migratory. It has exceptional durability and hiding power, and is generally used in applications where resistance to heat, light, and weather are needed."" (Ref. NTP Yellow & RTZ Orange @ Shepher Color)"
-NY2,Y,CINATURAL,2,Reseda,"Anatolian Reseda lutea;
- C.I. Natural Yellow 2;
- Natural Yellow 2;
- Reseda;
- Reseda Lemon [KP.p]","75580;
- 75590","Lake pigment, produced from weld (Ref: Natural History Museum, UK) (Reseda Luteola L.)(Ref: Natural Resources Conservation Service); (Pic: from APHOTOFLORA);
-  
- apigenin: 
- CAS 520-36-5;
-  
- luteolin:
- CAS 491-70-3",Lemon Yellow,T,IV,A,
-NY3,Y,CINATURAL,3,Curcumin,"C.I. Natural Yellow 3;
- Curcumin;
- Kurcum;
- Natural Yellow 3;
- Terra Merita;
- Turmeric;
- Turmeric Root [KP.p] 
- Turmeric Powder [KP.p];
- Turmeric Yellow",75300,"Diferuloylmethane from the root of; Curcuma Longa, C. Tinctoria, C. Rotunda, C. Vididiflora.; 
- Demethoxy curcumin;
-  Bisdemethoxy curcumin;
- Diferuloylmethane;
- Methane dyes;
- Generally;
- known the spice Turmeric. (Ref: The Handbook of Natural Colorants); 
- (Ref Natural Pigments Blog);
- (Ref: wikipedia);
-  
- CAS 91884-86-5
- CAS 458-37-7",Bright reddish yellow,T,III,A,"Extracted From Tumeric, used to give the bright yellow coloring to typical American mustard; 
-  
- CURCUMIN Chemical and Technical Assessment (CTA) First draft prepared by Ivan Stankovic © FAO 2004, PDF)
-  
- Diferuloylmethane said to have extremely beneficial antioxidant effects, (so much for the ""If you can't pronounce it, don't eat it crowd"", hehe by the way, I can pronounce ""Naples Yellow"" and ""lead"" just fine, but just because it's easy to pronounce, you should not eat the stuff) (Ref: Google Search);"
-NY6,Y,CINATURAL,6,Saffron,"African Saffron;
- C.I. Natural Yellow 6;
- Crocetin;
- Saffron; 
- Natural Yellow 6;
- Wild Saffron [KP.p];","75140
- 75100","Color dye extracted from the stigmas Crocus Sativa then precipitated onto lake base; A kilogram of saffron requires 20,000 flowers (Ref; Kremer Pigments); (Ref wikipedia);
-  
- Made from Curcuma, vibrant warm yellow (Ref: Kremer Pigments);
-  
- ""The term saffron in a pigment context, refers to a dye derived from the stamens of the plant Crocus sativus L., 
- The Borradailes stated in their notes to the fifteenth century Strasbourg MS that it was 'prized by illuminators’ .
- The main dyestuff produced is crocetin."" (Ref Pigment Compendium, 2008, p.337);",Bright orange yellow,T,IV,A,Fades completely; Recommended only for books were it would rarely be exposed to light or temporary illustration.
-NY8,Y,CINATURAL,8,Morin,"C.I. Natural Yellow 8;
- Calico Yellow*;
-  Moric acid;
- Morin hydrate;
- Morina (Esp., Port.);
- Natural Yellow 8;
- Natural Yellow 11;",75660,"2',3,4,5,7-pentahydroxyflavone;
- (Ref CAMEO Materials Database MFA, Boston);
-  
- Found in the wood of the Dyer's Mulberry (Chlorophora tinctoria), common in the Americas and the West Indies, also can be found in the wood of the Osage Orange tree (Maclura pomifera or Toxylon pomiferum), and Oak trees. It is the only coloring matter in the Jackwood tree (Artocarpus integrqolia), from Burma , Ceylon and India (Ref: Color Index Constitution Numbers Third Ed, 1998);
-  
- CAS 480-16-0","Olive Green to Intense bright yellow**
-  
- † Hue shift towards brown; Fades",T,IV,A,"*Calico Yellow is the bisulfite compound of morin
-  
- **Color depends on lake base"
-NY10,Y,CINATURAL,10,Quercitron Lake,"American bark;
- Black oak;
- C.I. Natural Yellow 10;
- Flavine;
- Gallstone;
- Gulizaleel;
- Italian pink;
- Meletin;
- Natural Yellow 10;
- Quercetin;
- Quercitrón; 
- Quercitron;
- Quercitron bark;
- Quercitron Lake;
- Querzitron;
- Sophoretin;
- Yellow lake;","75640
- 75650
- 75670
- 75680
- 75710
- 75720
- 75730
- 75750
- 75570","Laked extract from the bark of Black Oak, or oxgall; 
- A yellow vegetable dye extracted from the black or dark brown bark of the black oak, Quercus velutina formerly Quercus nigra; (Ref: Quercitron, CAMEO Materials Database MFA, Boston);
- The dye principal colorants: Quercetin, Quercetagetin, Quercimeritrin and flavine
- Quercetin produces a bright yellow with aluminum and tin, a tan with chrome, and an olive green with iron.
- Quercetagetin produces shades of orange
- Flavine gives a brilliant yellow with alum or tin
- (Ref CAMEO Materials Database MFA, Boston);","Bright yellow
-  
- † Hue shift towards brown",T,IV,A,"Quercetin is often found in many yellow fruits and vegetables, considered a antioxidant, and may have other health benefits as well. (google search);"
-NY11,Y,CINATURAL,11,Fustic,"Aurantica; 
- Aurantine;
- Bois Jaune (Fr.);
- C.I. Natural Yellow 11;
- Carmin de Cuba;
- Cuba wood;
- Cubawood;
- Dyer´s Mulberry;
- Geelhout (Ned.);
- Gaud (It.);
- Gelbholz;
- Gelholz (Deut.); 
- Extract of Fustik [KP.p];
- Fustic (Esp.);
- Fustik;
- Fustiikki;
- Gelbholz;
- Geschnitten;
- Keltapuu; 
- Madera amilla de Cuba (Esp.);
- Mora;
- Moriini Morin;
- Old Fustic;
- Old Fustik;
- Natural Yellow 11;
- Natural Yellow Wood [KP]; 
- Yellow Wood;
- Yellowwood;","75240
- 75660
- 75710
- 75720
- 75730
- 75750","Made from the heartwood of dyer's mulberry, a tropical tree of the Mulberry family Chlorophora tinctoria (formerly Morus tinctoria);, or Maclura tinctoria; Soaking the wood for long periods produces a stronger color. Fustic contains the yellow flavonol colorant morin. (Ref CAMEO Materials Database MFA, Boston);
- (Ref: Extract of Fusic Info from Kremer Pigments);
-  
- Main coloring from Morin (C.I.75660)and Maclurin (C.I.75240): Crystallized from ethanol to form colorless needles, turning intense yellow in alkaline solutions.
- 2',3,4,5,7-pentahydroxyflavone;
- Benzophenone, 2,3',4,4',6-pentahydroxy-
-  
- CAS 480-16-0","Greenish yellow-brown to bright orange yellow*
-  
- † Hue shift towards brown; Fades",T,III,A,*Dye colors can range from a pale yellow with alum to a dark tan with copper. Morin will react with aluminum to produce a green fluorescent compound.
-NY12,Y,CINATURAL,12,Datiscetin,"Acalbir;
- Akalbir;
- C.I. Natural Yellow 12;
- Natural Yellow 12",75630,"Plant dye found in the leaves, branches and roots of Datisca Cannabis*, also known as False Cannabis, False Hemp or Bastard Hemp, because it resembles Cannabis Sativa, however it is completely unrelated.
-  
- Datiscetin",,X,X,,* Apparently becoming a popular plant in home gardens
-NY13,Y,CINATURAL,13,"Stil de Grain*
- Dutch Pink
- Yellow Lake","Brown Lake;
- Brown Pink**; 
- Buckthorn Lake;
- C.I. Natural Yellow 13;
- Citrine Lake;
- Dutch Pink**;
- Dutch Yellow;
- English Pink**; 
- Indigo Yellow, 
- Italian Pink**;
- Natural Green 2
- Natural Yellow 13;
- Persian Lake;
- Persian Berry Lake;
- Pink**;
- Pinke***;
- Quercitron Lake;
- Rhamno lake;
- Rhamnin;
- Spincervino lake; 
- Stil de Grain?;
- Stil de Grain Brown;
- Stil de grain E [KP.p];
- Stil de grain lake; 
- Stil de Grain light [KP.p];
- Stil de Grain, Schützenberger [KP.p];
- Turkey Berries;
- Yellow Berries;
- Yellow Carmine;
- Yellow Lake;
- Yellow Madder;
-  
- also see Sap Green NG2","75430
- 75640
- 75660
- 75670
- 75690
- 75695","""The sources of yellow lake are numerous, but the best kind is obtained from quercitron bark from Quercus tinctoria, Qu. nigra, and Qu. citrina, three species of North American oak."" (see below NY14)
- – from ""The Chemistry Of Paints And Painting"", by Arthur H. Church, 1901, provided by chest of books, or see my free ebooks page here to download the full book
-  
- Generally, the colorant, mainly Quercitron, was absorbed on chalk or alumina trihydrate to form the lake.
-  
- also extracted from the black or dark brown bark of the black oak, Quercus velutina (formerly Quercus nigra) with Quercitron as the main coloring component; (Ref: Dutch Pink, CAMEO Materials Database MFA, Boston); (Ref: Quercitron, CAMEO Materials Database MFA, Boston);
-  
- Quercitron (Ref:wikipedia) Quercitrin (Ref:wikipedia):
- CAS 522-12-3 
- Rhamnetin:
- CAS 90-19-7; 
- Xanthorhamnin:
- CAS 1324-63-6; 
- Rhamnazin:
- CAS 552-54-5 
- Rhamnolutin, Kaempferol 7-methyl ether 
- CAS 569-92-6","Greenish yellow to brown*** (see below)
- Bright yellow in tints and thin layers, brownish in mass tone
-  
- † Hue shift towards brown; Fades",T,IV,A,"* see below NY14
- ** see below NY14"
-NY14,Y,CINATURAL,14,Stil de Grain*,"Brown Lake;
- Brown Pink***;
- Brown Stil de Grain;
- Buckthorn Lake;
- C.I. Natural Yellow 13;
- C.I. Natural Yellow 14;
- Citrine Lake;
- Dutch Pink***;
- Dutch Yellow;
- English Pink***;
- English Stil de Grain; 
- Italian Pink***;
- Jaune-de-graine (yellow de seed);
- Natural Green 2
- Natural Yellow 13;
- Natural Yellow 14;
- Persian Lake;
- Persian Berry Lake;
- Pink**;
- Pinke***;
- Quercitron Lake;
- Rhamno lake;
- Rhamnin;
- Spincervino lake;
- Stil de Grain (Fr.) [GEN | KP.p];
- Stil de Grain Brown;
- Stil de Grain Brun;
- Stil de grain E [KP.p];
- Stil de grain lake; 
- Stil de Grain light [KP.p];
- Stil de Grain, 
- Schijtgroen litter (Dutch), (Ref);
- Schützenberger [KP.p];
- Turkey Berries;
- Yellow Berries;
- Yellow Carmine;
- Yellow Lake;
- Yellow Madder;
- Yellow Stil de Grain;
-  
- also see Sap Green NG2",75440,"Lake extract of unripe Buckthorn or Purging Berries (Rhamnus catharticus, R. cathartica, R.infectorius, R. oleoides, R. saxatilis, R. amygdalinus, R. catharticus, Rhamnus frangula, ) 
- Sap green (NG2) is made from ripe berries; 
- (Historical Pigments: Stil de grain Ref @ Natural Pigments Blog);
- (Ref from Kremer Pigments)
- (Ref from Kremer Pigments)
- Other common names of the berries: Avignon Berries, Black plum, Blackthorn, Dyer's Bucktorn, Persian Berries, Purging Berries, Hungarian Berries, Turkish Berries
-  
- ""The sources of yellow lake are numerous, but the best kind is obtained from quercitron bark from Quercus tinctoria, Qu. nigra, and Qu. citrina, three species of North American oak.""
- ""Yellow lake was formerly made from the fruits of various species of buckthorn, known as Persian, Turkish, or Avignon berries.""
- "" 'Stil de grain,' and several of the continental yellow lakes, are made from the above-named berry""
- ""Italian pink, Dutch pink, and deep yellow madder are names usually given to the richer yellow lakes of quercitron, although some of these pigments are occasionally prepared from Turkish or Avignon berries.""
- – from ""The Chemistry Of Paints And Painting"", by Arthur H. Church, 1901, provided by chest of books, or see my free ebooks page here to download the full book
-  
- Generally, the colorant was absorbed on clay, chalk or alumina trihydrate to form the lake, mixed with alum and precipitated with an alkali (sodium carbonate) (Ref: pigments-historiques.blogspot, here is an english translation)
-  
- After 1819, it was also extracted from the black or dark brown bark of the black oak, Quercus velutina (formerly Quercus nigra) with Quercitron as the main coloring component; (Ref: Dutch Pink, CAMEO Materials Database MFA, Boston); (Ref: Quercitron, CAMEO Materials Database MFA, Boston);
-  
- Main coloring from Emodin, Frangula-emodin (from Buckthorn) (Ref: Chemicalbook.com)
- CAS 518-82-1 
- Rhamnetin:(Ref: Chemicalbook.com)
- CAS 90-19-7
- Quercitron (Quercitrin): (main coloring in Oak)
- CAS 522-12-3","Greenish yellow to brown
-  
- Bright yellow in tints and thin layers, brownish in mass tone
-  
- Munsell: 
- 5Y 9/10 (approximate) 
-  
- † Hue shift towards brown; Fades",T,IV,A,"* there is inconsistent and confusing literature and information on NY13 and NY14. Many sources seem to use both interchangeably.
- It appears that most often what is called Natural Yellow 14 (NY14), is what was originally called ""still de grain"" made from Buckthorn Berries (Rhamnus catharticus).
- But, later, after appox. 1819, the pigment extracted from Black Oak was called ""still de grain"".
- As far as I can determine, It seems Natural Yellow 13 (NY13), most often refers to that made with Black Oak and Quercitron as the main coloring matter. (Ref: Dutch Pink, CAMEO Materials Database MFA, Boston);
- (Ref: Color Index Constitution Numbers Third Ed, 1998, numbers 75430, 75640; 75650; 75660, 75695; 75700; 75710;), 
-  
- ** Pink in this sense refers to a yellow pigment based on natural yellow dyes, usually the lake of an extract from Buckthorn Berries with the but may have been used for other dyes based on Quercitron. The word pink came into use during the sixteenth century;
- According to the 2008 version of the Pigment Compendium, ""there is speculation that because of the yellow color, it is derived from the German ""pinkeln"" translated in a dictionary of 1798 (by Adelung and Schwann) as ‘to piss, to make water’."" (Reference Pigment Compendium, 2008, by Nicholas Eastaugh, Valentine Walsh, Tracey Chaplin and Ruth Siddall)
-  
- ***Color depends on ripeness of the berries and precipitant; Deep yellow lake on alum and yellow brown on carbonates (Reference: A practical treatise on the manufacture of colors for painting, 1874, also see the Free Art Books page under Pigments, Art Conservation and Art Materials.)"
-NY20,Y,CINATURAL,20,Indian Yellow,"Amarillo Indian;
- Camel's Urine;
- C.I. Natural Yellow 20;
- Euxanthin;
- Euxanthine;
- Gaugoli;
- Giallo Indiano;
- Gogili;
- Hardwari Peori;
- Indian Yellow [GEN];
- Indischgelb;
- Jaune Indien;
- Jaune Indien purifié;
- Monghyr;
- Natural Yellow 20;
- Peoli;
- Peori;
- Pioury;
- Piuri;
- Purrea arabicu;
- Purreie acid;
- Purree;
- Purée of India;
- Snowshoe Yellow;",75320,"Extracted from urine of cows fed mango leaves?** (Reference Indian Yellow at Pigments through the ages);
-  (Ref: Indian Yellow, CAMEO Materials Database MFA, Boston);
- ""Indian yellow, also called euxanthin or euxanthine, is a xanthonoid. It is transparent yellow pigment used in oil paint. Chemically it is a magnesium euxanthate, the magnesium salt of euxanthic acid"" (Ref wikipedia)
- Euxanthic (purreic) acid (Reference Examination of a yellow substance from India called Purree, from which the pigment called Indian Yellow is manufactured. By John Stenhouse, Ph.D.);
- Euxanthone;
- Calcium salts and magnesium euxanthate*** (compare PY108 Anthrapyrimidine Yellow)(Reference Pigment Compendium, 2008, by Nicholas Eastaugh, Valentine Walsh, Tracey Chaplin and Ruth Siddall)",Bright reddish yellow,T,II,A,"* Untested by ASTM, reported by some sources to be a highly lightfast pigment (Ref: Painting Materials: A Short Encyclopaedia By Rutherford John Gettens, ©1966 by Dover Publications, p.119)
-  
- ** Urine of cows origin Questioned (Ref Color: a natural history of the palette By Victoria Finlay, ©2002, published by Random House 2004, p.203-211); (Ref: Google); (Ref: wikipedia);
- If Indian yellow did come from cows urine, the common claim that they were cruelly ""force fed"" mango leaves is probably false. Mango Leaves are high in minerals, vitamins and protein and also anti-viral and antibacterial. Mango leaves may have been a perfect feed for cattle and not ""cruel"" at all (Ref: Feeding Value of Mango Leaf (Mangifera indica) for Growing Rabbits, Journal of Animal and Veterinary Advances, 2006, Vol: 5, Issue: 10, Page No.: 800-804), 
- (Ref: Effects of feeding mango (Mangifera indica) and shaora (Streblus asper) tree leaves to Black Bengal goats of Bangladesh, by M.A. Akbar, M.N. Alam, Small Ruminant Research, Volume 6, Issue 1, Pages 25-30, October 1991); 
- (Ref: MDidea.com Herbal Extracts); 
- (Ref: healthmad.com)
-  
- ""Mangos grow well in pastures, although cattle will graze off lower leaves. It is necessary to fence off young trees for the first 3–4 years to protect them from livestock."", – In other words the Mango leaves need to be protected from the cattle, because the cattle love them! (Ref p.16 under Silvopasture, of ""Species Profiles for Pacific Island Agroforestry: Mangifera indica (mango""),
- ***Daniel Smith has a water base paint containing magnesium euxanthate (PY108) as the pigment (Ref: at Daniel Smith).
- Also see my blog article on Indian Yellow
- Interesting discussion of Indian Yellow on the WetCanvas.com forum here."
-NY24,Y,CINATURAL,24,Gamboge,"Cadie Gum;
- Cambadium; 
- Camboge;
- Cambogia;
- Cambogium;
- Camborge;
- Ceylon gamboge;
- C.I. Natural Yellow 24;
- Drop Gum;
- Gamboage;
- Gamboge [GEN | KP.p];
- Gamboge Genuine [WNd];
- Gamboge, powder [KP.p]; 
- Gambodium;
- Gambogium;
- Gamboji (Jap.);
- Giallo Cambogia (It.)
- Gomma Gutti; 
- Gokatu Gamboge;
- Gomaguta (Esp., Port.);
- Gomma gutta (It.);
- Gomme-gutte (Fr.);
- Gum Gamboge Powder;
- Gum Gutte;
- Gummigutt (Deut.);
- Guti ambar; 
- Gutta gamba;
- Gutto gumbo;
- Kiyo (Jap.);
- Natural Gamboge; 
- Natural Yellow 24;
- Pipe Gamboge [KP.p];
- Rattan Yellow;
- Siam gamboge;
- Shio (Jap.);
- Tom Rong;
- Wisteria Yellow",,"""A yellow-orange gum-resin produced by several species of Garcinia tree"";
- ""Gamboge is composed of a yellow resinous component (70-80%; morelloflavone) and a clear water-soluble gum (20%"") - (Ref: Gamboge, CAMEO Materials Database MFA, Boston);
- (Ref: Gokatu Gamboge, CAMEO Materials Database MFA, Boston);
- Resin extract from the Garcinia hanburyi tree; (Ref wikipedia);
- Coloring from Xanthones and Hydroxanthones
- Gambogic acid 
- Isogambogic acid
- Morellic acid
- Isomorellic acid
- Morellin
- Morellinol
- Isomorellinol
- Desoxymorellinol
- Dihydroisomorellin
- Neogambogic acid
- (Ref: Winter, J. 1997. Gamboge. Artists' Pigments, a Handbook of their History and Characteristics vol 3: p.143–55. Washington, D.C.: National Gallery of Art.)
-  
- CAS 9000-25-3
- EC 232-533-1","Bright deep yellow to dullish yellow orange pigment;
-  
- † Fades",T,IV,B,"Fades completely; Recommended only for books were it would rarely be exposed to light or temporary illustration.
- W&N discontinued NY 24 in 2005, for more info on NY-24 in watercolors see handprint.com
- * Ingesting 7 grams or more is poisonous, But in very small doses it is sometimes used as a Herbal hydragogue cathartic (Ref:Medical-dictionary). (Ref: henriettesherbal.com);
- More heath info @ the Drug Information Portal"

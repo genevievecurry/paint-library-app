@@ -5,6 +5,7 @@
 
   export let title = '';
   export let fullWidth = false;
+  export let form = false;
 
   let modal;
   const handle_keydown = (e) => {
@@ -42,12 +43,18 @@
 <svelte:window on:keydown={handle_keydown} />
 
 <div
-  class="fixed z-20 inset-0 overflow-y-auto"
+  class="fixed z-20 inset-0 overflow-y-auto "
   role="dialog"
   aria-modal="true"
   bind:this={modal}>
+  <style>
+    /* This is actually terrible. I'm so sorry. And so lazy. */
+    body {
+      overflow-y: hidden;
+    }
+  </style>
   <div
-    class="flex min-h-screen text-center md:block md:px-2 lg:px-4"
+    class="flex min-h-screen text-center md:block md:px-2 lg:px-4 overflow-y"
     style="font-size: 0;">
     <!--
       Background overlay, show/hide based on modal state.
@@ -60,9 +67,9 @@
         To: "opacity-0"
     -->
     <div
-      class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity md:block"
+      class="hidden fixed inset-0 md:block bg-gray-100 bg-opacity-75 transition-opacity"
       aria-hidden="true"
-      on:click={close} />
+      on:click={() => (form ? null : close())} />
 
     <!-- This element is to trick the browser into centering the modal contents. -->
     <span
@@ -84,7 +91,7 @@
         ? 'lg:max-w-full'
         : 'md:max-w-2xl lg:max-w-4xl'}">
       <div
-        class="border-2 border-black w-full relative flex items-center bg-white px-4 pt-14 pb-8 overflow-hidden sm:px-6 sm:pt-8 md:p-6 lg:p-8">
+        class="border-2 border-black w-full relative flex items-center bg-white px-4 md:px-8 pt-4 md:pt-8 pb-8 overflow-hidden ">
         <button
           type="button"
           class="absolute top-4 right-4 text-black hover:text-pink-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8"
@@ -107,7 +114,7 @@
           </svg>
         </button>
         <div
-          class="w-full grid grid-cols-1 gap-y-8 gap-x-6 items-start sm:grid-cols-12 lg:gap-x-8 ">
+          class="w-full grid grid-cols-1 gap-y-8 gap-x-0 items-start sm:grid-cols-12 lg:gap-x-8 ">
           <div class="col-span-11"><h2 class="h2">{title}</h2></div>
           <slot />
         </div>

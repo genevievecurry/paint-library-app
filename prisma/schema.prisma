@@ -83,10 +83,10 @@ model Paint {
   paintTypeId             Int
   line                    Line?              @relation(fields: [lineId], references: [id])
   lineId                  Int?
-  productUrl              String?            @db.VarChar(140)
-  name                    String             @db.VarChar(140)
-  communityDescription    String?            @db.VarChar(500)
-  manufacturerDescription String?            @db.VarChar(500)
+  productUrl              String?
+  name                    String             @db.VarChar(200)
+  communityDescription    String?            @db.VarChar(1000)
+  manufacturerDescription String?            @db.VarChar(1000)
   hex                     String?            @db.VarChar(10)
   lightfastRating         LightfastRating    @relation(fields: [lightfastRatingId], references: [id])
   lightfastRatingId       Int
@@ -96,11 +96,13 @@ model Paint {
   stainingRatingId        Int
   granulationRating       GranulationRating  @relation(fields: [granulationRatingId], references: [id])
   granulationRatingId     Int
-  swatchCard              SwatchCard[]
+  primarySwatchCard       SwatchCard?        @relation("PrimarySwatchCard")
+  swatchCard              SwatchCard[]       @relation("SwatchCards")
   pigmentsOnPaints        PigmentsOnPaints[]
   notes                   Note[]
   tags                    TagsOnPaints[]
   paintsInPalette         PaintsInPalette[]
+
 
   @@unique([manufacturerId, name])
 }
@@ -174,26 +176,28 @@ model TagsOnSwatchCards {
 }
 
 model SwatchCard {
-  id                  Int                 @id @default(autoincrement())
-  createdAt           DateTime            @default(now())
-  updatedAt           DateTime?           @updatedAt
-  deleted             Boolean             @default(false)
-  author              User?               @relation(fields: [authorUuid], references: [uuid])
-  authorUuid          String?
-  description         String?
-  imageKitUpload      ImageKitUpload?     @relation(fields: [imageKitUploadId], references: [id])
-  imageKitUploadId    Int?
-  tags                TagsOnSwatchCards[]
-  paint               Paint               @relation(fields: [paintId], references: [id])
-  paintId             Int
-  paperManufacturer   Manufacturer?       @relation(fields: [paperManufacturerId], references: [id])
-  paperManufacturerId Int?
-  paperLine           Line?               @relation(fields: [paperLineId], references: [id])
-  paperLineId         Int?
-  paperType           PaperType?          @relation(fields: [paperTypeId], references: [id])
-  paperTypeId         Int?
-  paperWeightInLbs    Int?
-
+  id                          Int                           @id @default(autoincrement())
+  createdAt                   DateTime                      @default(now())
+  updatedAt                   DateTime?                     @updatedAt
+  deleted                     Boolean                       @default(false)
+  isOriginal                  Boolean                       @default(false)
+  author                      User?                         @relation(fields: [authorUuid], references: [uuid])
+  authorUuid                  String?
+  description                 String?
+  imageKitUpload              ImageKitUpload?               @relation(fields: [imageKitUploadId], references: [id])
+  imageKitUploadId            Int?
+  tags                        TagsOnSwatchCards[]
+  paint                       Paint                         @relation("SwatchCards", fields: [paintId], references: [id])
+  paintId                     Int
+  paperManufacturer           Manufacturer?                 @relation(fields: [paperManufacturerId], references: [id])
+  paperManufacturerId         Int?
+  paperLine                   Line?                         @relation(fields: [paperLineId], references: [id])
+  paperLineId                 Int?
+  paperType                   PaperType?                    @relation(fields: [paperTypeId], references: [id])
+  paperTypeId                 Int?
+  paperWeightInLbs            Int?
+  primaryOnPaint              Paint?                        @relation("PrimarySwatchCard", fields: [primaryOnPaintUuid], references: [uuid])
+  primaryOnPaintUuid          String?                       @unique
   swatchCardTypesOnSwatchCard SwatchCardTypesOnSwatchCard[]
 }
 

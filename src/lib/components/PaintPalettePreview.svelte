@@ -11,7 +11,9 @@
 
   let { paint, id } = paintOnPalette;
 
-  $: swatchImage = paint.swatchCard[0]?.imageKitUpload?.thumbnailUrl || '';
+  $: swatchImage =
+    `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${paint.primarySwatchCard?.imageKitUpload?.filePath}` ||
+    '';
 
   function remove() {
     dispatch('remove', id);

@@ -16,7 +16,7 @@
   export let searchQuery: string;
 
   $: searchQuery = searchQuery;
-  $: unsluggedQuery = searchQuery.replace('-', ' ');
+  $: unsluggedQuery = searchQuery.replace(/-/g, ' ');
   $: count = 0;
   $: set = 0;
   $: list = [];
@@ -50,6 +50,10 @@
       });
   }
 </script>
+
+<svelte:head>
+  <title>Search Results for "{unsluggedQuery}" - Paint Library</title>
+</svelte:head>
 
 <Header title={unsluggedQuery} subtitle={`${count} results`} />
 

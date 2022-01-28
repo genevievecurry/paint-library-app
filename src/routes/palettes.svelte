@@ -26,7 +26,11 @@
   export let pathname;
 </script>
 
-<div class="container mx-auto px-4 sm:px-6">
+<svelte:head>
+  <title>Palettes - Paint Library</title>
+</svelte:head>
+
+<div class="lg:container mx-auto px-4 sm:px-6">
   <Header title="Palettes" {pathname} />
 
   <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">

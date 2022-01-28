@@ -18,6 +18,10 @@
   export let pathname;
 </script>
 
+<svelte:head>
+  <title>Admin - Paint Library</title>
+</svelte:head>
+
 <div class="px-4 sm:px-6">
   <div class="flex">
     <div class="w-48 border-r-2 border-black pr-7 pt-7">
@@ -27,12 +31,30 @@
             href="/admin/paints"
             class="decorate-link"
             class:current={pathname === '/admin/paints'}>Paints</a>
+          <ul class="ml-3 my-1 text-sm">
+            <li>
+              <a
+                href="/admin/paints/create"
+                class="decorate-link"
+                class:current={pathname === '/admin/paints/create'}
+                >Create Paint</a>
+            </li>
+          </ul>
         </li>
         <li class="my-2">
           <a
             href="/admin/pigments"
             class="decorate-link"
             class:current={pathname === '/admin/pigments'}>Pigments</a>
+          <ul class="ml-3 my-1 text-sm">
+            <li>
+              <a
+                href="/admin/pigments/create"
+                class="decorate-link"
+                class:current={pathname === '/admin/pigments/create'}
+                >Create Pigment</a>
+            </li>
+          </ul>
         </li>
         <li class="my-2">
           <a

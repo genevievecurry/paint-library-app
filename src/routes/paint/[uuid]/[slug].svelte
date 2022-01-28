@@ -26,12 +26,14 @@
   import { connect } from '$lib/utility';
   import { clickOutside } from '$lib/actions';
   import {
+    addPaletteIcon,
     chevronRightIcon,
     circleAddIcon,
     circleCheckmarkIcon,
     closeIcon,
     editIcon,
-    menuIcon,
+    settingsIcon,
+    swatchesIcon,
   } from '$lib/icons';
   import { successNotifier, warningNotifier } from '$lib/notifier';
   import Header from '$lib/components/Header.svelte';
@@ -40,7 +42,7 @@
   import SwatchUploadForm from '$lib/components/SwatchUploadForm.svelte';
   import PigmentUpdateForm from '$lib/components/PigmentUpdateForm.svelte';
   import RatingsUpdateForm from '$lib/components/RatingsUpdateForm.svelte';
-  import Card from './_Card.svelte';
+  import SwatchCard from './_SwatchCard.svelte';
   import Pigments from './_Pigments.svelte';
   import Notes from './_Notes.svelte';
   import PaintForm from '$lib/components/PaintForm.svelte';
@@ -96,6 +98,18 @@
     }
   });
 
+  function orderSwatchCards() {
+    const primaryId = paint?.primarySwatchCard?.id;
+    if (primaryId) {
+      const initialIndex = paint.swatchCard.findIndex(
+        (card) => card.id === primaryId,
+      );
+      paint.swatchCard.unshift(paint.swatchCard.splice(initialIndex, 1)[0]);
+    }
+  }
+
+  orderSwatchCards();
+
   let formData = {
     published: paint.published,
     manufacturerDescription: paint.manufacturerDescription,
@@ -135,10 +149,11 @@
   async function refresh({ notify, message }) {
     let updatedPaint = await refreshIt();
     paint = updatedPaint;
+    orderSwatchCards();
     updatedPaint = null;
 
     if (notify) {
-      if (!message) message = 'Paint updated!';
+      if (!message) message = 'Changes saved successfully.';
       successNotifier(message);
     }
   }
@@ -259,9 +274,14 @@
   }
 </script>
 
+<svelte:head>
+  <title>{paint.name} by {paint.manufacturer.name} - Paint Library</title>
+</svelte:head>
+
 {#if showPaintUpdateModal && editable}
   <Modal
     title="Update Paint Details"
+    form={true}
     on:close={() => (showPaintUpdateModal = false)}>
     <div class="col-span-12">
       <PaintForm
@@ -281,6 +301,7 @@
 {#if showRatingsUpdateModal && editable}
   <Modal
     title="Manage Ratings"
+    form={true}
     on:close={() => (showRatingsUpdateModal = false)}>
     <div class="col-span-12">
       <RatingsUpdateForm
@@ -299,6 +320,7 @@
   <Modal
     title="Manage Pigments"
     fullWidth={true}
+    form={true}
     on:close={() => (showPigmentUpdateModal = false)}>
     <div class="col-span-12">
       <PigmentUpdateForm
@@ -320,19 +342,21 @@
 
 {#if showUploadSwatchModal}
   <Modal
+    title={editableSwatchCard?.id ? 'Edit Swatch' : 'Contribute Swatch'}
+    form={true}
     on:close={() => (showUploadSwatchModal = false)}
-    on:close={() => (editableSwatchCard = {})}
-    title={editableSwatchCard?.id ? 'Edit Swatch' : 'Contribute Swatch'}>
+    on:close={() => (editableSwatchCard = {})}>
     <div class="col-span-12">
       <SwatchUploadForm
         on:success={handleEditUpdate}
+        swatchCardCount={paint._count.swatchCard}
         paintUuid={paint.uuid}
         swatchCard={editableSwatchCard} />
     </div>
   </Modal>
 {/if}
 
-<div class="container mx-auto px-4 sm:px-6">
+<div class="lg:container mx-auto px-4 sm:px-6">
   {#if paint}
     <Header
       title={paint.name}
@@ -341,46 +365,35 @@
       owner={null}>
       {#if $session?.user}
         <div class="relative inline-block text-left">
-          <div class="mr-2 inline">
+          <div class="lg:mr-2 inline">
             <button
               type="button"
-              class="pop inline-flex justify-center px-3 py-1 text-sm"
+              title="Contribute Swatch"
+              aria-label="Contribute Swatch"
+              class="pop inline-flex justify-center p-2 lg:px-3 lg:py-1 text-sm"
               on:click={() => (showUploadSwatchModal = true)}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 mr-1"
-                viewBox="0 0 20 20"
-                fill="currentColor">
-                <path
-                  fill-rule="evenodd"
-                  d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
-                  clip-rule="evenodd" />
-              </svg>
-              Contribute Swatch</button>
+              {@html swatchesIcon('h-5 w-5')}
+              <span class="hidden lg:inline-block ml-1">Contribute Swatch</span>
+            </button>
           </div>
           <div
-            class="mr-2 inline"
+            class="lg:mr-2 inline"
             use:clickOutside={{
               enabled: addToPaletteMenuOpen,
               cb: () => (addToPaletteMenuOpen = false),
             }}>
             <button
               type="button"
-              class="pop inline-flex justify-center px-3 py-1 text-sm"
+              title="Add to Palette"
+              aria-label="Add to Palette"
+              class="pop inline-flex justify-center p-2 lg:px-3 lg:py-1 text-sm"
               id="menu-button"
               aria-expanded={addToPaletteMenuOpen}
               aria-haspopup="true"
               on:click={() => (addToPaletteMenuOpen = true)}
               on:click={fetchPalettes}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 mr-1"
-                viewBox="0 0 20 20"
-                fill="currentColor">
-                <path
-                  d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
-              </svg>
-              Add to Palette
+              {@html addPaletteIcon('h-5 w-5')}
+              <span class="hidden lg:inline-block ml-1">Add to Palette</span>
             </button>
           </div>
           {#if addToPaletteMenuOpen}
@@ -456,15 +469,15 @@
                 }}>
                 <button
                   type="button"
-                  class="pop inline-flex justify-center px-3 py-1 text-sm {editMenuOpen
+                  class="pop inline-flex justify-center p-2 lg:px-3 lg:py-1 text-sm {editMenuOpen
                     ? 'active'
                     : ''}"
                   id="menu-button"
                   aria-expanded={editMenuOpen}
                   aria-haspopup="true"
                   on:click={() => (editMenuOpen = true)}>
-                  {@html menuIcon('h-5 w-5 mr-1')}
-                  <span>Settings</span>
+                  {@html settingsIcon('h-5 w-5')}
+                  <span class="hidden lg:inline-block ml-1">Settings</span>
                 </button>
               </div>
 
@@ -515,18 +528,18 @@
       {/if}
     </Header>
 
-    {#if paint.swatchCard.length > 0}
+    {#if paint?.swatchCard.length > 0}
       <section
         class="grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-6">
         {#each paint.swatchCard as swatchCard}
-          <Card
+          <SwatchCard
             paintUuid={paint.uuid}
             paintName={paint.name}
             paintHex={paint.hex}
             {swatchCard}
             alignment={checkAlignment(
-              swatchCard.imageKitUpload?.height,
-              swatchCard.imageKitUpload?.width,
+              swatchCard?.imageKitUpload?.height,
+              swatchCard?.imageKitUpload?.width,
             )}
             on:deleteCard={handleEditUpdate}
             on:setSwatchCard={setEditableSwatchCard} />
@@ -534,7 +547,7 @@
       </section>
     {:else}
       <div
-        style="border-color:{paint.hex}"
+        style="border-color:{paint.hex}; background-color: {paint.hex}22"
         class="p-3 grid place-items-center border-2">
         <div class="text-center m-3">
           <div>
@@ -572,8 +585,8 @@
       </div>
     {/if}
 
-    <div class="md:flex">
-      <div class="flex-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-10">
+      <div class="col-span-2">
         <section class="mt-8">
           <div class="flex justify-start items-center">
             <h2 class="font-bold text-2xl">Ratings</h2>
@@ -591,7 +604,27 @@
           </div>
           <Ratings {paint} />
         </section>
-
+      </div>
+      <div class="col-span-1">
+        <section class="mt-8">
+          <div class="flex justify-start items-center">
+            <h2 class="font-bold text-2xl">Pigments</h2>
+            {#if editable}
+              <button
+                aria-label="Manage Pigments"
+                title="Manage Pigments"
+                on:click={() => (showPigmentUpdateModal = true)}
+                class="pop inline-flex justify-center ml-3 p-1 text-sm {showPigmentUpdateModal
+                  ? 'text-pink-600'
+                  : 'text-black'}">
+                {@html editIcon('h-5 w-5')}
+              </button>
+            {/if}
+          </div>
+          <Pigments {pigmentsOnPaints} />
+        </section>
+      </div>
+      <div class="col-span-2">
         {#if paint.manufacturerDescription || editable}
           <section class="mt-8">
             <div class="flex justify-start items-center">
@@ -623,7 +656,7 @@
                   This should be directly pulled from {paint.manufacturer
                     .name}'s description of the paint.</label>
                 <textarea
-                  maxlength="500"
+                  maxlength="1000"
                   id="manufacturerDescription"
                   name="manufacturerDescription"
                   bind:value={formData.manufacturerDescription}
@@ -654,7 +687,6 @@
             {/if}
           </section>
         {/if}
-        {editableField}
         {#if paint.communityDescription || editable}
           <section class="mt-8">
             <div class="flex justify-start items-center">
@@ -685,7 +717,7 @@
                   This should be a thoughtful, albiet unofficial, description of
                   this particular paint.</label>
                 <textarea
-                  maxlength="500"
+                  maxlength="1000"
                   id="communityDescription"
                   name="communityDescription"
                   bind:value={formData.communityDescription}
@@ -719,25 +751,6 @@
           paintUuid={paint.uuid}
           on:update={() => refresh({ notify: false })}
           on:update={handleEditUpdate} />
-      </div>
-      <div class="flex-none md:w-96 md:pl-10">
-        <section class="mt-8">
-          <div class="flex justify-start items-center">
-            <h2 class="font-bold text-2xl">Pigments</h2>
-            {#if editable}
-              <button
-                aria-label="Manage Pigments"
-                title="Manage Pigments"
-                on:click={() => (showPigmentUpdateModal = true)}
-                class="pop inline-flex justify-center ml-3 p-1 text-sm {showPigmentUpdateModal
-                  ? 'text-pink-600'
-                  : 'text-black'}">
-                {@html editIcon('h-5 w-5')}
-              </button>
-            {/if}
-          </div>
-          <Pigments {pigmentsOnPaints} />
-        </section>
       </div>
     </div>
   {:else}

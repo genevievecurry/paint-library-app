@@ -32,7 +32,7 @@
     This user has not yet saved any notes.
   </span>
 {:else}
-  <div class="container mx-auto max-w-2xl">
+  <div class="lg:container mx-auto max-w-2xl">
     {#each noteData.notes as note}
       {#if note.approved || $session.user?.role === 'ADMIN' || $session.user?.uuid === note.author.uuid}
         <div

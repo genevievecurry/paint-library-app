@@ -1,9 +1,9 @@
-import * as api from '$lib/api';
+import { createUser } from '$lib/api';
 
 export async function post({ body }): Promise<{
   body: User;
   status: number;
 }> {
-  const response = await api.createUser(body);
+  const response = await createUser(body);
   return response;
 }

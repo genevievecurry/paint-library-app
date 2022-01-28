@@ -1,4 +1,19 @@
 /// <reference types="@sveltejs/kit" />
+interface Locals {
+  user: User
+}
+
+type Action = (
+  node: HTMLElement,
+  parameters: any,
+) => {
+  update?: (parameters: any) => void;
+  destroy?: () => void;
+};
+
+declare type LoadInput = import('@sveltejs/kit').LoadInput;
+declare type RequestEvent = import('@sveltejs/kit').RequestEvent;
+declare type RequestHandler = import('@sveltejs/kit').RequestHandler;
 
 declare type Paint = import('.prisma/client').Paint;
 declare type Pigment = import('.prisma/client').Pigment;
@@ -13,6 +28,7 @@ declare type PaintsInPalette = import('.prisma/client').PaintsInPalette;
 declare type PaperType = import('.prisma/client').PaperType;
 declare type Line = import('.prisma/client').Line;
 declare type Note = import('.prisma/client').Note;
+
 declare type SwatchCardTypesOnSwatchCard =
   import('.prisma/client').SwatchCardTypesOnSwatchCard;
 
@@ -51,6 +67,7 @@ interface PaintComponent extends Paint {
   stainingRating?: import('.prisma/client').StainingRating;
   granulationRating?: import('.prisma/client').GranulationRating;
   notes?: import('.prisma/client').Notes;
+  primarySwatchCard: SwatchCardComponent;
 }
 
 type ListPaint = {

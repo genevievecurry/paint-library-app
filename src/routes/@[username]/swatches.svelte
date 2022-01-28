@@ -25,18 +25,6 @@
   export let swatchData;
 
   $: data = swatchData;
-
-  const setAspectClasses = (height: string, width: string) => {
-    if (height === width || !height || !width) {
-      return 'aspect-w-12 aspect-h-12';
-    }
-    if (height > width) {
-      return 'aspect-w-10 md:aspect-w-8 aspect-h-10';
-    }
-    if (height < width) {
-      return 'aspect-w-10 aspect-h-10 md:aspect-h-8';
-    }
-  };
 </script>
 
 {#if data.swatchCards.length === 0}
@@ -64,10 +52,15 @@
               <p class="text-gray-500 text-xs"
                 >{swatchCard.paint.manufacturer.name}</p>
               <p class="font-bold">{swatchCard.paint.name}</p>
-              <p class="text-sm mt-1 leading-tight">{swatchCard.description}</p>
-              <p class="text-sm mt-2">
-                {swatchCard.paperType?.name} ({swatchCard.paperWeightInLbs} lb.)
-              </p>
+              {#if swatchCard.description}
+                <p class="text-sm mt-1 leading-tight"
+                  >{swatchCard.description}</p>
+              {/if}
+              {#if swatchCard.paperType?.name && swatchCard.paperWeightInLbs}
+                <p class="text-sm mt-2">
+                  {swatchCard.paperType?.name} ({swatchCard.paperWeightInLbs} lb.)
+                </p>
+              {/if}
             </div>
             <div>
               <p class="text-xs mt-2 leading-tight"

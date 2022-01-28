@@ -1,9 +1,9 @@
-import * as api from '$lib/api';
+import { getUserProfileNotes } from '$lib/api';
 
 export async function get({
   params,
-}): Promise<{ status: number; body: Record<string, unknown> }> {
+}: RequestEvent): Promise<{ status: number; body: Record<string, unknown> }> {
   const { username } = params;
-  const response = await api.getUserProfileNotes(username);
+  const response = await getUserProfileNotes(username);
   return response;
 }

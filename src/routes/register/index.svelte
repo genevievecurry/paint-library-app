@@ -107,7 +107,11 @@
   }
 </script>
 
-<div class="container mx-auto px-4 sm:px-6">
+<svelte:head>
+  <title>Register New User - Paint Library</title>
+</svelte:head>
+
+<div class="lg:container mx-auto px-4 sm:px-6">
   <Header title="Register New User" />
   <form on:submit|preventDefault={submitHandler}>
     <div class="grid lg:grid-cols-2 gap-12 xl:gap-32">

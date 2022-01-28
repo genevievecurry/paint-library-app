@@ -150,7 +150,7 @@ PO17,O,CIPIGMENT,17,Persian Orange,"C.I. Pigment Orange 17;
  Monoazo; 
  Barium lake of azomethine dye;
  CAS 15782-04-4",Bright orange to reddish,X,II,A,
-PO17:1,O,CIPIGMENT,17,Persian Orange,"C.I. Pigment Orange 17:1;
+PO17:1,O,CIPIGMENT,17.1,Persian Orange,"C.I. Pigment Orange 17:1;
  Persian Orange;
  Pigment Orange 17:1",15510:1,"Synthetic Organic;
  Monoazo; 
@@ -200,7 +200,7 @@ PO20,O,CIPIGMENT,20,Cadmium Orange,"C.I. Pigment Orange 20;
  CAS 12656-57-4","Bright yellowish thru to reddish orange, (depends on modifiers used during synthesis);
  Very staining with very good tinting strength;
  † Fades, whithens, may fade or whiten when exposed to very damp conditions and excessive direct sunlight, Indoor lights have little or no effect.",S/O,I,B,
-PO20:1,O,CIPIGMENT,20,Cadmium-Barium Orange,"Cadmium-Barium Maroon [GR.o.wo?*];
+PO20:1,O,CIPIGMENT,20.1,Cadmium-Barium Orange,"Cadmium-Barium Maroon [GR.o.wo?*];
  Cadmium-Barium Orange [GR.o.wo?*];
  Cadmium-Barium Red Deep [GR.o.wo?*; 
  Cadmium-Barium Red Light [GR.o.wo?*];
@@ -266,7 +266,7 @@ PO21,O,CIPIGMENT,21,Chrome Orange,"American Vermillion (hue);
  Basic lead (II) -chromate;
  Method of making Chrome orange at webexhibits.org
  CAS 1344-38-3",Bright intense yellowish thru reddish Orange,O,NR,C,
-PO21:1,O,CIPIGMENT,21,Chrome Orange,"Chrome Orange;
+PO21:1,O,CIPIGMENT,21.1,Chrome Orange,"Chrome Orange;
  C.I. Pigment Orange 21:1;
  Pigment Orange 21:1;",,"Inorganic;
  lead (II) -chromate precipitated onto a silica base (Pigment Compendium, Ref)",Bright intense yellowish thru reddish Orange,O,NR,C,
@@ -296,7 +296,7 @@ PO23,O,CIPIGMENT,23,Cadmium Vermilion Orange,"Cadmium Cinnabar;
  Staining w/ good tinting strength, slow drying in oil.
  † Whitens / darkens, May whiten when exposed to excessive sun over a long time, may darken by atmospheric Sulfides, if not properly covered in binder, or of poor manufacture.
  Sensitive to acids, both oil binders & gum arabic are slightly acidic.",O,NR,D,
-PO23:1,O,CIPIGMENT,23,Cadmium-Barium Vermillion Orange,"Cadmium-Barium Vermillion Orange;
+PO23:1,O,CIPIGMENT,23.1,Cadmium-Barium Vermillion Orange,"Cadmium-Barium Vermillion Orange;
  Cadmium Mercury
  Lithopone Orange;
  C.I. Pigment Orange 23:1;

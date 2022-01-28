@@ -33,6 +33,10 @@
   const displayHex = pigment.hex ? pigment.hex : pigment.color.hex;
 </script>
 
+<svelte:head>
+  <title>Pigment {pigment.name} - Paint Library</title>
+</svelte:head>
+
 <!-- Todo: figure out breadcrumbs and use Header component -->
 <Header title={pigment.name} {pathname} />
 

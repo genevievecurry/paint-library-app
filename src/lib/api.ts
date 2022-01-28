@@ -56,15 +56,9 @@ const limitedPaintSelect: Prisma.PaintSelect = {
       },
     },
   },
-  swatchCard: {
-    take: 1,
+  primarySwatchCard: {
     select: {
-      imageKitUpload: {
-        select: {
-          url: true,
-          thumbnailUrl: true,
-        },
-      },
+      imageKitUpload: true
     },
   },
 };
@@ -124,6 +118,9 @@ const swatchCardSelect: Prisma.SwatchCardSelect = {
       },
     },
   },
+  isOriginal: true,
+  primaryOnPaintUuid: true,
+  primaryOnPaint: true,
   paperManufacturer: true,
   paperLine: true,
   paperType: true,
@@ -225,6 +222,7 @@ const paintSelect: Prisma.PaintSelect = {
       },
     },
   },
+  primarySwatchCard: true,
   swatchCard: {
     select: swatchCardSelect,
   },
@@ -299,7 +297,7 @@ export async function getSearchResults(
   status: number;
   body: SearchResults;
 }> {
-  const unsluggedQuery = searchQuery.replace('-', ' & ');
+  const unsluggedQuery = searchQuery.replace(/-/g, ' & ');
   const set = Number(query.get('set'));
 
   const count = await prisma.paint.count({
@@ -341,8 +339,7 @@ export async function getSearchResults(
           name: true,
         },
       },
-      swatchCard: {
-        take: 1,
+      primarySwatchCard: {
         select: {
           imageKitUpload: true,
         },
@@ -446,6 +443,7 @@ export async function getAllPigments(searchParams = null): Promise<{
         slug: true,
         hex: true,
         name: true,
+        type: true,
         number: true,
         _count: true,
       },
@@ -460,6 +458,17 @@ export async function getAllPigmentsByColor(): Promise<{
 }> {
   return {
     body: await prisma.color.findMany({
+      where: {
+        pigments: {
+          // Todo: is this really the only way to filter out
+          // colors that have no pigments??
+          some: {
+            id: {
+              gt: 0,
+            },
+          },
+        },
+      },
       orderBy: {
         label: 'asc',
       },
@@ -469,9 +478,7 @@ export async function getAllPigmentsByColor(): Promise<{
         slug: true,
         hex: true,
         pigments: {
-          orderBy: {
-            number: 'asc',
-          },
+          orderBy: [{ type: 'desc' }, { number: 'asc' }],
           select: {
             slug: true,
             hex: true,
@@ -481,6 +488,7 @@ export async function getAllPigmentsByColor(): Promise<{
             colorCode: true,
             lightfastRating: true,
             transparencyRating: true,
+            toxicity: true,
           },
         },
       },
@@ -515,6 +523,7 @@ export async function getPigmentsByColor(slug: string): Promise<{
       name: true,
       type: true,
       number: true,
+      toxicity: true,
       colorCode: true,
       color: {
         select: {
@@ -610,8 +619,7 @@ export async function getPaints(query): Promise<{
             name: true,
           },
         },
-        swatchCard: {
-          take: 1,
+        primarySwatchCard: {
           select: {
             imageKitUpload: true,
           },
@@ -1216,15 +1224,9 @@ export async function getUserProfileOwnedPalettes(data): Promise<{
                   uuid: true,
                   slug: true,
                   hex: true,
-                  swatchCard: {
-                    take: 1,
+                  primarySwatchCard: {
                     select: {
-                      imageKitUpload: {
-                        select: {
-                          url: true,
-                          thumbnailUrl: true,
-                        },
-                      },
+                      imageKitUpload: true
                     },
                   },
                 },
@@ -1383,6 +1385,14 @@ export async function createSwatchCard(
     },
   };
 
+  if(data.setAsPrimary) {
+    dataQuery.primaryOnPaint = {
+      connect: {
+        uuid: uuid
+      }
+    }
+  }
+
   if (data.paperLine?.id) {
     dataQuery.paperLine = {
       connect: {
@@ -1433,7 +1443,7 @@ export async function createSwatchCard(
   return { status, body };
 }
 
-export async function updateSwatchCard(data): Promise<{
+export async function updateSwatchCard(paintUuid: string, data,): Promise<{
   body: SwatchCard;
   status: number;
 }> {
@@ -1443,6 +1453,14 @@ export async function updateSwatchCard(data): Promise<{
   const dataQuery = {
     description: data.description,
   };
+
+  if(data.setAsPrimary) {
+    dataQuery.primaryOnPaint = {
+      connect: {
+        uuid: paintUuid
+      }
+    }
+  }
 
   // Todo: handle these better using Prisma's guidelines for null & undefined values
   if (data.paperLine?.id) {

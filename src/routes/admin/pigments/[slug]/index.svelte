@@ -116,8 +116,6 @@
   };
 
   async function handlePost() {
-    console.log('handlePost', formData);
-
     const response = await connect({
       method: 'post',
       endpoint: `/admin/pigments/create.json`,
@@ -133,7 +131,7 @@
     }
   }
 
-  async function submit(node) {
+  async function submit(node: HTMLElement) {
     const handler = async (event: Event) => {
       event.preventDefault();
       const response = await handlePost();
@@ -153,7 +151,7 @@
   }
 </script>
 
-<div class="container mx-auto mt-8 px-4 sm:px-6">
+<div class="lg:container mx-auto mt-8 px-4 sm:px-6">
   <Header
     title={create ? `Create Pigment` : `Edit ${pigmentData.name}`}
     {pathname} />
@@ -298,16 +296,6 @@
             class="accent-gray-300" />
           W - White
         </label>
-        <label>
-          <input
-            type="radio"
-            name="colorCode"
-            id="colorCode"
-            bind:group={colorCode}
-            value="X"
-            class="accent-pink-400" />
-          X - Etc (something else)
-        </label>
       </div>
     </div>
 
@@ -338,6 +326,7 @@
             class="border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500 block w-full p-2 sm:text-sm"
             id="hex"
             name="hex"
+            required
             bind:value={hex} />
         </div>
         <div>
@@ -346,6 +335,7 @@
             type="color"
             name="hexVis"
             id="hexVis"
+            required
             bind:value={hex}
             class="block w-full h-10 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
         </div>
@@ -379,23 +369,28 @@
       <span class="block font-bold">Toxicity </span>
       <div class="mt-1 relative inline-flex flex-col">
         <label>
-          <input type="radio" bind:group={toxicity} value="A" />
+          <input
+            type="radio"
+            bind:group={toxicity}
+            value="A"
+            required
+            name="toxicity" />
           A - Low
         </label>
         <label>
-          <input type="radio" bind:group={toxicity} value="B" />
+          <input type="radio" bind:group={toxicity} value="B" name="toxicity" />
           B - Possible
         </label>
         <label>
-          <input type="radio" bind:group={toxicity} value="C" />
+          <input type="radio" bind:group={toxicity} value="C" name="toxicity" />
           C - High
         </label>
         <label>
-          <input type="radio" bind:group={toxicity} value="D" />
+          <input type="radio" bind:group={toxicity} value="D" name="toxicity" />
           D - Extreme
         </label>
         <label>
-          <input type="radio" bind:group={toxicity} value="?" />
+          <input type="radio" bind:group={toxicity} value="?" name="toxicity" />
           Unknown
         </label>
       </div>
@@ -405,31 +400,60 @@
       <span class="block font-bold">Lightfast Rating</span>
       <div class="mt-1 relative inline-flex flex-col">
         <label>
-          <input type="radio" bind:group={lightfastRatingCode} value="X" />
+          <input
+            type="radio"
+            bind:group={lightfastRatingCode}
+            value="X"
+            name="lightfastRatingCode"
+            required />
           X - Unknown
         </label>
         <label>
-          <input type="radio" bind:group={lightfastRatingCode} value="NR" />
+          <input
+            type="radio"
+            bind:group={lightfastRatingCode}
+            value="NR"
+            name="lightfastRatingCode" />
           NR - Not Rated
         </label>
         <label>
-          <input type="radio" bind:group={lightfastRatingCode} value="I" />
+          <input
+            type="radio"
+            bind:group={lightfastRatingCode}
+            value="I"
+            name="lightfastRatingCode" />
           I - Excellent
         </label>
         <label>
-          <input type="radio" bind:group={lightfastRatingCode} value="II" />
+          <input
+            type="radio"
+            bind:group={lightfastRatingCode}
+            value="II"
+            name="lightfastRatingCode" />
           II - Very Good
         </label>
         <label>
-          <input type="radio" bind:group={lightfastRatingCode} value="III" />
+          <input
+            type="radio"
+            bind:group={lightfastRatingCode}
+            value="III"
+            name="lightfastRatingCode" />
           III - Fair
         </label>
         <label>
-          <input type="radio" bind:group={lightfastRatingCode} value="IV" />
+          <input
+            type="radio"
+            bind:group={lightfastRatingCode}
+            value="IV"
+            name="lightfastRatingCode" />
           IV - Poor
         </label>
         <label>
-          <input type="radio" bind:group={lightfastRatingCode} value="V" />
+          <input
+            type="radio"
+            bind:group={lightfastRatingCode}
+            value="V"
+            name="lightfastRatingCode" />
           V - Very Poor
         </label>
       </div>
@@ -438,29 +462,44 @@
         <span class="block font-bold">Transparency Rating</span>
         <div class="mt-1 relative inline-flex flex-col">
           <label>
-            <input type="radio" bind:group={transparencyRatingCode} value="X" />
+            <input
+              type="radio"
+              bind:group={transparencyRatingCode}
+              value="X"
+              name="transparencyRatingCode"
+              required />
             X - Unknown
           </label>
           <label>
-            <input type="radio" bind:group={transparencyRatingCode} value="T" />
+            <input
+              type="radio"
+              bind:group={transparencyRatingCode}
+              value="T"
+              name="transparencyRatingCode" />
             T - Transparent
           </label>
           <label>
             <input
               type="radio"
               bind:group={transparencyRatingCode}
-              value="S/T" />
+              value="S/T"
+              name="transparencyRatingCode" />
             S/T - Semi-Transparent
           </label>
           <label>
             <input
               type="radio"
               bind:group={transparencyRatingCode}
-              value="S/O" />
+              value="S/O"
+              name="transparencyRatingCode" />
             S/O - Semi-Opaque
           </label>
           <label>
-            <input type="radio" bind:group={transparencyRatingCode} value="O" />
+            <input
+              type="radio"
+              bind:group={transparencyRatingCode}
+              value="O"
+              name="transparencyRatingCode" />
             O - Opaque
           </label>
         </div>

@@ -19,13 +19,7 @@
   import { connect, validatePassword, validateUsername } from '$lib/utility';
   import Header from '$lib/components/Header.svelte';
   import { successNotifier, warningNotifier } from '$lib/notifier';
-  import {
-    circleCheckmarkIcon,
-    circleErrorIcon,
-    emptyCircleIcon,
-    hideIcon,
-    showIcon,
-  } from '$lib/icons';
+  import { hideIcon, showIcon } from '$lib/icons';
   import PasswordQuality from '$lib/components/PasswordQuality.svelte';
   import UsernameQuality from '$lib/components/UsernameQuality.svelte';
 
@@ -87,6 +81,10 @@
   async function submitHandler() {
     if (allowSubmission) {
       let userResponse = await update();
+      if (userResponse) {
+        newPassword = '';
+        currentPassword = '';
+      }
       if (userResponse?.uuid) {
         $session.user = userResponse;
         successNotifier(
@@ -98,7 +96,11 @@
   }
 </script>
 
-<div class="container mx-auto px-4 sm:px-6">
+<svelte:head>
+  <title>Account Settings - Paint Library</title>
+</svelte:head>
+
+<div class="lg:container mx-auto px-4 sm:px-6">
   <Header title="Account Settings" {pathname} />
 
   <form on:submit|preventDefault={submitHandler}>

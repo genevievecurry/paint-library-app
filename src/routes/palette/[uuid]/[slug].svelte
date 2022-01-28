@@ -195,8 +195,16 @@
   }
 </script>
 
+<svelte:head>
+  <title
+    >{palette.title} Palette by @{palette.owner.username} - Paint Library</title>
+</svelte:head>
+
 {#if showEditPaletteModal && editable}
-  <Modal on:close={() => (showEditPaletteModal = false)} title="Edit Palette">
+  <Modal
+    on:close={() => (showEditPaletteModal = false)}
+    title="Edit Palette"
+    form={true}>
     <div class="col-span-12">
       <PaletteForm {palette} on:update={handleEditedPalette} />
     </div>
@@ -214,7 +222,7 @@
   </Dialog>
 {/if}
 
-<div class="container mx-auto px-4 sm:px-6">
+<div class="lg:container mx-auto px-4 sm:px-6">
   <Header
     title={palette.title}
     owner={palette.owner}

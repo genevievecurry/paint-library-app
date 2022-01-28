@@ -106,71 +106,74 @@
 {/if}
 
 {#if showSwatchCardModal}
-  <Modal
-    on:close={() => (showSwatchCardModal = false)}
-    title={paintName}
-    fullWidth={true}>
-    <div class="col-span-8">
-      <img
-        src={imageKitUpload?.url}
-        alt="{paintName} Swatch"
-        title="{paintName} Swatch" />
-    </div>
-    <div class="col-span-4">
-      {#if description}
-        <h3 class="text-lg font-bold my-2">Description</h3>
-        <div class="text-sm">{@html description}</div>
-        <hr class="my-3" />
-      {/if}
-
-      <h3 class="text-lg font-bold my-2">Paper</h3>
-      <div class="text-sm">
-        {paperLine?.name ? paperLine.name : ''}
-        <span class="font-medium">{paperType?.name}</span>
-        ({paperWeightInLbs} lb.)
-        {paperManufacturer?.name ? `by ${paperManufacturer.name}` : ''}
+  <Modal on:close={() => (showSwatchCardModal = false)} title={paintName}>
+    <div class="col-span-12 flex">
+      <div>
+        <img
+          class="max-w-full"
+          src={imageKitUpload?.url}
+          alt="{paintName} Swatch"
+          title="{paintName} Swatch" />
       </div>
-      <hr class="my-3" />
-
-      {#if swatchCardTypesOnSwatchCard.length > 0}
-        <h3 class="text-lg font-bold my-2">Includes Tests</h3>
-        <ul class="">
-          {#each swatchCardTypesOnSwatchCard as item}
-            <li class="mb-1">
-              <span class="font-bold text-sm">{item.swatchCardType.label}</span>
-              <p class="text-xs">{item.swatchCardType.description}</p>
-            </li>
-          {/each}
-        </ul>
-        <hr class="my-3" />
-      {/if}
-
-      {#if author}
-        <p class="text-xs mt-2 leading-tight my-2"
-          >Contributed by @<a href="/@{author.username}" class="decorate-link"
-            >{author?.username}</a>
-          {#if author.role === 'ADMIN'}
-            {@html adminIcon('h-3 w-3 inline-block')}
-          {/if}
-          {timeAgo()}.</p>
-      {:else}
-        <p class="text-xs mt-2 leading-tight">Uploaded {timeAgo()}.</p>
-      {/if}
-      {#if $session.user}
-        {#if editable}
-          <button
-            class="pop inline-flex justify-center py-1 px-2 text-xs mt-2"
-            on:click={() => dispatch('setSwatchCard', swatchCard)}
-            on:click={() => (showSwatchCardModal = false)}>
-            {@html editIcon('h-5 w-5 mr-1')}
-            Edit</button>
-          <button
-            class="pop inline-flex justify-center py-1 px-2 text-xs mt-2 text-orange-600"
-            on:click={() => (showDeleteSwatchDialog = true)}>
-            {@html removeIcon('h-5 w-5 mr-1')}
-            Delete</button>
+      <div class="ml-10">
+        {#if description}
+          <h3 class="text-lg font-bold my-2">Description</h3>
+          <div class="text-sm">{@html description}</div>
+          <hr class="my-3" />
         {/if}
-      {/if}
+
+        {#if paperManufacturer?.name || paperType?.name}
+          <h3 class="text-lg font-bold my-2">Paper</h3>
+          <div class="text-sm">
+            {paperLine?.name ? paperLine?.name : ''}
+            {paperType?.name ? paperType?.name : ''}
+            {paperWeightInLbs ? `${paperWeightInLbs} lb.` : ''}
+            {paperManufacturer?.name ? `by ${paperManufacturer?.name}` : ''}
+          </div>
+          <hr class="my-3" />
+        {/if}
+
+        {#if swatchCardTypesOnSwatchCard.length > 0}
+          <h3 class="text-lg font-bold my-2">Includes Tests</h3>
+          <ul class="">
+            {#each swatchCardTypesOnSwatchCard as item}
+              <li class="mb-1">
+                <span class="font-bold text-sm"
+                  >{item.swatchCardType.label}</span>
+                <p class="text-xs">{item.swatchCardType.description}</p>
+              </li>
+            {/each}
+          </ul>
+          <hr class="my-3" />
+        {/if}
+
+        {#if author}
+          <p class="text-xs mt-2 leading-tight my-2"
+            >Contributed by @<a href="/@{author.username}" class="decorate-link"
+              >{author?.username}</a>
+            {#if author.role === 'ADMIN'}
+              {@html adminIcon('h-3 w-3 inline-block')}
+            {/if}
+            {timeAgo()}.</p>
+        {:else}
+          <p class="text-xs mt-2 leading-tight">Uploaded {timeAgo()}.</p>
+        {/if}
+        {#if $session.user}
+          {#if editable}
+            <button
+              class="pop inline-flex justify-center py-1 px-2 text-xs mt-2"
+              on:click={() => dispatch('setSwatchCard', swatchCard)}
+              on:click={() => (showSwatchCardModal = false)}>
+              {@html editIcon('h-5 w-5 mr-1')}
+              Edit</button>
+            <button
+              class="pop inline-flex justify-center py-1 px-2 text-xs mt-2 text-orange-600"
+              on:click={() => (showDeleteSwatchDialog = true)}>
+              {@html removeIcon('h-5 w-5 mr-1')}
+              Delete</button>
+          {/if}
+        {/if}
+      </div>
     </div>
   </Modal>
 {/if}

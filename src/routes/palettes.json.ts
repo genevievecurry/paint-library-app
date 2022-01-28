@@ -1,7 +1,7 @@
-import * as api from '$lib/api';
+import { getPublicPalettes } from '$lib/api';
 
 export async function get(): Promise<{ status: number; body: unknown }> {
-  const response = await api.getPublicPalettes();
+  const response = await getPublicPalettes();
 
   if (response.status === 500) {
     return {

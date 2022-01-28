@@ -27,7 +27,11 @@
   $: user = userData;
 </script>
 
-<div class="container mx-auto px-4 sm:px-6">
+<svelte:head>
+  <title>@{user.username} - Paint Library</title>
+</svelte:head>
+
+<div class="lg:container mx-auto px-4 sm:px-6">
   <Header title="@{user.username}" />
 
   <div class="border-b mb-10">

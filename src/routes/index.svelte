@@ -27,7 +27,7 @@
 
 <div class="relative mb-8">
   <div class="absolute h-full w-full bg-gradient-to-t from-black ">
-    <div class="container mx-auto px-4 sm:px-6 mt-32 mb-20">
+    <div class="lg:container mx-auto px-4 sm:px-6 mt-32 mb-20">
       <h1 class="text-white font-bold text-5xl">Paint Library</h1>
       <p class="text-white text-xl font-light mt-6">
         Paint Library is an online database of artist paint swatches.
@@ -43,7 +43,7 @@
     alt="" />
 </div>
 
-<div class="container mx-auto px-4 sm:px-6">
+<div class="lg:container mx-auto px-4 sm:px-6">
   <div
     class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-3"
     infinite-wrapper>

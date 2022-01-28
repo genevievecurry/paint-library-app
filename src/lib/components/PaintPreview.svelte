@@ -6,16 +6,9 @@
   export let hovered = false;
   export let type = 'default';
 
-  let swatchImage;
-
-  if (paint.swatchCard) {
-    if (paint.swatchCard.length > 0 && type === 'default') {
-      swatchImage = paint.swatchCard[0].imageKitUpload?.url;
-    }
-    if (paint.swatchCard.length > 0 && type === 'simple') {
-      swatchImage = paint.swatchCard[0].imageKitUpload?.thumbnailUrl;
-    }
-  }
+  const swatchImage =
+    `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${paint.primarySwatchCard.imageKitUpload?.filePath}` ||
+    '';
 </script>
 
 {#if type === 'default' && paint !== null}

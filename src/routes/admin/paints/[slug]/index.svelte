@@ -1,7 +1,13 @@
 <script context="module" lang="ts">
-  export async function load({ session }) {
+  export async function load({ params, session, url, fetch }) {
     if (session.user?.role === 'ADMIN' && session.user?.status === 'ACTIVE') {
-      return {};
+      const create = params.slug === 'create';
+      return {
+        props: {
+          pathname: url.pathname,
+          create: create,
+        },
+      };
     } else {
       return { redirect: '/', status: 302 };
     }
@@ -15,6 +21,9 @@
   import { goto } from '$app/navigation';
   import type { Manufacturer } from '@prisma/client';
   import Header from '$lib/components/Header.svelte';
+
+  export let pathname;
+  export let create;
 
   let manufacturerPromise: Promise<Manufacturer[]> =
     getManufacturer('manufacturer');
@@ -77,7 +86,7 @@
   async function handlePost() {
     const response = await connect({
       method: 'post',
-      endpoint: '/paint/create.json',
+      endpoint: '/admin/paints/create.json',
       data: formData,
     });
 
@@ -112,8 +121,8 @@
   }
 </script>
 
-<div class="container mx-auto mt-8 px-4 sm:px-6">
-  <Header title="Add New Paint" />
+<div class="lg:container mx-auto mt-8 px-4 sm:px-6">
+  <Header title="Create Paint" {pathname} />
   <form use:submit class="max-w-xl">
     <div>
       <label for="name" class="block">Paint Name </label>
@@ -159,7 +168,7 @@
           type="url"
           id="productUrl"
           name="productUrl"
-          bind:value={formData.productUrl} />
+          bind:value={productUrl} />
       </div>
     </div>
 

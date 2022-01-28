@@ -1,9 +1,6 @@
-import * as api from '$lib/api';
+import { upsertPigment, getPigment } from '$lib/api';
 
-export async function get({
-  locals,
-  params,
-}): Promise<{ status: number; body: unknown }> {
+export async function get({locals, params}: RequestEvent):RequestEvent {
   if (locals.user?.role !== 'ADMIN') {
     return {
       body: { message: 'unauthorized' },
@@ -11,7 +8,7 @@ export async function get({
     };
   }
   const { slug } = params;
-  const response = await api.getPigment(slug);
+  const response = await getPigment(slug);
   if (response.status !== 200) {
     return {
       status: response.status,
@@ -29,7 +26,7 @@ export async function post({ body: data, locals }) {
     };
   }
 
-  const response = await api.upsertPigment(data);
+  const response = await upsertPigment(data);
   if (response.status !== 200) {
     return {
       status: response.status,
