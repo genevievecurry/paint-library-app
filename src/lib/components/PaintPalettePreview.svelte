@@ -11,9 +11,9 @@
 
   let { paint, id } = paintOnPalette;
 
-  $: swatchImage =
-    `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${paint.primarySwatchCard?.imageKitUpload?.filePath}` ||
-    '';
+  $: swatchImage = paint.primarySwatchCard?.imageKitUpload?.filePath
+    ? `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${paint.primarySwatchCard?.imageKitUpload?.filePath}`
+    : '';
 
   function remove() {
     dispatch('remove', id);
@@ -32,7 +32,7 @@
               <img
                 loading="lazy"
                 src={swatchImage}
-                class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 hover:opacity-0"
+                class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 hover:opacity-0 "
                 alt={paint.name} />
             {/if}
           </a>
@@ -124,7 +124,7 @@
               draggable={!editPaletteMode}
               loading="lazy"
               src={swatchImage}
-              class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all {editPaletteMode
+              class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all text-white text-sm leading-tight {editPaletteMode
                 ? ''
                 : 'opacity-100 hover:opacity-0'}"
               alt={paint.name} />

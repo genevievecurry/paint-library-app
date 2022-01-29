@@ -6,9 +6,9 @@
   export let hovered = false;
   export let type = 'default';
 
-  const swatchImage =
-    `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${paint.primarySwatchCard.imageKitUpload?.filePath}` ||
-    '';
+  const swatchImage = paint?.primarySwatchCard?.imageKitUpload?.filePath
+    ? `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${paint?.primarySwatchCard?.imageKitUpload?.filePath}`
+    : '';
 </script>
 
 {#if type === 'default' && paint !== null}
@@ -26,7 +26,7 @@
             <img
               loading="lazy"
               src={swatchImage}
-              class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 hover:opacity-0"
+              class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 hover:opacity-0 text-white text-xs leading-tight"
               alt={paint.name} />
           {/if}
         </div>
@@ -47,7 +47,7 @@
       <img
         loading="lazy"
         src={swatchImage}
-        class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 {hovered
+        class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 text-white text-xs leading-tight {hovered
           ? 'opacity-0'
           : ''}"
         alt={paint.name} />
