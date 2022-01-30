@@ -95,7 +95,6 @@
         <button
           type="button"
           class="absolute top-4 right-4 text-black hover:text-pink-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8"
-          autofocus
           on:click={close}>
           <span class="sr-only">Close</span>
           <!-- Heroicon name: outline/x -->

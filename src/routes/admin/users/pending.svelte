@@ -149,9 +149,3 @@
     </tbody>
   </table>
 </section>
-
-<style>
-  .muted {
-    @apply text-gray-300;
-  }
-</style>
