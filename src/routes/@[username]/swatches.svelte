@@ -20,6 +20,7 @@
 
 <script lang="ts">
   import { generateUrl } from '$lib/generate';
+  import { adminIcon } from '$lib/icons';
   import { timeAgo } from '$lib/utility';
 
   export let swatchData;
@@ -63,8 +64,14 @@
               {/if}
             </div>
             <div>
-              <p class="text-xs mt-2 leading-tight"
-                >Uploaded {timeAgo(swatchCard.createdAt)}</p>
+              <p class="text-xs mt-2 leading-tight">
+                {#if swatchCard.isOriginal}
+                  Original work uploaded
+                  {timeAgo(swatchCard.createdAt)}.
+                {:else}
+                  Uploaded {timeAgo(swatchCard.createdAt)}.
+                {/if}
+              </p>
             </div>
           </div>
         </div>

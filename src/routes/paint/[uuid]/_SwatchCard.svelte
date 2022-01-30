@@ -21,6 +21,7 @@
     paperLine,
     paperType,
     paperWeightInLbs,
+    isOriginal,
     author,
     description,
     imageKitUpload,
@@ -147,7 +148,7 @@
           <hr class="my-3" />
         {/if}
 
-        {#if author}
+        {#if author && isOriginal}
           <p class="text-xs mt-2 leading-tight my-2"
             >Contributed by @<a href="/@{author.username}" class="decorate-link"
               >{author?.username}</a>

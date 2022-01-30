@@ -58,7 +58,7 @@ const limitedPaintSelect: Prisma.PaintSelect = {
   },
   primarySwatchCard: {
     select: {
-      imageKitUpload: true
+      imageKitUpload: true,
     },
   },
 };
@@ -1226,7 +1226,7 @@ export async function getUserProfileOwnedPalettes(data): Promise<{
                   hex: true,
                   primarySwatchCard: {
                     select: {
-                      imageKitUpload: true
+                      imageKitUpload: true,
                     },
                   },
                 },
@@ -1371,6 +1371,7 @@ export async function createSwatchCard(
         uuid: data.author.uuid,
       },
     },
+    isOriginal: data.isOriginal,
     description: data.description,
     imageKitUpload: {
       create: {
@@ -1385,12 +1386,12 @@ export async function createSwatchCard(
     },
   };
 
-  if(data.setAsPrimary) {
+  if (data.setAsPrimary) {
     dataQuery.primaryOnPaint = {
       connect: {
-        uuid: uuid
-      }
-    }
+        uuid: uuid,
+      },
+    };
   }
 
   if (data.paperLine?.id) {
@@ -1443,7 +1444,10 @@ export async function createSwatchCard(
   return { status, body };
 }
 
-export async function updateSwatchCard(paintUuid: string, data,): Promise<{
+export async function updateSwatchCard(
+  paintUuid: string,
+  data,
+): Promise<{
   body: SwatchCard;
   status: number;
 }> {
@@ -1452,14 +1456,15 @@ export async function updateSwatchCard(paintUuid: string, data,): Promise<{
 
   const dataQuery = {
     description: data.description,
+    isOriginal: data.isOriginal,
   };
 
-  if(data.setAsPrimary) {
+  if (data.setAsPrimary) {
     dataQuery.primaryOnPaint = {
       connect: {
-        uuid: paintUuid
-      }
-    }
+        uuid: paintUuid,
+      },
+    };
   }
 
   // Todo: handle these better using Prisma's guidelines for null & undefined values

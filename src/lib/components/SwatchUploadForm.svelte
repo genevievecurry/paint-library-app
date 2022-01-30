@@ -16,6 +16,7 @@
   // Form data
   let setAsPrimary =
     swatchCard.primaryOnPaintUuid || swatchCardCount === 0 ? true : false;
+  let isOriginal = swatchCard?.isOriginal || false;
   let disableSetAsPrimary = swatchCardCount === 0;
   let author = swatchCard?.author || $session.user;
   let id = swatchCard?.id;
@@ -98,6 +99,7 @@
     imageKitUpload,
     description,
     setAsPrimary,
+    isOriginal,
   };
 
   $: lineOptions = [];
@@ -251,30 +253,63 @@
 
     {#if imageKitUpload.thumbnailUrl}
       <div class="mt-6">
+        <label for="description" class="block font-bold text-lg">
+          Is this your original work?</label>
+        <small
+          class="leading-5 block mt-1 text-sm font-light text-gray-500 mb-3">
+          Did you personally meld paint and paper in a beautiful union? It's
+          okay if you didn't, but make sure you give credit where credit is due
+          in the further information section below.
+        </small>
+        <label for="isOriginal" class="flex">
+          <div
+            class="relative rounded-full w-12 h-6 transition duration-200 ease-linear {isOriginal
+              ? 'bg-green-400'
+              : 'bg-gray-400'}">
+            <div
+              class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer {isOriginal
+                ? 'translate-x-full border-green-400'
+                : 'translate-x-0 border-gray-400'}" />
+            <input
+              type="checkbox"
+              id="isOriginal"
+              name="isOriginal"
+              disabled={disableSetAsPrimary}
+              class="appearance-none w-full h-full active:outline-none focus:outline-none"
+              on:click={() => (isOriginal = !isOriginal)} />
+          </div>
+          <div class="ml-2 text-sm">Yes, it is my work.</div>
+        </label>
+      </div>
+
+      <div class="mt-6">
         <label for="description" class="block font-bold text-lg"
-          >Set as Primary Swatch Card</label>
+          >Primary Swatch Card</label>
         <small
           class="leading-5 block mt-1 text-sm font-light text-gray-500 mb-3">
           This will set it up as the swatch that appears first in search results
           & palettes. Ideally, it will really show off the color.
         </small>
-        <div
-          class="relative rounded-full w-12 h-6 transition duration-200 ease-linear {setAsPrimary
-            ? 'bg-green-400'
-            : 'bg-gray-400'}">
-          <label
-            for="toggle"
-            class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer {setAsPrimary
-              ? 'translate-x-full border-green-400'
-              : 'translate-x-0 border-gray-400'}" />
-          <input
-            type="checkbox"
-            id="toggle"
-            name="toggle"
-            disabled={disableSetAsPrimary}
-            class="appearance-none w-full h-full active:outline-none focus:outline-none"
-            on:click={() => (setAsPrimary = !setAsPrimary)} />
-        </div>
+        <label for="setAsPrimary" class="flex">
+          <div
+            class="relative rounded-full w-12 h-6 transition duration-200 ease-linear {setAsPrimary
+              ? 'bg-green-400'
+              : 'bg-gray-400'}">
+            <label
+              for="toggle"
+              class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer {setAsPrimary
+                ? 'translate-x-full border-green-400'
+                : 'translate-x-0 border-gray-400'}" />
+            <input
+              type="checkbox"
+              id="setAsPrimary"
+              name="setAsPrimary"
+              disabled={disableSetAsPrimary}
+              class="appearance-none w-full h-full active:outline-none focus:outline-none"
+              on:click={() => (setAsPrimary = !setAsPrimary)} />
+          </div>
+          <div class="ml-2 text-sm">Yes, set as primary.</div>
+        </label>
       </div>
 
       <div class="mt-6">

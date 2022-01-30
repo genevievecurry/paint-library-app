@@ -1,6 +1,6 @@
 import { upsertPigment, getPigment } from '$lib/api';
 
-export async function get({locals, params}: RequestEvent):RequestEvent {
+export async function get({ locals, params }: RequestEvent): RequestEvent {
   if (locals.user?.role !== 'ADMIN') {
     return {
       body: { message: 'unauthorized' },

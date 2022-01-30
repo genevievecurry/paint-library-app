@@ -1,4 +1,4 @@
-import {createSwatchCard, updateSwatchCard, deleteSwatchCard} from '$lib/api';
+import { createSwatchCard, updateSwatchCard, deleteSwatchCard } from '$lib/api';
 
 export async function post({ body: data, locals, params }) {
   if (!locals.user) {

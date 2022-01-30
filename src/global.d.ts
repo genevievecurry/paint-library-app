@@ -1,6 +1,6 @@
 /// <reference types="@sveltejs/kit" />
 interface Locals {
-  user: User
+  user: User;
 }
 
 type Action = (
@@ -54,6 +54,8 @@ interface SwatchCardComponent extends SwatchCard {
   author: import('.prisma/client').User;
   imageKitUpload: import('.prisma/client').ImageKitUpload;
   tags: import('.prisma/client').Tag[];
+  isOriginal: boolean;
+  primaryOnPaintUuid: string;
   swatchCardTypesOnSwatchCard: SwatchCardTypesOnSwatchCardComponent[];
 }
 interface PaintComponent extends Paint {

@@ -1,9 +1,6 @@
 import { updateUser, deleteUser, getUsers } from '$lib/api';
 
-export async function get({
-  url,
-  locals,
-}: RequestEvent): RequestEvent {
+export async function get({ url, locals }: RequestEvent): RequestEvent {
   if (locals.user?.role !== 'ADMIN') {
     return {
       body: { message: 'unauthorized' },
