@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-</script>
-
-<script>
+  export async function load() {
+    return { redirect: '/', status: 302 };
+  }
 </script>

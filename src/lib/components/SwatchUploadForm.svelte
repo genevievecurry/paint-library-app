@@ -1,11 +1,13 @@
 <script lang="ts">
+  import type { Manufacturer } from '@prisma/client';
+
   import { createEventDispatcher, onDestroy } from 'svelte';
   import { session } from '$app/stores';
+  import { successNotifier, warningNotifier } from '$lib/notifier';
   import { connect } from '$lib/utility';
   import imagekit from '$lib/config/imagekit';
-  import type { Manufacturer } from '@prisma/client';
+
   import Dropzone from './Dropzone.svelte';
-  import { successNotifier, warningNotifier } from '$lib/notifier';
 
   export let swatchCardCount: number;
   export let paintUuid: string;
@@ -56,6 +58,7 @@
   let paperTypePromise: Promise<PaperType[]> = getModel('paperType', '');
   let lineOptions: Promise<Line[]> = getLines();
 
+  const maxSizeInMb = 3.5;
   let swatchCardNames = [];
   let userImageUpload: any;
   let endpoint: string, action: string;
@@ -155,7 +158,6 @@
     }
   }
 
-  // Todo: Move this into a utility - duplicated in _Creator.svelte
   async function uploadImage() {
     imagekit.upload(
       {
@@ -195,11 +197,27 @@
   });
 
   const onChange = (e) => {
+    // Just to be real transparent here
+    const maxSizeInBytes = maxSizeInMb * 1000 * 1000;
+
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     fileName = file.name;
     userImageUpload = file;
 
-    uploadImage();
+    const fileSizeInKb = Math.round((file.size - maxSizeInBytes) / 1000);
+    const fileSizeInMb = Number(
+      (file.size - maxSizeInBytes) / 1000 / 1000,
+    ).toFixed(1);
+
+    if (file.size > maxSizeInBytes) {
+      userImageUpload = null;
+
+      dropzoneError = `Sorry, the file you chose is ${
+        Number(fileSizeInMb) < 1 ? `${fileSizeInKb} KB` : `${fileSizeInMb} MB`
+      } too large for the ${maxSizeInMb} MB limit.`;
+    } else {
+      uploadImage();
+    }
   };
 
   function submit(node: HTMLFormElement): SvelteActionReturnType {
@@ -246,6 +264,7 @@
         fileTitle={fileName}
         error={userImageUpload === null ? dropzoneError : ''}
         imagePreview={imageKitUpload?.thumbnailUrl}
+        {maxSizeInMb}
         bind:this={userImageUpload}
         on:drop={onChange}
         on:change={onChange} />
@@ -462,10 +481,20 @@
         </div>
       </div>
     {/if}
-    <div class="mt-6 py-3 text-right border-t border-black">
-      <button type="submit" class="pop px-6 py-4 text-2xl hover:text-pink-500">
-        {action} Swatch
-      </button>
+    <div
+      class="mt-6 py-3 text-right border-t border-black flex justify-between items-center">
+      <button
+        type="submit"
+        class="pop px-3 py-2 text-lg"
+        on:click={() => dispatch('cancel')}>Cancel</button>
+
+      {#if imageKitUpload.thumbnailUrl}
+        <button
+          type="submit"
+          class="pop px-6 py-4 text-2xl hover:text-pink-500">
+          {action} Swatch
+        </button>
+      {/if}
     </div>
   </div>
 </form>

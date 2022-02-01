@@ -25,22 +25,16 @@
   <title>Paint Library</title>
 </svelte:head>
 
-<div class="relative mb-8">
-  <div class="absolute h-full w-full bg-gradient-to-t from-black ">
-    <div class="lg:container mx-auto px-4 sm:px-6 mt-32 mb-20">
-      <h1 class="text-white font-bold text-5xl">Paint Library</h1>
-      <p class="text-white text-xl font-light mt-6">
-        Paint Library is an online database of artist paint swatches.
-      </p>
-      <div class="w-full mt-8">
-        <Search />
-      </div>
+<div class="w-full">
+  <div class="lg:container mx-auto py-16 px-4 sm:px-6">
+    <h1 class="font-bold text-5xl">Paint Library</h1>
+    <p class="text-xl font-light mt-6">
+      Paint Library is an online database of artist paint swatches.
+    </p>
+    <div class="w-full mt-8">
+      <Search />
     </div>
   </div>
-  <img
-    class="object-cover w-full min-h-screen lg:min-h-0 lg:max-h-112"
-    src="/kseniya-lapteva-qgWQuzpazWw-unsplash.jpg"
-    alt="" />
 </div>
 
 <div class="lg:container mx-auto px-4 sm:px-6">

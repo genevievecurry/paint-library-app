@@ -16,6 +16,7 @@
   export let error = '';
   export let dropOnPage = false;
   export let imagePreview = null;
+  export let maxSizeInMb = 3.5;
 
   $: imagePreview;
 
@@ -136,6 +137,17 @@
       <div
         class="pop py-1 px-3 text-dark dark:text-light text-center mx-auto mt-2"
         >{fileTitle ? buttonResetTitle : buttonTitle}</div>
+      <div class="text-xs mt-3">
+        <p>Maximum file size is <strong>{maxSizeInMb} MB</strong>.</p>
+        <p>
+          If your image is larger, try
+          <a
+            class="decorate-link"
+            href="https://tinypng.com/"
+            target="_blank"
+            rel="noopener noreferrer">compressing it</a> first.
+        </p>
+      </div>
     {/if}
   </label>
 </div>

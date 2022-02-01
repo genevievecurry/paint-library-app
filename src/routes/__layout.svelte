@@ -72,106 +72,111 @@
               </a>
             </div>
           </div>
-          <div class="hidden flex-1 md:flex md:items-center md:space-x-6 px-6">
-            <Search reverse={false} />
-          </div>
-          <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
-            <a href="/pigments" class="decorate-link">Pigments</a>
-          </div>
-          <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
-            <a href="/palettes" class="decorate-link">Palettes</a>
-          </div>
-          {#if $session?.user}
-            <div class="relative inline-block text-left">
-              <div
-                use:clickOutside={{
-                  enabled: menuOpen,
-                  cb: () => (menuOpen = false),
-                }}>
-                <button
-                  type="button"
-                  id="menu-button"
-                  aria-expanded={menuOpen}
-                  aria-haspopup="true"
-                  on:click={() => (menuOpen = !menuOpen)}
-                  class="pop inline-flex justify-center px-2 py-1 text-sm {menuOpen
-                    ? 'text-pink-400 active'
-                    : 'text-black'}">
-                  {@html menuIcon()}
-                </button>
-              </div>
-              {#if menuOpen}
+          <div class="relative flex items-center justify-between md:w-full">
+            <div
+              class="hidden flex-1 md:flex md:items-center md:space-x-6 px-6">
+              <Search reverse={false} />
+            </div>
+            <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
+              <a href="/pigments" class="decorate-link">Pigments</a>
+            </div>
+            <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
+              <a href="/palettes" class="decorate-link">Palettes</a>
+            </div>
+            {#if $session?.user}
+              <div class="relative inline-block text-left md:space-x-6 px-3">
                 <div
-                  class="light transition ease-out duration-100 {menuOpen
-                    ? 'opacity-100 scale-100'
-                    : 'opacity-0 scale-95'} z-10 border-2 border-black origin-top-right absolute right-0 mt-2 w-48 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="menu-button"
-                  tabindex="-1">
-                  <div class="py-1" role="none">
-                    <div class="block px-4 pt-2 pb-4 border-b border-gray-300">
-                      <a
-                        href={`/@${$session.user.username}`}
-                        class="decorate-link text-sm"
-                        role="menuitem"
-                        tabindex="-1"
-                        on:click={() => (menuOpen = false)}
-                        >@{$session.user.username}</a>
-                    </div>
-                    {#if $session.user?.role === 'ADMIN'}
-                      <div class="block px-4 py-2 text-sm"
-                        ><a
-                          href="/admin"
-                          class="decorate-link"
+                  use:clickOutside={{
+                    enabled: menuOpen,
+                    cb: () => (menuOpen = false),
+                  }}>
+                  <button
+                    type="button"
+                    id="menu-button"
+                    aria-expanded={menuOpen}
+                    aria-haspopup="true"
+                    on:click={() => (menuOpen = !menuOpen)}
+                    class="pop inline-flex justify-center px-2 py-1 text-sm {menuOpen
+                      ? 'text-pink-400 active'
+                      : 'text-black'}">
+                    {@html menuIcon()}
+                  </button>
+                </div>
+                {#if menuOpen}
+                  <div
+                    class="light transition ease-out duration-100 {menuOpen
+                      ? 'opacity-100 scale-100'
+                      : 'opacity-0 scale-95'} z-10 border-2 border-black origin-top-right absolute right-0 mt-2 w-48 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="menu-button"
+                    tabindex="-1">
+                    <div class="py-1" role="none">
+                      <div
+                        class="block px-4 pt-2 pb-4 border-b border-gray-300">
+                        <a
+                          href={`/@${$session.user.username}`}
+                          class="decorate-link text-sm"
                           role="menuitem"
                           tabindex="-1"
                           on:click={() => (menuOpen = false)}
-                          >Paint Library Admin</a
-                        ></div>
-                      <div class="block px-4 py-2 text-sm"
-                        ><a
-                          href="/admin/paints/create"
-                          class="decorate-link"
-                          role="menuitem"
-                          tabindex="-1"
-                          on:click={() => (menuOpen = false)}>Create Paint</a
-                        ></div>
+                          >@{$session.user.username}</a>
+                      </div>
+                      {#if $session.user?.role === 'ADMIN'}
+                        <div class="block px-4 py-2 text-sm"
+                          ><a
+                            href="/admin"
+                            class="decorate-link"
+                            role="menuitem"
+                            tabindex="-1"
+                            on:click={() => (menuOpen = false)}
+                            >Paint Library Admin</a
+                          ></div>
+                        <div class="block px-4 py-2 text-sm"
+                          ><a
+                            href="/admin/paints/create"
+                            class="decorate-link"
+                            role="menuitem"
+                            tabindex="-1"
+                            on:click={() => (menuOpen = false)}>Create Paint</a
+                          ></div>
+                        <div class="block px-4 py-2 text-sm">
+                          <a
+                            href="/register"
+                            class="decorate-link"
+                            role="menuitem"
+                            tabindex="-1"
+                            on:click={() => (menuOpen = false)}
+                            >Register User</a>
+                        </div>
+                      {/if}
                       <div class="block px-4 py-2 text-sm">
                         <a
-                          href="/register"
+                          href="/account"
                           class="decorate-link"
                           role="menuitem"
                           tabindex="-1"
-                          on:click={() => (menuOpen = false)}>Register User</a>
+                          on:click={() => (menuOpen = false)}>Account</a>
                       </div>
-                    {/if}
-                    <div class="block px-4 py-2 text-sm">
-                      <a
-                        href="/account"
-                        class="decorate-link"
-                        role="menuitem"
-                        tabindex="-1"
-                        on:click={() => (menuOpen = false)}>Account</a>
-                    </div>
-                    <div
-                      class="block px-4 pb-2 pt-2 text-sm border-t border-gray-300">
-                      <span
-                        class="decorate-link cursor-pointer"
-                        role="menuitem"
-                        tabindex="-1"
-                        on:click={logoutHandler}>Sign Out</span>
+                      <div
+                        class="block px-4 pb-2 pt-2 text-sm border-t border-gray-300">
+                        <span
+                          class="decorate-link cursor-pointer"
+                          role="menuitem"
+                          tabindex="-1"
+                          on:click={logoutHandler}>Sign Out</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              {/if}
-            </div>
-          {:else}
-            <div class="bg-gray-300 h-8 w-px mx-3" />
-            <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
-              <a href="/login" class="decorate-link">Login</a>
-            </div>
-          {/if}
+                {/if}
+              </div>
+            {:else}
+              <div class="bg-gray-300 h-8 w-px mx-3" />
+              <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
+                <a href="/login" class="decorate-link">Login</a>
+              </div>
+            {/if}
+          </div>
         </nav>
       </div>
     </header>

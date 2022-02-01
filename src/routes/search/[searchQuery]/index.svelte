@@ -55,17 +55,19 @@
   <title>Search Results for "{unsluggedQuery}" - Paint Library</title>
 </svelte:head>
 
-<Header title={unsluggedQuery} subtitle={`${count} results`} />
+<div class="lg:container mx-auto px-4 sm:px-6">
+  <Header title={unsluggedQuery} subtitle={`${count} results`} />
 
-<div
-  class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-3"
-  infinite-wrapper>
-  {#each list as paint, index}
-    <PaintPreview {paint} {index} />
-  {/each}
+  <div
+    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-3"
+    infinite-wrapper>
+    {#each list as paint, index}
+      <PaintPreview {paint} {index} />
+    {/each}
 
-  <InfiniteLoad
-    on:infinite={infiniteHandler}
-    identifier={infiniteId}
-    forceUseInfiniteWrapper />
+    <InfiniteLoad
+      on:infinite={infiniteHandler}
+      identifier={infiniteId}
+      forceUseInfiniteWrapper />
+  </div>
 </div>

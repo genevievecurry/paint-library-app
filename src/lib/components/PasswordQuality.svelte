@@ -16,6 +16,7 @@
     <a
       href="https://gross-warped-trogon.gigalixirapp.com/"
       target="_blank"
+      rel="noopener noreferrer"
       class="decorate-link">password generator</a
     >.
   </small>

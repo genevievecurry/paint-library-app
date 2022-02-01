@@ -70,6 +70,9 @@ interface PaintComponent extends Paint {
   granulationRating?: import('.prisma/client').GranulationRating;
   notes?: import('.prisma/client').Notes;
   primarySwatchCard: SwatchCardComponent;
+  _count: {
+    swatchCard: number;
+  };
 }
 
 type ListPaint = {
