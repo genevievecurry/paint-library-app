@@ -66,7 +66,23 @@
     }
   };
   let pigmentsOnPaints = paint.pigmentsOnPaints || [];
-  let editableSwatchCard = {};
+
+  const emptySwatchCard = {
+    author: null,
+    id: null,
+    paperManufacturer: null,
+    paperWeightInLbs: null,
+    paperLine: null,
+    paperType: null,
+    swatchCardNamesAdded: null,
+    swatchCardNamesRemoved: null,
+    tags: null,
+    imageKitUpload: null,
+    description: null,
+    isOriginal: null,
+  };
+
+  let editableSwatchCard = emptySwatchCard;
 
   // Todo: Update these to paintUuid & paintSlug & updated child components where
   // this data was passed in as prompts to use getContext()
@@ -345,9 +361,11 @@
     title={editableSwatchCard?.id ? 'Edit Swatch' : 'Contribute Swatch'}
     form={true}
     on:close={() => (showUploadSwatchModal = false)}
-    on:close={() => (editableSwatchCard = {})}>
+    on:close={() => (editableSwatchCard = emptySwatchCard)}>
     <div class="col-span-12">
       <SwatchUploadForm
+        on:cancel={() => (showUploadSwatchModal = false)}
+        on:cancel={() => (editableSwatchCard = emptySwatchCard)}
         on:success={handleEditUpdate}
         swatchCardCount={paint._count.swatchCard}
         paintUuid={paint.uuid}
