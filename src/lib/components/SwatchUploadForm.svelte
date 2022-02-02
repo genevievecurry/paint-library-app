@@ -13,7 +13,7 @@
   export let paintUuid: string;
   export let swatchCard: SwatchCardComponent = null;
 
-  let editMode = swatchCard?.id !== undefined;
+  let editMode = swatchCard?.id;
   let initialSwatchCardNames = [];
   // Form data
   let setAsPrimary =

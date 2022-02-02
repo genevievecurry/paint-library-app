@@ -108,7 +108,7 @@
 
 {#if showSwatchCardModal}
   <Modal on:close={() => (showSwatchCardModal = false)} title={paintName}>
-    <div class="col-span-12 flex">
+    <div class="col-span-12 flex flex-col md:flex-row">
       <div>
         <img
           class="max-w-full"
@@ -116,7 +116,7 @@
           alt="{paintName} Swatch"
           title="{paintName} Swatch" />
       </div>
-      <div class="ml-10">
+      <div class="mt-6 md:mt-0 md:ml-6 lg:ml-10">
         {#if description}
           <h3 class="text-lg font-bold my-2">Description</h3>
           <div class="text-sm">{@html description}</div>
@@ -161,17 +161,19 @@
         {/if}
         {#if $session.user}
           {#if editable}
-            <button
-              class="pop inline-flex justify-center py-1 px-2 text-xs mt-2"
-              on:click={() => dispatch('setSwatchCard', swatchCard)}
-              on:click={() => (showSwatchCardModal = false)}>
-              {@html editIcon('h-5 w-5 mr-1')}
-              Edit</button>
-            <button
-              class="pop inline-flex justify-center py-1 px-2 text-xs mt-2 text-orange-600"
-              on:click={() => (showDeleteSwatchDialog = true)}>
-              {@html removeIcon('h-5 w-5 mr-1')}
-              Delete</button>
+            <div class="flex">
+              <button
+                class="pop inline-flex justify-center py-1 px-2 text-xs mt-2"
+                on:click={() => dispatch('setSwatchCard', swatchCard)}
+                on:click={() => (showSwatchCardModal = false)}>
+                {@html editIcon('h-5 w-5 mr-1')}
+                Edit</button>
+              <button
+                class="pop inline-flex justify-center py-1 px-2 text-xs mt-2 text-orange-600"
+                on:click={() => (showDeleteSwatchDialog = true)}>
+                {@html removeIcon('h-5 w-5 mr-1')}
+                Delete</button>
+            </div>
           {/if}
         {/if}
       </div>
