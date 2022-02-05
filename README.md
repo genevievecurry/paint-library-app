@@ -2,17 +2,19 @@
 
 Node Version: `v16.12.0`
 
+PostgreSQL: `13`
+
 Env: `$ cp .example.env .env`
 
 ## Developing
 
+A postgres database must provisioned; once it is setup, use `$ npx prisma migrate dev` to apply migrations & seed. 
+
 ```bash
 npm install
-
-npx prisma generate
 ```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Start a development server:
 
 ```bash
 npm run dev
@@ -25,32 +27,38 @@ npm run dev -- --open
 
 This project uses Prisma.io & PostgreSQL.
 
-Note: the following is important at the beginning of the first migration.sql:
-
-```
-CREATE EXTENSION IF NOT EXISTS citext;
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-```
-
 Schema is: [schema.prisma](./prisma/schema.prisma)
 
-**Introspect**
+### Migration How To's ### 
+Create a migration from changes in Prisma schema, apply it to the database, trigger generators (e.g. Prisma Client)
 
-`npx prisma db pull`
+`$ npx prisma migrate dev`
 
-**Run Migrations:**
+Reset your database and apply all migrations
 
-`npm run migrate:dev`
+`$ npx prisma migrate reset`
 
-**Seed:**
+Apply pending migrations to the database in production/staging
 
-`npm run seed`
+`$ npx prisma migrate deploy`
 
-**Reset Database & Seed:**
+Check the status of migrations in the production/staging database
 
-`npm run migrate:reset`
+`$ npx prisma migrate status`
 
-After firing up the app with `npm run dev`, you can try navigating to [http://localhost:3000/swatch/watercolor-swatch](http://localhost:3000/swatch/watercolor-swatch) to see a seeded swatch (the only route at the moment).
+### Database/Schema How To's ###
+Pull the state from the database to the Prisma schema using introspection
+
+`$ npx prisma db pull`
+
+Push the state from Prisma schema to the database during prototyping
+
+`$ npx prisma db push`
+
+Seed your database
+
+`$ npx prisma db seed`
+
 
 **Note:** You'll need to make sure you have your .env configured to use a postgresql superuser. Hopefully you already have user 'postgres' with the same password & will not need to do anything.
 
