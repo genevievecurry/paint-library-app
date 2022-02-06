@@ -35,6 +35,9 @@
 
   let swatchCardClasses: string;
   let aspectRatioClasses: string;
+  let modalSwatchCardClasses: string;
+  let modalSwatchDescriptionClasses: string;
+  let modalSwatchScaledQuery = '';
 
   onMount(() => {
     if ($session.user) {
@@ -48,12 +51,21 @@
   if (alignment === 'square') {
     swatchCardClasses = 'col-span-1 row-span-1';
     aspectRatioClasses = 'aspect-w-16 aspect-h-16';
+    modalSwatchCardClasses = 'col-span-12 md:col-span-6 ';
+    modalSwatchDescriptionClasses = 'col-span-12 md:col-span-6';
+    modalSwatchScaledQuery = '?tr=w-386,h-386';
   } else if (alignment === 'vertical') {
     swatchCardClasses = 'col-span-1 row-span-1 md:row-span-2';
     aspectRatioClasses = 'aspect-w-16 md:aspect-w-8 aspect-h-16';
+    modalSwatchCardClasses = 'col-span-12 sm:col-span-4';
+    modalSwatchDescriptionClasses = 'col-span-12 sm:col-span-8';
+    modalSwatchScaledQuery = imageKitUpload?.width > 250 ? '?tr=w-250' : '';
   } else if (alignment === 'horizontal') {
     swatchCardClasses = 'col-span-1 md:col-span-2 row-span-1';
     aspectRatioClasses = 'aspect-w-16 aspect-h-16 md:aspect-h-8';
+    modalSwatchCardClasses = 'col-span-12';
+    modalSwatchDescriptionClasses = 'col-span-12';
+    modalSwatchScaledQuery = imageKitUpload?.width > 800 ? '?tr=w-800' : '';
   }
 
   async function deleteSwatch() {
@@ -108,23 +120,34 @@
 
 {#if showSwatchCardModal}
   <Modal on:close={() => (showSwatchCardModal = false)} title={paintName}>
-    <div class="col-span-12 flex flex-col md:flex-row">
-      <div>
+    <div class="col-span-12 grid grid-cols-12 gap-6">
+      <div class={modalSwatchCardClasses}>
         <img
           class="max-w-full"
-          src={imageKitUpload?.url}
+          src={`https://ik.imagekit.io/paintlibrary${imageKitUpload?.filePath}${modalSwatchScaledQuery}`}
           alt="{paintName} Swatch"
           title="{paintName} Swatch" />
+        {#if imageKitUpload?.width > 800 || (alignment === 'vertical' && imageKitUpload?.width > 250)}
+          <p class="text-xs my-2"
+            >Swatch is scaled down.
+            <a
+              href={imageKitUpload?.url}
+              target="_blank"
+              rel="noopener"
+              class="decorate-link">
+              See full-size swatch.</a
+            ></p>
+        {/if}
       </div>
-      <div class="mt-6 md:mt-0 md:ml-6 lg:ml-10">
+      <div class={modalSwatchDescriptionClasses}>
         {#if description}
-          <h3 class="text-lg font-bold my-2">Description</h3>
+          <h3 class="text-lg font-bold mb-2">Description</h3>
           <div class="text-sm">{@html description}</div>
           <hr class="my-3" />
         {/if}
 
         {#if paperManufacturer?.name || paperType?.name}
-          <h3 class="text-lg font-bold my-2">Paper</h3>
+          <h3 class="text-lg font-bold mb-2">Paper</h3>
           <div class="text-sm">
             {paperLine?.name ? paperLine?.name : ''}
             {paperType?.name ? paperType?.name : ''}
@@ -135,7 +158,7 @@
         {/if}
 
         {#if swatchCardTypesOnSwatchCard.length > 0}
-          <h3 class="text-lg font-bold my-2">Includes Tests</h3>
+          <h3 class="text-lg font-bold mb-2">Includes Tests</h3>
           <ul class="">
             {#each swatchCardTypesOnSwatchCard as item}
               <li class="mb-1">

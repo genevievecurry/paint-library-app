@@ -17,6 +17,7 @@ const limitedPaintSelect: Prisma.PaintSelect = {
   hex: true,
   name: true,
   published: true,
+  line: true,
   manufacturer: {
     select: {
       name: true,
@@ -25,21 +26,25 @@ const limitedPaintSelect: Prisma.PaintSelect = {
   lightfastRating: {
     select: {
       label: true,
+      code: true,
     },
   },
   transparencyRating: {
     select: {
       label: true,
+      code: true,
     },
   },
   stainingRating: {
     select: {
       label: true,
+      code: true,
     },
   },
   granulationRating: {
     select: {
       label: true,
+      code: true,
     },
   },
   pigmentsOnPaints: {
@@ -180,6 +185,7 @@ const paintSelect: Prisma.PaintSelect = {
   line: true,
   manufacturer: {
     select: {
+      slug: true,
       name: true,
       website: true,
     },
@@ -608,6 +614,7 @@ export async function getPaints(query): Promise<{
         slug: true,
         hex: true,
         name: true,
+        manufacturerDescription: true,
         _count: true,
         line: {
           select: {
@@ -1303,6 +1310,44 @@ export async function getUserProfileSavedPalettes(data): Promise<{
   return {
     status,
     body,
+  };
+}
+
+export async function getManufacturer(slug): Promise<{
+  status: number;
+  body: Record<string, unknown>;
+}> {
+  let body = null;
+  let status = 500;
+
+  body = await prisma.manufacturer.findFirst({
+    where: {
+      slug: slug,
+    },
+    select: {
+      id: true,
+      name: true,
+      slug: true,
+      website: true,
+      sellPaint: true,
+      sellPaper: true,
+      _count: true,
+      paints: {
+        select: limitedPaintSelect,
+        orderBy: {
+          name: 'asc',
+        },
+      },
+    },
+  });
+
+  if (body !== null) {
+    status = 200;
+  }
+
+  return {
+    body,
+    status,
   };
 }
 

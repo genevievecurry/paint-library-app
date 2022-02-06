@@ -26,9 +26,14 @@
   import Header from '$lib/components/Header.svelte';
   import PaintPreview from '$lib/components/PaintPreview.svelte';
   import { pigmentCode } from '$lib/utility';
+  import { session } from '$app/stores';
+  import { settingsIcon } from '$lib/icons';
 
   export let pigment: PigmentComponent;
   export let pathname;
+  export let slug;
+
+  let editable = $session.user?.role === 'ADMIN';
 
   const displayHex = pigment.hex ? pigment.hex : pigment.color.hex;
 </script>
@@ -37,11 +42,20 @@
   <title>Pigment {pigment.name} - Paint Library</title>
 </svelte:head>
 
-<!-- Todo: figure out breadcrumbs and use Header component -->
-<Header title={pigment.name} {pathname} />
-
-<section class="grid gap-3 grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6">
-  <div class="relative col-span-2 lg:col-span-1">
+<Header title={pigment.name} {pathname}>
+  {#if editable}
+    <a
+      href={`/admin/pigments/${slug}`}
+      title="Contribute Swatch"
+      aria-label="Contribute Swatch"
+      class="pop inline-flex justify-center p-2 lg:px-3 lg:py-1 text-sm">
+      {@html settingsIcon('h-5 w-5')}
+      <span class="hidden lg:inline-block ml-1">Edit</span>
+    </a>
+  {/if}
+</Header>
+<section class="grid gap-3 grid-cols-2 md:grid-cols-4 2xl:grid-cols-6">
+  <div class="relative col-span-1">
     <div class="border-2 border-black p-1">
       <div
         class="aspect-w-16 aspect-h-16 "
@@ -56,12 +70,14 @@
       </div>
     </div>
   </div>
-  <div class="ml-0 lg:ml-3 col-span-2 lg:col-span-3 xl:col-span-3">
+  <div class="ml-0 lg:ml-3 col-span-2 md:col-span-3">
     <table class="table-auto border-collapse border border-gray-400 w-full">
-      <tr>
-        <th class="text-left border border-gray-400 px-4 py-3 align-top"
+      <tr class="block md:table-row">
+        <th
+          class="inline-block md:table-cell text-left md:border border-gray-400 px-4 py-3 align-top"
           ><span class="whitespace-nowrap">CI Name</span></th>
-        <td class="border border-gray-400 px-4 py-3 text-center align-top">
+        <td
+          class="inline-block md:table-cell md:border border-gray-400 px-4 py-3 md:text-center align-top">
           <span class="border-2 border-black font-bold px-2">
             {@html pigmentCode(
               pigment.type,
@@ -73,7 +89,8 @@
             )}
           </span>
         </td>
-        <td class="border border-gray-400 px-4 py-3 w-full align-top">
+        <td
+          class="block md:table-cell md:border border-gray-400 px-4 py-3 w-full align-top">
           <p class="mb-2">
             CI stands for "Color Index". It's a short code that easily
             identifies the pigment. Not all pigments have one.
@@ -107,10 +124,12 @@
           {/if}
         </td>
       </tr>
-      <tr>
-        <th class="text-left border border-gray-400 px-4 py-3 align-top"
+      <tr class="block md:table-row">
+        <th
+          class="inline-block md:table-cell text-left md:border border-gray-400 px-4 py-3 align-top"
           ><span class="whitespace-nowrap">Toxicity</span></th>
-        <td class="border border-gray-400 px-4 py-3 text-center align-top">
+        <td
+          class="inline-block md:table-cell md:border border-gray-400 px-4 py-3 md:text-center align-top">
           <span class="border-2 border-black font-bold px-2">
             {#if pigment.toxicity === 'A'}
               Low
@@ -124,7 +143,8 @@
               ?
             {/if}
           </span></td>
-        <td class="border border-gray-400 px-4 py-3 w-full align-top">
+        <td
+          class="block md:table-cell md:border border-gray-400 px-4 py-3 w-full align-top">
           <p
             >The general rule of thumb to follow is to not inhale, ingest, feed
             to pets or babies, pour on the ground, or leave on skin.</p>
@@ -134,10 +154,12 @@
             it might be better not to use it at all.</p>
         </td>
       </tr>
-      <tr>
-        <th class="text-left border border-gray-400 px-4 py-3 align-top"
+      <tr class="block md:table-row">
+        <th
+          class="inline-block md:table-cell text-left md:border border-gray-400 px-4 py-3 align-top"
           >Lightfastness</th>
-        <td class="border border-gray-400 px-4 py-3 text-center align-top">
+        <td
+          class="inline-block md:table-cell md:border border-gray-400 px-4 py-3 md:text-center align-top">
           {#if pigment.lightfastRating.code !== 'X'}
             <span class="border-2 border-black font-bold px-2"
               >{pigment.lightfastRating.code}</span>
@@ -146,16 +168,19 @@
               >?</span>
           {/if}
         </td>
-        <td class="border border-gray-400 px-4 py-3 w-full align-top">
+        <td
+          class="block md:table-cell md:border border-gray-400 px-4 py-3 w-full align-top">
           {pigment.lightfastRating.label}
           <p class="text-gray-600 font-light text-sm"
             >{pigment.lightfastRating.description}</p>
         </td>
       </tr>
-      <tr>
-        <th class="text-left border border-gray-400 px-4 py-3 align-top"
+      <tr class="block md:table-row">
+        <th
+          class="inline-block md:table-cell text-left md:border border-gray-400 px-4 py-3 align-top"
           >Transparency</th>
-        <td class="border border-gray-400 px-4 py-3 text-center align-top">
+        <td
+          class="inline-block md:table-cell md:border border-gray-400 px-4 py-3 md:text-center align-top">
           {#if pigment.transparencyRating.code !== 'X'}
             <span class="border-2 border-black font-bold px-2"
               >{pigment.transparencyRating.code}</span>
@@ -164,38 +189,48 @@
               >?</span>
           {/if}
         </td>
-        <td class="border border-gray-400 px-4 py-3 align-top">
+        <td
+          class="block md:table-cell md:border border-gray-400 px-4 py-3 align-top">
           {pigment.transparencyRating.label}
           <p class="text-gray-600 font-light text-sm"
             >{pigment.transparencyRating.description}</p>
         </td>
       </tr>
       {#if pigment.reviewed && pigment.description}
-        <tr>
-          <th class="text-left border border-gray-400 px-4 py-3 align-top"
+        <tr class="block md:table-row">
+          <th
+            class="block md:table-cell text-left md:border border-gray-400 px-4 py-3 align-top"
             >Description</th>
 
-          <td class="border border-gray-400 px-4 py-3" colspan="2">
+          <td
+            class="block md:table-cell md:border border-gray-400 px-4 py-3"
+            colspan="2">
             {pigment.description}
           </td>
         </tr>
       {/if}
       {#if pigment.reviewed && pigment.composition}
-        <tr>
-          <th class="text-left border border-gray-400 px-4 py-3 align-top"
+        <tr class="block md:table-row">
+          <th
+            class="block md:table-cell text-left md:border border-gray-400 px-4 py-3 align-top"
             >Composition</th>
 
-          <td class="border border-gray-400 px-4 py-3" colspan="2">
+          <td
+            class="block md:table-cell md:border border-gray-400 px-4 py-3"
+            colspan="2">
             {pigment.composition}
           </td>
         </tr>
       {/if}
       {#if pigment.reviewed && pigment.alternateNames}
-        <tr>
-          <th class="text-left border border-gray-400 px-4 py-3 align-top"
+        <tr class="block md:table-row">
+          <th
+            class="block md:table-cell text-left md:border border-gray-400 px-4 py-3 align-top"
             >Alternate Names</th>
 
-          <td class="border border-gray-400 px-4 py-3" colspan="2">
+          <td
+            class="block md:table-cell md:border border-gray-400 px-4 py-3"
+            colspan="2">
             {pigment.alternateNames}
           </td>
         </tr>
@@ -215,7 +250,7 @@
   </p>
   {#if pigment.paints.length > 0}
     <div
-      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-3">
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-3">
       {#each pigment.paints as paint, index}
         {#if paint.paint.published}
           <PaintPreview paint={paint.paint} {index} />

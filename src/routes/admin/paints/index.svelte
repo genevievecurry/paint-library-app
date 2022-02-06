@@ -28,6 +28,7 @@
 <script lang="ts">
   import Header from '$lib/components/Header.svelte';
   import { generateUrl } from '$lib/generate';
+  import { checkmarkIcon, closeIcon } from '$lib/icons';
   import { timeAgo } from '$lib/utility';
   export let pathname;
   export let paints;
@@ -45,9 +46,12 @@
         <td class="font-bold p-1">Name</td>
         <td class="font-bold p-1">Manufacturer</td>
         <td class="font-bold p-1">Line</td>
+        <td class="font-bold p-1 leading-tight">Pigments</td>
         <td class="font-bold p-1 leading-tight">Swatches</td>
-        <td class="font-bold p-1 leading-tight">In Palettes</td>
-        <td class="font-bold p-1 leading-tight">Published</td>
+        <td class="font-bold p-1 leading-tight">In<br /> Palettes</td>
+        <td class="font-bold p-1 leading-tight">Live</td>
+        <td class="font-bold p-1 leading-tight">Mfr.<br />Desc.</td>
+        <td class="font-bold p-1 leading-tight">Primary<br />Swatch?</td>
         <td class="font-bold p-1 leading-tight">Updated</td>
         <td class="font-bold p-1" />
         <td />
@@ -68,16 +72,29 @@
           <td class="p-1">{paint.name}</td>
           <td class="p-1">{paint.manufacturer.name}</td>
           <td class="p-1">{paint.line?.name ? paint.line.name : ''}</td>
+          <td class="p-1" class:muted={paint._count.pigmentsOnPaints === 0}
+            >{paint._count.pigmentsOnPaints}</td>
           <td class="p-1" class:muted={paint._count.swatchCard === 0}
             >{paint._count.swatchCard}</td>
           <td class="p-1" class:muted={paint._count.paintsInPalette === 0}
             >{paint._count.paintsInPalette}</td>
-          <td class="p-1">{paint.published}</td>
+          <td class="p-1"
+            >{@html paint.published
+              ? checkmarkIcon()
+              : closeIcon('h-6 w-6 text-gray-300')}</td>
+          <td class="p-1"
+            >{@html paint.manufacturerDescription
+              ? checkmarkIcon()
+              : closeIcon('h-6 w-6 text-gray-300')}</td>
+          <td class="p-1"
+            >{@html paint.primarySwatchCard
+              ? checkmarkIcon()
+              : closeIcon('h-6 w-6 text-gray-300')}</td>
           <td class="p-1">{timeAgo(paint.updatedAt)}</td>
           <td class="p-1">
             <a
               href={generateUrl({ prefix: 'paint', target: paint })}
-              class="decorate-link">Public Link</a>
+              class="decorate-link">Link</a>
           </td>
         </tr>
       {/each}

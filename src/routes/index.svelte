@@ -1,24 +1,27 @@
+<script context="module" lang="ts">
+  export async function load({ fetch }) {
+    const response = await fetch(`index.json?take=30`);
+
+    if (response.ok) {
+      return {
+        props: {
+          paints: await response.json(),
+        },
+      };
+    }
+
+    return {
+      status: response.status,
+      error: new Error('Could not load.'),
+    };
+  }
+</script>
+
 <script lang="ts">
   import Search from '$lib/components/Search.svelte';
   import PaintPreview from '$lib/components/PaintPreview.svelte';
-  import InfiniteLoad from '$lib/components/InfiniteLoad.svelte';
 
-  let set = 0;
-  let list = [];
-
-  function infiniteHandler({ detail: { loaded, complete } }) {
-    fetch(`index.json?set=${set}`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.length) {
-          set += 50;
-          list = [...list, ...data];
-          loaded();
-        } else {
-          complete();
-        }
-      });
-  }
+  export let paints;
 </script>
 
 <svelte:head>
@@ -38,12 +41,11 @@
 </div>
 
 <div class="lg:container mx-auto px-4 sm:px-6">
+  <h2 class="font-bold text-3xl mb-6">Recently Added Paints</h2>
   <div
-    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-3"
-    infinite-wrapper>
-    {#each list as paint, index}
+    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-3">
+    {#each paints as paint, index}
       <PaintPreview {paint} {index} />
     {/each}
-    <InfiniteLoad on:infinite={infiniteHandler} forceUseInfiniteWrapper />
   </div>
 </div>

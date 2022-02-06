@@ -17,7 +17,10 @@ Utility.before(() => {
 });
 
 Utility('should return a converted pigment ci code', () => {
-  assert.is(pigmentCode(pigmentType, pigmentNumber, colorCode, {html: false}), 'PBr62');
+  assert.is(
+    pigmentCode(pigmentType, pigmentNumber, colorCode, { html: false }),
+    'PBr62',
+  );
 });
 
 Utility.run();

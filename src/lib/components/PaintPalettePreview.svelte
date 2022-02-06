@@ -2,21 +2,20 @@
   import { generateUrl } from '$lib/generate';
   import { createEventDispatcher } from 'svelte';
 
-  export let paintOnPalette;
+  export let paint;
+  export let paintOnPaletteId = null;
   export let showText: boolean;
   export let listView: boolean;
   export let editPaletteMode: boolean = false;
 
   const dispatch = createEventDispatcher();
 
-  let { paint, id } = paintOnPalette;
-
-  $: swatchImage = paint.primarySwatchCard?.imageKitUpload?.filePath
-    ? `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${paint.primarySwatchCard?.imageKitUpload?.filePath}`
+  $: swatchImage = paint?.primarySwatchCard?.imageKitUpload?.filePath
+    ? `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${paint?.primarySwatchCard?.imageKitUpload?.filePath}`
     : '';
 
   function remove() {
-    dispatch('remove', id);
+    dispatch('remove', paintOnPaletteId);
   }
 </script>
 

@@ -35,7 +35,7 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
   {#each pigments as pigment}
     <a
-      class="flex my-4"
+      class="flex mt-4"
       href={`/pigments/${pigment.color.slug}/${pigment.slug}`}>
       <div class="mr-4">
         <div class="border-2 border-black p-0.5 relative">
