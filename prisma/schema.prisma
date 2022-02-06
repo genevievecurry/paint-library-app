@@ -247,6 +247,7 @@ model Manufacturer {
   createdAt  DateTime     @default(now())
   updatedAt  DateTime?    @updatedAt
   name       String       @unique
+  slug       String       @default("unknown")
   website    String?
   sellPaint  Boolean      @default(false)
   sellPaper  Boolean      @default(false)

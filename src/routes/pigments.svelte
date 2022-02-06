@@ -83,9 +83,9 @@
   <Header title="Pigments" {pathname} />
 
   <div class="grid grid-cols-6">
-    <aside class="col-span-1">
+    <aside class="col-span-6 md:col-span-1">
       <div class="sticky top-0 py-2">
-        <span class="block text-xl font-bold">Color Ways</span>
+        <span class="block text-xl font-bold">Hue</span>
         <ul class="mt-3 text-lg">
           {#each colors as color}
             <li class="my-1">
@@ -106,27 +106,34 @@
         </ul>
       </div>
     </aside>
-    <div class="col-span-5">
+    <div class="col-span-6 md:col-span-5">
       {#each colors as color}
         <section id={color.slug} bind:this={sections[color.slug]}>
           <div class="sticky top-0 bg-white py-2"
             ><h2 class="font-bold text-3xl">{color.label}</h2></div>
 
-          <table class="border-collapse border-2 border-black my-4 w-full">
-            <thead class="text-left border-b-2 border-black">
+          <table class="border-collapse border my-4 w-full">
+            <thead class="text-left border-b ">
               <tr>
-                <th class="pl-1 pr-3 py-3" />
+                <th class="sticky top-10 pl-1 pr-3 py-3 bg-white" />
 
-                <th class="px-3 py-3 whitespace-nowrap">CI Code</th>
-                <th class="px-3 w-full">Common Name</th>
-                <th class="px-3 text-xs text-center">Lightfast</th>
-                <th class="px-3 text-xs text-center">Transparency</th>
-                <th class="px-3 text-xs text-center">Toxicity</th>
+                <th class="sticky top-10 px-3 py-3 whitespace-nowrap bg-white"
+                  >CI Code</th>
+                <th class="sticky top-10 px-3 w-full bg-white">Common Name</th>
+                <th
+                  class="sticky top-10 px-3 text-xs text-center hidden sm:table-cell bg-white"
+                  >Lightfast</th>
+                <th
+                  class="sticky top-10 px-3 text-xs text-center hidden sm:table-cell bg-white"
+                  >Transparency</th>
+                <th
+                  class="sticky top-10 px-3 text-xs text-center hidden sm:table-cell bg-white"
+                  >Toxicity</th>
               </tr>
             </thead>
             {#each color.pigments as pigment}
               <tr
-                class="transition-all border-b border-gray-300 cursor-pointer"
+                class="transition-all border-b cursor-pointer"
                 on:click={() =>
                   goto(`/pigments/${color.slug}/${pigment.slug}`)}>
                 <td class="pl-1 pr-3 py-1">
@@ -155,19 +162,19 @@
                 </td>
 
                 <td
-                  class="px-3 text-center"
+                  class="px-3 text-center hidden sm:table-cell"
                   title={pigment.lightfastRating.label}
                   >{@html pigment.lightfastRating.code !== 'X' &&
                   pigment.lightfastRating.code !== 'NR'
                     ? pigment.lightfastRating.code
                     : '<span class="text-gray-400">&bull;</span>'}</td>
                 <td
-                  class="px-3 text-center"
+                  class="px-3 text-center hidden sm:table-cell"
                   title={pigment.transparencyRating.label}
                   >{@html pigment.transparencyRating.code !== 'X'
                     ? pigment.transparencyRating.code
                     : '<span class="text-gray-400">&bull;</span>'}</td>
-                <td class="px-3 text-center text-sm">
+                <td class="px-3 text-center text-sm hidden sm:table-cell">
                   {#if pigment.toxicity === 'A'}
                     Low
                   {:else if pigment.toxicity === 'B'}

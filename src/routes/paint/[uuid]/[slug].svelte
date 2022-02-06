@@ -60,9 +60,9 @@
   let paint = paintData;
   const headerSubtitle = () => {
     if (paint.line) {
-      return `${paint.line.name} by ${paint.manufacturer.name}`;
+      return `${paint.line.name} by <a href="/manufacturer/${paint.manufacturer.slug}" class="decorate-link">${paint.manufacturer.name}</a>`;
     } else {
-      return paint.manufacturer.name;
+      return `<a href="/manufacturer/${paint.manufacturer.slug}" class="decorate-link">${paint.manufacturer.name}</a>`;
     }
   };
   let pigmentsOnPaints = paint.pigmentsOnPaints || [];

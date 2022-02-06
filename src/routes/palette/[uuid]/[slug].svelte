@@ -376,7 +376,7 @@
     <section
       class={listView
         ? ''
-        : 'grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-2'}>
+        : 'grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-2'}>
       {#if listView}
         <table class="border-collapse table-auto w-full text-sm">
           <thead>
@@ -395,7 +395,8 @@
             {#each paintsInPalette as paintInPalette}
               {#if paintInPalette.paint.published}
                 <PaintPalettePreview
-                  paintOnPalette={paintInPalette}
+                  paintOnPaletteId={paintInPalette.id}
+                  paint={paintInPalette.paint}
                   {showText}
                   {listView} />
               {/if}
@@ -410,7 +411,8 @@
           on:sort={sortPaintsInPalette}
           let:item>
           <PaintPalettePreview
-            paintOnPalette={item}
+            paintOnPaletteId={item.id}
+            paint={item.paint}
             {showText}
             {listView}
             on:remove={removePaintInPalette}

@@ -49,7 +49,7 @@
       <div class="my-5 max-w-xl">{description}</div>
     {/if}
     {#if subtitle}
-      <span class="block mt-2 font-light">{subtitle}</span>
+      <div class="mt-2 font-light">{@html subtitle}</div>
     {/if}
     {#if owner}
       By <a href="/@{owner.username}" class="decorate-link"
