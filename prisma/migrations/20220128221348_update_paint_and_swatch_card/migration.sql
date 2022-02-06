@@ -12,7 +12,7 @@ ALTER COLUMN "manufacturerDescription" SET DATA TYPE VARCHAR(1000);
 
 -- AlterTable
 ALTER TABLE "SwatchCard" ADD COLUMN     "isOriginal" BOOLEAN NOT NULL DEFAULT false,
-ADD COLUMN     "primaryOnPaintUuid" TEXT;
+ADD COLUMN     "primaryOnPaintUuid" TEXT IF NOT EXISTS;
 
 -- CreateIndex
 CREATE UNIQUE INDEX "SwatchCard_primaryOnPaintUuid_key" ON "SwatchCard"("primaryOnPaintUuid");
