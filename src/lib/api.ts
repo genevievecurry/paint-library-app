@@ -1618,6 +1618,15 @@ export async function createPalette(data): Promise<{
 
   const slug = generateSlug({ value: data.title, uuid: false });
   const uuid = generateUuid();
+  let paintsInPalette;
+
+  if (data.paintUuid){
+    paintsInPalette = {
+      create: {
+        paintUuid: data.paintUuid,
+      }
+    }
+  }
 
   const palette = await prisma.palette.create({
     data: {
@@ -1626,11 +1635,7 @@ export async function createPalette(data): Promise<{
       title: data.title,
       description: data.description,
       visible: data.visible,
-      paintsInPalette: {
-        create: {
-          paintUuid: data.paintUuid,
-        },
-      },
+      paintsInPalette: paintsInPalette,
       owner: {
         connect: {
           uuid: data.owner.uuid,

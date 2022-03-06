@@ -111,7 +111,7 @@
         ? '#'
         : generateUrl({ prefix: 'paint', target: paint })}
       draggable={!editPaletteMode}
-      class="h-full flex flex-col {editPaletteMode
+      class="h-full flex flex-col overflow-hidden {editPaletteMode
         ? 'pointer-events-none'
         : 'pointer-events-auto'}">
       <div class="flex-1">
@@ -132,9 +132,14 @@
       </div>
       {#if showText}
         <div class="mt-2 flex flex-col h-full content-between">
-          <div class="block text-xs leading-tight font-medium flex-grow"
-            >{paint.name}</div>
-          <div class="block text-xxs leading-none mt-1 ">
+          <div
+            class="block text-xs leading-tight font-medium flex-grow text-ellipsis overflow-hidden"
+            title={paint.name}>
+            {paint.name}
+          </div>
+          <div
+            class="block text-xxs leading-none mt-1 truncate"
+            title={paint.manufacturer?.name}>
             {paint.manufacturer?.name}
           </div>
         </div>

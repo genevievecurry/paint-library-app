@@ -10,18 +10,16 @@
   // a palette elsewhere, as it is janky jank
   export let paintUuid = null;
   export let palette = null;
+  export let method;
 
   let title = palette?.title || '';
   let description = palette?.description || '';
-  let visible = palette?.visible;
-  let action;
+  let visible = palette?.visible || false;
   let endpoint;
 
-  if (paintUuid !== null) {
-    action = 'create';
+  if (method === 'create') {
     endpoint = '/palette/create.json';
-  } else if (palette?.uuid !== undefined) {
-    action = 'update';
+  } else if (method === 'update') {
     endpoint = `/palette/${palette?.uuid}.json`;
   }
 
@@ -116,7 +114,7 @@
 
   <div class="mt-6 py-3 text-right border-t border-black">
     <button type="submit" class="pop px-6 py-4 text-2xl hover:text-pink-500">
-      {action} Palette
+      {method} Palette
     </button>
   </div>
 </form>

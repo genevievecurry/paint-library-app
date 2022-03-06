@@ -206,7 +206,7 @@
     title="Edit Palette"
     form={true}>
     <div class="col-span-12">
-      <PaletteForm {palette} on:update={handleEditedPalette} />
+      <PaletteForm {palette} on:update={handleEditedPalette} method="update" />
     </div>
   </Modal>
 {/if}

@@ -109,26 +109,30 @@
     <div class="col-span-6 md:col-span-5">
       {#each colors as color}
         <section id={color.slug} bind:this={sections[color.slug]}>
-          <div class="sticky top-0 bg-white py-2"
-            ><h2 class="font-bold text-3xl">{color.label}</h2></div>
+          <div class="sticky top-0 bg-white py-2">
+            <h2 class="font-bold text-3xl">{color.label}</h2>
+          </div>
 
-          <table class="border-collapse border my-4 w-full">
-            <thead class="text-left border-b ">
+          <table class="border-separate my-4 w-full pigment-table">
+            <thead class="text-left border-b relative">
               <tr>
-                <th class="sticky top-10 pl-1 pr-3 py-3 bg-white" />
-
-                <th class="sticky top-10 px-3 py-3 whitespace-nowrap bg-white"
-                  >CI Code</th>
-                <th class="sticky top-10 px-3 w-full bg-white">Common Name</th>
                 <th
-                  class="sticky top-10 px-3 text-xs text-center hidden sm:table-cell bg-white"
-                  >Lightfast</th>
+                  class="sticky top-12 pl-1 pr-3 py-3 bg-white border-y border-l" />
                 <th
-                  class="sticky top-10 px-3 text-xs text-center hidden sm:table-cell bg-white"
-                  >Transparency</th>
+                  class="sticky top-12 px-3 py-3 whitespace-nowrap bg-white border-y">
+                  CI Code</th>
                 <th
-                  class="sticky top-10 px-3 text-xs text-center hidden sm:table-cell bg-white"
-                  >Toxicity</th>
+                  class="sticky top-12 px-3 w-full whitespace-nowrap bg-white border-y"
+                  >Common Name</th>
+                <th
+                  class="sticky top-12 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y">
+                  Lightfast</th>
+                <th
+                  class="sticky top-12 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y">
+                  Transparency</th>
+                <th
+                  class="sticky top-12 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y border-r">
+                  Toxicity</th>
               </tr>
             </thead>
             {#each color.pigments as pigment}
@@ -136,7 +140,7 @@
                 class="transition-all border-b cursor-pointer"
                 on:click={() =>
                   goto(`/pigments/${color.slug}/${pigment.slug}`)}>
-                <td class="pl-1 pr-3 py-1">
+                <td class="pl-1 pr-3 py-1 border-l border-b">
                   <a
                     sveltekit:prefetch
                     href={`/pigments/${color.slug}/${pigment.slug}`}>
@@ -147,7 +151,7 @@
                       }`} />
                   </a>
                 </td>
-                <td class="px-3">
+                <td class="px-3 border-b">
                   <span>
                     {@html pigmentCode(
                       pigment.type,
@@ -157,24 +161,25 @@
                     )}
                   </span>
                 </td>
-                <td class="px-3 w-full">
+                <td class="px-3 w-full border-b">
                   <span class="decorate-link">{pigment.name}</span>
                 </td>
 
                 <td
-                  class="px-3 text-center hidden sm:table-cell"
+                  class="px-3 text-center hidden sm:table-cell border-b"
                   title={pigment.lightfastRating.label}
                   >{@html pigment.lightfastRating.code !== 'X' &&
                   pigment.lightfastRating.code !== 'NR'
                     ? pigment.lightfastRating.code
                     : '<span class="text-gray-400">&bull;</span>'}</td>
                 <td
-                  class="px-3 text-center hidden sm:table-cell"
-                  title={pigment.transparencyRating.label}
-                  >{@html pigment.transparencyRating.code !== 'X'
+                  class="px-3 text-center hidden sm:table-cell border-b"
+                  title={pigment.transparencyRating.label}>
+                  {@html pigment.transparencyRating.code !== 'X'
                     ? pigment.transparencyRating.code
                     : '<span class="text-gray-400">&bull;</span>'}</td>
-                <td class="px-3 text-center text-sm hidden sm:table-cell">
+                <td
+                  class="px-3 text-center text-sm hidden sm:table-cell border-r border-b">
                   {#if pigment.toxicity === 'A'}
                     Low
                   {:else if pigment.toxicity === 'B'}
@@ -195,3 +200,9 @@
     </div>
   </div>
 </div>
+
+<style>
+  .pigment-table {
+    border-spacing: 0px;
+  }
+</style>

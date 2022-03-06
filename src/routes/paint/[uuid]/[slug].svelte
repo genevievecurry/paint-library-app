@@ -348,10 +348,13 @@
   </Modal>
 {/if}
 
-{#if showPaletteModal && editable}
+{#if showPaletteModal}
   <Modal on:close={() => (showPaletteModal = false)} title="Create New Palette">
     <div class="col-span-12">
-      <PaletteForm paintUuid={paint.uuid} on:update={handleEditUpdate} />
+      <PaletteForm
+        paintUuid={paint.uuid}
+        on:update={handleEditUpdate}
+        method="create" />
     </div>
   </Modal>
 {/if}
