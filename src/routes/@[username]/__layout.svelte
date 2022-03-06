@@ -69,7 +69,7 @@
 
 <div class="lg:container mx-auto px-4 sm:px-6">
   <Header title="@{user.username}">
-    {#if $session?.user.uuid === user.uuid}
+    {#if $session?.user?.uuid === user?.uuid}
       <div class="relative inline-block text-left">
         <div class="lg:mr-2 inline">
           <button

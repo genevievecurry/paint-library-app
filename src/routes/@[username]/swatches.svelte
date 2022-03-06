@@ -50,21 +50,21 @@
           </div>
           <div class="mt-2 flex flex-col h-full content-between p-1">
             <div class="flex-grow">
-              <p class="text-gray-500 text-xs"
-                >{swatchCard.paint.manufacturer.name}</p>
-              <p class="font-bold">{swatchCard.paint.name}</p>
-              {#if swatchCard.description}
-                <p class="text-sm mt-1 leading-tight"
-                  >{swatchCard.description}</p>
-              {/if}
+              <p class="text-gray-500 text-xs">
+                {swatchCard.paint.manufacturer.name}</p>
+              <p class="font-bold truncate">{swatchCard.paint.name}</p>
               {#if swatchCard.paperType?.name && swatchCard.paperWeightInLbs}
-                <p class="text-sm mt-2">
+                <p class="text-xs font-medium mb-2">
                   {swatchCard.paperType?.name} ({swatchCard.paperWeightInLbs} lb.)
                 </p>
               {/if}
+              {#if swatchCard.description}
+                <div class="text-xs font-light mt-1 leading-tight truncate">
+                  {swatchCard.description}</div>
+              {/if}
             </div>
             <div>
-              <p class="text-xs mt-2 leading-tight">
+              <p class="text-xs mt-2 leading-tight font-light text-gray-500">
                 {#if swatchCard.isOriginal}
                   Original work uploaded
                   {timeAgo(swatchCard.createdAt)}.
