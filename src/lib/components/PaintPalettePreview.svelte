@@ -24,7 +24,7 @@
     <td class="py-1">
       <div class="w-12 border-2 border-black p-px">
         <div
-          class="aspect-w-16 aspect-h-16 "
+          class="aspect-w-16 aspect-h-16 overflow-hidden "
           style={`background-color: ${paint.hex};`}>
           <a href={generateUrl({ prefix: 'paint', target: paint })}>
             {#if swatchImage}

@@ -1313,6 +1313,40 @@ export async function getUserProfileSavedPalettes(data): Promise<{
   };
 }
 
+export async function getAllManufacturers(searchParams): Promise<{
+  status: number;
+  body: Record<string, unknown>;
+}> {
+  let body = null;
+  let status = 500;
+
+  let orderBy;
+
+  body = await prisma.manufacturer.findMany({
+    select: {
+      id: true,
+      name: true,
+      slug: true,
+      website: true,
+      sellPaint: true,
+      sellPaper: true,
+      lines: true,
+      _count: true
+    },
+    orderBy: {
+      name: 'asc',
+    },
+  })
+  if (body !== null) {
+    status = 200;
+  }
+
+  return {
+    body,
+    status,
+  };
+}
+
 export async function getManufacturer(slug): Promise<{
   status: number;
   body: Record<string, unknown>;
@@ -1332,6 +1366,12 @@ export async function getManufacturer(slug): Promise<{
       sellPaint: true,
       sellPaper: true,
       _count: true,
+      swatchCard: {
+        orderBy: {
+          createdAt: 'desc',
+        },
+        select: swatchCardSelect,
+      },
       paints: {
         select: limitedPaintSelect,
         orderBy: {

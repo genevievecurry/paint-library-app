@@ -90,7 +90,7 @@
           </span>
         </td>
         <td
-          class="block md:table-cell md:border border-gray-400 px-4 py-3 w-full align-top">
+          class="block md:table-cell border-b md:border border-gray-400 px-4 py-3 w-full align-top">
           <p class="mb-2">
             CI stands for "Color Index". It's a short code that easily
             identifies the pigment. Not all pigments have one.
@@ -144,7 +144,7 @@
             {/if}
           </span></td>
         <td
-          class="block md:table-cell md:border border-gray-400 px-4 py-3 w-full align-top">
+          class="block md:table-cell border-b md:border border-gray-400 px-4 py-3 w-full align-top">
           <p
             >The general rule of thumb to follow is to not inhale, ingest, feed
             to pets or babies, pour on the ground, or leave on skin.</p>
@@ -169,7 +169,7 @@
           {/if}
         </td>
         <td
-          class="block md:table-cell md:border border-gray-400 px-4 py-3 w-full align-top">
+          class="block md:table-cell border-b md:border border-gray-400 px-4 py-3 w-full align-top">
           {pigment.lightfastRating.label}
           <p class="text-gray-600 font-light text-sm"
             >{pigment.lightfastRating.description}</p>

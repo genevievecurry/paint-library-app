@@ -378,31 +378,33 @@
         ? ''
         : 'grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-2'}>
       {#if listView}
-        <table class="border-collapse table-auto w-full text-sm">
-          <thead>
-            <tr>
-              <td>&nbsp;</td>
-              <td class="font-bold p-3 pl-1">Manufacturer</td>
-              <td class="font-bold p-3">Name</td>
-              <td class="font-bold p-3">Lightfastness</td>
-              <td class="font-bold p-3">Transparency</td>
-              <td class="font-bold p-3">Staining</td>
-              <td class="font-bold p-3">Granulating</td>
-              <td class="font-bold p-3">Pigments</td>
-            </tr>
-          </thead>
-          <tbody>
-            {#each paintsInPalette as paintInPalette}
-              {#if paintInPalette.paint.published}
-                <PaintPalettePreview
-                  paintOnPaletteId={paintInPalette.id}
-                  paint={paintInPalette.paint}
-                  {showText}
-                  {listView} />
-              {/if}
-            {/each}
-          </tbody>
-        </table>
+        <div class="overflow-y-auto">
+          <table class="border-collapse table-auto w-full text-sm">
+            <thead>
+              <tr>
+                <td>&nbsp;</td>
+                <td class="font-bold p-3 pl-1">Manufacturer</td>
+                <td class="font-bold p-3">Name</td>
+                <td class="font-bold p-3">Lightfastness</td>
+                <td class="font-bold p-3">Transparency</td>
+                <td class="font-bold p-3">Staining</td>
+                <td class="font-bold p-3">Granulating</td>
+                <td class="font-bold p-3">Pigments</td>
+              </tr>
+            </thead>
+            <tbody>
+              {#each paintsInPalette as paintInPalette}
+                {#if paintInPalette.paint.published}
+                  <PaintPalettePreview
+                    paintOnPaletteId={paintInPalette.id}
+                    paint={paintInPalette.paint}
+                    {showText}
+                    {listView} />
+                {/if}
+              {/each}
+            </tbody>
+          </table>
+        </div>
       {:else}
         <SortableList
           draggable={editPaletteMode}
