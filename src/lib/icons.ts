@@ -161,6 +161,7 @@ export function infoIcon(
   return icon;
 }
 
+// X icon | x | https://heroicons.com/
 export function closeIcon(
   klass = 'h-6 w-6',
   currentColor = 'currentColor',

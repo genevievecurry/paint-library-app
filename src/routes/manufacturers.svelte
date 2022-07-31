@@ -17,7 +17,7 @@
 
 <script lang="ts">
   import { goto } from '$app/navigation';
-
+  import { checkmarkIcon, closeIcon } from '$lib/icons';
   import Header from '$lib/components/Header.svelte';
 
   export let manufacturers;
@@ -32,107 +32,66 @@
   <Header title="Manufacturers" {pathname} />
 
   <section>
-    <div class="sticky top-0 bg-white py-2">
-      <h2 class="font-bold text-3xl">Paint Manufacturers</h2>
-    </div>
     <table
       class="border-separate my-4 w-full table-fixed"
       style="border-spacing: 0px;">
       <thead class="text-left border-b relative">
         <tr>
           <th
-            class="sticky top-12 px-3 py-3 whitespace-nowrap bg-white border-y border-l">
+            class="sticky top-0 px-3 py-3 whitespace-nowrap bg-white border-y border-l">
             Name</th>
-          <th
-            class="sticky top-12 px-3 py-3 whitespace-nowrap bg-white border-y">
-            Paint Lines</th>
-          <th
-            class="sticky top-12 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y">
-            Paints</th>
 
           <th
-            class="sticky top-12 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y border-r">
-            Swatch Cards</th>
+            class="sticky top-0 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y">
+            Make Paint?</th>
+          <th
+            class="sticky top-0 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y">
+            Paints in Library</th>
+
+          <th
+            class="sticky top-0 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y">
+            Make Paper?</th>
+
+          <th
+            class="sticky top-0 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y border-r">
+            Paper Swatch Cards in Library</th>
         </tr>
       </thead>
       <tbody>
         {#each manufacturers as manufacturer}
-          {#if manufacturer.sellPaint === true}
-            <tr
-              class="transition-all border-b cursor-pointer"
-              on:click={() => goto(`/manufacturer/${manufacturer.slug}`)}>
-              <td class="pl-1 pr-3 py-1 border-l border-b">
-                <span class="decorate-link">{manufacturer.name}</span>
-              </td>
-              <td class="px-3 border-b">
-                {#each manufacturer.lines as line, index}
-                  {line.name}{index + 1 === manufacturer._count.lines
-                    ? ''
-                    : ', '}
-                {/each}
-              </td>
-              <td class="px-3 text-center hidden sm:table-cell border-b">
+          <tr
+            class="transition-all border-b cursor-pointer"
+            on:click={() => goto(`/manufacturer/${manufacturer.slug}`)}>
+            <td class="pl-1 pr-3 py-1 border-l border-b">
+              <span class="decorate-link">{manufacturer.name}</span>
+            </td>
+            <td class="px-3 text-center sm:table-cell border-b">
+              {#if manufacturer.sellPaint === true}
+                {@html checkmarkIcon('h-6 w-6 inline-block text-green-500')}
+              {:else}
+                {@html closeIcon('h-4 w-4 inline-block text-gray-300')}
+              {/if}
+            </td>
+            <td class="px-3 text-center sm:table-cell border-b">
+              {#if manufacturer.sellPaint === true}
                 {manufacturer._count.paints > 0
                   ? manufacturer._count.paints
                   : ''}
-              </td>
-
-              <td
-                class="px-3 text-center hidden sm:table-cell border-b border-r">
-                {manufacturer._count.swatchCard > 0
-                  ? manufacturer._count.swatchCard
-                  : ''}
-              </td>
-            </tr>
-          {/if}
-        {/each}
-      </tbody>
-    </table>
-  </section>
-  <section>
-    <div class="sticky top-0 bg-white py-2">
-      <h2 class="font-bold text-3xl">Paper Manufacturers</h2>
-    </div>
-    <table
-      class="border-separate my-4 w-full table-fixed"
-      style="border-spacing: 0px;">
-      <thead class="text-left border-b relative">
-        <tr>
-          <th
-            class="sticky top-12 px-3 py-3 whitespace-nowrap bg-white border-y border-l">
-            Name</th>
-          <th
-            class="sticky top-12 px-3 py-3 whitespace-nowrap bg-white border-y">
-            Paper Lines</th>
-          <th
-            class="sticky top-12 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y border-r">
-            Swatch Cards</th>
-        </tr>
-      </thead>
-      <tbody>
-        {#each manufacturers as manufacturer}
-          {#if manufacturer.sellPaper === true}
-            <tr
-              class="transition-all border-b cursor-pointer"
-              on:click={() => goto(`/manufacturer/${manufacturer.slug}`)}>
-              <td class="pl-1 pr-3 py-1 border-l border-b">
-                <span class="decorate-link">{manufacturer.name}</span>
-              </td>
-              <td class="px-3 border-b">
-                {#each manufacturer.lines as line, index}
-                  {line.name}{index + 1 === manufacturer._count.lines
-                    ? ''
-                    : ', '}
-                {/each}
-              </td>
-              <td
-                class="px-3 text-center hidden sm:table-cell border-b border-r">
-                {manufacturer._count.swatchCard > 0
-                  ? manufacturer._count.swatchCard
-                  : ''}
-              </td>
-            </tr>
-          {/if}
+              {/if}
+            </td>
+            <td class="px-3 text-center sm:table-cell border-b">
+              {#if manufacturer.sellPaper === true}
+                {@html checkmarkIcon('h-6 w-6 inline-block text-green-500')}
+              {:else}
+                {@html closeIcon('h-4 w-4 inline-block text-gray-300')}
+              {/if}
+            </td>
+            <td class="px-3 text-center sm:table-cell border-b border-r">
+              {manufacturer._count.swatchCard > 0
+                ? manufacturer._count.swatchCard
+                : ''}
+            </td>
+          </tr>
         {/each}
       </tbody>
     </table>

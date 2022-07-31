@@ -179,14 +179,25 @@
                   <div class="flex-grow">
                     {#if swatchCard.paperType?.name && swatchCard.paperWeightInLbs}
                       <p class=" mb-2 font-bold">
-                        {swatchCard.paperType?.name} ({swatchCard.paperWeightInLbs}
-                        lb.)
+                        {swatchCard.paperLine?.name
+                          ? swatchCard.paperLine?.name
+                          : ''}
+                        {swatchCard.paperType?.name
+                          ? swatchCard.paperType?.name
+                          : ''}
+                        {swatchCard.paperWeightInLbs
+                          ? `${swatchCard.paperWeightInLbs} lb.`
+                          : ''}
                       </p>
                     {/if}
-                    <p class="text-xs font-bold">
-                      {swatchCard.paint.manufacturer.name}</p>
-                    <p class="truncate text-xs text-gray-500"
-                      >{swatchCard.paint.name}</p>
+
+                    <p class="truncate text-xs text-gray-500">
+                      {swatchCard.paint.name} by
+                      <a
+                        class="decorate-link"
+                        href={`/manufacturer/${swatchCard.paint.manufacturer.slug}`}
+                        >{swatchCard.paint.manufacturer.name}</a
+                      ></p>
 
                     {#if swatchCard.description}
                       <div

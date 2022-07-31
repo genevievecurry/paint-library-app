@@ -78,9 +78,6 @@
               <Search reverse={false} />
             </div>
             <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
-              <a href="/pigments" class="decorate-link">Pigments</a>
-            </div>
-            <div class="md:flex md:items-center md:space-x-6 px-3 text-sm">
               <a href="/palettes" class="decorate-link">Palettes</a>
             </div>
             {#if $session?.user}
@@ -121,6 +118,26 @@
                           tabindex="-1"
                           on:click={() => (menuOpen = false)}
                           >@{$session.user.username}</a>
+                      </div>
+                      <div
+                        class="block px-4 pt-2 pb-2 border-b border-gray-300">
+                        <span class="text-xs text-gray-500">Browse by:</span>
+                        <div class="block px-4 py-1 text-sm">
+                          <a
+                            href="/pigments"
+                            class="decorate-link text-sm"
+                            role="menuitem"
+                            tabindex="-1"
+                            on:click={() => (menuOpen = false)}>Pigment</a>
+                        </div>
+                        <div class="block px-4 py-1 text-sm">
+                          <a
+                            href="/manufacturers"
+                            class="decorate-link text-sm"
+                            role="menuitem"
+                            tabindex="-1"
+                            on:click={() => (menuOpen = false)}>Manufacturer</a>
+                        </div>
                       </div>
                       {#if $session.user?.role === 'ADMIN'}
                         <div class="block px-4 py-2 text-sm"

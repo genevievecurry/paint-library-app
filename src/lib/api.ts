@@ -143,6 +143,7 @@ const swatchCardSelect: Prisma.SwatchCardSelect = {
       manufacturer: {
         select: {
           name: true,
+          slug: true,
         },
       },
     },

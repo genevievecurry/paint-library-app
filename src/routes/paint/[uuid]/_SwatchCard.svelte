@@ -152,7 +152,13 @@
             {paperLine?.name ? paperLine?.name : ''}
             {paperType?.name ? paperType?.name : ''}
             {paperWeightInLbs ? `${paperWeightInLbs} lb.` : ''}
-            {paperManufacturer?.name ? `by ${paperManufacturer?.name}` : ''}
+
+            {#if paperManufacturer?.name}
+              by
+              <a
+                href="/manufacturer/{paperManufacturer.slug}"
+                class="decorate-link">{paperManufacturer?.name}</a>
+            {/if}
           </div>
           <hr class="my-3" />
         {/if}
