@@ -3,7 +3,6 @@
 
   export let paint;
   export let index;
-  export let hovered = false;
   export let type = 'default';
 
   const swatchImage = paint?.primarySwatchCard?.imageKitUpload?.filePath
@@ -26,7 +25,7 @@
             <img
               loading="lazy"
               src={swatchImage}
-              class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 hover:opacity-0 text-white text-xs leading-tight"
+              class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 text-white text-xs leading-tight"
               alt={paint.name} />
           {/if}
         </div>
@@ -47,9 +46,7 @@
       <img
         loading="lazy"
         src={swatchImage}
-        class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 text-white text-xs leading-tight {hovered
-          ? 'opacity-0'
-          : ''}"
+        class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 text-white text-xs leading-tight"
         alt={paint.name} />
     {/if}
   </div>

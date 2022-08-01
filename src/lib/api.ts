@@ -1225,6 +1225,7 @@ export async function getUserProfileOwnedPalettes(data): Promise<{
           description: true,
           _count: true,
           paintsInPalette: {
+            take: 18,
             select: {
               paint: {
                 select: {
@@ -1367,6 +1368,15 @@ export async function getManufacturer(slug): Promise<{
       sellPaint: true,
       sellPaper: true,
       _count: true,
+      lines: {
+        orderBy: {
+          name: 'asc'
+        },
+        select:{
+          name: true,
+          _count: true,
+        }
+      },
       swatchCard: {
         orderBy: {
           createdAt: 'desc',

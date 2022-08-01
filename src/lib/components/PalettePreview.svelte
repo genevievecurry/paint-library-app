@@ -10,7 +10,6 @@
   let paintsInPaletteCount: number, lotsOfPaints: boolean, diff: number;
 
   $: shadowPaints = [];
-  $: hovered = false;
 
   onMount(() => {
     paintsInPaletteCount = palette?._count?.paintsInPalette || 0;
@@ -26,18 +25,10 @@
 </script>
 
 <div class="border-2 border-black p-1">
-  <a
-    href={`/palette/${palette.uuid}/${palette.slug}`}
-    class="relative block"
-    on:mouseenter={() => (hovered = true)}
-    on:mouseleave={() => (hovered = false)}>
+  <a href={`/palette/${palette.uuid}/${palette.slug}`} class="relative block">
     <div class="grid grid-cols-6 grid-rows-3 gap-1">
       {#each palette?.paintsInPalette as paintPalette, index}
-        <PaintPreview
-          type="simple"
-          paint={paintPalette.paint}
-          {index}
-          {hovered} />
+        <PaintPreview type="simple" paint={paintPalette.paint} {index} />
       {/each}
       {#if shadowPaints.length > 0}
         {#each shadowPaints as _shadowPaint}

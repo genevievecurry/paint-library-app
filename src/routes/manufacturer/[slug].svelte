@@ -20,6 +20,7 @@
 </script>
 
 <script lang="ts">
+  import { goto } from '$app/navigation';
   import Header from '$lib/components/Header.svelte';
   import { generateUrl } from '$lib/generate';
   import { timeAgo } from '$lib/utility';
@@ -33,7 +34,12 @@
 </svelte:head>
 
 <div class="lg:container mx-auto px-4 sm:px-6">
-  <Header title={manufacturer.name} {pathname} />
+  <Header
+    title={manufacturer.name}
+    {pathname}
+    subtitle={manufacturer.website
+      ? `<a href='${manufacturer.website}' target='_blank' rel='noopener noreferrer' class='decorate-link external-link'>Visit ${manufacturer.name}'s website</a>`
+      : null} />
 
   {#if manufacturer.sellPaint}
     <section class="mb-16">
@@ -48,53 +54,69 @@
         </div>
       {:else}
         <div class="overflow-y-auto">
-          <table class="border-collapse table-auto w-full text-sm relative">
-            <thead>
-              <tr class="border-b-2 border-black">
-                <th class="sticky top-0">&nbsp;</th>
-                <th class="sticky top-0 font-bold p-3 pl-1 text-left">Name</th>
+          <table
+            class="border-separate my-4 w-full table-auto"
+            style="border-spacing: 0px;">
+            <thead class="text-left border-b relative">
+              <tr>
+                <th
+                  class="sticky top-0 p-1 whitespace-nowrap bg-white border-y border-l"
+                  >&nbsp;</th>
+                <th
+                  class="sticky top-0 px-3 py-3 whitespace-nowrap bg-white border-y text-left border-r sm:border-r-0"
+                  >Name</th>
                 {#if manufacturer._count.lines > 0}<th
                     class="px-3 text-xs text-left">Line</th
                   >{/if}
-                <th class="sticky top-0 px-3 text-xs">Lightfastness</th>
-                <th class="sticky top-0 px-3 text-xs">Transparency</th>
-                <th class="sticky top-0 px-3 text-xs">Staining</th>
-                <th class="sticky top-0 px-3 text-xs">Granulating</th>
-                <th class="sticky top-0 px-3 text-xs text-left">Pigments</th>
+                <th
+                  class="sticky top-0 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y"
+                  >Lightfastness</th>
+                <th
+                  class="sticky top-0 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y"
+                  >Transparency</th>
+                <th
+                  class="sticky top-0 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y"
+                  >Staining</th>
+                <th
+                  class="sticky top-0 px-3 text-xs text-center hidden sm:table-cell whitespace-nowrap bg-white border-y"
+                  >Granulating</th>
+                <th
+                  class="sticky top-0 px-3 text-xs hidden sm:table-cell whitespace-nowrap bg-white border-y text-left border-r"
+                  >Pigments</th>
               </tr>
             </thead>
             <tbody>
               {#each manufacturer.paints as paint}
-                <tr class="border-b border-gray-400">
-                  <td class="py-1">
+                <tr
+                  class="transition-all border-b cursor-pointer"
+                  on:click={() =>
+                    goto(
+                      generateUrl({
+                        prefix: 'paint',
+                        target: paint,
+                      }),
+                    )}>
+                  <td class="pl-1 pr-3 py-1 border-l border-b">
                     <div class="w-12 border-2 border-black p-px">
                       <div
                         class="aspect-w-16 aspect-h-16 "
                         style={`background-color: ${paint.hex};`}>
-                        <a
-                          href={generateUrl({
-                            prefix: 'paint',
-                            target: paint,
-                          })}>
-                          {#if paint?.primarySwatchCard?.imageKitUpload?.filePath}
-                            <img
-                              loading="lazy"
-                              src={paint?.primarySwatchCard?.imageKitUpload
-                                ?.filePath
-                                ? `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${paint?.primarySwatchCard?.imageKitUpload?.filePath}`
-                                : ''}
-                              class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 hover:opacity-0 overflow-hidden text-xxs leading-tight"
-                              alt={paint.name} />
-                          {/if}
-                        </a>
+                        {#if paint?.primarySwatchCard?.imageKitUpload?.filePath}
+                          <img
+                            loading="lazy"
+                            src={paint?.primarySwatchCard?.imageKitUpload
+                              ?.filePath
+                              ? `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${paint?.primarySwatchCard?.imageKitUpload?.filePath}`
+                              : ''}
+                            class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 hover:opacity-0 overflow-hidden text-xxs leading-tight"
+                            alt={paint.name} />
+                        {/if}
                       </div>
                     </div>
                   </td>
-                  <td class="px-3 pl-1">
-                    <a
-                      class="decorate-link"
-                      href={generateUrl({ prefix: 'paint', target: paint })}
-                      >{paint.name}</a>
+                  <td
+                    class="px-3 sm:table-cell border-b border-r sm:border-r-0">
+                    <span class="decorate-link">{paint.name}</span>
                   </td>
                   {#if manufacturer._count.lines > 0}
                     <td class="px-3"
@@ -103,34 +125,34 @@
                         : '<div class="text-center"><span class="text-gray-400">&bull;</span></div>'}</td>
                   {/if}
                   <td
-                    class="px-3 text-center"
+                    class="px-3 hidden sm:table-cell border-b text-center"
                     title={paint.lightfastRating.label}>
                     {@html paint.lightfastRating.code !== 'X' &&
                     paint.lightfastRating.code !== 'NR'
                       ? paint.lightfastRating.code
                       : '<span class="text-gray-400">&bull;</span>'}</td>
                   <td
-                    class="px-3 text-center"
+                    class="px-3 hidden sm:table-cell border-b text-center"
                     title={paint.transparencyRating.label}>
                     {@html paint.transparencyRating.code !== 'X'
                       ? paint.transparencyRating.code
                       : '<span class="text-gray-400">&bull;</span>'}
                   </td>
                   <td
-                    class="px-3 text-center"
+                    class="px-3 hidden sm:table-cell border-b text-center"
                     title={paint.stainingRating.label}>
                     {@html paint.stainingRating.code !== 'X'
                       ? paint.stainingRating.code
                       : '<span class="text-gray-400">&bull;</span>'}
                   </td>
                   <td
-                    class="px-3 text-center"
+                    class="px-3 hidden sm:table-cell border-b text-center"
                     title={paint.granulationRating.label}>
                     {@html paint.granulationRating.code !== 'X'
                       ? paint.granulationRating.code
                       : '<span class="text-gray-400">&bull;</span>'}
                   </td>
-                  <td class="px-3">
+                  <td class="px-3 hidden sm:table-cell border-b border-r">
                     {#each paint.pigmentsOnPaints as pigmentsOnPaints, index}
                       <a
                         class="decorate-link"

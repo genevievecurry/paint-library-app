@@ -31,7 +31,7 @@
               <img
                 loading="lazy"
                 src={swatchImage}
-                class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all opacity-100 hover:opacity-0 "
+                class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all"
                 alt={paint.name} />
             {/if}
           </a>
@@ -123,9 +123,7 @@
               draggable={!editPaletteMode}
               loading="lazy"
               src={swatchImage}
-              class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all text-white text-sm leading-tight {editPaletteMode
-                ? ''
-                : 'opacity-100 hover:opacity-0'}"
+              class="w-full h-full object-center object-cover lg:w-full lg:h-full transition-all text-white text-sm leading-tight"
               alt={paint.name} />
           {/if}
         </div>
