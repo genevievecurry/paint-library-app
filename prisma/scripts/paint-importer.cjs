@@ -35,7 +35,7 @@ const generateSlug = ({ value, uuid = false }) => {
 };
 
 async function main() {
-  const importPaintCsv = `${__dirname}/test-paint-import.csv`;
+  const importPaintCsv = `${__dirname}/paint-import-8-7-22.csv`;
   const parsedPaintCsv = await processFile(importPaintCsv);
 
   async function getPigmentBySlug(slug) {
@@ -50,7 +50,7 @@ async function main() {
   }
 
   async function setPigmentOnPaint(pigmentIds) {
-    const pigmentSlugs = pigmentIds.split('|');
+    const pigmentSlugs = pigmentIds ? pigmentIds.split('|').filter(n => n).map(x => x.trim()) : [];
     const results = await Promise.all(
       pigmentSlugs.map(async (slug) => {
         const pigmentId = await getPigmentBySlug(slug);
@@ -58,7 +58,7 @@ async function main() {
         return {
           pigment: {
             connect: {
-              id: pigmentId.id,
+              id: pigmentId?.id ? pigmentId.id : undefined,
             },
           },
         };
@@ -99,29 +99,49 @@ async function main() {
     return line.id;
   }
 
-  const paintImport = parsedPaintCsv.forEach(async (paint, i) => {
-    const newPaint = await prisma.paint.create({
-      data: {
+  const paintImport = parsedPaintCsv.forEach(async (paint) => {
+    const newPaint = await prisma.paint.upsert({
+      where: {
+        manufacturerId_name: {
+          manufacturerId: await manufacturerId(paint.manufacturer),
+          name: paint.name,
+        }
+      },
+      update: {
+        hex: paint.hex,
+        line: paint.lineId
+          ? { connect: { id: Number(paint.lineId) } }
+          : undefined,
+        lightfastRating: { connect: { id: Number(paint.lightfastRatingId || 1) } },
+        transparencyRating: { connect: { id: Number(paint.transparencyRatingId || 1) } },
+        stainingRating: { connect: { id: Number(paint.stainingRatingId || 1) } },
+        granulationRating: { connect: { id: Number(paint.granulationRatingId || 1) } },
+        manufacturerDescription: paint.manufacturerDescription,
+        productUrl: paint.url,
+      },
+      create: {
         uuid: v4(),
         name: paint.name,
         slug: generateSlug({ value: paint.name, uuid: false }),
-        hex: paint.hex,
         manufacturer: {
           connect: { id: await manufacturerId(paint.manufacturer) },
         },
+        hex: paint.hex,
         line: paint.lineId
           ? { connect: { id: Number(paint.lineId) } }
           : undefined,
         paintType: { connect: { id: 1 } },
         author: { connect: { uuid: '37287234987' } },
-        lightfastRating: { connect: { id: 1 } },
-        transparencyRating: { connect: { id: 1 } },
-        stainingRating: { connect: { id: 1 } },
-        granulationRating: { connect: { id: 1 } },
+        lightfastRating: { connect: { id: Number(paint.lightfastRatingId || 1) } },
+        transparencyRating: { connect: { id: Number(paint.transparencyRatingId || 1) } },
+        stainingRating: { connect: { id: Number(paint.stainingRatingId || 1) } },
+        granulationRating: { connect: { id: Number(paint.granulationRatingId || 1) } },
+        manufacturerDescription: paint.manufacturerDescription,
+        productUrl: paint.url,
         published: true,
-        pigmentsOnPaints: {
+        pigmentsOnPaints: paint.pigmentSlugs ? {
           create: await setPigmentOnPaint(paint.pigmentSlugs),
-        },
+        } : undefined,
       },
     });
   });

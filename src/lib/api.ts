@@ -1333,6 +1333,7 @@ export async function getAllManufacturers(searchParams): Promise<{
       sellPaint: true,
       sellPaper: true,
       lines: true,
+      createdAt: true,
       _count: true
     },
     orderBy: {
@@ -1346,6 +1347,49 @@ export async function getAllManufacturers(searchParams): Promise<{
   return {
     body,
     status,
+  };
+}
+
+export async function upsertManufacturer(data): Promise<{
+  status: number;
+  body: Record<string, unknown>;
+}> {
+  let body = {};
+  let status = 500;
+
+  const slug = generateSlug({ value: data.name, uuid: false });
+
+  body = await prisma.manufacturer.upsert({
+    where: {
+      id: data.id,
+    },
+    update: {
+      name: data.name,
+      website: data.website,
+      sellPaper: data.sellPaper,
+      sellPaint: data.sellPaint,
+      slug: slug,
+    },
+    create: {
+      name: data.name,
+      website: data.website,
+      sellPaper: data.sellPaper,
+      sellPaint: data.sellPaint,
+      slug: slug,
+    },
+    select: {
+      slug: true,
+      name: true,
+    }
+  })
+
+  if (body !== null) {
+    status = 200;
+  }
+
+  return {
+    status,
+    body
   };
 }
 
@@ -1368,6 +1412,7 @@ export async function getManufacturer(slug): Promise<{
       sellPaint: true,
       sellPaper: true,
       _count: true,
+      createdAt: true,
       lines: {
         orderBy: {
           name: 'asc'

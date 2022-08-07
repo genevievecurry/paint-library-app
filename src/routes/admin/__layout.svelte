@@ -64,6 +64,22 @@
         </li>
         <li class="my-2">
           <a
+            href="/admin/manufacturers"
+            class="decorate-link"
+            class:current={pathname === '/admin/manufacturers'}
+            >Manufacturers</a>
+          <ul class="ml-3 my-1 text-sm">
+            <li>
+              <a
+                href="/admin/manufacturers/create"
+                class="decorate-link"
+                class:current={pathname === '/admin/manufacturers/create'}
+                >Create Manufacturer</a>
+            </li>
+          </ul>
+        </li>
+        <li class="my-2">
+          <a
             href="/admin/notes"
             class="decorate-link"
             class:current={pathname === '/admin/notes'}>Notes</a>
