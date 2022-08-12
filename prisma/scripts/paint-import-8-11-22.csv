@@ -1,0 +1,726 @@
+manufacturer,name,hex,lineId,pigmentSlugs,lightfastRating,transparencyRating,stainingRatingId,granulationRatingId
+Art Spectrum,Antwerp Blue,#024399,,PB27,I,T,X,X
+Art Spectrum,Aureolin,#BB8C2E,,PY40,II,T,4,N
+Art Spectrum,Australian Green Gold,#82b60b,,PY129|PG7,I,T,X,X
+Art Spectrum,Australian Grey,#f0b095,,PBr7|PY42,I,O,1,Y
+Art Spectrum,Australian Leaf Green Dark,#044703,,PY129|PG7|PR175|PY83,I,S/T,X,X
+Art Spectrum,Australian Red Gold,#f1531b,,PY83|PR101|PV19,I,T,1,Y
+Art Spectrum,Australian Turquoise,#44f9b0,,PG50,I,O,1,Y
+Art Spectrum,Brilliant Red,#fd3a81,,PR170,II,S/T,X,X
+Art Spectrum,Burnt Sienna Hue,#c06842,,PR101,I,S/T,X,X
+Art Spectrum,Burnt Sienna Natural,#c5734c,,PBr7,I,T,X,Y
+Art Spectrum,Burnt Umber,#5A3C3A,,PBr7|PY42|PR101,I,S/T,1,Y
+Art Spectrum,Cadmium Deep Red,#e20a1b,,PR108,I,O,X,X
+Art Spectrum,Cadmium Orange,#f76538,,PY37|PO20,I,O,X,X
+Art Spectrum,Cadmium Red,#f12a47,,PR108,I,O,X,X
+Art Spectrum,Cadmium Yellow,#fde21d,,PY37,I,O,4,N
+Art Spectrum,Cadmium Yellow Deep,#D89328,,PO20,I,O,4,N
+Art Spectrum,Cadmium Yellow Pale,#fcee1c,,PY35,I,O,4,N
+Art Spectrum,Cerulean Blue,#0F8AC6,,PB35,I,S/T,1,Y
+Art Spectrum,Chinese White,#FFFFFF,,PW4,I,O,X,X
+Art Spectrum,Cobalt Blue,#2280C2,,PB28,I,S/T,X,X
+Art Spectrum,Cobalt Violet,#d71bf3,,PV14,I,T,1,Y
+Art Spectrum,Coral,#f2201f,,PR170|PO36,II,S/T,X,X
+Art Spectrum,Flinders Blue (Mineral Violet),#760be7,,PV16,I,S/T,1,Y
+Art Spectrum,Flinders Red Violet,#8e03a8,,PV19,I,S/T,X,X
+Art Spectrum,French Ultramarine,#06329f,,PB29,I,S/T,1,Y
+Art Spectrum,Hooker's Green Permanent,#02be02,,PG7|PY42,I,S/T,4,N
+Art Spectrum,Indian Red,#950113,,PR101,I,O,X,X
+Art Spectrum,Indigo Blue,#061931,,PB29|PBk6|PB15:3,II,S/T,4,N
+Art Spectrum,Ivory Black,#050505,,PBk9,I,S/T,1,Y
+Art Spectrum,Lamp Black,#010101,,PBk6,I,S/T,X,X
+Art Spectrum,Lemon Yellow,#FFF466,,PY3,II,S/T,X,X
+Art Spectrum,Light Red,#a40000,,PR101|PY42,I,O,X,X
+Art Spectrum,Mars Violet,#580c2a,,PR101,I,O,X,X
+Art Spectrum,Naples Yellow,#FDDB70,,PW4|PY42,I,O,X,X
+Art Spectrum,Naples Yellow Reddish,#fe946a,,PW4|PY42|PO20,I,O,X,X
+Art Spectrum,Neutral Tint,#2C2D31,,PB15:3|PBk6|PV19,II,T,X,X
+Art Spectrum,Olive Green Permanent,#56710c,,PY42|PG7,I,S/T,4,Y
+Art Spectrum,Oxide of Chromium,#2C5231,,PG17,I,O,4,N
+Art Spectrum,Payne’s Grey,#3C4A57,,PB15:3|PBk6|PV19,II,S/T,4,N
+Art Spectrum,Permanent Crimson,#ea0343,,PR176|PR101,II,T,4,N
+Art Spectrum,Permanent Gamboge,#ffbf1b,,PY97|PY83,II,T,X,X
+Art Spectrum,Permanent Indian Yellow,#fda913,,PY83,II,T,X,X
+Art Spectrum,Permanent Magenta,#8D2C4E,,PV19,I,S/T,4,N
+Art Spectrum,Permanent Mauve,#2f28f0,,PB29|PV19,I,T,4,N
+Art Spectrum,Permanent Orange,#fc9732,,PO62,II,S/T,X,X
+Art Spectrum,Permanent Rose,#DF3461,,PV19,I,T,4,N
+Art Spectrum,Phthalo Blue,#1895e7,,PB15:3,II,T,4,N
+Art Spectrum,Phthalo Green,#06cc15,,PG7,I,T,4,N
+Art Spectrum,Pilbara Red,#b20000,,PR101|PV19|PBr7,I,T,X,X
+Art Spectrum,Prussian Blue,#1E3A50,,PB27,I,S/T,4,N
+Art Spectrum,Raw Sienna Light Hue,#e9aa2c,,PY42,I,S/T,1,Y
+Art Spectrum,Raw Sienna Natural Deep,#d7a462,,PBr7,I,S/T,1,Y
+Art Spectrum,Raw Umber,#bc6617,,PBr7|PY42|PR101,I,S/T,1,Y
+Art Spectrum,Rose Madder,#A32A35,,PV19,I,T,4,N
+Art Spectrum,Sap Green Permanent,#5df40c,,PY129|PG7,I,T,4,N
+Art Spectrum,Sepia,#282015,,PR101|PBk6,I,S/T,X,X
+Art Spectrum,Spectrum Blue,#274fa7,,PB29|PB15:3,II,S/T,4,N
+Art Spectrum,Spectrum Crimson,#a30057,,PV19,I,T,4,N
+Art Spectrum,Spectrum Red,#fd2746,,PR112|PO5,II,O,X,X
+Art Spectrum,Spectrum Yellow,#fddc13,,PY97|PY83,II,S/T,4,N
+Art Spectrum,Tasman Blue,#40a8fd,,PW4|PB29|PG7,I,O,X,X
+Art Spectrum,Ultramarine Blue,#0d39a1,,PB29,I,S/T,1,Y
+Art Spectrum,Ultramarine Violet,#3f21f5,,PV15,I,T,X,X
+Art Spectrum,Vermilion Permanent,#fa3a27,,PO36,I,S/T,4,N
+Art Spectrum,Viridian,#02e32f,,PG18,I,T,1,Y
+Art Spectrum,Warm Sepia,#4c3b2b,,PR101|PBk6,I,S/T,X,X
+Art Spectrum,Yellow Ochre,#ae5700,,PY42,I,O,1,Y
+Cass Art,Alizarin Crimson,#992D3D,,PR179|PR208|PY83,I,T,X,X
+Cass Art,Blue Violet,#4b1c85,,PV15,I,T,X,X
+Cass Art,Burnt Sienna,#ac4a20,,PBr7,I,T,X,X
+Cass Art,Burnt Umber,#5A3C3A,,PBr7,I,T,X,X
+Cass Art,Cadmium Red Light,#e3001b,,PR108,I,O,X,X
+Cass Art,Cadmium Yellow Light,#F1A132,,PY35,I,O,X,X
+Cass Art,Cerulean Blue,#0F8AC6,,PB35,I,O,X,X
+Cass Art,Cobalt Blue,#2280C2,,PB28,I,T,X,X
+Cass Art,Cobalt Teal,#08b6bd,,PG50,I,O,X,X
+Cass Art,Dioxazine Purple,#300658,,PV23,I,S/O,X,X
+Cass Art,Hooker's Green,#006A3A,,PY83|PG36,I,T,X,X
+Cass Art,Indian Yellow,#ffcc00,,PY93,I,T,X,X
+Cass Art,Indigo,#26343F,,PB15:1|PBk7,I,S/O,X,X
+Cass Art,Lamp Black,#040204,,PBk9|PY43,I,S/O,X,X
+Cass Art,Lemon Yellow,#FFF466,,PY3,I,T,X,X
+Cass Art,Olive Green,#4E5744,,PY150|PG36|PBr23,I,T,X,X
+Cass Art,Payne’s Grey,#3C4A57,,PV19|PB15:1|PBk7,I,S/O,X,X
+Cass Art,Pyrole Orange,#eb4511,,PO73,I,S/O,X,X
+Cass Art,Pyrole Yellow Deep,#ffa70d,,PY154,I,S/O,X,X
+Cass Art,Quinacridone Red,#7F2B2C,,PR208|PR146,I,T,X,X
+Cass Art,Raw Sienna,#AC6A3D,,PBr7,I,T,X,X
+Cass Art,Rose Madder Lake,#d50d65,,PV19,I,T,X,X
+Cass Art,Sap Green,#407335,,PB29|PY154,I,S/O,X,X
+Cass Art,Sepia,#402423,,PBr7|PBk7,X,S/O,X,X
+Cass Art,Titanium White,#FFFFFF,,PW6,I,O,X,X
+Cass Art,Ultramarine Blue,#0a1194,,PB29|PV15,I,T,X,X
+Cass Art,Vermillion,#d52927,,PR242,I,O,X,X
+Cass Art,Yellow Ochre,#ae5700,,PY43,I,O,X,X
+Isaro,Agapanthe Blue,#11157f,,PB29|PV16,II,S/O,3,Y
+Isaro,Azure Blue,#3174a9,,PB36,X,S/O,3,Y
+Isaro,Beverly Rose,#ba777c,,PY154|PR122,II,S/O,3,N
+Isaro,Boreal Blue,#54556b,,PB29,II,O,4,Y
+Isaro,Burnt Sienna,#ac4a20,,PBr7,III,S/T,2,Y
+Isaro,Burnt Umber,#5A3C3A,,PBr7,I,S/T,2,Y
+Isaro,Cadmium Orange,#d85735,,PO20,III,O,3,N
+Isaro,Cadmium Red Deep,#D4383F,,PR108,III,O,3,N
+Isaro,Cadmium Red Light,#d1514d,,PR108,III,O,3,N
+Isaro,Cadmium Yellow Deep,#D89328,,PY35,III,O,4,N
+Isaro,Cadmium Yellow Lemon,#f6ea5f,,PY35,III,O,4,N
+Isaro,Cadmium Yellow Light,#F1A132,,PY35,I,O,3,N
+Isaro,Cerulean Blue,#0F8AC6,,PB35,III,S/T,2,Y
+Isaro,Chartreuse Yellow,#d1b955,,PY129,II,T,3,N
+Isaro,Chromium Oxide Green,#4b5d39,,PG17,X,O,3,N
+Isaro,Cobalt Blue,#2280C2,,PB28,III,S/T,2,Y
+Isaro,Coppery Red,#c46e65,,PR101|PW20,III,S/T,X,N
+Isaro,Emerald Green,#6bb696,,PG18,I,S/T,1,Y
+Isaro,English Red,#b25248,,PR101,III,O,3,N
+Isaro,Eternal Summit,#cfe0dd,,PW6|PB36|PW20,I,S/T,2,N
+Isaro,Glimmer Green,#7d8484,,,X,X,X,X
+Isaro,Gold,#c98a5f,,PW20,X,T,1,N
+Isaro,Icy Lake,#496091,,PBr7|PB29|PW20,I,S/T,3,Y
+Isaro,Imperial Moon,#8f4d4d,,PR101|PV16,I,S/T,2,Y
+Isaro,Indantrene Blue,#2b3e70,,PB60,II,T,4,X
+Isaro,Indian Yellow,#ecb555,,PY154|PO73,II,T,3,N
+Isaro,Indigo Blue,#1e3958,,PBr7|PB29|PB15,I,O,X,X
+Isaro,Isaro Green Light,#b3bc67,,PG36|PY35,I,S/T,3,N
+Isaro,Isaro Grey Light,#8c8774,,PR101|PG17,III,S/T,2,N
+Isaro,Isaro Mauve,#9e3d6a,,PV19,III,T,4,N
+Isaro,Isaro Orange,#e16424,,PO61|PR206|PBr23,I,T,4,N
+Isaro,Isaro Pink,#d25081,,PR122,III,T,4,N
+Isaro,Isaro Purple Deep,#663957,,PV23,II,T,4,N
+Isaro,Isaro Pyrrole Red,#db4250,,PR254,II,T,4,N
+Isaro,Isaro Yellow Deep,#fb9c41,,PY154|PO73,III,T,X,X
+Isaro,Isaro Yellow Light,#f5d636,,PY154,II,T,3,N
+Isaro,Lamp Black,#2d2b29,,PBk6,III,O,X,N
+Isaro,Magenta,#af3a5f,,PV19,II,T,4,N
+Isaro,Mars Brown Light,#925439,,PR101,I,O,3,N
+Isaro,Mars Red,#a5503b,,PR101,I,T,X,N
+Isaro,Mindy Green,#8d6e27,,PY165|PG36,II,T,4,N
+Isaro,Nickel Yellow,#dfd881,,PY53,III,S/T,1,Y
+Isaro,Nordmann Green,#315663,,PG7|PV16,II,S/O,3,Y
+Isaro,Olive Green,#4E5744,,PG7|PY42|PY35|PV19,III,S/T,3,N
+Isaro,Oxide Orange,#ce7e5c,,PR101,I,O,3,X
+Isaro,Oxide Purple,#7b5352,,PR101,III,O,3,Y
+Isaro,Payne’s Grey,#3b495d,,PBk11|PB29|PB15,III,O,4,N
+Isaro,Pearly Rose Deep,#8c6e81,,PR170,II,S/O,3,N
+Isaro,Pearly Rose Light,#c1a493,,PR101,I,S/O,3,N
+Isaro,Perylene Red,#732e25,,PR179,III,T,3,N
+Isaro,Phthalo Blue,#184490,,PB15,III,T,4,N
+Isaro,Phthalo Green,#2a6142,,PG7,III,T,3,N
+Isaro,Phthalo Green Yellow,#48a062,,PG36,X,T,3,N
+Isaro,Podery Rose,#d0a1af,,PW6:1|PR122,I,X,4,N
+Isaro,Prussian Blue,#1E3A50,,PB27,III,T,4,N
+Isaro,Pyrrole Orange,#dc522c,,PO73,III,T,3,N
+Isaro,Pyrrole Red Deep,#ae4b4f,,PR264,III,T,3,N
+Isaro,Raw Sienna,#AC6A3D,,PBr7,III,S/T,1,Y
+Isaro,Raw Umber,#6b554a,,PBr7,I,S/T,1,Y
+Isaro,Saffron Yellow,#efab45,,PY110,III,T,3,N
+Isaro,Sap Green,#407335,,PG36|PY165,II,T,4,N
+Isaro,Satine Blue,#161d4b,,PB29|PBr7|PV16,I,S/T,X,Y
+Isaro,Scarlett Red,#bb312e,,PR255,II,T,4,N
+Isaro,Sepia,#59514f,,PBk11|PR101|PY42,III,O,3,Y
+Isaro,Star Dust,#c28352,,PY42,II,S/T,2,N
+Isaro,Steel Blue,#73727a,,PBr7|PB29,III,O,3,Y
+Isaro,Sylver Sky,#bcb5b3,,PR101|PW20,I,S/T,1,N
+Isaro,Titanium Beige,#f1eada,,PW6:1,X,S/T,X,N
+Isaro,Titanium White,#FFFFFF,,PW6,III,O,X,X
+Isaro,Tropical Green,#7daca7,,PB29|PG7,II,T,2,N
+Isaro,Turquoise Green,#327786,,PB15|PG7,I,T,3,N
+Isaro,Ultramarine Blue,#285cba,,PB29,III,S/T,3,Y
+Isaro,Ultramarine Pink,#c299b5,,PR259,III,S/T,1,Y
+Isaro,Ultramarine Violet,#4B326F,,PV14,III,S/T,2,Y
+Isaro,Van Dijckx Brown,#4d3e3c,,PR101|PBk6,III,O,3,X
+Isaro,Venetian Red,#9a4d49,,PR101,III,O,3,N
+Isaro,Yellow Ochre,#ae5700,,PY42,III,S/T,3,N
+Ken Bromley,Alizarin Crimson,#992D3D,,PR83:1,II,T,X,X
+Ken Bromley,Aureolin,#BB8C2E,,PY40,II,T,X,X
+Ken Bromley,Burnt Sienna,#ac4a20,,PR101,I,S/T,X,X
+Ken Bromley,Burnt Umber,#5A3C3A,,PBr7,II,O,X,X
+Ken Bromley,Burnt Umber (Dark),,,PBr7,II,O,X,X
+Ken Bromley,Cadmium Orange,#d85736,,PO20,I,O,X,X
+Ken Bromley,Cadmium Red,#df4b4a,,PR108,II,O,X,X
+Ken Bromley,Cadmium Yellow,#fde21d,,PY37,I,O,X,X
+Ken Bromley,Cerulean Blue,#0F8AC6,,PB35,I,S/T,X,X
+Ken Bromley,Cobalt Blue,#2280C2,,PB28,II,S/T,X,X
+Ken Bromley,Cotswold Stone,,,PW6|PY42|PR101,I,O,X,X
+Ken Bromley,Dioxazine Violet,#644390,,PV23,II,S/T,X,X
+Ken Bromley,French Ultramarine,#06329f,,PB29,II,S/T,X,X
+Ken Bromley,Hooker's Green,#006A3A,,PG7|PG8|PY3,I,S/T,X,X
+Ken Bromley,Lamp Black,#2d2b29,,PBk7,I,O,X,X
+Ken Bromley,Lemon Yellow Azo,#FFF466,,PY3,II,S/T,X,X
+Ken Bromley,Light Red,#a40000,,PR101,I,O,X,X
+Ken Bromley,Manganese Violet,#8f5aa0,,PV16,I,S/T,X,X
+Ken Bromley,Naples Yellow,#FDDB70,,PW6|PY37|PR101|PO20,II,O,X,X
+Ken Bromley,Neutral Tint,#2C2D31,,PB15:3|PR101|PR177,II,S/T,X,X
+Ken Bromley,Payne's Grey (BS),#3C4A57,,PBk9|PB15:3,II,O,X,X
+Ken Bromley,Payne's Grey (Dark),#3C4A57,,PBk11|PB29|PB27|PR83:1,II,S/T,X,X
+Ken Bromley,Permanent Rose,#DF3461,,PV19,II,T,X,X
+Ken Bromley,Phthalo Blue (Green Shade),#2253b2,,PB15:3,I,S/T,X,X
+Ken Bromley,Phthalo Blue (Red Shade),#2A296A,,PB15:1,II,S/T,X,X
+Ken Bromley,Phthalo Green,#2a6142,,PG7,I,T,X,X
+Ken Bromley,Prussian Blue,#1E3A50,,PB27,II,S/T,X,X
+Ken Bromley,Quinacridone Rose,#ce184c,,PR122,II,T,X,X
+Ken Bromley,Raw Sienna,#AC6A3D,,PR101|PY42,I,S/T,X,X
+Ken Bromley,Raw Umber,#bc6617,,PR101|PY42,I,O,X,X
+Ken Bromley,Rose Madder,#A32A35,,PR209|PR254|PR177,II,T,X,X
+Ken Bromley,Sap Green,#407335,,PG7|PY1,II,T,X,X
+Ken Bromley,Sevres Blue,,,PW6|PB15:3,I,O,X,X
+Ken Bromley,Teal Blue,,,PB27|PB15:1,I,S/T,X,X
+Ken Bromley,Titanium White,#FFFFFF,,PW6,I,O,X,X
+Ken Bromley,Translucent Grey,,,PBk11|PBk7|PB15:3,II,S/T,X,X
+Ken Bromley,Venetian Red Translucent,,,PR101,II,T,X,X
+Ken Bromley,Vermilion Hue,#c5392e,,PR166,I,O,X,X
+Ken Bromley,Viridian Hue,#0C6144,,PG7|PY3,II,T,X,X
+Ken Bromley,Warm Sepia,#4c3b2b,,PBr7|PBk7,I,S/T,X,X
+Ken Bromley,Yellow Ochre,#ae5700,,PY42,I,S/T,X,X
+Paul Rubens,Blue Peacock (Glitter),,78,PB28,I,T,,
+Paul Rubens,Burnt Brown,,76,PBr7,,,,
+Paul Rubens,Burnt Sienna,#ac4a20,76,PBr7,,,,
+Paul Rubens,Cadmium Orange Yellow,,76,PO20,,,,
+Paul Rubens,Cadmium Red,#df4b4a,76,PR108,,,,
+Paul Rubens,Cadmium Red Light,#d1514d,76,PR108,,,,
+Paul Rubens,Cadmium Yellow Medium,#fce636,76,PY35,,,,
+Paul Rubens,China Red (Glitter),,78,PR254,I,S/T,,
+Paul Rubens,Chinese Red,,76,PR254,,,,
+Paul Rubens,Coal Black,,76,PBk7,,,,
+Paul Rubens,Cobalt Blue,#2280C2,76,PB28,,,,
+Paul Rubens,Cobalt Blue (Glitter),,78,PB28,I,T,,
+Paul Rubens,Emerald Green Deep,,76,PG7,,,,
+Paul Rubens,France Ultramarine,#06329f,76,PB29,,,,
+Paul Rubens,France Ultramarine (Glitter),#06329f,78,PB29,I,T,,
+Paul Rubens,Hooker's Green Brillight,,76,PG17,,,,
+Paul Rubens,Indian Yellow,,76,PY83,,,,
+Paul Rubens,Indian Yellow (Glitter),#f9d503,78,PY83,I,T,,
+Paul Rubens,Indigo,#26343F,76,PV19|PB15|PBk6,,,,
+Paul Rubens,Ivory Black,#2A2A2A,76,PBr9,,,,
+Paul Rubens,Lemon Sienna,,76,PY42,,,,
+Paul Rubens,Madder Red,,76,PR177,,,,
+Paul Rubens,Madder Red (Glitter),,78,PR177,I,S/O,,
+Paul Rubens,Magenta,#af3a5f,76,PR122,,,,
+Paul Rubens,Malachite Green,,76,PY101|PB19,,,,
+Paul Rubens,Napels Yellow Light,,76,PY53,,,,
+Paul Rubens,Naple Yellow,,76,PBr24,,,,
+Paul Rubens,Nickel Yellow,#dfd881,76,PY150,,,,
+Paul Rubens,Olive Green,#4E5744,76,PG17|PY53|PR101,,,,
+Paul Rubens,Payne's Grey,#3C4A57,76,PB15|PB29|PBk9,,,,
+Paul Rubens,Peacock Blue,#11679D,76,PB17,,,,
+Paul Rubens,Permanent Green,#7ab741,76,PG36|PY3|PY74,,,,
+Paul Rubens,Permanent Lemon Yellow (Glitter),,78,PY3,I,S/T,,
+Paul Rubens,Permanent Orange Red,,76,PY35,,,,
+Paul Rubens,Permanent Orange Red (Glitter),,78,PO73,I,S/O,,
+Paul Rubens,Permanent Violet,#5F408E,76,PV23,,,,
+Paul Rubens,Permanent Violet (Glitter),#5F408E,78,PV23,I,T,,
+Paul Rubens,Permanent Yellow Medium,,76,PY65,,,,
+Paul Rubens,Phthalocyanine Blue (Glitter),,78,PB36,I,O,,
+Paul Rubens,Pozzuoli Red Ochre,,76,PR101,,,,
+Paul Rubens,Prussian Blue,#1E3A50,76,PB27,,,,
+Paul Rubens,Raw Umber,#6b554a,76,PBr7,,,,
+Paul Rubens,Rose Red,,76,PV19,,,,
+Paul Rubens,Rose Red (Glitter),,78,PV19,I,T,,
+Paul Rubens,Royal Purple,,76,PV19|PB29,,,,
+Paul Rubens,Royal Purple (Glitter),,78,PV19|PB29,I,S/T,,
+Paul Rubens,Scarlet,#ed1200,76,PR123,,,,
+Paul Rubens,Sea Blue,,76,PB15:3,,,,
+Paul Rubens,Sea Blue (Glitter),,78,PB60|PB15|PBk6,I,S/T,,
+Paul Rubens,Sky Blue,,76,PB36,,,,
+Paul Rubens,Titanium White,#FFFFFF,76,PW6,,,,
+Paul Rubens,Transparent Medium Yellow,,76,PY83|PY110,,,,
+Paul Rubens,Tree Green,,76,PG7|PY3|PR101|PW4,,,,
+Paul Rubens,Turquoise Deep,,76,PG26,,,,
+Paul Rubens,Turquoise Light,,76,PB36,,,,
+Paul Rubens,Umber,#7d6543,76,PBr7|PR101,,,,
+Paul Rubens,Van Dyke Brown,#53463c,76,PBr7,,,,
+Paul Rubens,Violet,#331b6b,76,PV19,,,,
+Paul Rubens,Yellow Green,,76,PG36|PY74,,,,
+Paul Rubens,Yellow Green (Glitter),,78,PG36|PY74,I,S/T,,
+Paul Rubens,Yellow Light (Glitter),,78,PY1,I,S/T,,
+Paul Rubens,Yellow Ochre,#ae5700,76,PY42,,,,
+Prodigal Sons Pigments,Azurite #2,#227aba,,PB30,,,,
+Prodigal Sons Pigments,Baikal Lazurite,#91b3cf,,PB29,,,,
+Prodigal Sons Pigments,Benzimidazo Blue,#5b3e63,,PB80,,,,
+Prodigal Sons Pigments,Diopside,#96c070,,,,,,
+Prodigal Sons Pigments,Egyptian Blue,#508cfb,,PB31,,,,
+Prodigal Sons Pigments,Eskolaite,#374c2d,,,,,,
+Prodigal Sons Pigments,Han Blue,#4f60eb,,,,,,
+Prodigal Sons Pigments,Manganese Blue,#006bb1,,PB33,,,,
+Prodigal Sons Pigments,Manganese Brown,#554332,,PBr8,,,,
+Prodigal Sons Pigments,Pyrolusite,#56554c,,PBk14,,,,
+Prodigal Sons Pigments,Smalt 200,#1f007b,,PB32,,,,
+Prodigal Sons Pigments,Zirconium Blue,#4bb1ec,,PB71,,,,
+Roman Szmal,Anthraquinone Red,#b8363b,,PR177,I,T,4,N
+Roman Szmal,Anthraquinone Scarlet,#e94a49,,PR168,I,S/T,3,N
+Roman Szmal,Aquarius Black,#7d827e,,PBk11,I,S/T,2,Y
+Roman Szmal,Aquarius Brown,#8d5032,,PBr11,I,S/T,1,Y
+Roman Szmal,Aquarius Cobalt Blue,#3f5ab6,,PB72,I,S/T,3,Y
+Roman Szmal,Aquarius Green,#444639,,PY150|PBr25|PB29,I,S/T,3,Y
+Roman Szmal,Aquarius Grey,#757366,,PW6:1,I,S/O,1,Y
+Roman Szmal,Aquarius Orange,#e63d33,,,I,S/T,3,Y
+Roman Szmal,Aquarius Red,#d03c3a,,PR214,I,S/T,3,N
+Roman Szmal,Aquarius Yellow,#fefa54,,PY168,I,S/T,2,N
+Roman Szmal,Aureoline (Hue),#BB8C2E,,PY151,I,S/T,2,N
+Roman Szmal,Azo Red,#af4030,,PR144,I,T,3,N
+Roman Szmal,Benzimidazole Orange,#e8523f,,PO36,I,S/T,3,Y
+Roman Szmal,Benzymidazole Yellow,#f2b304,,PY154,I,T,3,N
+Roman Szmal,Bismuth Yellow,#fefb5d,,PY184,I,S/O,1,N
+Roman Szmal,Blue Ridge Burnt Sienna,#935e41,,PBr7,I,S/O,1,Y
+Roman Szmal,Blue Ridge Raw Sienna,#b68944,,PY43,I,S/T,1,Y
+Roman Szmal,Blue Sky,#327ccf,,PW4|PB15:1,I,S/O,2,N
+Roman Szmal,Brilliant Orange,#ec6241,,PO67,I,S/T,2,Y
+Roman Szmal,Brown Ochre,#6c493b,,PBr7,I,S/T,2,Y
+Roman Szmal,Buff Titanium,#b5a778,,PW6:1,I,S/O,3,Y
+Roman Szmal,Burnt Sienna Monte Amiata,#a74d2e,,PBr7,I,S/O,3,Y
+Roman Szmal,Cadmium Lemon,#faf159,,PY35,I,S/O,3,N
+Roman Szmal,Cadmium Orange,#ea5943,,PO20,I,S/O,4,Y
+Roman Szmal,Cadmium Red,#df4b4a,,PR108,I,O,3,Y
+Roman Szmal,Cadmium Red Deep,#D4383F,,PR108,I,O,3,Y
+Roman Szmal,Cadmium Vermilion,#e84746,,PR108,I,S/O,2,Y
+Roman Szmal,Cadmium Yellow Deep,#D89328,,PY37,I,S/O,3,N
+Roman Szmal,Cadmium Yellow Pale,#E7C81F,,PY35,I,S/O,3,N
+Roman Szmal,Caput Mortuum,#795851,,PR102,I,S/T,2,Y
+Roman Szmal,Cherry Quinacridone Red,#ec6b8f,,PR209,I,T,3,Y
+Roman Szmal,Chinese White,#FFFFFF,,PW4,I,S/T,2,N
+Roman Szmal,Chrome Orange Hue,#eaac57,,PO82,I,S/T,1,Y
+Roman Szmal,Chromium Oxide Green,#698e5d,,PG17,I,S/O,1,N
+Roman Szmal,Cobalt Blue,#2280C2,,PB28,I,S/O,2,Y
+Roman Szmal,Cobalt Blue Deep,#5668dd,,PB74,I,S/O,3,Y
+Roman Szmal,Cobalt Cerulean Blue,#6e91e0,,PB35,I,S/O,2,Y
+Roman Szmal,Cobalt Coelin Blue,#8abaf2,,PB35,I,S/O,3,Y
+Roman Szmal,Cobalt Green Deep,#566f6b,,PG26,I,S/O,1,Y
+Roman Szmal,Cobalt Green Light,#66a77b,,PG50,I,S/O,1,Y
+Roman Szmal,Cobalt Sea Blue,#429cbe,,PB28,I,S/O,3,Y
+Roman Szmal,Cobalt Teal,#60dae0,,PG50,I,S/O,1,Y
+Roman Szmal,Cobalt Turquoise,#41818e,,PB36,I,S/O,2,Y
+Roman Szmal,Cobalt Violet Deep,#ab8fd3,,PV14,I,S/T,1,Y
+Roman Szmal,Cobalt Violet Light,#f1b3ec,,PV49,I,S/T,1,Y
+Roman Szmal,Cyprus Burnt Umber,#8f6242,,PBr7,I,S/T,3,Y
+Roman Szmal,Cyprus Burnt Umber Deep,#725c44,,PBr7,I,S/T,2,Y
+Roman Szmal,Cyprus Burnt Umber Light,#9e7449,,PBr7,I,S/T,2,Y
+Roman Szmal,Cyprus Raw Umber,#897144,,PBr7,I,T,2,Y
+Roman Szmal,Cyprus Raw Umber Brownish,#b28a51,,PBr7,I,S/T,2,Y
+Roman Szmal,Cyprus Raw Umber Deep,#604f3a,,PBr7,I,S/T,3,Y
+Roman Szmal,Dark Ochre,#987e4e,,PY43,I,S/T,1,N
+Roman Szmal,Deep Green Gold,#a68d33,,PY129,I,T,2,N
+Roman Szmal,Deep Orange,#ea5631,,PO64,I,S/T,3,Y
+Roman Szmal,Dioxazine Violet,#644390,,PV37,I,T,3,Y
+Roman Szmal,English Red Deep,#a74f3f,,PR102,I,S/T,2,Y
+Roman Szmal,English Red Light,#ed906b,,PR102,I,S/T,2,Y
+Roman Szmal,Flesh Tint,#f2c5a1,,PW4|PY42|PR264,I,S/O,2,N
+Roman Szmal,French Ochre,#ec9e5c,,PY43,I,S/T,2,Y
+Roman Szmal,French Ultramarine,#356dea,,PB29,I,S/T,3,Y
+Roman Szmal,German Raw Umber Greenish,#9c8658,,PBr7,I,T,2,Y
+Roman Szmal,Ginger Red,#cc8254,,PR290,I,S/O,1,Y
+Roman Szmal,Glauconite,#8c7e42,,glauconite,I,S/T,3,Y
+Roman Szmal,Goethite,#75512a,,goethite-77491-77492-77499,I,S/T,3,Y
+Roman Szmal,Gold Ochre,#e7a54e,,PY43,I,S/T,2,Y
+Roman Szmal,Golden Orange,#ef8336,,PO62,I,S/T,3,Y
+Roman Szmal,Golden Yellow,#ec9c38,,PY181,I,S/T,3,Y
+Roman Szmal,Green Earth,#93af7f,,PG23,I,T,2,N
+Roman Szmal,Green Gold,#d7b53e,,PY150|PY129|PG36,I,T,3,N
+Roman Szmal,Hansa Yellow Deep,#f7de4a,,PY65,I,T,3,N
+Roman Szmal,Hansa Yellow Light,#fbf651,,PY3,I,S/T,2,N
+Roman Szmal,Hansa Yellow Medium,#fefb54,,PY74,I,S/T,2,N
+Roman Szmal,Hematite,#935f55,,PR102,I,O,3,Y
+Roman Szmal,Hematite Brown Shade,#5f4136,,PR102,I,S/O,3,Y
+Roman Szmal,Hematite Violet Shade,#77574e,,PR102,I,S/O,3,Y
+Roman Szmal,Hooker’s Green,#006A3A,,PY150|PB27,I,T,3,N
+Roman Szmal,Indanthrone Blue,#29418a,,PB60,I,S/T,4,N
+Roman Szmal,Indian Red,#703832,,PR101,I,O,3,Y
+Roman Szmal,Indian Yellow Hue,#f9e44b,,PY108,I,S/T,2,N
+Roman Szmal,Indigo Hue,#2f3b63,,PB60|PBk7,I,S/O,4,N
+Roman Szmal,Iron Chrome Brown,#4e4a46,,PBr29,I,S/O,1,Y
+Roman Szmal,Isoindolinone Yellow Deep,#eda63a,,PY110,I,T,2,Y
+Roman Szmal,Isoindolinone Yellow Light,#fcf957,,PY109,I,S/T,2,N
+Roman Szmal,Italian Burnt Sienna,#a65c3d,,PBr7,I,S/O,2,Y
+Roman Szmal,Italian Raw Sienna,#b77c41,,PBr7,I,T,2,Y
+Roman Szmal,Ivory Black,#2A2A2A,,PBk9,I,S/T,3,Y
+Roman Szmal,Lavenda,#9cadeb,,PW6|PB29|PV16,I,O,1,N
+Roman Szmal,Lazurite (Lapis Lazuli),#97a4c2,,lapis-lazuli-77007,I,S/T,1,Y
+Roman Szmal,Lemon Yellow,#FFF466,,PY61,I,S/T,2,N
+Roman Szmal,Malachite,#95cb95,,malachite-77492,I,S/T,1,Y
+Roman Szmal,Manganese Brown,#6c5e52,,PY164,I,S/O,1,Y
+Roman Szmal,Manganese Violet,#8f5aa0,,PV16,I,S/T,2,Y
+Roman Szmal,Mars Black,#4e514b,,PBk11,I,O,3,Y
+Roman Szmal,Mars Red,#a7614f,,PR101,I,O,3,Y
+Roman Szmal,Mineral Violet,#5f3b64,,PB29|PV19,I,T,2,Y
+Roman Szmal,Misty Morning,#6f84a7,,PG50|PV19,I,S/T,3,Y
+Roman Szmal,Mummy Transparent Red,#d5663e,,PR102,I,S/T,1,Y
+Roman Szmal,Naphthol Red,#e63b3c,,PR112,I,T,4,N
+Roman Szmal,Naples Yellow Deep,#ed9f53,,PBr24,I,S/O,3,N
+Roman Szmal,Naples Yellow Light,#f7de9e,,PW4|PY53|PBr24,I,S/O,2,N
+Roman Szmal,Naples Yellow Reddish,#f3c18b,,PW4|PY53|PBr24|PR264,I,S/O,2,N
+Roman Szmal,Natural Sienna Light,#f1b849,,PY43,I,S/T,2,Y
+Roman Szmal,Natural Sienna Monte Amiata,#c7883b,,PBr7,I,T,2,Y
+Roman Szmal,Neutral Tint,#3a3f40,,PB60|PBk6|PV19,I,S/T,2,N
+Roman Szmal,Nickel Azo Yellow,#f1ba3d,,PY150,I,T,2,N
+Roman Szmal,Nickel Titanate Yellow,#fdfb91,,PY53,I,S/T,3,N
+Roman Szmal,Ocean Blue,#304e63,,PBr24|PB15:3,I,S/T,3,Y
+Roman Szmal,Ochre Havana,#aa7946,,PY43,I,S/T,2,Y
+Roman Szmal,Olive Green Deep,#725d39,,PY150|PBk9|PG17|PBr25,I,S/T,3,Y
+Roman Szmal,Olive Green Light,#ae9c41,,PB29|PY129|PY150|PBr25,I,S/T,3,Y
+Roman Szmal,Payne’s Grey,#3C4A57,,PBk9|PB27|PR264,I,S/O,2,N
+Roman Szmal,Permanent Alizarin Crimson,#b23738,,PR176,I,T,4,N
+Roman Szmal,Permanent Green Light,#7dd34b,,PY154|PG7,I,T,3,N
+Roman Szmal,Permanent Orange,#f5c749,,PO59,I,T,3,N
+Roman Szmal,Permanent Red,#D5313C,,PR170,I,S/T,3,N
+Roman Szmal,Permanent Yellow,#f3b83f,,PY139,I,S/T,3,N
+Roman Szmal,Perylene Green,#6e7666,,PBk31,I,S/T,2,N
+Roman Szmal,Perylene Green Deep,#424f3d,,PBk32,I,S/T,3,N
+Roman Szmal,Perylene Maroon,#b33438,,PR179,I,T,4,Y
+Roman Szmal,Perylene Red,#cf5450,,PR178,I,S/T,4,Y
+Roman Szmal,Perylene Violet,#793e4a,,PV29,I,T,3,N
+Roman Szmal,Phthalo Blue (Green Shade),#2253b2,,PB15:3,I,T,4,N
+Roman Szmal,Phthalo Blue (Red Shade),#2A296A,,PB15:6,I,T,2,N
+Roman Szmal,Phthalo Green (Blue Shade),#255d55,,PG7,I,T,4,N
+Roman Szmal,Phthalo Green (Yellow Shade),#4dae75,,PG36,I,T,2,N
+Roman Szmal,Phthalo Turquoise,#245b98,,PB16,I,T,3,N
+Roman Szmal,Pompeii Red,#b65938,,PR102,I,S/T,2,Y
+Roman Szmal,Potter’s Pink,#b06d72,,PR233,I,S/T,3,Y
+Roman Szmal,Prussian Blue,#1E3A50,,PB27,I,T,3,N
+Roman Szmal,Przybysz’s Grey,#6a6073,,PB29|PR177|PG26,I,S/T,2,Y
+Roman Szmal,Pyrrol Orange,#e7443b,,PO73,I,S/T,3,N
+Roman Szmal,Pyrrol Red,#de2f35,,PR254,I,S/O,4,Y
+Roman Szmal,Pyrrol Scarlet,#e93d43,,PR255,I,S/T,4,N
+Roman Szmal,Pyrrole Rubine,#a63b39,,PR264,I,S/T,3,N
+Roman Szmal,Quinacridone Burnt Sienna,#96372d,,PO48,I,T,3,N
+Roman Szmal,Quinacridone Fuchsia,#b23063,,PR202,I,S/T,4,Y
+Roman Szmal,Quinacridone Gold,#df793a,,PY150|PO48,I,T,3,N
+Roman Szmal,Quinacridone Gold (Hue),#dca644,,PR102|PY150,I,T,4,Y
+Roman Szmal,Quinacridone Magenta,#dc478b,,PR122,I,T,3,N
+Roman Szmal,Quinacridone Maroon,#c5483c,,PR206,I,T,2,N
+Roman Szmal,Quinacridone Pink,#c83a83,,PR122,I,T,3,N
+Roman Szmal,Quinacridone Purple,#8b4b92,,PV55,I,S/T,1,Y
+Roman Szmal,Quinacridone Red,#7F2B2C,,PV19,I,T,3,N
+Roman Szmal,Quinacridone Scarlet,#b84736,,,I,S/T,1,Y
+Roman Szmal,Quinacridone Violet,#98355e,,PV19,I,S/T,3,N
+Roman Szmal,Quinophthalone Yellow,#f6ec58,,PY138,I,S/T,4,N
+Roman Szmal,Red Ochre,#ab5a41,,PR102,I,S/T,2,N
+Roman Szmal,Roman Black,#45463e,,PBk11,I,S/T,3,Y
+Roman Szmal,Royal Blue,#294161,,PW4|PB29|PB15:1,I,S/O,2,N
+Roman Szmal,Sap Green,#407335,,PY150|PG7,I,T,3,N
+Roman Szmal,Sap Green Light,#386f21,,PY110|PG7,I,S/T,3,Y
+Roman Szmal,Scarlet Lake,#E12927,,PR188,I,T,2,N
+Roman Szmal,Scarlet Red,#e73d38,,PR166,I,T,3,N
+Roman Szmal,Sepia,#463f38,,PBr7|PBk9,I,S/T,3,Y
+Roman Szmal,Shadow Grey,#555466,,PB29|PBr7|PV19,I,S/O,1,Y
+Roman Szmal,Shadow Violet,#484561,,PG50|PB29|PV19,I,S/T,3,Y
+Roman Szmal,Shadow Violet Light,#565c7b,,PB36|PB29|PR176,I,S/T,4,Y
+Roman Szmal,Terra Pozzuoli,#d26845,,PR102,I,S/T,2,Y
+Roman Szmal,Titanium White,#FFFFFF,,PW6,I,O,2,N
+Roman Szmal,Transparent Brown,#793e32,,PBr23,I,T,3,N
+Roman Szmal,Transparent Gold Ochre,#f8d865,,PY43,I,T,2,N
+Roman Szmal,Transparent Oxide Brown,#7e5542,,PR101,I,T,2,Y
+Roman Szmal,Transparent Oxide Red,#a75641,,PR101,I,T,2,Y
+Roman Szmal,Transparent Oxide Yellow,#bb8f4c,,PY42,I,T,3,Y
+Roman Szmal,Transparent Pyrrol Orange,#e95634,,PO71,I,T,3,N
+Roman Szmal,Transparent Turquoise,#2c3746,,PB15:3|PG7,I,T,4,N
+Roman Szmal,Ultramarine Blue (Green Shade),#3070e9,,PB29,I,S/T,3,Y
+Roman Szmal,Ultramarine Intense,#2d4acd,,PB29,I,S/T,3,Y
+Roman Szmal,Ultramarine Light,#12529C,,PB29,I,S/T,3,Y
+Roman Szmal,Ultramarine Pink,#db9dc5,,PR259,I,S/T,2,Y
+Roman Szmal,Ultramarine Violet,#4B326F,,PV15,I,S/T,2,Y
+Roman Szmal,Van Dyck Brown,#53463c,,NBr8,I,S/T,3,Y
+Roman Szmal,Venetian Red,#c45940,,PR102,I,S/T,2,Y
+Roman Szmal,Venetian Yellow Earth,#f3c85c,,PY43,I,T,2,N
+Roman Szmal,Veronese Red Earth,#c46d45,,PR102,I,S/T,2,Y
+Roman Szmal,Veronese Yellow Earth,#f4cc5e,,PY43,I,S/T,2,N
+Roman Szmal,Vine Black,#555247,,PBk8,I,S/O,2,N
+Roman Szmal,Viridian,#56ab9c,,PG18,I,T,3,Y
+Roman Szmal,Vivianite (Blue Ochre),#47575b,,vivianite,I,S/T,1,Y
+Roman Szmal,Yellow Ochre,#ae5700,,PY43,I,T,2,N
+ShinHan,Alizarin Crimson,#992D3D,51,PR23,I,T,X,X
+ShinHan,Aureolin,#BB8C2E,51,PY42,I,T,X,X
+ShinHan,Blue Grey,#1bb2e6,51,PB15:3|PW6,II,O,X,X
+ShinHan,Blue Pale,#2f99cc,51,PB15|PW6,I,O,X,X
+ShinHan,Bright Rose,#d53774,51,BR12,III,T,X,X
+ShinHan,Bright Violet,#A93992,51,BV11,III,T,X,X
+ShinHan,Brilliant Orange,#ED6B37,51,PO16,I,T,X,X
+ShinHan,Brilliant Pink,#F37D97,51,PR209|PW6,II,O,X,X
+ShinHan,Brown (PWC),#a0462c,51,PR101,II,S/T,X,X
+ShinHan,Brown Madder,#9c352b,51,PR83|PY83,II,S/T,X,X
+ShinHan,Brown Red (PWC),#492a23,51,PBr25,I,T,X,X
+ShinHan,Burnt Sienna,#ac4a20,51,PR101,I,T,X,X
+ShinHan,Burnt Umber,#5A3C3A,51,PBr7,I,T,X,X
+ShinHan,Cadmium Green,#285B32,51,PG26|PY35,I,S/O,X,X
+ShinHan,Cadmium Green Deep,#02501e,51,PG26|PY35,I,S/O,X,X
+ShinHan,Cadmium Green Light,#a2ca11,51,PG7|PY35,I,S/O,X,X
+ShinHan,Cadmium Green Middle,#509e32,51,PG26|PY35,I,S/O,X,X
+ShinHan,Cadmium Green Pale,#ced933,51,PG26|PY35,I,S/O,X,X
+ShinHan,Cadmium Red Deep,#D4383F,51,PR108,I,S/O,X,X
+ShinHan,Cadmium Red Orange,#df4532,51,PO20,I,S/O,X,X
+ShinHan,Cadmium Yellow,#feda00,51,PO20,I,S/O,X,X
+ShinHan,Cadmium Yellow Deep,#D89328,51,PY35,I,S/O,X,X
+ShinHan,Cadmium Yellow Light,#F1A132,51,PY35,I,S/O,X,X
+ShinHan,Cadmium Yellow Orange,#EFAE1D,51,PY35|PO20,I,S/O,X,X
+ShinHan,Cadmium Yellow Pale,#E7C81F,51,PY35,I,S/O,X,X
+ShinHan,Carmine,#ae3943,51,PR83,I,T,X,X
+ShinHan,Cerulean Blue,#0F8AC6,51,PB35,I,S/O,X,X
+ShinHan,Cerulean Blue Hue (PWC),#2497D2,51,PB15:3,II,T,X,X
+ShinHan,Chinese White,#FFFFFF,51,PW6,II,O,X,X
+ShinHan,Cobalt Blue,#2280C2,51,PB28,I,S/T,X,X
+ShinHan,Cobalt Blue Hue (PWC),#1765AD,51,PB29,I,T,X,X
+ShinHan,Cobalt Green,#16BAA2,51,PY53|PG7,I,O,X,X
+ShinHan,Cobalt Violet Light,#8F52A0,51,PV14,I,T,X,X
+ShinHan,Crimson Lake (PWC),#802d3a,51,PR83,II,T,X,X
+ShinHan,Davy’s Grey,#90A093,51,PBk31|PG17|PW6,I,O,X,X
+ShinHan,Emerald Green Nova,#1ba351,51,PG7|PW6,II,S/O,X,X
+ShinHan,Green Deep,#3a5b2f,51,PY3|PG7,II,S/T,X,X
+ShinHan,Green Pale,#86c185,51,PG7|PW6,II,O,X,X
+ShinHan,Greenish Yellow,#786e2e,51,PY129,II,T,X,X
+ShinHan,Grey,#b4b6b8,51,PBk7|PW6,II,O,X,X
+ShinHan,Hooker’s Green,#006A3A,51,PG8,II,T,X,X
+ShinHan,Horizon Blue,#389399,51,PB15:4|PW6,I,O,X,X
+ShinHan,Indian Yellow,#f1882f,51,PY183,II,T,X,X
+ShinHan,Indigo,#26343F,51,PB66,II,S/O,X,X
+ShinHan,Ivory Black,#2A2A2A,51,PBk9,I,O,X,X
+ShinHan,Jaune Brilliant 1,#ffd9a2,51,PO20|PY74|PW6,II,O,X,X
+ShinHan,Jaune Brilliant 2,#f5a07a,51,PO20|PW6,II,O,X,X
+ShinHan,Lavender,#848aba,51,PB28|PV15|PW6,I,O,X,X
+ShinHan,Leaf Green,#D5D539,51,PY74|PG7|PW6,II,T,X,X
+ShinHan,Lemon Yellow,#FFF466,51,PY81,II,S/O,X,X
+ShinHan,Light Red,#ac3f29,51,PR101,I,S/T,X,X
+ShinHan,Lilac,#b780af,51,PR122|PV23|PW6,II,O,X,X
+ShinHan,Marine Blue,#1F4959,51,PB15:3,I,T,X,X
+ShinHan,Mineral Violet,#653c70,51,PV23,II,S/T,X,X
+ShinHan,Naples Yellow,#FDDB70,51,PY35|PW6,I,O,X,X
+ShinHan,Neutral Tint,#2C2D31,51,PB66|PBk11,II,O,X,X
+ShinHan,Olive Green (PWC),#4E5744,51,PY83|PG8,II,S/O,X,X
+ShinHan,Opera (PWC),#EE4598,51,BR1,III,T,X,X
+ShinHan,Oxide of Chromium,#2C5231,51,PG17,I,O,X,X
+ShinHan,Payne’s Grey,#3C4A57,51,PB66|PBk31,II,S/O,X,X
+ShinHan,Peach Black,#2A2A2C,51,PBk1,I,O,X,X
+ShinHan,Peacock Blue,#11679D,51,PB15:3,II,T,X,X
+ShinHan,Peacock Green (PWC),#264335,51,PG7|PB15:3,II,S/T,X,X
+ShinHan,Permanent Green 1,#7ab741,51,PG7,II,T,X,X
+ShinHan,Permanent Green 2,#42913f,51,PG7,II,T,X,X
+ShinHan,Permanent Magenta,#8D2C4E,51,PV19,I,S/T,X,X
+ShinHan,Permanent Red,#D5313C,51,PR209,I,T,X,X
+ShinHan,Permanent Rose,#DF3461,51,PV19,II,T,X,X
+ShinHan,Permanent Violet,#5F408E,51,PV3,II,T,X,X
+ShinHan,Permanent Yellow Deep,#f09d32,51,PY83,II,T,X,X
+ShinHan,Permanent Yellow Light,#fbb738,51,PY1,II,T,X,X
+ShinHan,Permanent Yellow Orange,#e56f35,51,PY83|PO13,II,T,X,X
+ShinHan,Phthalo Blue (Red Shade),#2A296A,51,PB29,I,T,X,X
+ShinHan,Phthalo Green Dark,#0f473a,51,PG7|PBr7,I,S/O,X,X
+ShinHan,Prussian Blue,#1E3A50,51,PB27,II,T,X,X
+ShinHan,Purple Grey,#9E486F,51,PR122|PW6,III,O,X,X
+ShinHan,Pyrrole Red,#9A2B19,51,PR254,I,T,X,X
+ShinHan,Quinacridone Red,#7F2B2C,51,PV19,I,T,X,X
+ShinHan,Raw Sienna,#AC6A3D,51,PR101,I,T,X,X
+ShinHan,Raw Umber,#7f503e,51,PR101,I,T,X,X
+ShinHan,Rose Madder,#A32A35,51,PR83,I,T,X,X
+ShinHan,Royal Blue,#294161,51,PB15:3|PB66,I,S/O,X,X
+ShinHan,Sap Green,#407335,51,PG8,II,T,X,X
+ShinHan,Scarlet Lake,#E12927,51,PR48:1|PR9,II,T,X,X
+ShinHan,Sepia,#413531,51,PR101|PBk11,I,S/O,X,X
+ShinHan,Shadow Green,#153834,51,PBk31,I,S/T,X,X
+ShinHan,Shell Pink,#F8BCB4,51,PR9|PW6,II,O,X,X
+ShinHan,Terre Verte,#44684e,51,PB28|PG8,I,T,X,X
+ShinHan,Terre Verte (Yellow Shade),#a3ad3d,51,PBr7,I,T,X,X
+ShinHan,Titanium White,#FFFFFF,51,PW6,I,O,X,X
+ShinHan,Turquoise Blue,#0197A3,51,PG7|PB28|PW6,II,O,X,X
+ShinHan,Turquoise Blue Light,#0ca2ba,51,PB28|PW18|PG7,I,S/O,X,X
+ShinHan,Ultramarine Deep,#3E4EA0,51,PB29,I,T,X,X
+ShinHan,Ultramarine Light,#12529C,51,PB29,I,T,X,X
+ShinHan,Ultramarine Violet,#4B326F,51,PV15,II,S/O,X,X
+ShinHan,Umber,#453b27,51,PBr7,I,S/T,X,X
+ShinHan,Vandyke Brown 1,#483832,51,NBr8,II,T,X,X
+ShinHan,Vandyke Brown 2,#553735,51,PR101,I,S/T,X,X
+ShinHan,Verditer Blue,#2478b1,51,PB28|PW6,I,O,X,X
+ShinHan,Vermilion,#c7382c,51,PR108|PO20,I,S/T,X,X
+ShinHan,Vermilion Hue,#c5392e,51,PO16,III,T,X,X
+ShinHan,Viridian,#1D9A6D,51,PG7,I,T,X,X
+ShinHan,Viridian Hue,#0C6144,51,PG7,I,T,X,X
+ShinHan,Yellow Ochre,#ae5700,51,PY42,I,S/O,X,X
+Turner,Brown Madder,#7c150b,,PR175,,,,
+Turner,Burnt Sienna,#ac4a20,,PBr7,,,,
+Turner,Burnt Umber,#5A3C3A,,PBr7,,,,
+Turner,Chinese White,#FFFFFF,,PW6|PW7,,,,
+Turner,Cobalt Violet,#a935a1,,PV49,,,,
+Turner,Dioxazine Violet,#270a48,,PV23,,,,
+Turner,Ivory Black,#2A2A2A,,PBk9,,,,
+Turner,Manganese Blue,#016bbe,,PB15,,,,
+Turner,Maya Blue,#0f3451,,PB82,,,,
+Turner,Maya Green,#243133,,SG3,,,,
+Turner,Maya Orange,#d16f06,,SY163,,,,
+Turner,Maya Red,#da2c30,,PR254,,,,
+Turner,Maya Violet,#372072,,VR41,,,,
+Turner,Maya Yellow,#e6d433,,SY33,,,,
+Turner,Naphthol Red,#b80509,,PR5,,,,
+Turner,Permanent Gamboge,#d66f19,,PY150|PY110|PY109,,,,
+Turner,Permanent Scarlet,#d00f06,,PR188,,,,
+Turner,Permanent Yellow,#f7c30f,,PY154,,,,
+Turner,Phthalo Blue (Green Shade),#2a3e82,,PB15,,,,
+Turner,Phthalo Green (Blue Shade),#14257b,,PG7,,,,
+Turner,Pyrrole Red,#9A2B19,,PR254,,,,
+Turner,Rose Madder Hue,#8f000b,,PR187,,,,
+Turner,Sap Green,#407335,,PG36|PY110,,,,
+Turner,Turquoise Blue,#0197A3,,PB28,,,,
+Turner,Ultramarine,#2d20b0,,PB29,,,,
+Turner,Yellow Ochre,#ae5700,,PY43,,,,
+White Nights (St Petersburg),Antique Gold,#87654a,,metallic-gold,I,T,1,N
+White Nights (St Petersburg),Aquamarine Mist,#057e98,,PB29|PG7,I,S/T,4,Y
+White Nights (St Petersburg),Aureolin,#BB8C2E,,PY151,I,T,3,N
+White Nights (St Petersburg),Aztec Gold,#a77c51,,,I,T,1,N
+White Nights (St Petersburg),Azure,#1056c5,,PB15,I,T,4,N
+White Nights (St Petersburg),Azure Blue,#182452,,PB15:3|PG7,I,T,4,N
+White Nights (St Petersburg),Blue,#226ad7,,PB15:6,I,T,4,N
+White Nights (St Petersburg),Blue Lake,#120499,,PB1,III,T,3,N
+White Nights (St Petersburg),Blue Mist,#016397,,PB29|PG7,I,S/T,4,Y
+White Nights (St Petersburg),Blue Shadows,#3a4966,,PB29|PBk11,I,S/T,1,Y
+White Nights (St Petersburg),Bright Blue,#127dce,,PB15:3,I,T,4,N
+White Nights (St Petersburg),Bronze,#776153,,bronze-powder,I,T,1,N
+White Nights (St Petersburg),Burnt Sienna,#ac4a20,,PBr7,I,S/T,1,Y
+White Nights (St Petersburg),Burnt Umber,#5A3C3A,,PBr7,I,S/T,1,Y
+White Nights (St Petersburg),Cadmium Lemon,#fbfe00,,PY35,I,S/T,3,N
+White Nights (St Petersburg),Cadmium Orange,#fb4c00,,PO20,I,O,1,Y
+White Nights (St Petersburg),Cadmium Red Light,#f12000,,PR108,I,O,1,Y
+White Nights (St Petersburg),Cadmium Yellow Medium,#fce637,,PY35,I,O,1,N
+White Nights (St Petersburg),Caput Mortuum,#99545d,,PR101,I,O,3,N
+White Nights (St Petersburg),Carmine,#ec170e,,PV19,I,T,4,N
+White Nights (St Petersburg),Celestial Blue,#76cfed,,PB15:3|PW6,I,O,3,N
+White Nights (St Petersburg),Cerulean Blue,#0F8AC6,,PB35,I,S/T,1,Y
+White Nights (St Petersburg),Chromium Cobalt Mist,#1e3a3b,,PB28|PG7,I,S/T,1,Y
+White Nights (St Petersburg),Chromium Oxide,#678b34,,PG17,I,O,1,N
+White Nights (St Petersburg),Claret,#b61d1e,,PR12,III,T,4,N
+White Nights (St Petersburg),Cobalt Azure Blue,#03a1e2,,PB36,I,S/T,1,Y
+White Nights (St Petersburg),Cobalt Blue,#2280C2,,PB28,I,S/T,1,Y
+White Nights (St Petersburg),Cobalt Chrome Turquoise,,,PB36,I,S/T,1,Y
+White Nights (St Petersburg),Cobalt Mist,#203b63,,PB28|PBk7,I,S/T,1,Y
+White Nights (St Petersburg),Cobalt Turquoise,#29b3d6,,PB28,I,S/T,1,Y
+White Nights (St Petersburg),Copper,#a46252,,copper-alloy,I,T,1,N
+White Nights (St Petersburg),Coral,#f99e7f,,PR242|PW6,I,O,X,X
+White Nights (St Petersburg),Dark Blue Shadows,#26476a,,PBk11|PB15:6,I,S/T,4,Y
+White Nights (St Petersburg),Dioxazine Violet,#644390,,PV23,I,T,4,N
+White Nights (St Petersburg),Dune,#baa07f,,PY42|PBr6|PBk7|PW6,I,O,3,N
+White Nights (St Petersburg),Emerald Green,#006121,,PG7,I,T,4,N
+White Nights (St Petersburg),English Red,#a93623,,PR101,I,O,X,X
+White Nights (St Petersburg),Geranium Red,#f55442,,PR242,I,S/T,4,N
+White Nights (St Petersburg),Golden,#fa9522,,PY3|PO64,II,T,3,N
+White Nights (St Petersburg),Golden Deep,#f77f26,,PO62,I,T,3,N
+White Nights (St Petersburg),Green,#41803b,,PG8,II,T,4,N
+White Nights (St Petersburg),Green Earth,#3d522b,,PBr7|PG17,I,S/T,1,N
+White Nights (St Petersburg),Green Light,#03a131,,PG36,I,T,3,N
+White Nights (St Petersburg),Green Original,#058838,,PY35|PG7,I,T,3,N
+White Nights (St Petersburg),Green Shadows,#1b3534,,PBk11|PG7,I,S/T,4,Y
+White Nights (St Petersburg),Grey-Blue Mist,#364155,,PB29|PBk7,I,S/T,3,Y
+White Nights (St Petersburg),Grey-Pink Mist,#353942,,PB29|PG7|PR187,I,S/T,3,Y
+White Nights (St Petersburg),Grey-Rose Mist,#353942,,PB29|PG17|PR187,I,S/T,3,Y
+White Nights (St Petersburg),Hansa Yellow,,,PY1,X,X,X,X
+White Nights (St Petersburg),Hematite Mist,#4e404d,,PB29|PR101,I,S/T,1,Y
+White Nights (St Petersburg),Inca Gold,#a2825b,,,I,T,1,N
+White Nights (St Petersburg),Indanthrone Blue,#29418a,,PB60,I,T,3,N
+White Nights (St Petersburg),Indian Gold,#f08c01,,PY150|PR101,I,O,3,N
+White Nights (St Petersburg),Indian Yellow,#f9d503,,PY150,I,T,3,N
+White Nights (St Petersburg),Indigo,#26343F,,PBk7|PB15|PV23,I,S/T,4,N
+White Nights (St Petersburg),Irgazin Yellow,#d0b602,,PY129,I,T,1,N
+White Nights (St Petersburg),Ivory Black,#2A2A2A,,PR102|PBk7,I,S/T,3,Y
+White Nights (St Petersburg),Lamp Black,#2a2623,,PBk7,I,S/T,4,N
+White Nights (St Petersburg),Lavender,#879ED2,,PV15|PB29|PW6,I,O,3,N
+White Nights (St Petersburg),Lemon,#f5f400,,PY3,I,T,1,N
+White Nights (St Petersburg),Lilac,#deaad1,,PV19|PW6,I,O,X,X
+White Nights (St Petersburg),Lilac Mist,#574ba0,,PB29|PR122,I,S/T,1,Y
+White Nights (St Petersburg),Madder Lake Red Light,#e62d2f,,PR187,I,T,3,N
+White Nights (St Petersburg),Magnolia,#f29ad7,,PR19|PW6,I,O,1,N
+White Nights (St Petersburg),Marengo,#b1c2d2,,PB15|PBk7|PW6,I,O,1,N
+White Nights (St Petersburg),Maroon,,,PBr7|PR19|PW6,I,O,1,N
+White Nights (St Petersburg),Mars Brown,#864f29,,PBr6,I,T,1,Y
+White Nights (St Petersburg),May Green,#cddd09,,PY3|PG36,I,T,3,N
+White Nights (St Petersburg),Mint,#72c2bd,,PG7|PW6,I,O,3,N
+White Nights (St Petersburg),Mocha,#dca5a0,,PR102|PV55|PW6,I,O,1,N
+White Nights (St Petersburg),Naples Flesh,,,PO62|PW6,I,O,1,N
+White Nights (St Petersburg),Naples Orange,#fda60c,,PY216,I,O,1,Y
+White Nights (St Petersburg),Naples Yellow,#FDDB70,,PY42|PY35|PO20|PW4,I,O,1,Y
+White Nights (St Petersburg),Naples Yellow Light,#f8e133,,PY216,I,O,1,N
+White Nights (St Petersburg),Neon Pink,#ee35c1,,PR122,I,O,3,N
+White Nights (St Petersburg),Neutral Black,#5c6164,,PR187|PB15:1|PBk7,I,S/T,4,N
+White Nights (St Petersburg),Ochre Light,#fbb43e,,PY43,I,S/T,1,N
+White Nights (St Petersburg),Olive Green,#4E5744,,PG17|PY1|PBk7,II,S/T,3,N
+White Nights (St Petersburg),Orange,#f75a00,,PO64,I,S/T,3,N
+White Nights (St Petersburg),Orange Lake,#fa6c2e,,PO17,III,T,4,N
+White Nights (St Petersburg),Payne’s Grey,#3C4A57,,PBk7|PB15|PV23,I,S/T,3,N
+White Nights (St Petersburg),Peach,#fbb987,,PY3|PO64|PW6,I,O,3,N
+White Nights (St Petersburg),Pearl Grey,#bec0cc,,PR102|PBk7|PW6,I,O,1,N
+White Nights (St Petersburg),Perylene Violet,#793e4a,,PV29,I,T,4,N
+White Nights (St Petersburg),Petersburg Ochre,#e2d4b1,,PY42|PBk8|PW6,I,O,1,N
+White Nights (St Petersburg),Pink Peony,#e78cb8,,PR122|PW6,I,O,3,N
+White Nights (St Petersburg),Prussian Blue,#1E3A50,,PB27,II,T,4,N
+White Nights (St Petersburg),Quinacridone Lilac,#be1977,,PV19,I,T,4,N
+White Nights (St Petersburg),Quinacridone Red,#7F2B2C,,PR19,I,T,3,N
+White Nights (St Petersburg),Quinacridone Rose,#ce184c,,PR122,I,T,4,N
+White Nights (St Petersburg),Quinacridone Violet,#bc104a,,PV55,I,T,4,N
+White Nights (St Petersburg),Quinacridone Violet Rose,#bc134c,,PR19,I,T,4,N
+White Nights (St Petersburg),Raw Sienna,#AC6A3D,,PBr43,I,S/T,1,Y
+White Nights (St Petersburg),Red Ochre,#a83921,,PR102,I,S/T,1,N
+White Nights (St Petersburg),Rose,#d92968,,PR81,III,T,4,N
+White Nights (St Petersburg),Rose Quartz,#d994cb,,PR170|PW6,I,O,3,N
+White Nights (St Petersburg),Royal Blue,#294161,,PB29|PW6,I,O,3,N
+White Nights (St Petersburg),Ruby,#f21a01,,PR170,I,T,4,N
+White Nights (St Petersburg),Sap Green,#407335,,PY150|PG36|PBk7,I,T,4,N
+White Nights (St Petersburg),Scarlet,#ed1200,,PR188,I,T,4,N
+White Nights (St Petersburg),Scarlet Light,#E12927,,PR2|PR4,III,T,X,X
+White Nights (St Petersburg),Sepia,#625242,,PR102|PR187|PBr7,I,S/T,3,N
+White Nights (St Petersburg),Shakhnazarskaya Red,#c73d0e,,PR102,I,S/T,3,N
+White Nights (St Petersburg),Silver Deep,#707c8a,,,I,T,1,N
+White Nights (St Petersburg),Silver Light,#989aa6,,metallic-silver,I,T,1,N
+White Nights (St Petersburg),Sky-Blue Shadows,#234652,,PB28|PBk11,I,S/T,1,Y
+White Nights (St Petersburg),Taiga Mist,#243638,,PBr7|PB15:3,I,S/T,3,Y
+White Nights (St Petersburg),Titian Red,#f03f00,,PO36,I,T,3,N
+White Nights (St Petersburg),Turquoise Blue,#0197A3,,PB15:3|PG7,I,T,4,N
+White Nights (St Petersburg),Ultramarine,#1e3885,,PB29,I,S/T,3,Y
+White Nights (St Petersburg),Ultramarine Deep,#3E4EA0,,PB29,I,T,1,Y
+White Nights (St Petersburg),Ultramarine Violet,#4B326F,,PV15,I,S/T,1,Y
+White Nights (St Petersburg),Umber,#7d6543,,PY43|PBr7|PBk7,I,S/T,1,N
+White Nights (St Petersburg),Van Dyke Brown,#9b785c,,PR102|PBk8,I,O,1,N
+White Nights (St Petersburg),Venetian Red,#d43321,,PR102|PR187,I,T,3,N
+White Nights (St Petersburg),Venice Purple,#f66d6f,,PR179,I,S/T,3,N
+White Nights (St Petersburg),Vermilion (Imit.),,,PR188|PY154,I,T,3,N
+White Nights (St Petersburg),Vermilion Hue,#e4320e,,PR4|PY1,III,T,X,X
+White Nights (St Petersburg),Violet,#331b6b,,PV3,III,T,4,N
+White Nights (St Petersburg),Violet Mist,#5c5c73,,PB29|PG17|PR187,I,S/T,3,Y
+White Nights (St Petersburg),Violet Rose,#a91a90,,PV2,III,T,4,N
+White Nights (St Petersburg),Violet Shadow,#574962,,PBk11|PV23,I,S/T,4,Y
+White Nights (St Petersburg),Voronezhskaya Black,#695848,,PBk8,I,S/T,1,Y
+White Nights (St Petersburg),Warm Green,#bbf5c3,,PY151|PG7|PW6,I,O,1,N
+White Nights (St Petersburg),Yellow,#fee801,,PY154,I,T,4,N
+White Nights (St Petersburg),Yellow Ochre,#ae5700,,PY43|PY154,II,S/T,1,N
+White Nights (St Petersburg),Yellowish Green,#03a100,,PG7|PY3,I,T,4,N
+White Nights (St Petersburg),Zinc White,#fdfdfd,,PW4,I,S/O,1,N

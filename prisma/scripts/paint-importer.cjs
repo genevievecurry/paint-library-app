@@ -35,7 +35,7 @@ const generateSlug = ({ value, uuid = false }) => {
 };
 
 async function main() {
-  const importPaintCsv = `${__dirname}/paint-import-8-7-22.csv`;
+  const importPaintCsv = `${__dirname}/paint-import-8-11-22.csv`;
   const parsedPaintCsv = await processFile(importPaintCsv);
 
   async function getPigmentBySlug(slug) {
@@ -112,10 +112,10 @@ async function main() {
         line: paint.lineId
           ? { connect: { id: Number(paint.lineId) } }
           : undefined,
-        lightfastRating: { connect: { id: Number(paint.lightfastRatingId || 1) } },
-        transparencyRating: { connect: { id: Number(paint.transparencyRatingId || 1) } },
-        stainingRating: { connect: { id: Number(paint.stainingRatingId || 1) } },
-        granulationRating: { connect: { id: Number(paint.granulationRatingId || 1) } },
+        lightfastRating: { connect: { code: paint.lightfastRating || 'X' } },
+        transparencyRating: { connect: { code: paint.transparencyRating || 'X' } },
+        stainingRating: { connect: { code: paint.stainingRating || 'X' } },
+        granulationRating: { connect: { code: paint.granulationRating || 'X' } },
         manufacturerDescription: paint.manufacturerDescription,
         productUrl: paint.url,
       },
@@ -132,10 +132,10 @@ async function main() {
           : undefined,
         paintType: { connect: { id: 1 } },
         author: { connect: { uuid: '37287234987' } },
-        lightfastRating: { connect: { id: Number(paint.lightfastRatingId || 1) } },
-        transparencyRating: { connect: { id: Number(paint.transparencyRatingId || 1) } },
-        stainingRating: { connect: { id: Number(paint.stainingRatingId || 1) } },
-        granulationRating: { connect: { id: Number(paint.granulationRatingId || 1) } },
+        lightfastRating: { connect: { code: paint.lightfastRating || 'X' } },
+        transparencyRating: { connect: { code: paint.transparencyRating || 'X' } },
+        stainingRating: { connect: { code: paint.stainingRating || 'X' } },
+        granulationRating: { connect: { code: paint.granulationRating || 'X' } },
         manufacturerDescription: paint.manufacturerDescription,
         productUrl: paint.url,
         published: true,
