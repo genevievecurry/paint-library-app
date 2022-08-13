@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
   export async function load({ fetch }) {
-    const response = await fetch(`index.json?take=30`);
+    const response = await fetch(`index.json?take=30&swatched=true`);
 
     if (response.ok) {
       return {
@@ -41,7 +41,7 @@
 </div>
 
 <div class="lg:container mx-auto px-4 sm:px-6">
-  <h2 class="font-bold text-3xl mb-6">Recently Added Paints</h2>
+  <h2 class="font-bold text-3xl mb-6">Recently Swatched Paints</h2>
   <div
     class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-3">
     {#each paints as paint, index}

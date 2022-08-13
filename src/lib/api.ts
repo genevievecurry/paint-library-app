@@ -334,13 +334,23 @@ export async function getSearchResults(
     skip: set,
     take: set + 50,
     orderBy: {
-      createdAt: 'desc',
+      _relevance: {
+        fields: ['name', 'manufacturerDescription'],
+        search: unsluggedQuery,
+        sort: 'asc',
+      }
+      
     },
     select: {
       uuid: true,
       slug: true,
       hex: true,
       name: true,
+      line: {
+        select: {
+          name: true,
+        },
+      },
       manufacturer: {
         select: {
           name: true,
@@ -594,6 +604,7 @@ export async function getPaints(query): Promise<{
   const set = query.get('set') ? Number(query.get('set')) : 0;
   const take = query.get('take') ? Number(query.get('take')) : 50;
   const showAll = JSON.parse(query.get('all')) ? undefined : true;
+  const swatched =  JSON.parse(query.get('swatched')) ? true : undefined;
 
   return {
     status: 200,
@@ -602,6 +613,13 @@ export async function getPaints(query): Promise<{
       take: take + set,
       where: {
         published: showAll,
+        swatchCard: swatched ? {
+          some:{
+            primaryOnPaintUuid: {
+              not: null,
+            }
+          }
+        } : undefined,
       },
       orderBy: {
         createdAt: 'desc',
@@ -1430,9 +1448,17 @@ export async function getManufacturer(slug): Promise<{
       },
       paints: {
         select: limitedPaintSelect,
-        orderBy: {
-          name: 'asc',
-        },
+        orderBy: [
+          {
+            line: {
+              name: 'asc',
+            }
+          },
+          {
+            name: 'asc',
+          },
+          
+        ],
       },
     },
   });

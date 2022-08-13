@@ -30,9 +30,14 @@
           {/if}
         </div>
       </div>
-      <div class="p-1">
-        <span class="decorate-link">{paint.manufacturer?.name}</span>
-        <span class="block text-sm">{paint.name}</span>
+      <div class="p-1 leading-4">
+        <span class="decorate-link">{paint.name}</span>
+        <span class="block text-xs mt-1">
+          {paint.manufacturer?.name}
+        </span>
+        {#if paint.line}
+          <span class="block text-xs font-light">{paint.line?.name}</span>
+        {/if}
       </div>
     </a>
   </div>
