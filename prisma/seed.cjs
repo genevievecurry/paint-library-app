@@ -243,25 +243,25 @@ async function main() {
   const superSecurePassword = bcrypt.hashSync('password', salt);
 
   const adminUser = await prisma.user.upsert({
-    where: { email: 'admin@paintlibrary.com' },
+    where: { email: 'admin@paintlibrary.art' },
     update: {},
     create: {
-      email: 'admin@paintlibrary.com',
+      email: 'admin@paintlibrary.art',
       firstName: 'Admin',
       lastName: 'Human',
       hashedPassword: superSecurePassword,
       uuid: '37287234987',
-      username: 'admin-the-human',
+      username: 'admin',
       role: 'ADMIN',
       status: 'ACTIVE',
     },
   });
 
   const memberUser = await prisma.user.upsert({
-    where: { email: 'member@paintlibrary.foo' },
+    where: { email: 'member@paintlibrary.art' },
     update: {},
     create: {
-      email: 'member@paintlibrary.foo',
+      email: 'member@paintlibrary.art',
       firstName: 'Entity',
       lastName: 'Member',
       username: 'entity-member',

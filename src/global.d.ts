@@ -36,6 +36,7 @@ interface ImportMetaEnv
   extends Readonly<Record<string, string | boolean | undefined>> {
   readonly VITE_IMAGEKIT_PUBLIC_API_KEY: string;
   readonly VITE_IMAGEKIT_PRIVATE_API_KEY: string;
+  readonly VITE_SENDGRID_API_KEY: string;
 }
 interface ImportMeta {
   readonly env: ImportMetaEnv;
