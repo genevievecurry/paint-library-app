@@ -17,9 +17,13 @@
 
 <script lang="ts">
   import Header from '$lib/components/Header.svelte';
-  import { sendRequestAccountEmail } from '$lib/email';
+
+  import { connect } from '$lib/utility';
+  import { goto } from '$app/navigation';
+  import { successNotifier, warningNotifier } from '$lib/notifier';
 
   export let pathname;
+
   let email = '';
   let firstName = '';
   let message = '';
@@ -30,14 +34,32 @@
     message: message,
   };
 
-  async function submitHandler() {
-    sendRequestAccountEmail(accountRequest);
+  async function submitHandler(): Promise<string> {
+    const response = await connect({
+      method: 'post',
+      endpoint: `/email.json`,
+      data: accountRequest,
+    });
+
+    if (response.status == 200) {
+      successNotifier('Account request submitted! Thanks!');
+      goto('/');
+      return response.json();
+    }
+
+    if (response.status !== 200) {
+      warningNotifier(
+        `There was a problem sending the message: ${response.statusText}.`,
+        {
+          persist: true,
+        },
+      );
+    }
   }
 </script>
 
 <div class="lg:container mx-auto px-4 sm:px-6">
   <Header title="Request Account" {pathname} />
-
   <form on:submit|preventDefault={submitHandler}>
     <div class="grid lg:grid-cols-2 gap-12 xl:gap-32">
       <div>
