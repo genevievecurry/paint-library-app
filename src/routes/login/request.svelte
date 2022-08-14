@@ -41,15 +41,11 @@
       data: accountRequest,
     });
 
-    if (response.status == 200) {
-      console.log(response);
+    if (response.ok) {
       successNotifier('Account request submitted! Thanks!');
       goto('/');
       return response.json();
-    }
-
-    if (response.status !== 200) {
-      console.log(response);
+    } else {
       warningNotifier(
         `There was a problem sending the message: ${response.statusText}.`,
         {
