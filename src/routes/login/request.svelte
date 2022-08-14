@@ -42,12 +42,14 @@
     });
 
     if (response.status == 200) {
+      console.log(response);
       successNotifier('Account request submitted! Thanks!');
       goto('/');
       return response.json();
     }
 
     if (response.status !== 200) {
+      console.log(response);
       warningNotifier(
         `There was a problem sending the message: ${response.statusText}.`,
         {

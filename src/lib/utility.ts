@@ -74,12 +74,12 @@ export function validatePassword(password: string): {
   passes: boolean;
 } {
   const minimumRequirements =
-    /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,24})/;
+    /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,50})/;
   const checkDigits = /\d/;
   const checkSpecial = /[^A-z\d][\\\^]?/;
   const checkLowercase = /[a-z]/;
   const checkUppercase = /[A-Z]/;
-  const checkLength = password.length > 7 && password.length < 25;
+  const checkLength = password.length > 7 && password.length < 51;
 
   return {
     digits: checkDigits.test(password),

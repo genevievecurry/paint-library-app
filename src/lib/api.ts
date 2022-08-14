@@ -12,6 +12,7 @@ const limitedUserSelect: Prisma.UserSelect = {
 };
 
 const limitedPaintSelect: Prisma.PaintSelect = {
+  _count: true,
   slug: true,
   uuid: true,
   hex: true,
@@ -52,8 +53,12 @@ const limitedPaintSelect: Prisma.PaintSelect = {
       pigment: {
         select: {
           slug: true,
+          type: true,
+          number: true,
+          name: true,
           color: {
             select: {
+              code: true,
               slug: true,
             },
           },
@@ -99,11 +104,17 @@ const pigmentSelect: Prisma.PigmentSelect = {
   imageKitUploadId: true,
   imageKitUpload: true,
   paints: {
+    orderBy: {
+      paint: {
+        name: 'asc',
+      }
+    },
     select: {
       paint: {
         select: limitedPaintSelect,
       },
     },
+    
   },
   slug: true,
 };
@@ -341,27 +352,7 @@ export async function getSearchResults(
       }
       
     },
-    select: {
-      uuid: true,
-      slug: true,
-      hex: true,
-      name: true,
-      line: {
-        select: {
-          name: true,
-        },
-      },
-      manufacturer: {
-        select: {
-          name: true,
-        },
-      },
-      primarySwatchCard: {
-        select: {
-          imageKitUpload: true,
-        },
-      },
-    },
+    select: limitedPaintSelect,
   });
 
   const body = {
@@ -1380,6 +1371,7 @@ export async function upsertManufacturer(data): Promise<{
   body = await prisma.manufacturer.upsert({
     where: {
       id: data.id,
+      name: data.name,
     },
     update: {
       name: data.name,

@@ -24,6 +24,7 @@
   import Header from '$lib/components/Header.svelte';
   import { generateUrl } from '$lib/generate';
   import { timeAgo } from '$lib/utility';
+  import { pigmentCode } from '$lib/utility';
 
   export let pathname;
   export let manufacturer;
@@ -156,10 +157,18 @@
                 <td class="px-3 hidden sm:table-cell border-b border-r">
                   {#each paint.pigmentsOnPaints as pigmentsOnPaints, index}
                     <a
-                      class="decorate-link"
-                      href={`/pigments/${pigmentsOnPaints.pigment.color?.slug}/${pigmentsOnPaints.pigment.slug}`}
-                      >{pigmentsOnPaints.pigment.slug}</a
-                    >{#if index + 1 < paint.pigmentsOnPaints.length},&nbsp;{/if}
+                      class="decorate-link text-xs whitespace-nowrap"
+                      href={`/pigments/${pigmentsOnPaints.pigment.color?.slug}/${pigmentsOnPaints.pigment.slug}`}>
+                      {#if pigmentsOnPaints.pigment.type === 'CINATURAL' || pigmentsOnPaints.pigment.type === 'CIPIGMENT'}
+                        {@html pigmentCode(
+                          pigmentsOnPaints.pigment.type,
+                          pigmentsOnPaints.pigment.number,
+                          pigmentsOnPaints.pigment.color.code,
+                          {
+                            html: false,
+                          },
+                        )}{:else}{pigmentsOnPaints.pigment.name}{/if}</a
+                    >{#if index + 1 < paint._count.pigmentsOnPaints},&nbsp;{/if}
                   {/each}
                 </td>
               </tr>

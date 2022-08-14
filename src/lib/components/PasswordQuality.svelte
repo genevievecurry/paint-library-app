@@ -12,13 +12,14 @@
 <div>
   <span class="block font-bold">Password Guidelines</span>
   <small class="leading-5 block my-1 text-sm text-gray-500">
-    Pick a good one! Try the
-    <a
+    Pick a good one!
+    <!-- Try the -->
+    <!-- <a
       href="https://gross-warped-trogon.gigalixirapp.com/"
       target="_blank"
       rel="noopener noreferrer"
       class="decorate-link">password generator</a
-    >.
+    >. -->
   </small>
 
   <table class="table-auto">
@@ -96,7 +97,7 @@
             {@html emptyCircleIcon()}
           {/if}
         </td>
-        <td class="p-2">Between 8-24 characters</td>
+        <td class="p-2">Between 8-50 characters</td>
       </tr>
     {:else}
       <tr>

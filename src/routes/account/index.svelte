@@ -52,7 +52,11 @@
       allowSubmission = false;
     }
 
-    if (newPassword.length > 0 && passwordValidation.passes) {
+    if (
+      newPassword.length > 0 &&
+      passwordValidation.passes &&
+      currentPassword.length > 0
+    ) {
       allowSubmission = true;
       formData.newPassword = newPassword;
     }
@@ -152,13 +156,21 @@
       <div>
         <h2 class="text-xl font-bold">Update Password</h2>
         <div class="mt-6">
-          <label for="currentPassword" class="block">Current Password</label>
+          <label for="currentPassword" class="block"
+            >Current/Old Password</label>
+          <small
+            class="leading-5 block mt-1 text-sm font-light text-gray-500 mb-3">
+            Enter your current password to confirm that you're you! This is only
+            necessary if you are updating your password.
+          </small>
           <div class="flex">
             {#if showCurrentPassword}
               <input
                 id="currentPassword"
                 name="currentPassword"
                 type="text"
+                on:blur={toggleAllowSubmission}
+                on:keyup={toggleAllowSubmission}
                 bind:value={currentPassword}
                 class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
             {:else}
@@ -166,6 +178,8 @@
                 id="currentPassword"
                 name="currentPassword"
                 type="password"
+                on:blur={toggleAllowSubmission}
+                on:keyup={toggleAllowSubmission}
                 bind:value={currentPassword}
                 class="mt-1 block w-full py-2 px-3 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
             {/if}
@@ -185,12 +199,19 @@
         </div>
         <div class="mt-6">
           <label for="currentPassword" class="block">New Password</label>
+          <small
+            class="leading-5 block mt-1 text-sm font-light text-gray-500 mb-3">
+            Enter a fresh new password.
+          </small>
           <div class="flex">
             {#if showNewPassword}
               <input
                 id="currentPassword"
                 name="currentPassword"
                 type="text"
+                on:blur={toggleAllowSubmission}
+                on:blur={() =>
+                  (passwordValidation = validatePassword(newPassword))}
                 on:keyup={toggleAllowSubmission}
                 on:keyup={() =>
                   (passwordValidation = validatePassword(newPassword))}
@@ -201,6 +222,9 @@
                 id="currentPassword"
                 name="currentPassword"
                 type="password"
+                on:blur={toggleAllowSubmission}
+                on:blur={() =>
+                  (passwordValidation = validatePassword(newPassword))}
                 on:keyup={toggleAllowSubmission}
                 on:keyup={() =>
                   (passwordValidation = validatePassword(newPassword))}

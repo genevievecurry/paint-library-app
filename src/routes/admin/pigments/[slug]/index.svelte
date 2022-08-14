@@ -296,6 +296,16 @@
             class="accent-gray-300" />
           W - White
         </label>
+        <label>
+          <input
+            type="radio"
+            name="colorCode"
+            id="colorCode"
+            bind:group={colorCode}
+            value="M"
+            class="accent-gray-300" />
+          M - Metallic
+        </label>
       </div>
     </div>
 

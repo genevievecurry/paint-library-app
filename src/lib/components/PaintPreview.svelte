@@ -1,5 +1,6 @@
 <script lang="ts">
   import { generateUrl } from '$lib/generate';
+  import { pigmentCode } from '$lib/utility';
 
   export let paint;
   export let index;
@@ -30,14 +31,35 @@
           {/if}
         </div>
       </div>
-      <div class="p-1 leading-4">
-        <span class="decorate-link">{paint.name}</span>
-        <span class="block text-xs mt-1">
-          {paint.manufacturer?.name}
-        </span>
-        {#if paint.line}
-          <span class="block text-xs font-light">{paint.line?.name}</span>
-        {/if}
+      <div class="p-1 leading-4 flex flex-col">
+        <div class="flex-1">
+          <span class="decorate-link">{paint.name}</span>
+          <span class="block text-xs mt-1">
+            {paint.manufacturer?.name}
+          </span>
+          {#if paint.line}
+            <span class="block text-xs font-light">{paint.line?.name}</span>
+          {/if}
+        </div>
+        <div>
+          {#if paint.pigmentsOnPaints?.length > 0}
+            {#each paint.pigmentsOnPaints as pigmentsOnPaints, index}
+              <a
+                class="decorate-link text-xs"
+                href={`/pigments/${pigmentsOnPaints.pigment.color?.slug}/${pigmentsOnPaints.pigment.slug}`}>
+                {#if pigmentsOnPaints.pigment.type === 'CINATURAL' || pigmentsOnPaints.pigment.type === 'CIPIGMENT'}
+                  {@html pigmentCode(
+                    pigmentsOnPaints.pigment.type,
+                    pigmentsOnPaints.pigment.number,
+                    pigmentsOnPaints.pigment.color.code,
+                    {
+                      html: false,
+                    },
+                  )}{:else}{pigmentsOnPaints.pigment.name}{/if}</a
+              >{#if index + 1 < paint._count.pigmentsOnPaints},&nbsp;{/if}
+            {/each}
+          {/if}
+        </div>
       </div>
     </a>
   </div>

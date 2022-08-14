@@ -36,6 +36,14 @@
   let editable = $session.user?.role === 'ADMIN';
 
   const displayHex = pigment.hex ? pigment.hex : pigment.color.hex;
+
+  const singlePigmentPaints = pigment.paints.filter(
+    (paint) => paint.paint._count.pigmentsOnPaints === 1,
+  );
+
+  const multiPigmentPaints = pigment.paints.filter(
+    (paint) => paint.paint._count.pigmentsOnPaints > 1,
+  );
 </script>
 
 <svelte:head>
@@ -79,14 +87,16 @@
         <td
           class="inline-block md:table-cell md:border border-gray-400 px-4 py-3 md:text-center align-top">
           <span class="border-2 border-black font-bold px-2">
-            {@html pigmentCode(
-              pigment.type,
-              pigment.number,
-              pigment.color.code,
-              {
-                html: true,
-              },
-            )}
+            {#if pigment.type === 'CINATURAL' || pigment.type === 'CIPIGMENT'}
+              {@html pigmentCode(
+                pigment.type,
+                pigment.number,
+                pigment.color.code,
+                {
+                  html: true,
+                },
+              )}
+            {/if}
           </span>
         </td>
         <td
@@ -248,10 +258,15 @@
       No paint in this database is currently linked to this pigment.
     {/if}
   </p>
-  {#if pigment.paints.length > 0}
+
+  {#if singlePigmentPaints.length > 0}
+    <h3 class="font-bold text-xl mb-3">Single-Pigment Watercolors</h3>
+    <p class="text-gray-500 font-light mt-2 mb-6 text-sm"
+      >The paints listed here are not guaranteed to be single-pigment, but we
+      found {pigment.name} listed as the only known pigment in our database.</p>
     <div
       class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-3">
-      {#each pigment.paints as paint, index}
+      {#each singlePigmentPaints as paint, index}
         {#if paint.paint.published}
           <PaintPreview paint={paint.paint} {index} />
         {/if}
@@ -261,6 +276,20 @@
 </section>
 
 <section class="mt-10">
+  {#if multiPigmentPaints.length > 0}
+    <h3 class="font-bold text-xl mb-3">Multi-Pigment Watercolors</h3>
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-3">
+      {#each multiPigmentPaints as multiPigmentPaint, index}
+        {#if multiPigmentPaint.paint.published}
+          <PaintPreview paint={multiPigmentPaint.paint} {index} />
+        {/if}
+      {/each}
+    </div>
+  {/if}
+</section>
+
+<section class="mt-10 max-w-2xl">
   <h2 class="font-bold text-3xl">More Information</h2>
   <p class="font-light my-4">
     Information on this website related to pigments has the distict possibility
@@ -275,19 +304,19 @@
       class="decorate-link"
       target="_blank"
       rel="noreferrer noopener">Art is Creation Pigment Database</a
-    >, for example.
+    >, or
+    <a
+      href="https://handprint.com/HP/WCL/water.html"
+      class="decorate-link"
+      target="_blank"
+      rel="noreferrer noopener">handprint</a
+    >.
   </p>
   <p class="font-light my-4">
     If you want to help update pigment information, or want to just share
-    something that can be fixed,
-    <span
-      class="decorate-link cursor-pointer"
-      on:click={() =>
-        window.open(
-          'mailto:' + 'paint-library' + '@' + 'protonmail.com',
-          '_blank',
-        )}>
-      you can send an email</span
+    something that can be fixed, you can send an email to <a
+      href="mailto:librarian@paintlibrary.art"
+      class="decorate-link cursor-pointer">librarian@paintlibrary.art</a
     >.
   </p>
 </section>

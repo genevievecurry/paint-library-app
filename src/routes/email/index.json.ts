@@ -6,12 +6,8 @@ const SENDER_NAME = import.meta.env.VITE_SENDER_NAME;
 
 client.setApiKey(SENDGRID_API_KEY as string);
 
+// This function is very limited.
 export async function post({ body: data }) {
-  const response = await sendEmail(data);
-  return response;
-}
-
-export async function sendEmail(data) {
   const message = {
     to: SENDER_EMAIL,
     from: SENDER_EMAIL,
@@ -25,21 +21,14 @@ export async function sendEmail(data) {
     },
   };
 
-	try {
-		const response = await client.send(message as MailDataRequired);
+  try {
+    const response = await client.send(message as MailDataRequired);
+    return response;
+  } catch (error) {
+    console.log(error);
     return {
-      body: {
-        message: response[0]?.body,
-        status: response[0]?.statusCode
-      }
+      body: { message: error },
+      status: 500,
     }
-	} catch (error) {
-		return {
-      body: {
-        message: error,
-        status: 500
-      }
-    }
-	}
+  }
 }
-
