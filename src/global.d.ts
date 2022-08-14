@@ -37,6 +37,8 @@ interface ImportMetaEnv
   readonly VITE_IMAGEKIT_PUBLIC_API_KEY: string;
   readonly VITE_IMAGEKIT_PRIVATE_API_KEY: string;
   readonly VITE_SENDGRID_API_KEY: string;
+  readonly VITE_SENDER_EMAIL: string;
+  readonly VITE_SENDER_NAME: string;
 }
 interface ImportMeta {
   readonly env: ImportMetaEnv;
