@@ -245,17 +245,13 @@
 <form use:submit>
   <div>
     {#if editMode}
-      <div class="flex">
-        <div class="flex-shrink-0"
-          ><img src={imageKitUpload.thumbnailUrl} alt="Swatch Preview" /></div>
-        <div class="ml-3">
-          <p class="font-bold text-lg">Swatch Preview</p>
-          <p class="text-sm"
-            >For now, it is not possible to update the swatch image directly.
-            This is probably going to be a little annoying in some cases, but
-            for now it's helpful to make sure nothing... weird... gets swapped
-            in for a swatch that folks have added to their palettes. If you want
-            to delete it, though, that's fine!</p>
+      <div class="mt-1">
+        <p class="font-bold text-lg">Swatch Preview</p>
+        <p class="text-xs md:text-sm font-light text-gray-500 my-3"
+          >For now, it is not possible to update the swatch image directly after
+          upload.</p>
+        <div class="text-left mt-3">
+          <img src={imageKitUpload.thumbnailUrl} alt="Swatch Preview" />
         </div>
       </div>
     {:else}
@@ -270,12 +266,12 @@
         on:change={onChange} />
     {/if}
 
-    {#if imageKitUpload.thumbnailUrl}
+    {#if imageKitUpload.thumbnailUrl || editMode}
       <div class="mt-6">
         <label for="description" class="block font-bold text-lg">
           Is this your original work?</label>
         <small
-          class="leading-5 block mt-1 text-sm font-light text-gray-500 mb-3">
+          class="block mt-1 text-xs md:text-sm font-light text-gray-500 mb-3">
           Did you personally meld paint and paper in a beautiful union? It's
           okay if you didn't, but make sure you give credit where credit is due
           in the further information section below.
@@ -293,7 +289,6 @@
               type="checkbox"
               id="isOriginal"
               name="isOriginal"
-              disabled={disableSetAsPrimary}
               class="appearance-none w-full h-full active:outline-none focus:outline-none"
               on:click={() => (isOriginal = !isOriginal)} />
           </div>
@@ -305,7 +300,7 @@
         <label for="description" class="block font-bold text-lg"
           >Primary Swatch Card</label>
         <small
-          class="leading-5 block mt-1 text-sm font-light text-gray-500 mb-3">
+          class="block mt-1 text-xs md:text-sm font-light text-gray-500 mb-3">
           This will set it up as the swatch that appears first in search results
           & palettes. Ideally, it will really show off the color.
         </small>
@@ -335,13 +330,13 @@
         <label for="description" class="block font-bold text-lg"
           >Swatch Tests</label>
         <small
-          class="leading-5 block mt-1 text-sm font-light text-gray-500 mb-3">
+          class="block mt-1 text-xs md:text-sm font-light text-gray-500 mb-3">
           Check off each type of test you've included in your swatch.
         </small>
         {#await swatchTypesPromise}
           <p>Loading swatch test types...</p>
         {:then swatchTypes}
-          <div class="grid grid-cols-2">
+          <div class="grid grid-cols-1 md:grid-cols-2">
             {#each swatchTypes as swatchType}
               <div class="flex items-start mb-2">
                 <input
@@ -365,8 +360,8 @@
       </div>
       <div class="mt-6">
         <h3 class="font-bold text-lg">Paper Used</h3>
-        <div class="flex justify-between">
-          <div>
+        <div class="lg:flex lg:justify-between">
+          <div class="my-3 lg:my-0">
             <label
               for="paperManufacturerName"
               class="block text-sm font-light text-gray-700">
@@ -389,7 +384,7 @@
                 {/each}
               </select>
             {:catch error}
-              <p>Something went wrong! {error}</p>
+              <p>Could not load manufacturers: {error}</p>
             {/await}
 
             {#await lineOptions then lineOpts}
@@ -417,7 +412,7 @@
             {/await}
           </div>
 
-          <div>
+          <div class="my-3 lg:my-0">
             <label
               for="paperTypeId"
               class="block text-sm font-light text-gray-700">
@@ -439,10 +434,10 @@
                 {/each}
               </select>
             {:catch error}
-              <p>Something went wrong! {error}</p>
+              <p>Could not load paper types: {error}</p>
             {/await}
           </div>
-          <div>
+          <div class="my-3 lg:my-0">
             <label
               for="paperWeight"
               class="block text-sm font-light text-gray-700">
@@ -468,7 +463,7 @@
           <label for="description" class="block font-bold text-lg"
             >Further Information</label>
           <small
-            class="leading-5 block mt-1 text-sm font-light text-gray-500 mb-3">
+            class="block mt-1 text-xs md:text-sm font-light text-gray-500 mb-3">
             Is there any additional information you'd like to include? This will
             be published along with your swatch.
           </small>

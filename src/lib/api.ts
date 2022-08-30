@@ -580,7 +580,7 @@ export async function getPaint(
   };
 }
 
-export async function getPaints(query): Promise<{
+export async function getHomePaints(query): Promise<{
   status: number;
   body: {
     uuid: string;
@@ -597,52 +597,162 @@ export async function getPaints(query): Promise<{
   const showAll = JSON.parse(query.get('all')) ? undefined : true;
   const swatched =  JSON.parse(query.get('swatched')) ? true : undefined;
 
-  return {
-    status: 200,
-    body: await prisma.paint.findMany({
-      skip: set,
-      take: take + set,
-      where: {
-        published: showAll,
-        swatchCard: swatched ? {
-          some:{
-            primaryOnPaintUuid: {
-              not: null,
-            }
+
+  let body = null;
+  let status = 404;
+
+  let paints = await prisma.paint.findMany({
+    skip: set,
+    take: take + set,
+    where: {
+      published: showAll,
+      swatchCard: swatched ? {
+        some:{
+          primaryOnPaintUuid: {
+            not: null,
           }
-        } : undefined,
-      },
-      orderBy: {
-        createdAt: 'desc',
-      },
-      select: {
-        createdAt: true,
-        updatedAt: true,
-        id: true,
-        published: true,
-        uuid: true,
-        slug: true,
-        hex: true,
-        name: true,
-        manufacturerDescription: true,
-        _count: true,
-        line: {
-          select: {
-            name: true,
-          },
-        },
-        manufacturer: {
-          select: {
-            name: true,
-          },
-        },
-        primarySwatchCard: {
-          select: {
-            imageKitUpload: true,
-          },
+        }
+      } : undefined,
+    },
+    orderBy: {
+      updatedAt: 'desc',
+    },
+    select: {
+      createdAt: true,
+      updatedAt: true,
+      id: true,
+      published: true,
+      uuid: true,
+      slug: true,
+      hex: true,
+      name: true,
+      manufacturerDescription: true,
+      _count: true,
+      line: {
+        select: {
+          name: true,
         },
       },
-    }),
+      manufacturer: {
+        select: {
+          name: true,
+        },
+      },
+      swatchCard: {
+        take:1,
+        orderBy: {
+          createdAt: 'desc',
+        },
+        select: {
+          imageKitUpload: true,
+        },
+      },
+    },
+  })
+
+  if (paints !== null) {
+    status = 200;
+    
+    paints = paints.map((paint) => {
+      let swatch;
+
+      if (paint.swatchCard) {
+        swatch = paint.swatchCard[0];
+      }
+
+      paint.primarySwatchCard = swatch;
+      delete paint.swatchCard
+      return paint;
+    })
+    body = paints;
+  }
+
+  return {
+    status,
+    body,
+  };
+}
+
+
+export async function getPaints(query): Promise<{
+  status: number;
+  body: {
+    uuid: string;
+    slug: string;
+    hex: string;
+    name: string;
+    manufacturer: {
+      name: string;
+    };
+  }[];
+}> {
+  const showAll = JSON.parse(query.get('all')) ? undefined : true;
+  const swatched =  JSON.parse(query.get('swatched')) ? true : undefined;
+
+  const count = await prisma.paint.count();
+
+  let body = null;
+  let status = 404;
+
+  const paints = await prisma.paint.findMany({
+    where: {
+      published: showAll,
+      swatchCard: swatched ? {
+        some:{
+          primaryOnPaintUuid: {
+            not: null,
+          }
+        }
+      } : undefined,
+    },
+    orderBy: {
+      name: 'asc',
+    },
+    select: {
+      createdAt: true,
+      updatedAt: true,
+      id: true,
+      published: true,
+      uuid: true,
+      slug: true,
+      hex: true,
+      name: true,
+      manufacturerDescription: true,
+      _count: true,
+      line: {
+        select: {
+          name: true,
+        },
+      },
+      manufacturer: {
+        select: {
+          name: true,
+        },
+      },
+      swatchCard: {
+        where: {
+          primaryOnPaintUuid: {
+            not: null,
+          },
+        },
+        take:1,
+        select: {
+          imageKitUpload: true,
+        },
+      },
+    },
+  });
+
+  if (paints !== null) {
+    status = 200;
+    body = {
+      paints: paints,
+      paintCount: count,
+    }
+  }
+  return {
+    status,
+    body,
   };
 }
 
@@ -1595,6 +1705,15 @@ export async function createSwatchCard(
       id: true,
     },
   });
+
+  const PaintUpdate = await prisma.paint.update({
+    where: {
+      uuid: uuid,
+    },
+    data: {
+      updatedAt: new Date(),
+    }
+  })
 
   if (body !== null) {
     status = 200;

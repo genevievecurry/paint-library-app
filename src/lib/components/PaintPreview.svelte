@@ -6,8 +6,10 @@
   export let index;
   export let type = 'default';
 
-  const swatchImage = paint?.primarySwatchCard?.imageKitUpload?.filePath
-    ? `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${paint?.primarySwatchCard?.imageKitUpload?.filePath}`
+  const swatchCard = paint?.primarySwatchCard;
+
+  const swatchImage = swatchCard.imageKitUpload?.filePath
+    ? `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${swatchCard.imageKitUpload?.filePath}`
     : '';
 </script>
 

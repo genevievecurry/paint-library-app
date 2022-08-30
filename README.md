@@ -1,14 +1,18 @@
 # Paint Library App
 
+This app uses [SvelteKit](https://kit.svelte.dev/) ✨
+
 Node Version: `v16.12.0`
 
 PostgreSQL: `13`
 
 Env: `$ cp .example.env .env`
 
+_Note: you will have to ask for the imagekit/sendgrid .env secrets_
+
 ## Developing
 
-A postgres database must provisioned; once it is setup, use `$ npx prisma migrate dev` to apply migrations & seed. 
+A postgres database must provisioned; once it is setup, use `$ npx prisma migrate dev` to apply migrations & seed.
 
 ```bash
 npm install
@@ -29,7 +33,8 @@ This project uses Prisma.io & PostgreSQL.
 
 Schema is: [schema.prisma](./prisma/schema.prisma)
 
-### Migration How To's ### 
+### Migration How To's
+
 Create a migration from changes in Prisma schema, apply it to the database, trigger generators (e.g. Prisma Client)
 
 `$ npx prisma migrate dev`
@@ -46,7 +51,8 @@ Check the status of migrations in the production/staging database
 
 `$ npx prisma migrate status`
 
-### Database/Schema How To's ###
+### Database/Schema How To's
+
 Pull the state from the database to the Prisma schema using introspection
 
 `$ npx prisma db pull`
@@ -58,7 +64,6 @@ Push the state from Prisma schema to the database during prototyping
 Seed your database
 
 `$ npx prisma db seed`
-
 
 **Note:** You'll need to make sure you have your .env configured to use a postgresql superuser. Hopefully you already have user 'postgres' with the same password & will not need to do anything.
 

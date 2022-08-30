@@ -2,14 +2,12 @@
   export async function load({ session, fetch, url }) {
     if (session.user?.role === 'ADMIN' && session.user?.status === 'ACTIVE') {
       const { pathname } = url;
-      const response = await fetch(
-        '/admin/paints.json?set=0&take=200&all=true',
-      );
+      const response = await fetch(`/admin/paints.json?all=true`);
 
       if (response.ok) {
         return {
           props: {
-            paints: await response.json(),
+            body: await response.json(),
             pathname,
           },
         };
@@ -30,68 +28,87 @@
   import { generateUrl } from '$lib/generate';
   import { checkmarkIcon, closeIcon } from '$lib/icons';
   import { timeAgo } from '$lib/utility';
+
   export let pathname;
-  export let paints;
+  export let body;
+
+  const paints = body.paints;
+  const paintCount = body.paintCount;
 </script>
 
 <Header title="Paints" {pathname} />
-
+Total Paints: {paintCount}
 <section>
-  <table class="table-auto border-collapse w-full text-sm mb-10">
-    <thead>
-      <tr class="border-b-2 border-black">
-        <td class="p-1"><input type="checkbox" /></td>
-        <td class="font-bold p-1">ID</td>
-        <td class="font-bold p-1" />
-        <td class="font-bold p-1">Name</td>
-        <td class="font-bold p-1">Manufacturer</td>
-        <td class="font-bold p-1">Line</td>
-        <td class="font-bold p-1 leading-tight">Pigments</td>
-        <td class="font-bold p-1 leading-tight">Swatches</td>
-        <td class="font-bold p-1 leading-tight">In<br /> Palettes</td>
-        <td class="font-bold p-1 leading-tight">Live</td>
-        <td class="font-bold p-1 leading-tight">Mfr.<br />Desc.</td>
-        <td class="font-bold p-1 leading-tight">Primary<br />Swatch?</td>
-        <td class="font-bold p-1 leading-tight">Updated</td>
-        <td class="font-bold p-1" />
+  <table class="sticky-header-table border-separate w-full text-xs mb-10">
+    <thead class="text-left border-b relative z-10">
+      <tr>
+        <td class="sticky top-0 pl-1 pr-3 py-3 bg-white border-y border-l"
+          >ID</td>
+        <td class="sticky top-0 py-1 whitespace-nowrap bg-white border-y" />
+        <td class="sticky top-0 py-1 whitespace-nowrap bg-white border-y"
+          >Name</td>
+        <td class="sticky top-0 py-1 whitespace-nowrap bg-white border-y"
+          >Manufacturer</td>
+        <td class="sticky top-0 py-1 whitespace-nowrap bg-white border-y"
+          >Line</td>
+        <td class="sticky top-0 py-1 whitespace-nowrap bg-white border-y"
+          >Pigments</td>
+        <td class="sticky top-0 py-1 whitespace-nowrap bg-white border-y"
+          >Swatches</td>
+        <td class="sticky top-0 py-1 whitespace-nowrap bg-white border-y"
+          >Palettes</td>
+        <td class="sticky top-0 py-1 whitespace-nowrap bg-white border-y"
+          >Live</td>
+        <td class="sticky top-0 py-1 whitespace-nowrap bg-white border-y"
+          >Mfr.<br />Desc.</td>
+        <td class="sticky top-0 py-1 whitespace-nowrap bg-white border-y"
+          >Primary<br />Swatch?</td>
+        <td class="sticky top-0 py-1 whitespace-nowrap bg-white border-y"
+          >Updated</td>
+        <td
+          class="sticky top-0 py-1 whitespace-nowrap bg-white border-y border-r" />
         <td />
       </tr>
     </thead>
     <tbody>
       {#each paints as paint}
         <tr class="border-b border-gray-300">
-          <td class="p-1"><input type="checkbox" /></td>
-          <td class="p-1">{paint.id}</td>
-          <td>
+          <td class="py-1 border-l border-b p-1">{paint.id}</td>
+          <td class="border-b">
             <div class="w-5 mr-2">
               <div
                 class="aspect-w-16 aspect-h-16"
                 style={`background-color: ${paint.hex};`} />
             </div>
           </td>
-          <td class="p-1">{paint.name}</td>
-          <td class="p-1">{paint.manufacturer.name}</td>
-          <td class="p-1">{paint.line?.name ? paint.line.name : ''}</td>
-          <td class="p-1" class:muted={paint._count.pigmentsOnPaints === 0}
+          <td class="p-1 border-b">{paint.name}</td>
+          <td class="p-1 border-b">{paint.manufacturer.name}</td>
+          <td class="p-1 border-b"
+            >{paint.line?.name ? paint.line.name : ''}</td>
+          <td
+            class="p-1 border-b"
+            class:muted={paint._count.pigmentsOnPaints === 0}
             >{paint._count.pigmentsOnPaints}</td>
-          <td class="p-1" class:muted={paint._count.swatchCard === 0}
+          <td class="p-1 border-b" class:muted={paint._count.swatchCard === 0}
             >{paint._count.swatchCard}</td>
-          <td class="p-1" class:muted={paint._count.paintsInPalette === 0}
+          <td
+            class="p-1 border-b"
+            class:muted={paint._count.paintsInPalette === 0}
             >{paint._count.paintsInPalette}</td>
-          <td class="p-1"
+          <td class="p-1 border-b"
             >{@html paint.published
               ? checkmarkIcon()
               : closeIcon('h-6 w-6 text-gray-300')}</td>
-          <td class="p-1"
+          <td class="p-1 border-b"
             >{@html paint.manufacturerDescription
               ? checkmarkIcon()
               : closeIcon('h-6 w-6 text-gray-300')}</td>
-          <td class="p-1"
+          <td class="p-1 border-b"
             >{@html paint.primarySwatchCard
               ? checkmarkIcon()
               : closeIcon('h-6 w-6 text-gray-300')}</td>
-          <td class="p-1">{timeAgo(paint.updatedAt)}</td>
-          <td class="p-1">
+          <td class="p-1 border-b">{timeAgo(paint.updatedAt)}</td>
+          <td class="p-1 border-b border-r">
             <a
               href={generateUrl({ prefix: 'paint', target: paint })}
               class="decorate-link">Link</a>
@@ -105,5 +122,9 @@
 <style>
   .muted {
     @apply text-gray-300;
+  }
+
+  .sticky-header-table {
+    border-spacing: 0px;
   }
 </style>

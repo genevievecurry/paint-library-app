@@ -12,6 +12,7 @@ export async function get({
   }
 
   const response = await getPaints(url.searchParams);
+  
 
   if (response.status !== 200) {
     return {

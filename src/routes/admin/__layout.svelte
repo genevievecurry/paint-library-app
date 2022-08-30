@@ -24,8 +24,8 @@
 
 <div class="px-4 sm:px-6">
   <div class="flex">
-    <div class="w-48 border-r-2 border-black pr-7 pt-7">
-      <ul>
+    <div class="w-48 border-r-2 border-black pr-7 pt-7 relative">
+      <ul class="sticky top-7">
         <li class="my-2">
           <a
             href="/admin/paints"
