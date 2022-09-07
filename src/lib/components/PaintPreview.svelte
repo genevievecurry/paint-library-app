@@ -8,8 +8,8 @@
 
   const swatchCard = paint?.primarySwatchCard;
 
-  const swatchImage = swatchCard.imageKitUpload?.filePath
-    ? `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${swatchCard.imageKitUpload?.filePath}`
+  const swatchImage = swatchCard?.imageKitUpload?.filePath
+    ? `https://ik.imagekit.io/paintlibrary/tr:w-200,h-200${swatchCard?.imageKitUpload?.filePath}`
     : '';
 </script>
 
