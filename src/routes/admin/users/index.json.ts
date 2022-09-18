@@ -19,7 +19,8 @@ export async function get({ url, locals }: RequestEvent): RequestEvent {
   return response;
 }
 
-export async function post({ body, locals }) {
+export async function post({ request, locals }) {
+  const body = await request.json();
   if (locals.user?.role !== 'ADMIN') {
     return {
       body: { message: 'unauthorized' },
@@ -32,7 +33,8 @@ export async function post({ body, locals }) {
   return response;
 }
 
-export async function del({ locals, body: data }) {
+export async function del({ locals, request }) {
+  const data = await request.json();
   if (locals.user?.role !== 'ADMIN') {
     return {
       body: { message: 'unauthorized' },

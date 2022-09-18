@@ -10,7 +10,9 @@ export async function get({
   return response;
 }
 
-export async function post({ body: data, locals, params }) {
+export async function post({ request, params, locals }) {
+  const data = await request.json()
+
   if (!locals.user) {
     return {
       status: 401,

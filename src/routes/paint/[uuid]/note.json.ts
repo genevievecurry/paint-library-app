@@ -2,9 +2,11 @@ import * as api from '$lib/api';
 
 export async function post({
   params,
-  body: data,
+  request,
   locals,
 }): Promise<{ status: number; body: Record<string, unknown> }> {
+  const data = await request.json()
+
   if (!locals.user) {
     return {
       body: null,
@@ -24,7 +26,8 @@ export async function post({
   return response;
 }
 
-export async function del({ body: data }) {
+export async function del({ request }) {
+  const data = await request.json()
   const response = await api.deleteNote(data);
 
   return response;

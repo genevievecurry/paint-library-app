@@ -1,6 +1,8 @@
 import { createSwatchCard, updateSwatchCard, deleteSwatchCard } from '$lib/api';
 
-export async function post({ body: data, locals, params }) {
+export async function post({ request, locals, params }) {
+  const data = await request.json();
+
   if (!locals.user) {
     return {
       status: 401,

@@ -1,6 +1,8 @@
 import * as api from '$lib/api';
 
-export async function post({ body: data, locals }) {
+export async function post({ request, locals }) {
+  const data = await request.json()
+
   if (!locals.user) {
     return {
       status: 401,

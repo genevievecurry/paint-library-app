@@ -103,7 +103,6 @@ model Paint {
   tags                    TagsOnPaints[]
   paintsInPalette         PaintsInPalette[]
 
-
   @@unique([manufacturerId, name])
 }
 
@@ -213,7 +212,7 @@ model SwatchCardType {
 
 model SwatchCardTypesOnSwatchCard {
   id                 Int                 @id @default(autoincrement())
-  swatchCard         SwatchCard          @relation(fields: [swatchCardId], references: [id])
+  swatchCard         SwatchCard          @relation(fields: [swatchCardId], references: [id], onDelete: Cascade)
   swatchCardId       Int
   swatchCardType     SwatchCardType?     @relation(fields: [swatchCardTypeName], references: [name])
   swatchCardTypeName SwatchCardTypeName?

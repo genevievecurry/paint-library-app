@@ -7,7 +7,8 @@ const SENDER_NAME = import.meta.env.VITE_SENDER_NAME;
 client.setApiKey(SENDGRID_API_KEY as string);
 
 // This function is very limited.
-export async function post({ body: data }) {
+export async function post({ request }) {
+  const data = await request.json()
   const message = {
     to: SENDER_EMAIL,
     from: SENDER_EMAIL,

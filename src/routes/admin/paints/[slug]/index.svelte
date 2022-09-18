@@ -131,6 +131,7 @@
           class="border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500 block w-full p-2 sm:text-sm"
           id="name"
           name="name"
+          required
           bind:value={name} />
       </div>
     </div>
@@ -144,6 +145,7 @@
             class="border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500 block w-full p-2 sm:text-sm"
             id="hex"
             name="hex"
+            required
             bind:value={hex} />
         </div>
         <div>
@@ -153,6 +155,7 @@
             name="hexVis"
             id="hexVis"
             bind:value={hex}
+            required
             class="block w-full h-10 border-2 border-black focus:outline-none focus:ring-lime-500 focus:border-lime-500" />
         </div>
       </div>
@@ -178,6 +181,7 @@
         <p>Loading manufacturers...</p>
       {:then manufacturers}
         <select
+          required
           id="paperManufacturerName"
           name="paperManufacturerName"
           bind:value={manufacturer.name}
