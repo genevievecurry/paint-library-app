@@ -23,7 +23,8 @@
     "seed:pigments": "node prisma/seed-pigments.cjs",
     "migrate:dev": "prisma migrate dev",
     "migrate:reset": "prisma migrate reset",
-    "test": "uvu tests '.spec.ts' -r tsm -r tests/setup/register -i setup"
+    "test": "uvu tests '.spec.ts' -r tsm -r tests/setup/register -i setup",
+    "generate": "prisma generate"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.0",
