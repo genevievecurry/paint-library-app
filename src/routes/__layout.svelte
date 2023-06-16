@@ -56,6 +56,10 @@
 
 <svelte:head>
   <title>Paint Library</title>
+  <script
+    async
+    src="https://gumami.netlify.app/script.js"
+    data-website-id="b2e90573-328a-4759-9b72-9173c0b56112"></script>
 </svelte:head>
 
 <div class="bg-white">
